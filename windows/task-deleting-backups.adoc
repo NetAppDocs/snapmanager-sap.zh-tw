@@ -1,0 +1,30 @@
+---
+permalink: windows/task-deleting-backups.html 
+sidebar: sidebar 
+keywords: delete, backup, free, space, occupy, remove, snapshot, copies, copy, volume, deleting 
+summary: 當您不再需要備份時、必須刪除備份、如此可釋出備份佔用的空間。如果您移除備份、則可降低每個磁碟區達到255個Snapshot複本上限的機率。 
+---
+= 刪除備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您不再需要備份時、必須刪除備份、如此可釋出備份佔用的空間。如果您移除備份、則可降低每個磁碟區達到255個Snapshot複本上限的機率。
+
+* 您必須確保備份並未用於建立複本。
+
+
+您可以無限刪除保留的備份、而不需變更保留類別。
+
+您可以選擇在備份刪除作業成功或失敗之後收集傾印檔案。
+
+如果您想要刪除歸檔記錄備份、則需要檢查歸檔記錄備份的保留期間設定。如果歸檔記錄備份在保留期間內、且還原資料庫需要歸檔記錄檔、則無法刪除歸檔記錄備份。
+
+. 輸入下列命令、確認作業是否完成：「msap operation list -profileprofile_name-dump - quide-verbose」（msap作業清單-profileprofileprofile_name-dump - quide-verbose）
+. 若要刪除備份、請輸入下列命令：「msap備份刪除-profile profile_name（資料|-archivelogs）|-ided |-all][-force][-dump ][-quide"|-verbose]
++
+使用-force選項強制移除備份。強制移除作業不完整的備份可能會使備份處於不一致的狀態。
+
+

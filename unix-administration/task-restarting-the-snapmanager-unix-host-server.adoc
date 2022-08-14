@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task-restart-the-snapmanager-unix-host-server.html 
+sidebar: sidebar 
+keywords: restart, server, unix, host, cli, snapmanager 
+summary: 您可以使用CLI在UNIX主機上重新啟動伺服器。 
+---
+= 重新啟動SnapManager UNIX主機伺服器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用CLI在UNIX主機上重新啟動伺服器。
+
+.步驟
+. 若要重新啟動伺服器、請輸入下列命令：
++
+‘* smsap_server REATON*’
+
+

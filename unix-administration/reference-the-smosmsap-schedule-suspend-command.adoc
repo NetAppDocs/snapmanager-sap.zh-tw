@@ -1,0 +1,37 @@
+---
+permalink: unix-administration/reference-the-smosmsap-schedule-suspend-command.html 
+sidebar: sidebar 
+keywords: command, suspend, backup, schedule, resume, smsap 
+summary: 此命令會暫停備份排程、直到備份排程恢復為止。 
+---
+= smsap排程暫停命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會暫停備份排程、直到備份排程恢復為止。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap schedule suspend -profile _profile_name_
+-schedule-name _schedule_name_ [-quiet | -verbose\]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile_name_*」
++
+指定與您要暫停備份排程之資料庫相關的設定檔名稱。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* 「*排程名稱_排程名稱_*」
++
+指定建立備份排程時所提供的排程名稱。
+
+

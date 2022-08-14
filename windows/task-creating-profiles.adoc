@@ -1,0 +1,127 @@
+---
+permalink: windows/task-creating-profiles.html 
+sidebar: sidebar 
+keywords: creating, create, profile, assign, oracle, database, policy, set, retention, count, class 
+summary: 建立設定檔時、您可以將特定的Oracle資料庫使用者帳戶指派給設定檔。您可以設定設定檔的保留原則、並設定每個保留類別的保留計數和持續時間。 
+---
+= 建立設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立設定檔時、您可以將特定的Oracle資料庫使用者帳戶指派給設定檔。您可以設定設定檔的保留原則、並設定每個保留類別的保留計數和持續時間。
+
+如果您未提供資料庫的-Login、-password和-port參數值、作業系統（OS）驗證模式會使用預設認證。
+
+在建立設定檔時SnapManager 、執行還原資格檢查、以判斷可用來還原資料庫的還原機制。
+
+使用支援（3.2或更新版本）、您可以在建立新設定檔或更新現有設定檔的同時、將歸檔記錄檔與資料檔分開。SnapManager使用設定檔分隔備份之後、您可以只建立資料庫的純資料檔案備份、或僅建立資料庫的記錄檔備份。您可以使用新的設定檔或更新的設定檔來建立包含資料檔案和歸檔記錄檔的備份。不過、您無法使用設定檔來建立完整備份或還原設定。
+
+*用於建立完整和部分備份的設定檔*
+
+您可以建立設定檔、以建立完整的資料庫備份、其中包含資料檔案、控制檔、歸檔記錄檔、以及包含指定資料檔案或表格空間、所有控制檔及所有歸檔記錄檔的部分資料庫備份。不允許使用為完整和部分備份所建立的設定檔來建立個別的歸檔記錄備份。SnapManager
+
+*用於建立純資料檔案備份與僅歸檔程式備份的設定檔*
+
+當您建立新的設定檔時、可以加入-v分離 的archivelog-Backup、將歸檔記錄備份與資料檔案備份分開。您也可以更新現有的設定檔、將歸檔記錄備份與資料檔案備份分開。
+
+透過使用新的設定檔選項來分隔歸檔記錄備份、您可以執行下列SnapManager 功能：
+
+* 建立歸檔記錄備份
+* 刪除歸檔記錄備份
+* 掛載歸檔記錄備份
+* 釋放歸檔記錄備份
+
+
+在建立設定檔以將歸檔記錄備份與資料檔案備份分開時、如果建立設定檔的資料庫中不存在歸檔記錄檔、則作用中檔案系統中不會出現「Archive log file（歸檔記錄檔）」警告訊息。此時會顯示早於記錄檔執行緒版本>記錄檔的歸檔記錄檔版本、但不會包含在備份中。即使您為此資料庫建立備份、歸檔記錄檔仍無法在資料庫備份中使用。
+
+
+NOTE: 如果您在建立設定檔時遇到錯誤、請使用smsapsystem dump命令。建立設定檔之後、如果發生錯誤、請使用smsapopoperation dump和smsapprofile dump命令。
+
+. 若要建立使用者名稱、密碼和連接埠（Oracle驗證）的設定檔、請輸入下列命令：
++
+msap profile create -profileprofile [-profile-password-profile_password]-reposite-dbnamerepo_dbname-host note-portrepo_port-login-usernamerepo_username-database-dbnamedb_dbname-hostdb_host [-siddb_siddb_sid][-usernamedb_deparamedb_deparecastampaign_noteep-tream_dep-tream_noteep-treamed][-pyour-peck_note_noteeparam_noteeparm/noteepam][-tream_noteepamed][-tream_noteep-treamed][-treamed][-pyour-pyour][-pyour-pecastery_noteeparam_noteepam_noteeparam_note_noteeparamed][-pyour][-tream_noteeparam_note_noteepam_noteeparam_note
+
++
+此命令的其他選項如下：
+
++
+[-force][-noprompel]
+
++
+根據您要存取資料庫的方式、您也可以在建立設定檔時加入其他選項。
+
++
+|===
+| 如果... | 然後... 
+
+
+ a| 
+*您想要使用資料庫驗證來建立設定檔*
+ a| 
+指定資料庫登入詳細資料。
+
+
+
+ a| 
+*您想要指定備份保留原則*
+ a| 
+指定保留類別的保留計數或持續時間、或兩者。持續時間以課程單位為單位（例如小時、日）。
+
+** 「每小時」是指每小時的保留類別、其中分別有[-count n][-duration m]為保留計數和保留期間。
+** 「每日」是每日保留類別、其中分別有「[-count n][-durationm]」是保留計數和保留持續時間。
+** 每週保留類別為每週保留類別、其中分別有[-count n][-duration m]為保留計數和保留期間。
+** 「每月」是每月保留類別、其中分別有[-count n][-durationm]為保留計數和保留期間。
+
+
+
+
+ a| 
+*您想要啟用資料庫作業完成狀態的電子郵件通知*
+ a| 
+指定下列選項和變數：
+
+** 使用摘要通知功能、您可以在儲存庫資料庫下設定多個設定檔的摘要電子郵件通知。
+** 通知功能可讓您接收電子郵件通知、告知設定檔資料庫作業的完成狀態。
+** -Success-emailemail_address2可讓您接收電子郵件通知、告知您使用新的或現有的設定檔來成功執行資料庫作業。
+** -aile-email_address2可讓您接收電子郵件通知、通知您使用新的或現有的設定檔執行失敗的資料庫作業。
+** -SubectSub_text會在建立新設定檔或現有設定檔時、指定電子郵件通知的主旨文字。如果通知設定未針對儲存庫進行設定、而您嘗試使用CLI設定設定設定檔或摘要通知、則主控台記錄中會記錄下列訊息：SMSAP-1477: Notification Settings Not Configure（通知設定未設定）。
++
+如果您已設定通知設定、並嘗試使用CLI設定摘要通知、但未啟用儲存庫的摘要通知、則主控台記錄會顯示下列訊息：____SMSAP-14575：摘要通知組態無法用於此儲存庫
+
+
+
+
+
+ a| 
+*您想要將歸檔記錄檔與資料檔分開備份*
+ a| 
+指定下列選項和變數：
+
+** 使用分隔的archivelog-Backup、您可以將歸檔記錄備份與資料檔案備份分開。
+** -ret-archivelog-Backups可設定歸檔記錄備份的保留時間。您必須指定正的保留期間。
++
+歸檔記錄備份會根據歸檔記錄保留期間而保留。資料檔案備份會根據現有的保留原則來保留。
+
+** 包括線上備份、包括歸檔記錄備份、以及線上資料庫備份。
++
+此選項可讓您一起建立線上資料檔案備份與歸檔記錄備份、以便進行複製。設定此選項時、每當您建立線上資料檔案備份時、都會立即建立歸檔記錄備份及資料檔案。
+
+** -no include-with online備份不包括歸檔記錄備份和資料庫備份。
+
+
+
+
+ a| 
+*您可以在設定檔成功建立作業之後收集傾印檔*
+ a| 
+在profile create命令結尾處指定-dump選項。
+
+|===
+
+
+*相關資訊*
+
+xref:concept-how-to-collect-dump-files.adoc[如何收集傾印檔案]

@@ -1,0 +1,72 @@
+---
+permalink: windows/task-perform-backup-restore-and-clone-operations-using-prescript-and-post-scripts.html 
+sidebar: sidebar 
+keywords: script, initiate, backup, restore, clone, operation, snapmanager, task-enable, page, create, wizard, restore, recover, create, parameter, prescript, post-script 
+summary: 您可以在開始備份、還原或複製作業時、使用自己的指令碼。在「備份建立精靈」、「還原或還原精靈」或「Clone Create精靈」中顯示「工作啟用」頁面、您可以在其中選取指令碼、並為指令碼所需的任何參數提供值。SnapManager 
+---
+= 使用指令碼和指令碼後執行備份、還原和複製作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在開始備份、還原或複製作業時、使用自己的指令碼。在「備份建立精靈」、「還原或還原精靈」或「Clone Create精靈」中顯示「工作啟用」頁面、您可以在其中選取指令碼、並為指令碼所需的任何參數提供值。SnapManager
+
+
+
+== 您的需求
+
+* 將外掛程式指令碼安裝在正確SnapManager 的安裝位置。
+* 使用「msap外掛檢查」命令、確認外掛程式安裝正確。
+* 請確定您使用的是Bash Shell。
+
+
+
+
+== 關於這項工作
+
+在命令列介面（CLI）中、列出指令碼名稱、選取參數、然後設定值。
+
+.步驟
+. 若要驗證您是否正在使用Bash Shell、請在命令提示字元中輸入下列命令：
++
+《* Basash*》
+
++
+或者、您也可以在提示字元輸入「bash」命令、然後使用命令輸出做為指令碼的開始參數。
+
++
+如果沒有看到錯誤、則表示Bash Shell運作正常。
+
+. 對於備份作業、請輸入「taskspec」選項、並提供工作規格XML檔案的絕對路徑、以便在備份作業之前或之後執行預先處理或後處理活動：
++
+「* smsap備份建立設定檔_profile_name_｛[-full｛-online |-offline |-auto｝[-sthourly |[-dyourly |-fleyly |-mourly |-monthly |-monthly |-unchallyly |-stamply -scap空間|[_-tablform空間 每週數][_自動標記]|每週數][_自動標記]|每週數|每週數][_資料空間數 [-archivelogs [-label _][-comment _comment _][-backup-dest-dest_path1_[,[_path2_][-exclude _dest-destate _path1_[,_path2_]][-prunelogs {-all |-untuntilSCN_untuntilscn_|-therun-testsunnestsun_|-therun-testsune-therun-testsun-testsun-testsun-test_|-therune-therune-therun-testsune-therune-sun-test_|-therun-test_[-y_date｛-testsune-sune-sune-sune-ths｛-test_[-test_[-test_[-test-
+
++
+如果備份外掛程式作業失敗、則只會顯示外掛程式名稱和傳回代碼。外掛程式指令碼必須包含記錄訊息、並將訊息重新導向至使用者定義的記錄檔。
+
+. 對於備份還原作業、請輸入「taskspec」選項、並提供工作規格XML檔案的絕對路徑、以便在還原作業之前或之後執行預先處理或後處理活動：
++
+hy*smsap備份還原-profile _profile_name_｛-label __|-id _<id>_｝｛-files>_|-tabl空間_|-solete>_|-f完整|-controlfiles｝[復原｛_-alllogs_|_nosap備份還原備份|直到_<atured>_}][-restore-restoreec[ restore-spec-solid-solid_] taskec[快轉儲][-offrestoreed][-verbestamptask_][-spec_][-solid_][快轉儲][-solid_][-verbestamptask_][
+
++
+如果還原外掛程式作業失敗、則只會顯示外掛程式名稱和傳回代碼。外掛程式指令碼必須包含記錄訊息、並將訊息重新導向至使用者定義的記錄檔。
+
+. 對於實體複本建立作業、請輸入「taskspec」選項、並提供工作規格XML檔案的絕對路徑、以便在實體複本作業之前或之後執行預先處理或後處理活動：
++
+hy*smsap clone create -profile _profile_name_{-backup-label _backup_name_|-backup-id _|-current}-newsid _new_sid-_ clonespec _fact_to_clonespecfile_[-Reserve _<是、否、繼承>_][主機<備份標籤_ veryoid_<備份_ task_<備份標籤_ very><備份_資訊><備份_備份_備份_備份_備份_備份_備份_備份_備份_備份_資訊_資訊_資訊_資訊><資訊><
+
++
+如果複製外掛程式作業失敗、則只會顯示外掛程式名稱和傳回代碼。外掛程式指令碼必須包含記錄訊息、並將訊息重新導向至使用者定義的記錄檔。
+
+
+
+
+
+== 使用工作規格XML檔案建立備份的範例
+
+[listing]
+----
+smsap backup create -profile SALES1 -full -online -taskspec sales1_taskspec.xml -force -verify
+----

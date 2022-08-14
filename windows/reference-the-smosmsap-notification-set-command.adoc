@@ -1,0 +1,101 @@
+---
+permalink: windows/reference-the-smosmsap-notification-set-command.html 
+sidebar: sidebar 
+keywords: notification, set, command, configure, mail, server, smsap 
+summary: 您可以使用notification set命令來設定郵件伺服器。 
+---
+= smsap通知集命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「notification set」命令來設定郵件伺服器。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap notification set
+-sender-email email_address
+-mailhost mailhost
+-mailport mailport
+[-authentication
+-username username
+-password password]
+-repository
+-dbname repo_service_name
+-port repo_port]
+-host repo_host
+-login -username repo_username
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *（寄件者-電子郵件_email_address_`*）
++
+指定傳送電子郵件警示的寄件者電子郵件地址。從SAP版的32位元3.2開始SnapManager 、您可以在指定電子郵件地址的網域名稱時、加入連字號（-）。例如、您可以將寄件者電子郵件地址指定為「+-sender-email07lbfmdatacenter@continental-corporation.com +」。
+
+* *（即：mailhost _mailhost_`*）
++
+指定處理電子郵件通知的主機伺服器名稱或IP位址。
+
+* *。-mailport _mailport_`*
++
+指定郵件伺服器連接埠號碼。
+
+* *（即驗證）-username_username-password密碼_`*
++
+指定電子郵件地址的驗證詳細資料。您必須指定使用者名稱和密碼。
+
+* *（系統儲存庫）*
++
+指定儲存庫資料庫的詳細資料。
+
+* *（連接埠_repo_port_`*）
++
+指定用於存取儲存庫資料庫的傳輸控制傳輸協定（TCP）連接埠號碼。
+
+* *（即dbname _repo_service_name_`*）
++
+指定儲存庫資料庫的名稱。您可以使用全域名稱或系統識別碼。
+
+* *主機_repo_host_`*
++
+指定儲存庫資料庫所在主機的名稱或IP位址。
+
+* *（登入）*
++
+指定儲存庫登入詳細資料。這是選用的。如果未指定SnapManager 、則無法使用作業系統驗證連線模式。
+
+* *（用戶名_repo_username_`*）
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+下列範例會設定郵件伺服器：
+
+[listing]
+----
+smsap notification set -sender-email admin@org.com -mailhost hostname.org.com -mailport 25 authentication -username davis -password davis -repository -port 1521 -dbname SMSAPREPO -host hotspur
+-login -username grabal21 -verbose
+----

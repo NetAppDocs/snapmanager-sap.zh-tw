@@ -1,0 +1,30 @@
+---
+permalink: windows/task-mount-backups.html 
+sidebar: sidebar 
+keywords: snapmanager, automatic, handle, mount, backup, host, available, scenario, tools, oracle, recovery, manager, rman, file 
+summary: 自動處理備份的安裝、以便主機使用。SnapManager您也可以在使用外部工具（例如Oracle Recovery Manager（RMAN））存取備份檔案的情況下、掛載備份。 
+---
+= 掛載備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+自動處理備份的安裝、以便主機使用。SnapManager您也可以在使用外部工具（例如Oracle Recovery Manager（RMAN））存取備份檔案的情況下、掛載備份。
+
+
+
+== 關於這項工作
+
+「msap備份掛載」命令會顯示已掛載Snapshot複本（包含備份）的路徑清單。
+
+
+NOTE: 您可以選擇在備份掛載作業成功或失敗之後收集傾印檔案。
+
+.步驟
+. 若要掛載備份、請輸入下列命令：
++
+「* smsap備份掛載-profile _profile_name__label_[data |-archivelogs]|-id _id_｝[-host __ host_][-dump ][-quiet |-verbose]*」
+
+

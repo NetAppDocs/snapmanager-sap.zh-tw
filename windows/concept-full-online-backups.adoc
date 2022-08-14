@@ -1,0 +1,36 @@
+---
+permalink: windows/concept-full-online-backups.html 
+sidebar: sidebar 
+keywords: full, online, backup, snapmanager, back up, database, create, snapshot, copies, copy, volume, level, tablespace 
+summary: 在完整的線上備份期間SnapManager 、將整個資料庫備份、並在磁碟區層級（而非表格空間層級）建立Snapshot複本。 
+---
+= 完整的線上備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在完整的線上備份期間SnapManager 、將整個資料庫備份、並在磁碟區層級（而非表格空間層級）建立Snapshot複本。
+
+針對每個備份建立兩個Snapshot複本。SnapManager如果資料庫所需的所有檔案都位於單一磁碟區中、則該磁碟區中會同時出現這兩個Snapshot複本。
+
+當您指定完整備份時SnapManager 、執行下列動作：
+
+.步驟
+. 將整個資料庫置於線上備份模式
+. 為所有包含資料庫檔案的磁碟區建立Snapshot複本
+. 將資料庫從線上備份模式中移出
+. 強制切換記錄檔、然後歸檔記錄檔
++
+這也會將重作資訊排清到磁碟。
+
+. 產生備份控制檔
+. 建立記錄檔和備份控制檔的Snapshot複本
+
+
+執行完整備份時SnapManager 、將整個資料庫置於線上備份模式。個別的資料表空間（例如「E：\data\system.data1」）處於線上備份模式、時間比指定的特定資料表空間或資料檔案長。
+
+當資料庫進入備份模式時、Oracle會將整個區塊寫入記錄、而不只是在備份之間寫入差異。由於資料庫在線上備份模式下的工作更多、因此選擇完整備份會對主機造成更大的負載。
+
+雖然執行完整備份會對主機造成較大的負載、但完整備份需要較少的Snapshot複本、因此儲存需求較少。

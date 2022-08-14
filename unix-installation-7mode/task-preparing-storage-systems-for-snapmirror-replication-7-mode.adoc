@@ -1,0 +1,118 @@
+---
+permalink: unix-installation-7mode/task-prepare-storage-systems-for-snapmirror-replication-7-mode.html 
+sidebar: sidebar 
+keywords: snapmanager, snapmirror, technology, mirror, snapshot, copies, copy, configure, initialize, data-protection, relationship, destination, volume, prepare, preparing, storage, system, replication 
+summary: 在使用SnapManager的整合式SnapMirror技術鏡射Snapshot複本之前、您必須先設定及初始化來源與目的地磁碟區之間的資料保護關係。初始化時、SnapMirror會製作來源磁碟區的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地磁碟區。它也會將來源磁碟區上任何其他較不新的Snapshot複本傳輸到目的地磁碟區。 
+---
+= 準備儲存系統以進行SnapMirror複寫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用SnapManager的整合式SnapMirror技術鏡射Snapshot複本之前、您必須先設定及初始化來源與目的地磁碟區之間的_data-protection關係。初始化時、SnapMirror會製作來源磁碟區的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地磁碟區。它也會將來源磁碟區上任何其他較不新的Snapshot複本傳輸到目的地磁碟區。
+
+*關於此工作*
+
+您可以使用ONTAP 「僅供參考的CLI OnCommand 」或「系統管理程式」來執行這些工作。以下程序是假設您使用的是CLI。如需詳細資訊、請參閱 https://library.netapp.com/ecm/ecm_download_file/ECMP1368826["適用於7-Mode的《Data Protection Online Backup and Recovery Guide》（英文）Data ONTAP"^]。
+
+
+NOTE: 您無法使用SnapManager 邊鏡射qtree。僅支援Volume鏡射。SnapManager
+
+無法使用SnapManager 支援同步鏡射的功能。僅支援非同步鏡射。SnapManager
+
+
+IMPORTANT: 如果您要將資料庫檔案和交易記錄儲存在不同的磁碟區上、則必須在資料庫檔案的來源和目的地磁碟區之間、以及交易記錄的來源和目的地磁碟區之間建立關聯。
+
+. 在來源系統主控台、使用「options SnapMirror存取」命令來指定允許直接從來源系統複製資料的系統主機名稱。
++
+* 範例 *
+
++
+下列項目允許複寫至destination_SystemB：
+
++
+[listing]
+----
+options snapmirror.access host=destination_systemB
+----
+. 在目的地系統上、建立或編輯「/etc/SnapMirror．conf」檔案、以指定要複製的磁碟區。
++
+* 範例 *
+
++
+下列項目指定從SOUR_SystemA的vol0複寫到destination_SystemB的vol2：
+
++
+[listing]
+----
+source_systemA:vol0 destination_systemB:vol2
+----
+. 在來源和目的地系統主控台上、使用「napmirror on」命令來啟用SnapMirror。
++
+* 範例 *
+
++
+下列命令可啟用SnapMirror：
+
++
+[listing]
+----
+snapmirror on
+----
+. 在目的地系統主控台上、使用「vol create」命令建立大小與來源Volume相同或更大的SnapMirror目的地Volume。
++
+* 範例 *
+
++
+下列命令會在Agggr1上建立名為vol2的2-GB目的地Volume：
+
++
+[listing]
+----
+vol create vol2 aggr1 2g
+----
+. 在目的地系統主控台上、使用vol restrict命令將目的地Volume標記為受限。
++
+* 範例 *
+
++
+下列命令會將目的地Volume vol2標示為受限：
+
++
+[listing]
+----
+vol restrict vol2
+----
+. 在來源系統主控台、使用「nap sched」命令停用任何排程的傳輸。
++
+* 範例 *
+
++
+您必須停用排程的傳輸、以避免與SnapDrive 功能不穩定的排程衝突。
+
++
+下列命令會停用排程的傳輸：
+
++
+[listing]
+----
+snap sched vol1 -----
+----
+. 在目的地系統主控台、使用「napmirror initialize」命令建立來源與目的地磁碟區之間的關係、然後初始化關係。
++
+初始化程序會將_基準線傳輸_傳送到目的地Volume。SnapMirror會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。它也會將來源磁碟區上的任何其他Snapshot複本傳輸到目的地磁碟區。
+
++
+* 範例 *
+
++
+下列命令會在SOUR_SystemA上的來源Volume vol0與destination_SystemB上的目的地Volume vol2之間建立SnapMirror關係、並初始化關係：
+
++
+[listing]
+----
+snapmirror initialize -S source_systemA:vol0 destination_systemB:vol2
+----
+

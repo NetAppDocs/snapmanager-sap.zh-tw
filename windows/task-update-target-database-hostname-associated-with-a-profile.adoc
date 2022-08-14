@@ -1,0 +1,74 @@
+---
+permalink: windows/task-update-target-database-hostname-associated-with-a-profile.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, provide, ability, update, host, name, target, database, profile, associate 
+summary: SAP適用的BIOS（3.2或更新版本）可在BIOS設定檔中更新目標資料庫的主機名稱。SnapManager SnapManager 
+---
+= 更新與設定檔相關聯的目標資料庫主機名稱
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAP適用的BIOS（3.2或更新版本）可在BIOS設定檔中更新目標資料庫的主機名稱。SnapManager SnapManager
+
+
+
+== 您的需求
+
+* 本機使用者的主目錄必須知道設定檔對儲存庫的對應。
+* 必須關閉圖形化使用者介面（GUI）工作階段。SnapManager
+
+
+
+
+== 關於這項工作
+
+您只能使用CLI、以新的主機名稱更新設定檔。
+
+*不支援在設定檔*中變更目標資料庫主機名稱的情況
+
+下列情況不支援變更設定檔中的目標資料庫主機名稱：
+
+* 使用SnapManager Isname GUI變更目標資料庫主機名稱
+* 更新設定檔的目標資料庫主機名稱後、將儲存庫資料庫復原
+* 執行單一命令來更新新目標資料庫主機名稱的多個設定檔
+* 執行SnapManager 任何功能不全的作業時、請變更目標資料庫主機名稱
+
+
+
+NOTE: 在設定檔中更新目標資料庫主機名稱之後、只會變更目標資料庫主機名稱。設定檔上設定的所有其他組態參數都會保留。
+
+更新目標資料庫主機名稱之後、如果新主機中沒有可用的實體複本或掛載備份、則無法刪除或卸載備份。在這種情況SnapManager 下、從新主機執行支援功能會導致故障、以及舊主機中的過時項目。若要執行SnapManager 還原作業、您必須使用「profile update」（設定檔更新）來還原至先前的主機名稱。
+
+.步驟
+. 輸入下列命令：
++
+_smsap profile update -profile _profile_[-profile-password _profile_password_][-database-dbname _dbname_-host _db_host_[-sID db_sid_][-log-userName _db_username_-password _db_password_-port _db_port_][{-rmne-lam_dim_dim_nour-tn_dim_dim_dim_nstyour_station__每週次按分鐘數[_transm_de_deed_deed_de_de[_controllunn_sthour_][_stock_unn_styour_uneed][_styour_styour_uneed_deed_次輸入密碼_次輸入_次輸入密碼_次輸入_次輸入_次輸入_次輸入_次輸入_次輸入_次輸入密碼_次輸入_次輸入_次輸入_次輸入_次輸入_次輸入_次 [-Comment _Comment_][-snapname-Pattern_][-apstrape-noticle][-notification [-s字 節成功電子郵件_email_address1_、_email_address2_-Subject _Pattern_][-fell_email_address_address__、_email_address_-pet_Pattern_][-site-archive-develogs備份與備份資料的線上備份日數（_stations[–分隔、電子郵件、電子郵件、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件_、電子郵件、電子郵件
+
++
+此命令的其他選項如下：
+
++
+[`-force（力量）][`-nosmp]
+
++
+['quide'|'-verbose']
+
++
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+*變更目標資料庫主機名稱*
+ a| 
+指定「-host _new_db_host_'」
+
+|===
+. 若要檢視設定檔的目標資料庫主機名稱、請輸入下列命令：
++
+「msap設定檔顯示」
+
+

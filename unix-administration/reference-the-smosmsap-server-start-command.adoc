@@ -1,0 +1,51 @@
+---
+permalink: unix-administration/reference-the-smosmsap-server-start-command.html 
+sidebar: sidebar 
+keywords: command, start, host, server, run, snapmanager, sap, software, smsap_server 
+summary: 此命令會啟動執行SnapManager for SAP軟體的主機伺服器。 
+---
+= smsap_server start命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會啟動執行SnapManager for SAP軟體的主機伺服器。
+
+
+
+== 語法
+
+[listing]
+----
+smsap_server start
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* 「*無聲*」
++
+指定主控台僅顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+指定錯誤、警告和資訊訊息會顯示在主控台上。
+
+
+
+'''
+
+
+== 命令範例
+
+下列範例會啟動主機伺服器。
+
+[listing]
+----
+smsap_server start
+SMSAP-17100: SnapManager Server started on secure port 25204 with PID 11250
+----
+'''

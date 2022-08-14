@@ -1,0 +1,88 @@
+---
+permalink: unix-administration/concept-understanding-enabling-or-disabling-of-data-protection-in-profile.html 
+sidebar: sidebar 
+keywords: enable, disable, data, protection, creating, create, update, updating, database, profile, understand, enabling, disabling 
+summary: 您可以在建立或更新資料庫設定檔時啟用或停用資料保護。 
+---
+= 瞭解在設定檔中啟用或停用資料保護
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在建立或更新資料庫設定檔時啟用或停用資料保護。
+
+若要在次要儲存資源上建立資料庫的受保護備份、資料庫管理員與儲存管理員必須執行下列動作。
+
+[cols="1a,2a"]
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+建立或編輯設定檔
+ a| 
+若要建立或編輯設定檔、請執行下列步驟：
+
+* 為二線儲存設備啟用備份保護。
+* 如果您使用Data ONTAP 以7-Mode運作的支援功能、並安裝Protection Manager、則可在Protection Manager中選取儲存設備或備份管理員所建立的原則。
++
+如果您使用Data ONTAP 以7-Mode運作且已啟用保護功能的功能、SnapManager 則會為資料庫建立資料集。資料集包含儲存集的集合、以及與其資料相關的組態資訊。與資料集相關的儲存集包括用於匯出資料至用戶端的主要儲存集、以及其他儲存集上的一組複本與歸檔。資料集代表可匯出的使用者資料。如果系統管理員停用資料庫保護、SnapManager 則將刪除資料集。
+
+* 如果您使用ONTAP 的是S動ure,則必須根據所SnapVault 建立的SnapMirror或相依關係來選擇_SnapManager®cDOT_Mirror_或_SnapManager®cDOT_Vault_原則。
+
+
+當您停用備份保護時、會顯示一則警告訊息、表示資料集將被刪除、而且無法還原或複製此設定檔的備份。
+
+
+
+ a| 
+檢視設定檔
+ a| 
+由於儲存設備管理員尚未指派儲存資源來執行保護原則、因此設定檔會在SnapManager 顯示為不一致的圖形使用者介面和「profile show」命令輸出中顯示。
+
+
+
+ a| 
+在Protection Manager管理主控台中指派儲存資源
+ a| 
+在Protection Manager管理主控台中、儲存管理員會檢視未受保護的資料集、並為與設定檔相關聯的資料集的每個節點指派資源池。儲存管理員接著確認已配置次要磁碟區、並已初始化保護關係。
+
+
+
+ a| 
+請參閱SnapManager 《不一致的個人資料（若有
+ a| 
+在本報告中、資料庫管理員會發現、圖形使用者介面和「profile show」命令輸出中的設定檔已變更為一致狀態、表示已指派資源。SnapManager
+
+
+
+ a| 
+建立備份
+ a| 
+* 選取完整備份。
+* 此外、請選取備份是否應受到保護、然後選取主要保留類別（例如、每小時或每天）。
+* 如果您使用Data ONTAP 的是7-Mode作業系統的支援功能、而且想要保護備份到二線儲存設備的安全、而不需要保護保護管理程式的保護排程、請指定「-protectNOW」選項。
+* 如果您使用ONTAP 的是支援功能、想要立即保護備份到二線儲存設備、請指定「Protect」選項。
++
+
+NOTE: 「protectNOW」選項不適用於叢集Data ONTAP 式的
+
+
+
+
+
+ a| 
+檢視備份
+ a| 
+新的備份會顯示為已排程保護、但尚未受到保護（在SnapManager 支援畫面介面和「備份顯示」命令輸出中）。保護狀態顯示為「Not protected」（未受保護）。
+
+
+
+ a| 
+檢視備份清單
+ a| 
+儲存管理員確認備份已複製到二線儲存設備之後SnapManager 、將備份保護狀態從「未受保護」變更為「受保護」。
+
+|===

@@ -1,0 +1,27 @@
+---
+permalink: windows/task-unmounting-backups.html 
+sidebar: sidebar 
+keywords: snapmanager, automatic, unmount, backup, available, external, tool, oracle, recovery, manager, rman, file, remove, access 
+summary: 自動卸載備份、讓主機伺服器無法使用備份。SnapManager如果您使用外部工具（例如Oracle Recovery Manager \（RMAN））來存取備份中的檔案、並變更備份狀態以移除存取權、則可使用此功能來卸載。SnapManager 
+---
+= 卸載備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+自動卸載備份、讓主機伺服器無法使用備份。SnapManager如果您使用外部工具（例如Oracle Recovery Manager（RMAN））來存取備份中的檔案、並變更備份狀態以移除存取、則可使用此功能來卸載。SnapManager
+
+您可以選擇在成功或失敗的卸載備份作業之後收集傾印檔案。
+
+.步驟
+. 輸入下列命令：
++
+「msap備份取消掛載-profile profile profile _name｛labelLabel [data |-archivelogs]|-ided｝[-quiet |-verbose]」
+
+
+
+*相關資訊*
+
+xref:reference-the-smosmsapbackup-unmount-command.adoc[smsap備份unmount命令]

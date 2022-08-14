@@ -1,0 +1,64 @@
+---
+permalink: windows/concept-managing-profiles-for-efficient-backups.html 
+sidebar: sidebar 
+keywords: create, profile, snapmanager, database, perform, operation, manage, efficient, backup 
+summary: 您必須在SnapManager 還原中為要執行作業的資料庫建立設定檔。您必須選取設定檔、然後選取您要執行的作業。 
+---
+= 管理設定檔以有效備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在SnapManager 還原中為要執行作業的資料庫建立設定檔。您必須選取設定檔、然後選取您要執行的作業。
+
+
+
+== 與設定檔相關的工作
+
+您可以執行下列工作：
+
+* 建立設定檔、以便將完整或部分備份及備份至一線或二線儲存設備。
++
+您也可以建立設定檔、將歸檔記錄備份與資料檔案備份分開。
+
+* 驗證設定檔。
+* 更新設定檔。
+* 刪除設定檔。
+
+
+
+
+== 關於設定檔與驗證
+
+建立設定檔時、您可以指定資料庫、然後選擇下列其中一種方法來連線至資料庫：
+
+* 使用使用者名稱、密碼和連接埠進行Oracle驗證
+* 作業系統（OS）驗證、不含使用者名稱、密碼或連接埠。
++
+若要進行OS驗證、您必須輸入OS帳戶使用者和群組資訊。
+
+* 當「qlnet.authentication_services`」設定為*無*時、資料庫驗證。接著、將資料庫使用者名稱和密碼用於所有與目標資料庫的連線。SnapManager當「qlnet.authentication_services`」設為* NTS*時、也可以使用Windows原生驗證。SnapManager
+
+
+您只能在下列環境中將「qlnet.authentication_services`」設定為「無」*：
+
+|===
+| 資料庫配置 | Oracle版本 | 目標資料庫是否支援資料庫驗證 
+
+
+ a| 
+任何非ASM和非RAC資料庫
+ a| 
+Oracle 10g與Oracle 11g（低於11.2.0.3）
+ a| 
+是的
+
+|===
+[NOTE]
+====
+禁用"shqlnet.authentication_services`並將驗證方法更改爲資料庫驗證後、您必須將「shqlnet.authentication_services`」設定為「* none*」。
+
+====
+如果您是第一次存取設定檔、則必須輸入設定檔密碼。輸入認證資料之後、您就可以在設定檔中檢視資料庫備份。

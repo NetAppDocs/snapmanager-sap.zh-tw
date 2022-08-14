@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task-verify-profiles.html 
+sidebar: sidebar 
+keywords: verify, exist, profile, set, up, correct, snapmanager, environment, accessible 
+summary: 您可以驗證現有的設定檔是否設定正確。驗證設定檔時SnapManager 、此功能會檢查您指定的設定檔環境、並驗證設定檔是否已設定、以及此設定檔中的資料庫是否可供存取。 
+---
+= 驗證設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以驗證現有的設定檔是否設定正確。驗證設定檔時SnapManager 、此功能會檢查您指定的設定檔環境、並驗證設定檔是否已設定、以及此設定檔中的資料庫是否可供存取。
+
+.步驟
+. 若要驗證設定檔是否設定正確、請輸入下列命令：
++
+"*smsap設定檔驗證-profile _profile_name_*
+
+

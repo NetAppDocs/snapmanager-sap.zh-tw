@@ -1,0 +1,34 @@
+---
+permalink: windows/task-restore-backups-from-an-alternate-location.html 
+sidebar: sidebar 
+keywords: restore, alternate, location, data, file, intermediate, system, active, backup 
+summary: 您可以從替代位置還原資料檔案、將資料檔案從中繼檔案系統還原至作用中檔案系統。 
+---
+= 從替代位置還原備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從替代位置還原資料檔案、將資料檔案從中繼檔案系統還原至作用中檔案系統。
+
+
+
+== 您的需求
+
+* 建立還原規格XML檔案、並指定您要使用的還原方法類型。
+
+
+
+
+== 關於這項工作
+
+您可以使用「msap備份還原」命令、並指定您建立的還原規格XML檔案、以便從替代位置還原備份。
+
+.步驟
+. 輸入下列命令：
++
+Check Alignment of PHs>"*smsap備份還原-profile _profile _-label _label_-完整-alllogs -restorespec _restoresprec_*
+
+

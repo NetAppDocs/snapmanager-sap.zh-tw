@@ -1,0 +1,25 @@
+---
+permalink: unix-administration/task-suspend-backup-schedules.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, suspend, backup, schedule, resume 
+summary: 利用此功能、您可以暫停備份排程、直到備份排程恢復為止。SnapManager 
+---
+= 暫停備份排程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以暫停備份排程、直到備份排程恢復為止。SnapManager
+
+*關於此工作*
+
+您可以暫停使用中的排程。如果您嘗試暫停已暫停的備份排程、可能會遇到錯誤訊息「無法暫停：排程<schedulename>已經處於暫停狀態」
+
+.步驟
+. 若要暫時暫停備份排程、請輸入下列命令：
++
+hy*smsap排程暫停-profile _profile_name_-schedule-name _schedulename_[-quiet |-verbose]*
+
+

@@ -1,0 +1,30 @@
+---
+permalink: unix-administration/concept-scheduling-database-backups.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, enable, schedule, database, backup, off-peak, hour, scheduling, retention, policy 
+summary: SAP適用的支援功能（3.2或更新版本）可讓您在非尖峰時間安排定期執行資料庫備份、以維持高效能。SnapManager若要排程備份、您可以建立設定檔、其中包含資料庫資訊和保留原則、然後設定備份排程。 
+---
+= 排程資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAP適用的支援功能（3.2或更新版本）可讓您在非尖峰時間安排定期執行資料庫備份、以維持高效能。SnapManager若要排程備份、您可以建立設定檔、其中包含資料庫資訊和保留原則、然後設定備份排程。
+
+
+NOTE: 您必須以root使用者或Oracle使用者的身分排程備份。如果您嘗試將備份排程為不存在的使用者、SnapManager 則會顯示錯誤訊息：Invaliduser: username: Cannot create schedule backup for a ter-existing user.（無效的使用者：使用者名稱：無法為指定的使用者建立排程備份。
+
+以下是一些排程相關工作：
+
+* 排程資料庫備份以每小時、每日、每週、每月或一次為基礎進行。
+* 檢視與設定檔相關的排程備份清單。
+* 更新排程的備份。
+* 暫時暫停排程。
+* 恢復暫停的排程。
+* 刪除排程。
+
+
+
+NOTE: 當排程的備份正在執行時、「*立即執行功能表操作*」核取方塊會停用。

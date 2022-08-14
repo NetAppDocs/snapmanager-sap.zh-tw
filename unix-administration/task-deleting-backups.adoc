@@ -1,0 +1,121 @@
+---
+permalink: unix-administration/task-delete-backups.html 
+sidebar: sidebar 
+keywords: delete, backup, free, space, remove, snapshot, copies, copy, volume, deleting 
+summary: 當您不再需要備份時、必須刪除備份、如此可釋出備份佔用的空間。如果您移除備份、則可降低每個磁碟區達到255個Snapshot複本上限的機率。 
+---
+= 刪除備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您不再需要備份時、必須刪除備份、如此可釋出備份佔用的空間。如果您移除備份、則可降低每個磁碟區達到255個Snapshot複本上限的機率。
+
+*您需要的是什麼*
+
+* 您必須確保備份並未用於建立複本。
+
+
+*關於此工作*
+
+刪除受保護的備份時SnapManager 、將從二線儲存設備和SnapManager 資訊庫中刪除備份。下表顯示當您刪除本機備份時、在主要和次要儲存設備上所採取的行動：
+
+[cols="2a,1a,3a,3a,4a"]
+|===
+| 保護狀態 | 本機狀態 | 主儲存設備的行動 | 二線儲存設備的行動 | 說明 
+
+
+ a| 
+未要求（要保護）
+ a| 
+存在
+ a| 
+刪除Snapshot複本
+ a| 
+無需採取任何行動
+ a| 
+支援刪除本機備份。SnapManager
+
+
+
+ a| 
+釋放
+ a| 
+無需採取任何行動
+ a| 
+無需採取任何行動
+ a| 
+本機備份已釋出。如果您刪除已釋出的備份、備份中繼資料就會從儲存庫中移除。
+
+
+
+ a| 
+未受保護
+ a| 
+存在
+ a| 
+刪除Snapshot複本
+ a| 
+無需採取任何行動
+ a| 
+無論本機備份是否受到保護、均會刪除。SnapManager
+
+
+
+ a| 
+釋放
+ a| 
+無需採取任何行動
+ a| 
+無需採取任何行動
+ a| 
+本機備份已釋出。如果您刪除已釋出的備份、備份中繼資料就會從儲存庫中移除。
+
+
+
+ a| 
+受保護
+ a| 
+存在
+ a| 
+刪除Snapshot複本
+ a| 
+支援刪除二線儲存設備上的備份SnapManager
+ a| 
+支援刪除本機備份和次要複本。SnapManager
+
+
+
+ a| 
+釋放
+ a| 
+無需採取任何行動
+ a| 
+可在二線儲存設備上釋出備份SnapManager
+ a| 
+支援刪除本機備份和次要複本。SnapManager
+
+|===
+如果您嘗試刪除受二線儲存設備保護的備份、則Snapshot複本可能會標示為刪除、並於稍後由Protection Manager刪除。
+
+您可以無限刪除保留的備份、而不需變更保留類別。
+
+您可以選擇在備份刪除作業成功或失敗之後收集傾印檔案。
+
+如果您想要刪除歸檔記錄備份、則需要檢查歸檔記錄備份的保留期間設定。如果歸檔記錄備份在保留期間內、且還原資料庫需要歸檔記錄檔、則無法刪除歸檔記錄備份。
+
+.步驟
+. 輸入下列命令、確認作業已完成：
++
+「* smsap作業清單- profile _profile_name_-dump-quide-verbos*」
+
+. 若要刪除備份、請輸入下列命令：
++
+「* smsap備份刪除-profile _profile_name_[-label _label_[data |-archivelogs]|-id _id_|-all][-force][-dump ][-quiet |-verbose]*
+
++
+使用-force選項強制移除備份。強制移除作業不完整的備份可能會使備份處於不一致的狀態。
+
+

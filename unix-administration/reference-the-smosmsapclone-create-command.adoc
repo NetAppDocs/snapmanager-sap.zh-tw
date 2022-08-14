@@ -1,0 +1,187 @@
+---
+permalink: unix-administration/reference-the-smosmsapclone-create-command.html 
+sidebar: sidebar 
+keywords: clone, create, command, backed-up, database, primary, secondary, storage, smsap 
+summary: 您可以執行Clone create命令、建立備份資料庫的複本。您可以從一線或二線儲存設備複製備份。 
+---
+= smsap clone create命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「Clone create」命令、建立備份資料庫的複本。您可以從一線或二線儲存設備複製備份。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap clone create
+-profile _profile_name_
+[-backup-id _backup_guid_ | -backup-label _backup_label_name_ | -current\]
+-newsid _new_sid_
+[-host _target_host_\]
+[-label _clone_label_]
+pass:quotes[[-comment _string_\]
+-clonespec _full_path_to_clonespec_file_
+[-asminstance -asmusername _asminstance_username_  -asmpassword _asminstance_password_\]\]
+[-syspassword syspassword]] pass:quotes[[-reserve {*yes* | *no* | *inherit*}]
+pass:quotes[[-from-secondary {-copy-id _id_}]
+pass:quotes[[-no-resetlogs | -recover-from-location _path1_ [, _path2_\]\] [-taskspec taskspec\] [-dump]
+[-quiet | -verbose]]
+----
+
+
+== 參數
+
+* 「*設定檔_名稱_*」
++
+指定要複製的資料庫。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* 「*備份ID _guid_*」
++
+使用指定的GUID複製備份。當SnapManager 您建立備份時、會產生由支援所產生的GUID。您可以使用smsap備份list-verbose命令來顯示每個備份的Guid。
+
+* 「*備份-標籤_backup_label_name_*」
++
+指定使用指定的標籤名稱來複製備份。
+
+* 《*目前*》
++
+指定從資料庫的目前狀態建立備份與複製。
+
++
+
+NOTE: 如果資料庫處於nocarchivelog模式、SnapManager 則會建立離線備份。
+
+* 「-newsid _new_sid_*」
++
+為複製的資料庫指定新的唯一Oracle系統識別碼。系統識別碼值最多八個字元。Oracle不允許在同一主機上同時執行兩個具有相同系統識別碼的資料庫。
+
+* 「*主機_目標主機_主機_*」
++
+指定應在其上建立實體複本的主機。
+
+* 「*標籤_clone_label_*」
++
+指定實體複本的標籤。
+
+* 「*」、「*」、「_stron_*」
++
+指定可選的註釋來描述此克隆。您必須將字串括在單引號內。
+
++
+
+NOTE: 有些Shell會刪除引號。如果您的Shell確實如此、則必須使用反斜槓（\）來轉義報價。例如、您可能需要輸入：「\」這是註釋
+
+* 「*」-clonespec _f完整 路徑至clonespec_file_*
++
+指定複製規格XML檔案的路徑。這可以是相對路徑名稱或絕對路徑名稱。
+
+* 《*》- asminstance *》
++
+指定用於登入ASM執行個體的認證資料。
+
+* 「*」-「asmusername _asminstation_username_*」
++
+指定用於登入ASM執行個體的使用者名稱。
+
+* 「-asmpassword _asminstation_password_*」
++
+指定用於登入ASM執行個體的密碼。
+
+* 「*」-「*」-「*」-「_syspassword_*」
++
+指定sys授權使用者的密碼。
+
++
+
+NOTE: 如果系統權限使用者所提供的資料庫認證資料不同、您必須提供系統權限使用者的密碼。
+
+* 《*保留*》
++
+將「-Reserve」選項設為「yes」、可確保新複製磁碟區的磁碟區保證空間保留功能已開啟。將「-Reserve」選項設為「no」、可確保新複製磁碟區的磁碟區保證空間保留功能已關閉。將「-Reserve」選項設為「* inherit*」、可確保新的實體複本繼承父Snapshot複本的空間保留特性。預設設定為「*否*」。
+
++
+下表說明複製方法及其對複製建立作業及其「保留」選項的影響。LUN可以使用任一方法複製。
+
++
+[cols="1a,2a,2a"]
+|===
+| 複製方法 | 說明 | 結果 
+
+
+ a| 
+LUN複製
+ a| 
+在同一個磁碟區內建立新的實體複製LUN。
+ a| 
+當LUN的「-Reserve」選項設為「yes」時、磁碟區內的空間會保留為完整LUN大小。
+
+
+
+ a| 
+Volume複製
+ a| 
+此時會建立新的FlexClone、且複製LUN存在於新的複製磁碟區中。使用FlexClone技術。
+ a| 
+當Volume的「-Reserve」選項設為「yes」時、空間會保留給集合體內的完整Volume大小。
+
+|===
+* 「*來源-次要[-copy - id _copy _id_]*」
++
+指定SnapManager 應將受保護的備份複本複製到二線儲存設備。如果未指定此選項、SnapManager 則由主儲存設備複製複本。
+
++
+只要指定「來源-次要」選項、就必須指定「-copy -id」選項。如果二線儲存系統上有多個備份、則可使用-COPy-id選項來指定次要儲存設備上的備份複本應用於複製。
+
++
+
+NOTE: 如果您使用Data ONTAP 的是7-Mode的支援功能、則必須為「-copy -id」選項指定有效值。但是、如果您使用叢集Data ONTAP 式的功能、則不需要「-copy -id」選項。
+
+* 「*-無法重新設置記錄*」
++
+指定在建立複本時跳過還原資料庫、執行DBNEWID公用程式、而不使用重新設定記錄開啟資料庫。
+
+* 「*-從位置恢復*」
++
+指定歸檔記錄備份的外部歸檔記錄檔位置SnapManager 、其中的資訊為從外部位置取得歸檔記錄檔、並使用它們進行複製。
+
+* 「* taskspec*」
++
+指定工作規格XML檔案、用於複製作業的預先處理活動或後處理活動。您必須提供工作規格XML檔案的完整路徑。
+
+* 「*傾印*」
++
+指定在複製建立作業之後收集傾印檔案。
+
+* 「*- Quiet *」
++
+僅在主控台顯示錯誤訊息。預設設定為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 範例
+
+下列範例使用針對此複本所建立的複本規格來複製備份：
+
+[listing]
+----
+smsap clone create -profile SALES1 -backup-label full_backup_sales_May -newsid
+CLONE -label sales1_clone -clonespec /opt/<path>/smsap/clonespecs/sales1_clonespec.xml
+----
+[listing]
+----
+Operation Id [8abc01ec0e794e3f010e794e6e9b0001] succeeded.
+----
+'''

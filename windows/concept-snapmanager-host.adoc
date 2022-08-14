@@ -1,0 +1,24 @@
+---
+permalink: windows/concept-snapmanager-host.html 
+sidebar: sidebar 
+keywords: snapmanager, host, windows, server, netapp, product 
+summary: 這個支援主機是Windows伺服器SnapManager 、也可執行其他NetApp產品。 
+---
+= 支援SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+這個支援主機是Windows伺服器SnapManager 、也可執行其他NetApp產品。
+
+下列產品安裝了這個支援對象：SnapManager
+
+* 適用於Windows SnapDrive
+* 主機公用程式
+
+
+執行此服務的支援主機。SnapManager
+
+該支援用於SAP BR*工具的BACKINT介面。SnapManager

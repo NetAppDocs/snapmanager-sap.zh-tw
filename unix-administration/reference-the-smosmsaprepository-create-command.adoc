@@ -1,0 +1,91 @@
+---
+permalink: unix-administration/reference-the-smosmsaprepository-create-command.html 
+sidebar: sidebar 
+keywords: command, create, repository, store, database, profile, associate, credentials, block, size, adequate, smsap 
+summary: 此命令會建立儲存庫、以儲存資料庫設定檔和相關認證。此命令也會檢查區塊大小是否足夠。 
+---
+= smsap儲存庫create命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 語法
+
+此命令會建立儲存庫、以儲存資料庫設定檔和相關認證。此命令也會檢查區塊大小是否足夠。
+
+[listing]
+----
+smsap repository create
+-repository
+-port repo_port
+-dbname repo_service_name
+-host repo_host
+-login -username repo_username
+[-force] [-noprompt]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* 「*儲存庫*」
++
+"_-reposposacu專 為儲存庫指定資料庫詳細資料的選項
+
+* 「*連接埠_repo_port_*」
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* 「*」-dbname _repo_service_name_*
++
+指定儲存庫的資料庫名稱。使用全域名稱或SID。
+
+* 「*主機_repo_host_*」
++
+指定執行儲存庫資料庫的主機電腦名稱或IP位址。
+
+* 「*登入*」
++
+啟動儲存庫登入詳細資料。
+
+* 「*使用者名稱_repo_username_*」
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* 「*力*」
++
+嘗試強制建立儲存庫。使用此選項會SnapManager 導致在建立儲存庫之前提示您備份儲存庫。
+
+* 「*節點提示*」
++
+如果您使用「-force」選項、在建立儲存庫之前不會顯示備份提示。使用「-noprompt」選項可確保不會出現提示、讓您更容易使用指令碼建立儲存庫。
+
+* 「*- Quiet *」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 命令範例
+
+下列範例會在主機Hotspur的資料庫SMSAPREPO中建立儲存庫。
+
+[listing]
+----
+smsap repository create -repository -port 1521 -dbname SMSAPREPO -host hotspur -login -username grabal21 -verbose
+SMSAP-09202 [INFO ]: Creating new schema as grabal21 on jdbc:oracle:thin:@//hotspur:1521/SMSAPREPO.
+SMSAP-09205 [INFO ]: Schema generation complete.
+SMSAP-09209 [INFO ]: Performing repository version INSERT.
+SMSAP-09210 [INFO ]: Repository created with version: 30
+SMSAP-13037 [INFO ]: Successfully completed operation: Repository Create
+SMSAP-13049 [INFO ]: Elapsed Time: 0:00:08.844
+----

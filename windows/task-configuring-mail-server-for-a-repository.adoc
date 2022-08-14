@@ -1,0 +1,70 @@
+---
+permalink: windows/task-configuring-mail-server-for-a-repository.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, mail, server, detail, email, alert, configuring, configure, repository 
+summary: 利用此功能、您可以指定要傳送電子郵件警示的郵件伺服器詳細資料。SnapManager 
+---
+= 設定儲存庫的郵件伺服器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以指定要傳送電子郵件警示的郵件伺服器詳細資料。SnapManager
+
+使用此功能、您可以指定寄件者的電子郵件伺服器主機名稱或IP位址、以及儲存庫資料庫名稱的電子郵件伺服器連接埠號碼、以要求電子郵件通知。SnapManager您可以在0到65535,範圍內設定郵件伺服器連接埠號碼；預設值為25。如果您需要驗證電子郵件地址、可以指定使用者名稱和密碼。
+
+您必須指定處理電子郵件通知的主機伺服器名稱或IP位址。
+
+.步驟
+. 若要設定郵件伺服器以傳送電子郵件警示、請輸入下列命令：
++
+「msap通知集- senter-emailemail_address-mailhostmailhost-mailportmailport [-improc-username-username-passwormspasswordpasswordpassword]-reposite-portrepo_port-dbnamerepo_service_name-hosetpo_host-login-usernamerepo_username'」
+
++
+此命令的其他選項如下：
+
++
+[力]
+
++
+|===
+| 若要執行下列動作... | 然後... 
+
+
+ a| 
+*指定寄件者的電子郵件地址。*
+ a| 
+指定-sender電子郵件選項。從SAP版的32位元3.2開始SnapManager 、您可以在指定電子郵件地址的網域名稱時加入連字號（-）。例如、您可以將寄件者電子郵件地址指定為-sender-emailuser@org-corp.com。
+
+
+
+ a| 
+*指定寄件者的電子郵件伺服器主機名稱或IP位址。*
+ a| 
+指定-mailhost選項。
+
+
+
+ a| 
+*指定需要電子郵件通知之儲存庫資料庫名稱的電子郵件伺服器連接埠號碼。您可以將郵件伺服器連接埠號碼設定在零到65535;預設值為25.*
+ a| 
+指定-mailport選項。
+
+
+
+ a| 
+*如果您需要驗證電子郵件地址、請指定使用者名稱和密碼。*
+ a| 
+指定驗證選項、後面加上使用者名稱和密碼。
+
+|===
+
+
+下列範例會設定郵件伺服器。
+
+[listing]
+----
+smsap notification set -sender-email admin1@org.com -mailhost hostname.org.com -mailport 25 authentication -username admin1 -password admin1 -repository -port 1521 -dbname SMSAPREPO -host hotspur -login -username grabal21 -verbose
+----

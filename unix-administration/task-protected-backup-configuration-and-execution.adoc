@@ -1,0 +1,14 @@
+---
+permalink: unix-administration/task-protected-backup-configuration-and-execution.html 
+sidebar: sidebar 
+keywords: configure, snapmanager, protection, manager, support, database, backup, secondary, administrator, coordinate, action, protect, configuration, execution 
+summary: 您必須設定SnapManager 支援資料庫備份至二線儲存設備的支援功能、才能使用支援的功能。資料庫管理員與儲存管理員必須協調其行動。 
+---
+= 受保護的備份組態與執行
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須設定SnapManager 支援資料庫備份至二線儲存設備的支援功能、才能使用支援的功能。資料庫管理員與儲存管理員必須協調其行動。

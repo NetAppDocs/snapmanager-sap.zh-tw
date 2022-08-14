@@ -1,0 +1,16 @@
+---
+permalink: unix-installation-cmode/reference-smsap-isg-deployment-workflow.html 
+sidebar: sidebar 
+keywords: create, backup, snapmanager, install, snapdrive, unix, sap, deployment, workflow 
+summary: 在您使用SnapManager NetApp建立備份之前、您必須先安裝SnapDrive 適用於UNIX的功能、然後再安裝SnapManager 適用於SAP的功能。 
+---
+= 部署工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在您使用SnapManager NetApp建立備份之前、您必須先安裝SnapDrive 適用於UNIX的功能、然後再安裝SnapManager 適用於SAP的功能。
+
+image::../media/smsap_deployment_workflow_cmode.gif[cmode的smsap部署工作流程]

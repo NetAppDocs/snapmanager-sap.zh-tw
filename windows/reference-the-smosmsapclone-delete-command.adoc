@@ -1,0 +1,102 @@
+---
+permalink: windows/reference-the-smosmsapclone-delete-command.html 
+sidebar: sidebar 
+keywords: run, clone, delete, command, operation, smsap 
+summary: 您可以執行Clone刪除命令來刪除實體複本。如果實體複本是由任何作業所使用、則無法刪除實體複本。 
+---
+= smsap clone刪除命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「Clone DELETE」命令來刪除實體複本。如果實體複本是由任何作業所使用、則無法刪除實體複本。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap clone delete
+-profile profile_name
+[-id guid | -label clone_name]
+[-login
+[-username db_username -password db_password -port db_port]
+]
+[-syspassword syspassword]
+-force
+[-dump]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定包含要刪除之實體複本的設定檔名稱。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *（力）*
++
+即使有資源與實體複本相關聯、也會刪除實體複本。
+
+* *（id_guid_`*）
++
+指定要刪除之複本的GUID。當SnapManager 您建立複本時、會產生由實體所產生的GUID。您可以使用「msap clone list」命令來顯示每個實體複本的GUID。
+
+* *標籤_name_`*
++
+指定要刪除之實體複本的標籤。
+
+* *（即syspassWord _syspassword_`*）
++
+指定sys授權使用者的密碼。
+
++
+
+NOTE: 如果系統權限使用者所提供的資料庫認證資料不同、則必須提供系統權限使用者的密碼。
+
+* *（登入）*
++
+可讓您輸入資料庫登入詳細資料。
+
+* *（用戶名_db_username_`*）
++
+指定存取資料庫所需的使用者名稱。
+
+* *密碼_db_password_`*
++
+指定存取資料庫所需的密碼。
+
+* *（連接埠_db_port_`*）
++
+指定用於存取設定檔所描述之資料庫的TCP連接埠號碼。
+
+* *（轉儲）*
++
+指定在複製刪除作業之後收集傾印檔案。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+以下範例會刪除實體複本：
+
+[listing]
+----
+smsap clone delete -profile SALES1 -label SALES_May
+Operation Id [8abc01ec0e79004b010e79006da60001] succeeded.
+----

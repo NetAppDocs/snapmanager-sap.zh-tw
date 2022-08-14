@@ -1,0 +1,90 @@
+---
+permalink: unix-administration/reference-troubleshooting-snapdrive-issues.html 
+sidebar: sidebar 
+keywords: common, issue, snapmanager, snapdrive, troubleshooting, product 
+summary: 搭配使用搭配使用介紹功能的產品時、可能會遇到一些常見問題SnapManager 。SnapDrive 
+---
+= 疑難排解SnapDrive 各種問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+搭配使用搭配使用介紹功能的產品時、可能會遇到一些常見問題SnapManager 。SnapDrive
+
+首先、您必須判斷問題是否與SnapManager 適用於SAP或SnapDrive NetApp的解決方法有關。如果問題SnapDrive 是不確定的錯誤、SnapManager 則適用於SAP的解決方案會顯示類似以下的錯誤訊息：
+
+[listing]
+----
+SMSAP-12111: Error executing snapdrive command "<snapdrive command>": <snapdrive error>
+----
+以下是SnapDrive 一個不全錯誤訊息的範例、其中「MSAP-12111」是SnapManager 指錯誤編號。「0001-770」編號方案代表SnapDrive UNIX錯誤的不全。
+
+[listing]
+----
+SMSAP-12111: Error executing snapdrive command
+"/usr/sbin/snapdrive snap restore -file
+/mnt/pathname/ar_anzio_name_10gR2_arrac1/data/undotbs02.dbf -snapname pathname.company.com:
+/vol/ar_anzio_name_10gR2_arrac1:
+TEST_ARRAC1_YORKTOW_arrac12_F_C_0_8abc01b20f9ec03d010f9ec06bee0001_0": 0001-770
+Admin error: Inconsistent number of files returned when listing contents of
+/vol/ar_anzio_name_10gR2_arrac1/.snapshot/
+TEST_ARRAC1_YORKTOW_arrac12_F_C_0_8abc01b20f9ec03d010f9ec06bee0001_0/data
+on filer pathname.
+----
+以下是SnapDrive UNIX最常見的有關LUN探索、組態問題和空間的資訊。如果您收到上述任何錯誤、請參閱《_ SnapDrive 》《安裝與管理指南》_的「疑難排解」一章。
+
+[cols="3a,1a"]
+|===
+| 症狀 | 說明 
+
+
+ a| 
+'0001-136管理錯誤：無法登入檔案管理器：<filer>請設定<filer>'的使用者名稱和/或密碼
+ a| 
+初始SnapDrive 化的組態
+
+
+
+ a| 
+「0001-382管理錯誤：多重路徑重新掃描失敗」
+ a| 
+LUN探索錯誤
+
+
+
+ a| 
+「0001-462 Admin錯誤：無法取消<LUN>: spd5的多重路徑設定：無法停止裝置。裝置忙碌中
+ a| 
+LUN探索錯誤
+
+
+
+ a| 
+'0001-476管理錯誤：無法找到與...相關的設備。 0001-710管理錯誤：重新整理LUN的OS失敗
+ a| 
+LUN探索錯誤
+
+
+
+ a| 
+「0001-680管理員錯誤：主機作業系統需要更新內部資料、才能建立或連線LUN。使用「SnapDrive 此功能可準備LUN」或手動更新此資訊...」
+ a| 
+LUN探索錯誤
+
+
+
+ a| 
+「0001-817管理錯誤：無法建立磁碟區複製... ：FlexClone未獲授權
+ a| 
+初始SnapDrive 化的組態
+
+
+
+ a| 
+'0001-878管理錯誤：找不到HBA助理。涉及LUN的命令應該會失敗
+ a| 
+LUN探索錯誤
+
+|===

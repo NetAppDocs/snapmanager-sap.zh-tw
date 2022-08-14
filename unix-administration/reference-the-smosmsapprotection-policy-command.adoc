@@ -1,0 +1,69 @@
+---
+permalink: unix-administration/reference-the-smosmsapprotection-policy-command.html 
+sidebar: sidebar 
+keywords: run, protection-policy, command, list, policies, applied, apply, profile, protection, policy, exist, update, manager, smsap 
+summary: 您可以執行protection原則命令、列出可套用至設定檔的保護原則。建立新設定檔或更新現有設定檔時、即可套用保護原則。您也可以使用Protection Manager主控台設定設定檔的保護原則。 
+---
+= smsap protection原則命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「protection原則」命令、列出可套用至設定檔的保護原則。建立新設定檔或更新現有設定檔時、即可套用保護原則。您也可以使用Protection Manager主控台設定設定檔的保護原則。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smsap protection-policy list
+----
+
+NOTE: 伺SnapDrive 服器上必須安裝Protection Manager和功能不全、才能使用此命令。
+
+
+
+== 參數
+
+* ’* list*’
++
+顯示可在設定檔上設定的保護原則清單。
+
+
+
+
+
+== 範例
+
+下列範例列出可設定為設定檔的保護原則：
+
+[listing]
+----
+smsap protection-policy list
+----
+[listing]
+----
+
+Back up
+Back up, then mirror
+Chain of two mirrors
+DR Back up
+DR Back up, then mirror
+DR Mirror
+DR Mirror and back up
+DR Mirror and mirror
+DR Mirror, then back up
+DR Mirror, then mirror
+Local backups only
+Mirror
+Mirror and back up
+Mirror to two destinations
+Mirror, then back up
+No protection
+Partial-volume Mirror
+Remote backups only
+----

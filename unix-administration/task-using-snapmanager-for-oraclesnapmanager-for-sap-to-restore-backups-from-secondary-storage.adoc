@@ -1,0 +1,41 @@
+---
+permalink: unix-administration/task-use-snapmanager-for-oraclesnapmanager-for-sap-to-restore-backups-from-secondary-storage.html 
+sidebar: sidebar 
+keywords: administrator, restore, protect, backup, secondary, storage, copy, data, back, primary, snapmanager 
+summary: 系統管理員可以從次要儲存設備還原受保護的備份、並可選擇將資料複製回主要儲存設備的方式。 
+---
+= 使用適用於SAP的功能、從二線儲存設備還原備份SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+系統管理員可以從次要儲存設備還原受保護的備份、並可選擇將資料複製回主要儲存設備的方式。
+
+*您需要的是什麼*
+
+在您嘗試還原備份之前、請檢查備份內容、並確定備份已在主要儲存系統上釋出、並在次要儲存設備上受到保護。
+
+.步驟
+. 在SnapManager 「SAP儲存庫的支援範本」樹狀結構中、以滑鼠右鍵按一下您要還原的備份、然後選取「*還原*」。
+. 在「還原與還原精靈」歡迎頁面中、按一下「*下一步*」。
+. 在「還原組態資訊」頁面中、按一下*完整資料檔案/資料表空間使用控制檔還原*。
+. 按一下「*必要時允許關閉資料庫*」、然後按一下「*下一步*」。
++
+若有必要、可變更資料庫狀態。SnapManager例如、如果資料庫離線且需要上線、SnapManager 則會迫使它上線。
+
+. 在「恢復組態資訊」頁面上、按一下*「所有記錄」*。然後按一下*下一步*。
++
+將資料庫還原並恢復至上次交易、並套用所有必要的記錄。SnapManager
+
+. 在「還原來源位置組態」頁面中、選取受保護備份來源的ID、然後按「*下一步*」。
+. 在「Volume Restore Configuration Information」（Volume還原組態資訊）頁面中、按一下*「嘗試Volume還原*」以嘗試進行Volume還原。
+. 按一下*「還原至檔案型還原*」。
++
+如果SnapManager 無法完成Volume還原方法、則可讓支援使用檔案型還原方法。
+
+. 若要查看快速還原的資格檢查、以及強制檢查和可過度檢查的相關資訊、請按一下*預覽*。
+. 在「Perform Operation（執行操作）」頁面上、確認您提供的資訊、然後按一下「* Restore *（*還原*）」。
+. 若要檢視程序的詳細資料、請按一下*作業詳細資料*。
+

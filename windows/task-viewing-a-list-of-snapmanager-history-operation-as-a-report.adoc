@@ -1,0 +1,21 @@
+---
+permalink: windows/task-viewing-a-list-of-snapmanager-history-operation-as-a-report.html 
+sidebar: sidebar 
+keywords: view, history, snapmanager, operation, report, base, retention, setting, list 
+summary: 您可以根據SnapManager 保留設定、以報告形式檢視特定或所有的還原作業歷史記錄。 
+---
+= 查看SnapManager 一份關於功能的清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以根據SnapManager 保留設定、以報告形式檢視特定或所有的還原作業歷史記錄。
+
+.步驟
+. 若要檢視SnapManager 包含各種資訊的資訊、請輸入下列命令：
++
+「msap歷程記錄清單-profile｛-name、profile_name [profile_name1、profile_name2」|-all-reposite-login[-passwormsrepo_password]-usernamerepo_username-dbnamerepo_dbname-hobrepo_host-portrepo_port}-oprosoperationsoperations_name [operation_name [operations_name1、operations'、operations'、operations'、operations'、operation_name1、operations'、operations'、[op_
+
+

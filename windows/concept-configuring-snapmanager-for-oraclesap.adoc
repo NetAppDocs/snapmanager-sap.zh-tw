@@ -1,0 +1,14 @@
+---
+permalink: windows/concept-configuring-snapmanager-for-oraclesap.html 
+sidebar: sidebar 
+keywords: install, snapmanager, perform, configuration, task, environment, use, configure 
+summary: 安裝SnapManager 完這個功能後、您必須視使用的環境而執行一些額外的組態工作。 
+---
+= 設定SnapManager 功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝SnapManager 完這個功能後、您必須視使用的環境而執行一些額外的組態工作。

@@ -1,0 +1,21 @@
+---
+permalink: windows/concept-restoration-of-the-data-from-file-systems.html 
+sidebar: sidebar 
+keywords: restore, data, alternate, location, file, system, mount, host, restoration 
+summary: 從替代位置還原資料之前、您必須先還原必要的檔案系統、然後將其掛載到本機主機上。 
+---
+= 從檔案系統還原資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從替代位置還原資料之前、您必須先還原必要的檔案系統、然後將其掛載到本機主機上。
+
+您可以從替代位置叫用還原作業、將檔案從替代檔案系統複製到作用中檔案系統。
+
+若要執行此作業、您必須建立還原規格檔案、指定用來還原原始掛載點和原始Snapshot複本名稱的備用掛載點。
+
+
+NOTE: Snapshot複本名稱是必要的元件、因為同一個檔案系統可能會在單一備份作業中多次貼齊（例如、資料檔案一次、記錄檔一次）。

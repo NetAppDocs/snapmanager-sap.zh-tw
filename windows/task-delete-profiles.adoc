@@ -1,0 +1,21 @@
+---
+permalink: windows/task-delete-profiles.html 
+sidebar: sidebar 
+keywords: delete, profile, successful, incomplete, backup, free, deleting 
+summary: 只要設定檔不包含成功或不完整的備份、您就可以隨時刪除該設定檔。您可以刪除包含已釋出或刪除備份的設定檔。 
+---
+= 刪除設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+只要設定檔不包含成功或不完整的備份、您就可以隨時刪除該設定檔。您可以刪除包含已釋出或刪除備份的設定檔。
+
+.步驟
+. 若要刪除設定檔、請輸入下列命令：
++
+‘* smsap profile刪除-profile _profile_name_*’
+
+

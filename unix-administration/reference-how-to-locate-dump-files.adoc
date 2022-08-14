@@ -1,0 +1,74 @@
+---
+permalink: unix-administration/reference-how-to-locate-dump-files.html 
+sidebar: sidebar 
+keywords: dump, file, locate, client, system, easy, access, troubleshoot, profile, system, operation 
+summary: 傾印檔案位於用戶端系統上、方便存取。如果您需要疑難排解與設定檔、系統或任何作業相關的問題、這些檔案會很有幫助。 
+---
+= 如何找到傾印檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+傾印檔案位於用戶端系統上、方便存取。如果您需要疑難排解與設定檔、系統或任何作業相關的問題、這些檔案會很有幫助。
+
+傾印檔案位於用戶端系統上的使用者主目錄中。
+
+* 如果您使用圖形化使用者介面（GUI）、則傾印檔案位於：
++
+[listing]
+----
+user_home/Application Data/NetApp/smsap/3.3.0/smsap_dump dump_file_type_name
+server_host.jar
+----
+* 如果您使用命令列介面（CLI）、傾印檔案位於：
++
+[listing]
+----
+user_home/.netapp/smsap/3.3.0/smsap_dump_dump_file_type_name server_host.jar
+----
+
+
+dump檔案包含dump命令的輸出。檔案名稱取決於所提供的資訊。下表顯示傾印作業類型及產生的檔案名稱：
+
+[cols="1a,4a"]
+|===
+| 傾印作業類型 | 產生的檔案名稱 
+
+
+ a| 
+含作業ID的作業傾印命令
+ a| 
+「msap_dump__operation-id_.jar」
+
+
+
+ a| 
+不含作業ID的作業傾印命令
+ a| 
+「msap作業傾印-profile _VH1_-verbose」會顯示下列輸出：
+
+[listing]
+----
+smsap operation dump -profile VH1 -verbose
+[ INFO] SMSAP-13048: Dump Operation Status: SUCCESS
+[ INFO] SMSAP-13049: Elapsed Time: 0:00:01.404
+Dump file created.
+Path: /oracle/VH1/<path>/smsap/3.3.0/smsap_dump_VH1_kaw.rtp.foo.com.jar
+----
+
+
+ a| 
+System dump命令
+ a| 
+「msap_dump__host-name_.jar」
+
+
+
+ a| 
+設定檔傾印命令
+ a| 
+「msap_dump__profile-name_host-name_.jar」
+
+|===

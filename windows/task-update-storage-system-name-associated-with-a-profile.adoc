@@ -1,0 +1,80 @@
+---
+permalink: windows/task-update-storage-system-name-associated-with-a-profile.html 
+sidebar: sidebar 
+keywords: snapmanager, ability, update, host, name, ip, address, storage, system, associate, profile 
+summary: 利用BIOS 3.3或更新版本、您可以更新與設定檔相關聯之儲存系統的主機名稱或IP位址。SnapManager 
+---
+= 更新與設定檔相關的儲存系統名稱
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用BIOS 3.3或更新版本、您可以更新與設定檔相關聯之儲存系統的主機名稱或IP位址。SnapManager
+
+
+
+== 您的需求
+
+您必須確保：
+
+* 設定檔至少有一個備份。
++
+如果設定檔沒有任何備份、則不需要更新該設定檔的儲存系統名稱。
+
+* 設定檔沒有執行任何作業。
+
+
+
+
+== 關於這項工作
+
+您可以使用SnapManager BIOS命令列介面（CLI）來更新儲存系統名稱或IP位址。更新儲存系統名稱時、儲存在儲存庫資料庫中的中繼資料會單獨更新。重新命名儲存系統名稱之後、您SnapManager 可以像先前一樣執行所有的功能。
+
+
+NOTE: 您無法使用SnapManager 無法更新的圖形化使用者介面（GUI）來變更儲存系統名稱。
+
+您必須確保新儲存系統中有Snapshot複本可供使用。不驗證儲存系統中是否存在Snapshot複本。SnapManager
+
+不過、在重新命名儲存系統名稱之後、執行主機的循環升級和復原時、您必須記住下列事項：
+
+* 如果您在重新命名儲存系統名稱之後執行主機的循環升級、則必須以新的儲存系統名稱更新設定檔。
+* 如果您在重新命名儲存系統之後要復原主機、則必須確保將儲存系統名稱改回先前的儲存系統名稱、以便使用先前儲存系統的設定檔、備份和複製來執行SnapManager 還原作業。
+
+
+.步驟
+. 輸入下列命令：
++
+hy*smsap儲存設備重新命名-profile _profile_-oldname _old_storage名稱_-newname _new_storage名稱_[quiet |-verbose]*
+
++
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+更新與設定檔相關的儲存系統名稱
+ a| 
+指定「-profile」選項。
+
+
+
+ a| 
+更新與設定檔相關的儲存系統名稱或IP位址
+ a| 
+指定下列選項和變數：
+
+** 「-oldnameold_storage名稱」是儲存系統的主機名稱或IP位址。
+** newnamenew_storage名稱是儲存系統的主機名稱或IP位址。
+
+
+|===
+
+
+以下範例顯示正在更新的儲存系統名稱：
+
+[listing]
+----
+smsap storage rename -profile mjullian -oldname lech -newname hudson -verbose
+----

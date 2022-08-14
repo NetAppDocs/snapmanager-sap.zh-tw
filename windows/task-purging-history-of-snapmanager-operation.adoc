@@ -1,0 +1,21 @@
+---
+permalink: windows/task-purging-history-of-snapmanager-operation.html 
+sidebar: sidebar 
+keywords: delete, history, snapmanager, operation, detail, deleting 
+summary: 如果不再需要歷程詳細資料、您可以刪除SnapManager 此動作的歷程記錄。 
+---
+= 刪除SnapManager 作業系統歷史記錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果不再需要歷程詳細資料、您可以刪除SnapManager 此動作的歷程記錄。
+
+.步驟
+. 若要刪除SnapManager 此動作的歷程記錄、請輸入下列命令：
++
+「msap歷史記錄清除-profile｛-name、profile_name_name1、profile_name2」| all-reposure-login[-passwormsrepo_password]-usernamerepo_username-dbnamerepo_dbname-hosampo-host-portrepo_port}-oprobose｛-operations_name [operation_name1、op_name1、[-quality2 | op_operations'、-operationsnality
+
+

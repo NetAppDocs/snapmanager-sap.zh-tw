@@ -1,0 +1,74 @@
+---
+permalink: unix-administration/task-use-protection-manager-to-configure-a-secondary-backup-protection-policy.html 
+sidebar: sidebar 
+keywords: configure, configuring, backup, schedule, storage, administrator, protect, protection, manager, secondary, policy 
+summary: 設定備份排程之後、儲存管理員會設定受保護的備份儲存原則、以納入該排程。 
+---
+= 使用Protection Manager來設定次要備份保護原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定備份排程之後、儲存管理員會設定受保護的備份儲存原則、以納入該排程。
+
+*您需要的是什麼*
+
+在設定保護原則之前、儲存管理員會將下列資訊授予DBA合作夥伴：
+
+* 指定次要儲存設備的保留期間
+* 所需的二線儲存保護類型
+
+
+*關於此工作*
+
+所建立的保護原則、SnapManager 可由DBA合作夥伴列於《適用於SAP的資訊之用」中、並指派給資料庫設定檔以保護資料。
+
+. 前往Protection Manager的NetApp管理主控台。
+. 在功能表列中、按一下*原則*>*保護*>*總覽*。
++
+此時會顯示Protection Policies（保護策略）窗口中的Overview（概述）選項卡。
+
+. 按一下「*新增原則*」以啟動「*新增保護原則*」精靈。
+. 完成精靈的下列步驟：
++
+.. 指定描述性原則名稱。
++
+在此範例中、輸入* TechCo Payroll Data：Backup *和說明、然後按一下* Next*。
+
+.. 選取基礎原則。
++
+在此範例中、選取*備份*、然後按一下*下一步*。
+
+.. 在「*主要資料*」節點原則內容表中、接受預設設定、然後按一下「*下一步*」。
++
+
+NOTE: 在此範例SnapManager 中、會套用在支援中設定的本機備份排程。使用此方法指定的任何本機備份排程都會被忽略。
+
+.. 在*要備份的主要資料*連線內容表中、選取備份排程。
++
+在此範例中、請選取*「Payroll星期六」（上午1點）加上「每日下午7點」（每天）*作為備份排程、然後按一下*「下一步」*。
+
++
+在此範例中、您選取的排程包括您先前設定的每週和每日排程。
+
+.. 在*備份原則*內容表中、指定備份節點的名稱、以及每日、每週或每月備份的保留時間。
++
+在此範例中、指定每日備份保留10天、每週備份保留52週。完成每份屬性表之後、按一下*下一步*。
+
++
+完成所有屬性表之後、「新增保護原則」精靈會顯示您要建立之保護原則的摘要表。
+
+
+
+. 按一下「*完成*」以儲存變更。
+
+
+* 結果 *
+
+「* TechCo Payroll Data：備份*」保護原則列示在其他針對Protection Manager設定的原則中。
+
+*完成後*
+
+DBA合作夥伴現在可以使用SnapManager 適用於SAP的功能、在建立要保護資料的資料庫設定檔時、列出並指派此原則。

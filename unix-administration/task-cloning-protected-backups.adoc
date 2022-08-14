@@ -1,0 +1,48 @@
+---
+permalink: unix-administration/task-clone-protected-backups.html 
+sidebar: sidebar 
+keywords: snapmanager, clone, copy, backup, protect, cloning 
+summary: 您可以使用SnapManager 支援功能來複製受保護的備份複本。 
+---
+= 複製受保護的備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用SnapManager 支援功能來複製受保護的備份複本。
+
+*您需要的是什麼*
+
+主機（選擇用於複製）必須使用相同的儲存傳輸協定（例如SAN或NAS）來存取次要儲存設備。
+
+您可以使用「來源-次要」選項來指定要從次要儲存設備複製的內容。
+
+*關於此工作*
+
+只要指定「來源-次要」選項、就必須指定「-copy -id」選項。如果二線儲存系統上有多個備份、則可使用-COPy-id選項來指定次要儲存設備上的備份複本應用於複製。
+
+
+NOTE: 如果您使用Data ONTAP 的是7-Mode的支援功能、則必須為「-copy -id」選項指定有效值。但是、如果您使用叢集Data ONTAP 式的功能、則不需要「-copy -id」選項。
+
+刪除二線儲存系統上受保護備份的複本可能會失敗。當主要和次要儲存系統的系統時間未同步時、就會發生此問題。
+
+.步驟
+. 建立受保護備份複本的複本：
++
+hesap clone create -backup-label _backup_name_-newsid _new_sid_-label _clone_label_-profile _profile_name_-clonespec _f完整 路徑至clonespecfile_-from次要複製id _id_*
+
+
+
+'''
+
+
+== 範例
+
+[listing]
+----
+smsap clone create -label testdb_clone_clstest
+-profile sys_db_finance -from-secondary -copy-id 3042 sys_db_finance_sept_08
+----
+'''

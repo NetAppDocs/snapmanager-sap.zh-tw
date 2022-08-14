@@ -1,0 +1,30 @@
+---
+permalink: unix-administration/task-uninstall-the-software-from-a-unix-host.html 
+sidebar: sidebar 
+keywords: snapmanager, software, uninstall, host, server, unix 
+summary: 如果您不再需要SnapManager 使用此功能、可以從主機伺服器上解除安裝。 
+---
+= 從UNIX主機解除安裝軟體
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不再需要SnapManager 使用此功能、可以從主機伺服器上解除安裝。
+
+.步驟
+. 以root身分登入。
+. 若要停止伺服器、請輸入下列命令：
++
+‘* smsap_server ststop *’
+
+. 若要移除SnapManager 此軟件、請輸入下列命令：
++
+「*卸載Smsap*」
+
+. 在介紹文字之後、按* Enter *繼續。
++
+解除安裝完成。
+
+

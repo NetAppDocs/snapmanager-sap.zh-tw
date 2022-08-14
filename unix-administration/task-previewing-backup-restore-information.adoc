@@ -1,0 +1,88 @@
+---
+permalink: unix-administration/task-preview-backup-restore-information.html 
+sidebar: sidebar 
+keywords: preview, information, backup, restore, process, snapmanager, sap, successful 
+summary: 您可以在備份還原程序發生之前預覽相關資訊、以查看SnapManager 有關還原資格的資訊、該資訊可在備份中找到適用於SAP的資訊。支援分析備份資料、判斷還原程序是否能成功完成。SnapManager 
+---
+= 預覽備份還原資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在備份還原程序發生之前預覽相關資訊、以查看SnapManager 有關還原資格的資訊、該資訊可在備份中找到適用於SAP的資訊。支援分析備份資料、判斷還原程序是否能成功完成。SnapManager
+
+*關於此工作*
+
+還原預覽提供下列資訊：
+
+* 哪種還原機制（快速還原、儲存端檔案系統還原、儲存端檔案還原或主機端檔案複本還原）可用於還原每個檔案。
+* 當您指定「-verbose」選項時、為什麼不使用更有效率的機制來還原每個檔案。
+
+
+如果您在「備份還原」命令中指定「預覽」選項、SnapManager 則無法還原任何內容、只會列出要還原的檔案、並指出其還原方式。
+
+
+NOTE: 您可以預覽所有類型的還原機制。預覽顯示最多20個檔案的相關資訊。
+
+.步驟
+. 輸入下列命令：
++
+「* smsap備份還原-profile _profile_name_-label _-f完整- preview -verbose*」
+
++
+* 範例 *
+
++
+例如、輸入：
+
++
+[listing]
+----
+smsap backup restore -profile targetdb1_prof1
+      -label full_bkup_sales_nov_08  -complete -preview -verbose
+----
++
+下列範例顯示使用主機端檔案複製還原程序還原的部分檔案、並說明為何無法使用快速還原選項還原部分檔案。如果您指定「-verbose」選項、SnapManager 則會顯示預覽區段和分析區段、說明為何無法透過快速還原程序還原每個檔案。
+
++
+[listing]
+----
+PREVIEW:
+The following files will be restored via host side file copy restore:
++DG2/sid/datafile10.dbf
++DG2/sid/datafile11.dbf
+
+ANALYSIS:
+The following reasons prevent certain files from being restored via fast restore:
+Reasons:
+ Newer snapshots of /vol/volume2 have volume clones: SNAP_1
+*Newer backups will be freed: nightly2, nightly3
+Files to Restore:
+/mnt/systemB/volume2/system.dbf
+/mnt/systemB/volume2/users.dbf
+/mnt/systemB/volume2/sysaux.dbf
+/mnt/systemB/volume2/datafile04.dbf
+/mnt/systemB/volume2/datafile05.dbf
+
+The following reasons prevent certain files from being restored via fast restore:
+Reasons:
+* Newer snapshots of /vol/adm_disks will be lost: ADM_SNAP_5
+* Luns present which were created after snapshot SNAP_0 was created: /vol/adm_disks/disk5.lun
+* Files not part of the restore scope will be reverted in file system: +DG2
+
+Files Not in Restore Scope: +DG2/someothersid/data01.dbf
++DG2/someothersid/data02.dbf
+Files to Restore:
++DG2/sid/datafile08.dbf +DG2/sid/datafile09.dbf
++DG2/sid/datafile10.dbf +DG2/sid/datafile11.dbf
+
+* Reasons denoted with an asterisk (*) are overridable.
+----
+. 檢閱其他還原程序無法使用的任何理由。
+. 如果只顯示可過度使用的原因、請在不顯示「preview」（預覽）選項的情況下開始還原作業。
++
+您仍可覆寫非強制性檢查。
+
+

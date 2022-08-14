@@ -1,0 +1,40 @@
+---
+permalink: windows/task-consolidating-archive-log-backups.html 
+sidebar: sidebar 
+keywords: snapmanager, consolidate, archivelog-only, archive, log, backup, duplicate, consolidation, consolidating 
+summary: 藉由釋放複製的僅歸檔記錄備份、可在每次進行備份時整合僅歸檔記錄的備份。SnapManager預設會啟用整合。 
+---
+= 整合歸檔記錄備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+藉由釋放複製的僅歸檔記錄備份、可在每次進行備份時整合僅歸檔記錄的備份。SnapManager預設會啟用整合。
+
+此解決方法可識別僅歸檔日誌的備份、這些備份在其他備份中包含歸檔日誌檔、並可釋出檔案、以唯一的歸檔日誌檔來維持最少的歸檔日誌備份數量。SnapManager
+
+如果僅歸檔日誌備份可透過整合釋出、則會根據歸檔日誌保留期間刪除這些備份。
+
+資料庫在歸檔記錄整合期間處於關機或nomount狀態時SnapManager 、將資料庫變更為掛載狀態。
+
+如果歸檔記錄檔的備份或剪除失敗、則不會進行整合。只有在成功備份並順利執行剪除作業之後、才能整合僅歸檔日誌備份。
+
+. 若要整合僅歸檔器記錄的備份、請修改組態參數整合、並在SnapManager 還原組態檔（smsap.config）中將值設為true。
++
+設定參數之後、將會合併僅歸檔日誌的備份。
+
++
+如果新建立的僅歸檔檢查記錄備份在任何先前的僅歸檔檢查記錄備份中包含相同的歸檔記錄檔、則會釋出先前的僅歸檔記錄備份。
+
++
+
+NOTE: 不整合與資料檔案備份一起進行的歸檔記錄備份。SnapManager此功能可整合僅歸檔功能的備份。SnapManager
+
++
+
+NOTE: 即使使用者手動從歸檔記錄目的地刪除歸檔記錄檔、或是歸檔記錄檔毀損且可能包含備份、也能整合歸檔記錄備份。SnapManager
+
+. 若要停用歸檔記錄備份的整合、請修改組態參數整合、並在SnapManager 還原組態檔（smsap.config）中將值設為「假」。
+

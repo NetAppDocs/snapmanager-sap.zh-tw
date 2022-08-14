@@ -1,0 +1,106 @@
+---
+permalink: unix-administration/task-create-restore-specifications.html 
+sidebar: sidebar 
+keywords: restore, specification, file, xml, original, alternate, location, file, restore, snapmanager, specification, location, creating, create 
+summary: 還原規格檔案是XML檔案、其中包含可從中還原檔案的原始和替代位置。使用此規格檔案從指定位置還原檔案。SnapManager 
+---
+= 建立還原規格
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+還原規格檔案是XML檔案、其中包含可從中還原檔案的原始和替代位置。使用此規格檔案從指定位置還原檔案。SnapManager
+
+*關於此工作*
+
+您可以使用任何文字編輯器來建立還原規格檔案。您必須為檔案使用.xml副檔名。
+
+.步驟
+. 開啟文字檔。
+. 輸入下列項目：
++
+「*」<還原規格的xmlns="http://www.netapp.com">*`[]
+
+. 使用下列範例所示格式輸入任何檔案對應資訊：
++
+[listing]
+----
+<file-mapping>
+    <original-location>/path/dbfilename.dbf</original-location>
+    <alternate-location>/path/dbfilename1.dbf</alternate-location>
+</file-mapping>
+----
++
+檔案對應會指定從何處還原檔案。原始位置是檔案在備份時在作用中檔案系統上的位置。替代位置是指從何處還原檔案。
+
+. 使用範例中所示的格式輸入任何掛載的檔案系統對應資訊：
++
+[listing]
+----
+<mountpoint-mapping>
+     <original-location>/path/db_name</original-location>
+     <snapname>snapname</snapname>
+     <alternate-location>/path/vaultlocation</alternate-location>
+</mountpoint-mapping>
+<mountpoint-mapping>
+     <original-location>+DiskGroup_1</original-location>
+     <snapname>snapname</snapname>
+     <alternate-location>+DiskGroup_2</alternate-location>
+</mountpoint-mapping>
+----
++
+mountpoint是指目錄路徑「/mnt/myfs/」）。mountpoint對應指定要從其還原檔案的掛載點。原始位置是備份時作用中檔案系統中掛載點的位置。替代位置是還原原始位置檔案的掛載點。snapname_'是備份原始檔案的Snapshot複本名稱。
+
++
+
+NOTE: Snapshot複本名稱是必要的元件、因為同一個檔案系統可在單一備份作業中多次使用（例如、資料檔案一次、記錄一次）。
+
+. 使用範例中所示的格式輸入原始裝置對應標記和位置：
++
+[listing]
+----
+<raw-device-mapping>
+     <original-location>/path/raw_device_name</original-location>
+     <alternate-location>/path/raw_device_name</alternate-location>
+</raw-device-mapping>
+----
++
+原始裝置對應會指定原始裝置的還原位置。
+
+. 輸入下列項目：
++
+「*」（還原規格）*
+
+. 將檔案另存為.xml檔案、然後關閉規格。
+
+
+
+
+== 還原規格範例
+
+下列範例顯示還原規格結構：
+
+[listing]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<restore-specification xmlns="http://www.netapp.com">
+<!-- "Restore from file(s)" -->
+     <file-mapping>
+          <original-location>/mnt/pathname/dbname/users01.dbf</original-location>
+          <alternate-location>/mnt/vault/users01.dbf</alternate-location>
+     </file-mapping>
+<!-- "Restore from host mounted file system(s)" -->
+     <mountpoint-mapping>
+          <original-location>/mnt/pathname/dbname/fs</original-location>
+          <snapname>Snapshotname</snapname>
+          <alternate-location>/mnt/vaultlocation</alternate-location>
+     </mountpoint-mapping>
+<!-- "Restore from raw device" -->
+     <raw-device-mapping>
+          <original-location>/pathname/devicename</original-location>
+          <alternate-location>/pathname/devicename</alternate-location>
+     </raw-device-mapping>
+</restore-specification>
+----

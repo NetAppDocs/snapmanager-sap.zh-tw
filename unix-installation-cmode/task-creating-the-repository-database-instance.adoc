@@ -1,0 +1,36 @@
+---
+permalink: unix-installation-cmode/task-create-the-repository-database-instance.html 
+sidebar: sidebar 
+keywords: repository, database, instance, oracle, snapmanager, stand-alone, target, create 
+summary: 儲存庫資料庫執行個體是Oracle資料庫、您可在其中建立SnapManager 一個還原儲存庫。儲存庫資料庫執行個體必須是獨立的資料庫、而且不能是目標資料庫。 
+---
+= 建立儲存庫資料庫執行個體
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儲存庫資料庫執行個體是Oracle資料庫、您可在其中建立SnapManager 一個還原儲存庫。儲存庫資料庫執行個體必須是獨立的資料庫、而且不能是目標資料庫。
+
+
+
+== 您的需求
+
+您必須擁有Oracle資料庫和使用者帳戶、才能存取資料庫。
+
+.步驟
+. 登入SQL * Plus：「qlplus '/ as Sysdba'」
+. 建立SnapManager 更新的資料表空間以供更新資料儲存庫：「*建立資料表空間acetablespace_name dathafe/u01/app/oracle/oradata/datafe/tablespace_name.dbf大小100公尺自動擴充；*」
++
+「tablspace_name」是表格空間的名稱。
+
+. 驗證表空間的區塊大小：`*從dba_tablspace;*中選取tablspace_name、block_size
++
+表空間需要至少4至K區塊大小。SnapManager
+
+
+
+*相關資訊*
+
+http://www.netapp.com/us/media/tr-3761.pdf["NetApp技術報告3761：SnapManager 《Oracle的支援：最佳實務做法》"^]

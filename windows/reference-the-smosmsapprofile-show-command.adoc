@@ -1,0 +1,43 @@
+---
+permalink: windows/reference-the-smosmsapprofile-show-command.html 
+sidebar: sidebar 
+keywords: run, profile, command, display, information, smsap 
+summary: 您可以執行profile show命令來顯示設定檔的相關資訊。 
+---
+= smsap profile show命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「profile show」命令來顯示設定檔的相關資訊。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap profile show
+-profile profile_name
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定設定檔的名稱。此名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+

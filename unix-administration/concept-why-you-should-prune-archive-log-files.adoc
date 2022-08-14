@@ -1,0 +1,19 @@
+---
+permalink: unix-administration/concept-why-you-should-prune-archive-log-files.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, delete, archive, log, file, active, system, back, up, prune 
+summary: 適用於SAP的支援功能可讓您從已備份的作用中檔案系統刪除歸檔記錄檔。SnapManager 
+---
+= 為何您應該剪下歸檔記錄檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+適用於SAP的支援功能可讓您從已備份的作用中檔案系統刪除歸檔記錄檔。SnapManager
+
+剪除功能可SnapManager 讓人建立不同歸檔記錄檔的備份。剪除與備份保留原則一起、可在清除備份時釋出歸檔記錄空間。
+
+
+NOTE: 當Flash Recovery Area（FRA）已啟用歸檔記錄檔時、您無法剪除歸檔記錄檔。如果您在Flash Recovery區域中指定歸檔記錄位置、則必須確定您也在「archive log_dest'參數中指定歸檔記錄位置。

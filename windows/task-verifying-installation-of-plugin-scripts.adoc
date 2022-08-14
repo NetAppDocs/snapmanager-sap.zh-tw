@@ -1,0 +1,43 @@
+---
+permalink: windows/task-verifying-installation-of-plugin-scripts.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, install, custom, script, operation, backup, restore, operation, automate, clone, verify, plug-in 
+summary: 利用此功能、您可以安裝及使用自訂指令碼來執行各種作業。SnapManager提供備份、還原及複製作業的外掛程式、可讓您在備份、還原及複製作業前後、自動執行自訂指令碼。SnapManager 
+---
+= 驗證外掛程式指令碼的安裝
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以安裝及使用自訂指令碼來執行各種作業。SnapManager提供備份、還原及複製作業的外掛程式、可讓您在備份、還原及複製作業前後、自動執行自訂指令碼。SnapManager
+
+. 輸入下列命令：
++
+《msap外掛程式檢查-osAccount OS資料庫使用者名稱》
+
++
+如果您未提供-osaccount選項、則會驗證系統管理員而非指定使用者的外掛程式指令碼安裝。
+
++
+下列輸出指出已成功安裝policy1、pre-plugin1和pre-plugin2指令碼。不過、後掛程式1指令碼無法運作。
+
++
+[listing]
+----
+
+            smsap plugin check
+Checking plugin directory structure ...
+<installdir>\plugins\clone\policy
+   OK: 'policy1' is executable
+
+<installdir>\plugins\clone\pre
+   OK: 'pre-plugin1' is executable and returned status 0
+   OK: 'pre-plugin2' is executable and returned status 0
+
+<installdir>\plugins\clone\post
+   ERROR: 'post-plugin1' is executable and returned status 3
+Command complete.
+----
+

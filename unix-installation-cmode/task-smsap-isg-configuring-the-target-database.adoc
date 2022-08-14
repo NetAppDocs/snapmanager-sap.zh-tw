@@ -1,0 +1,22 @@
+---
+permalink: unix-installation-cmode/task-smsap-isg-configure-the-target-database.html 
+sidebar: sidebar 
+keywords: target, database, oracle, configure, standalone, real, application, cluster, rac, automatic, storage, management, asm, support, combination 
+summary: 目標資料庫是Oracle資料庫、可設定為獨立式、Real Application叢集（RAC）、自動儲存管理（ASM）或任何其他支援的組合。 
+---
+= 設定目標資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+目標資料庫是Oracle資料庫、可設定為獨立式、Real Application叢集（RAC）、自動儲存管理（ASM）或任何其他支援的組合。
+
+.步驟
+. 請參閱_NetApp技術報告3633：NetApp Storage_上Oracle資料庫的最佳實務做法、以設定目標資料庫。
+
+
+*相關資訊*
+
+http://www.netapp.com/us/media/tr-3633.pdf["NetApp技術報告3633：NetApp儲存設備上Oracle資料庫的最佳實務做法"^]

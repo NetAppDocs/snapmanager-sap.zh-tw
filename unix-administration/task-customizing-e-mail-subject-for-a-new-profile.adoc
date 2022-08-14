@@ -1,0 +1,102 @@
+---
+permalink: unix-administration/task-customize-e-mail-subject-for-a-new-profile.html 
+sidebar: sidebar 
+keywords: customize, email, subject, profile, create, customizing 
+summary: 您可以在建立新設定檔時、針對其自訂電子郵件主旨。 
+---
+= 自訂新設定檔的電子郵件主旨
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在建立新設定檔時、針對其自訂電子郵件主旨。
+
+您可以使用「｛profile｝_\｛operation-name｝_\｛db-sID｝_\｛db-host｝_\｛start-date｝_\｛end-date｝_\｛STATUS｝模式來自訂電子郵件主旨、或輸入您自己的文字。
+
+[cols="1a,3a,2a"]
+|===
+| 變數名稱 | 說明 | 範例值 
+
+
+ a| 
+」
+ a| 
+用於資料庫作業的設定檔名稱
+ a| 
+PROF1
+
+
+
+ a| 
+作業名稱
+ a| 
+資料庫作業名稱
+ a| 
+備份、資料備份、資料與歸檔記錄備份
+
+
+
+ a| 
+「_db-sid_」
+ a| 
+資料庫的SID
+ a| 
+DB1
+
+
+
+ a| 
+「_db-host_」
+ a| 
+主機伺服器名稱
+ a| 
+主機A
+
+
+
+ a| 
+「_start-date」
+ a| 
+以mmdd:hhh：s yyyy格式執行資料庫作業的開始時間
+ a| 
+2012年4月27日21：00：45（太平洋標準時間2012年）
+
+
+
+ a| 
+結束日期_
+ a| 
+以mmdd:hhh：s yyyy格式結束資料庫作業時間
+ a| 
+2012年4月27日21：10：45（太平洋標準時間2012年）
+
+
+
+ a| 
+「_STATUS_」
+ a| 
+資料庫作業狀態
+ a| 
+成功
+
+|===
+如果您未提供任何變數值、SnapManager 則Sing會顯示下列錯誤訊息：「Missing Value(s)-Subject」（顯示值-主旨）
+
+. 輸入下列命令：
++
+_smsap profile create -profile _profile_[-profile-password _profile_password_]-reposit儲存 庫-dbname _repo_service_name_-host _repo_host_-portrepo_login-userName _-database-dbname _db_dbname -host _db_db_host_[-sid_hourly db_db_credent_station_[-nstock_enued_deed_deed_]–_sthour_sthour_station_-sn _主機_-pen_sthourly pd_station_-am_enued_-am_enued_主機_-am_station_主機_-am_station_-db_station_-n_主機_-am_n _主機_-amn _-amn _主機名_pd_pd_pdn _-am_station_-sc [-dormal__（日）[-count_n_][-dim_m_]（每週）[-count_n_][-dim_m_][-monvent [-count_n_][-dimdim_][-comment _comment _comment _notee_email_notee_email][電子郵件主題電子郵件地址模式1、電子郵件地址模式_失敗
+
+
+
+'''
+以下是顯示電子郵件主旨模式的範例：
+
+[listing]
+----
+
+smsap profile create -profile sales1 -profile-password admin1 -repository -dbname repo2 -host 10.72.197.133 -port 1521 -login -username admin2 -database -dbname DB1 -host 10.72.197.142 -sid DB1
+-osaccount oracle -osgroup dba -profile-notification -success -email admin@org.com -subject {profile}_{operation-name}_{db-sid}_{db-host}_{start-date}_{end-date}_{status}
+----
+'''

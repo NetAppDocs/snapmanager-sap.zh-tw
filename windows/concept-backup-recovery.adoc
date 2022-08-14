@@ -1,0 +1,23 @@
+---
+permalink: windows/concept-backup-recovery.html 
+sidebar: sidebar 
+keywords: snapmanager, perform, restore, recover, operation, backup 
+summary: 在還原中SnapManager 、您必須同時執行還原和還原作業。您無法執行還原作業、SnapManager 稍後再執行還原作業。 
+---
+= 備份還原
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在還原中SnapManager 、您必須同時執行還原和還原作業。您無法執行還原作業、SnapManager 稍後再執行還原作業。
+
+在3.2版或更早版本中、您可以使用支援功能來還原和恢復備份、或使用支援功能來還原備份、並使用其他工具（例如Oracle Recovery Manager（RMAN））來恢復資料。SnapManager SnapManager SnapManager由於支援使用RMAN登錄備份、因此您可以使用RMAN以區塊等較精細的精細度還原及還原資料庫。SnapManager這項整合結合了Snapshot複本的速度與空間效率、以及使用RMAN還原的精細控制能力。
+
+
+NOTE: 您必須先還原資料庫、才能使用。您可以使用任何工具或指令碼來還原資料庫。
+
+從適用於SAP的32個3.2開始SnapManager 、利用歸檔記錄備份、即可自動還原資料庫備份。SnapManager即使外部位置有歸檔記錄備份可用、SnapManager 也能使用外部位置的歸檔記錄備份來還原資料庫備份。
+
+如果新的資料檔案已新增至資料庫、Oracle建議您立即進行新的備份。此外、如果您在新增資料檔案之前還原備份、並嘗試在新增資料檔案之後還原至某個點、則自動Oracle還原程序可能會失敗、因為無法建立資料檔案。請參閱Oracle說明文件、瞭解備份後新增的資料檔案恢復程序。

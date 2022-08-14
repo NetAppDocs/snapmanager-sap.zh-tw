@@ -1,0 +1,39 @@
+---
+permalink: unix-administration/concept-snapmanager-for-oraclefor-sap-command-reference.html 
+sidebar: sidebar 
+keywords: snapmanager, command, reference, valid, syntax, option, parameter, argument, sap 
+summary: 這個指令參考資料包括您應該隨命令提供的有效使用語法、選項、參數和引數、以及範例。SnapManager 
+---
+= SAP命令參考資料SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+這個指令參考資料包括您應該隨命令提供的有效使用語法、選項、參數和引數、以及範例。SnapManager
+
+下列問題適用於命令的使用：
+
+* 命令區分大小寫。
+* 支援最多200個字元和最多80個字元的標籤。SnapManager
+* 如果主機上的Shell限制了命令列上可以顯示的字元數、您可以使用「cmd檔案」命令。
+* 請勿在設定檔名稱或標籤名稱中使用空格。
+* 在實體複本規格中、請勿在實體複本位置使用空格。
+
+
+可在主控台顯示三種訊息層級：SnapManager
+
+* 錯誤訊息
+* 警告訊息
+* 資訊訊息
+
+
+您可以指定顯示訊息的方式。如果您未指定任何項目、SnapManager 則僅會在主控台顯示錯誤訊息和警告。若要控制SnapManager 在主控台上顯示的輸出量、請使用下列其中一個命令列選項：
+
+* 「-Quiet」：僅顯示主控台的錯誤訊息。
+* verbose：在主控台顯示錯誤、警告及資訊訊息。
+
+
+
+NOTE: 無論預設行為或您指定的顯示詳細程度為何、SnapManager 恆將所有訊息類型寫入記錄檔。

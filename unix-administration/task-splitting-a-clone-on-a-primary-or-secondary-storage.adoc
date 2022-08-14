@@ -1,0 +1,47 @@
+---
+permalink: unix-administration/task-split-a-clone-on-a-primary-or-secondary-storage.html 
+sidebar: sidebar 
+keywords: clone, split, complete, metadata, remove, repository, primary, secondary, storage, delete, free 
+summary: 您可以使用Clone分割命令來分割實體複本。完成複本分割之後、會從儲存庫資料庫移除複本中繼資料、並刪除或釋出與複本相關的備份。 
+---
+= 分割一線或二線儲存設備上的實體複本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「Clone分割」命令來分割實體複本。完成複本分割之後、會從儲存庫資料庫移除複本中繼資料、並刪除或釋出與複本相關的備份。
+
+*關於此工作*
+
+成功分割操作之後建立的新設定檔、用於管理分割實體複本。新的設定檔就像SnapManager 其他任何現有的設定檔一樣。您可以使用此設定檔來執行備份、還原及複製作業。
+
+此外、您也可以設定新設定檔的電子郵件通知。如此一來、資料庫管理員就能得知使用設定檔執行的資料庫作業狀態。
+
+
+NOTE: 僅在FlexClone上執行時、支援分割作業。SnapManager
+
+如果分割作業失敗、則會顯示適當的錯誤訊息、並說明失敗原因。多個作業的狀態也會顯示在作業記錄中。例如：
+
+[listing]
+----
+--[ INFO] The following operations were completed:
+Clone Split : Success
+Profile Create : Failed
+Clone Detach : Success
+----
+您可以選擇在成功或失敗的實體複本分割作業之後收集傾印檔案。
+
+
+NOTE: 輸入「Clone分割」命令後、SnapManager 在複製分割作業開始之前、不應停止該伺服器。
+
+
+NOTE: 即使您未提供Oracle帳戶（osAccount和osgroup）的任何價值、也會產生設定檔。SnapManager
+
+.步驟
+. 輸入下列命令：
++
+_ssap clone sap clopy -profile _clone-profile_-host _hostname_[-label _clone-label_|-id _clone-id_]-s拆 標籤_sit-operation-tlabel_-comment _new-profile _new-profile-name_[-profile-password _new-profile_password_]-repo_]-repo_]-pdb -stock_service｛_pdb密碼_-pane_-op_server｛_pdb -op_server｛_pdb密碼_server -server -pdb、_server、_server、_pdb、_server、_pdb、_pdb、_pdb、_pdb、_pdb、_pdb、_pdb、_pdb、_pdb、_pdb、_pdb、-server、_pdb、_pdb、_pdb、-opam_service、_pdb、-server、_pdb、_pdb、-op_ ]-osAccount _osaccount_-osgroup _osgroup _[-stae-counter-n_][-dimdim_m_][-daper-count_n_][-time-counted _address_address_][-tim_project project形式電子郵件[_ quide-project形式電子郵件_ quality_notee_notee_][_電子郵件主題電子郵件地址模式[_資訊保護電子郵件地址][_資訊][_資訊][_資訊][_資訊保護電子郵件地址][資訊保護電子郵件地址][_主題][_主題資訊保護電子郵件地址][_主題資訊保護電子郵件地址][_主題][_主題][_主題][資訊保護][資訊保護][資訊保護][資訊保護][資訊保護][資訊保護][資訊保護][_主題資訊保護電子郵件地址模式資訊保護電子郵件地址][資訊保護][資訊保護][資訊保護][資訊保護][資訊保護][資訊保護][資訊保護][資訊
+
+

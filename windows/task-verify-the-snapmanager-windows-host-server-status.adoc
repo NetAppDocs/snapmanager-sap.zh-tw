@@ -1,0 +1,19 @@
+---
+permalink: windows/task-verify-the-snapmanager-windows-host-server-status.html 
+sidebar: sidebar 
+keywords: server, run, execute, command, initiate, snapmanager, operation, verify, status, host 
+summary: 伺服器必須在執行中、才能執行命令或啟動SnapManager 執行功能。您必須先確認伺服器的狀態、才能執行任何作業。 
+---
+= 驗SnapManager 證「不支援主機伺服器」狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+伺服器必須在執行中、才能執行命令或啟動SnapManager 執行功能。您必須先確認伺服器的狀態、才能執行任何作業。
+
+.步驟
+. 在「服務」視窗中、選取SnapManager 「針對SAP的資訊」。
+. 在「Status（狀態）」欄中檢視狀態。
+

@@ -1,0 +1,119 @@
+---
+permalink: windows/concept-profile-usage-for-br-tools-backups.html 
+sidebar: sidebar 
+keywords: br, tools, command, backint, interface, interface, snapmanager, profile, repository, credential, user, run, backup 
+summary: 當您執行使用BACKINT介面的BR* Tools命令時SnapManager 、會使用儲存庫中的設定檔。儲存庫是由SnapManager 執行BR* Tools命令之使用者的身分證明所決定。 
+---
+= BR*工具備份的設定檔使用量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您執行使用BACKINT介面的BR* Tools命令時SnapManager 、會使用儲存庫中的設定檔。儲存庫是由SnapManager 執行BR* Tools命令之使用者的身分證明所決定。
+
+根據預設SnapManager 、使用的設定檔名稱與SAP資料庫系統識別碼相同。
+
+
+
+== 關於建立認證以存取儲存庫
+
+您可以使用「shmsap認證集」命令來設定BR*工具使用者的儲存庫認證。
+
+
+
+== 關於指定不同SnapManager 的Isname設定檔名稱
+
+只要SnapManager 系統識別碼對所有的主機而言都是唯一的、而且這些主機的位元資料位於特定的儲存庫中、預設設定檔名稱就足夠了。您可以使用SnapManager 資料庫系統識別碼值來建立及命名此資訊檔。
+
+不過、如果在不同的主機上使用相同的系統識別碼、或是您想在SnapManager 特定SAP執行個體上指定多個搭配BR* Tools使用的版本、則需要定義BR* Tools命令的設定檔名稱。
+
+SAP應用程式中排程的資料庫作業會以使用者身分執行。BR*排定在SAP應用程式中執行的工具作業會以「APServiceSID」的形式執行。這些使用者必須擁有儲存庫和設定檔的存取權。
+
+SAP服務使用者SAPServiceSID不允許使用者在本機登入。若要變更此設定、您必須執行下列步驟來修改本機安全性原則：
+
+.步驟
+. 按一下「*開始*>*程式集*>*系統管理工具*>*本機安全性原則*」。
+. 展開*本機原則*、然後選取「**使用者權限指派」
+. 搜尋*拒絕本機登入*原則。
+. 按一下滑鼠右鍵並選取*「內容」*。
+. 從此清單中刪除* SAP服務使用者*。
+
+
+
+
+== 關於建立備份公用程式參數檔
+
+BR*Tools命令可選擇性地將備份公用程式參數（`.utl'參數）檔案傳遞至BACKINT介面。根據預設、此檔案的名稱為「initSID.utl」、其中SID是資料庫的系統識別碼。
+
+根據預設、BR*工具會使用「initSID.SAP」檔案中的「util_par_file'」參數所指定的參數檔案。備份公用程式參數檔案通常儲存在與「initSID.SAP」檔案相同的目錄中。
+
+將「profile_name =<profile >」新增至「.utl」檔案並儲存。設定檔是SnapManager 您要用於BR* Tools命令的SURF_profile名稱。
+
+下表列出如備份保留、快速還原及資料保護等作業所需的其他「.utl」檔案備份公用程式參數：
+
+|===
+| 營運 | 備份公用程式參數 
+
+
+ a| 
+備份保留
+ a| 
+* 關鍵：保留
+* 價值：無限
+
+
+
+
+| 每小時 | 每日 
+
+
+| 每週 | 每月 
+|===
+下表說明這些作業的不同備份公用程式參數：
+
+|===
+| 營運 | 金鑰 | 價值 
+
+
+ a| 
+備份保留
+ a| 
+快速=
+ a| 
+容錯回復
+
+|===
+
+
+== 將備份公用程式參數新增至BR*工具初始化檔案
+
+SAP會在「$oracle_home\database\」中為每個SAP資料庫執行個體建立名為「initSID.sap」的備份設定檔。您可以使用此檔案來指定用於BR* Tools命令的預設備份公用程式參數（`.utl`）檔案。
+
+.步驟
+. 編輯initSID.SAP檔案、找出開頭為「util_par_file =」的行。
+. 取消註釋此行並將路徑新增至包含設定檔名稱的備份公用程式參數檔、例如「util_par_file = initSA1.utl」。
+. 如果您為「util_par_file」指定一個值、請確定該檔案存在。
++
+如果找不到檔案、BRBACKUP命令會失敗、因為它們會嘗試將該檔案加入備份中。
+
+
+
+如果找到下列任一錯誤條件、您就必須使用「-u」選項做為設定檔名稱：
+
+* "蔘 數檔案不存在"
+* 「沒有設定檔名稱項目」
+
+
+「orasid」和「sidadorm」都需要存取設定檔、以便用來建立或管理使用BR*工具建立的備份。
+
+
+
+== 在BR*Tools命令上指定備份公用程式參數檔名
+
+您可以選擇使用「-r'」選項、在BR* Tools命令上指定備份公用程式參數（.utl參數）檔案。命令列上的值會覆寫SAP初始化檔案中指定的值。
+
+BR*工具會在'$oracle_home\database\’目錄中搜尋參數檔案。如果您將檔案儲存在其他位置、則需要提供完整路徑、並使用「-r」選項。例如：
+
+`* brBackup -r C：\oracle\NetApp_FCP價格_10g企業級_inst_vol1\database_initCER.utl ...*

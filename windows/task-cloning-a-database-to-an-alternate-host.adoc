@@ -1,0 +1,39 @@
+---
+permalink: windows/task-cloning-a-database-to-an-alternate-host.html 
+sidebar: sidebar 
+keywords: clone, command, database, alternate, host, cloning 
+summary: 您可以使用clone create命令來複製替代主機上的資料庫備份。 
+---
+= 將資料庫複製到替代主機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用clone create命令來複製替代主機上的資料庫備份。
+
+* 建立設定檔或擁有現有的設定檔。
+* 建立完整備份或現有資料庫備份。
+* 建立實體複本規格或現有的實體複本規格。
+
+
+.步驟
+. 若要將資料庫複製到替代主機、請輸入下列命令：
++
+「msap clone create -backup-labelbackup_label_name-newsidnew_sidnew_sid-hosttarget主機標籤clone_label-comment comment coming_text-profileprofile_name-clonespecfull路徑to_clonespecfile'」
+
++
+Oracle不允許您在同一主機上同時執行兩個具有相同SID的資料庫。因此、您必須為每個實體複本提供新的SID。不過、您可以在另一部具有相同SID的主機上建立資料庫。
+
+
+
+*相關資訊*
+
+xref:task-creating-profiles.adoc[建立設定檔]
+
+xref:task-cloning-databases-from-backups.adoc[從備份複製資料庫]
+
+xref:task-creating-clone-specifications.adoc[建立複製規格]
+
+xref:reference-the-smosmsapclone-create-command.adoc[smsap clone create命令]

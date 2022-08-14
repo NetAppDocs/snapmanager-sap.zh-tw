@@ -1,0 +1,18 @@
+---
+permalink: unix-administration/task-check-the-snapmanager-software-version.html 
+sidebar: sidebar 
+keywords: determine, version, product, run, local, host, command, check, software, snapmanager 
+summary: 您可以執行version命令、判斷您在本機主機上執行的產品版本。 
+---
+= 請查看SnapManager 此軟體版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「Vrsion」命令、判斷您在本機主機上執行的產品版本。
+
+.步驟
+. 若要檢查SnapManager 此版本、請輸入以下命令：「* smsap version *」
+

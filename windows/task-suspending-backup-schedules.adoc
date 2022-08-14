@@ -1,0 +1,22 @@
+---
+permalink: windows/task-suspending-backup-schedules.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, suspend, backup, schedule, resume 
+summary: 利用此功能、您可以暫停備份排程、直到備份排程恢復為止。SnapManager 
+---
+= 暫停備份排程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以暫停備份排程、直到備份排程恢復為止。SnapManager
+
+您可以暫停使用中的排程。如果您嘗試暫停已暫停的備份排程、可能會出現錯誤訊息「無法暫停：排程<排程名稱>已處於暫停狀態」。
+
+. 若要暫時暫停備份排程、請輸入下列命令：
++
+「msap排程suspend -profile profile_name-schedule-namesschedule名稱[-quiet |-verbose]」
+
+

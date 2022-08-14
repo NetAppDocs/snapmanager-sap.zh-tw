@@ -1,0 +1,87 @@
+---
+permalink: windows/concept-creating-task-specification-file-and-scripts-for-snapmanager-operations.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, task, specification, extensible, markup, language, xml, file, pretask, post-task, backup, restore, clone, operation, create 
+summary: SAP版的支援使用工作規格可延伸標記語言（XML）檔案、指出備份、還原及複製作業的前置工作和後置工作。SnapManager您可以在XML檔案中新增工作前及工作後指令碼名稱、以便在備份、還原及複製作業之前或之後執行工作。 
+---
+= 建立SnapManager 工作規格檔案和指令碼、以利執行各項作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAP版的支援使用工作規格可延伸標記語言（XML）檔案、指出備份、還原及複製作業的前置工作和後置工作。SnapManager您可以在XML檔案中新增工作前及工作後指令碼名稱、以便在備份、還原及複製作業之前或之後執行工作。
+
+在不含更新版本的版本（3.1或更新版本）中、您只能執行複製作業的前置和後置指令碼。SnapManager在SAP適用的版本（3.2或更新版本）中、您可以執行備份、還原及複製作業的前置和後置指令碼。SnapManager
+
+在本指南（3.1或更早版本）中SnapManager 、工作規格區段是複製規格XML檔案的一部分。從適用於SAP的32版3.2開始SnapManager 、工作規格區段是獨立的XML檔案。
+
+
+NOTE: 不支援使用在發行版更新版本之前建立的實體複本規格XML檔案。SnapManager SnapManager
+
+在SAP適用的版本（3.2或更新版本）中、您必須確保符合下列條件、才能成功執行下列操作：SnapManager SnapManager
+
+* 如需備份與還原作業、請使用工作規格XML檔案。
+* 對於複製作業、請提供兩個規格檔案：複製規格XML檔案和工作規格XML檔案。
++
+如果您想要啟用工作前或工作後活動、您可以選擇性地新增工作規格XML檔案。
+
+
+
+您可以使用SnapManager 圖形化使用者介面（GUI）、命令列介面（CLI）或文字編輯器來建立工作規格檔案。您必須為檔案使用.xml副檔名、才能啟用適當的編輯功能。您可能想要儲存此檔案、以便日後用於備份、還原及複製作業。
+
+工作規格XML檔案包含兩個區段：
+
+* 「預先工作」區段包含可在備份、還原及複製作業之前執行的指令碼。
+* 「工作後」區段包含可在備份、還原及複製作業之後執行的指令碼。
+
+
+「預先工作」和「後置工作」區段中所包含的值必須遵循下列準則：
+
+* 工作名稱：工作名稱必須與指令碼名稱相符、當您執行「plugin.sh -flexe'」命令時、會顯示該指令碼名稱。
++
+
+NOTE: 如果不相符、您可能會收到下列錯誤訊息：「找不到檔案」。
+
+* 參數名稱：參數名稱必須是可做為環境變數設定的字串。
++
+該字串必須符合自訂指令碼中的參數名稱、此指令碼會在您執行「plugin.sh -flexe'」命令時顯示。
+
+
+
+您可以根據下列範例工作規格檔的結構來建立規格檔：
+
+[listing]
+----
+
+<task-specification>
+  <pre-tasks>
+<task>
+      <name>name</name>
+      <parameter>
+          <name>name</name>
+          <value>value</value>
+       </parameter>
+    </task>
+  </pre-tasks>
+  <post-tasks>
+    <task>
+      <name>name</name>
+      <parameter>
+          <name>name</name>
+          <value>value</value>
+       </parameter>
+    </task>
+  </post-tasks>
+</task-specification>
+----
+
+NOTE: 工作規格XML檔案不應包含任何原則。
+
+您可以從SnapManager 這個功能組設定參數值、然後儲存XML檔案。您可以使用備份建立精靈的「工作啟用」頁面、「還原或還原」精靈、以及「Clone Create」精靈、載入現有的工作規格XML檔案、並將選取的檔案用於工作前或工作後活動。
+
+您可以使用相同或不同的參數和值組合、多次執行工作。例如、您可以使用「儲存」工作來儲存多個檔案。
+
+
+NOTE: 無論工作規格檔案的副檔名為何、均使用工作規格檔案中提供的XML標記進行備份、還原及複製作業的預先處理或後處理活動。SnapManager

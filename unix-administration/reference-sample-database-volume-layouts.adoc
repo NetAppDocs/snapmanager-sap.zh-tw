@@ -1,0 +1,182 @@
+---
+permalink: unix-administration/reference-sample-database-volume-layouts.html 
+sidebar: sidebar 
+keywords: sample, database, volume, layout, configuring, configure 
+summary: 如需設定資料庫的說明、請參閱資料庫Volume配置範例。 
+---
+= 範例資料庫Volume配置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如需設定資料庫的說明、請參閱資料庫Volume配置範例。
+
+
+
+== 單一執行個體資料庫
+
+[cols="1a,3a,1a,1a"]
+|===
+| 檔案類型 | Volume名稱 | 適用於檔案類型的專屬Volume | 自動Snapshot複本 
+
+
+ a| 
+Oracle二進位檔
+ a| 
+orabin_`_host name_'
+ a| 
+是的
+ a| 
+開啟
+
+
+
+ a| 
+資料檔案
+ a| 
+oradata_`_sid_'
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+暫用資料檔案
+ a| 
+oratemp_`_sid_'
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+控制檔
+ a| 
+oracntrl01_`_SID_'（多工）
+
+oracntrl02_`_SID_'（多工）
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+重作記錄
+ a| 
+orogic 01_`_SID_'（多工）
+
+orogic 02_`_SID_'（多工）
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+歸檔記錄
+ a| 
+oraarch_`_sid_'
+ a| 
+是的
+ a| 
+關
+
+|===
+
+
+== Real Application叢集（RAC）資料庫
+
+[cols="1a,3a,1a,1a"]
+|===
+| 檔案類型 | Volume名稱 | 適用於檔案類型的專屬Volume | 自動Snapshot複本 
+
+
+ a| 
+Oracle二進位檔
+ a| 
+orabin_`_host name_'
+ a| 
+是的
+ a| 
+開啟
+
+
+
+ a| 
+資料檔案
+ a| 
+oradata_`_dbname_'
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+暫用資料檔案
+ a| 
+oratemp_`_dbname_'
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+控制檔
+ a| 
+oracntrl01_`_dbname_'（多工）
+
+oracntrl02_`_dbname_'（多工）
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+重作記錄
+ a| 
+orogic 01_`_dbname_'（多工）
+
+orogic 02_`_dbname_'（多工）
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+歸檔記錄
+ a| 
+oraarch_`_dbname_'
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+叢集檔案
+ a| 
+oracrs_`_clustername_'
+ a| 
+是的
+ a| 
+開啟
+
+|===

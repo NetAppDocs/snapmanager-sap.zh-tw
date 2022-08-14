@@ -1,0 +1,28 @@
+---
+permalink: unix-administration/task-delete-a-clone-split-operation-cycle-from-a-repository-database.html 
+sidebar: sidebar 
+keywords: delete, clone, split, operation, cycle, entry, repository, database, deleting 
+summary: 您可以從儲存庫資料庫刪除複本分割作業週期項目。 
+---
+= 從儲存庫資料庫刪除實體複本分割作業週期
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從儲存庫資料庫刪除複本分割作業週期項目。
+
+.步驟
+. 若要從儲存庫資料庫刪除實體複本分割作業週期項目、請輸入下列命令：
++
+「* smsap clone sap-delete -profile _profile_[-host _hostname_][-label _s拆 分標籤_|-id _s拆 分id_][-quiet |-verbose]*」
+
+
+
+'''
+[listing]
+----
+smsap clone split-delete -profile p1 -id 8abc01ec0e78f3e2010e78f3fdd00001
+----
+'''

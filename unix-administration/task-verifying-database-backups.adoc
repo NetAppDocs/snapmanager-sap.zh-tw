@@ -1,0 +1,28 @@
+---
+permalink: unix-administration/task-verify-database-backups.html 
+sidebar: sidebar 
+keywords: backup, verify, command, block, database, backup, corrupt, operation, invoke, oracle, utility, data, file 
+summary: 您可以使用備份驗證命令來驗證資料庫備份中的區塊是否未毀損。驗證作業會針對備份中的每個資料檔案、呼叫Oracle Database Verify公用程式。 
+---
+= 驗證資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「備份驗證」命令來驗證資料庫備份中的區塊是否未毀損。驗證作業會針對備份中的每個資料檔案、呼叫Oracle Database Verify公用程式。
+
+*關於此工作*
+
+利用此功能、您可以隨時在系統上方便您和使用者的位置執行驗證作業。SnapManager您可以在建立備份之後立即執行驗證。您必須指定包含備份的設定檔、以及所建立備份的標籤或ID。
+
+
+NOTE: 您可以指定-dump來在備份驗證作業之後收集傾印檔案。
+
+.步驟
+. 輸入下列命令：
++
+「* smsap備份驗證-profile _profile_name_[-label _label_|-id _id_][-force][-dump ][-quiet |-verbose]*」
+
+

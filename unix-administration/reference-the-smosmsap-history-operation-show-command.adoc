@@ -1,0 +1,56 @@
+---
+permalink: unix-administration/reference-the-smosmsap-history-operation-show-command.html 
+sidebar: sidebar 
+keywords: command, enable, history, snapmanager, operation, associated, profile, smsap, operation-show 
+summary: 此命令可讓您檢視SnapManager 與設定檔相關的特定故障操作記錄。 
+---
+= smsap history operation-show命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令可讓您檢視SnapManager 與設定檔相關的特定故障操作記錄。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap history operation-show
+-profile _profile_ {-label _label_ | -id _id_} [-quiet | -verbose\]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile _*」
++
+指定設定檔的名稱。此名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* 「*標籤_label_|-id _id_*」
++
+指定SnapManager 您要檢視其歷程記錄的動作ID或標籤。
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 命令範例
+
+[listing]
+----
+ smsap history operation-show -profile PROFILE1 -label backup1 -verbose
+----
+'''

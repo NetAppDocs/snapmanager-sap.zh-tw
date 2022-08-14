@@ -1,0 +1,21 @@
+---
+permalink: windows/task-customize-the-email-subject-for-an-existing-profile.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, customize, email, subject, pattern, exist, profile, applicable, update 
+summary: 利用此功能、您可以更新現有設定檔、自訂電子郵件主旨模式。SnapManager此自訂的受試者模式僅適用於更新的設定檔。 
+---
+= 自訂現有設定檔的電子郵件主旨
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以更新現有設定檔、自訂電子郵件主旨模式。SnapManager此自訂的受試者模式僅適用於更新的設定檔。
+
+.步驟
+. 輸入下列命令：
++
+「* smsap profile update -profile _profile_[-profile -password _profile_password_][-database-dbname _dbname_-host _db_host_[-sID db_sid_][-login_username_-password _db_password_-port _db_port_][{-rmne-four-tn_dim_dim_dim_nstation_nstyour_dim_unyour_unyour_unyour_styour_unyour_station_unyour_unyour_styour_station__[_count][_styour_unyour_unyour_unyour-tnstation_密碼[_station_count][_station_count_unyour-tnstyour-tnstyour-tnstyour-tunyour_un次 密碼[_count][_次_次_次_ _n_][-dim_m_]][-comment _comment _][-snapname -Pattern_][-protection [-protection -policy _policy_name_]|[-noprotel][-notification（成功）-email_email_address1_、_email_address2_-Subject _Subject _Pattern_]電子郵件主題_、電子郵件_主題_電子郵件_主題_電子郵件_、電子郵件_主題_、電子郵件地址模式1 _、電子郵件_、電子郵件_、電子郵件地址模式_、電子郵件_、電子郵件地址模式_、電子郵件_、電子郵件地址模式_、電子郵件地址模式2
+
+

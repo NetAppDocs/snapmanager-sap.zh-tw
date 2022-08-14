@@ -1,0 +1,24 @@
+---
+permalink: windows/task-disabling-autosupport-in-snapmanager.html 
+sidebar: sidebar 
+keywords: disable, autosupport, storage, system, receive, message, snapmanager, backup, operation, disabling 
+summary: 如果您不想讓儲存系統接收來自於整個過程的訊息、則必須停用AutoSupport 支援功能、SnapManager 才能順利完成備份作業。 
+---
+= 停用AutoSupport 功能不SnapManager 只是功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不想讓儲存系統接收來自於整個過程的訊息、則必須停用AutoSupport 支援功能、SnapManager 才能順利完成備份作業。
+
+根據預設、AutoSupport 如果組態檔不包含auto_support.on參數、則會啟用此功能。在此案例中、您必須在組態檔中新增auto_support.on參數、並將值設為假。
+
+. 停止SnapManager 伺服器。
+. 在smsap.config組態檔中、將auto_support.on參數的值設為假。
++
+Auto_support.on=假
+
+. 重新啟動SnapManager 伺服器。
+

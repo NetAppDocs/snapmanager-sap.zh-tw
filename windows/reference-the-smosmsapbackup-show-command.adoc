@@ -1,0 +1,102 @@
+---
+permalink: windows/reference-the-smosmsapbackup-show-command.html 
+sidebar: sidebar 
+keywords: backup, show, command, display, detail, information, protection, status, retention, class, primary, secondary, storage, smsap 
+summary: 您可以使用備份show命令來顯示有關備份的詳細資訊、包括其保護狀態、備份保留類別、以及一線與二線儲存設備上的備份。 
+---
+= smsap備份show命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「備份show」命令來顯示有關備份的詳細資訊、包括其保護狀態、備份保留類別、以及一線與二線儲存設備上的備份。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap backup show
+-profile profile_name
+[-label label [-data | -archivelogs] | [-id id]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定要顯示備份的設定檔。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *標籤_label_`*
++
+指定備份的標籤。
+
+* *資料*
++
+指定資料檔案。
+
+* *《歸檔者》*
++
+指定歸檔記錄檔。
+
+* *
++
+指定備份ID。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台中顯示錯誤、警告和資訊訊息、以及任何複製和驗證資訊。
+
+
+
+
+
+== 範例
+
+下列範例顯示有關備份的詳細資訊：
+
+[listing]
+----
+smsap backup show -profile SALES1 -label BTNFS -verbose
+Backup id: 8abc013111a450480111a45066210001
+Backup status: SUCCESS
+Primary storage resources: EXISTS
+Protection sate: NOT REQUESTED
+Retention class: DAILY
+Backup scope: FULL
+Backup mode: OFFLINE
+Mount status: NOT MOUNTED
+Backup label: BTNFS
+Backup comment:
+
+Backup start time: 2007-03-30 15:26:30
+Backup end time: 2007-03-30 15:34:13
+Verification status: OK
+Backup Retention Policy: NORMAL
+Backup database: hsdb1
+Checkpoint: 2700620
+Tablespace: SYSAUX
+Datafile: E:\disks\data\hsdb\sysaux01.dbf [ONLINE]
+...
+Control Files:
+File: E:\disks\data\control03.ctl
+...
+Archive Logs:
+File: E:\disks\data\archive_logs\2_131_626174106.dbf
+...
+Volume: hs_data
+Snapshot: SMSAP_HSDBR_hsdb1_F_C_1_
+8abc013111a450480111a45066210001_0
+File: E:\disks\data\hsdb\SMSAPBakCtl_1175283005231_0
+...
+----

@@ -1,0 +1,37 @@
+---
+permalink: unix-administration/task-add-storage-systems-to-the-snapmanager-server-host.html 
+sidebar: sidebar 
+keywords: add, storage, system, operating, operate, cluster, data, ontap, autosupport, snapmanager, 7-mode 
+summary: 您必須將以叢集Data ONTAP 式的效能運作的儲存系統新增至SnapManager 支援AutoSupport 動作的伺服器主機、才能啟用此功能。在VMware 3.3及更早版本中、僅在以7-Mode運作的儲存系統上才支援使用。SnapManager AutoSupport 
+---
+= 將以叢集Data ONTAP 式功能運作的儲存系統新增至SnapManager 支援此功能的伺服器主機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須將以叢集Data ONTAP 式的效能運作的儲存系統新增至SnapManager 支援AutoSupport 動作的伺服器主機、才能啟用此功能。在VMware 3.3及更早版本中、僅在以7-Mode運作的儲存系統上才支援使用。SnapManager AutoSupport
+
+.步驟
+. 將以叢集Data ONTAP 式功能運作的儲存系統新增至SnapManager 支援此功能的伺服器主機。
++
+[cols="1a,3a"]
+|===
+| 如果... | 然後執行下列命令... 
+
+
+ a| 
+管理儲存虛擬機器（SVM、先前稱為Vserver）是在叢集Data ONTAP 式的SVM中運作
+ a| 
+`* SnapDrive 《*》組態集-cserver _user_name__storage名稱_*》
+
+
+
+ a| 
+SVM正在叢集Data ONTAP 式的過程中運作
+ a| 
+hy* SnapDrive 《*》組態集-vserver _user_name__storage名稱_*》
+
+|===
+

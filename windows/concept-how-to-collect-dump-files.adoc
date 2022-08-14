@@ -1,0 +1,39 @@
+---
+permalink: windows/concept-how-to-collect-dump-files.html 
+sidebar: sidebar 
+keywords: dump, snapmanager, command, collect, file, successful, fail, operation 
+summary: 您可以在SnapManager 執行成功或失敗SnapManager 的動作後、在feschcommand中加入-dump來收集傾印檔案。 
+---
+= 如何收集傾印檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在SnapManager 成功或失敗SnapManager 的動作後、在esf2命令中加入「-dump」來收集傾印檔案。
+
+您可以收集下列SnapManager 各項的傾印檔案：
+
+* 建立設定檔
+* 正在更新設定檔
+* 建立備份
+* 驗證備份
+* 刪除備份
+* 釋放備份
+* 掛載備份
+* 卸載備份
+* 還原備份
+* 建立複本
+* 刪除複本
+
+
+
+NOTE: 當您建立設定檔時、只有在作業成功時、才能收集傾印檔案。如果在建立設定檔時遇到錯誤、您必須使用「shmsap system dump」命令。若要取得成功的設定檔、您可以使用「shmsap operation dump」和「shmsap profile dump」命令來收集傾印檔案。
+
+* 範例 *
+
+[listing]
+----
+ smsap backup create -profile targetdb1_prof1 -auto -full -online -dump
+----

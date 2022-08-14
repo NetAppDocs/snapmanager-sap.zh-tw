@@ -1,0 +1,32 @@
+---
+permalink: windows/task-cloning-databases-in-the-current-state.html 
+sidebar: sidebar 
+keywords: create, backup, clone, database, command, cloning, current, state 
+summary: 您可以使用單一命令、從資料庫的目前狀態建立資料庫的備份與複製。 
+---
+= 正在複製目前狀態的資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用單一命令、從資料庫的目前狀態建立資料庫的備份與複製。
+
+當您使用-current選項指定設定檔時、SnapManager 首先會建立備份、然後從資料庫的目前狀態建立複本。
+
+在設定檔設定中、如果您已啟用資料檔案備份和歸檔記錄檔以進行複製、則每當您備份線上資料檔案時、也會備份歸檔記錄。複製資料庫時SnapManager 、將會建立資料檔案備份、以及歸檔記錄備份、並建立資料庫複製。如果不包含歸檔記錄備份、SnapManager 則無法建立歸檔記錄備份、因此無法建立資料庫的複本。
+
+.步驟
+. 若要以目前狀態複製資料庫、請輸入下列命令：
++
+「msap Clone create -profileprofileprofile_name-current -labelclone_name-clonespecclonappec.xml」
+
++
+此命令會執行全自動備份（產生備份標籤）、並使用您要使用的現有複本規格、立即從該備份建立複本。
+
++
+
+NOTE: 您可以將-dump選項指定為選用參數、以便在成功或失敗的作業之後收集傾印檔案。會針對備份和複製作業收集傾印。
+
+

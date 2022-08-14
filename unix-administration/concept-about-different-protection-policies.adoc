@@ -1,0 +1,111 @@
+---
+permalink: unix-administration/concept-about-different-protection-policies.html 
+sidebar: sidebar 
+keywords: policies, policy, protect, backup, secondary, tertiary, storage, system, protection 
+summary: 您可以選擇不同的原則來保護二線或三線儲存系統上的備份。 
+---
+= 關於不同的保護原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以選擇不同的原則來保護二線或三線儲存系統上的備份。
+
+如果您使用Data ONTAP 的是以7-Mode運作、SnapManager 而使用的是與Protection Manager整合的功能、則在建立設定檔時、您必須選取下列其中一項保護原則。Protection Manager的管理主控台提供範本、可設定資料集的保護原則。雖然災難恢復保護原則列於SnapManager 「支援」使用者介面中、但不支援這些原則。
+
+[cols="1a,3a"]
+|===
+| 原則 | 說明 
+
+
+ a| 
+備份
+ a| 
+資料集會在本機備份、也可以使用SnapVault SnapMirror或SnapMirror從一線儲存設備備份到二線儲存設備。
+
+
+
+ a| 
+備份、然後鏡射
+ a| 
+資料集會使用SnapVault SnapMirror或SnapMirror從一線儲存設備備份到二線儲存設備、然後鏡射到SnapMirror合作夥伴。
+
+
+
+ a| 
+僅限本機Snapshot複本
+ a| 
+資料集只會在主要儲存設備中使用本機Snapshot複本。
+
+
+
+ a| 
+鏡射
+ a| 
+資料集會使用SnapMirror從一線儲存設備鏡射至二線儲存設備。
+
+
+
+ a| 
+鏡射與備份
+ a| 
+資料集會使用SnapMirror從一線儲存設備鏡射至二線儲存設備、然後使用SnapVault SnapMirror或SnapMirror備份至二線儲存設備。
+
+
+
+ a| 
+鏡射與鏡射
+ a| 
+資料集會從兩個不同SnapMirror合作夥伴的一線儲存設備鏡射至二線儲存設備。
+
+
+
+ a| 
+鏡射、然後備份
+ a| 
+資料集會使用SnapMirror從一線儲存設備鏡射至二線儲存設備、然後使用SnapVault SnapMirror或SnapMirror備份至三線儲存設備。
+
+
+
+ a| 
+鏡射、然後鏡射
+ a| 
+資料集會使用SnapMirror從一線儲存設備鏡射至二線儲存設備、然後鏡射至其他SnapMirror合作夥伴。
+
+
+
+ a| 
+無保護
+ a| 
+資料集沒有任何種類的Snapshot複本、備份或鏡射複本保護。
+
+
+
+ a| 
+僅限遠端備份
+ a| 
+儲存系統上的資料會使用SnapVault SnapMirror或SnapMirror、從遠端備份到二線儲存設備。授權應用程式不會在主要儲存設備上執行本機備份。此保護原則可套用至SnapVault 已安裝開放式系統的第三方系統。
+
+|===
+如果您使用叢集Data ONTAP 式的實體、則必須在建立設定檔時、選取下列其中一項保護原則。
+
+[cols="1a,1a"]
+|===
+| 原則 | 說明 
+
+
+ a| 
+SnapManager：cDOT鏡射
+ a| 
+鏡射備份。
+
+
+
+ a| 
+SnapManager _cDOT_Vault
+ a| 
+保存備份。
+
+|===

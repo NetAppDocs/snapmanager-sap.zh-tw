@@ -1,0 +1,14 @@
+---
+permalink: unix-installation-7mode/task-set-up-snapmanager.html 
+sidebar: sidebar 
+keywords: snapmanager, access, user, interface, command-line, cli, access, repository, operation, set, up 
+summary: 您可以使用SnapManager 使用者介面（UI）或命令列介面（CLI）來啟動和存取功能。在存取SnapManager 完功能後、您必須先建立SnapManager 這個功能庫、才能執行SnapManager 任何的功能。 
+---
+= 設定SnapManager 功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用SnapManager 使用者介面（UI）或命令列介面（CLI）來啟動和存取功能。在存取SnapManager 完功能後、您必須先建立SnapManager 這個功能庫、才能執行SnapManager 任何的功能。

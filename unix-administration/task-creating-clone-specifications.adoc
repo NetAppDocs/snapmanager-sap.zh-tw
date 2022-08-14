@@ -1,0 +1,334 @@
+---
+permalink: unix-administration/task-create-clone-specifications.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, clone, specification, xml, file, mapping, option, parameter, operation, information, diagnostic, creating, create 
+summary: SAP的適用範圍使用複製規格XML檔案、其中包含用於複製作業的對應、選項和參數。SnapManager支援使用此資訊來判斷要將檔案放在何處、以及如何處理診斷資訊、控制檔案、參數等。SnapManager 
+---
+= 建立複製規格
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAP的適用範圍使用複製規格XML檔案、其中包含用於複製作業的對應、選項和參數。SnapManager支援使用此資訊來判斷要將檔案放在何處、以及如何處理診斷資訊、控制檔案、參數等。SnapManager
+
+*關於此工作*
+
+您可以使用SnapManager 無法使用的圖形化使用者介面（GUI）、命令列介面（CLI）或文字編輯器來建立複製規格檔案。
+
+使用文字編輯器建立複製規格檔案時、必須將其儲存為「.xml」檔案。您可以將此XML檔案用於其他複製作業。
+
+您也可以建立複製規格範本、然後加以自訂。您可以使用「msap Clone template」命令、或在GUI中使用Clone精靈。
+
+適用於SAP的將版本字串新增至其產生的任何複製規格範本。SnapManager針對任何缺少版本字串的複製規格檔案、SAP適用的更新版本均採用。SnapManager
+
+如果您要執行遠端複製、請勿變更複製規格檔案中的資料檔案、重作記錄檔和控制檔的預設位置。如果您變更預設位置、SnapManager 則無法在不支援Snapshot功能的資料庫上建立實體複本或建立實體複本。因此、自動建立設定檔失敗。
+
+
+NOTE: 雖然可從GUI編輯掛載點和ASM磁碟群組資訊、但您只能變更檔案名稱、而不能變更檔案位置。
+
+您可以使用相同或不同的參數和值組合、多次執行工作。
+
+SAP使用特定的Oracle設定進行資料庫組態。您可以在位於「$oracle_home/DBS」的「init<sid>.ora」中找到這些設定。您應該在複製規格中加入這些項目。
+
+.步驟
+. 開啟文字檔並輸入文字、如下列範例所示：
++
+* 範例 *
+
++
+[listing]
+----
+<clone-specification xmlns="http://www.example.com>
+     <storage-specification/>
+     <database-specification/>
+ </clone-specification>
+----
+. 在儲存規格元件中、輸入資料檔案的掛載點。
++
+儲存規格會列出為實體複本所建立的新儲存設備位置、例如資料檔案掛載點和原始裝置。這些項目必須從來源對應至目的地。
+
++
+下列範例顯示NFS附加儲存設備上的單一NFS掛載點：
+
++
+* 範例 *
+
++
+[listing]
+----
+<mountpoint>
+      <source>/oracle/<SOURCE SID>_sapdata</source>
+      <destination>/oracle/<TARGET SID>_sapdata</destination>
+</mountpoint>
+----
+. *選用：*如果來源上有原始裝置、則必須在來源上指定原始裝置的路徑、然後指定
++
+「*目的地自動產生=」「true」*
+
++
+目的地。
+
++
+與SnapManager 舊版的SAP版的Clone對應檔案不同、您無法在目的地上指定原始裝置的位置。SAP適用的系統將為複製的原始裝置選擇下一個可用的裝置名稱。SnapManager
+
++
+* 範例 *
+
++
+以下範例顯示您在複製規格中使用的原始裝置語法：
+
++
+[listing]
+----
+<raw-device>
+     <source>/dev/raw/raw1</source>
+     <destination auto-generate="true"/>
+</raw-device>
+----
+. 在資料庫規格元件中、將控制檔資訊識別為您要為複本建立的控制檔清單。
++
+資料庫規格會指定實體複本的資料庫選項、例如控制檔、重作記錄、歸檔記錄和Oracle參數。
+
++
+* 範例 *
+
++
+下列範例顯示您在複製規格中使用的控制檔語法：
+
++
+[listing]
+----
+<controlfiles>
+     <file>/oracle/<TARGET SID>/origlogA/cntrl/cntrl<TARGET SID>.dbf</file>
+     <file>/oracle/<TARGET SID>/origlogB/cntrl/cntrl<TARGET SID>.dbf</file>
+     <file>/oracle/<TARGET SID>/sapdata1/cntrl/cntrl<TARGET SID>.dbf</file>
+</controlfiles>
+----
+. 指定實體複本的重作記錄結構。
++
+* 範例 *
+
++
+下列範例顯示用於複製的重作記錄目錄結構：
+
++
+[listing]
+----
+<redologs>
+     <redogroup>
+        <file>/oracle/<TARGET SID>/origlogA/log_g11m1.dbf</file>
+        <file>/oracle/<TARGET SID>/mirrlogA/log_g11m2.dbf</file>
+        <number>1</number>
+        <size unit="M">100</size>
+     </redogroup>
+     <redogroup>
+        <file>/oracle/<TARGET SID>/origlogB/log_g12m1.dbf</file>
+        <file>/oracle/<TARGET SID>/mirrlogB/log_g12m2.dbf</file>
+        <number>2</number>
+        <size unit="M">100</size>
+     </redogroup>
+     <redogroup>
+        <file>/oracle/<TARGET SID>/origlogA/log_g13m1.dbf</file>
+        <file>/oracle/<TARGET SID>/mirrlogA/log_g13m2.dbf</file>
+        <number>3</number>
+        <size unit="M">100</size>
+     </redogroup>
+     <redogroup>
+        <file>/oracle/<TARGET SID>/origlogB/log_g14m1.dbf</file>
+        <file>/oracle/<TARGET SID>/mirrlogB/log_g14m2.dbf</file>
+        <number>4</number>
+        <size unit="M">100</size>
+     </redogroup>
+</redologs>
+----
+. 指定應在複製資料庫中設定為不同值的Oracle參數。如果您使用的是Oracle 10、則必須指定下列參數：
++
+** 背景傾印
+** 核心傾印
+** 使用者傾印
+** *選用：*歸檔記錄
++
+
+NOTE: 如果參數值未正確設定、則會停止複製作業、並顯示錯誤訊息。
+
+
+
++
+如果您未指定儲存歸檔記錄的位置、SnapManager 則會以「nocarchivelog」模式建立複本。此參數資訊會複製到實體複本的「init.ora」檔案中。SnapManager
+
+
+
+* 範例 *
+
+下列範例顯示您在複製規格中使用的參數語法：+
+
+[listing]
+----
+<parameters>
+     <parameter>
+          <name>log_archive_dest</name>
+          <value>LOCATION=>/oracle/<TARGET SID>/oraarch</value>
+     </parameter>
+     <parameter>
+          <name>background_dump_dest</name>
+          <value>/oracle/<TARGET SID>/saptrace/background</value>
+     </parameter>
+     <parameter>
+          <name>core_dump_dest</name>
+          <value>/oracle/<TARGET SID>/saptrace/background</value>
+     </parameter>
+     <parameter>
+     <name>user_dump_dest</name>
+     <value>/oracle/<TARGET SID>/saptrace/usertrace</value>
+     </parameter>
+</parameters>
+----
+* 範例 *
+
+您可以使用參數元素內的預設元素來使用預設值。在下列範例中、因為已指定預設元素、所以「os_imization_prefix」參數會採用預設值：
+
+[listing]
+----
+<parameters>
+     <parameter>
+          <name>os_authent_prefix</name>
+          <default></default>
+     </parameter>
+</parameters>
+----
+* 範例 *
+
+您可以使用空白元素、將空白字串指定為參數的值。在下列範例中、「OS_imization_prefix」會設為空白字串：
+
+[listing]
+----
+<parameters>
+     <parameter>
+          <name>os_authent_prefix</name>
+          <value></value>
+     </parameter>
+</parameters>
+----
+
+NOTE: 您可以使用來源資料庫的「init.ora」檔案中的值做為參數、而不指定任何元素。
+
+* 範例 *
+
+如果參數有多個值、則可以提供以逗號分隔的參數值。例如、如果您想要將資料檔案從一個位置移到另一個位置、您可以使用「db_file_name_convert」參數、並指定以逗號分隔的資料檔案路徑、如下列範例所示：
+
+* 範例 *
+
+如果您想要將記錄檔從一個位置移到另一個位置、接下來您可以使用「log_file_name_convert」參數、並指定以逗號分隔的記錄檔路徑、如範例所示：
+
+. *選用：*指定在實體複本上線時對其執行的任意SQL陳述式。
++
+您可以使用SQL陳述式來執行工作、例如在複製的資料庫中重新建立「暫存檔案」。
+
++
+
+NOTE: 您必須確保SQL陳述式結尾沒有包含分號。
+
++
+以下是您在複製作業中執行的SQL陳述式範例：
+
++
+[listing]
+----
+<sql-statements>
+   <sql-statement>
+     ALTER TABLESPACE TEMP ADD
+     TEMPFILE '/mnt/path/clonename/temp_user01.dbf'
+     SIZE 41943040 REUSE AUTOEXTEND ON NEXT 655360
+     MAXSIZE 32767M
+   </sql-statement>
+</sql-statements>
+----
++
+* Clone規格範例*
+
++
+下列範例顯示複製規格結構、包括儲存設備和資料庫規格元件：
+
++
+[listing]
+----
+<clone-specification xmlns="http://www.example.com>
+
+   <storage-specification>
+     <storage-mapping>
+        <mountpoint>
+           <source>/oracle/<SOURCE SID>_sapdata</source>
+           <destination>/oracle/<TARGET SID>_sapdata</destination>
+        </mountpoint>
+        <raw-device>
+          <source>/dev/raw/raw1</source>
+          <destination auto-generate="true"/>
+        </raw-device>
+        <raw-device>
+          <source>/dev/raw/raw2</source>
+          <destination auto-generate="true"/>
+        </raw-device>
+     </storage-mapping>
+   </storage-specification>
+
+   <database-specification>
+     <controlfiles>
+        <file>/oracle/<TARGET SID>/origlogA/cntrl/cntrl<TARGET SID>.dbf</file>
+        <file>/oracle/<TARGET SID>/origlogB/cntrl/cntrl<TARGET SID>.dbf</file>
+        <file>/oracle/<TARGET SID>/sapdata1/cntrl/cntrl<TARGET SID>.dbf</file>
+       </controlfiles>
+
+       <redologs>
+        <redogroup>
+          <file>/oracle/<TARGET SID>/origlogA/log_g11m1.dbf</file>
+          <file>/oracle/<TARGET SID>/mirrlogA/log_g11m2.dbf</file>
+          <number>1</number>
+          <size unit="M">100</size>
+        </redogroup>
+        <redogroup>
+          <file>/oracle/<TARGET SID>/origlogB/log_g12m1.dbf</file>
+          <file>/oracle/<TARGET SID>/mirrlogB/log_g12m2.dbf</file>
+          <number>2</number>
+          <size unit="M">100</size>
+        </redogroup>
+        <redogroup>
+          <file>/oracle/<TARGET SID>/origlogA/log_g13m1.dbf</file>
+          <file>/oracle/<TARGET SID>/mirrlogA/log_g13m2.dbf</file>
+          <number>3</number>
+          <size unit="M">100</size>
+        </redogroup>
+        <redogroup>
+          <file>/oracle/<TARGET SID>/origlogB/log_g14m1.dbf</file>
+          <file>/oracle/<TARGET SID>/mirrlogB/log_g14m2.dbf</file>
+          <number>4</number>
+          <size unit="M">100</size>
+       </redogroup>
+       </redologs>
+
+    <parameters>
+      <parameter>
+          <name>log_archive_dest</name>
+          <value>LOCATION=>/oracle/<TARGET SID>/oraarch</value>
+     </parameter>
+     <parameter>
+          <name>background_dump_dest</name>
+          <value>/oracle/<TARGET SID>/saptrace/background</value>
+     </parameter>
+     <parameter>
+          <name>core_dump_dest</name>
+          <value>/oracle/<TARGET SID>/saptrace/background</value>
+     </parameter>
+     <parameter>
+     <name>user_dump_dest</name>
+     <value>/oracle/<TARGET SID>/saptrace/usertrace</value>
+     </parameter>
+
+    </parameters>
+   </database-specification>
+</clone-specification>
+----
++
+'''
+

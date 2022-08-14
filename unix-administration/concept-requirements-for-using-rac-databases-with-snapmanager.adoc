@@ -1,0 +1,22 @@
+---
+permalink: unix-administration/concept-requirements-for-using-rac-databases-with-snapmanager.html 
+sidebar: sidebar 
+keywords: recommendation, real, application, cluster, rac, database, snapmanager, number, password, authentication, mode, requirement 
+summary: '您必須瞭解使用Real Application Clusters(RAC)資料庫搭配SnapManager 使用的建議。建議包括連接埠號碼、密碼和驗證模式。' 
+---
+= 搭配SnapManager 使用RAC資料庫的需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須瞭解使用Real Application Clusters(RAC)資料庫搭配SnapManager 使用的建議。建議包括連接埠號碼、密碼和驗證模式。
+
+* 在資料庫驗證模式中、每個與RAC資料庫執行個體互動的節點上的接聽程式必須設定為使用相同的連接埠號碼。
++
+必須先啟動與主要資料庫執行個體互動的接聽程式、然後再開始備份。
+
+* 在作業系統驗證模式中、SnapManager 必須在RAC環境中的每個節點上安裝及執行支援服務器。
+* 對於RAC環境中的所有Oracle資料庫執行個體、資料庫使用者密碼（例如、系統管理員或具有Sysdba權限的使用者）必須相同。
+

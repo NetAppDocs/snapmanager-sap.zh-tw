@@ -1,0 +1,54 @@
+---
+permalink: unix-administration/task-use-snapmanager-for-oraclesnapmanager-for-sapto-restore-a-local-backup-on-primary-storage.html 
+sidebar: sidebar 
+keywords: restore, local, backup, exist, primary, storage, entire, process, perform, snapmanager, sap 
+summary: 您可以還原主要儲存設備上的本機備份。整個程序都是使用SnapManager 適用於SAP的功能來執行。 
+---
+= 使用適用於SAP的支援功能、在主要儲存設備上還原本機備份SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以還原主要儲存設備上的本機備份。整個程序都是使用SnapManager 適用於SAP的功能來執行。
+
+*關於此工作*
+
+您也可以預覽備份還原程序的相關資訊。您可能會想要查看備份還原資格的相關資訊。此功能可分析備份資料、判斷是否可以使用磁碟區型還原或檔案型還原方法來完成還原程序。SnapManager
+
+還原預覽會顯示下列資訊：
+
+* 將使用哪種還原機制（快速還原、儲存端檔案系統還原、儲存端檔案還原或主機端檔案複本還原）來還原每個檔案。
+* 為何不使用更有效率的機制來還原每個檔案。
+
+
+在還原計畫的預覽中SnapManager 、無法還原任何內容。預覽最多可顯示20個檔案的資訊。
+
+如果您想預覽資料檔案的還原、但資料庫並未掛載、SnapManager 則會掛載資料庫。如果無法掛載資料庫、則作業會失敗、SnapManager 且還原資料庫至其原始狀態。
+
+.步驟
+. 在*儲存庫*樹狀結構中、以滑鼠右鍵按一下您要還原的備份、然後選取*還原*。
+. 在「還原與還原精靈」歡迎頁面上、按一下「*下一步*」。
+. 在「*還原組態資訊*」頁面上、選取*完整的資料檔案/資料表空間使用控制檔還原*。
+. 按一下*必要時允許關閉資料庫*。
++
+若有必要、可變更資料庫狀態。SnapManager例如、如果資料庫離線且需要上線、SnapManager 則會迫使它上線。
+
+. 在「*恢復組態資訊*」頁面上、按一下「*所有記錄*」。
++
+將資料庫還原並恢復至上次交易、並套用所有必要的記錄。SnapManager
+
+. 在「*還原來源位置組態*」頁面上、檢視主要備份的相關資訊、然後按一下「*下一步*」。
++
+如果備份僅存在於主要儲存設備、SnapManager 則由主儲存設備還原備份。
+
+. 在「* Volume Restore Configuration Information *」（* Volume還原組態資訊*）頁面上、選取*「嘗試Volume還原*」以嘗試Volume還原方法。
+. 按一下*「還原至檔案型還原*」。
++
+如果SnapManager 無法使用Volume還原方法、則可讓支援使用檔案型還原方法。
+
+. 按一下「*預覽*」查看快速還原的資格檢查、以及強制檢查和可過度檢查的相關資訊。
+. 在「*執行作業*」頁面上、確認您輸入的資訊、然後按一下「*還原*」。
+. 若要檢視程序的詳細資料、請按一下*作業詳細資料*。
+

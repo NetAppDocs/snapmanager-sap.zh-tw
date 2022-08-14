@@ -1,0 +1,30 @@
+---
+permalink: windows/task-add-new-profile-to-summary-notification.html 
+sidebar: sidebar 
+keywords: configure, summary, email, notification, repository, database, profile, command, add 
+summary: 為儲存庫資料庫設定摘要電子郵件通知之後、您可以使用摘要通知命令、將新的設定檔新增至摘要通知。 
+---
+= 新增設定檔至摘要電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為儲存庫資料庫設定摘要電子郵件通知之後、您可以使用「摘要通知」命令、將新的設定檔新增至摘要通知。
+
+.步驟
+. 輸入下列命令：
++
+_smsap profile create -profile _profile_name_[-profile-password _profile_password_]-reposit儲存 庫-dbname _repo_service_name_-host _repo_host_-port _repo_port_-username_-database-dbname _dbdb_dbname_-host _db_host_host_host_sthourly文件[_ened_deed_dektAN _stock_stock_ened_deed_deed_deed_deed_deed_deed_deed_sthour_st_enam_sthour_station__stock_enyour_en_ened_deed_deed_deed_deed_deed_deed_deed_station_enam___[_sthour_ms_enam_enam_enam_station_enam_en -count _n_][-duration _m_][-每週數_n_][-duration _m_][-每月數_n_][-duration _m_]][-註釋_comment _][-snapname-Pattern_][][-摘要通知]*
+
++
+此命令的其他選項如下：
+
++
+[`-force（力量）]
+
++
+['quide'|'-verbose']
+
+

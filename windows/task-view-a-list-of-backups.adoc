@@ -1,0 +1,21 @@
+---
+permalink: windows/task-view-a-list-of-backups.html 
+sidebar: sidebar 
+keywords: check, backup, create, profile, state, smsap, backup, command, display, information, view, list 
+summary: 您可以使用smsap備份清單命令、檢查為設定檔建立的備份和備份狀態。對於每個設定檔、命令會先顯示最近一次備份的相關資訊、然後繼續顯示所有備份的資訊。 
+---
+= 檢視備份清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「msap備份清單」命令、檢查為設定檔建立的備份和備份狀態。對於每個設定檔、命令會先顯示最近一次備份的相關資訊、然後繼續顯示所有備份的資訊。
+
+.步驟
+. 輸入下列命令：
++
+「* smsap備份清單-profile _profile_name_（-分隔符號_字 元_）」[資料|-archivelogs]（-安靜|-詳細）*
+
+

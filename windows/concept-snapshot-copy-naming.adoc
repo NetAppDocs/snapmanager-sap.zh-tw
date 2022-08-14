@@ -1,0 +1,166 @@
+---
+permalink: windows/concept-snapshot-copy-naming.html 
+sidebar: sidebar 
+keywords: specify, convention, pattern, snapshot, copies, copy, create, update, custom, text, snapshot, name 
+summary: 您可以指定命名慣例或模式、以說明與您建立或更新的設定檔相關的Snapshot複本。您也可以在所有Snapshot複本名稱中加入自訂文字。 
+---
+= Snapshot複本命名
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以指定命名慣例或模式、以說明與您建立或更新的設定檔相關的Snapshot複本。您也可以在所有Snapshot複本名稱中加入自訂文字。
+
+您可以在建立設定檔或建立設定檔之後、變更Snapshot複本命名模式。更新的模式僅適用於尚未發生的Snapshot複本；現有的Snapshot複本會保留先前的snapname模式。
+
+以下範例顯示了針對某個磁碟區所使用的兩個Snapshot複本名稱。列出的第二個Snapshot複本名稱中間有_F_H_1_。「1」表示它是備份集中所取得的第一個Snapshot複本。列出的第一個Snapshot複本是最新的、並有「2」、表示這是第二個Snapshot複本。「1」Snapshot複本包含資料檔案、「2」Snapshot複本則包含控制檔。由於控制檔Snapshot複本必須在資料檔Snapshot複本之後取得、因此需要兩個Snapshot複本。
+
+[listing]
+----
+smsap_profile_sid_f_h_2_8ae482831ad14311011ad14328b80001_0
+smsap_profile_sid_f_h_1_8ae482831ad14311011ad14328b80001_0
+----
+預設模式包括必要的SMID、如下所示：
+
+* 預設模式：smsap_｛profile｝_｛db-sid｝_｛op加工 範圍｝_｛mode｝_｛SMID｝
+* 範例：smsap_my_profile_rac51_f_h_2_8abc01e915a55ac50115a55acc8d0001_0
+
+
+您可以在Snapshot複本名稱中使用下列變數：
+
+|===
+| 變數名稱 | 說明 | 範例值 
+
+
+ a| 
+SMID（必填）
+ a| 
+建立Snapshot複本的名稱時、唯一需要使用的元素就是這個獨特的ID。SnapManager此ID可確保您建立唯一的Snapshot名稱。
+ a| 
+8abc01e915a55ac50115a55acc8d0001_0
+
+
+
+ a| 
+類別（選用）
+ a| 
+與設定檔備份相關的保留類別、以每小時（h）、每日（d）、每週（w）、每月（m）或無限（u）表示。
+ a| 
+D
+
+
+
+ a| 
+意見（選用）
+ a| 
+與設定檔備份相關的註解。當Snapshot複本名稱完成時、此欄位中的空格將會轉換成底線。
+ a| 
+SAMPLE_Comment_space_replaced
+
+
+
+ a| 
+日期（選用）
+ a| 
+設定檔的備份日期。如有必要、日期值會以零填充。（月號：月號：Y-Y-Y-MMD）
+ a| 
+20070218
+
+
+
+ a| 
+DB-主機（選用）
+ a| 
+與正在建立或更新的設定檔相關聯的資料庫主機名稱。
+ a| 
+my_host
+
+
+
+ a| 
+DB-NAME（選用）
+ a| 
+與您建立的Snapshot複本相關聯的資料庫名稱。
+ a| 
+RAC2
+
+
+
+ a| 
+DB-SID（選用）
+ a| 
+與您建立的Snapshot複本相關聯的資料庫SID。
+ a| 
+機架51.
+
+
+
+ a| 
+標籤（選用）
+ a| 
+與設定檔備份相關的標籤。
+ a| 
+SAMPLE_LABEL
+
+
+
+ a| 
+模式（選用）
+ a| 
+指定備份是在線上（h）還是離線（c）完成。
+ a| 
+h
+
+
+
+ a| 
+設定檔（選用）
+ a| 
+與您建立的備份相關聯的設定檔名稱。
+ a| 
+my_profile
+
+
+
+ a| 
+範圍（選用）
+ a| 
+指定備份是完整備份（f）還是部分備份（p）。
+ a| 
+f
+
+
+
+ a| 
+時間（選用）
+ a| 
+設定檔的備份時間。此變數的時間值使用24小時制、必要時會以零填充。例如、5：32和8秒會顯示為053208（hhmmsss）。
+ a| 
+170530
+
+
+
+ a| 
+時區（選用）
+ a| 
+為目標資料庫主機指定的時區。
+ a| 
+估計
+
+
+
+ a| 
+使用者文字（選用）
+ a| 
+您可以輸入的自訂文字。
+ a| 
+產品
+
+|===
+[NOTE]
+====
+SAP版不支援Snapshot複本名稱的長格式中的分號（：）符號。SnapManager
+
+====

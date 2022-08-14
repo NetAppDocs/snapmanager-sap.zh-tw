@@ -1,0 +1,77 @@
+---
+permalink: windows/task-schedule-archive-log-file-pruning.html 
+sidebar: sidebar 
+keywords: create, backup, schedule, prune, archive, log, file 
+summary: 建立備份時、您可以排定在指定時間剪除保存記錄檔。 
+---
+= 排程保存檔記錄檔剪除
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立備份時、您可以排定在指定時間剪除保存記錄檔。
+
+
+
+== 關於這項工作
+
+利用此功能、您可以定期從作用中的檔案系統中剪除歸檔記錄檔。SnapManager
+
+.步驟
+. 輸入下列命令：
++
+「*smsap排程create -profile _profile_name_｛[-full｛-online |-offline |-auto｝[-hourly |-daynyour|-fleyly |-mestyourly |-monestyour]|[-data [-files/_files/[_files/hour-files/stay_]| offline備份資料表空間、每週數][、每週數不限的備份、每週數][_、每週數][_、每週數][、請檢查資料表空間數][_、每週數][、請按小時、請按小時、請按天、請按天、請按小時、請按天 _path1_[、[_path2_][-exclude目的地_path1_[,_path2_][-prunelogs｛-all |-untilsco _untilscn_|-在｛-tate _yd-mm-dd hh：mm:ss_|-m月_月_|-週_|-週_天_|-天_天__天__、_、_天_、_、_、_、_、_小時_、__、_、_、_、_、_、_、_、_ _prune_dest2_]-schedule-name _schedule_name_[-schedule-comment _schedule_comment _]-interval {-_hour__|-day__|__週_|__月_|__天時間_｝-cronstring_-start-time {_start_time_time__<<yd-mm-rid_use-styd'[
+
++
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+*排程保存記錄檔的剪除*
+ a| 
+指定下列選項：
+
+** 「剪除日誌」來排程剪除歸檔日誌檔
+** 從歸檔記錄目的地剪除歸檔記錄檔檔案的「prune-dest」
+
+
+
+
+ a| 
+*加入排程名稱*
+ a| 
+指定"-schedule-nam"選項。
+
+
+
+ a| 
+*排程在特定時間間隔內剪除歸檔記錄檔*
+ a| 
+指定時間間隔選項、並指出是否應根據下列時間間隔類別來剪除歸檔記錄檔：
+
+** 「每小時」
+** 《每日》
+** 每週一次
+** 每月一次
+** 僅限一次性
+
+
+
+
+ a| 
+*新增有關排程作業的留言*
+ a| 
+指定「-schedule-comment」選項、後面接著說明字串。
+
+
+
+ a| 
+*指定排程作業的開始時間*
+ a| 
+以yyyy-mm-dd hh：mm格式指定「-start-time」選項。
+
+|===
+

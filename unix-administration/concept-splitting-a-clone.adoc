@@ -1,0 +1,31 @@
+---
+permalink: unix-administration/concept-splitting-a-clone.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, split, manage, clone, exist, flexclone, technology, data, block, database 
+summary: 使用NetApp技術、您可以分割及管理使用FlexClone技術所建立的現有複本。SnapManager在FlexClone技術中、複製與原始資料庫共用相同的實體資料區塊。 
+---
+= 分割實體複本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用NetApp技術、您可以分割及管理使用FlexClone技術所建立的現有複本。SnapManager在FlexClone技術中、複製與原始資料庫共用相同的實體資料區塊。
+
+在執行複本分割作業之前、您可以知道要分割的複本估計大小、以及集合體上可用的必要空間。
+
+如果實體複製分割作業成功、則會產生新的設定檔SnapManager 。如果SnapManager 無法建立新的設定檔、您可以手動建立新的設定檔。您可以使用新的設定檔來建立資料庫備份、還原資料及建立複本。如果複本分割作業成功、無論是否建立新的設定檔、都會從儲存庫資料庫移除與複本相關的中繼資料。
+
+您可以執行下列與分割複本相關的工作：
+
+* 檢視實體複本分割預估。
+* 分割一線儲存設備上的實體複本。
+* 分割次要儲存設備上的實體複本。
+* 檢視實體複本分割作業狀態。
+* 停止實體複本分割作業。
+* 銷毀設定檔及基礎儲存設備。
+* 刪除為分割實體複本建立的設定檔。
+
+
+當您從父磁碟區分割複本時、會刪除與複製磁碟區相關聯的Snapshot複本。無法使用在複製分割程序之前為複製資料庫所建立的備份、因為這些備份的Snapshot複本已刪除、而且備份會保留為儲存庫中的過時項目。

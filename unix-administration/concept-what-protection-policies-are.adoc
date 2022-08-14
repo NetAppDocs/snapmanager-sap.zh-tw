@@ -1,0 +1,24 @@
+---
+permalink: unix-administration/concept-what-protection-policies-are.html 
+sidebar: sidebar 
+keywords: protection, policy, policies, govern, database, backup, profile 
+summary: 保護原則是規範資料庫備份保護方式的規則。您可以在建立設定檔時選取保護原則。 
+---
+= 什麼是保護原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+保護原則是規範資料庫備份保護方式的規則。您可以在建立設定檔時選取保護原則。
+
+保護原則定義下列參數：
+
+* 何時將複本傳輸至次要儲存設備
+* 應在排程時間傳輸的資料量上限
+* 每個備份位置保留複本的時間
+* 延遲時間的警告和錯誤臨界值
+
+
+啟用保護後SnapManager 、即可建立資料庫的資料集。資料集包含儲存集的集合、以及與其資料相關的組態資訊。與資料集相關的儲存集包括用於匯出資料至用戶端的主要儲存集、以及其他儲存集上的一組複本與歸檔。資料集代表可匯出的使用者資料。如果系統管理員停用資料庫保護、SnapManager 則將刪除資料集。

@@ -1,0 +1,228 @@
+---
+permalink: unix-administration/task-create-profiles.html 
+sidebar: sidebar 
+keywords: creating, create, profile, assign, oracle, database, account, retention, policy, protection, backup, duration, class 
+summary: 建立設定檔時、您可以將特定的Oracle資料庫使用者帳戶指派給設定檔。您可以設定設定檔的保留原則、使用此設定檔為所有備份啟用次要儲存設備的備份保護、以及設定每個保留類別的保留計數和持續時間。 
+---
+= 建立設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立設定檔時、您可以將特定的Oracle資料庫使用者帳戶指派給設定檔。您可以設定設定檔的保留原則、使用此設定檔為所有備份啟用次要儲存設備的備份保護、以及設定每個保留類別的保留計數和持續時間。
+
+*關於此工作*
+
+如果您未提供資料庫的「-login'、「-password」和「-port」參數值、作業系統（OS）驗證模式會使用預設認證。
+
+在建立設定檔時SnapManager 、執行還原資格檢查、以判斷可用來還原資料庫的還原機制。如果資料庫位於qtree上、且父Volume不符合快速或磁碟區型還原的資格、則分析可能是錯誤的。
+
+使用支援（3.2或更新版本）、您可以在建立新設定檔或更新現有設定檔的同時、將歸檔記錄檔與資料檔分開。SnapManager使用設定檔分隔備份之後、您可以只建立資料庫的純資料檔案備份、或僅建立資料庫的記錄檔備份。您可以使用新的設定檔或更新的設定檔來建立包含資料檔案和歸檔記錄檔的備份。不過、您無法使用設定檔來建立完整備份或還原設定。
+
+*用於建立完整和部分備份的設定檔*
+
+您可以建立設定檔、以建立完整的資料庫備份、其中包含資料檔案、控制檔、歸檔記錄檔、以及包含指定資料檔案或表格空間、所有控制檔及所有歸檔記錄檔的部分資料庫備份。不允許使用為完整和部分備份所建立的設定檔來建立個別的歸檔記錄備份。SnapManager
+
+*用於建立純資料檔案備份與僅歸檔程式備份的設定檔*
+
+當您建立新的設定檔時、可以加入「分離式歸檔儲存記錄備份」、將歸檔記錄備份與資料檔案備份區分開。您也可以更新現有的設定檔、將歸檔記錄備份與資料檔案備份分開。
+
+透過使用新的設定檔選項來分隔歸檔記錄備份、您可以執行下列SnapManager 功能：
+
+* 建立歸檔記錄備份
+* 刪除歸檔記錄備份
+* 掛載歸檔記錄備份
+* 釋放歸檔記錄備份
+
+
+建立設定檔以將歸檔記錄備份與資料檔案備份分開時、如果建立設定檔的資料庫中不存在歸檔記錄檔、則會顯示警告訊息。
+
+
+WARNING: 「歸檔的記錄檔不存在於作用中的檔案系統中。備份中不會包含<歸檔記錄執行緒版本>記錄檔之前的歸檔記錄檔版本
+
+即使您為此資料庫建立備份、歸檔記錄檔仍無法在資料庫備份中使用。
+
+
+NOTE: 如果在建立設定檔時遇到錯誤、請使用「shmsap system dump」命令。建立設定檔之後、如果發生錯誤、請使用「msap operation」dump和「shmsap profile dump」命令。
+
+. 若要建立使用者名稱、密碼和連接埠（Oracle驗證）的設定檔、請輸入下列命令：
++
+hour-profileprofile [-profile-password _profile_password_]-reposite-dbname _repo_dbname_-host _repo_host_-port _repo_port_-login-userName _repo_username_-database-dbname _dbdb_dbname -host _db_host_host_[-siddb_mindb_minstation_station_station_密碼_station_station_station_]-stepyour_pdn_step_step_step_pd_step_pdn [-password _station_主機密碼_station_主機_-station_-station_主機_密碼_station_-station_-密碼_station_-station_-station_-密碼_station_-station_-station_-stam_station_-station_-密碼_station_-密碼_station_-am_station_-station_-station___-am_station_ _m_][-denth [-count_n_][-dim_][-m_][每週[-count_n_][-dim_m_][每月[-count_address_][-dim_]]][-comment _comment _comment _][-snapname-Pattern_][-protection [-protection [-protection [-petime_email_policy_policy_note_note_note_notee_notee_notee_notee_notee_notee_notee_notee_notee_notee_notee_note]電子郵件[_電子郵件通知單電子郵件[_每月電子郵件通知單電子郵件_電子郵件 email_address2_-Subject _Subject _Pattern_]][-sisar-archivelog-take-ap日 保存備份-archivelog-take-hours _hidays _days |-mays _micle__|-micle_mos_月_[-protection [-protection -policy_name_][-include-one-online備份|不含轉儲]備份功能*、不含線上備份功能
+
++
+此命令的其他選項如下：
+
++
+「-force」[-noprompel]
+
++
+「-quiet | verbose]」
+
++
+
+NOTE: 對於Real Application Clusters（RAC）環境、在建立新設定檔時、您必須將「db_unity_name」參數的值提供為「_db_dbname_」。
+
++
+根據您要存取資料庫的方式、您也可以在建立設定檔時加入其他選項。
+
++
+|===
+| 如果... | 然後... 
+
+
+ a| 
+*您想要使用作業系統驗證來建立設定檔*
+ a| 
+指定DBA群組中作業系統帳戶的變數（通常是用來安裝Oracle的帳戶）。請指定下列項目、而非新增使用者名稱、密碼和連接埠：
+
+** 作業系統帳戶的名稱為-osAccount _account_name_'
+** 將-osgroup _osgroup作爲與操作系統帳戶關聯的組
+
+
+
+
+ a| 
+*您想要使用自動儲存管理（ASM）執行個體驗證來建立設定檔*
+ a| 
+指定ASM執行個體驗證的認證資料。
+
+** 「-asmusername _asminance_username_」是用來登入ASM執行個體的使用者名稱。
+** asmpassword _asminstance_password_是用於登入ASM執行個體的密碼。
+
+
+
+
+ a| 
+*您想要使用資料庫驗證來建立設定檔*
+ a| 
+指定資料庫登入詳細資料。如果密碼包含特殊字元、例如驚嘆號（！）、美元符號（$）或重音（`）、SnapManager 則無法從命令列介面（CLI）建立資料庫驗證設定檔。
+
+
+
+ a| 
+*您使用目錄做為Oracle Recovery Manager（RMAN）儲存庫*
+ a| 
+指定下列選項和變數：
+
+** tnssnames.ora檔案中定義的tnssname。
+** 以「-login-username_usernam__」作為連線至RMAN目錄所需的使用者名稱。
++
+如果未指定、SnapManager 則使用作業系統驗證資訊。您無法將作業系統驗證用於RAC資料庫。
+
+** 密碼_password_'是連線至RMAN目錄所需的RMAN密碼。
+
+
+
+
+ a| 
+*您使用控制檔做為RMAN儲存庫*
+ a| 
+指定「-controlfile'」選項。
+
+
+
+ a| 
+*您想要指定備份保留原則*
+ a| 
+指定保留類別的保留計數或持續時間、或兩者。持續時間以課程單位為單位（例如小時、日）。
+
+** 「每小時」是指每小時保留課程、其「記錄次數_n_」（-duration _m__）分別是保留次數和保留期間。
+** 「每日」是每日保留類別、其「記錄次數_n_」、「持續時間_m__」分別是保留數和保留時間。
+** 「每週」是每週保留類別、而「-count_n_]」的「-duration _m__」則分別是保留數和保留期間。
+** 「每月」是每月保留類別、其「記錄次數_n_」（-duration _m_]）分別為保留數和保留期間。
+
+
+
+
+ a| 
+*您想要啟用設定檔的備份保護*
+ a| 
+指定下列選項和變數：
+
+** 「-protection」可提供備份保護。
++
+如果您使用Data ONTAP 7-Mode執行的功能、此選項會在Data Fabric Manager（DFM）伺服器中建立應用程式資料集、並新增與資料庫、資料檔案、控制檔和歸檔記錄相關的成員。如果資料集已存在、則建立設定檔時、會重複使用相同的資料集。
+
+** 您可以使用保護原則_policy_'來指定保護原則。
++
+如果您使用Data ONTAP 的是以7-Mode運作的功能、SnapManager 而使用的是與Protection Manager整合的功能、則必須指定其中一個Protection Manager原則。
+
++
+
+NOTE: 若要列出可能的保護原則、請使用smsap「protection -policy list」命令。
+
++
+如果您使用叢集Data ONTAP 式的功能、則必須選取_SnapManager®cDOT_Mirror_或_SnapManager®cDOT_Vault_。
+
++
+
+NOTE: 設定檔建立作業在下列案例中失敗：
+
++
+*** 如果您使用叢集Data ONTAP 式的不實功能、請選取Protection Manager原則
+*** 如果您使用Data ONTAP 的是以7-Mode運作的功能、但選取_SnapManager®cDOT_Mirror_或_SnapManager®cDOT_Vault_原則
+*** 如果您已建立SnapMirror關係、但選擇了_SnapManager®cDOT_Vault_原則、或是建立SnapVault 了一些不確定的關係、但選擇了_SnapManager®cDOT_Mirror_原則
+*** 如果您尚未建立SnapMirror或SnapVault S動系 關係、但選擇了_SnapManager®cDOT_Vault_或_SnapManager®cDOT_Mirror_原則
+
+
+** nosProtect表示不保護使用設定檔建立的資料庫備份。
+
+
+
+NOTE: 如果在沒有「保護原則」的情況下指定「保護」、資料集就不會有保護原則。如果在建立設定檔時指定了「-protect'（保護）」且未設定「-protection-policy（保護原則）」、則稍後可透過「msap profile update（安全設定檔更新）」命令加以設定、或是由儲存管理員使用Protection Manager主控台加以設定。
+
+
+
+ a| 
+*您想要啟用資料庫作業完成狀態的電子郵件通知*
+ a| 
+指定下列選項和變數：
+
+** 「摘要通知」可讓您針對儲存庫資料庫下的多個設定檔設定摘要電子郵件通知。
+** 「通知」可讓您收到電子郵件通知、告知設定檔資料庫作業的完成狀態。
+** 您可以使用新的或現有的設定檔、接收關於成功執行資料庫作業的電子郵件通知。
+** 您可以使用新的或現有的設定檔、接收有關資料庫作業失敗的電子郵件通知。
+** 主題_Subject _text_'指定建立新設定檔或現有設定檔時、電子郵件通知的主旨文字。如果通知設定未針對儲存庫進行設定、而您嘗試使用CLI設定設定設定檔或摘要通知、則主控台記錄中會記錄下列訊息：「MSAP-1477: Notification Settings Not Configure（通知設定未設定）」
++
+如果您已設定通知設定、並嘗試使用CLI設定摘要通知、但未啟用儲存庫的摘要通知、則主控台記錄中會顯示下列訊息：「MSAP-14775：摘要通知組態無法用於此儲存庫」
+
+
+
+
+
+ a| 
+*您想要將歸檔記錄檔與資料檔分開備份*
+ a| 
+指定下列選項和變數：
+
+** 「分隔的archivelog-Backup」可讓您將歸檔記錄備份與資料檔案備份分開。
+** 「-ret-archivelog-Backups」可設定歸檔記錄備份的保留時間。您必須指定正的保留期間。
++
+歸檔記錄備份會根據歸檔記錄保留期間而保留。資料檔案備份會根據現有的保留原則來保留。
+
+** 「-protection」可保護歸檔記錄備份。
+** 保護原則將保護原則設定為歸檔記錄備份。
++
+歸檔記錄備份會根據歸檔記錄保護原則加以保護。資料檔案備份會根據現有的保護原則加以保護。
+
+** 「包括線上備份」包括歸檔記錄備份、以及線上資料庫備份。
++
+此選項可讓您一起建立線上資料檔案備份與歸檔記錄備份、以便進行複製。設定此選項時、每當您建立線上資料檔案備份時、都會立即建立歸檔記錄備份及資料檔案。
+
+** 「不含線上備份」不包括歸檔記錄備份與資料庫備份。
+
+
+
+
+ a| 
+*您可以在設定檔成功建立作業之後收集傾印檔*
+ a| 
+在「profile create」命令結尾處指定-dump選項。
+
+|===
++
+當您建立設定檔時SnapManager 、如果您稍後想要對設定檔中指定的檔案執行磁碟區型還原作業、則此功能會分析這些檔案。
+
+

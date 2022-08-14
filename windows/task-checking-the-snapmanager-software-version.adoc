@@ -1,0 +1,21 @@
+---
+permalink: windows/task-checking-the-snapmanager-software-version.html 
+sidebar: sidebar 
+keywords: version, product, run, local, host, command, check, snapmanager, software 
+summary: 您可以執行version命令、判斷您在本機主機上執行的產品版本。 
+---
+= 正在檢查SnapManager 更新的版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行version命令、判斷您在本機主機上執行的產品版本。
+
+. 若要檢查SnapManager 此版本、請輸入以下命令：「msap version」
+
+
+*相關資訊*
+
+xref:reference-the-smosmsapversion-command.adoc[smsap version命令]

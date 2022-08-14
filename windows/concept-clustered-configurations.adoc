@@ -1,0 +1,18 @@
+---
+permalink: windows/concept-clustered-configurations.html 
+sidebar: sidebar 
+keywords: snapmanager, operate, cluster, configuration 
+summary: 可在叢集組態中運作。SnapManager 
+---
+= 叢集式組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+可在叢集組態中運作。SnapManager
+
+支援的主機叢集和組態與支援的不相同、而不支援使用此功能的產品和主機公用程式套件。SnapManager SnapDrive
+
+此外、支援非叢集式組態、其中單一主機連接至單一儲存系統、支援的主機叢集、以及執行故障恢復功能的儲存系統。SnapManager Data ONTAP

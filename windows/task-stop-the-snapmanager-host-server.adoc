@@ -1,0 +1,21 @@
+---
+permalink: windows/task-stop-the-snapmanager-host-server.html 
+sidebar: sidebar 
+keywords: finish, snapmanager, stop, server, host 
+summary: 使用SnapManager 完這個功能後、您可能會想要停止伺服器。 
+---
+= 停止SnapManager 支援服務器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用SnapManager 完這個功能後、您可能會想要停止伺服器。
+
+.步驟
+. 若要停止伺服器、請以root使用者身分輸入下列命令：
++
+‘* smsap_server ststop *’
+
+

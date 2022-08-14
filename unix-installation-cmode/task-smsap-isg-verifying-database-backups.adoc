@@ -1,0 +1,42 @@
+---
+permalink: unix-installation-cmode/task-smsap-isg-verify-database-backups.html 
+sidebar: sidebar 
+keywords: verify, backup, database, ensure, backed-up, file, corrupt 
+summary: 您可以驗證資料庫的備份、以確保備份的檔案不會毀損。 
+---
+= 驗證資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以驗證資料庫的備份、以確保備份的檔案不會毀損。
+
+
+
+== 關於這項工作
+
+如果您在建立備份時未選取「*使用Oracle DBVERIFY公用程式驗證備份」核取方塊、則必須手動執行這些步驟來驗證備份。不過、如果您選取此核取方塊、SnapManager 則會自動驗證備份。
+
+.步驟
+. 從*儲存庫*樹狀結構中、選取設定檔。
+. 在您要驗證的備份上按一下滑鼠右鍵、然後選取*驗證*。
+. 單擊*完成*。
++
+如果作業失敗、請按一下*作業詳細資料*以檢視導致作業失敗的原因。
+
++
+在*儲存庫*樹狀結構中、以滑鼠右鍵按一下備份、然後按一下*內容*以檢視驗證作業的結果。
+
+
+
+
+
+== 完成後
+
+您可以使用備份檔案來執行還原作業。如需如何使用SnapManager 支援功能的使用者介面（UI）執行還原作業的相關資訊、請參閱「線上說明」。如果您想使用命令列介面（CLI）執行還原作業、請參閱SnapManager UNIX適用的_Es4 for SAP Administration指南。
+
+*相關資訊*
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP12481453["適用於UNIX的SAP系統管理指南SnapManager"^]

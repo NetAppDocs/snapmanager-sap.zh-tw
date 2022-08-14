@@ -1,0 +1,14 @@
+---
+permalink: unix-administration/task-database-restore-from-backup.html 
+sidebar: sidebar 
+keywords: active, content, payroll, database, accidentally, lost, destroy, snapmanager, netapp, management, console, data, protection, capability, support, restoration, local, backup, secondary, storage 
+summary: 如果薪資資料庫的主動式內容意外遺失或毀損、SnapManager 則支援從本機備份或二線儲存設備還原資料、而NetApp管理主控台的資料保護功能則支援還原該資料。 
+---
+= 從備份還原資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果薪資資料庫的主動式內容意外遺失或毀損、SnapManager 則支援從本機備份或二線儲存設備還原資料、而NetApp管理主控台的資料保護功能則支援還原該資料。

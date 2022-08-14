@@ -1,0 +1,14 @@
+---
+permalink: unix-installation-cmode/task-smsap-isg-configure-databases.html 
+sidebar: sidebar 
+keywords: configure, database, target, back, up, snapmanager, repository, store, metadata, online, operation 
+summary: 您必須至少設定兩個資料庫：一個目標資料庫、您要使用SnapManager 還原進行備份；另一個儲存庫資料庫、以儲存目標資料庫中繼資料。在SnapManager 執行SnapManager 還原作業之前、必須先設定目標資料庫和還原儲存庫資料庫、並將其上線。 
+---
+= 設定資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須至少設定兩個資料庫：一個目標資料庫、您要使用SnapManager 還原進行備份；另一個儲存庫資料庫、以儲存目標資料庫中繼資料。在SnapManager 執行SnapManager 還原作業之前、必須先設定目標資料庫和還原儲存庫資料庫、並將其上線。

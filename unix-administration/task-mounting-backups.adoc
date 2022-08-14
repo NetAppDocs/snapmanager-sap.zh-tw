@@ -1,0 +1,37 @@
+---
+permalink: unix-administration/task-mount-backups.html 
+sidebar: sidebar 
+keywords: snapmanager, automatic, handle, mount, backup, available, host, scenario, external, tool, oracle, recovery, manager, rman, access, file 
+summary: 自動處理備份的安裝、以便主機使用。SnapManager您也可以在使用外部工具（例如Oracle Recovery Manager（RMAN））存取備份檔案的情況下、掛載備份。 
+---
+= 掛載備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+自動處理備份的安裝、以便主機使用。SnapManager您也可以在使用外部工具（例如Oracle Recovery Manager（RMAN））存取備份檔案的情況下、掛載備份。
+
+*關於此工作*
+
+「msap備份掛載」命令會顯示已掛載Snapshot複本（包含備份）的路徑清單。
+
+您可以使用「來源-次要」選項從次要儲存設備掛載備份。如果您不使用此選項、SnapManager 則由主儲存設備安裝此備份。
+
+只要指定「來源-次要」選項、就必須指定「-copy -id」選項。如果二線儲存系統上有多個備份、則可使用「-copy -id」選項來指定次要儲存設備上的備份複本、以用於掛載備份。6.
+
+
+NOTE: 如果您使用Data ONTAP 的是7-Mode的支援功能、則必須為「-copy -id」選項指定有效值。但是、如果您使用叢集Data ONTAP 式的功能、則不需要「-copy -id」選項。
+
+如果您要將資料庫備份掛載到遠端主機、則必須確保兩個主機上的自動儲存管理（ASM）認證資訊相同。
+
+
+NOTE: 您可以選擇在備份掛載作業成功或失敗之後收集傾印檔案。
+
+.步驟
+. 若要掛載備份、請輸入下列命令：
++
+「* smsap備份掛載-profile _profile_name label_[data |-archivelogs]|-id _id_｝[-host __ host_][-fer-secondary [-copy -id _id_]][-dump][-quid|-verbose]*
+
+

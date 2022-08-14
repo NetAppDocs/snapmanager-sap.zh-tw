@@ -1,0 +1,39 @@
+---
+permalink: windows/task-post-rollback-tasks.html 
+sidebar: sidebar 
+keywords: perform, additional, step, rollback, repository, database, downgrade, snapmanager, host, schedule, create, version, post, task 
+summary: 您必須在復原儲存庫資料庫後執行一些額外步驟、並將SnapManager 該系統從SnapManager 還原3.2降級至SnapManager 還原3.0、才能檢視在舊版儲存庫資料庫中建立的排程。 
+---
+= 復原後工作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在復原儲存庫資料庫後執行一些額外步驟、並將SnapManager 該系統從SnapManager 還原3.2降級至SnapManager 還原3.0、才能檢視在舊版儲存庫資料庫中建立的排程。
+
+.步驟
+. 瀏覽至「C:\Program Files\NetApp\SnapManager for Oracle\儲存 庫」。
++
+「儲存庫」目錄可能包含每個儲存庫的兩個檔案。檔案名稱中有數字符號（#）是使用SnapManager 支援更新版本的版本來建立、檔案名稱中有連字號（-）則是使用SnapManager 支援更新版本的版本來建立。
+
++
+* 範例 *
+
++
+檔案名稱可能如下：
+
++
+** 「保存#SMSAP300a#SMSAPREPO1#10.72.197.141#1521」
+** 《儲存空間300A-saprepo1-10.72.197.141-1521》
+
+
+. 以連字號（-）取代檔案名稱中的數字符號（#）。
++
+* 範例 *
+
++
+檔案名稱中有數字符號（#）、現在包含連字號（-）：「儲存庫SMSAP300A-SMSAPREPO1-10.72.197.141-1521」
+
+

@@ -1,0 +1,31 @@
+---
+permalink: unix-installation-cmode/task-create-an-oracle-user-for-the-target-database.html 
+sidebar: sidebar 
+keywords: oracle, database, user, require, log, in, perform, snapmanager, operation, sysdba, privilege, exist, target, create 
+summary: Oracle資料庫使用者必須登入資料庫並執行SnapManager 還原作業。如果目標資料庫不存在具有Sysdba權限的使用者、您必須以Sysdba權限建立此使用者。 
+---
+= 為目標資料庫建立Oracle資料庫使用者
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Oracle資料庫使用者必須登入資料庫並執行SnapManager 還原作業。如果目標資料庫不存在具有_Sysdbba_權限的使用者、您必須使用_Sysdbba_權限來建立此使用者。
+
+
+
+== 關於這項工作
+
+任何具有目標資料庫所擁有的_Sysdbba_權限的Oracle使用者、都可以使用。SnapManager例如SnapManager 、無法使用預設的_sys_使用者。不過、即使使用者存在、您仍可為目標資料庫建立新的使用者、並指派_sysdb__權限。
+
+您也可以使用作業系統驗證方法、讓Oracle資料庫使用作業系統維護的認證資料來驗證使用者登入資料庫並執行SnapManager 還原作業。如果您已通過作業系統驗證、則無需指定使用者名稱或密碼即可連線至Oracle資料庫。
+
+.步驟
+. 登入SQL * Plus：「qlplus '/ as Sysdba'」
+. 使用管理員密碼建立新使用者：「*建立由admin_password識別的useruser_name；*」
++
+「user_name」是您建立的使用者名稱、「admin_password」是您要指派給使用者的密碼。
+
+. 將Sysdba權限指派給新的Oracle使用者：「*將Sysdba授予user_name；*」
+

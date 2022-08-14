@@ -1,0 +1,20 @@
+---
+permalink: windows/task-change-the-backup-retention-policy.html 
+sidebar: sidebar 
+keywords: change, property, properties, eligible, ineligible, deletion, retention, policy, change, backup 
+summary: 您可以變更備份內容、使其符合或不符合根據保留原則刪除的資格。 
+---
+= 變更備份保留原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以變更備份內容、使其符合或不符合根據保留原則刪除的資格。
+
+
+
+== 關於這項工作
+
+建立備份時、您可以設定其保留原則。您可以稍後選擇將該備份保留超過保留原則允許的時間、或指定不再需要備份、並希望保留原則加以管理。

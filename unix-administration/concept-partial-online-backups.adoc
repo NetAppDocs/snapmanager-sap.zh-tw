@@ -1,0 +1,34 @@
+---
+permalink: unix-administration/concept-partial-online-backups.html 
+sidebar: sidebar 
+keywords: full, backup, perform, partial, backup, tablespace, database, snapmanager, online 
+summary: 您可以選擇在資料庫中執行部分資料表空間備份、而非完整備份。雖然使用Snapshot Snapshot複本進行磁碟區完整備份、但用每個指定的資料表空間進行Snapshot複本、以進行部分備份。SnapManager SnapManager 
+---
+= 部分線上備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以選擇在資料庫中執行部分資料表空間備份、而非完整備份。雖然執行Snapshot Volume複本以進行_Full_備份、但針對每個指定的資料表空間、執行Snapshot複本以進行_partial _備份。SnapManager SnapManager
+
+由於資料表空間層級是Oracle允許進入備份模式的最低層級、SnapManager 所以即使您在資料表空間中指定資料檔案、也會在資料表空間層級處理備份。
+
+在部分備份的情況下、每個資料表空間都會以備份模式存在、相較於完整備份、時間會縮短。在線上備份期間、資料庫永遠可供使用者使用；不過、資料庫必須執行更多工作、而且主機必須執行更多實體I/O此外、SnapManager 由於它會針對每個指定的表格空間或包含指定資料檔案的每個表格空間（而非整個Volume）建立Snapshot複本、因此會產生更多Snapshot複本。
+
+利用Snapshot複本取得特定表格空間或資料檔案。SnapManager部分備份演算法是SnapManager 一個循環、可重複執行直到取得每個指定表格空間或資料檔案的Snapshot複本為止。
+
+
+NOTE: 雖然您可以執行部分備份、但建議您一律對整個資料庫執行完整備份。
+
+在部分備份期間SnapManager 、執行下列動作：
+
+. 將包含資料檔案的資料表空間置於備份模式。
+. 對表空間使用的所有磁碟區進行Snapshot複本。
+. 使表空間退出備份模式。
+. 繼續此程序、直到取得所有表格空間或檔案的Snapshot複本為止。
+. 強制切換記錄檔、然後歸檔記錄檔。
+. 產生備份控制檔。
+. 取得記錄檔和備份控制檔的Snapshot複本。
+

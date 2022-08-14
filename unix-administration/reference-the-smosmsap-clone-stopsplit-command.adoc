@@ -1,0 +1,56 @@
+---
+permalink: unix-administration/reference-the-smosmsap-clone-stopsplit-command.html 
+sidebar: sidebar 
+keywords: command, stop, run, clone, split, process, split-stop, smsap 
+summary: 此命令會停止執行中的實體複本分割程序。 
+---
+= smsap clone分割停止命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會停止執行中的實體複本分割程序。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap clone split-stop
+-profile _profile_
+[-host _hostname_\]
+[-label _split-label_ | -id _split-id_\]
+[-quiet | -verbose\]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile _*」
++
+指定實體複本的設定檔名稱。
+
+* 「*主機名稱_*」
++
+指定複本所在的主機名稱。
+
+* 標籤_s拆 分標籤_*
++
+指定由複製程序產生的標籤名稱。
+
+* 「*」-id _s拆 分id_*
++
+指定由複製程序產生的唯一ID。
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+

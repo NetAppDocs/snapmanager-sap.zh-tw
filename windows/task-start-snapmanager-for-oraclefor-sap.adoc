@@ -1,0 +1,24 @@
+---
+permalink: windows/task-start-snapmanager-for-oraclefor-sap.html 
+sidebar: sidebar 
+keywords: snapmanager, startup, section, task, perform, start, sap 
+summary: 「功能啟動」區段會列出您在啟動時執行的工作。SnapManager SnapManager如果您只是想瞭SnapManager 解有關資訊、也可以使用本節。 
+---
+= SAP SnapManager 入門
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+「功能啟動」區段會列出您在啟動時執行的工作。SnapManager SnapManager如果您只是想瞭SnapManager 解有關資訊、也可以使用本節。
+
+
+
+== 您的需求
+
+在使用SnapManager 此功能之前、您應該先執行下列動作：
+
+* 已下載並安裝SnapManager 此功能。
+* 已確定是使用圖形用戶界面還是命令行界面。
+

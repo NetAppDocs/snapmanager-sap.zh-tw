@@ -1,0 +1,70 @@
+---
+permalink: unix-administration/concept-general-layout-and-configuration.html 
+sidebar: sidebar 
+keywords: recommend, general, database, layout, storage, configuration, help, avoid, issue, relate, disk, group, file, type, tablespace 
+summary: 瞭解建議的一般資料庫配置和儲存組態、有助於避免與磁碟群組、檔案類型和表格空間有關的問題。 
+---
+= 建議的一般資料庫配置和儲存組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解建議的一般資料庫配置和儲存組態、有助於避免與磁碟群組、檔案類型和表格空間有關的問題。
+
+* 請勿在資料庫中包含來自多種SAN檔案系統或Volume Manager的檔案。
++
+組成資料庫的所有檔案都必須位於相同類型的檔案系統上。
+
+* 需要多個4K區塊大小。SnapManager
+* 在「oratab」檔案中加入資料庫系統識別碼。
++
+在要管理的每個資料庫的「oratab」檔案中加入一個項目。支援使用「oratab」檔案來判斷要使用哪個Oracle主目錄。SnapManager
+
+
+
+如果您想要使用新的磁碟區型還原或完整磁碟群組還原、請考慮下列與檔案系統和磁碟群組相關的準則：
+
+* 包含資料檔案的磁碟群組不能包含其他類型的檔案。
+* 資料檔案磁碟群組的邏輯單元編號（LUN）必須是儲存磁碟區中唯一的物件。
+
+
+以下是一些Volume區隔準則：
+
+* 磁碟區中只能有一個資料庫的資料檔案。
+* 您必須針對下列每個檔案分類使用不同的磁碟區：資料庫二進位檔、資料檔案、線上重作記錄檔、歸檔的重作記錄檔和控制檔。
+* 您不需要為暫用資料庫檔案建立個別的Volume、因為SnapManager 無法備份暫用資料庫檔案。
+
+
+SAP使用標準配置來安裝Oracle資料庫。在此配置中、SAP會將Oracle控制檔的複本放在「E：\oracle\SID\origlogA、E：\oracle\SID\origlogB」和「E：\oracle\SID\sapdata1檔案系統」中。
+
+sapdata1檔案系統中的控制檔與SnapManager 將控制檔和資料檔分成不同磁碟區的需求不一致、因此必須加以調整、才能提供快速還原功能。
+
+
+NOTE: 由於BR*工具備份包含Oracle安裝的DBS子目錄中的Oracle和SAP設定檔、因此Oracle安裝必須位於儲存設備上。
+
+在新安裝的情況下、您可以使用SAINST修改控制檔的位置、並將通常放置在sapdata1檔案系統中的控制檔移至與資料檔不在同一個磁碟區內的檔案系統。（SAINST是SAP提供的安裝SAP系統工具。）
+
+不過、如果系統已經安裝、您必須從檔案系統中移動控制檔、才能使用SnapManager 還原功能快速還原。您可以在不含資料檔案的磁碟區中建立新的檔案系統、將控制檔移至該檔案系統、然後建立符號連結、從先前的檔案系統移至新檔案系統的目錄。移動控制檔時、必須停止SAP和Oracle資料庫、以避免資料庫錯誤。
+
+在進行任何修改之前、包含控制檔的sapdata1目錄中的檔案清單可能如下所示：
+
+[listing]
+----
+hostname:/
+#  ls -l /oracle/SID/sapdata1/cntrl
+-rw-r----- 1 orasid  dba  9388032 Jun 19 01:51 cntrlSID.dbf
+----
+修改後、清單可能如下所示：
+
+[listing]
+----
+hostname:/
+# ls -sl /oracle/SID/sapdata1
+0 lrwxrwxrwx 1 root root 19 2008-08-06 14:55 cntrl -> /oracle/SID/control
+0 -rw-r--r-- 1 root root 0 2008-08-06 14:57 data01.dbf
+
+# ls -sl /oracle/SID/control
+0 -rw-r--r-- 1 root root 0 2008-08-06 14:56 cntrlSID.dbf
+----

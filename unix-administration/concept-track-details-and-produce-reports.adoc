@@ -1,0 +1,16 @@
+---
+permalink: unix-administration/concept-track-details-and-produce-reports.html 
+sidebar: sidebar 
+keywords: snapmanager, reduce, level, database, administrator, interface 
+summary: 利用單一介面監控作業的方法、可降低資料庫管理員追蹤不同作業狀態所需的詳細程度。SnapManager 
+---
+= 追蹤詳細資料並產生報告
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用單一介面監控作業的方法、可降低資料庫管理員追蹤不同作業狀態所需的詳細程度。SnapManager
+
+系統管理員指定要備份哪些資料庫之後SnapManager 、即可自動識別資料庫檔案以進行備份。顯示儲存庫、主機、設定檔、備份和複製的相關資訊。SnapManager您可以監控特定主機或資料庫上的作業。您也可以識別受保護的備份、並判斷備份是否正在進行或排定要進行。

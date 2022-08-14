@@ -1,0 +1,67 @@
+---
+permalink: unix-administration/concept-snapmanager-security.html 
+sidebar: sidebar 
+keywords: snapmanager, operation, credential, security, authentication, role-based, access, control, rbac, lun, data, file, database 
+summary: 只有具備適當的認證資料、才能執行SnapManager 不必要的作業。使用者驗證和角色型存取控制（RBAC）來管理功能的安全性。SnapManagerRBAC可讓資料庫管理員針對SnapManager 資料庫中儲存資料檔案的磁碟區和LUN、限制可執行的作業。 
+---
+= 如何維護安全性SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+只有具備適當的認證資料、才能執行SnapManager 不必要的作業。使用者驗證和角色型存取控制（RBAC）來管理功能的安全性。SnapManagerRBAC可讓資料庫管理員針對SnapManager 資料庫中儲存資料檔案的磁碟區和LUN、限制可執行的作業。
+
+資料庫管理員SnapManager 使用SnapDrive 支援功能以啟用RBAC來進行支援。然後、資料庫管理員將權限指派給SnapManager 角色、並在Operations Manager圖形化使用者介面（GUI）或命令列介面（CLI）中將這些角色指派給使用者。在DataFabric Manager伺服器中執行RBAC權限檢查。
+
+除了角色型存取之外、SnapManager 透過密碼提示或設定使用者認證來要求使用者驗證、藉此維持安全性。有效的使用者將透過SnapManager 驗證伺服器進行驗證和授權。
+
+支援的認證資料與使用者驗證與支援的支援功能有很大差異：SnapManager SnapManager
+
+* 在3.0之前的版本中、您可以在安裝時設定任意伺服器密碼。SnapManager SnapManager任何想要使用SnapManager 此伺服器的人、都需要SnapManager 使用此伺服器密碼。需要使用「shmsap認證集-host'命令、將該伺服器密碼新增至使用者認證資料。SnapManager
+* 在3.0版及更新版本中SnapManager 、由個別使用者作業系統（OS）驗證取代的是支援伺服SnapManager 器的密碼。如果您不是從主機所在的伺服器執行用戶端、SnapManager 則支援使用您的作業系統使用者名稱和密碼來執行驗證。如果您不想收到OS密碼的提示、可以SnapManager 使用「msap認證集-host'命令、將資料儲存到您的支援中心認證快取。
++
+
+NOTE: 當smsap.config檔案中的「host.ecenture.stist」屬性設定為「* true*」時、「smsap認證集-host」命令會記住您的認證資料。
+
+
+
+* 範例 *
+
+使用者1和使用者2共用一個稱為Prof2的設定檔。使用者2在沒有存取主機1權限的情況下、無法在主機1中執行Database1的備份。使用者1在沒有存取Host3權限的情況下、無法將資料庫複製到主機3。
+
+下表說明指派給使用者的不同權限：
+
+[cols="2a,1a,1a"]
+|===
+| 權限類型 | 使用者1. | 使用者2. 
+
+
+ a| 
+主機密碼
+ a| 
+主機1、主機2
+ a| 
+主機2、主機3
+
+
+
+ a| 
+儲存庫密碼
+ a| 
+Repo1
+ a| 
+Repo1
+
+
+
+ a| 
+設定檔密碼
+ a| 
+Prof1、Prof2
+ a| 
+專業人員2.
+
+|===
+如果使用者1和使用者2沒有任何共用設定檔、則假設使用者1擁有主機1和主機2的權限、而使用者2擁有主機2的權限。使用者2甚至無法在主機1上執行非設定檔命令、例如dump和「系統驗證」。

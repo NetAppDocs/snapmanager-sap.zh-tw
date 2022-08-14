@@ -1,0 +1,60 @@
+---
+permalink: windows/task-modifying-the-backup-retention-class.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, snapmanager, default, backup, retention, class, exist, modify 
+summary: 升級之後SnapManager 、將預設的備份保留類別指派給現有的備份。您可以修改預設的保留類別值、以符合備份需求。 
+---
+= 修改備份保留類別
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+升級之後SnapManager 、將預設的備份保留類別指派給現有的備份。您可以修改預設的保留類別值、以符合備份需求。
+
+指派給現有備份的預設備份保留類別如下：
+
+|===
+| 備份類型 | 升級後指派保留類別 
+
+
+ a| 
+備份將永遠保留
+ a| 
+無限
+
+
+
+ a| 
+其他備份
+ a| 
+每日
+
+|===
+*附註：*您可以刪除永久保留的備份、而無需變更保留類別。
+
+如果您升級SnapManager 至支援版3.0或更新版本、下列兩個值中的較大值會指派給現有的設定檔：
+
+* 設定檔先前的保留計數
+* smsap.config檔案中指定的保留計數和每日備份持續時間預設值
++
+.. 在smsap.config檔案中修改指派為state.Hour.count和state.Hour.duration的值。
++
+smsap.config檔案位於預設安裝位置/內容/smsap.config。
+
++
+您可以輸入下列值：
+
++
+*** 保有。hourly。count= 12
+*** 保有。每小時。持續時間= 2
+
+
+
+
+
+
+*相關資訊*
+
+xref:reference-snapmanager-configuration-parameters.adoc[組態參數SnapManager]

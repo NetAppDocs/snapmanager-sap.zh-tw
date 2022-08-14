@@ -1,0 +1,106 @@
+---
+permalink: unix-administration/task-store-the-task-scripts.html 
+sidebar: sidebar 
+keywords: store, pretask, post-task, policy, task, script, backup, clone, create, restore, operation, directory, target, server, storing 
+summary: 您必須將pretask、task-task和原則工作指令碼儲存在目標伺服器上要建立備份或複本的指定目錄中。若要還原作業、指令碼必須放在目標伺服器上您要還原備份的指定目錄中。 
+---
+= 儲存工作指令碼
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須將pretask、task-task和原則工作指令碼儲存在目標伺服器上要建立備份或複本的指定目錄中。若要還原作業、指令碼必須放在目標伺服器上您要還原備份的指定目錄中。
+
+.步驟
+. 建立您的指令碼。
+. 將指令碼儲存在下列其中一個位置：
++
+*用於備份作業*
+
++
+[cols="1a,2a"]
+|===
+| 目錄 | 說明 
+
+
+ a| 
+「*」<預設安裝目錄>/外掛程式/備份/建立/原則*
+ a| 
+原則指令碼會在備份作業之前執行。
+
+
+
+ a| 
+「*」<預設安裝目錄>/外掛程式/備份/建立/ pre*
+ a| 
+預先處理指令碼會在備份作業之前執行。
+
+
+
+ a| 
+「*」<預設安裝目錄>/外掛程式/備份/建立/張貼*
+ a| 
+後處理指令碼會在備份作業之後執行。
+
+|===
++
+*用於還原作業*
+
++
+[cols="1a,2a"]
+|===
+| 目錄 | 說明 
+
+
+ a| 
+「*」<預設安裝目錄>/外掛程式/還原/建立/原則*
+ a| 
+原則指令碼會在還原作業之前執行。
+
+
+
+ a| 
+「*」<預設安裝目錄>/外掛程式/還原/建立/ pre*
+ a| 
+預先處理指令碼會在還原作業之前執行。
+
+
+
+ a| 
+「*」<預設安裝目錄>/外掛程式/還原/建立/ POST *
+ a| 
+後處理指令碼會在還原作業之後執行。
+
+|===
++
+*用於複製作業*
+
++
+[cols="1a,2a"]
+|===
+| 目錄 | 說明 
+
+
+ a| 
+「*」<預設安裝目錄>/plugins/clone /建立/原則*
+ a| 
+原則指令碼會在複製作業之前執行。
+
+
+
+ a| 
+「*」<預設安裝目錄>/plugins/clone / crede/pre*
+ a| 
+預先處理指令碼會在複製作業之前執行。
+
+
+
+ a| 
+「*」<預設安裝目錄>/plugins/clone / cree/post *
+ a| 
+後處理指令碼會在複製作業之後執行。
+
+|===
+

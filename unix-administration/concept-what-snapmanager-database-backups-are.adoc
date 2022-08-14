@@ -1,0 +1,38 @@
+---
+permalink: unix-administration/concept-what-snapmanager-database-backups-are.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, perform, backup, task, assign, retention, class, retain, reach, database 
+summary: 利用此功能、您可以執行不同的備份工作。SnapManager您可以指派保留類別、以指定備份保留的時間長度；一旦達到該時間限制、備份就會刪除。 
+---
+= 什麼是資料庫備份SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以執行不同的備份工作。SnapManager您可以指派保留類別、以指定備份保留的時間長度；一旦達到該時間限制、備份就會刪除。
+
+* 在主儲存設備上建立備份
+* 在次要儲存資源上建立受保護的備份
+* 驗證備份是否成功完成
+* 檢視備份清單
+* 使用圖形化使用者介面來排程備份
+* 管理保留的備份數量
+* 免費備份資源
+* 掛載及卸載備份
+* 刪除備份
+
+
+使用下列其中一種保留類別建立備份：SnapManager
+
+* 每小時
+* 每日
+* 每週
+* 每月
+* 無限
+
+
+必須安裝Protection Manager、才能使用保護原則來保護備份。備份可以具有下列其中一種保護狀態：「未要求」、「未保護」或「受保護」。
+
+如果新的資料檔案已新增至資料庫、您應該立即建立新的備份。此外、如果您在新增資料檔案之前還原備份、並嘗試在新增資料檔案之後恢復到某個點、則自動還原程序可能會失敗。請參閱Oracle文件、以深入瞭解還原備份後新增之資料檔案的程序。

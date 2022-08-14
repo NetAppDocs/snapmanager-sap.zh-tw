@@ -1,0 +1,64 @@
+---
+permalink: unix-administration/task-configure-summary-e-mail-notification-for-multiple-profiles.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, configure, summary, email, notification, multiple, profile, repository, database, configuring 
+summary: 利用此功能、您可以在儲存庫資料庫下設定多個設定檔的摘要電子郵件通知。SnapManager 
+---
+= 設定多個設定檔的摘要電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以在儲存庫資料庫下設定多個設定檔的摘要電子郵件通知。SnapManager
+
+*關於此工作*
+
+您可以將SnapManager 支援服務器主機設定為通知主機、以便將摘要通知電子郵件傳送給收件者。如果SnapManager 變更了伺服器主機名稱或IP位址、則通知主機也可以更新。
+
+您可以選擇任何需要電子郵件通知的排程時間：
+
+* 每小時：每小時接收一封電子郵件通知
+* 每日：每日接收電子郵件通知
+* 每週：每週接收電子郵件通知
+* 每月：每月接收電子郵件通知
+
+
+您需要輸入單一電子郵件地址或以逗號分隔的電子郵件地址清單、才能收到使用這些設定檔執行作業的通知。輸入多個電子郵件地址時、您必須確保在逗號和下一個電子郵件地址之間沒有空格。
+
+利用下列變數、您可以新增自訂的電子郵件主旨：SnapManager
+
+* 用於資料庫作業的設定檔名稱。
+* 資料庫名稱
+* 資料庫的SID
+* 主機伺服器名稱
+* 以yymmdd：hh：sss格式執行資料庫作業的開始時間
+* 以yymmdd：hh：sss格式結束資料庫作業時間
+* 資料庫作業狀態
+
+
+如果您選擇不新增自訂的主旨、SnapManager 則功能表會顯示錯誤訊息：「使用數值主題」。
+
+. 輸入下列命令：
++
+資料儲存庫-連接埠_repo_port_-dbname _repo_service_name_-主機_repo_host_-登入使用者名稱_repo_username_-電子郵件_email_address1、email_address2_-主題_Subject模式_-頻率｛每日時間_depage_notification _每日時間_time_|每週檔案時間_____-每小時通知時間_下午1–下午1–下午1–主機時間_時間_–下午1–每小時–每小時–下午1–下午1–通知時間_｛-time–｛-notification
+
++
+此命令的其他選項如下：
+
++
+「-force」[-noprompel]
+
++
+「-quiet |-verbose]」
+
+
+
+'''
+[listing]
+----
+
+smsap notification update-summary-notification –repository –port 1521 –dbname repo2 –host 10.72.197.133 –login –username oba5 –email-address admin@org.com –subject success –frequency -daily -time 19:30:45 –profiles sales1 -notification-host wales
+----
+'''

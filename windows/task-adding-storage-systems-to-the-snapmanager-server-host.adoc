@@ -1,0 +1,24 @@
+---
+permalink: windows/task-adding-storage-systems-to-the-snapmanager-server-host.html 
+sidebar: sidebar 
+keywords: add, storage, operate, operating, cluster, data, ontap, snapmanager, server, host, autosupport, system 
+summary: 您必須將以叢集Data ONTAP 式的效能運作的儲存系統新增至SnapManager 支援AutoSupport 動作的伺服器主機、才能啟用此功能。在VMware 3.3及更早版本中、僅在以7-Mode運作的儲存系統上才支援使用。SnapManager AutoSupport 
+---
+= 將以叢集Data ONTAP 式功能運作的儲存系統新增至SnapManager 支援叢集的伺服器主機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須將以叢集Data ONTAP 式的效能運作的儲存系統新增至SnapManager 支援AutoSupport 動作的伺服器主機、才能啟用此功能。在VMware 3.3及更早版本中、僅在以7-Mode運作的儲存系統上才支援使用。SnapManager AutoSupport
+
+. 將管理儲存虛擬機器（SVM、先前稱為vserver）和以叢集Data ONTAP 式VMware運作的SVM新增SnapManager 至支援伺服器主機：「dcli transmite_protocol set -f adminVserver_name或vserver_name -type HTTP -user admin」
++
+隨即顯示Enter the following command:（輸入下列命令：）訊息。
+
+. 輸入您在建立SVM時提供的密碼。
++
+成功執行命令之後、即已設定新傳輸傳輸傳輸傳輸傳輸協定。訊息隨即顯示。
+
+

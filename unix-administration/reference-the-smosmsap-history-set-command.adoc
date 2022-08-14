@@ -1,0 +1,95 @@
+---
+permalink: unix-administration/reference-the-smosmsap-history-set-command.html 
+sidebar: sidebar 
+keywords: run, history, set, command, configure, operation, smsap 
+summary: 您可以執行history set命令來設定要檢視其歷程記錄的作業。 
+---
+= smsap history set命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「history set」命令來設定要檢視其歷程記錄的作業。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap history set
+-profile {-name _profile_name_ [_profile_name1, profile_name2_\] | -all
+-repository -login [password _repo_password_\] -username _repo_username_
+-host _repo_host_
+-dbname _repo_dbname_
+-port _repo_port_}
+-operation {-operations _operation_name_ [_operation_name1, operation_name2_\] | -all}
+-retain
+{-count _retain_count_ | -daily _daily_count_ | -monthly _monthly_count_ | -weekly _weekly_count_}
+[-quiet | -verbose]]
+----
+
+
+== 參數
+
+* 「*設定檔*」
++
+指定設定檔的名稱。名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* 「*儲存庫*」
++
+指定儲存設定檔的資料庫詳細資料。
+
+* 「*」-「dbname _repo_dbname_*」
++
+指定儲存設定檔的資料庫名稱。您可以使用全域名稱或系統識別碼。
+
+* 「*主機_repo_host_*」
++
+指定儲存庫資料庫所在主機的名稱或IP位址。
+
+* 「*登入*」
++
+指定儲存庫登入詳細資料。
+
+* -username_repo_username_*
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* 「*連接埠_repo_port_*」
++
+指定用於存取儲存庫資料庫的傳輸控制傳輸協定（TCP）連接埠號碼。
+
+* 作業｛-operations _operation_name_[_operation_name1、operation_name2_]|-all*
++
+指定SnapManager 您要設定歷程記錄的不執行作業。
+
+* 「*」-「*保留｛-count _stay_count_|-day_day_count_|-每月_個月_個數_|-每週_個週_個數_｝個*」
++
+指定建立備份、驗證備份、還原及還原、以及建立及分割實體複本作業的保留類別。保留類別是根據作業數、天數、週數或月數來設定。
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 命令範例
+
+下列範例顯示有關備份作業的資訊：
+
+[listing]
+----
+smsap history set -profile -name PROFILE1 -operation -operations backup -retain -daily 6
+ -verbose
+----
+'''

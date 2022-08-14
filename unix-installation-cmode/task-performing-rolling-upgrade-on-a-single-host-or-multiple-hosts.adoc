@@ -1,0 +1,108 @@
+---
+permalink: unix-installation-cmode/task-perform-rolling-upgrade-on-a-single-host-or-multiple-hosts.html 
+sidebar: sidebar 
+keywords: perform, roll, upgrade, single, multiple, snapmanager, server, host, command-line, interface, cli, manage 
+summary: 您SnapManager 可以使用命令列介面（CLI）、在單一或多個支援服務器的主機上執行循環升級。升級SnapManager 後的支援服務器主機只能使用更新版本SnapManager 的支援功能進行管理。 
+---
+= 在單一主機或多部主機上執行循環升級
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您SnapManager 可以使用命令列介面（CLI）、在單一或多個支援服務器的主機上執行循環升級。升級SnapManager 後的支援服務器主機只能使用更新版本SnapManager 的支援功能進行管理。
+
+
+
+== 您的需求
+
+您必須確保已完成執行循環升級的所有先決條件。
+
+.步驟
+. 若要在單一主機上執行循環升級、請輸入下列命令：「* smsap儲存庫復原升級-reposale-dbname _repo_service_name_-host _repo_host_-login-username_-port _repo_port_-upgradehost _host_with _target資料庫_-force [-quide"| verbose*
++
+* 範例 *
+
++
+下列命令會針對裝載在主機A上的所有目標資料庫、以及位於repo_host上名為repoA的儲存庫資料庫、執行循環升級：
+
++
+[listing]
+----
+
+smsap repository rollingupgrade
+    -repository
+      -dbname repoA
+      -host repo_host
+      -login
+       -username repouser
+       -port 1521
+     -upgradehost hostA
+----
+. 若要在多個主機上執行循環升級、請輸入下列命令：「* smsap儲存庫復原升級-reposit -dbname _repo_service_name_-host _repo_host_-login-userName _repo_username_-port _repo_port_-upgradehost _host_with _target資料庫1_、_host_with _tamete_staid_staquenet_2
++
+
+NOTE: 若為多個主機、請輸入以逗號分隔的主機名稱、並確保您未在逗號和下一個主機名稱之間加入任何空格。如果您使用Real Application Clusters(RAC)組態、則必須手動升級所有RAC相關的主機。您可以使用「-allhosts」來執行所有主機的循環升級。
+
++
+* 範例 *
+
++
+下列命令會針對裝載在主機、主機A和主機B上的所有目標資料庫、以及位於repo_host上名為repoA的儲存庫資料庫、執行循環升級：
+
++
+[listing]
+----
+
+smsap repository rollingupgrade
+    -repository
+      -dbname repoA
+      -host repo_host
+      -login
+       -username repouser
+       -port 1521
+     -upgradehost hostA,hostB
+----
+. 若要在儲存庫資料庫的所有主機上執行循環升級、請輸入下列命令：
++
+h.*smsap儲存庫復原升級-reposit -dbname _repo_service_name_-host _repo_host_-login-username_-port _repo_port_-allhosts -force [-quiet |-verbose]*
+
++
+成功升級儲存庫資料庫之後、您可以在SnapManager 目標資料庫上執行所有的還原作業。
+
++
+* 範例 *
+
++
+下列命令會對位於repo_host上名為repoA的儲存庫資料庫上所有可用的目標資料庫執行循環升級：
+
++
+[listing]
+----
+
+smsap repository rollingupgrade
+    -repository
+      -dbname repoA
+      -host repo_host
+      -login
+       -username repouser
+       -port 1521
+      -allhosts
+----
+
+
+
+
+== 完成後
+
+* 如果自動啟動此伺服器SnapManager 、您必須重新啟動伺服器、以確保您可以檢視排程。
+* 如果您升級兩個相關主機之一、則必須在升級第一個之後升級第二個主機。
++
+例如、如果您已從主機A建立複本至主機B、或是從主機A掛載備份至主機B、則主機A和主機B彼此相關。升級主機A時、會顯示一則警告訊息、要求您在升級主機A後立即升級主機B
+
++
+
+NOTE: 即使刪除實體複本、或是在主機A的循環升級期間從主機B卸載備份、仍會顯示警告訊息這是因為中繼資料存在於儲存庫中、用於在遠端主機上執行的作業。
+
+

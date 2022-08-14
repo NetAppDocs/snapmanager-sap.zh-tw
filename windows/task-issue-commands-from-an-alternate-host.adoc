@@ -1,0 +1,27 @@
+---
+permalink: windows/task-issue-commands-from-an-alternate-host.html 
+sidebar: sidebar 
+keywords: issue, cli, command, host, database, snapmanager, route, alternate 
+summary: 您可以從資料庫主機以外的主機發出CLI命令、SnapManager 而將輸入的命令路由傳送到適當的主機。 
+---
+= 從替代主機發出命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從資料庫主機以外的主機發出CLI命令、SnapManager 而將輸入的命令路由傳送到適當的主機。
+
+
+
+== 關於這項工作
+
+為了讓系統將作業分派到正確的主機、系統必須先知道該在哪裡找到作業的設定檔。在此程序中、系統會將設定檔保留在本機主機上使用者主目錄中的檔案對應資訊儲存庫。
+
+.步驟
+. 若要讓本機使用者的主目錄知道設定檔對儲存庫的對應、以便路由傳送作業要求、請輸入下列命令：
++
+hy*smsap設定檔同步儲存庫-dbname _repo_dbname_-host _repo_host_-port _repo_port_-login-username_[-quiet |-verbose]*
+
+

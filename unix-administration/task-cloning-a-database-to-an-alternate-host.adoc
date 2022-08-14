@@ -1,0 +1,31 @@
+---
+permalink: unix-administration/task-clone-a-database-to-an-alternate-host.html 
+sidebar: sidebar 
+keywords: clone, create, command, database, alternate, host, cloning 
+summary: 您可以使用clone create命令來複製替代主機上的資料庫備份。 
+---
+= 將資料庫複製到替代主機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「Clone create」命令、在替代主機上複製資料庫備份。
+
+*您需要的是什麼*
+
+* 建立設定檔或擁有現有的設定檔。
+* 建立完整備份或現有資料庫備份。
+* 建立實體複本規格或現有的實體複本規格。
+
+
+.步驟
+. 若要將資料庫複製到替代主機、請輸入下列命令：
++
+hesap clone create -backup-label _backup_label_name_-newsid _new_sid_-host _target主機_-label _clon_label_-comment _comment _text_-profile _profile_name_-clonespec _f完整 路徑to _clonespecfile_*
+
++
+Oracle不允許您在同一主機上同時執行兩個具有相同SID的資料庫。因此、您必須為每個實體複本提供新的SID。不過、您可以在另一部具有相同SID的主機上建立資料庫。
+
+

@@ -1,0 +1,104 @@
+---
+permalink: unix-administration/reference-supported-partition-devices.html 
+sidebar: sidebar 
+keywords: partition, device, support, snapmanager 
+summary: 您必須知道SnapManager 支援的不同分割區裝置。 
+---
+= 支援的分割裝置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須知道SnapManager 支援的不同分割區裝置。
+
+下表提供分割區資訊、以及如何在不同的作業系統上啟用分割區資訊：
+
+[cols="3a,1a,1a,1a,1a"]
+|===
+| 作業系統 | 單一分割區 | 多個分割區 | 非磁碟分割裝置 | 檔案系統或原始裝置 
+
+
+ a| 
+Red Hat Enterprise Linux 5倍
+
+或
+
+Oracle Enterprise Linux 5倍
+ a| 
+是的
+ a| 
+否
+ a| 
+否
+ a| 
+ext3*
+
+
+
+ a| 
+Red Hat Enterprise Linux 6x
+
+或
+
+Oracle Enterprise Linux 6x
+ a| 
+是的
+ a| 
+否
+ a| 
+否
+ a| 
+ext3或ext4*
+
+
+
+ a| 
+SUSE Linux Enterprise Server 11
+ a| 
+是的
+ a| 
+否
+ a| 
+否
+ a| 
+ext3*
+
+
+
+ a| 
+SUSE Linux Enterprise Server 10
+ a| 
+否
+ a| 
+否
+ a| 
+是的
+ a| 
+ext3***
+
+
+
+ a| 
+*
+
+對於非MPIO環境、請輸入下列命令：
+
+"fdisk -us -f -L -q dev/ device_name"
+
+若為MPIO環境、請輸入下列命令：
+
+* "fdisk -us -f -L -q dev/ device_name"
+* 「kpartx -A -p p / dev/mapper/ device_name'
+
+
+
+
+ a| 
+***********_*
+
+不適用。
+
+|===
+如需所支援作業系統版本的詳細資訊、請參閱互通性對照表。

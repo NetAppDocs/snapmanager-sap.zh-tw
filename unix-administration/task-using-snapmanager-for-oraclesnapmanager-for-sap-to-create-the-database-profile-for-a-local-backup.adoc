@@ -1,0 +1,72 @@
+---
+permalink: unix-administration/task-use-snapmanager-for-oraclesnapmanager-for-sap-to-create-the-database-profile-for-a-local-backup.html 
+sidebar: sidebar 
+keywords: database, administrator, snapmanager, database, initiate, local, storage, primary, system, creation, process, involve, manager 
+summary: 資料庫管理員使用SnapManager 支援功能來建立資料庫設定檔、以便在主要儲存系統上啟動本機儲存設備的備份。整個設定檔建立與備份建立程序完全在SnapManager 整個過程中執行、不涉及Protection Manager。 
+---
+= 使用支援SAP的功能來建立資料庫設定檔以進行本機備份SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+資料庫管理員使用SnapManager 支援功能來建立資料庫設定檔、以便在主要儲存系統上啟動本機儲存設備的備份。整個設定檔建立與備份建立程序完全在SnapManager 整個過程中執行、不涉及Protection Manager。
+
+*關於此工作*
+
+設定檔包含所管理資料庫的相關資訊、包括其認證、備份設定及備份保護設定。透過建立設定檔、您不需要在每次對該資料庫執行作業時指定資料庫詳細資料、只需提供設定檔名稱即可。設定檔只能參考一個資料庫。多個設定檔可以參照相同的資料庫。
+
+.步驟
+. 前往SnapManager SAP用戶端的《關於SAP用戶端的問題：
+. 在「物件儲存庫」樹狀結構中、以滑鼠右鍵SnapManager 按一下您要與此設定檔相關聯的主機、然後選取「*建立設定檔*」。
+. 在「設定檔組態資訊」頁面中、輸入下列資訊、然後按「*下一步*」。
++
+** 設定檔名稱：finford_prod
+** 設定檔密碼：payrol123
+** 註解：正式作業薪資資料庫
+
+
+. 在Database Configuration Information（資料庫組態資訊）頁面中、輸入下列資訊、然後按一下* Next*（下一步*）。
++
+** 資料庫名稱：PAYDB
+** 資料庫SID：payrol.db
+** 資料庫主機：接受預設值
++
+由於您是從儲存庫樹狀結構中的主機建立設定檔、SnapManager 所以顯示主機名稱。
+
+
+
+. 在第二個Database Configuration Information（資料庫組態資訊）頁面中、接受下列資料庫資訊、然後按一下* Next*（下一步*）：
++
+** 主機帳戶、代表Oracle使用者帳戶（適用於ora<SID>）：orapayrolldb
+** 主機群組、代表Oracle群組：DBA
+
+
+. 在Database Connection Information（資料庫連線資訊）頁面中、選取* Use databasing Authentication*（使用資料庫驗證*）、以允許使用者使用資料庫資訊進行驗證。
++
+在此範例中、輸入下列資訊、然後按「*下一步*」。
+
++
+** Sysdba優先使用者名稱、代表具有系統管理權限的系統資料庫管理員：sys
+** 密碼（SYSDBA密碼）：Oracle
+** 連接至資料庫主機的連接埠：1527
+
+
+. 在「Snapshot Naming Information」（Snapshot命名資訊）頁面中、選取變數以指定與此設定檔相關聯之Snapshot的命名慣例。唯一需要的變數是* SMID*變數、它會建立唯一的Snapshot識別碼。
++
+在此範例中、請執行下列動作：
+
++
+.. 在「變數Token」清單中、選取*｛usertext｝*變數、然後按一下*「Add*」。
+.. 輸入「prod01.sample.com_"」作為主機名稱、然後按一下「*確定*」。
+.. 按一下*左*、直到主機名稱出現在「格式」方塊中的「smsap」之後。
+.. 單擊 * 下一步 * 。
+
+
++
+「_smsap_hostname_smsapprofile_dbsid_scope_mode_SMID_」的Snapshot命名慣例會變成「smsap_prpd01.sample.com_P01_BACKUP_P01_f_a_x"」（其中「f」表示完整備份、「A」表示自動模式、而「x」代表唯一的SMID）。
+
+. 在「Perform Operation（執行操作）」頁面上、確認資訊、然後按一下「* Creation*（建立*）」。
+. 按一下「*作業詳細資料*」以查看設定檔的相關資訊：建立作業和磁碟區型還原資格資訊。
+

@@ -1,0 +1,108 @@
+---
+permalink: unix-installation-cmode/task-prepare-storage-systems-for-snapvault-replication.html 
+sidebar: sidebar 
+keywords: snapmanager, perform, disk-to-disk, backup, replication, configure, data-protection, relationship, source, destination, volume, initialize, snapvault, data, block, prepare, storage, system, replication 
+summary: 在使用SnapManager 支援功能執行磁碟對磁碟備份複寫之前、您必須先設定來源與目的地磁碟區之間的資料保護關係、然後初始化關係。初始化時SnapVault 、功能區會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。 
+---
+= 準備儲存系統SnapVault 以進行資訊複寫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用SnapManager 支援功能執行磁碟對磁碟備份複寫之前、您必須先在來源與目的地磁碟區之間設定_資料保護關係_、然後初始化關係。初始化時SnapVault 、功能區會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。
+
+
+
+== 您的需求
+
+* 您必須是叢集管理員。
+
+
+
+
+== 關於這項工作
+
+您可以使用ONTAP 無法使用的指令行介面（CLI）或OnCommand 無法使用的功能來建立SnapVault 彼此之間的不一致關係。下列程序記錄了CLI的使用情形。
+
+
+IMPORTANT: 如果您要將資料庫檔案和交易記錄儲存在不同的磁碟區上、則必須在資料庫檔案的來源和目的地磁碟區之間、以及交易記錄的來源和目的地磁碟區之間建立關聯。
+
+下圖顯示初始化SnapVault 不實關係的程序：
+
+image::../media/snapvault_steps_clustered.gif[此圖顯示初始化SnapVault 「相互關聯」的程序：識別目的地叢集,creating a destination volume,creating a policy]
+
+.步驟
+. 識別目的地叢集。
+. 在目的地叢集上、使用「volume create」命令搭配「-type」DP選項、建立SnapVault 與來源Volume相同大小或更大的目標Volume。
++
+
+IMPORTANT: 目的地Volume的語言設定必須符合來源Volume的語言設定。
+
++
+* 範例 *
+
++
+下列命令會在Aggregate node01_aggr上的SVM2中建立名為dstvolB的2 GB目的地Volume：
+
++
+[listing]
+----
+cluster2::> volume create -vserver SVM2 -volume dstvolB -aggregate node01_aggr -type DP
+-size 2GB
+----
+. 在目的地SVM上、使用「napmirror policy create」命令來建立SnapVault 一個Suse原則。
++
+* 範例 *
+
++
+下列命令會建立SVM整體原則SVM1-vVault：
+
++
+[listing]
+----
+SVM2::> snapmirror policy create -vserver SVM2 -policy SVM1-vault
+----
++
+
+NOTE: 請勿針對SnapVault 彼此之間的關係、定義cron排程或Snapshot複製原則。您可以在建立備份排程時執行這項作業。
+
+. 使用「napmirror cred'」命令搭配「type XDP」參數和「-policy」參數、建立SnapVault 一個彼此的關係、並指派一個保存原則。
++
+XDP類型將關係定義為SnapVault 彼此之間的相互關係。
+
++
+* 範例 *
+
++
+下列命令會在SnapVault SVM1上的來源Volume srcvolA與SVM2上的目的地Volume dstvolB之間建立一個「不支援」關係、並指派「SVM1-vVault」原則：
+
++
+[listing]
+----
+SVM2::> snapmirror create -source-path SVM1:srcvolA -destination-path SVM2:dstvolB
+-type XDP -policy SVM1-vault
+----
+. 使用「napmirror initialize」命令來初始化關係。
++
+初始化程序會將_基準線傳輸_傳送到目的地Volume。SnapMirror會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。
+
++
+* 範例 *
+
++
+下列命令可初始化SVM1上的來源Volume srcvolA與SVM2上的目的地Volume dstvolB之間的關係：
+
++
+[listing]
+----
+SVM2::> snapmirror initialize -destination-path SVM2:dstvolB
+----
+
+
+*相關資訊*
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["《叢集對等快速指南》（英文）ONTAP"^]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-buvault/home.html["《使用《不適用》指南的《》（英文）9 Volume Backup》ONTAP SnapVault"^]

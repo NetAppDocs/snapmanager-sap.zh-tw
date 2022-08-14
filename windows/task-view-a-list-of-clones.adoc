@@ -1,0 +1,36 @@
+---
+permalink: windows/task-view-a-list-of-clones.html 
+sidebar: sidebar 
+keywords: view, list, clone, associate, particular, profile 
+summary: 您可以檢視與特定設定檔相關聯的複本清單。 
+---
+= 檢視複本清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視與特定設定檔相關聯的複本清單。
+
+
+
+== 關於這項工作
+
+此清單包含下列設定檔中有關複本的資訊：
+
+* 實體複本的ID
+* 實體複本作業的狀態
+* 用於複製的Oracle SID
+* 實體複本所在的主機
+* 實體複本的標籤
+
+
+如果您指定「-verbose」選項、則輸出也會顯示針對複製所輸入的註解。
+
+.步驟
+. 若要顯示設定檔的所有複本清單、請輸入下列命令：
++
+「* smsap clone list -profile _profile_name_[-quiet |-verbose]*」
+
+

@@ -1,0 +1,22 @@
+---
+permalink: windows/task-use-snapmanager-commands.html 
+sidebar: sidebar 
+keywords: start, snapmanager, host, server, enter, command, prompt 
+summary: 啟動SnapManager 完整套主機伺服器之後、SnapManager 您可以在主機上的提示字元輸入命令來使用支援功能。 
+---
+= 使用SnapManager 指令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+啟動SnapManager 完整套主機伺服器之後、SnapManager 您可以在主機上的提示字元輸入命令來使用支援功能。
+
+.步驟
+. 若要執行作業：
++
+** 如果是Windows主機、請前往* Start*>* All Programs*>* NetApp*>* SnapManager 適用於SAP*的*支援*>*啟動SMSAP命令列介面（CLI）*
+
+
+

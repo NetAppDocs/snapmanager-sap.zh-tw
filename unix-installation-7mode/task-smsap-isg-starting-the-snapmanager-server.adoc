@@ -1,0 +1,36 @@
+---
+permalink: unix-installation-7mode/task-smsap-isg-start-the-snapmanager-server.html 
+sidebar: sidebar 
+keywords: start, snapmanager, server, target, database, host 
+summary: 您必須SnapManager 從目標資料庫主機啟動此伺服器。 
+---
+= 啟動SnapManager 伺服器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須SnapManager 從目標資料庫主機啟動此伺服器。
+
+.步驟
+. 登入目標資料庫主機、然後啟動SnapManager 支援服務器：
++
+‘* smsap_server start*’
+
++
+畫面會顯示下列訊息：「SnapManager SfetsServer started on secureport _port_Number with PID_number_」（使用PID_number_的安全連接埠_port_Number啟動伺服器）。
+
++
+
+NOTE: 預設連接埠為_27214_。
+
+
+
+*完成後*
+
+您可以驗SnapManager 證此功能是否正常運作：
+
+"*smsap_server驗證*
+
+畫面會顯示下列訊息：「操作ID _operation_ID_number_ sinessed」（操作ID _operation_ID_number_成功）。

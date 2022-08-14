@@ -1,0 +1,104 @@
+---
+permalink: unix-administration/task-prune-archive-log-files.html 
+sidebar: sidebar 
+keywords: prune, archive, log, file, backup, pruning 
+summary: 您可以在建立備份時、從歸檔記錄位置剪除歸檔記錄檔。 
+---
+= 剪下歸檔記錄檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在建立備份時、從歸檔記錄位置剪除歸檔記錄檔。
+
+*您需要的是什麼*
+
+* 歸檔記錄檔必須由目前的備份作業來備份。
++
+如果剪除是與其他不含歸檔記錄檔的備份一起指定、則不會剪除歸檔記錄檔。
+
+* 資料庫必須處於掛載狀態。
++
+如果資料庫未處於掛載狀態、請輸入-force選項以及備份命令。
+
+
+
+*關於此工作*
+
+執行備份作業時、您可以指定下列項目：
+
+* 剪除範圍：
++
+** 刪除所有歸檔記錄檔。
+** 刪除歸檔記錄檔、直到指定的系統變更編號（SCN）為止。
+** 刪除歸檔記錄檔、直到指定時間為止。
+** 在指定的時間週期之前刪除歸檔記錄檔。
+
+
+* 必須剪除歸檔記錄檔的目的地。
++
+
+NOTE: 即使一個目的地的歸檔記錄檔剪除失敗、SnapManager 也會繼續從其他目的地剪除歸檔記錄檔。
+
+
+
+刪除歸檔記錄檔之前SnapManager 、驗證下列項目：
+
+* 歸檔記錄檔至少會備份一次。
+* 歸檔記錄檔會傳送至Oracle Datagard備用資料庫（若有）。
+* Oracle串流擷取程序會擷取歸檔記錄檔（如果有）。
+
+
+如果歸檔記錄檔已備份、運送至待命狀態、並由擷取程序擷取、SnapManager 則只需執行一次、即可刪除所有歸檔記錄檔。不過、如果有任何歸檔記錄檔檔案未備份、未送至待機、或未被擷取程序擷取、SnapManager 則用一個檔案記錄檔逐一刪除。在單一執行中刪除歸檔記錄檔的速度比逐一刪除歸檔記錄快。
+
+此外、還可以將歸檔記錄檔分組、並依批次刪除。SnapManager每個批次最多可有998個檔案。此值可在998以下設定、方法是使用「msap.config」檔案中的組態參數「max.im.archivelog.files.toprune.atatatatime」。
+
+使用Oracle Recovery Manager（RMAN）命令刪除歸檔記錄檔。SnapManager但是SnapManager 、不將此功能與RMAN保留原則和刪除原則整合。
+
+
+NOTE: 如果您從歸檔記錄目的地刪除歸檔記錄檔、則無法剪除歸檔記錄檔。
+
+下列情況不支援剪除歸檔記錄檔：SnapManager
+
+* 歸檔記錄檔位於Flash恢復區域。
+* 歸檔記錄檔位於待命資料庫中。
+* 歸檔記錄檔是由SnapManager 支援此功能的功能進行管理。
+
+
+.步驟
+. 輸入下列命令：
++
+「* smsap備份建立設定檔_profile_name_｛[-full｛-online |-offline |-auto｝[-sthourly |[-dayly |-fleyly |-mourly |-monthly |-monthly |-unchallyly |-scap空間__[-stourly databar空間]|[-hourly ]每月一次、每週一次、每週一次、每週一次、每週一次、每次、每次、每個月一次、每次、_、每次、每次、每次、每次、每次、每次、每次、每次不限 [-archivelogs [-label _label_][-comment _comment _][-protection |-nosprotectnow][-backup-dest _path1_[,[_path2_]][-exclude taskogs {-all |-untilun-tunestsunycluned*前數小時_spec_dest_date prunid_mind [-mind - prsdest_minuts__小時][_minuted_date prs__小時數][_mind [-minuts__小時數][_minuted_date prminuts__小時數][_sty_date prs__小時數][_sty_date prs__小時數][_scnest_date prunest_uned][_minuted][_prun
+
++
+[cols="1a,3a"]
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+* Prune歸檔記錄檔*
+ a| 
+指定下列選項：
+
+** 「prunelogs」指定在建立備份時刪除歸檔記錄檔。
++
+*** 「-all」指定刪除所有歸檔記錄檔。
+*** 在指定的SCN之前、「-undilSCN」會指定刪除歸檔記錄檔。
+*** 「截至日期」指定刪除歸檔記錄、包括指定的日期和時間。
+*** 在「｛-Months |- days |-wits |-hours｝」之前、指定在指定時間段之前刪除歸檔記錄檔。
+
+
+
+
+
+
+ a| 
+*包括要剪除歸檔記錄檔的目的地*
+ a| 
+指定「-prune-dest'」選項。
+
+|===
+

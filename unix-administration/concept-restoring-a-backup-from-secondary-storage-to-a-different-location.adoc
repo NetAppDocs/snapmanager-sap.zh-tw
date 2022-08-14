@@ -1,0 +1,32 @@
+---
+permalink: unix-administration/concept-restoring-a-backup-from-secondary-storage-to-a-different-location.html 
+sidebar: sidebar 
+keywords: brrestore, smsap, restore, command, secondary, backup, location, host, snapmanager, restoring 
+summary: 您可以使用BRRESTORE或smsap還原命令、將次要備份還原至不同的位置。新主機也必須執行SnapManager 不全功能。 
+---
+= 將備份從次要儲存設備還原至不同位置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「BRRESTOR」或「msap還原」命令、將次要備份還原到不同的位置。新主機也必須執行SnapManager 不全功能。
+
+您必須在「initSID.utl」檔案中設定「premite_backup_locations」和「remstore_from最近的_backup_locations」參數、才能將次要備份還原至所需的位置。
+
+. 編輯「initSID.utl」檔案。
+. 在檔案中新增「pete_backup_locations」和「REstore_from _Nearest _backup_location」。
++
+
+NOTE: 「pedite_backup_locations」環境變數會覆寫initSID.utl檔案中「pedite_backup_locations」參數的設定值。
+
+
+
+[NOTE]
+====
+* 如果「prefereted_backup_locations」的值與任何保護原則節點名稱不符、且「resstore_from _Nearest _backup_location'設定為「* No *」、則作業會失敗。
+* 如果未設定「prefereted_backup_locations」的值、或「REstore_from _Nearest備份位置」設定為「*是*」、則可從最近的備份位置執行還原作業。
+
+
+====

@@ -1,0 +1,56 @@
+---
+permalink: unix-administration/concept-restores-of-protected-backups-overview.html 
+sidebar: sidebar 
+keywords: restore, method, backup, data, secondary, primary, storage, protect, overview 
+summary: 您可以選擇要用來將備份資料從次要儲存設備還原至主要儲存設備的還原方法。 
+---
+= 還原受保護的備份總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以選擇要用來將備份資料從次要儲存設備還原至主要儲存設備的還原方法。
+
+下表說明可用於從次要儲存設備還原備份的不同案例和方法：
+
+[cols="1a,3a"]
+|===
+| 還原目標 | 說明 
+
+
+ a| 
+直接連接至主儲存設備
+ a| 
+透過用於保護資料的相同網路、將資料從次要儲存系統直接傳回主要儲存系統上的原始位置。
+
+儘可能使用直接儲存方法。SnapManager如果資料位於儲存區域網路（SAN）的檔案系統中、且符合下列任一條件、則無法使用此方法：
+
+* 其他非資料庫檔案不會還原在同一個檔案系統中。
+* 在還原的檔案系統中、控制檔和資料檔的Snapshot複本會在不同時間拍攝。
+* 邏輯單元號碼（LUN）位於磁碟區群組中、但同一個磁碟區群組中的其他LUN並未還原。
+
+
+
+
+ a| 
+直接連接主機
+ a| 
+複製次要儲存系統上的資料、並將複製的資料掛載到主機上。複製並掛載資料後、SnapManager 將其複製到原始位置。
+
+
+
+ a| 
+間接連接至儲存設備或主機
+ a| 
+透過用於保護資料及在主機上掛載新儲存設備的相同網路、將資料從次要儲存系統傳回至主要系統上的新位置。資料歸還並掛載後、SnapManager 將其複製到原始位置。間接儲存方法可能需要很長時間才能傳回資料。
+
+首先將資料複製到主要主機的暫存磁碟區、然後再使用資料來還原及恢復資料庫。SnapManager SnapManager是否自動刪除暫存資料取決於使用的傳輸協定。
+
+* 若為SAN、SnapManager 則會刪除傳回的資料。
+* 對於網路附加儲存設備（NAS）、SnapManager 不刪除傳回的qtree內容、但不會自行刪除qtree。若要刪除qtree、系統管理員應掛載Scr刮 除磁碟區、並使用UNIX rmdir命令移除qtree。
+
+
+|===
+如果您無法直接將資料傳回儲存設備、SnapManager 則可將資料直接傳回主機、或間接傳回儲存設備或主機。方法取決於原則、該原則會決定組織是否允許直接連線至次要儲存設備、或是要求透過儲存網路複製資料。您可以在smsap.config檔案中設定組態資訊來管理此原則。

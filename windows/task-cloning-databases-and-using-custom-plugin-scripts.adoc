@@ -1,0 +1,25 @@
+---
+permalink: windows/task-cloning-databases-and-using-custom-plugin-scripts.html 
+sidebar: sidebar 
+keywords: snapmanager, method, custom, script, clone, operation, sid, policy, naming, name, plug-in 
+summary: 提供在複製作業執行前後使用自訂指令碼的方法。SnapManager例如、您可能已建立自訂指令碼來驗證複製資料庫的SID、並確保命名原則允許該SID。使用SnapManager 「還原複製」外掛程式、您可以加入自訂指令碼、並在SnapManager 執行還原複製作業之前或之後自動執行。 
+---
+= 複製資料庫並使用自訂外掛程式指令碼
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+提供在複製作業執行前後使用自訂指令碼的方法。SnapManager例如、您可能已建立自訂指令碼來驗證複製資料庫的SID、並確保命名原則允許該SID。使用SnapManager 「還原複製」外掛程式、您可以加入自訂指令碼、並在SnapManager 執行還原複製作業之前或之後自動執行。
+
+. 檢視外掛程式指令碼範例。
+. 從頭建立指令碼、或修改其中一個範例外掛程式指令碼。
++
+根據SnapManager 指令碼指令碼的指令集建立自訂指令碼。
+
+. 將自訂指令碼放在指定的目錄位置。
+. 更新Clone規格XML檔案、並包含複製程序期間應使用的自訂指令碼相關資訊。
+. 使用SnapManager 指令碼驗證自訂指令碼是否正常運作。
+. 當您啟動複製作業時、請加入指令碼名稱和選用參數。
+

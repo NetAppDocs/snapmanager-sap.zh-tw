@@ -1,0 +1,72 @@
+---
+permalink: windows/task-scheduling-archive-log-file-pruning.html 
+sidebar: sidebar 
+keywords: create, backup, schedule, pruning, prune, archive, log, file, scheduling 
+summary: 建立備份時、您可以排定在指定時間剪除保存記錄檔。 
+---
+= 排程保存檔記錄檔剪除
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立備份時、您可以排定在指定時間剪除保存記錄檔。
+
+利用此功能、您可以定期從作用中的檔案系統中剪除歸檔記錄檔。SnapManager
+
+. 輸入下列命令：
++
+「msap排程create -profile profile_name｛[-full｛-online |-offline |-auto｝[-sthourly |-ditly |-fleyly |-muthonly |-minutional][-vuticle]|[-data [-filesfiles/files/files/]|[-testabl空間[-tap空間 記錄表空間]｛-online |-offline |-offline |-offline |-offline |-sthour-testcomment][每週備份資料檔案檔案檔案[每小時不限路徑1、][每小時不限備份][-每小時][-每小時][-每週備份][-每小時備份][-每小時備份][- [-prunelogs｛-all |-untilscnuntilscn |-therate｛-dateyey-mm-dd hh：mss |-monthsmonts |-weeksweeks |-daysdays |-hourshours｝-prune-destprune_dest1、verbose _dest2）-schedule-schedule-data-name-chestchagetchamed_name [｛-hour-tour-timour-timour-timour-timestart-time-your-timour-time-s-timay-time-stayn [｛-your-time-sstart-time-s-timyourt按月間隔（按小時、按分鐘、按分鐘、按分鐘、按分鐘、按分鐘
+
++
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+*排程保存記錄檔的剪除*
+ a| 
+指定下列選項：
+
+** -prunelogs來排程保存檔記錄檔的剪除
+** 從歸檔記錄目的地剪除歸檔記錄檔檔案的目的地
+
+
+
+
+ a| 
+*加入排程名稱*
+ a| 
+指定-schedule-name選項。
+
+
+
+ a| 
+*排程在特定時間間隔內剪除歸檔記錄檔*
+ a| 
+指定時間間隔選項、並指出是否應根據下列時間間隔類別來剪除歸檔記錄檔：
+
+** -每小時
+** 每日
+** 每週
+** 每月
+** 僅限一次
+
+
+
+
+ a| 
+*新增有關排程作業的留言*
+ a| 
+指定-schedule-comment選項、後面接著說明字串。
+
+
+
+ a| 
+*指定排程作業的開始時間*
+ a| 
+以yyyy-mm-dd hh：mm格式指定-start-tTime選項。
+
+|===
+

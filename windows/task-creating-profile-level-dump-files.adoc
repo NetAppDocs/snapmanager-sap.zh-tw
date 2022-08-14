@@ -1,0 +1,29 @@
+---
+permalink: windows/task-creating-profile-level-dump-files.html 
+sidebar: sidebar 
+keywords: find, log, information, particular, profile, smsap, dump, command, name, profile-level, creating, create 
+summary: 您可以使用smsap設定檔傾印命令和設定檔名稱來尋找特定設定檔的記錄資訊。 
+---
+= 正在建立設定檔層級的傾印檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用smsap設定檔傾印命令和設定檔名稱來尋找特定設定檔的記錄資訊。
+
+. 輸入下列命令：「msap profile dump -profileprofile_name」
++
+傾印檔案位置：
+
++
+[listing]
+----
+Path:\<user-home>\Application Data\NetApp\smsap\3.3.0\smsap_dump_8abc01c814649ebd0114649ec69d0001.jar
+----
++
+
+NOTE: 如果您在建立設定檔時遇到錯誤、請使用smsapsystem dump命令。成功建立設定檔之後、請使用smsapoperation dump和smsapprofile dump命令。
+
+

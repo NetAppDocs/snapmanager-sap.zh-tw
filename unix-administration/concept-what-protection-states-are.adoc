@@ -1,0 +1,48 @@
+---
+permalink: unix-administration/concept-what-protection-states-are.html 
+sidebar: sidebar 
+keywords: snapmanager, state, backup, administrator, monitor, protection 
+summary: 顯示每個備份的狀態。SnapManager系統管理員必須知道不同的狀態、並監控備份的狀態。 
+---
+= 什麼是保護狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+顯示每個備份的狀態。SnapManager系統管理員必須知道不同的狀態、並監控備份的狀態。
+
+資料庫備份可以具有下列保護狀態：
+
+[cols="1a,2a,3a"]
+|===
+| 狀態 | 定義 | 說明 
+
+
+ a| 
+受保護
+ a| 
+已要求保護並已啟用。
+ a| 
+啟用SnapManager 了在支援中進行備份的保護、Protection Manager將備份成功複製到另一組實體磁碟（也稱為二線儲存設備）。如果Protection Manager因為保留原則而從二線儲存設備移除備份、則備份可能會回到未受保護的狀態。
+
+
+
+ a| 
+未受保護
+ a| 
+已要求保護、但尚未完成。
+ a| 
+備份已啟用保護功能、但備份不會複製到另一組實體磁碟。備份尚未受到保護或保護失敗、或是先前受到保護、但不再受到保護。當您建立備份時、備份的初始保護狀態可能未要求或未受到保護。如果備份未受到保護、則在傳輸至次要儲存設備時、備份便會受到保護。
+
+
+
+ a| 
+未要求
+ a| 
+未要求保護。
+ a| 
+未啟用備份保護。資料的邏輯複本存在於相同的實體磁碟（也稱為本機備份）上。如果在建立備份時未要求保護、則備份上的保護永遠顯示為「未要求」。
+
+|===

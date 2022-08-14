@@ -1,0 +1,50 @@
+---
+permalink: unix-administration/reference-the-smosmsap-server-restart-command.html 
+sidebar: sidebar 
+keywords: command, restart, snapmanager, host, server, enter, root, smsap_server 
+summary: 此命令會重新啟動SnapManager 以root輸入的支援服務器。 
+---
+= smsap_server重新啟動命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會重新啟動SnapManager 以root輸入的支援服務器。
+
+
+
+== 語法
+
+[listing]
+----
+smsap_server restart
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* 「*無聲*」
++
+指定主控台僅顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+指定錯誤、警告和資訊訊息會顯示在主控台上。
+
+
+
+'''
+
+
+== 命令範例
+
+下列範例會重新啟動主機伺服器。
+
+[listing]
+----
+smsap_server restart
+----
+'''

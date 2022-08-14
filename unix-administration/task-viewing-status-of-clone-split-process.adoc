@@ -1,0 +1,28 @@
+---
+permalink: unix-administration/task-view-status-of-clone-split-process.html 
+sidebar: sidebar 
+keywords: view, progress, split, start, process, clone 
+summary: 您可以檢視您開始的分割程序進度。 
+---
+= 檢視複本分割程序的狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視您開始的分割程序進度。
+
+.步驟
+. 若要檢視實體複本分割程序的進度、請輸入下列命令：
++
+「* smsap clone sap-STATUS -profile _profile_[-host _hostname_][-label _s拆 分標籤_|-id _s拆 分id_][-quiet |-verbose]*」
+
+
+
+'''
+[listing]
+----
+smsap clone split-status -profile p1 -id 8abc01ec0e78f3e2010e78f3fdd00001
+----
+'''

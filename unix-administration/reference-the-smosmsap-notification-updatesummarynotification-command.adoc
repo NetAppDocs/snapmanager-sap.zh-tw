@@ -1,0 +1,109 @@
+---
+permalink: unix-administration/reference-the-smosmsap-notification-updatesummarynotification-command.html 
+sidebar: sidebar 
+keywords: run, notification, update-summary-notification, command, enable, summary, repository, database, smsap 
+summary: 您可以執行notification update-Summary通知命令、為儲存庫資料庫啟用摘要通知。 
+---
+= smsap notification update-sap-notification命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行notification update-Summary通知命令、為儲存庫資料庫啟用摘要通知。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap notification update-summary-notification
+-repository
+-port _repo_port_
+-dbname  _repo_service_name_
+-host _repo_host_
+-login -username _repo_username_
+-email _email-address1,email-address2_
+-subject _subject-pattern_
+-frequency
+[-daily –time _daily_time_ |
+-hourly –time _hourly_time_ |
+-monthly –time _monthly_time_ -date [_1_|_2_|_3_|...|_31_\] |
+-weekly  –time _weekly_time_ -day [_1_|_2_|_3_|_4_|_5_|_6_|_7_\]\]
+-profiles _profile1,profile2_ -notification-host _notification-host_
+[-quiet | -verbose]]
+
+----
+
+
+== 參數
+
+* 「*儲存庫*」
++
+指定儲存庫資料庫的詳細資料。
+
+* 「*連接埠_repo_port_*」
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* 「*」-「dbname _repo_service_name_*」
++
+指定儲存庫資料庫的名稱。您可以使用全域名稱或系統識別碼。
+
+* 「*主機_repo_host_*」
++
+指定儲存庫資料庫所在主機的名稱或IP位址。
+
+* 「*登入*」
++
+指定儲存庫登入詳細資料。這是選用的。如果未指定SnapManager 、則無法使用作業系統驗證連線模式。
+
+* -username_repo_username_*
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* 電子郵件地址1、電子郵件地址2_*
++
+指定收件者的電子郵件地址。
+
+* 主題_Subject模式_*
++
+指定電子郵件主旨模式。
+
+* 「*」頻率｛-每日-時間_每日_時間_|-每小時-時間_每小時_時間_|-每月-時間_每月_時間_-日期｛_1_|_2_|_3_...||-每週-時間_每週_時間_-天｛_1_|_2_|_3_|_5_|
++
+指定您想要電子郵件通知的排程類型和排程時間。
+
+* 「*設定檔_profile1、profile2_*」
++
+指定需要電子郵件通知的設定檔名稱。
+
+* 「*通知主機_通知主機_主機_*」
++
+指定SnapManager 將摘要通知電子郵件傳送給收件者的伺服器主機。您可以提供通知主機的主機名稱或IP位址。您也可以更新主機IP或主機名稱。
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 範例
+
+下列範例可啟用儲存庫資料庫的摘要通知：
+
+[listing]
+----
+
+smsap notification update-summary-notification –repository –port 1521 –dbname repo2 –host 10.72.197.133 –login –username oba5 –email admin@org.com –subject success –frequency -daily -time 19:30:45 –profiles sales1
+----
+'''

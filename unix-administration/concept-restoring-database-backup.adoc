@@ -1,0 +1,35 @@
+---
+permalink: unix-administration/concept-restoring-database-backup.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, enable, restore, database, state, snapshot, copy, addition, file-base, restoring, backup, mean-time-to-recoverr, mttr 
+summary: SAP版的支援功能可讓您將資料庫還原至Snapshot複本的執行狀態。SnapManager除了檔案型還原程序之外、SnapManager 支援Volume型快速還原技術、相較於其他還原方法、還原時間大幅縮短。由於備份的建立頻率較高、因此需要套用的記錄數目會減少、因此可減少資料庫的平均恢復時間（MTTR）。 
+---
+= 還原資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAP版的支援功能可讓您將資料庫還原至Snapshot複本的執行狀態。SnapManager除了檔案型還原程序之外、SnapManager 支援Volume型快速還原技術、相較於其他還原方法、還原時間大幅縮短。由於備份的建立頻率較高、因此需要套用的記錄數目會減少、因此可減少資料庫的平均恢復時間（MTTR）。
+
+以下是您可以執行的一些與還原及還原資料庫資料相關的工作：
+
+* 執行檔案型的重述或磁碟區型還原、這是還原資料庫備份的最快方法、也是SnapManager 預設的用途。
+* 還原整個備份或部分備份。
++
+如果還原其中的一部分、請指定一組表格空間或一組資料檔案。您也可以連同資料一起還原控制檔、或只還原控制檔本身。
+
+* 根據時間點或所有可用記錄來恢復資料、這些記錄會儲存最後一筆提交至資料庫的交易。
++
+時間點可以是Oracle系統變更編號（SCN）或日期與時間（yyyy-mm-dd:hh：mm:sss）。支援24小時時鐘。SnapManager
+
+* 從主儲存設備上的備份還原（本機備份）。
+* 使用SnapManager 還原還原還原和恢復備份、或使用SnapManager 還原功能還原備份、並使用其他工具（例如Recovery Manager（RMAN））來恢復資料。
+* 從其他位置還原備份。
+* 使用還原規格檔案、從二線儲存設備（遠端備份）和其他位置還原受保護的備份。
+
+
+您可以SnapManager 使用SnapManager 還原3.0及更新版本、還原先前版本的還原所製作的備份。
+
+系統管理員可使用SnapManager 圖形化使用者介面（GUI）或命令列介面（CLI）來執行還原或還原作業。

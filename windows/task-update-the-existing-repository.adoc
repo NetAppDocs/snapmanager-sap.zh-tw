@@ -1,0 +1,61 @@
+---
+permalink: windows/task-update-the-existing-repository.html 
+sidebar: sidebar 
+keywords: update, exist, repository, upgrade, snapmanager, path 
+summary: 如果您要從SnapManager BIOS 3.3.x升級SnapManager 至BIOS 3.4或更新版本、則不需要更新現有的儲存庫、但對於所有其他升級途徑、您必須更新現有的儲存庫、以便在升級後存取。 
+---
+= 更新現有儲存庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您要從SnapManager BIOS 3.3.x升級SnapManager 至BIOS 3.4或更新版本、則不需要更新現有的儲存庫、但對於所有其他升級途徑、您必須更新現有的儲存庫、以便在升級後存取。
+
+
+
+== 您的需求
+
+* 升級SnapManager 後的功能伺服器必須已啟動並驗證。
+* 必須存在現有儲存庫的備份。
+
+
+
+
+== 關於這項工作
+
+* 如果您要從SnapManager 任何版本更新到版本不超過版本的版本、SnapManager 則必須先升級SnapManager 到版本32。
++
+升級SnapManager 至32版之後、您可以升級SnapManager 至32版或更新版本。
+
+* 更新儲存庫之後、您無法將儲存庫與舊版SnapManager 的BIOS搭配使用。
+
+
+.步驟
+. 更新現有儲存庫：
++
+hy*smsap儲存庫更新-儲存庫-dbname _reposite_service_name_-host _reposite_host_name_-login-username_reposite_use_port_*。*儲存庫使用者名稱、儲存庫服務名稱及儲存庫主機名稱可由英數字元、減號、底線及句點組成。*儲存庫連接埠可以是任何有效的連接埠號碼。更新現有儲存庫時使用的其他選項如下：
+
++
+** 「強制」選項
+** 「nosmpt」選項
+** 「無聲」選項
+** "verrbose"選項
+
+
++
+* 範例 *
+
+
+
+[listing]
+----
+smsap repository update -repository -dbname HR1
+-host server1 -login -username admin -port 1521
+----
+
+
+== 完成後
+
+重新啟動SnapManager 伺服器以重新啟動任何相關的排程。

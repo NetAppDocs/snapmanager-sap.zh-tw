@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task-remove-history-configuration-associated-with-a-single-profile-or-multiple-profiles.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, remove, history, setting, operation, purge, information, associate, single, multiple, profile, removing 
+summary: 利用此功能、您可以移除還原作業的歷史記錄設定。SnapManager SnapManager此作業會清除與單一設定檔或多個設定檔相關的所有歷程記錄資訊。 
+---
+= 移除與單一設定檔或多個設定檔相關的記錄設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以移除還原作業的歷史記錄設定。SnapManager SnapManager此作業會清除與單一設定檔或多個設定檔相關的所有歷程記錄資訊。
+
+.步驟
+. 若要移除SnapManager 與單一設定檔或多個設定檔相關聯的支援流程記錄、請輸入下列命令：
++
+「* smsap歷程記錄移除-profile｛_名稱、profile名稱[profile名稱1、profile名稱2 _]| all-reposale-login[-password_]-userName _repo_username_-dbname _repo_dbname_-host _repo_host_-port _repo_port_｝-op_operation｛_name_all操作｛_、_name_op_op_op_op_all操作｛_操作｛_、_op_name_op_all操作｛_、_op_op_operation_、_op_op_op_op_op_op_name_op
+
+

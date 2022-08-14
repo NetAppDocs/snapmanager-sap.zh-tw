@@ -1,0 +1,28 @@
+---
+permalink: unix-installation-cmode/concept-understanding-the-differences-between-snapmirror-and-snapvault.html 
+sidebar: sidebar 
+keywords: snapmirror, disaster, recovery, technology, design, failover, primary, storage, secondary, geographical, remote, site, snapvault, disk-to-disk, replication, design, standard, compliance, governance-related, purpose, snapvault, 
+summary: SnapMirror是災難恢復技術、專為從一線儲存設備容錯移轉到位於地理位置遠端站台的二線儲存設備而設計。NetApp是磁碟對磁碟備份複寫技術、專為符合標準及其他治理相關用途而設計。SnapVault 
+---
+= 瞭解SnapMirror與SnapVault SnapMirror之間的差異
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapMirror是災難恢復技術、專為從一線儲存設備容錯移轉到位於地理位置遠端站台的二線儲存設備而設計。NetApp是磁碟對磁碟備份複寫技術、專為符合標準及其他治理相關用途而設計。SnapVault
+
+這些目標說明備份貨幣與備份保留目標之間的每項技術平衡：
+
+* SnapMirror儲存主要儲存設備中的Snapshot複本（僅限）、因為發生災難時、您必須能夠容錯移轉至已知良好的最新主要資料版本。
++
+例如、貴組織可能會在十天內鏡射每小時的正式作業資料複本。如同容錯移轉使用案例所暗示、二線系統上的設備必須與一線系統上的設備相當或幾乎等同、才能從鏡射儲存設備有效地提供資料。
+
+* 反之、由於在稽核時、存取歷史資料的重要性可能與存取目前資料同樣重要、因此無論Snapshot複本目前是否位於主要儲存設備中、都會儲存Snapshot複本。SnapVault
++
+例如、您可能想要在20年內保留資料的每月Snapshot複本、以符合貴企業的政府會計法規。由於不需要從二線儲存設備提供資料、因此您可以在保存庫系統上使用速度較慢、成本較低的磁碟。
+
+
+
+SnapMirror和SnapVault SnapMirror對備份貨幣和備份保留所提供的不同權重、最終是從每個磁碟區最多255個Snapshot複本的限制衍生而來。SnapMirror保留最新的複本、SnapVault 但不保留在最長時間內製作的複本。

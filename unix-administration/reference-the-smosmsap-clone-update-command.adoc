@@ -1,0 +1,69 @@
+---
+permalink: unix-administration/reference-the-smosmsap-clone-update-command.html 
+sidebar: sidebar 
+keywords: command, update, information, clone, comment, smsap 
+summary: 此命令會更新有關實體複本的資訊。您可以更新留言。 
+---
+= smsap Clone update命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會更新有關實體複本的資訊。您可以更新留言。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap clone update
+-profile _profile_name_
+[-label _label_ | -id _id_\]
+-comment  _commment_text_ [-quiet | -verbose\]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile_name_*」
++
+指定包含您要更新之複本的設定檔名稱。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* 「*」-id _id_*
++
+指定實體複本的ID。當SnapManager 您建立實體複本時、會產生ID。使用「msap clone list」命令顯示每個實體複本的ID。
+
+* 「*標籤_label_*」
++
+指定實體複本的標籤。
+
+* *評論*
++
+顯示在建立實體複本中輸入的註解。這是選用參數。
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 命令範例
+
+下列範例更新複製留言。
+
+[listing]
+----
+smsap clone update -profile anson.pcrac5
+-label clone_pcrac51_20080820141624EDT  -comment See updated clone
+----
+'''

@@ -1,0 +1,49 @@
+---
+permalink: unix-administration/task-change-the-retention-policy-default-behavior.html 
+sidebar: sidebar 
+keywords: backup, expire, base, retention, policy, snapmanager, determine, delete, back, up, setting, behavior, unprotect, protect, changing, change 
+summary: 當備份根據保留原則到期時、SnapManager 則由支援決定是否根據保留設定刪除備份。刪除備份是預設行為。您可以變更此預設行為、並選擇釋出未受保護的備份。 
+---
+= 變更保留原則預設行為
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當備份根據保留原則到期時、SnapManager 則由支援決定是否根據保留設定刪除備份。刪除備份是預設行為。您可以變更此預設行為、並選擇釋出未受保護的備份。
+
+*關於此工作*
+
+根據預設、SnapManager 根據備份是否受到保護而定、還原刪除或釋出備份、如下所示：
+
+* 針對受保護的備份、SnapManager 當本機備份過期時、即可將其釋出。
+* 對於未受保護的備份、SnapManager 當本機備份過期時、將會刪除。
++
+您可以變更此預設行為。
+
+
+
+對於受保護的備份、SnapManager 決定是否刪除本機複本時、不考慮下列事項：
+
+* 備份到二線儲存設備失敗或正在受到保護。
++
+如此可在套用保留原則之前、將備份傳輸至二線儲存設備。
+
+* 複本隨後從二線儲存設備中刪除。
+
+
+.步驟
+. 存取下列預設位置：
++
+缺省smsap安裝位置_/properties/smsap.config
+
+. 編輯「smsap.config」檔案。
+. 將'smsap.config'檔案中的'represe.alwaysFreedBackups'屬性設為true。
++
+例如、
+
++
+「* hest.alwaysFreeDiredBackups = true*」
+
+

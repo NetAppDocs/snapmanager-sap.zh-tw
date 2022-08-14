@@ -1,0 +1,256 @@
+---
+permalink: unix-administration/reference-the-smosmsapprofile-update-command.html 
+sidebar: sidebar 
+keywords: run, profile, update, command, information, exist, smsap 
+summary: 您可以執行設定檔更新命令來更新現有設定檔的資訊。 
+---
+= smsap設定檔更新命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「profile update」命令來更新現有設定檔的資訊。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap profile update
+-profile profile
+[-new-profile _new_profile_name_\]
+[-profile-password _profile_password_\]
+[-database
+-dbname _db_dbname_
+-host _db_host_
+[-sid _db_sid_\]
+[-login
+[-username _db_username_ -password _db_password_ -port _db_port_\]
+[-asminstance -asmusername _asminstance_username_  -asmpassword _asminstance_password_\]]
+pass:quotes[[{-rman  {-controlfile | {{-login
+-username  _rman_username_
+-password  _rman_password_ }
+[-tnsname  _tnsname_\]}}} |
+-remove-rman\]
+-osaccount _osaccount_
+-osgroup _osgroup_
+[-retain
+[-hourly [-count _n_\] [-duration _m_\]\]
+[-daily [-count _n_\] [-duration _m_\]]
+pass:quotes[[-weekly [-count _n_] pass:quotes[[-duration _m_]]
+pass:quotes[[-monthly [-count _n_] pass:quotes[[-duration _m_]]]]
+pass:quotes[-comment _comment_
+-snapname-pattern _pattern_
+[-protect [-protection-policy _policy_name_\] | [-noprotect\]]
+[-summary-notification]
+[-notification
+[-success
+pass:quotes[-email _email_address1,email_address2_
+-subject _subject_pattern_\]
+[-failure
+-email _email_address1,email_address2_
+-subject _subject_pattern_]
+pass:quotes[[-separate-archivelog-backups
+-retain-archivelog-backups
+-hours  _hours_ |
+-days _days_ |
+-weeks _weeks_ |
+-months _months_
+[-protect [-protection-policy _policy_name_\] | [-noprotect\]]
+[-include-with-online-backups | -no-include-with-online-backups]]
+[-dump]
+[-quiet | -verbose]]
+----
+
+
+== 參數
+
+如果設定檔上已設定保護原則、您就無法使用SnapManager 效益分析來變更原則。您必須使用Protection Manager的主控台來變更原則。
+
+* 「*設定檔_profile _*」
++
+指定設定檔的名稱。此名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* 「*」、「*」、「*」、「密碼」、「profile密碼」、「*」
++
+指定設定檔的密碼。
+
+* 「*」-「新設定檔」_new_profile_name_*
++
+指定可為設定檔提供的新名稱。
+
+* 「*資料庫*」
++
+指定設定檔所描述之資料庫的詳細資料。這是要備份、還原的資料庫、依此類推。
+
+* 「*」、「*」、「*」、「*」、「*」
++
+指定設定檔所描述的資料庫名稱。您可以使用全域名稱或系統識別碼。
+
+* 「*主機_db_host_*」
++
+指定執行資料庫的主機電腦名稱或IP位址。
+
+* 「-sID _db_sid_*」
++
+指定設定檔所描述之資料庫的系統識別碼。根據預設SnapManager 、系統識別碼會使用資料庫名稱。如果系統識別碼與資料庫名稱不同、您必須使用「-sID」選項來指定。
+
++
+例如、如果您使用Oracle Real Application叢集（RAC）、則必須在RAC節點上指定RAC執行SnapManager 個體的SID系統識別碼、以執行此功能。
+
+* 「*登入*」
++
+指定儲存庫登入詳細資料。
+
+* 「*使用者名稱_repo_username_*」
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* 「*連接埠_repo_port_*」
++
+指定存取儲存庫資料庫所需的TCP連接埠號碼。
+
+* 「*資料庫*」
++
+指定設定檔所描述之資料庫的詳細資料。這是要備份、還原或複製的資料庫。
+
+* 「*」、「*」、「*」、「*」、「*」
++
+指定設定檔所描述的資料庫名稱。您可以使用全域名稱或系統識別碼。
+
+* 「*主機_db_host_*」
++
+指定執行資料庫的主機電腦名稱或IP位址。
+
+* 「*登入*」
++
+指定資料庫登入詳細資料。
+
+* 「*使用者名稱_db_username_*」
++
+指定存取設定檔所描述之資料庫所需的使用者名稱。
+
+* 「*密碼_db_password_*」
++
+指定存取設定檔所描述之資料庫所需的密碼。
+
+* 「*連接埠_db_port_*」
++
+指定存取設定檔所描述之資料庫所需的TCP連接埠號碼。
+
+* 《*》- asminstance *》
++
+指定用於登入自動儲存管理（ASM）執行個體的認證資料。
+
+* 「*」-「asmusername _asminstation_username_*」
++
+指定用於登入ASM執行個體的使用者名稱。
+
+* 「-asmpassword _asminstation_password_*」
++
+指定用於登入ASM執行個體的密碼。
+
+* 「*」、「*」、「*」
++
+指定Oracle資料庫使用者帳戶的名稱。支援此帳戶執行Oracle作業、例如啟動和關機。SnapManager通常是擁有主機上Oracle軟體的使用者、例如orasid。
+
+* 「*」-osgroup _osgroup _*
++
+指定與orasid帳戶相關聯的Oracle資料庫群組名稱。
+
+* 「*」-「*保留」（-每小時[-計數_n_][-持續時間_m_]）[-每日[-計數_n_][-持續時間_m_]][-每週[-計數_n_][-持續時間_m_]]][-每月[-計數_n_][-持續時間_m_]]*
++
+指定備份的保留類別（每小時、每日、每週、每月）。
+
++
+對於每個保留類別、都可以指定保留計數或保留期間、或兩者都指定。持續時間以課程單位為單位（例如小時或日）。例如、如果使用者僅指定每日備份的保留時間為7、SnapManager 則不會限制設定檔的每日備份次數（因為保留次數為0）、SnapManager 但無法自動刪除7天前建立的每日備份。
+
+* 《*評論*》
++
+指定設定檔的註解。
+
+* 「*快照名稱模式_Pattern_*」
++
+指定Snapshot複本的命名模式。您也可以在所有Snapshot複本名稱中加入自訂文字、例如用於高可用度作業的HAOPS。您可以在建立設定檔或建立設定檔之後、變更Snapshot複本命名模式。更新的模式僅適用於尚未發生的Snapshot複本。現有的Snapshot複本會保留先前的Snapname模式。您可以在模式文字中使用多個變數。
+
+* 「*保護（-protection）」[-protection policy _policy_name_]|[-noprotetel]*
++
+指出備份是否應受到二線儲存設備的保護。
+
++
+
+NOTE: 如果在沒有「保護原則」的情況下指定「保護」、資料集就不會有保護原則。如果指定了"-protect"且在創建配置文件時未設置"-protection-police"，則稍後可以使用"msap profile update"命令進行設置，或由儲存管理員使用Protection Manager的控制檯進行設置。
+
++
+nosProtect選項指定不將設定檔保護至次要儲存設備。
+
+* 「*」、「*」、「*」、「*」、「*」、「*
++
+指定已啟用現有設定檔的摘要電子郵件通知。
+
+* 「*通知」（-s字 段成功電子郵件_email_address1、電子郵件地址2 _-Subject _Subject _Pattern_]*）
++
+啟用現有設定檔的電子郵件通知、以便在SnapManager 執行完動作後、收件者能收到電子郵件。您必須輸入要傳送電子郵件警示的單一電子郵件地址或多個電子郵件地址、以及現有設定檔的電子郵件主旨模式。
+
++
+您可以在更新設定檔時變更主旨文字、或加入自訂主旨文字。更新的主旨僅適用於未傳送的電子郵件。您可以針對電子郵件主旨使用多個變數。
+
+* 「*」通知（-fAILITY -email_email_address1、電子郵件地址2 _-Subject _Subject _Pattern_]*）
++
+啟用現有設定檔的電子郵件通知、以便接收者在SnapManager 無法執行此操作時收到電子郵件。您必須輸入要傳送電子郵件警示的單一電子郵件地址或多個電子郵件地址、以及現有設定檔的電子郵件主旨模式。
+
++
+您可以在更新設定檔時變更主旨文字、或加入自訂主旨文字。更新的主旨僅適用於未傳送的電子郵件。您可以針對電子郵件主旨使用多個變數。
+
+* 「*分隔的歸檔儲存設備備份*」
++
+將歸檔記錄備份與資料檔案備份分開。這是可在建立設定檔時提供的選用參數。使用此選項分隔備份之後、您可以建立純資料檔案備份或僅歸檔記錄備份。
+
+* 「*」、「*保留-歸檔-備份」、「小時_小時_」|「-天_天_」|「-週_週_天_」|「-月_月_月*」
++
+指定根據歸檔記錄保留期間（每小時、每日、每週、每月）來保留歸檔記錄備份。
+
+* 「*保護（-protection）」[-protection policy _policy_name_]|-nosprote*
++
+指定根據歸檔記錄保護原則來保護歸檔記錄檔。
+
++
+指定歸檔日誌文件不受使用"-noprote"選項的保護。
+
+* 「包括線上備份」|「不含線上備份」*
++
+指定在線上資料庫備份時隨附歸檔記錄備份。
+
++
+指定不會隨線上資料庫備份一起提供歸檔記錄備份。
+
+* 「*傾印*」
++
+指定在成功建立設定檔之後收集傾印檔。
+
+* 「*- Quiet *」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+下列範例會變更設定檔所述資料庫的登入資訊、並針對此設定檔設定電子郵件通知：
+
+[listing]
+----
+smsap profile update -profile SALES1 -database -dbname SALESDB
+ -sid SALESDB -login -username admin2 -password d4jPe7bw -port 1521
+-host server1 -profile-notification -success -e-mail Preston.Davis@org.com -subject success
+Operation Id [8abc01ec0e78ec33010e78ec3b410001] succeeded.
+----

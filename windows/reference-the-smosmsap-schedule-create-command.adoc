@@ -1,0 +1,192 @@
+---
+permalink: windows/reference-the-smosmsap-schedule-create-command.html 
+sidebar: sidebar 
+keywords: schedule, create, command, backup, smsap 
+summary: 您可以使用排程建立命令來排程要在特定時間建立的備份。 
+---
+= smsap排程create命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「排程create」命令來排程在特定時間建立備份。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap schedule create
+-profile profile_name
+[-full{-auto | -online | -offline}
+[-retain -hourly | -daily | -weekly | -monthly | -unlimited]
+[-verify]] |
+[-data [[-files files [files]] |
+[-tablespaces tablespaces [tablespaces]] {-auto | -online | -offline}
+[-retain -hourly | -daily | -weekly | -monthly | -unlimited]
+[-verify]] |
+[-archivelogs]}
+[-label label]
+[-comment comment]
+
+[-backup-dest path1 [ , path2]]
+[-exclude-dest path1 [ , path2]]
+[-prunelogs {-all | -until-scn until-scn | -until -date  yyyy-MM-dd:HH:mm:ss] | -before {-months | -days | -weeks | -hours}}
+-prune-dest prune_dest1,[prune_dest2]]
+-schedule-name schedule_name
+[-schedule-comment schedule_comment]
+-interval {-hourly | -daily | -weekly | -monthly | -onetimeonly}
+-cronstring cron_string
+-start-time {start_time <yyyy-MM-dd HH:mm>}
+-runasuser runasuser
+[-taskspec taskspec]
+-force
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定與您要排程備份之資料庫相關的設定檔名稱。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *（自動選項）*
++
+如果資料庫處於掛載或離線狀態、SnapManager 則執行離線備份。如果資料庫處於開啟或線上狀態、SnapManager 則執行線上備份。如果您使用「-force」選項搭配「-offline」選項、SnapManager 即使資料庫目前處於線上狀態、也會強制進行離線備份。
+
+* *線上選項*
++
+指定線上資料庫備份。
+
+* *離線選項*
++
+指定資料庫處於關機狀態時的離線備份。如果資料庫處於開啟或掛載狀態、則備份會失敗。如果使用「-force」選項、SnapManager 則嘗試變更資料庫狀態、以關閉資料庫進行離線備份。
+
+* *（全選）*
++
+備份整個資料庫。這包括所有資料、歸檔記錄和控制檔。無論您執行何種類型的備份、都會備份歸檔的重作記錄和控制檔。如果您只想備份一部分資料庫、請使用「-files'」選項或「-tabl空間」選項。
+
+* *文件_list_`*
++
+僅備份指定的資料檔案、加上歸檔的記錄和控制檔。以空格分隔檔案名稱清單。如果資料庫處於開啟狀態、SnapManager 則由功能驗證適當的資料表空間是否處於線上備份模式。
+
+* *表空間_tabl空間_`*
++
+僅備份指定的資料庫表格空間、以及歸檔的記錄和控制檔。以空格分隔表格空間名稱。如果資料庫處於開啟狀態、SnapManager 則由功能驗證適當的資料表空間是否處於線上備份模式。
+
+* *標籤_name_`*
++
+指定此備份的選用名稱。此名稱在設定檔中必須是唯一的。名稱可以包含字母、數字、底線（_）和連字號（-）。它不能以連字號開頭。
+
++
+如果您未指定標籤、SnapManager 則會以scene_type_date格式建立預設標籤：
+
++
+** 範圍為F表示完整備份、或是P表示部分備份。
+** 類型為C表示離線（冷）備份、H表示線上（熱）備份、或A表示自動備份、例如P_a_200810060037IST。
+** 日期是備份的年、月、日和時間。
++
+支援24小時時鐘。SnapManager
+
+
+
++
+例如、如果您在2007年1月16日下午5：45：16離線執行資料庫完整備份東部標準時間SnapManager 、這個功能可以建立F_C_20070111111174516EST標籤。
+
+* *（註釋_stron_`*）
++
+指定可選的註釋來描述此備份。將字串括在單引號（'）內。
+
++
+
+NOTE: 有些Shell會刪除引號。如果您的Shell確實如此、則必須使用反斜槓（\）來加上引號。例如、您可能需要輸入：「\」這是註釋。
+
+* *（驗證選項）*
++
+執行Oracle DBV公用程式、確認備份中的檔案未毀損。
+
++
+
+NOTE: 如果您指定「-Verify」（驗證）選項、則在驗證作業完成之前、備份作業不會完成。
+
+* *（強制選項）*
++
+如果資料庫狀態不正確、則強制變更狀態。例如SnapManager 、根據您指定的備份類型和資料庫所在的狀態、將資料庫狀態從線上變更為離線。
+
++
+** 如果本機執行個體處於關機狀態、且至少有一個執行個體已開啟、您可以使用「-force」選項將本機執行個體變更為已掛載。
+** 如果沒有開啟執行個體、您可以使用「-force」選項將本機執行個體變更為開啟。
+
+
+* *（每小時）-保留｛-每小時|-每日|-每週|-每月|-無限｝（*）
++
+指定備份應以每小時、每日、每週、每月或無限的方式保留。如果未指定"-retif省"選項、則保留類別預設為"-Hour"。若要永久保留備份、請使用「無限」選項。「無限」選項可讓備份不符合保留原則刪除的資格。
+
+* *《歸檔者》*
++
+指定建立歸檔記錄備份。
+
+* *備份目的地_path1 _、[、[_path2_].*
++
+指定歸檔記錄備份的歸檔記錄目的地。
+
+* *（即exclude目的地_path1 _、[、[_path2_]]*）
++
+指定要從備份中排除的歸檔記錄目的地。
+
+* **（至今）-全部|直到- scn直到- SCN |-直到日期_西元年-月-日：日：時：分：分_|-早於｛-月|-日|-週|-小時｝*
++
+根據建立備份時所提供的選項、指定是否從歸檔記錄目的地刪除歸檔記錄檔。「-all」選項會從歸檔記錄目的地刪除所有歸檔記錄檔。在指定的系統變更編號（SCN）之前、「直到SCN」選項會刪除歸檔記錄檔。「直到日期」選項會刪除歸檔記錄檔、直到指定的時間段為止。「之前」選項會在指定的時間段（天、月、週、小時）之前刪除歸檔記錄檔。
+
+* *（排程名稱_排程名稱_）*
++
+指定您為排程提供的名稱。
+
+* *（排程）-留言_schedule_comment（排程留言）_`*
++
+指定可選的註釋來說明如何排程備份。
+
+* *：間隔時間：｛-每小時|-每日|-每週|-每月|-僅限一次時間｝*
++
+指定建立備份的時間間隔。您可以排程每小時、每日、每週、每月或僅一次的備份。
+
+* *。-cronstring_string_`*
++
+指定使用cronstring排程備份。cron運算式用於設定CronTrigger的執行個體。cron運算式是由下列子運算式所組成的字串：
+
++
+** 1指秒。
+** 2指分鐘。
+** 3指小時。
+** 4指一個月內的一天。
+** 5指的是月份。
+** 6指一週中的一天。
+** 7指的是年份（選用）。
+
+
+* *（即開始時間_西元年-月-日、日：月_日*）
++
+指定排程作業的開始時間。排程開始時間應包含在西元年-月-日、日：公釐格式中。
+
+* *執行中使用者_Runasuser_`*
++
+指定在排程備份時變更排程備份作業的使用者（root使用者或Oracle使用者）。
+
+* *任務規範_taskspec_`*
++
+指定可用於備份作業的預先處理活動或後處理活動的工作規格XML檔案。XML檔案的完整路徑必須隨附「taskspec」選項。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+

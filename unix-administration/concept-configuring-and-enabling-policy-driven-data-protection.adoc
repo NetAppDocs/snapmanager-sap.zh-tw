@@ -1,0 +1,17 @@
+---
+permalink: unix-administration/concept-configuring-and-enabling-policy-driven-data-protection.html 
+sidebar: sidebar 
+keywords: snapdrive, datafabric, manager, server, protect, backup, configure, configuring, policy-driven, policy, driven, data, protection 
+summary: 您必須設定SnapDrive 支援資料保護的功能、才能在設定檔上啟用資料保護功能、以保護次要儲存系統上的備份。您可以在Protection Manager的主控台中選取保護原則、以指定如何保護資料庫備份。 
+---
+= 設定及啟用原則導向的資料保護
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須設定SnapDrive 支援資料保護的功能、才能在設定檔上啟用資料保護功能、以保護次要儲存系統上的備份。您可以在Protection Manager主控台中選取保護原則、以指定如何保護資料庫備份。
+
+
+NOTE: 您必須確保OnCommand 在獨立的伺服器上安裝了支援資料保護的功能。

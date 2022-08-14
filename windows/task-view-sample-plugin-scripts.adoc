@@ -1,0 +1,212 @@
+---
+permalink: windows/task-view-sample-plugin-scripts.html 
+sidebar: sidebar 
+keywords: snapmanager, include, script, example, basis, custom, view, sample, plug-in 
+summary: 包含指令碼、您可以用它做為範例、說明如何製作自己的指令碼、或做為自訂指令碼的基礎。SnapManager 
+---
+= 檢視外掛程式指令碼範例
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+包含指令碼、您可以用它做為範例、說明如何製作自己的指令碼、或做為自訂指令碼的基礎。SnapManager
+
+
+
+== 關於這項工作
+
+您可以在下列位置找到範例外掛程式指令碼：
+
+* 「<efault_install_ddirectory>\plugins\examples\backup\cred'」
+* 「<efault_install_ddirectory>\plugins\examples\clone \cred'」
+* 「<default_install_ddirectory>\plugins\windows\examples\backup\create_post」
+
+
+包含範例外掛程式指令碼的目錄包含下列子目錄：
+
+* 「原則」：包含指令碼、一旦設定、就會在複製作業上執行。
+* 「PRE」：包含在設定完成後、在複製作業之前執行的指令碼。
+* 「POST」：包含在完成複製作業後執行的指令碼（若已設定）。
+
+
+下表說明範例指令碼：
+
+|===
+| 指令碼名稱 | 說明 | 指令碼類型 
+
+
+ a| 
+"validation_SID.sh"
+ a| 
+包含對目標系統所用之SID的額外檢查。指令碼會檢查該SID是否具有下列特性：
+
+* 包含三個英數字元
+* 以字母開頭
+* 不包含保留的SAP SSID
+
+ a| 
+原則
+
+
+
+ a| 
+"清理.sh"
+ a| 
+清除目標系統、以便準備好儲存新建立的複本。視需要保留或刪除檔案和目錄。
+ a| 
+Pretask
+
+
+
+ a| 
+"ap_folling_up_Actives.sh"
+ a| 
+執行後續活動工作、如_SAP System Copy Guide_和TR-3442、SAP with Oracle on UNIX and NFS and NetApp Storage中所述。例如、此指令碼會刪除或修改SAP架構中的表格項目。
+ a| 
+工作後
+
+
+
+ a| 
+"OS_db_authentization_sh"
+ a| 
+依照SAP附註316641的建議、針對OPS$使用者調整作業系統驗證。這是如何處理外部SQL檔案的範例。
+ a| 
+工作後
+
+
+
+ a| 
+「鏡射_the_backup.cmd」
+ a| 
+在Windows環境中使用Data ONTAP 7-Mode運作的任一功能時、在備份作業執行後、鏡射磁碟區。
+ a| 
+工作後
+
+
+
+ a| 
+「Vault_the_backup.cmd」
+ a| 
+在Windows環境中使用Data ONTAP 以7-Mode運作的任一功能時、保存備份作業之後的qtree。
+ a| 
+工作後
+
+
+
+ a| 
+「鏡射_the_backup_cDOT.cmd」
+ a| 
+在使用叢集Data ONTAP 式功能時、在Windows環境中執行備份作業之後、鏡射磁碟區。
+ a| 
+工作後
+
+
+
+ a| 
+「Vault_the_backup_cDOT.cmd」
+ a| 
+在使用叢集Data ONTAP 式的Windows環境中執行備份作業之後、保存qtree。
+ a| 
+工作後
+
+|===
+根據預設、隨附的指令碼SnapManager 會使用Bash Shell。在嘗試執行任何範例指令碼之前、您必須確定作業系統已安裝對Bash Shell的支援。
+
+.步驟
+. 若要驗證您是否正在使用Bash Shell、請在命令提示字元中輸入下列命令：
++
+《* Basash*》
+
++
+如果沒有看到錯誤、則表示Bash Shell運作正常。
+
++
+或者、您也可以在命令提示字元中輸入「bash」命令。
+
+. 在下列目錄中找到指令碼：
++
+「<installdir>\plugins\examples\clone \create'」
+
+. 在腳本編輯器（如VI）中打開腳本。
+
+
+
+
+== 範例指令碼
+
+下列範例自訂指令碼可驗證資料庫的SID名稱、並防止在複製的資料庫中使用無效名稱。其中包括三項作業（檢查、說明及執行）、這些作業會在您執行指令碼後呼叫。指令碼也包含代碼0、4和>4的錯誤訊息處理。
+
+[listing]
+----
+@echo off
+REM $Id: //depot/prod/capstan/Rcapstan_ganges/src/plugins/windows/examples/clone/create/policy/validate_sid.cmd#1 $
+REM $Revision: #1 $ $Date: 2011/12/06 $
+REM
+REM
+
+set /a EXIT=0
+
+set name="Validate SID"
+set description="Validate SID used on the target system"
+set parameter=()
+
+rem reserved system IDs
+set INVALID_SIDS=("ADD" "ALL" "AND" "ANY" "ASC" "COM" "DBA" "END" "EPS" "FOR" "GID" "IBM" "INT" "KEY" "LOG" "MON" "NIX" "NOT" "OFF" "OMS" "RAW" "ROW" "SAP" "SET" "SGA" "SHG" "SID" "SQL" "SYS" "TMP" "UID" "USR" "VAR")
+
+if /i "%1" == "-check" goto :check
+if /i "%1" == "-execute" goto :execute
+if /i "%1" == "-describe" goto :describe
+
+:usage:
+	echo usage: %0 "{ -check | -describe | -execute }"
+	set /a EXIT=99
+	goto :exit
+
+:check
+	set /a EXIT=0
+	goto :exit
+
+:describe
+	echo SM_PI_NAME:%name%
+	echo SM_PI_DESCRIPTION:%description%
+	set /a EXIT=0
+	goto :exit
+
+:execute
+	set /a EXIT=0
+
+	rem SM_TARGET_SID must be set
+	if "%SM_TARGET_SID%" == "" (
+		set /a EXIT=4
+		echo SM_TARGET_SID not set
+		goto :exit
+	)
+
+	rem exactly three alphanumeric characters, with starting with a letter
+	echo %SM_TARGET_SID% | findstr "\<[a-zA-Z][a-zA-Z0-9][a-zA-Z0-9]\>" >nul
+	if %ERRORLEVEL% == 1 (
+		set /a EXIT=4
+		echo SID is defined as a 3 digit value starting with a letter. [%SM_TARGET_SID%] is not valid.
+		goto :exit
+	)
+
+	rem not a SAP reserved SID
+	echo %INVALID_SIDS% | findstr /i \"%SM_TARGET_SID%\" >nul
+	if %ERRORLEVEL% == 0 (
+		set /a EXIT=4
+		echo SID [%SM_TARGET_SID%] is reserved by SAP
+		goto :exit
+	)
+
+	goto :exit
+
+
+
+:exit
+	echo Command complete.
+	exit /b %EXIT%
+----
+http://media.netapp.com/documents/tr-3442.pdf["SAP搭配Oracle on UNIX、NFS及NetApp Storage：TR-3442"^]

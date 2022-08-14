@@ -1,0 +1,93 @@
+---
+permalink: unix-administration/concept-restore-preview-plans.html 
+sidebar: sidebar 
+keywords: snapmanager, restore, plan, before, after, operation, preview, review, analyze 
+summary: 還原作業完成前後提供還原計畫。SnapManager還原計畫用於預覽、檢閱及分析不同的還原方法。 
+---
+= 什麼是還原預覽計畫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+還原作業完成前後提供還原計畫。SnapManager還原計畫用於預覽、檢閱及分析不同的還原方法。
+
+
+
+== 還原計畫的架構
+
+還原計畫包含下列兩個區段：
+
+* 預覽/審查：本節說明SnapManager 如何還原（或還原）每個檔案。
+* 分析：本節說明還原作業期間為何未使用某些還原機制。
+
+
+
+
+== 「預覽/審查」區段
+
+本節說明每個檔案的還原方式。當您在還原作業之前檢視還原計畫時、它稱為預覽。還原作業完成後檢視時、稱為審查。
+
+下列預覽範例顯示、檔案是使用快速磁碟區型還原、儲存端檔案系統還原及儲存端系統還原方法來還原。若要判斷為何無法使用相同的還原方法還原所有檔案、請參閱「分析」一節。
+
+[listing]
+----
+Preview:
+The following files will be restored completely via: fast restore
++DG1/rac6/users.dbf
+
+The following files will be restored completely via: storage side file system restore
++DG2/rac6/sysaux.dbf
++DG2/rac6/system.dbf
+The following files will be restored completely via: storage side system restore
++DG2/rac6/undotbs1.dbf
++DG2/rac6/undotbs2.dbf
+----
+每種還原方法都有一個子區段、其中包含可使用該還原方法還原的檔案相關資訊。這些小節會根據儲存方法效率的降低程度來訂購。在上述範例中、快速還原方法比儲存檔案系統還原方法更有效率、因此會先顯示。
+
+一個檔案可以透過多種還原方法還原。當用於檔案系統的基礎邏輯單元編號（LUN）散佈於不同的儲存系統磁碟區、而某些磁碟區符合磁碟區還原的資格、而其他則不適用時、就會使用多種還原方法。如果使用多種還原方法來還原相同的檔案、預覽區段將類似下列內容：
+
+[listing]
+----
+The following files will be restored via a combination of:
+[fast restore, storage side file system restore. storage side system restore]
+----
+
+
+== 「分析」區段
+
+「分析」區段說明為何無法使用或未使用某些還原機制。您可以使用此資訊來判斷需要什麼才能啟用更有效率的還原機制。
+
+下列範例顯示分析區段：
+
+[listing]
+----
+Analysis:
+
+The following reasons prevent certain files from being
+restored completely via: fast restore
+   * LUNs present in snapshot of volume fas960:
+        /vol/rac_6_asm_disks may not be consistent when reverted:
+        [fas960:/vol/rac6_asm_disks/DG4D1.lun]
+     Mapped LUNs in volume fas960:/vol/rac_6_asm_disks
+        not part of the restore scope will be reverted: [DG4D1.lun]
+
+Files to restore:
+     +DG2/rac6/sysaux.dbf
+     +DG2/rac6/system.dbf
+     +DG2/rac6/undotbs1.dbf
+     +DG2/rac6/undotbs2.dbf
+
+* Reasons denoted with an asterisk (*) are overridable.
+----
+在範例中、第一個故障可透過命令列介面（CLI）使用「-fast -override」（快速置換）、或在圖形使用者介面（GUI）中選取* overrid*來進行置換。磁碟區中對應LUN的第二個故障是強制性的、不可過度使用。
+
+您可以執行下列動作來解決檢查：
+
+* 若要解決強制檢查失敗、請變更環境、使檢查通過。
+* 若要解決可過度使用的檢查失敗、您可以變更環境或置換檢查。
++
+不過、您必須謹慎、因為覆寫檢查可能會導致不必要的後果。
+
+

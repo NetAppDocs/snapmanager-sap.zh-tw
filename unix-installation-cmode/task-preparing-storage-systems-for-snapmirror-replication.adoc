@@ -1,0 +1,103 @@
+---
+permalink: unix-installation-cmode/task-prepare-storage-systems-for-snapmirror-replication.html 
+sidebar: sidebar 
+keywords: snapmanager, mirror, snapshot, copies, copy, configure, data-protection, relationship, source, destination, volume, initialize, snapmirror, transfer, replication 
+summary: 在使用SnapManager 效益資料鏡射Snapshot複本之前、您必須先設定來源與目的地磁碟區之間的資料保護關係、然後初始化關係。初始化時、SnapMirror會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。它也會將來源磁碟區上任何其他較不新的Snapshot複本傳輸到目的地磁碟區。 
+---
+= 準備儲存系統以進行SnapMirror複寫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用SnapManager S動地 鏡射Snapshot複本之前、您必須先在來源與目的地磁碟區之間設定_data-protection關係、然後初始化關係。初始化時、SnapMirror會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。它也會將來源磁碟區上任何其他較不新的Snapshot複本傳輸到目的地磁碟區。
+
+
+
+== 您的需求
+
+* 您必須是叢集管理員。
+* 對於目的地Volume上的Snapshot複本驗證、來源與目的地儲存虛擬機器（SVM）必須具有管理LIF及資料LIF。
++
+管理LIF必須與SVM具有相同的DNS名稱。將管理LIF角色設為資料、傳輸協定設為無、防火牆原則設為* mgmt*。
+
+
+
+
+
+== 關於這項工作
+
+您可以使用ONTAP 無法執行的命令列介面（CLI）或OnCommand 《系統管理程式》來建立SnapMirror關係。下列程序記錄了CLI的使用情形。
+
+
+IMPORTANT: 如果您要將資料庫檔案和交易記錄儲存在不同的磁碟區上、則必須在資料庫檔案的來源和目的地磁碟區之間、以及交易記錄的來源和目的地磁碟區之間建立關聯。
+
+下圖顯示初始化SnapMirror關係的程序：
+
+image::../media/snapmirror_steps_clustered.gif[此圖顯示初始化SnapMirror關係的程序：識別目的地叢集,creating a destination volume,creating a SnapMirror relationship between the volumes]
+
+.步驟
+. 識別目的地叢集。
+. 在目的地叢集上、使用「volume create」命令搭配「-type」DP選項、建立大小與來源Volume相同或更大的SnapMirror目的地Volume。
++
+
+IMPORTANT: 目的地Volume的語言設定必須符合來源Volume的語言設定。
+
++
+* 範例 *
+
++
+下列命令會在Aggregate node01_aggr上的SVM2中建立名為dstvolB的2 GB目的地Volume：
+
++
+[listing]
+----
+cluster2::> volume create -vserver SVM2 -volume dstvolB -aggregate node01_aggr -type DP
+-size 2GB
+----
+. 在目的地SVM上、使用「napmirror create」命令搭配「type DP」參數、建立SnapMirror關係。
++
+DP類型將關係定義為SnapMirror關係。
+
++
+* 範例 *
+
++
+下列命令會在SVM1上的來源Volume srcvolA與SVM2上的目的地Volume dstvolB之間建立SnapMirror關係、並指派預設的SnapMirror原則DPDefault：
+
++
+[listing]
+----
+SVM2::> snapmirror create -source-path SVM1:srcvolA -destination-path SVM2:dstvolB
+-type DP
+----
++
+
+NOTE: 請勿定義SnapMirror關係的鏡射排程。您可以在建立備份排程時執行這項作業。
+
++
+如果您不想使用預設的SnapMirror原則、可以叫用「建立napmirror原則」命令來定義SnapMirror原則。
+
+. 使用「napmirror initialize」命令來初始化關係。
++
+初始化程序會將_基準線傳輸_傳送到目的地Volume。SnapMirror會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。它也會將來源磁碟區上的任何其他Snapshot複本傳輸到目的地磁碟區。
+
++
+* 範例 *
+
++
+下列命令可初始化SVM1上的來源Volume srcvolA與SVM2上的目的地Volume dstvolB之間的關係：
+
++
+[listing]
+----
+SVM2::> snapmirror initialize -destination-path SVM2:dstvolB
+----
+
+
+*相關資訊*
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-clus-peer/home.html["《叢集對等快速指南》（英文）ONTAP"^]
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-cg/home.html["《》《9 Volume Disaster Recovery Preparation Express Guide》（英文）ONTAP"^]

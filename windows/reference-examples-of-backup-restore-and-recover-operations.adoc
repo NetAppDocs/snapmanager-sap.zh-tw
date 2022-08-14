@@ -1,0 +1,125 @@
+---
+permalink: windows/reference-examples-of-backup-restore-and-recover-operations.html 
+sidebar: sidebar 
+keywords: information, backup, restore, recover, scenario, accomplish, data, protection, goal, operation 
+summary: 您可以找到一些備份、還原及還原案例的相關資訊、以便用來達成資料保護目標。 
+---
+= 備份、還原及還原作業的範例
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以找到一些備份、還原及還原案例的相關資訊、以便用來達成資料保護目標。
+
+下圖顯示了表空間的內容：
+
+image::../media/prnt_en_drw_smo_smsap_db_tables.gif[Prnten drw smsap資料庫表格]
+
+在圖例中、Tablespace1有一個表格和兩個資料庫檔案與其相關聯。Tablespace2有兩個資料表和一個資料庫檔案與其相關聯。
+
+下表說明部分完整與部分備份、還原及還原案例：
+
+
+
+== 完整備份、還原及還原作業的範例
+
+|===
+| 完整備份 | 還原 | 恢復 
+
+
+ a| 
+執行資料庫DB1中所有項目的備份、包括資料檔案、歸檔記錄和控制檔。SnapManager
+ a| 
+利用SnapManager 控制檔完整還原功能還原備份中的所有資料檔案、表格空間和控制檔。
+ a| 
+您可以指定下列其中一項：
+
+* SCN -輸入SCN、例如384641。
+* 日期/時間-輸入備份的日期和時間、例如：2005年11月25日：19：6：22。
+* 上次對資料庫進行的交易。
+
+
+
+
+ a| 
+不需控制檔即可完成還原SnapManager 功能；不需控制檔、即可還原所有表格空間和資料檔案。
+
+
+
+ a| 
+使用控制檔還原資料檔案或表格空間、請指定下列其中一項：
+
+* 表格空間
+* 資料檔案
+
+ a| 
+將資料恢復到上次對資料庫進行的交易。SnapManager
+
+
+
+ a| 
+無需控制文件即可還原資料檔案或表格空間SnapManager可還原下列其中一項：
+
+* 表格空間
+* 資料檔案
+
+
+
+
+ a| 
+僅還原控制檔
+
+|===
+
+
+== 部分備份、還原及還原作業的範例
+
+|===
+| 部分備份 | 還原 | 恢復 
+
+
+ a| 
+您可以選擇下列其中一個選項：
+
+* 表格空間
++
+您可以指定Tablespace1和Tablespace2、或只指定其中一個。
+
+* 資料檔案
++
+您可以指定三個資料庫檔案（TS1_1.dbf、TS1_2.dbf和TS2_1.dbf）、兩個檔案或一個檔案。
+
+
+
+無論您選擇何種選項、備份都會包含所有控制檔。如果未啟用設定檔來分別建立歸檔記錄備份、則部分備份中會包含歸檔記錄檔。
+ a| 
+完整還原SnapManager 功能可還原部分備份中指定的所有資料檔案、表格空間和控制檔。
+ a| 
+將資料恢復到上次對資料庫執行個體進行的交易。SnapManager
+
+
+
+ a| 
+使用控制檔還原資料檔案或表格空間SnapManager 。功能表還原下列其中一項：
+
+* 指定的所有資料檔案
+* 指定的所有表空間
+
+ a| 
+還原資料檔案或表格空間而不使用控制檔SnapManager 功能還原下列其中一項：
+
+* 表格空間
++
+指定任何表空間。僅還原指定的表格空間。SnapManager如果備份包含Tablespace1、SnapManager 則僅還原該資料表空間。
+
+* 資料檔案
++
+指定任何資料庫檔案。僅還原指定的資料檔案。SnapManager如果備份包含資料庫檔案（TS1_1.dbf和TS1_2.dbf）、SnapManager 則僅還原這些檔案。
+
+
+ a| 
+僅還原控制檔
+
+|===

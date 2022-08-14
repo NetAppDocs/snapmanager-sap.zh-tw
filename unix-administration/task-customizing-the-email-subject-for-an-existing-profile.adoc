@@ -1,0 +1,32 @@
+---
+permalink: unix-administration/task-customize-the-email-subject-for-an-existing-profile.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, customize, email, subject, pattern, exist, profile, updating, update, applicable, update, customizing 
+summary: 利用此功能、您可以更新現有設定檔、自訂電子郵件主旨模式。SnapManager此自訂的受試者模式僅適用於更新的設定檔。 
+---
+= 自訂現有設定檔的電子郵件主旨
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以更新現有設定檔、自訂電子郵件主旨模式。SnapManager此自訂的受試者模式僅適用於更新的設定檔。
+
+.步驟
+. 輸入下列命令：
++
+「* smsap profile update -profile _profile_[-profile-password _profile_password_][-database-dbname _dbname_-host _db_host_[-sID _db_sid_][-login-username_db_username_-password _dimourly _transm_stock_stock_][_unhourly _unnstyourly _controlms_][_styour-tn_deed_deed_deed_密碼_recyour_recon__[_密碼_recyour_recyour_recyour_recyour_][_recyour_recyour_][_recyour_recon_station__station__][_recon__按小時/每週一次、按分鐘數_、按分鐘數_、按分鐘數_、按分鐘數_、按分鐘數_、按分鐘數_、按分鐘、按分鐘數_、按分鐘數 [-每月[-count_n_][-dim_m_]][-留言_comment _][-snapname-Pattern_][-protection [-protection policy _address_oed]|[-notprote][-notification [-socm-email_address1、email_address2_-Subject _ite_protee_protee_Pattern_email]電子郵件形式[_email_email_dism_
+
+
+
+'''
+下列範例顯示電子郵件主旨模式：
+
+[listing]
+----
+
+smsap profile update -profile sales1 -profile-password sales1 -repository -dbname repo2 -host 10.72.197.133 -port 1521 -login -username admin2 -database -dbname DB1 -host 10.72.197.142 -sid DB1
+-osaccount oracle -osgroup dba -profile-notification -success -email admin@org.com -subject {profile}_{operation-name}_{db-sid}_{db-host}_{start-date}_{end-date}_{status}
+----
+'''

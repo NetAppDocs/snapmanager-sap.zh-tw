@@ -1,0 +1,14 @@
+---
+permalink: unix-administration/concept-updating-storage-controller-name-and-database-hostname-associated-with-a-profile.html 
+sidebar: sidebar 
+keywords: snapmanager, storage, system, host, name, address, profile, update, updating, target 
+summary: 利用BIOS 3.3或更新版本、您可以更新儲存系統主機名稱或儲存系統位址、以及與某個BIOS設定檔相關聯的目標資料庫主機名稱。SnapManager SnapManager 
+---
+= 更新與設定檔相關的儲存系統名稱和目標資料庫主機名稱
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用BIOS 3.3或更新版本、您可以更新儲存系統主機名稱或儲存系統位址、以及與某個BIOS設定檔相關聯的目標資料庫主機名稱。SnapManager SnapManager

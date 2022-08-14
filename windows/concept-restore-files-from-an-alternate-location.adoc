@@ -1,0 +1,22 @@
+---
+permalink: windows/concept-restore-files-from-an-alternate-location.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, restore, data, file, control, location, snapshot, copies, copy, volume, alternate, location 
+summary: 利用此功能、您可以從原始Volume中Snapshot複本以外的位置還原資料檔案和控制檔案。SnapManager 
+---
+= 從替代位置還原檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以從原始Volume中Snapshot複本以外的位置還原資料檔案和控制檔案。SnapManager
+
+原始位置是檔案在備份時在作用中檔案系統上的位置。替代位置是指將從哪個位置還原檔案。
+
+您可以從替代位置還原資料檔案、將資料檔案從中繼檔案系統還原至作用中檔案系統。
+
+恢復是SnapManager 由功能不全自動完成的。從外部位置還原檔案時SnapManager 、使用「從位置自動恢復」命令。
+
+此外、支援Oracle Recovery Manager（RMAN）來恢復檔案。SnapManager要恢復的檔案應可由Oracle辨識。檔案名稱應為預設格式。從Flash恢復區恢復時SnapManager 、提供轉譯至Oracle的路徑。但Oracle無法從Flash恢復區域恢復、因為它無法產生正確的檔案名稱。理想情況下、Flash恢復區域是要與RMAN搭配使用的目的地。

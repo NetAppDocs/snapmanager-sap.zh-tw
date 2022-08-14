@@ -1,0 +1,35 @@
+---
+permalink: unix-installation-cmode/reference-smsap-isg-host-requirements.html 
+sidebar: sidebar 
+keywords: install, snapmanager, sap, host, database, backup, requirement, configuration, unix 
+summary: 您必須在SnapManager 要備份的資料庫所在的每個主機上安裝適用於SAP的支援功能。您必須確保主機符合SnapManager 有關功能不整組態的最低要求。 
+---
+= UNIX主機需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在SnapManager 要備份的資料庫所在的每個主機上安裝適用於SAP的支援功能。您必須確保主機符合SnapManager 有關功能不整組態的最低要求。
+
+* 安裝完還原之前、您必須先在SnapDrive 資料庫主機上安裝支援。SnapManager
+* 您可以在SnapManager 實體或虛擬機器上安裝VMware。
+* 您必須在SnapManager 所有共用相同儲存庫的主機上安裝相同版本的資訊區。
+* 如果使用Oracle資料庫11.2.0.2或11.2.0.3、則必須安裝Oracle修補程式「13366202」。
++
+如果您使用的是DNFS、也必須安裝My Oracle Support（MOS）報告「1495104.1」中所列的修補程式、以獲得最大效能與穩定性。
+
+
+
+若要使用SnapManager 圖形化使用者介面（GUI）、您必須在下列其中一個平台上執行主機。GUI也需要在主機上安裝Java執行時間環境（JRE）1.8。
+
+* Red Hat Enterprise Linux
+* Oracle Enterprise Linux
+* SUSE Enterprise Linux
+* Solaris SPARC、x86及x86_64
+* IBM AIX
+
+
+
+NOTE: 也可在VMware ESX虛擬化環境中運作。SnapManager

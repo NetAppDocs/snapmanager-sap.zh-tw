@@ -1,0 +1,26 @@
+---
+permalink: unix-administration/concept-what-autosupport-is.html 
+sidebar: sidebar 
+keywords: autosupport, enable, feature, snapmanager, server, storage, system, operation 
+summary: 利用此功能、當備份作業完成後、支援服務器將不完整的資訊傳送到儲存系統。AutoSupport SnapManager AutoSupport 
+---
+= 什麼是呢AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、當備份作業完成後、支援服務器將不完整的資訊傳送到儲存系統。AutoSupport SnapManager AutoSupport
+
+
+NOTE: 僅針對成功的備份作業傳送不必要訊息。SnapManager AutoSupport
+
+您可以在AutoSupport 「smsap.config」組態檔中、將下列值指派給「auto_support.on」組態參數、以啟用或停用此功能：
+
+* 「* true *」-啟用AutoSupport 「
+* 「*假*」-停用AutoSupport 等化功能
+
+
+
+NOTE: 根據預設AutoSupport 、在SnapManager 支援的功能中啟用了功能。

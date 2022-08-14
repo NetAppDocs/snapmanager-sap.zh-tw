@@ -1,0 +1,22 @@
+---
+permalink: windows/concept-supported-general-configurations.html 
+sidebar: sidebar 
+keywords: install, snapmanager, general, configuration, requirement, support 
+summary: 安裝SnapManager 過程中、您必須先瞭解一般組態需求。 
+---
+= 支援的一般組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝SnapManager 過程中、您必須先瞭解一般組態需求。
+
+支援下列一般組態：SnapManager
+
+* 非叢集式組態、其中單一主機連接至單一儲存系統
+* 每個主機一個SnapManager 支援一個伺服器執行個體
+
+
+如需SnapManager 有關支援的所有儲存類型和版本的資訊、請參閱SnapManager 《支援的功能與SnapDrive 功能表》（英文）。

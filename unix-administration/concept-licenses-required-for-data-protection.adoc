@@ -1,0 +1,34 @@
+---
+permalink: unix-administration/concept-licenses-required-for-data-protection.html 
+sidebar: sidebar 
+keywords: ensure, license, require, data, protection, install, enable, primary, secondary, storage, system 
+summary: 您必須確保在一線和二線儲存系統上安裝並啟用資料保護所需的授權。 
+---
+= 資料保護功能SnapManager 所需的授權
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須確保在一線和二線儲存系統上安裝並啟用資料保護所需的授權。
+
+主儲存系統會接收Oracle資料庫的最新交易更新、儲存資料、並提供資料庫的本機備份保護。主儲存系統也會維護資料庫資料檔案、記錄檔和控制檔。二線儲存系統可做為受保護備份的遠端儲存設備。
+
+為了保護資料、必須在主要儲存系統上安裝並啟用下列授權：
+
+
+NOTE: 如果您想要在二線儲存系統上啟用資料保護、也必須在二線儲存系統上安裝及啟用這些授權。
+
+* 執行7-Mode（7.3.1或更新版本）或叢集式VMware（8.2或更新版本）的支援Data ONTAP Data ONTAP
+* 取決於保護原則）SnapVault
+* SnapRestore
+* SnapMirror（視保護原則而定）
+* 網路檔案系統（NFS）和複製需要FlexClone。
++
+此外、僅SnapDrive 當將需求設定為在SAN環境中使用FlexClone時、儲存區域網路（SAN）才需要FlexClone。
+
+* 適當的傳輸協定、例如NFS、網際網路小型電腦系統介面（iSCSI）或光纖通道（FC）
+
+
+根據所使用的保護原則、應在一線和二線儲存系統上使用SnapMirror或SnapMirror。SnapVault基本的備份保護原則只需要SnapVault 在支援的系統上安裝支援的功能即可。包含鏡射保護的原則需要在支援的系統上安裝SnapMirror。備份與鏡射災難恢復原則需要在支援的系統上安裝SnapMirror。

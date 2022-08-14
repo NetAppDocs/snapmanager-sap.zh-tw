@@ -1,0 +1,14 @@
+---
+permalink: windows/concept-snapdrive-on-snapmanager-server.html 
+sidebar: sidebar 
+keywords: snapmanager, snapdrive, windows, snapshot, copies, copy, storage, system, server 
+summary: 使用適用於Windows的功能來建立儲存系統的Snapshot複本。SnapManager SnapDrive駐留在同一部伺服器上做為SnapDrive SnapManager 
+---
+= 在伺服器上執行SnapDrive SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用適用於Windows的功能來建立儲存系統的Snapshot複本。SnapManager SnapDrive駐留在同一部伺服器上做為SnapDrive SnapManager

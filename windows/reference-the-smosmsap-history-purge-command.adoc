@@ -1,0 +1,88 @@
+---
+permalink: windows/reference-the-smosmsap-history-purge-command.html 
+sidebar: sidebar 
+keywords: command, enable, delete, history, snapmanager, operation, smsap, purge 
+summary: 此命令可讓您刪除SnapManager 整個過程中的資訊。 
+---
+= smsap歷史記錄清除命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令可讓您刪除SnapManager 整個過程中的資訊。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap history purge
+-profile {-name profile_name [profile_name1, profile_name2] | -all
+-repository
+-login [-password repo_password]
+-username repo_username
+-host repo_host
+-dbname repo_dbname
+-port repo_port}
+-operation {-operations operation_name [operation_name1, operation_name2] | -all}
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *？設定檔_profile _？*
++
+指定設定檔的名稱。此名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* *（系統儲存庫）*
++
+儲存庫之後的選項會指定儲存設定檔之資料庫的詳細資料。
+
+* *（即dbname _repo_dbname_`*）
++
+指定儲存設定檔的資料庫名稱。使用全域名稱或SID。
+
+* *主機_repo_host_`*
++
+指定執行儲存庫資料庫的主機電腦名稱或IP位址。
+
+* *（登入）*
++
+啟動儲存庫登入詳細資料。
+
+* *（用戶名_repo_username_`*）
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* *（連接埠_repo_port_`*）
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* *操作｛-operationsoperation_name [_operation_name1、operation_name2_]|-all`*
++
+指定SnapManager 您設定歷程記錄的靜態作業。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 命令範例
+
+[listing]
+----
+smsap history purge -profile -name PROFILE1 -operation -operations backup
+-verbose
+----

@@ -1,0 +1,188 @@
+---
+permalink: unix-administration/concept-primary-and-secondary-storage-configuration-and-topology.html 
+sidebar: sidebar 
+keywords: techco, corportation, payroll, database, server, snapmanager, sap, host, fifty, mile, primary, secondary, storage, configuration, topology 
+summary: 在此範例中、TechCo公司會在資料庫伺服器上執行其薪資資料庫、該資料庫伺服器也是SnapManager SAP主機的支援中心、並將其薪資資料庫資料和組態檔案儲存在公司總部的主要儲存系統上。企業的需求是透過每日和每週備份到本機儲存設備、以及備份到50英里以外次要儲存站台的儲存系統、來保護該資料庫。 
+---
+= 一線與二線儲存組態與拓撲
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在此範例中、TechCo公司會在資料庫伺服器上執行其薪資資料庫、該資料庫伺服器也是SnapManager SAP主機的支援中心、並將其薪資資料庫資料和組態檔案儲存在公司總部的主要儲存系統上。企業的需求是透過每日和每週備份到本機儲存設備、以及備份到50英里以外次要儲存站台的儲存系統、來保護該資料庫。
+
+下圖顯示SnapManager 支援本機和次要備份保護所需的SAP的功能、以及NetApp管理主控台資料保護功能元件。
+
+image::../media/scrn_en_drw_smsap_architecture.gif[此圖顯示與SnapManager SAP及管理主控台資料庫保護架構的結合式功能相關的元件]
+
+如前圖所示、若要管理薪資資料庫並支援其本機和次要備份保護、請使用下列部署。
+
+* *《主機*》SnapManager
++
+這個主機payroll.techco.com位於公司總部、在UNIX伺服器上執行、也會執行產生及維護薪資資料庫的資料庫程式。SnapManager
+
++
+** *連線*
++
+為了支援本機備份與二線備份保護、SnapManager 此功能的網路連線可連線至下列元件：
+
++
+*** SAP用戶端適用的SnapManager
+*** 執行資料庫程式的資訊儲存庫、適用於UNIX的功能、SnapManager SnapDrive SnapManager 以及
+*** 主要儲存系統
+*** 二線儲存系統
+*** DataFabric Manager伺服器
+
+
+** *安裝產品*
++
+本範例中安裝了下列產品的支援對象：SnapManager
+
++
+*** 伺服器SnapManager
+*** 適用於UNIX SnapDrive
+*** 主機公用程式
+
+
+
+
+* * TechCo主要儲存系統*
++
+薪資資料庫（包括相關的資料檔案、記錄檔和控制檔）位於主要儲存系統上。這些產品位於TechCo公司總部、SnapManager 以及連接主要儲存設備和SnapManager 該主機的網站。最新的薪資資料庫交易和更新會寫入主要儲存系統。Snapshot複本可為薪資資料庫提供本機備份保護、也駐留在主要儲存系統上。
+
++
+** *連線*
++
+為了支援二線備份保護、主要儲存系統會與下列元件建立網路連線：
+
++
+*** 執行資料庫程式的支援主機、UNIX版的支援、SnapManager SnapDrive SnapManager 以及
+*** 二線儲存系統
+*** DataFabric Manager伺服器
+
+
+** *安裝產品*
++
+在此範例中、必須在這些系統上啟用下列授權：
+
++
+*** 不含更新版本Data ONTAP
+*** SnapVaultData ONTAP 功能主要
+*** （NFS所需）FlexVol
+*** SnapRestore
+*** NFS傳輸協定
+
+
+
+
+* * TechCo二線儲存系統*
++
+次要儲存系統位於50英里以外的網路連線次要儲存站台、用於儲存薪資資料庫的二線備份。
+
++
+** *連線*
++
+為了支援二線備份保護、二線儲存系統可連線至下列元件：
+
++
+*** 主要儲存系統
+*** DataFabric Manager伺服器
+
+
+** *安裝產品*
++
+以下授權必須在次要儲存系統上啟用：
+
++
+*** Data ONTAP
+*** SnapVaultData ONTAP 不支援
+*** SnapRestore
+*** （NFS所需）FlexVol
+*** NFS傳輸協定
+
+
+
+
+* * DataFabric Manager伺服器*
++
+DataFabric Manager伺服器techco_dFM位於公司總部、可供儲存管理員存取。DataFabric Manager伺服器除了其他功能外、還能協調主要與次要儲存設備之間的備份工作。
+
++
+** *連線*
++
+為了支援二線備份保護、DataFabric Manager伺服器會維持與下列元件的網路連線：
+
++
+*** NetApp管理主控台
+*** 主要儲存系統
+*** 二線儲存系統
+
+
+** *安裝產品*
++
+DataFabric Manager伺服器已獲得下列伺服器產品的授權：
+
++
+*** DataFabric Manager
+
+
+
+
+* *《知識庫》* SnapManager
++
+這個位於專用伺服器SnapManager 上的支援資源庫儲存SnapManager 有關由支援中心執行作業的資料、例如備份時間、表格空間和資料檔案備份、使用的儲存系統、建立的複本、以及建立的Snapshot複本。當DBA嘗試完整或部分還原時、SnapManager 此功能會查詢儲存庫、以識別SnapManager 由SAP針對還原所建立的備份。
+
++
+** *連線*
++
+為了支援二線備份保護、二線儲存系統可連線至下列元件：
+
++
+*** 支援SnapManager
+*** SAP用戶端適用的SnapManager
+
+
+
+
+* * NetApp管理主控台*
++
+NetApp管理主控台是儲存管理員用來設定排程、原則、資料集和資源集區指派的圖形化使用者介面主控台、可讓儲存管理員存取備份至二線儲存系統。
+
++
+** *連線*
++
+為了支援二線備份保護、NetApp管理主控台可連線至下列元件：
+
++
+*** 主要儲存系統
+*** 二線儲存系統
+*** DataFabric Manager伺服器
+
+
+
+
+* *適用於SAP用戶端* SnapManager
++
+SAP用戶端的功能是DBA在本範例中用於薪資資料庫的圖形化使用者介面和命令列主控台、用於設定及執行本機備份及備份至二線儲存設備。SnapManager
+
++
+** *連線*
++
+為了支援本機備份與二線備份保護、SnapManager SAP客戶端的網路連線可連線至下列元件：
+
++
+*** 支援SnapManager
+*** 執行資料庫程式、適用於UNIX的功能、以及執行資料庫程式的資訊儲存庫SnapManager SnapDrive SnapManager
+*** 資料庫主機（如果與執行SnapManager 支援的主機分開）
+*** DataFabric Manager伺服器
+
+
+** *安裝產品*
++
+若要支援本機備份與二線備份保護、SnapManager 此元件必須安裝適用於SAP用戶端的功能。
+
+
+
+

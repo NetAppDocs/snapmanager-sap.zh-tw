@@ -1,0 +1,99 @@
+---
+permalink: windows/reference-the-smosmsapbackup-mount-command.html 
+sidebar: sidebar 
+keywords: run, backup, mount, command, perform, recover, operation, external, tool, smsap 
+summary: 您可以執行備份掛載命令來掛載備份、以便使用外部工具執行恢復作業。 
+---
+= smsap備份掛載命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「備份掛載」命令來掛載備份、以便使用外部工具執行恢復作業。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap backup mount
+-profile profile_name
+[-label label [-data | -archivelogs] | [-id id]
+[-host  host]
+
+[-dump]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定與您要掛載的備份相關聯的設定檔。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *（id_guid_`*）
++
+以指定的GUID掛載備份。當SnapManager 您建立備份時、會產生由支援所產生的GUID。您可以使用「msap備份清單」命令來顯示每個備份的Guid。
+
+* *標籤_label_`*
++
+以指定的標籤掛載備份。
+
+* *資料*
++
+指定資料檔案。
+
+* *《歸檔者》*
++
+指定歸檔記錄檔。
+
+* *（主機_主機_主機_）*
++
+指定要掛載備份的主機。
+
+* *（轉儲）*
++
+在成功或失敗的掛載作業之後收集傾印檔。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設設定為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+NOTE: 只有在使用外部工具（例如Oracle Recovery Manager（RMAN））時、才必須使用此命令。如果您使用「msap備份還原」命令來還原備份、則系統會自動處理備份的掛載作業。SnapManager此命令會顯示清單、顯示已掛載Snapshot複本的路徑。只有在指定了「-verbose」選項時、才會顯示此清單。
+
+
+
+== 範例
+
+下列範例裝載備份：
+
+[listing]
+----
+smsap backup mount -profile S10_BACKUP -label full_monthly_10 -verbose
+[INFO ]: SMSAP-13051: Process PID=6852
+[INFO ]: SMSAP-13036: Starting operation Backup Mount on host hadley.domain.private
+[INFO ]: SMSAP-13036: Starting operation Backup Mount on host hadley.domain.private
+[INFO ]: SMSAP-13046: Operation GUID 8abc01573883daf0013883daf5ac0001 starting on Profile FAS_P1
+[INFO ]: SD-00025: Beginning to connect filesystem(s) [I:\] from snapshot smsap_fas_p1_fasdb_d_h_2_8abc0157388344bc01388344c2d50001_0.
+[INFO ]: SD-00016: Discovering storage resources for C:\SnapManager_auto_mounts\I-2012071400592328_0.
+[INFO ]: SD-00017: Finished storage discovery for C:\SnapManager_auto_mounts\I-2012071400592328_0
+[INFO ]: SD-00026: Finished connecting filesystem(s) [I:\] from snapshot smsap_fas_p1_fasdb_d_h_2_8abc0157388344bc01388344c2d50001_0.
+[INFO ]: SD-00025: Beginning to connect filesystem(s) [H:\] from snapshot smsap_fas_p1_fasdb_d_h_1_8abc0157388344bc01388344c2d50001_0.
+[INFO ]: SD-00016: Discovering storage resources for C:\SnapManager_auto_mounts\H-2012071400592312_0.
+[INFO ]: SD-00017: Finished storage discovery for C:\SnapManager_auto_mounts\H-2012071400592312_0.
+[INFO ]: SD-00026: Finished connecting filesystem(s) [H:\] from snapshot smsap_fas_p1_fasdb_d_h_1_8abc0157388344bc01388344c2d50001_0.
+[INFO ]: SMSAP-13048: Backup Mount Operation Status: SUCCESS
+[INFO ]: SMSAP-13049: Elapsed Time: 0:19:05.620
+----

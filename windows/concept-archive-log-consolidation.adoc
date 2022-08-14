@@ -1,0 +1,14 @@
+---
+permalink: windows/concept-archive-log-consolidation.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, consolidate, archive, log, backup, file, identify, identifies, consolidation 
+summary: SAP適用的（3.2或更新版本）整合歸檔記錄備份、以維持歸檔記錄檔的最少備份量。SnapManager適用於SAP的可識別及釋出包含歸檔記錄檔檔案的備份、這些檔案是其他備份的子集。SnapManager 
+---
+= 歸檔記錄整合
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAP適用的（3.2或更新版本）整合歸檔記錄備份、以維持歸檔記錄檔的最少備份量。SnapManager適用於SAP的可識別及釋出包含歸檔記錄檔檔案的備份、這些檔案是其他備份的子集。SnapManager

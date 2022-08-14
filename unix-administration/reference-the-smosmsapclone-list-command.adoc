@@ -1,0 +1,66 @@
+---
+permalink: unix-administration/reference-the-smosmsapclone-list-command.html 
+sidebar: sidebar 
+keywords: command, list, clone, database, profile, smsap 
+summary: 此命令會列出特定設定檔的資料庫複本。 
+---
+= smsap clone list命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會列出特定設定檔的資料庫複本。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap clone list
+-profile _profile_name_
+-delimiter _character_
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* 「*設定檔_profile名稱_*」
++
+指定與設定檔相關聯的複本清單。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* 「*」分隔符號_character-*
++
+指定此參數時、命令會列出每一列中以指定字元分隔的屬性。
+
+* 「*- Quiet *」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 命令範例
+
+下列範例列出SALES1設定檔中的資料庫複本。
+
+[listing]
+----
+smsap clone list -profile SALES1 -verbose
+----
+[listing]
+----
+ID Status SID Host Label Comment
+-------- ------- ----- ------- ---------- -------
+8ab...01 SUCCESS hsdbc server1 back1clone test comment
+----
+'''

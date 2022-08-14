@@ -1,0 +1,24 @@
+---
+permalink: windows/task-authorizing-user-access-to-the-repository.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, set, credential, user, repository, restrict, prevent, access, host, database, authorize, authorizing 
+summary: 使用支援的支援功能、您可以設定資料庫使用者存取儲存庫的認證資料。SnapManager使用認證資料、您可以限制或禁止存取SnapManager 「介紹主機」、儲存庫、設定檔和資料庫。 
+---
+= 授權存取儲存庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用支援的支援功能、您可以設定資料庫使用者存取儲存庫的認證資料。SnapManager使用認證資料、您可以限制或禁止存取SnapManager 「介紹主機」、儲存庫、設定檔和資料庫。
+
+如果您使用認證集命令來設定認證資料、SnapManager 則不會提示輸入密碼。
+
+您可以在安裝SnapManager 過程中設定使用者認證資料。
+
+. 輸入下列命令：
++
+「msap認證集-repository -dbname repo_service_name -host repo_host -login-userName repo_username[-password]-port repo_port]
+
+

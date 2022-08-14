@@ -1,0 +1,38 @@
+---
+permalink: windows/concept-advantages-of-using-snapmanager.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, task, database, manage, data, advantage, use 
+summary: 您可以使用SnapManager 適用於SAP的功能來在資料庫上執行不同的工作、並有效率地管理資料。 
+---
+= 使用SnapManager 過程中的優勢
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用SnapManager 適用於SAP的功能來在資料庫上執行不同的工作、並有效率地管理資料。
+
+適用於SAP的支援可搭配儲存系統使用、並可讓您執行下列工作：SnapManager
+
+* 為主要或次要儲存設備建立節省空間的備份、並排程備份。
++
+您可以建立完整和部分資料庫備份、並套用保留期間原則。SnapManager（3.2或更新版本）可讓您僅建立資料檔案和歸檔記錄的備份。
+
++
+** 使用支援（3.2或更新版本）、您可以在備份與還原作業之前或之後執行預先處理或後處理。SnapManager
+** 利用支援（3.2或更新版本）的功能、您可以使用後處理指令碼來保護備份。SnapManager
+
+
+* 使用檔案型還原作業還原完整或部分資料庫。
+* 自動還原及還原資料庫備份。
++
+支援自動還原及還原資料庫備份的功能（3.2或更新版本）SnapManager 。透過探索、掛載及套用備份中的歸檔記錄檔、即可自動恢復還原的資料庫。SnapManager
+
+* 僅針對歸檔記錄建立備份時、從歸檔記錄目的地剪除歸檔記錄檔。
+* 只保留具有唯一歸檔記錄檔的備份、即可自動保留歸檔記錄備份的最小數量。
+* 追蹤作業詳細資料、並依主機、設定檔、備份或複製來產生報告。
+* 驗證備份狀態。
+* 維護SnapManager 與設定檔相關的不穩定作業歷史記錄。
+* 在主儲存設備上建立具空間效益的備份複本。
+

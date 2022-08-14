@@ -1,0 +1,24 @@
+---
+permalink: unix-administration/task-clone-with-rac-databases.html 
+sidebar: sidebar 
+keywords: clone, rac, database, cloning 
+summary: 您可以將RAC資料庫複製到非RAC資料庫、或將其複製到非RAC資料庫、然後將其變更為RAC資料庫。 
+---
+= 使用RAC資料庫複製
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將RAC資料庫複製到非RAC資料庫、或將其複製到非RAC資料庫、然後將其變更為RAC資料庫。
+
+.步驟
+. 若要複製RAC資料庫、請輸入下列命令：
++
+hesap clone create -backup-label _backup_label_-profile _profile_name_-newsid _new_sid_-clonespec _full路徑to _clonespec_file_-verbos*
+
+. 若要將複製的非RAC資料庫變更為RAC資料庫、請將檔案從「_initclone _sid.ora_」重新命名為「_initclone _local_instance_sid.ora_」。
+. 編輯重新命名的檔案、將參數「叢集資料庫」設為「_true_」。RAC資料庫資訊。
+. 使用srvctl註冊克隆的RAC資料庫。
+

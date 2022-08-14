@@ -1,0 +1,49 @@
+---
+permalink: windows/reference-the-smosmsap-server-stop-command.html 
+sidebar: sidebar 
+keywords: command, stop, snapmanager, host, server, enter, root, smsap_server, smsap 
+summary: 此命令會停止SnapManager 支援此功能的主機伺服器、並在根目錄下輸入。 
+---
+= smsap_server stop命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會停止SnapManager 支援此功能的主機伺服器、並在根目錄下輸入。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap_server stop
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *（靜音）*
++
+指定主控台僅顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+指定錯誤、警告和資訊訊息會顯示在主控台上。
+
+
+
+
+
+== 命令範例
+
+以下範例使用「smsap_server stop」命令。
+
+[listing]
+----
+smsap_server stop
+----

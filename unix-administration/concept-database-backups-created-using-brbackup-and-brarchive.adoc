@@ -1,0 +1,51 @@
+---
+permalink: unix-administration/concept-database-backups-created-using-brbackup-and-brarchive.html 
+sidebar: sidebar 
+keywords: brbackup, command, create, backup, sap, database, snapshot, copy, storage, system, cli, interface, offline, redo, log, file, brarchive 
+summary: BRBACKUP命令會使用儲存系統上的Snapshot複本來建立SAP資料庫的備份。您可以從SAP主機的命令列介面（CLI）、BR*工具CLI或圖形使用者介面（GUI）執行BRBACKUP命令。若要備份離線重作記錄檔、您可以使用BRARCHIVE命令。 
+---
+= 使用BRBACKUP和BRRCHIVE建立資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+BRBACKUP命令會使用儲存系統上的Snapshot複本來建立SAP資料庫的備份。您可以從SAP主機的命令列介面（CLI）、BR*工具CLI或圖形使用者介面（GUI）執行「BRBACKUP」命令。若要備份離線重作記錄檔、您可以使用「BRARCHIVE」命令。
+
+BRBACKUP會備份SAP資料庫的資料檔案、控制檔和線上重作記錄檔。您應該備份其他SAP組態檔、例如SAP記錄檔、核心檔案、並使用「BRBACKUP」搭配「AP_DIR」選項來傳輸要求、然後使用「BRRESTRESTORE」來還原。
+
+如果將"shqlnet.ora"中的"_SQLNET.imiting_services _"參數值設為"* none*"、請確定Oracle資料庫使用者（系統）具有Sysoper權限。系統是在Oracle資料庫建立期間所建立的預設使用者。若要啟用SYSOPER權限、請執行下列命令：
+
+「*將系統授予系統；*」
+
+您應該使用BR*工具命令或SnapManager 是使用REXEREAT命令來管理歸檔記錄檔。
+
+您不應將SnapManager 下列作業結合使用、以管理下列歸檔記錄備份：
+
+* 使用BRBACKUP和BRRCHIVE命令搭配SnapManager 使用支援此功能的支援資料設定檔（使用分隔歸檔記錄備份的選項建立）、分別建立資料檔案和歸檔記錄檔的備份。
+* 使用SnapManager 還原設定檔建立備份時、請剪除歸檔記錄檔
+
+
+
+NOTE: 當您將下列項目搭配使用時、不顯示任何警告或錯誤訊息：SAP設定檔的搭配使用時、以及用於管理歸檔記錄檔的BR*工具命令。SnapManager SnapManager
+
+您應該建立設定檔、而不使用分隔歸檔記錄備份的選項、並將此設定檔用於一般BR*工具作業。
+
+您可以使用「BRRESTRESTORE」來還原備份。對於使用「BRBACKUP」搭配「-m all」或「-m full」選項所建立的資料庫備份（備份包括資料檔案、控制檔或線上重作記錄檔）、您也可以使用SnapManager NetApp CLI或GUI還原備份。
+
+如需SnapManager 有關如何處理還原的詳細資訊、請參閱_備份資料庫_。
+
+請參閱SAP文件、以取得「BRBACKUP」和「BRRCHIVE」命令的具體指示和語法。在儲存系統上使用BRBACKUP和BRRCHIVE命令之前、請先確定符合下列條件：
+
+* 如果SnapManager 此零件名稱與SAP資料庫系統識別碼不同、請指定包含SnapManager 此零件名稱的參數檔名稱。
++
+您可以使用下列其中一種方法來執行此作業：
+
++
+** 使用帶有「BRBACKUP」命令的-r選項指定備份公用程式參數檔（「initSID.utl」）。
+** 在初始化檔案（「initSID.SAP」）中指定參數檔案。如需詳細資訊、請參閱_指定BR* Tools備份的設定檔_。
+
+
+* 如果適合您的環境、請使用不同的媒體（例如磁帶）來建立SAP資料的額外備份。Snapshot複本可用於快速備份與還原。它們儲存在與備份資料相同的實體媒體上、除非複製到其他儲存設備、否則不會用於災難恢復。
+

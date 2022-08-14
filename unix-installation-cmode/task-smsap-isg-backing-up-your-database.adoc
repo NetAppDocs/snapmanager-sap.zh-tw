@@ -1,0 +1,73 @@
+---
+permalink: unix-installation-cmode/task-smsap-isg-back-up-your-database.html 
+sidebar: sidebar 
+keywords: create, back up, database, schedule, initial, verification 
+summary: 建立設定檔之後、您必須備份資料庫。您可以在初始備份與驗證之後排程重複備份。 
+---
+= 備份資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立設定檔之後、您必須備份資料庫。您可以在初始備份與驗證之後排程重複備份。
+
+
+
+== 關於這項工作
+
+這些步驟說明如何使用SnapManager 還原使用者介面建立資料庫備份。您也可以視需要使用命令列介面（CLI）。
+
+如需如何使用CLI或SAP BR*工具建立備份的相關資訊、請參閱SnapManager UNIX適用的_《SAP系統管理指南》。
+
+.步驟
+. 在「儲存庫」樹狀結構中、以滑鼠右鍵按一下包含您要備份之資料庫的設定檔、然後選取*備份*。
+. 在* Label *中、輸入備份的自訂名稱。
++
+名稱中不得包含空格或特殊字元。如果您未指定名稱、SnapManager 則由NetApp自動建立備份標籤。
+
++
+從功能3.4開始SnapManager 、您可以修改SnapManager 由功能複製所自動建立的備份標籤。您可以編輯「override.default.backup.pattern`」和「new.default.backup.pattern`」組態變數、以建立自己的預設備份標籤模式。
+
+. 選用：在* SnapVault 《*》中、您必須輸入SnapMirror原則規則中所指定的SnapMirror標籤、同時設定SnapVault 「SnapMirror關係」。
++
+
+NOTE: 僅當您在建立設定檔時、已選取_SnapManager®cDOT_Vault_作為保護原則時、才SnapVault 會顯示*《SURELabel》（*《參考資料標籤》）欄位。
+
+. 如有必要、請選取*允許資料庫的啟動或關閉*、以修改資料庫的狀態（若有需要）。
++
+此選項可確保如果資料庫未處於建立備份所需的狀態、SnapManager 則由Oracle將資料庫自動移至所需狀態、以完成作業。
+
+. 在「*資料庫*」、「*表格空間*」或「*資料檔案*」至「備份」頁面上、執行下列步驟：
++
+.. 選取*備份資料檔案*以備份完整資料庫、選取的資料檔案或選取的資料表空間。
+.. 選擇*備份歸檔文件*、分別備份歸檔記錄檔。
+.. 如果要從已備份的作用中檔案系統刪除歸檔記錄檔、請選取* Prune Archivelog*。
++
+
+NOTE: 如果Flash Recovery Area（FRA）已啟用歸檔記錄檔、SnapManager 則無法剪除歸檔記錄檔。
+
+.. 如果您要啟用備份保護、請選取*保護備份*。
++
+只有在建立設定檔時選取保護原則時、才會啟用此選項。
+
+.. 從*類型*下拉式清單中、選取您要建立的備份類型（離線或線上）。
++
+如果您選取_Auto_、SnapManager 則會根據資料庫的目前狀態建立備份。
+
+.. 從*保留類別*下拉式清單中、選取保留類別。
+.. 如果要確保備份的檔案未毀損、請選取「使用Oracle DBVERIFY公用程式*驗證備份」核取方塊。
+
+
+. 在「*工作啟用*」頁面上、指定您是否要在備份作業完成前後執行工作。
+. 在*執行備份作業*頁面上、確認資訊、然後按一下*備份*。
+. 按一下「*完成*」以關閉精靈。
++
+如果作業失敗、請按一下*作業詳細資料*以檢視導致作業失敗的原因。
+
+
+
+*相關資訊*
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP12481453["適用於UNIX的SAP系統管理指南SnapManager"^]

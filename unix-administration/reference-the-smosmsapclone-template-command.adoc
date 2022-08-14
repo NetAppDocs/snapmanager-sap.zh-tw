@@ -1,0 +1,65 @@
+---
+permalink: unix-administration/reference-the-smosmsapclone-template-command.html 
+sidebar: sidebar 
+keywords: command, create, clone, specification, template, smsap 
+summary: 此命令可讓您建立複製規格範本。 
+---
+= smsap Clone範本命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令可讓您建立複製規格範本。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap clone template
+-profile _name_
+[-backup-id _guid_  | -backup-label _backup_name_\]
+[-quiet | -verbose]]
+----
+
+
+== 參數
+
+* 「*設定檔_名稱_*」
++
+指定要建立複本規格的資料庫。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* 「*備份ID _guid_*」
++
+使用指定的GUID從備份建立複製規格。當SnapManager 您建立備份時、會產生由支援所產生的GUID。使用smsap備份清單命令來顯示每個備份的Guid。
+
+* 「*備份-標籤_backup_label_name_*」
++
+使用指定的備份標籤、從備份建立複本規格。
+
+* 「*- Quiet *」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 命令範例
+
+下列範例使用標籤Full_backup_sales_May從備份建立複製規格範本。當smsap Clone範本命令完成後、即會完成Clone規格範本。
+
+[listing]
+----
+smsap clone template -profile SALES1 -backup-label full_backup_sales_May
+Operation Id [8abc01ec0e79004b010e79006da60001] succeeded.
+----
+'''

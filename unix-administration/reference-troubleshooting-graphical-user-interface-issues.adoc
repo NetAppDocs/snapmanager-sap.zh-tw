@@ -1,0 +1,206 @@
+---
+permalink: unix-administration/reference-troubleshooting-graphical-user-interface-issues.html 
+sidebar: sidebar 
+keywords: information, common, graphical, user, interface, gui, issue, resolve, troubleshooting 
+summary: 您可以找到一些常見的已知圖形化使用者介面（GUI）問題的相關資訊、這些問題可能有助於您解決問題。 
+---
+= 疑難排解圖形化使用者介面問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以找到一些常見的已知圖形化使用者介面（GUI）問題的相關資訊、這些問題可能有助於您解決問題。
+
+|===
+| 問題 | 說明 | 因應措施 
+
+
+ a| 
+在存取SnapManager 支援圖形使用者介面以執行作業時、可能會顯示下列錯誤訊息：「MSAP-20111：驗證失敗、適用於主機上的使用者。
+ a| 
+如果SnapManager 在執行此伺服器的主機上變更使用者密碼、就會發生此問題。變更密碼後、針對啟動GUI的使用者所建立的認證快取將變成無效。由於使用快取中的認證資料進行驗證、因此驗證失敗。SnapManager
+ a| 
+您必須執行下列其中一項工作：
+
+* 刪除密碼已變更的使用者認證、然後執行下列命令、在快取中新增認證：
++
+.. 《msap認證資料刪除》
+.. 「msap認證集」
+
+
+* 執行「shmsap認證清除命令」來清除整個快取。如果出現提示、請重新開啟GUI並設定認證資料。
+
+
+
+
+ a| 
+使用Java Web Start存取SnapManager 功能時會顯示安全性警告。
+ a| 
+使用Java Web Start存取SnapManager 圖形化圖形使用者介面時、會顯示安全性警告。此問題是因為JLLP Jar是自我簽署的、SnapManager 而使用的Java版本不允許高安全性層級的自我簽署Jar。
+ a| 
+您可以在Java控制面板中將安全性設定變更為媒體、或將SnapManager 還原GUI URL新增至例外清單。
+
+
+
+ a| 
+這個功能可讓您從這個介面啟動圖形使用者介面、顯示錯誤的版本。SnapManager
+ a| 
+當您啟動網路啟動GUI時、SnapManager 將更新版本的功能從更新版本降級為較舊版本之後、SnapManager 更新版本的「更新版本的Webstart GUI」就會啟動。
+ a| 
+您也必須執行下列步驟來清除快取：
+
+. 啟動主控台。
+. 輸入以下內容：「* java aws -viewer*」
+. 在Java快取檢視器畫面上、用滑鼠右鍵按一下SnapManager 「介紹」應用程式、然後選取「*刪除*」。
+
+
+
+
+ a| 
+當您重新啟動GUI並嘗試檢查某個設定檔的備份時、只會看到設定檔的名稱。
+ a| 
+在您開啟設定檔之前、不會顯示任何關於設定檔的資訊。SnapManager
+ a| 
+請執行下列步驟：
+
+. 在設定檔上按一下滑鼠右鍵、然後從功能表中選取*「Open*（開啟*）」。
++
+顯示「設定檔驗證」對話方塊。SnapManager
+
+. 輸入主機使用者名稱和密碼。
++
+顯示備份清單。SnapManager
+
+
+
+
+NOTE: 只要認證資料有效且保留在快取中、您就只需要驗證設定檔一次。
+
+
+
+ a| 
+當您在GUI中開啟第一個儲存庫時、會顯示類似下列的錯誤訊息：「Profile name XXXX與先前載入的儲存庫發生衝突。
+ a| 
+儲存庫中無法存在名稱相同的設定檔。此外、您一次只能開啟一個儲存庫。
+ a| 
+請參考兩個不同作業系統（OS）使用者的衝突設定檔、或是針對儲存庫發出SQL陳述式來重新命名設定檔：'* update SMSAP_33_profile set name ='new_name'、其中name ='old_name'*
+
+
+
+ a| 
+此時會顯示類似下列的錯誤訊息：SMSAP-01092：「無法初始化儲存庫repo1@不存在：repo1SMSAP-110006：無法解析主機不存在」
+ a| 
+儲存庫無法存取、可能是因為它不再存在。GUI會從認證檔案初始化儲存庫清單。
+ a| 
+錯誤訊息會詢問您是否要移除此儲存庫、以便日後不會嘗試載入。如果不需要存取此儲存庫、請按一下*刪除*、將其從GUI檢視中移除。這會移除認證檔案中儲存庫的參照、而且GUI不會再次嘗試載入儲存庫。
+
+
+
+ a| 
+設定檔建立失敗、因為在SUSE Linux Enterprise Server 10和SUSE Linux Enterprise Server 11平台中、主機認證無法驗證。
+ a| 
+使用可插拔驗證模組（PAM）來驗證使用者。SnapManager在SUSE Linux Enterprise Server版本10和11平台中SnapManager 、在提供必要驗證詳細資料的/etc/pam.d'目錄中、預設不會有「恢復」檔案。因此主機認證失敗。
+ a| 
+若要成功登入SUSE Linux Enterprise Server 10和11平台中的主機、請執行下列步驟：
+
+. 在SnapManager 「/etc/pam.d/」中建立「/setc/」檔案
+. 將下列內容新增至SnapManager 位於「/etc/pam.d/snaps:'」的「/sety'」檔案
++
+[listing]
+----
+
+#%PAM-1.0
+auth     include   common-auth
+account  include   common-account
+password include   common-password
+session  include   common-session
+----
+. 儲存檔案並重試設定檔建立作業。
+
+
+
+
+ a| 
+用較長的時間載入資料庫樹狀結構、並在整個圖形使用者介面上顯示逾時錯誤訊息。SnapManager SnapManager
+ a| 
+當您嘗試從SnapManager 還原GUI執行部分備份作業時SnapManager 、嘗試載入所有設定檔的認證資料、如果有任何無效項目、SnapManager 則嘗試驗證項目、這會導致顯示逾時錯誤訊息。
+ a| 
+使用SnapManager 來自於指令行介面（CLI）的「認證刪除」命令、刪除未使用的主機、儲存庫和設定檔的認證資料。
+
+
+
+ a| 
+在複製分割作業之後、無法產生新的設定檔、而且您不知道是否已建立新的設定檔。SnapManager
+ a| 
+如果在複製分割作業之後沒有建立新的設定檔、則無法提示您。SnapManager由於未顯示失敗作業的訊息、您可能會假設設定檔已建立。
+ a| 
+若要瞭解是否為實體複本分割作業建立新的設定檔、請執行下列步驟：
+
+. 按一下「*監控*」索引標籤、以滑鼠右鍵按一下「複製分割」作業項目、然後選取「*內容*」。
+. 在「設定檔內容」視窗中、按一下「*記錄*」索引標籤以檢視複製分割作業和設定檔建立記錄。
+
+
+
+
+ a| 
+在備份、還原或複製作業之前或之後、預先處理或後處理活動的自訂指令碼無法從SnapManager GUI中看到。
+ a| 
+當您在自訂備份、還原或複製指令碼位置中新增自訂指令碼時、自訂指令碼不會顯示在「可用指令碼」清單下方。
+ a| 
+重新啟動SnapManager 「支援服務器」、然後開啟SnapManager 「支援GUI」。
+
+
+
+ a| 
+您無法使用SnapManager 以還原（3.1或更早版本）建立的複製規格XML檔案來進行複製作業。
+ a| 
+從SAP版的《3.2版》中SnapManager 、工作規格區段（工作規格）是以獨立的工作規格XML檔案形式提供。
+ a| 
+如果您使用SnapManager 的是適用於SAP的32位元版本、則必須從複製規格XML移除工作規格區段、或建立新的複製規格XML檔案。SnapManager 3.3或更新版本不支援SnapManager 在32位元版本或更新版本中建立的複製規格XML檔案。
+
+
+
+ a| 
+在清除使用者認證資料後、若使用來自整個CLI的「smsap認證清除」命令、或是按一下來自整個圖形介面的*管理*>*認證*>*清除*>*快取*、GUI上的執行作業將不會繼續。SnapManager SnapManager SnapManager
+ a| 
+系統會清除儲存庫、主機和設定檔的認證設定。在開始任何作業之前、驗證使用者認證資料。當使用者認證資料無效時、無法驗證。SnapManager SnapManager從儲存庫刪除主機或設定檔時、使用者認證仍可在快取中使用。這些不必要的認證項目會減慢SnapManager GUI的功能。
+ a| 
+視SnapManager 清除快取的方式而定、重新啟動圖形使用者介面。
+
+[NOTE]
+====
+* 如果您已從SnapManager 無法使用的圖形介面上清除認證快取、就不需要離開SnapManager 此圖形介面。
+* 如果您已從SnapManager 無法使用的CLI清除認證快取、則必須重新啟動SnapManager 該程式。
+* 如果您已手動刪除加密的認證檔案、則必須重新啟動SnapManager 該圖形使用者介面。
+
+
+====
+設定您為儲存庫、設定檔主機和設定檔所提供的認證資料。如果SnapManager 儲存庫樹狀結構下沒有對應的儲存庫、請從該程式庫GUI執行下列步驟：
+
+. 按一下*工作*>*新增現有儲存庫*
+. 在儲存庫上按一下滑鼠右鍵、按一下「*開啟*」、然後在「*儲存庫認證驗證*」視窗中輸入使用者認證資料。
+. 在儲存庫下的主機上按一下滑鼠右鍵、按一下「* Open*（開啟*）」、然後在「*主機認證驗證*」中輸入使用者認證資料。
+. 在主機下的設定檔上按一下滑鼠右鍵、按一下「*開啟*」、然後在「*設定檔認證驗證*」中輸入使用者認證資料。
+
+
+
+
+ a| 
+當您從「設定檔內容」視窗的「*保護管理員保護原則*」下拉式功能表和「設定檔建立精靈」的原則設定頁面中選取「*無*」時、會顯示「無法列出保護原則、原因如下：保護管理員暫時無法使用」錯誤訊息。
+ a| 
+Protection Manager未設定SnapManager 為使用此功能、或Protection Manager未執行。
+ a| 
+無需採取任何行動。
+
+
+
+ a| 
+由於瀏覽器的安全通訊端層（SSL）密碼強度較弱、您無法SnapManager 使用Java Web Start GUI來開啟此功能。
+ a| 
+不支援低於128位元的SSL密碼。SnapManager
+ a| 
+升級瀏覽器版本並檢查密碼強度。
+
+|===

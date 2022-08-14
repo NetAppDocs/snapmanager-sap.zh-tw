@@ -1,0 +1,176 @@
+---
+permalink: unix-administration/concept-how-snapmanager-retains-backups-on-the-local-storage.html 
+sidebar: sidebar 
+keywords: 'snapmanager, enable, create, backup, retention, policies, policy, successful, storage, retain, local, database summary: SnapManager enables you to create backups that meet retention policies, which specify how many successful backups on local storage should be retained. You can specify the number of successful backups that should be retained in the profile for a given database.' 
+---
+= 如何在本機儲存設備上保留備份SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用NetApp功能、您可以建立符合保留原則的備份、以指定應保留多少本機儲存設備上的成功備份。SnapManager您可以指定在指定資料庫的設定檔中應保留的成功備份數目。
+
+您可以建立下列項目的備份：
+
+* 在一線儲存設備上進行10天的每日備份
+* 2個月的一線儲存設備每月備份
+* 7天的二線儲存設備每日備份
+* 每週備份4週的二線儲存設備
+* 次儲存設備每月備份6個月
+
+
+針對SnapManager 每個分析資料、您可以變更下列非限制保留類別的值：
+
+* 每小時
+* 每日
+* 每週
+* 每月
+
+
+透過考量保留數（例如15份備份）和保留時間（例如、每日備份的10天）、確定是否應保留備份。SnapManager當備份的存留期間超過其保留類別所設定的保留期間、或是備份數量超過保留數時、備份就會過期。例如、如果備份數為15（SnapManager 不只是執行15次成功備份）、而且持續時間需求設定為每日備份的10天、則五個最舊且符合資格的備份就會過期。
+
+備份過期後SnapManager 、不再釋放或刪除過期的備份。不間斷地保留上次備份。SnapManager
+
+僅計算保留數的成功備份數、並不考慮下列事項：SnapManager
+
+[cols="1a,1a"]
+|===
+| 保留數中未包含備份 | 其他詳細資料 
+
+
+ a| 
+備份失敗
+ a| 
+關於成功和不成功備份的資訊將會保留。SnapManager雖然不成功的備份只需要儲存庫中的最小空間、但您可能想要刪除它們。不成功的備份會保留在儲存庫中、直到您刪除它們為止。
+
+
+
+ a| 
+指定不受限制地保留備份、或為不同的保留類別保留備份
+ a| 
+不刪除指定無限期保留的備份。SnapManager此外SnapManager 、僅考慮相同保留類別中的備份（例如SnapManager 、針對每小時保留數、僅考慮每小時備份）。
+
+
+
+ a| 
+從本機儲存設備掛載備份
+ a| 
+掛載Snapshot複本時、也會複製這些複本、因此不符合保留資格。如果快照複本已複製、則無法刪除這些複本。SnapManager
+
+
+
+ a| 
+用於在本機儲存設備上建立複本的備份
+ a| 
+支援還原所有用於建立複本的備份、但不考慮用於備份保留計數。SnapManager
+
+
+
+ a| 
+複製或掛載於二線儲存設備、並使用鏡射保護原則的備份
+ a| 
+如果SnapManager 將主要儲存資源上的Snapshot複本刪除以進行備份、而Snapshot複本則鏡射到次要儲存設備、則下一個備份將會失敗。
+
+|===
+當您從主要儲存資源中釋放備份時、備份所使用的主要資源（Snapshot複本）會遭到銷毀、但備份中繼資料仍可使用。在備份保留數中、不考慮使用釋放的備份。SnapManager
+
+提供每個保留類別的預設保留計數和持續時間。SnapManager例如、SnapManager 對於每小時保留類別數、根據預設、還原會保留四個每小時備份。您可以在建立或更新設定檔時覆寫這些預設值、或在「smsap.config」檔案中變更保留計數和持續時間的預設值。
+
+一線儲存設備上的備份可透過備份至二線儲存設備來保護。雖然Protection Manager可管理主儲存設備上的備份保留與排程、但SnapManager 仍可管理二線儲存設備上的備份保留與排程。
+
+當本機備份根據保留原則到期時、視其是否受到保護而定、它們會被刪除或釋出。
+
+* 如果它們受到保護、就會釋出本機備份。他們的儲存資源或Snapshot複本會刪除、但備份仍保留在SnapManager 還原庫中、可從二線儲存設備還原。您不需要釋放備份（例如、使用備份可用命令）。備份會被釋放、直到備份不再存在於次要儲存設備上、並在該點刪除備份。
+* 如果它們沒有受到保護、則會刪除本機備份。
+
+
+在僅歸檔的備份作業中SnapManager 、不像在線上資料庫備份程序中、使用者無法將重作記錄檔歸檔。您必須先新增pretask指令碼、以歸檔重作記錄檔、然後再執行僅歸檔記錄備份作業。pretask指令碼必須執行「alter system switchlogfile」命令。
+
+下列範例顯示SnapManager 根據三天一次的備份保留原則（將計數設為保留3）、針對各種類型的備份所採取的行動：
+
+[cols="1a,1a,1a,1a"]
+|===
+| 備份日期 | 狀態 | 已採取保留政策行動 | 說明 
+
+
+ a| 
+5/10.
+ a| 
+成功
+ a| 
+保留
+ a| 
+這是最新的成功備份、因此會保留下來。
+
+
+
+ a| 
+5/9.
+ a| 
+成功、複製完成
+ a| 
+跳過
+ a| 
+在保留原則計數中、不考慮用於複製的備份。SnapManager此備份會從成功備份數中省略。
+
+
+
+ a| 
+5/8.
+ a| 
+成功、已掛載
+ a| 
+跳過
+ a| 
+在保留原則數中、不考慮掛載備份。SnapManager此備份會從成功備份數中省略。
+
+
+
+ a| 
+5/7.
+ a| 
+失敗
+ a| 
+跳過
+ a| 
+不計入失敗的備份。
+
+
+
+ a| 
+滿分
+ a| 
+成功
+ a| 
+保留
+ a| 
+此為第二次成功的每日備份。SnapManager
+
+
+
+ a| 
+5/3.
+ a| 
+成功
+ a| 
+保留
+ a| 
+支援此第三次成功的每日備份。SnapManager
+
+
+
+ a| 
+5/2.
+ a| 
+成功
+ a| 
+刪除
+ a| 
+雖然此備份很成功、但在還原達到三次成功的每日備份之後、此備份便會刪除。SnapManager SnapManager
+
+|===
+*相關資訊*
+
+http://mysupport.netapp.com/["NetApp支援網站上的文件"^]

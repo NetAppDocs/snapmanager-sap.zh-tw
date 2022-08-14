@@ -1,0 +1,116 @@
+---
+permalink: unix-administration/task-protect-database-backups-on-secondary-storage.html 
+sidebar: sidebar 
+keywords: snapmanager, protect, backup, copies, copy, secondary, tertiary, storage, system 
+summary: 您可以使用SnapManager 支援功能來保護二線或三線儲存系統上的備份複本。 
+---
+= 保護二線或三線儲存設備上的資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用SnapManager 支援功能來保護二線或三線儲存系統上的備份複本。
+
+*關於此工作*
+
+在一線儲存設備上執行成功備份後、您無法立即保護使用BRBACKUP命令建立的備份至二線儲存設備。
+
+.步驟
+. 輸入下列命令：
++
+「* smsap備份建立設定檔_profile_name_｛[-full｛-online |-offline |-auto｝[-hourly |-dyourly |-fleyly |-mourly |-monthly |-unmously |-unchallyly |-scap空間_[-databar空間 每月_|每週資料空間數]|[_]|每週數][_、每週數_、每週數_、_、每週數_、每週數_、_、_、每週數_、_、_、_、_、每週數_、_、_、_、_、_、_ [-archivelogs [-label _label_][-comment _Comment_][-snapvaultlabel _SnapVault標籤_][-protection |-nosprotectnow][-backup-dest_path1_[,[_path2_]][-exclude task-dest_path1 _[_pathune _][-unymvest-uned'之前的小時數][_scuned'[-ed'、scuned'、scuned'之前的小時數分鐘數_、[-spec_uned* pruned'、共重排數_、共重排數_、共重排時間_、共重排數_、共重排數_、共數_、共重排數_、共2天_、共數_、共重排數_、共重排數_、共2天_、共數天_、共重排數
+
++
+[cols="1a,3a"]
+|===
+| 如果您想要... | 然後執行此動作... 
+
+
+ a| 
+*建立線上或離線資料庫的備份、而非SnapManager 讓支援部門管理線上或離線的資料庫*
+ a| 
+指定「離線」或「線上」選項、以建立離線資料庫或線上資料庫的備份。如果您使用「離線」或「線上」選項、則無法使用-auto選項。
+
+
+
+ a| 
+* SnapManager 讓支援管理資料庫的備份、無論資料庫是在線上或離線*
+ a| 
+指定「-auto'（自動）選項。如果您使用-auto選項、則無法使用「-offline」或「-online」選項。
+
+
+
+ a| 
+*新增備份的相關註解*
+ a| 
+指定「-comment」選項、後面接著說明字串。
+
+
+
+ a| 
+*強制資料庫進入您指定的備份狀態、無論資料庫目前處於何種狀態*
+ a| 
+指定「-force」選項。
+
+
+
+ a| 
+*在建立時驗證備份*
+ a| 
+指定「-VERIFY」選項。
+
+
+
+ a| 
+*在二線儲存設備上建立備份*
+ a| 
+指定「-Protect」選項。
+
+** 如果您使用ONTAP 的是支援功能、想要立即保護備份到二線儲存設備、請指定「-Protect」選項。
++
+
+NOTE: 「-protectNOW」選項不適用於叢集Data ONTAP 式的整個過程。
+
+** 如果您使用Data ONTAP 的是7-Mode作業系統的支援功能、而且想要保護備份到二線儲存設備的安全、而不需要保護保護管理程式的保護排程、請指定「-protectNOW」選項。
+** 若要防止備份到二線儲存設備、請指定「-noProtect」選項。如果您使用ONTAP 的是SURFY、而且在建立設定檔時選取了_SnapManager®cDOT_Vault_保護原則、則必須指定「-snapvaultlabel'」選項。您必須提供SnapMirror原則規則中所指定的SnapMirror標籤、同時將SnapVault 「不確定性」設定為「值」。
+
+
+
+
+ a| 
+*指定保留類別值*
+ a| 
+指定"-retac"選項、並根據下列其中一個保留類別、指出是否應保留備份：
+
+** 「每小時」
+** 《每日》
+** 每週一次
+** 每月一次
+** 「無限」
+
+
+如果您未指定保留類別、SnapManager 則根據預設、使用-Hourly。
+
+|===
+
+
+'''
+
+
+== 範例
+
+下列命令可保護資料庫備份：
+
+[listing]
+----
+smsap backup create -profile PAYDB -protect -retain -daily -full auto -label full_bkup_sales
+----
+下列命令可立即保護資料庫備份：
+
+[listing]
+----
+smsap backup create -profile PAYDB -protectnow -retain -daily -full auto -label full_bkup_sales
+----
+'''

@@ -1,0 +1,21 @@
+---
+permalink: windows/task-view-a-list-of-snapmanager-history-operation-as-a-report.html 
+sidebar: sidebar 
+keywords: view, history, snapmanager, operation, report, base, retention, set, list 
+summary: 您可以根據SnapManager 保留設定、以報告形式檢視特定或所有的還原作業歷史記錄。 
+---
+= 查看SnapManager 一份關於此作業記錄的清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以根據SnapManager 保留設定、以報告形式檢視特定或所有的還原作業歷史記錄。
+
+.步驟
+. 若要檢視SnapManager 包含各種資訊的資訊、請輸入下列命令：
++
+hesap歷史記錄清單-profile｛_-name、profile_name [profile_name1、profile_name2_]|-all_-reposory -login [-password_repo_password_]-userName _repo_username_-dbname _repo_dbname_-host _repo_host_-port _repo_port_-name_｛_ops_-operation_全名_操作_操作_操作_-name_｛_all操作_操作_操作_操作_-name_name _op_opsleverbose分隔符號_｛_op_op_op_op_op_op_opyamentity_｝
+
+

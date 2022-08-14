@@ -1,0 +1,48 @@
+---
+permalink: windows/reference-the-smosmsapcmdfile-command.html 
+sidebar: sidebar 
+keywords: cmdfile, command, shell, host, character, number, line, smsap 
+summary: 如果主機上的Shell限制了命令列上可顯示的字元數、您可以使用cmd檔案命令來執行任何命令。 
+---
+= smsap cmd命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果主機上的Shell限制了命令列上可以顯示的字元數、您可以使用「cmd檔案」命令來執行任何命令。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap cmdfile
+-file file_name
+[-quiet | -verbose]
+----
+您可以在文字檔中加入命令、然後使用「shmsap cmd file」命令來執行命令。您只能在文字檔中新增一個命令。您不得在命令語法中包含smsap。
+
+
+NOTE: 命令"shmsap cmpdfile"取代了"shmsap pfile"命令。「shmsap cmd file」與「shmsap pfile」命令不相容。
+
+
+
+== 參數
+
+* *文件_file_name_`*
++
+指定包含您要執行之命令的文字檔路徑。
+
+* *（靜音）*
++
+指定主控台僅顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+指定錯誤、警告和資訊訊息會顯示在主控台中。
+
+

@@ -1,0 +1,33 @@
+---
+permalink: windows/concept-restoring-a-backup-to-a-different-host.html 
+sidebar: sidebar 
+keywords: brrestore, smsap, restore, command, backup, brbackup, host, run, snapmanager, sap 
+summary: 您可以使用BRRESTORE或smsap還原命令、在不同的主機上還原使用BRBACKUP所做的備份。新主機也必須執行SnapManager 適用於SAP的功能。 
+---
+= 將備份還原至其他主機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用BRRESTORE或「msap RESTORE」命令、在不同的主機上還原您使用BRBACKUP所做的備份。新主機也必須執行SnapManager 適用於SAP的功能。
+
+
+
+== 提供SnapManager 此功能
+
+在執行BRRESTORE之前、您必須先讓SnapManager 新主機能夠使用原始主機的版本資訊。完成下列步驟：
+
+* 設定儲存庫認證：使用「shmsap認證集」命令、讓新主機存取SnapManager 用於原始備份的還原儲存庫。
+* 設定設定檔認證：使用「msap認證集」命令、讓新主機存取SnapManager 原始備份所用的版本資訊。
+* 在新主機上載入設定檔：使用「smsap profile sync」命令、將SnapManager 該設定檔資訊載入新主機。
+
+
+
+
+== 執行BRRESESTORE
+
+在新主機上使用與原始主機上原始儲存設備相同的路徑來設定新儲存設備。
+
+使用「BRRESTORE」命令將備份還原至新主機。根據預設、檔案會還原至原始路徑位置。您可以使用「BRRESTRESTORE」命令的「-m」選項來指定還原檔案的替代路徑。請參閱SAP文件以取得「BRRESTORE」的詳細資訊。

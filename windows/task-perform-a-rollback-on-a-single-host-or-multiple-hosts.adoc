@@ -1,0 +1,76 @@
+---
+permalink: windows/task-perform-a-rollback-on-a-single-host-or-multiple-hosts.html 
+sidebar: sidebar 
+keywords: perform, rollback, single, multiple, snapmanager, server, host, command-line, interface, cli, multiple 
+summary: 您SnapManager 可以使用命令列介面（CLI）、在單一或多個支援服務器的主機上執行復原。 
+---
+= 在單一主機或多個主機上執行復原
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您SnapManager 可以使用命令列介面（CLI）、在單一或多個支援服務器的主機上執行復原。
+
+
+
+== 您的需求
+
+您必須確保執行復原的所有先決條件均已完成。
+
+.步驟
+. 若要在單一主機上執行復原、請輸入下列命令：
++
+系統信息庫回滾-系統信息庫-dbname _repo_service_name_-host _repo_host_-login-userName _repo_username_-port _repo_port_-rollbackhost _host_with _target資料庫_*
+
++
+* 範例 *
+
++
+下列範例顯示可復原裝載於主機A上的所有目標資料庫、以及儲存庫主機repoA上名為repoA的儲存庫資料庫的命令：
+
++
+[listing]
+----
+
+smsap repository rollback
+    -repository
+      -dbname repoA
+      -host repo_host
+      -login
+       -username repouser
+       -port 1521
+     -rollbackhost hostA
+----
+. 若要在多個主機上執行復原、請輸入下列命令：
++
+系統信息庫回滾-reposore-dbname _repo_service_name_-host _repo_host_-login-userName _repo_username_-port _repo_port_-rollbackhost _host_with _target資料庫1_、host_with _target資料庫2_*
+
++
+
+NOTE: 對於多個主機、請輸入以逗號分隔的主機名稱、並確保在逗號和下一個主機名稱之間沒有空格。此外、請務必在雙引號內輸入一整組多個主機名稱。
+
++
+* 範例 *
+
++
+下列範例顯示可復原裝載在主機、主機A、主機B上的所有目標資料庫、以及儲存庫主機repoA上的儲存庫資料庫（名稱為repoA）的命令：
+
++
+[listing]
+----
+
+smsap repository rollback
+    -repository
+      -dbname repoA
+      -host repo_host
+      -login
+       -username repouser
+       -port 1521
+     -rollbackhost hostA,hostB
+----
++
+與主機目標資料庫的設定檔相關聯的主機、設定檔、排程、備份和複製、都會還原至較早的儲存庫。
+
+

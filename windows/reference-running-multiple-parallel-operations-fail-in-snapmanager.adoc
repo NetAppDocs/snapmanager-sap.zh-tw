@@ -1,0 +1,29 @@
+---
+permalink: windows/reference-running-multiple-parallel-operations-fail-in-snapmanager.html 
+sidebar: sidebar 
+keywords: multiple, run, parallel, operation, seperate, database, reside, storage, system, igroup, lun, associate, delete, snapmanager, display, error, message 
+summary: 當您在位於同一個儲存系統上的個別資料庫上執行多個平行作業時、與這兩個資料庫相關聯的LUN igroup可能會因為其中一個作業而遭到刪除。之後、如果其他作業嘗試使用刪除的igroup、SnapManager 則會顯示錯誤訊息。 
+---
+= 在不支援的情況下、執行多個平行作業會失敗SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您在位於同一個儲存系統上的個別資料庫上執行多個平行作業時、與這兩個資料庫相關聯的LUN igroup可能會因為其中一個作業而遭到刪除。之後、如果其他作業嘗試使用刪除的igroup、SnapManager 則會顯示錯誤訊息。
+
+例如、如果您幾乎同時在不同資料庫上執行備份刪除和備份建立作業、則備份建立作業將會失敗。下列連續步驟顯示當您幾乎同時在不同資料庫上執行備份刪除和備份建立作業時會發生什麼情況。
+
+.步驟
+. 執行「備份刪除」命令。
+. 執行「備份建立」命令。
+. 「備份建立」命令可識別已存在的igroup、並使用相同的igroup來對應LUN。
+. 「備份刪除」命令會刪除對應至相同igroup的備份LUN。
+. 然後使用「備份刪除」命令刪除igroup、因為沒有LUN與igroup相關聯。
+. 「備份建立」命令會建立備份、並嘗試對應至不存在的igroup、因此作業會失敗。
+
+
+*活動內容*
+
+您必須使用下列命令為資料庫使用的每個儲存系統建立igroup：「* sdcli igroup cred*」

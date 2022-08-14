@@ -1,0 +1,240 @@
+---
+permalink: unix-administration/reference-the-smosmsap-clone-split-command.html 
+sidebar: sidebar 
+keywords: run, clone, split, command, independent, original, snapmanager, smsap, operation, profile 
+summary: 您可以執行Clone分割命令來分割實體複本。分割實體複本會獨立於原始實體複本。在複製分割作業之後、會產生一個新的設定檔、您可以使用此設定檔來管理分割複本。SnapManager 
+---
+= smsap Clone分割命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「Clone分割」命令來分割實體複本。分割實體複本會獨立於原始實體複本。在複製分割作業之後、會產生一個新的設定檔、您可以使用此設定檔來管理分割複本。SnapManager
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap clone split
+-profile _clone-profile_
+[-host hostname\]
+{-label _clone-label_ | -id _clone-id_} [-split-label _split-operation_label_\]
+[-comment _comment_\]
+-new-profile _new-profile-name_ [-profile-password _new-profile_password_\]
+-repository -dbname _repo_service_name_
+-host _repo_host_
+-port _repo_port_
+-login -username _repo_username_
+-database -dbname _db_dbname_
+-host _db_host_ [-sid _db_sid_\] [-login -username _db_username_ -password _db_password_
+-port _db_port_\]
+[-rman {{-controlfile | {-login -username _rman_username_
+-password _rman_password_} -tnsname _rman_tnsname_}}\]
+-osaccount _osaccount_
+-osgroup _osgroup_
+[-retain
+[-hourly [-count _n_\] [-duration  _m_\]\]
+[-daily [-count _n_\] [-duration _m_\]\]
+[-weekly  [-count _n_\] [-duration _m_\]\]
+[-monthly [-count _n_\] [-duration _m_\]\] \]
+[-profile-comment _profile-comment_\]
+[-snapname-pattern _pattern_\]
+[-protect [-protection-policy _policy_name_\]\] | [-noprotect\]\]
+[-summary-notification
+[-notification
+[-success -email _email_address1,email_address2_
+-subject subject-pattern\]
+[failure -email _email_address1,email_address2_
+-subject _subject-pattern_\] \]
+[-separate-archivelog-backups
+-retain-archivelog-backups -hours  _hours_ |
+-days _days_ |
+-weeks _weeks_ |
+-months _months_
+[-protect [-protection-policy _policy_name_ | -noprotect\]
+[-include-with-online-backups | -no-include-with-online-backups\]\]
+[-dump\]
+[-quiet | -verbose\]]
+----
+
+
+== 參數
+
+* -profile _clone-profile _*
++
+指定建立複本的設定檔名稱。
+
+* 「*主機名稱_*」
++
+指定實體複本所在的主機名稱。
+
+* 標籤_clone-label_*
++
+指定複製作業所產生的標籤名稱。
+
+* 「*」-id _clone-id_*
++
+指定複製作業所產生的唯一ID。
+
+* 「*分割標籤分割」-_operation_label_*
++
+指定複製作業所產生的標籤名稱。
+
+* 「*新設定檔_new-profile_name_*」
++
+指定SnapManager 成功分割作業後、將產生的新設定檔名稱。
+
+* 「*」-profile密碼_new-profile密碼_*
++
+指定設定檔的密碼。
+
+* 「*儲存庫*」
++
+指定儲存庫資料庫的詳細資料。
+
+* 「*」-「dbname _repo_service_name_*」
++
+指定儲存庫的資料庫名稱。您可以使用全域名稱或系統識別碼。
+
+* 「*主機_repo_host_*」
++
+指定儲存庫資料庫所在主機電腦的名稱或IP位址。
+
+* 「*連接埠_repo_port_*」
++
+指定用於存取儲存庫資料庫所在主機的傳輸控制傳輸協定（TCP）連接埠號碼。
+
+* 「*登入*」
++
+指定儲存庫登入詳細資料。這是選用的。如果未指定SnapManager 、則無法使用作業系統驗證連線模式。
+
+* -username_repo_username_*
++
+指定存取儲存庫資料庫所在主機所需的使用者名稱。
+
+* 「*資料庫*」
++
+指定要備份、還原或複製的資料庫詳細資料。
+
+* 「*」、「*」、「*」、「*」、「*」
++
+指定設定檔所描述的資料庫名稱。您可以使用全域名稱或系統識別碼。
+
+* 「*主機_db_host_*」
++
+指定資料庫所在主機電腦的名稱或IP位址。
+
+* 「-sID _db_sid_*」
++
+指定設定檔所描述之資料庫的系統識別碼。根據預設SnapManager 、系統識別碼會使用資料庫名稱。如果系統識別碼與資料庫名稱不同、您必須使用「-sID」選項來指定。
+
+* 「*登入*」
++
+指定資料庫登入詳細資料。
+
+* 「*使用者名稱_db_username_*」
++
+指定存取設定檔所描述之資料庫所需的使用者名稱。
+
+* 「*密碼_db_password_*」
++
+指定存取設定檔所描述之資料庫所需的密碼。
+
+* 「* osAccount _osaccount_*」
++
+指定Oracle資料庫使用者帳戶的名稱。支援此帳戶執行Oracle作業、例如啟動和關機。SnapManager通常是擁有主機上Oracle軟體的使用者、例如orasid。
+
+* 「*」-osgroup _osgroup _*
++
+指定與orasid帳戶相關聯的Oracle資料庫群組名稱。
+
++
+
+NOTE: UNIX需要使用「-osAccount」和「-osgroup」變數、但Windows上執行的資料庫則不允許使用。
+
+* 「*保留（-每小時[-count n][-duration m]）][-每日[-count n][-持續時間m]][-每週[-count n][-持續時間m]]][-每月[-count n][-持續時間m]]*
++
+指定備份的保留原則。
+
++
+對於每個保留類別、可能會指定保留數或保留期間。持續時間以課程單位為單位（例如小時、日）。例如、如果您只指定每日備份的保留時間為7、SnapManager 則不會限制設定檔的每日備份次數（因為保留次數為0）、SnapManager 但會自動刪除7天前建立的每日備份。
+
+* 「*」、「*」、「*」、「*」
++
+指定描述設定檔網域的設定檔註解。
+
+* 快照名稱模式_Pattern_*
++
+指定Snapshot複本的命名模式。您也可以在所有Snapshot複本名稱中加入自訂文字、例如用於高可用度作業的HAOPS。您可以在建立設定檔或建立設定檔之後、變更Snapshot複本命名模式。更新的模式僅適用於尚未建立的Snapshot複本。現有的Snapshot複本會保留先前的Snapname模式。您可以在模式文字中使用多個變數。
+
+* 「*保護-保護-原則_policy_name_*」
++
+指定是否應將備份保護至次要儲存設備。
+
++
+
+NOTE: 如果在沒有「保護原則」的情況下指定「保護」、資料集就不會有保護原則。如果在建立設定檔時指定了「-protect'（保護）」且未設定「-protection-policy（保護原則）」、則稍後可透過「msap profile update（安全設定檔更新）」命令加以設定、或是由儲存管理員使用Protection Manager的主控台加以設定。
+
+* 「*」-「*」-「Summary」-「notification *」
++
+指定在儲存庫資料庫下為多個設定檔設定摘要電子郵件通知的詳細資料。系統會產生這封電子郵件。SnapManager
+
+* 「*通知*」
++
+指定設定新設定檔電子郵件通知的詳細資料。系統會產生這封電子郵件。SnapManager此電子郵件通知可讓資料庫管理員接收電子郵件、告知使用此設定檔執行的資料庫作業狀態為「成功」或「失敗」。
+
+* 「*成功*」
++
+指定SnapManager 當執行完此動作時、會針對設定檔啟用電子郵件通知。
+
+* 電子郵件地址1電子郵件地址2_*
++
+指定收件者的電子郵件地址。
+
+* 主題_Subject模式_*
++
+指定電子郵件主旨。
+
+* 「*故障*」
++
+指定SnapManager 當功能無法運作時、會針對設定檔啟用電子郵件通知。
+
+* 「*分隔-歸檔儲存設備-備份*」
++
+指定歸檔記錄備份與資料檔案備份分開。這是選用參數、可在建立設定檔時提供。使用此選項分隔備份之後、您可以建立純資料檔備份或僅歸檔記錄備份。
+
+* hours _hours |-days _days |-eavays _vites/|-Months _sevelog-eavays -hours _shours _*
++
+指定根據歸檔記錄保留期間（每小時、每日、每週或每月）來保留歸檔記錄備份。
+
+* 「*保護（-protection）原則_policy_name_]|-nosprote*」
++
+指定根據歸檔記錄保護原則來保護歸檔記錄檔。
+
++
+指定歸檔日誌文件不受使用"-noprote"選項的保護。
+
+* 「包括線上備份」|「不含線上備份」*
++
+指定在線上資料庫備份時隨附歸檔記錄備份。
+
++
+指定不會隨線上資料庫備份一起提供歸檔記錄備份。
+
+* 「*傾印*」
++
+指定在成功建立設定檔之後、不會收集傾印檔案。
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設設定會顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+

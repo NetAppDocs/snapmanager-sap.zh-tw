@@ -1,0 +1,64 @@
+---
+permalink: unix-administration/task-clone-database-backups-without-resetlogs.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, perform, flexible, cloning, clone, recover, database, manual, desire, point, resetlog, configure, data, guard, standby 
+summary: 利用此功能、您可以執行彈性的複製作業、以便手動將複製的資料庫恢復至所需時間點、而無需使用重新設定記錄來開啟資料庫。SnapManager您也可以手動將複製的資料庫設定為Data Guard待命資料庫。 
+---
+= 複製資料庫備份、無需重新設檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以執行彈性的複製作業、以便手動將複製的資料庫恢復至所需時間點、而無需使用重新設定記錄來開啟資料庫。SnapManager您也可以手動將複製的資料庫設定為Data Guard待命資料庫。
+
+*關於此工作*
+
+當您在建立實體複本時選擇「-no -resettlogs」（無重新設定記錄）選項時SnapManager 、會執行下列活動來建立複製的資料庫：
+
+. 在開始複製作業之前、執行預先處理工作活動（若有指定）
+. 使用使用者指定的SID建立複製的資料庫
+. 執行針對複製資料庫所發出的SQL陳述式。
++
+只有可在掛載狀態下執行的SQL陳述式才會成功執行。
+
+. 執行後處理工作活動（若有指定）。
+
+
+*需要執行哪些工作來手動還原複製的資料庫*
+
+. 使用掛載路徑中的歸檔記錄檔、以手動掛載歸檔記錄備份並還原複製的資料庫。
+. 執行手動恢復後、請使用「-resettlogs」選項開啟恢復的複製資料庫。
+. 視需要建立暫用表格空間。
+. 執行DBNEWID公用程式。
+. 將Sysdba權限授予複製資料庫的認證資料。
+
+
+使用「-no resettlogs」選項複製資料庫備份時SnapManager 、將複製的資料庫保留在掛載狀態、以便手動恢復。
+
+
+NOTE: 使用「-no resettlogs」選項建立的複製資料庫並非完整的資料庫。因此、您不得在此SnapManager 資料庫上執行任何的還原作業、雖然SnapManager 此功能並不會限制您執行任何作業。
+
+如果您未指定「-ner-resettlogs」選項、SnapManager 則會套用歸檔記錄檔、並以重新設定的記錄開啟資料庫。
+
+.步驟
+. 輸入下列命令：
++
+hesap clone create -profile _profile_name_[-backup-label _backup_name_|-backup-id _backup_id_| current]-newsid _new_sid_-clonespec _f完整 路徑轉換為clonespecfile_-non-resettinglogg*
+
++
+如果您嘗試同時指定「-no -resettlogs」和「recover-from -location」選項、SnapManager 則不允許同時指定這兩個選項、並顯示錯誤訊息：「MSAP-04084：您必須指定下列其中一個選項：-no -resettlogs或-recover-from location。
+
+
+
+'''
+
+
+== 範例
+
+[listing]
+----
+smsap clone create -profile product -backup-label full_offline -newsid PROD_CLONE -clonespec prod_clonespec.xml -label prod_clone-reserve -no-reset-logs
+----
+'''

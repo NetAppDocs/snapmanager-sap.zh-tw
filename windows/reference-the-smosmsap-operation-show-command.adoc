@@ -1,0 +1,63 @@
+---
+permalink: windows/reference-the-smosmsap-operation-show-command.html 
+sidebar: sidebar 
+keywords: run, operation, show, command, list, summary, information, profile, client, user, pc, smsap 
+summary: 您可以執行operation show命令、列出針對指定設定檔所執行之所有作業的摘要資訊。輸出會列出用戶端使用者（用戶端PC的使用者）和有效使用者（SnapManager 在選定主機上有效的使用者）。 
+---
+= smsap operation show命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「operation show」命令、列出針對指定設定檔所執行之所有作業的摘要資訊。輸出會列出用戶端使用者（用戶端PC的使用者）和有效使用者（SnapManager 在選定主機上有效的使用者）。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap operation show
+-profile profile_name
+[-label label | -id id]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定設定檔的名稱。此名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* *標籤_label_`*
++
+指定作業的標籤。
+
+* *
++
+指定作業的識別碼。
+
+* *（靜音）*
++
+選用：僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+選用：在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+下列命令列顯示作業的詳細資訊：
+
+[listing]
+----
+smsap operation show -id 8ac861781d0ac992011d0ac999680001  -profile CER
+----

@@ -1,0 +1,50 @@
+---
+permalink: unix-installation-cmode/concept-prerequisites-for-performing-rolling-upgrade.html 
+sidebar: sidebar 
+keywords: perform, roll, upgrade, ensure, environment, certain, requirement, prerequisite 
+summary: 執行循環升級之前、您必須確保環境符合特定要求。 
+---
+= 執行循環升級的先決條件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+執行循環升級之前、您必須確保環境符合特定要求。
+
+* 如果您使用SnapManager 的版本早於版本不超過版本的版本、而且想要執行SnapManager 還原至版本3.3或更新版本的升級、您必須先升級至3.2、然後再升級至最新版本。
++
+您可以直接從SnapManager 32版升級SnapManager 至32版或更新版本。
+
+* 必須備份用於執行任何外部資料保護或資料保留的外部指令碼。
+* 必須安裝您要升級的版本。SnapManager
++
+
+NOTE: 如果您要從SnapManager 任何版本更新到版本不超過版本的版本、SnapManager 則必須先安裝SnapManager 版本號為32的版本、然後執行循環升級。升級至3.2版之後、您可以安裝SnapManager 不含更新版本的版本、並執行SnapManager 另一次的循環升級至版本資訊3、3、3或更新版本。
+
+* 必須安裝支援您要升級之支援的支援的for UNIX版本。SnapDrive SnapManager
++
+本文件包含有關安裝過程的詳細資料。SnapDrive SnapDrive
+
+* 必須備份儲存庫資料庫。
+* 應將使用率降至最低。SnapManager
+* 如果要升級的主機使用儲存庫、SnapManager 則不得在使用相同儲存庫的其他主機上執行功能。
++
+在其他主機上排程或執行的作業會等待循環升級完成。
+
++
+
+NOTE: 建議您在儲存庫最不忙碌時執行循環升級、例如週末或未排程作業。
+
+* 指向相同儲存庫資料庫的設定檔、必須在SnapManager 伺服器主機中以不同的名稱建立。
++
+如果您使用名稱相同的設定檔、則涉及該儲存庫資料庫的循環升級將會失敗而不會發出警告。
+
+* 不能在要升級的主機上執行支援作業。SnapManager
+
+
+
+NOTE: 隨著主機的備份數量增加、循環升級的執行時間也會延長。升級的持續時間可能會因特定主機的設定檔數量和備份而有所不同。
+
+http://mysupport.netapp.com/["NetApp支援網站上的文件：mysupport.netapp.com"^]

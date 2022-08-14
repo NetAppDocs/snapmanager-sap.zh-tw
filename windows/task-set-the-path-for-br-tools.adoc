@@ -1,0 +1,26 @@
+---
+permalink: windows/task-set-the-path-for-br-tools.html 
+sidebar: sidebar 
+keywords: set, path, br, tools, command 
+summary: 您必須設定BR*工具的路徑、才能使用BR*工具命令。 
+---
+= 設定BR*工具的路徑
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須設定BR*工具的路徑、才能使用BR*工具命令。
+
+
+
+== 關於這項工作
+
+如果未設定路徑、而您嘗試使用BR*工具執行系統傾印作業、則會在「config_s立即 摘要」中記錄下列錯誤訊息：「brtools」無法識別為內部或外部命令、可操作程式或批次檔」
+
+.步驟
+. 按一下「*開始*」>「*我的電腦*」、然後在「*內容*」>「*進階*」>「*環境變數*」上按一下滑鼠右鍵。
+. 在「*環境變數*」視窗中、按一下「*新增*」以新增BR*工具路徑、或按一下「*編輯*」以編輯系統變數和使用者變數的現有BR*工具路徑。
+. 按一下「*確定*」以儲存變更。
+

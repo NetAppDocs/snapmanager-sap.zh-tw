@@ -1,0 +1,29 @@
+---
+permalink: windows/task-enabling-autosupport-in-snapmanager.html 
+sidebar: sidebar 
+keywords: enable, autosupport, storage, system, receive, message, snapmanager, server, successful, backup, operation, enabling, enable 
+summary: 您必須啟用AutoSupport 「功能不全」、儲存系統才能接收SnapManager 來自該伺服器的訊息、以利每次成功的備份作業。 
+---
+= 啟用AutoSupport 支援功能SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須啟用AutoSupport 「功能不全」、儲存系統才能接收SnapManager 來自該伺服器的訊息、以利每次成功的備份作業。
+
+支援下列兩種方式：AutoSupport
+
+* 根據預設、SnapManager 新安裝的功能不包含smsap.config組態檔中的auto_support.on參數。這表示AutoSupport 已啟用了功能。
+* 您可以手動設定auto_support.on參數。
++
+.. 停止SnapManager 伺服器。
+.. 在smsap.config組態檔中、將auto_support.on參數的值設為true。
++
+Auto_support.on=true
+
+.. 重新啟動SnapManager 伺服器。
+
+
+

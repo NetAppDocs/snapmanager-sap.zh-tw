@@ -1,0 +1,71 @@
+---
+permalink: windows/reference-the-smosmsapoperation-list-command.html 
+sidebar: sidebar 
+keywords: command, list, summary, information, operation, record, profile, smsap 
+summary: 此命令會列出針對指定設定檔所記錄之所有作業的摘要資訊。 
+---
+= smsap作業清單命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會列出針對指定設定檔所記錄之所有作業的摘要資訊。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap operation list
+-profile profile_name
+[-delimiter character]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定設定檔的名稱。此名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* *符號_character-`*
++
+（選用）指定此參數時、命令會將每一列分別列在一行中、並以指定的字元分隔該列中的屬性。
+
+* *（靜音）*
++
+（選用）僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+（選用）在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 命令範例
+
+下列範例列出針對指定設定檔所記錄之所有作業的摘要資訊。
+
+[listing]
+----
+smsap operation list -profile myprofile
+----
+[listing]
+----
+Start Date Status Operation ID Type Host
+-------------------- ---------- -------------------------------- ------------------ --
+2007-07-16 16:03:57 SUCCESS 8abc01c813d0a1530113d0a15c5f0005 Profile Create Host3
+2007-07-16 16:04:55 FAILED 8abc01c813d0a2370113d0a241230001 Backup Host3
+2007-07-16 16:50:56 SUCCESS 8abc01c813d0cc580113d0cc60ad0001 Profile Update Host3
+2007-07-30 15:44:30 SUCCESS 8abc01c81418a88e011418a8973e0001 Remove Backup Host3
+2007-08-10 14:31:27 SUCCESS 8abc01c814510ba20114510bac320001 Backup Host3
+2007-08-10 14:34:43 SUCCESS 8abc01c814510e9f0114510ea98f0001 Mount Host3
+2007-08-10 14:51:59 SUCCESS 8abc01c814511e6e0114511e78d40001 Unmount Host3
+----

@@ -1,0 +1,65 @@
+---
+permalink: windows/task-configure-e-mail-notification-for-a-new-profile.html 
+sidebar: sidebar 
+keywords: create, profile, configure, receive, email, notification, completion, database, operation, profile 
+summary: 建立新設定檔時、您可以設定在資料庫作業完成時接收電子郵件通知。 
+---
+= 設定新設定檔的電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立新設定檔時、您可以設定在資料庫作業完成時接收電子郵件通知。
+
+
+
+== 您的需求
+
+* 您必須設定傳送警示的電子郵件地址。
+* 您必須針對多個電子郵件地址使用以逗號分隔的清單。
++
+您必須確保在逗號和下一個電子郵件地址之間沒有空格。
+
++
+
+NOTE: 您必須確保在雙引號內輸入一組電子郵件地址。
+
+
+
+.步驟
+. 輸入下列命令：
++
+_smsap profile create -profile _profile_[-profile-password _profile_password_]-reposit儲存 庫-dbname _repo_service_name_-host _repo_host_-port _repo_port_-login-username_-database-dbname _dbdbname_-host _db_host_host_[-hourly port_login_[-s_密碼_ened_deed_deed_deed_deed_deed_deed_dektAN __[_sthour_sthour_st_st_en_en_stock_ened_deed_deed_deed_deed_deed_deed_deed_deed_deed_station_ms_ms_ [-count_n_][-dim_m_][-flex每 週[-count_n_][-dim_m_][-moneh [-count_n_][-dimdim_m]][-comment _comment _][-snapname-Pattern_][-Protect [-notification [-sure-email_Subject -email_att主題 電子郵件-email_attject 1、_attject電子郵件_attern
+
++
+此命令的其他選項如下：
+
++
+[`-force（力量）]
+
++
+['quide'|'-verbose']
+
++
+
+NOTE: 支援最多1000個字元的電子郵件地址。SnapManager
+
++
+當您使用設定檔（建立個別的歸檔記錄備份）一起建立資料檔案和歸檔記錄檔備份、而且資料檔案備份建立失敗時、電子郵件通知會以作業名稱的形式傳送資料備份、而非以資料備份和歸檔記錄備份的形式傳送。當資料檔案和歸檔記錄檔備份作業成功時、您會看到下列輸出：
+
++
+[listing]
+----
+
+Profile Name    : PROF_31
+Operation Name 	: Data Backup and Archive Logs Backup
+Database SID   	: TENDB1
+Database Host 	 : repo1.rtp.org.com
+Start Date 	    : Fri Sep 23 13:37:21 EDT 2011
+End Date 	      : Fri Sep 23 13:45:24 EDT 2011
+Status 	        : SUCCESS
+Error messages 	:
+----
+

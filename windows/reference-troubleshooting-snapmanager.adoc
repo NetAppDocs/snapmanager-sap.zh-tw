@@ -1,0 +1,312 @@
+---
+permalink: windows/reference-troubleshooting-snapmanager.html 
+sidebar: sidebar 
+keywords: information, common, issue, resolve, troubleshoot, snapmanager 
+summary: 您可以找到一些最常見問題的相關資訊、以及如何解決這些問題。 
+---
+= 疑難排解SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以找到一些最常見問題的相關資訊、以及如何解決這些問題。
+
+下表說明常見問題與可能的解決方案：
+
+[cols="2*"]
+|===
+| 問題導向的問題 | 可能的解決方案 
+
+
+ a| 
+目標資料庫和接聽程式是否正在執行？
+ a| 
+執行「lsnrctl STATUS」命令。確保已向偵聽器註冊資料庫執行個體。
+
+
+
+ a| 
+儲存設備是否可見？
+ a| 
+請執行下列步驟：
+
+. 以滑鼠右鍵按一下「My Computer」（我的電腦）、然後選取「*管理*」。
+. 按一下*儲存設備*>* SnapDrive 《*》*《主機名稱*》>*《磁碟*》。
+
+
+
+
+ a| 
+該伺服器是否正在執行？SnapManager
+ a| 
+檢查狀態、然後使用「服務組態」啟動伺服器。
+
+在使用圖形使用者介面（GUI）或命令列介面（CLI）來啟動SnapManager 與設定檔相關的指令之前、伺服器必須先執行。您可以在不啟動伺服器的情況下建立或更新儲存庫、但若要執行所有其他SnapManager 的功能、伺服器必須執行。
+
+若要啟動SnapManager 伺服器、請輸入下列命令：
+
+《msap_server start》
+
+
+
+ a| 
+執行SnapManager 完整套功能時、是否所有必要的元件都能正確設定？
+ a| 
+執行「shmsap系統驗證」命令、確認SnapDrive 已正確設定好整套功能。
+
+
+
+ a| 
+您是否擁有SnapManager 正確版本的不正確版本的資訊？
+ a| 
+使用「shmsap version」命令來檢查SnapManager 該版本。
+
+
+
+ a| 
+您是否曾查看SnapManager 過資訊檔以判斷錯誤訊息是否有助於隔離問題？
+ a| 
+將所有記錄項目記錄到一組循環記錄檔中。SnapManager記錄檔位於「C：\PROP_files\NetApp\SnapManager for SAP_logs」。
+
+如果您使用的是Windows 2008、記錄檔位於下列位置：
+
+* 作業記錄：
++
+** 「C:\Program Files\NetApp\SnapManager for SAP-var\log\smsap」
+
+
+* 用戶端記錄：
++
+** 「C：\使用者\系統管理員\應用程式資料\漫遊\ NetApp \ smsap\3.3.0\」
+
+
+
+
+查看下列位置的記錄也可能很有幫助：「C：\Documents and Settings\hostname\Application Data \NetApp\smsap\3.3.0\log」
+
+每個作業記錄都會寫入其本身的記錄檔、格式為「smsap_of_date_time.log」。
+
+
+
+ a| 
+如果您的歸檔記錄儲存在未執行Data ONTAP 任何功能的儲存系統上、您是否已將它們排除在SnapManager 考慮使用無法使用此功能進行備份的考量之外？
+ a| 
+「smsap.config」檔案可讓您排除特定的歸檔記錄檔。對於Windows、檔案位於下列位置：「C：\PROP_files.NetApp\smsap\PRONTATE\smsap.config」
+
+使用檔案中所述的格式排除本機封存記錄檔。如需更多資訊、請參閱「設定組態內容」主題。
+
+您也可以在SnapManager 從CLI建立備份時、排除歸檔記錄目的地。如需詳細資訊、請參閱「建立資料庫備份」主題。
+
+您也可以在從SnapManager 功能表GUI建立備份時、排除歸檔記錄目的地。
+
+
+
+ a| 
+您是否在嘗試在SnapManager Windows上安裝或升級功能的目錄中開啟MS－DOS視窗？
+ a| 
+您會看到類似下列的錯誤訊息：
+
+[listing]
+----
+Directory
+C:\Program Files\NetApp\SnapManager for SAP\bin
+is currently in use by another program.
+Any window, opened by you or
+another user, that is currently
+referencing this directory must be
+closed before installation can proceed.
+----
+關閉視窗、然後再次嘗試安裝或升級。
+
+
+
+ a| 
+您是否無法連線至儲存庫？
+ a| 
+如果連線至儲存庫失敗、請在儲存庫資料庫上執行「lsnrctl STATUS」命令、然後檢查作用中的服務名稱。當連接到儲存庫資料庫時SnapManager 、它會使用資料庫的服務名稱。視接聽程式的設定方式而定、這可能是簡短的服務名稱或完整的服務名稱。當連接資料庫進行備份、還原或其他作業時SnapManager 、它會使用主機名稱和SID。如果儲存庫因為目前無法連線而無法正確初始化、您會收到一則錯誤訊息、詢問您是否要移除儲存庫。您可以從目前檢視中移除儲存庫、以便在其他儲存庫上執行作業。
+
+此外、請檢查對應的服務是否正在執行。
+
+
+
+ a| 
+系統是否能解析主機名稱？
+ a| 
+檢查指定的主機名稱是否位於不同的子網路。如果您收到SnapManager 無法解析主機名稱的錯誤訊息、請在主機檔案中新增主機名稱。將主機名稱新增至位於「C：\Windows\system32\drivers\etc\hosts」的檔案：「xxx.xxx.xxx.xxx主機名稱IP位址」
+
+
+
+ a| 
+是否正在執行呢？SnapDrive
+ a| 
+若要檢視SnapDrive 畫面的狀態、請前往「服務」、然後選取SnapDrive 「功能表」服務。
+
+
+
+ a| 
+哪些儲存系統已設定SnapDrive 為使用NetApp存取？
+ a| 
+若要尋找設定SnapDrive 為供使用的儲存系統、請執行下列步驟：
+
+. 在*我的電腦*上按一下滑鼠右鍵、然後選取*管理*。
+. 按一下「*儲存設備*」>* SnapDrive 《*》。
+. 以滑鼠右鍵按一下主機名稱、然後選取*傳輸傳輸傳輸協定設定*。
+
+
+
+
+ a| 
+如何改善GUI效能？SnapManager
+ a| 
+* 請確定您擁有儲存庫、設定檔主機和設定檔的有效使用者認證。
++
+如果認證資料無效、請清除儲存庫、設定檔主機和設定檔的使用者認證資料。重設您之前針對儲存庫、設定檔主機和設定檔所設定的相同使用者認證。如需再次設定使用者認證的其他資訊、請參閱「清除認證快取後設定認證」。
+
+* 關閉未使用的設定檔。
++
+如果您開啟的設定檔數量較多、SnapManager 則VMware GUI效能會變慢。
+
+* 從SnapManager 「使用者偏好設定」視窗的「*管理*」功能表（從「支援GUI」）中、檢查您是否已啟用「啟動時開啟*」。
++
+如果已啟用此功能、則可在「C：\Documents and Settings\Administrator \Application Data \NetApp\smsap\3.3.0\GUI \state'取得的使用者組態（「user.config」）檔案會顯示為「openOnStartup=profile」（openOnStartup=profile）。
+
++
+由於*啟動時開啟*已啟用、因此您必須使用SnapManager 使用者組態（「user.config」）檔案中的「lastOpenProfiles」（lastOpenProfiles）、「PROFILEX 2、PROFILEX 3、...」、從BIOS GUI檢查最近開啟的設定檔
+
++
+您可以刪除列出的設定檔名稱、並將最少的設定檔保持開啟狀態。
+
+* 在Windows環境中安裝SnapManager 新版的更新版本之前、請先刪除SnapManager 下列位置的可用項目：
++
+C：\Documents and Settings\Administrator：應用程式資料\NetApp
+
+
+
+
+
+ a| 
+當多個支援功能同時在背景中啟動和執行時、使用者介面圖形介面需要更多時間來重新整理。SnapManager SnapManager當您以滑鼠右鍵按一下備份（已刪除但仍會顯示在SnapManager 還原GUI中）時、該備份的備份選項不會在備份或複製視窗中啟用。
+ a| 
+您必須等到SnapManager 更新完這個功能後、再檢查備份狀態。
+
+
+
+ a| 
+如果Oracle資料庫不是以英文設定、您會怎麼做？
+ a| 
+如果Oracle資料庫的語言未設定為英文、可能無法執行支援。請將Oracle資料庫的語言設定為英文：SnapManager
+
+. 確認未設定NLS_LANG環境變數：ECA%NLS_LANG%
+. 將下列行新增至「wrapper.conf（包裝文件）檔、位於「C：\SnapManager安裝目錄\服務（service）：
++
+"et.NLS_LANG=America_America.W8MSwin1252"
+
+. 重新啟動SnapManager 伺服器：
++
+'伺服器重新啟動'
+
+
+
+
+NOTE: 如果系統環境變數設定為NLS_LANG、您必須編輯指令碼、使其不覆寫NLS_LANG。
+
+
+
+ a| 
+如果儲存庫資料庫指向多個IP、且每個IP具有不同的主機名稱、那麼當備份排程作業失敗時、您該怎麼辦？
+ a| 
+. 停止SnapManager 伺服器。
+. 從要觸發備份排程的主機刪除儲存庫目錄中的排程檔案。
++
+排程檔案名稱的格式如下：
+
++
+** 儲存庫#repo_username#reposide_database_name#reposide_host#repo_port
+** 儲存庫-repo_usernamer保存 庫_database_name-reposure_host-repo_port
+
+
+
+
+
+NOTE: 您必須確保以符合儲存庫詳細資料的格式刪除排程檔案。
+
+. 重新啟動SnapManager 伺服器。
+. 在SnapManager 同一個資源庫下、從Sure GUI開啟其他設定檔、確保您不會錯過這些設定檔的任何排程資訊。
+
+
+
+
+ a| 
+當由於認證檔案鎖定錯誤而導致無法執行動作時、您會怎麼做SnapManager ？
+ a| 
+更新之前會先鎖定認證檔案、更新後再解除鎖定。當多個作業同時執行時、其中一個作業可能會鎖定認證檔案以進行更新。SnapManager如果另一個作業同時嘗試存取鎖定的認證檔案、則作業會失敗、並顯示檔案鎖定錯誤。
+
+根據同步作業的頻率、在smsap.config檔案中設定下列參數：
+
+* fileLock.retryInterval = 100毫秒
+* fileLock.timeout = 5000毫秒
+
+
+
+NOTE: 指派給參數的值必須以毫秒為單位。
+
+
+
+ a| 
+當備份驗證作業的中繼狀態在「監控」索引標籤中顯示為「失敗」時、即使備份驗證作業仍在執行中、您該怎麼辦？
+ a| 
+錯誤訊息會記錄在sm_gui.log檔案中。您必須查看記錄檔、以判斷可解決此問題的「operation.檢測 到時間間隔」和「operation.檢測 到時間臨界值」參數的新值。
+
+. 將下列參數新增到「smsap.config檔案中：
++
+** "operation.beatInterval"= 5000
+** 「operation.beatThreshold」= 5000、SnapManager 由功能性供方指派的預設值為5000。
+
+
+. 將新值指派給這些參數。
++
+
+NOTE: 指派給參數的值必須以毫秒為單位。
+
+. 重新啟動SnapManager 伺服器、然後再次執行此作業。
+
+
+
+
+ a| 
+遇到堆空間問題時該怎麼辦？
+ a| 
+當您在SnapManager 執行SAP作業時遇到堆疊空間問題時、必須執行下列步驟：
+
+. 瀏覽SnapManager 至適用於SAP的安裝目錄。
+. 從「installationdirectory\bin\launchjava'路徑開啟「launchjava'」檔案。
+. 增加Java -Xmx160m Java堆空間參數的值。
++
+例如、您可以將預設值160m增加至200m。
+
++
+
+NOTE: 如果您在SnapManager 舊版的SAP版中增加Java堆空間參數的值、您應該保留該值。
+
+
+
+
+
+ a| 
+當無法在Windows環境中啟動支援服務、並顯示下列錯誤訊息時、您會怎麼做SnapManager ：Windows無法在本機電腦上啟動Snap Manager。如需詳細資訊、請檢閱系統事件記錄。如果這是非Microsoft服務、請聯絡服務廠商、並參閱服務專屬的錯誤代碼1？
+ a| 
+請在位於「Installation_directory\service」的wrapper.conf檔案中設定下列參數。
+
+* 包裝程式啟動逾時參數可定義包裝程式啟動Java虛擬機器（JVM）與應用程式啟動之JVM回應之間的最長允許時間。
++
+預設值設為90秒。不過、您可以變更大於0的值。如果您指定無效值、則會改用預設值。
+
+* "wrapper.ping．timeout"參數定義了包裝程序ping jvm與來自jvm的回應之間的最長允許時間。預設值設為90秒。
++
+不過、您可以變更為大於0的值。如果您指定無效值、則會改用預設值。
+
+
+
+|===

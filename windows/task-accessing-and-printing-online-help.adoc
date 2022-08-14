@@ -1,0 +1,24 @@
+---
+permalink: windows/task-accessing-and-printing-online-help.html 
+sidebar: sidebar 
+keywords: online, help, instruction, task, snapmanager, graphical, user, interface, windows, wizard, access, print 
+summary: 線上「說明」提供使用SnapManager 支援功能以執行各項工作的指示。線上說明也會提供視窗和精靈欄位的說明。 
+---
+= 存取及列印線上說明
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+線上「說明」提供使用SnapManager 支援功能以執行各項工作的指示。線上說明也會提供視窗和精靈欄位的說明。
+
+. 執行下列其中一項動作：
++
+** 在主視窗中、按一下*「說明」*>*「說明內容」*。
+** 在任何視窗或精靈中、按一下*「說明」*以顯示該視窗的特定說明。
+
+
+. 使用左窗格中的*目錄*瀏覽主題。
+. 按一下說明視窗頂端的「印表機」圖示、即可列印個別主題。
+

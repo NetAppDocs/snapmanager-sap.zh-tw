@@ -1,0 +1,75 @@
+---
+permalink: windows/task-view-backup-details.html 
+sidebar: sidebar 
+keywords: view, detail, information, backup, profile, smsap, show, command 
+summary: 您可以使用smsap備份show命令、在設定檔中檢視特定備份的詳細資訊。 
+---
+= 檢視備份詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「msap備份show」命令、在設定檔中檢視特定備份的詳細資訊。
+
+
+
+== 關於這項工作
+
+「msap備份show」命令會顯示每個備份的下列資訊：
+
+* 備份ID
+* 備份成功或失敗
+* 備份範圍（完整、部分、線上或離線）
+* 備份模式
+* 掛載狀態
+* 備份標籤
+* 留言
+* 開始和結束作業的日期和時間
+* 關於備份是否已驗證的資訊
+* 備份保留類別
+* 資料庫和主機名稱
+* 檢查點系統變更編號（SCN）
+* 結束備份SCN（僅限線上備份）
+* 備份資料庫中的資料表空間和資料檔案
+* 備份資料庫中的控制檔
+* 備份資料庫中的歸檔記錄
+* 檔案所在的儲存系統和磁碟區
+* 製作Snapshot複本及其位置
+* 主要儲存資源的狀態
+* 備份保護狀態
+* 備份模式
+
+
+如果您指定「-verbose」選項、則會顯示下列額外資訊：
+
+* 從備份建立的複本（如果有）
+* 驗證資訊
+* 如果安裝備份、SnapManager 則會顯示使用中的掛載點
+
+
+對於歸檔記錄檔備份、除了下列資訊之外、其他資料庫備份的資訊也會顯示相同：
+
+* 檢查點SCN
+* 結束備份SCN
+* 表格空間
+* 控制檔
+
+
+不過、歸檔記錄檔備份包含下列額外資訊：
+
+* 備份的第一個變更編號
+* 備份的下一個變更編號
+* 執行緒編號
+* 重設記錄ID
+* 轉世
+* 記錄檔名稱
+
+
+.步驟
+. 輸入下列命令：
++
+「* smsap備份」顯示-profile _profile_name_｛-label _label_[data |-archivelogs]|-id _id_[-quiet |-verbose]*
+
+

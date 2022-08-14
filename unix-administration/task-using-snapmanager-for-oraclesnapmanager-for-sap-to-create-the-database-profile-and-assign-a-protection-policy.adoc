@@ -1,0 +1,100 @@
+---
+permalink: unix-administration/task-use-snapmanager-for-oraclesnapmanager-for-sap-to-create-the-database-profile-and-assign-a-protection-policy.html 
+sidebar: sidebar 
+keywords: create, profile, snapmanager, sap, enable, protection, assign, policy, protection, backup 
+summary: 您必須在SnapManager SAP的支援範本中建立設定檔、在設定檔中啟用保護功能、並指派保護原則以建立受保護的備份。 
+---
+= 使用適用於SAP的功能來建立資料庫設定檔、並指派保護原則SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在SnapManager SAP的支援範本中建立設定檔、在設定檔中啟用保護功能、並指派保護原則以建立受保護的備份。
+
+*關於此工作*
+
+設定檔包含所管理資料庫的相關資訊、包括其認證、備份設定及備份保護設定。建立設定檔之後、您不需要在每次執行作業時指定資料庫詳細資料。設定檔只能參考一個資料庫、但多個設定檔可以參照同一個資料庫。
+
+.步驟
+. 前往SnapManager SAP用戶端的《關於SAP用戶端的問題：
+. 在儲存庫樹狀結構中、以滑鼠右鍵按一下主機、然後選取*「Create Profile*（建立設定檔*）」。
+. 在「*設定檔組態資訊*」頁面上、輸入設定檔詳細資料、然後按「*下一步*」。
++
+* 範例 *
+
++
+您可以輸入下列資訊：
+
++
+** 設定檔名稱：P01備份
+** 設定檔密碼：payrol123
+** 註解：正式作業薪資資料庫
+
+
+. 在「*資料庫組態資訊*」頁面上、輸入資料庫詳細資料、然後按「*下一步*」。
++
+* 範例 *
+
++
+您可以輸入下列資訊：
+
++
+** 資料庫名稱：P01
+** 資料庫SID：P01
+** 資料庫主機：接受預設值。由於您是從儲存庫樹狀結構中的主機建立設定檔、SnapManager 所以顯示主機名稱。
+** 主機帳戶、代表Oracle使用者帳戶（適用於ora<SID>）：orapayrolldb
+** 主機群組、代表Oracle群組：DBA
+
+
+. 在「*資料庫連線資訊*」頁面上、按一下「*使用資料庫驗證*」以允許使用者使用資料庫資訊進行驗證。
+. 輸入資料庫連線詳細資料、然後按一下*下一步*。
++
+* 範例 *
+
++
+您可以輸入下列資訊：
+
++
+** Sysdba優先使用者名稱、代表具有系統管理權限的系統資料庫管理員：sys
+** 密碼（SYSDBA密碼）：Oracle
+** 連接至資料庫主機的連接埠：1527
+
+
+. 在「Snapshot Naming Information」（Snapshot命名資訊）頁面上、選取變數以指定與此設定檔相關聯之Snapshot的命名慣例。
++
+'_SMID_'變數會建立唯一的快照識別碼。
+
++
+請執行下列步驟：
+
++
+.. 在*變數權杖*清單中、選取「_usertext_」、然後按一下「*新增*」。
+.. 輸入「_prod01.sample.com__`」作為主機名稱、然後按一下「*確定*」。
+.. 按一下「*左*號」、直到「格式」方塊中的smsap之後出現主機名稱。
+.. 單擊 * 下一步 * 。
+
+
++
+「_smsap_hostname_smsapprofile_dbsid_scope_mode_SMID_」的Snapshot命名慣例會變成「smsap_prpd01.sample.com_P01_BACKUP_P01_f_a_x"」（其中「f」表示完整備份、「A」表示自動模式、而「x」表示唯一的SMID）。
+
+. 選擇* Protection Manager Protection Policy*。
++
+* Protection Manager Protection Policy*可讓您選取使用NetApp管理主控台設定的保護原則。
+
+. 從NetApp管理主控台擷取的保護原則中選取* TechCo Payroll Data：Backup *作為保護原則、然後按* Next*。
+. 在「*執行作業*」頁面上、確認資訊、然後按一下「*建立*」。
+. 按一下「*作業詳細資料*」以查看設定檔的相關資訊：建立作業和磁碟區型還原資格資訊。
+
+
+* 結果 *
+
+* 將NetApp管理主控台保護原則指派給資料庫設定檔、會自動建立不一致的資料集、供NetApp管理主控台操作員使用、名稱慣例為smsap_<hostname>_<profileName>、或本範例為smsap_prod01.sample.com_P01_BACKUP。
+* 如果設定檔不符合磁碟區還原的資格（也稱為「快速還原」）、則會發生下列情況：
++
+** 「*結果*」標籤表示設定檔建立成功、而且在作業期間發生警告。
+** 「*作業詳細資料*」標籤包含警告記錄、指出設定檔不符合快速還原的資格、並說明原因。
+
+
+

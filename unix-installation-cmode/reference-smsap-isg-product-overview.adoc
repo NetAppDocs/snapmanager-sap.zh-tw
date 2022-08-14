@@ -1,0 +1,48 @@
+---
+permalink: unix-installation-cmode/reference-smsap-isg-product-overview.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, automate, simplify, simplifies, complex, manual, time-consume, associate, backup, recovery, clone, database, snapmirror, copy, copies, ontap, snapvault, technology, disk, product, overview 
+summary: 適用於SAP的解決方案可自動化並簡化資料庫的備份、還原及複製相關的複雜、手動及耗時程序。SnapManager您可以使用SnapManager 支援ONTAP SnapMirror的功能來建立備份複本、並使用ONTAP SnapVault 支援此技術的功能、將備份有效歸檔至磁碟。 
+---
+= 產品總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+適用於SAP的解決方案可自動化並簡化資料庫的備份、還原及複製相關的複雜、手動及耗時程序。SnapManager您可以使用SnapManager 支援ONTAP SnapMirror的功能來建立備份複本、並使用ONTAP SnapVault 支援此技術的功能、將備份有效歸檔至磁碟。
+
+提供必要的工具、例如支援支援VMware的支援、並與SAP BR*工具整合、以便執行原則導向的資料管理、排程及建立定期資料庫備份、以及在發生資料遺失或災難時、從這些備份還原資料。SnapManager OnCommand
+
+此外、它還能與Oracle原生技術整合、例如Oracle Real Application Clusters(Oracle RAC)和Oracle Recovery Manager（RMAN）、以保留備份資訊。SnapManager這些備份稍後可用於區塊層級還原或表格空間時間點還原作業。
+
+
+
+== 重點摘要SnapManager
+
+支援無縫整合UNIX主機上的資料庫、以及後端的Snapshot、還原和FlexClone技術SnapManager SnapRestore它提供易於使用的使用者介面（UI）、以及用於管理功能的命令列介面（CLI）。
+
+利用此功能、您可以執行下列資料庫作業、並有效管理資料：SnapManager
+
+* 在一線或二線儲存設備上建立節省空間的備份
++
+使用支援的支援功能、您可以分別備份資料檔案和歸檔記錄檔。SnapManager
+
+* 排程備份
+* 使用檔案型或磁碟區型還原作業還原完整或部分資料庫
+* 從備份中探索、掛載及套用歸檔記錄檔、藉此還原資料庫
+* 僅建立歸檔記錄備份時、可從歸檔記錄目的地剪除歸檔記錄檔
+* 只保留含有唯一歸檔記錄檔的備份、即可自動保留最少的歸檔記錄備份數量
+* 追蹤作業詳細資料並產生報告
+* 驗證備份以確保備份是有效的區塊格式、而且沒有任何備份檔案毀損
+* 維護在資料庫設定檔上執行的作業記錄
++
+設定檔包含SnapManager 有關要由還原管理之資料庫的資訊。
+
+* 保護二線儲存系統上的備份。
+* 在一線或二線儲存設備上建立具空間效益的備份複本
++
+利用此功能、您可以分割資料庫的複本。SnapManager
+
+

@@ -1,0 +1,22 @@
+---
+permalink: windows/task-creating-post-processing-task-specification-file.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, create, post-processing, task-specification, xml, file, operation, snapmirror, snapvault, post-script, backup, secondary, storage, creating 
+summary: 利用此功能、您可以建立後處理、工作規格的XML檔案、以供備份作業使用、其中包括SnapMirror或還原指令碼。SnapManager SnapVault指令碼可讓您將備份鏡射或保存至次要儲存設備。 
+---
+= 建立後處理、工作規格檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以建立後處理、工作規格的XML檔案、以供備份作業使用、其中包括SnapMirror或還原指令碼。SnapManager SnapVault指令碼可讓您將備份鏡射或保存至次要儲存設備。
+
+. 開啟新的XML檔案。
++
+您可以在預設安裝目錄\外掛程式\範例中看到範例工作規格XML檔案。
+
+. 將指令碼名稱新增為輸入參數。
+. 儲存工作規格的XML檔案。
+

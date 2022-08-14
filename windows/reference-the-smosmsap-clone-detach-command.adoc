@@ -1,0 +1,45 @@
+---
+permalink: windows/reference-the-smosmsap-clone-detach-command.html 
+sidebar: sidebar 
+keywords: split, clone, volume, parent, data, ontap, detach, command, snapmanager, smsap 
+summary: 將複製的Volume從Data ONTAP 其父Volume分割成一個實體磁碟區之後、您可以從SnapManager 功能區執行Clone detach命令SnapManager 、讓功能區知道該磁碟區已不再是複製的實體。 
+---
+= smsap Clone detach命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將複製的Volume從Data ONTAP 其父Volume分割成一個實體磁碟區之後、您可以從SnapManager 功能區執行「Clone detach」命令SnapManager 、讓大家知道該磁碟區已不再是複製的實體。
+
+
+
+== 語法
+
+《msap Clone detach -profile profile_name -label clone_label》（英文）
+
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定建立複本的設定檔名稱。
+
+* *標籤_clone_label_`*
++
+指定複製作業所產生的名稱。
+
+
+
+
+
+== 範例
+
+下列命令可分離實體複本：
+
+[listing]
+----
+smsap clone detach -profile SALES1 -label sales1_clone
+----

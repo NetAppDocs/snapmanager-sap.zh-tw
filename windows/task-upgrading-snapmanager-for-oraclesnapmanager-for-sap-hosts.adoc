@@ -1,0 +1,78 @@
+---
+permalink: windows/task-upgrading-snapmanager-for-oraclesnapmanager-for-sap-hosts.html 
+sidebar: sidebar 
+keywords: upgrade, exist, snapmanager, host, version, simultaneous, result, downtime, schedule, operation, time, upgrading 
+summary: 您可以升級所有現有SnapManager 的資訊主機、以使用SnapManager 最新版的資訊。所有主機都會同時升級。不過、這可能會導致所有SnapManager 的故障主機停機、並在這段時間內排定營運。 
+---
+= 升級SnapManager 功能主機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以升級所有現有SnapManager 的資訊主機、以使用SnapManager 最新版的資訊。所有主機都會同時升級。不過、這可能會導致所有SnapManager 的故障主機停機、並在這段時間內排定營運。
+
+. 請執行下列步驟來停止SnapManager 此伺服器：
++
+.. 在Windows Services（Windows服務）窗口中，選擇* NetApp SnapManager Sfor SAP*。
+.. 在左側面板中、按一下*停止*。
+
+
+. 按兩下SnapManager 安裝的安裝檔案。
++
+|===
+| 如果作業系統是... | 然後使用... 
+
+
+ a| 
+Windows x86
+ a| 
+netapp.smsap.windows-x86-version_number.exe
+
+
+
+ a| 
+Windows x64
+ a| 
+netapp.smsap.windows-x64-version_number.exe
+
+|===
++
+此時會顯示下列訊息：無法驗證發行者。確定要執行此軟體？
+
+. 按一下「*確定*」。
++
+隨即顯示簡介視窗。
+
+. 單擊 * 下一步 * 。
++
+隨即顯示Choose Install資料夾視窗。
+
+. 單擊*下一步*接受默認安裝位置或選擇新位置。
++
+預設位置為：C:\Program Files\NetApp\SnapManager for SAP。
+
+. 在Menu Availability（菜單可用度）窗口中，單擊* Next*（下一步*）。
+. 在「指定服務內容」視窗中、輸入Windows服務的帳戶和密碼資訊。
++
+指定的帳戶必須是下列群組的成員：
+
++
+** 儲存系統的本機管理群組
+** 本機系統管理員的群組
+** 您可以指定服務是否必須在重新開機後自動啟動、或服務必須手動啟動。
+
+
+. 在「預先安裝摘要」視窗中、按一下「*安裝*」。
+. 在Install Complete（安裝完成）窗口中，單擊* Next*（下一步*）。
+. 在「重要資訊」視窗中、按一下「*完成*」結束安裝程式。
+
+
+*相關資訊*
+
+xref:concept-preparing-to-install-snapmanager-for-oraclesnapmanager-for-sap.adoc[準備安裝SnapManager 適用於SAP的功能]
+
+xref:concept-preinstallation-tasks.adoc[預先安裝工作]
+
+xref:task-downloading-snapmanager-for-oraclesnapmanager-for-sap-installation-package.adoc[正在下載SnapManager 適用於SAP的更新套件]

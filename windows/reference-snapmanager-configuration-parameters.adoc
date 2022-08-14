@@ -1,0 +1,278 @@
+---
+permalink: windows/reference-snapmanager-configuration-parameters.html 
+sidebar: sidebar 
+keywords: snapmanager, provide, list, configuration, parameter, edit, requirement, smsap, config, file 
+summary: 提供組態參數清單、您可以根據需求進行編輯。SnapManager組態參數儲存在smsap.config檔案中。不過、smsap.config檔案可能不包含所有支援的組態參數。您可以視需求新增組態參數。 
+---
+= 組態參數SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+提供組態參數清單、您可以根據需求進行編輯。SnapManager組態參數儲存在「smsap.config」檔案中。不過、「smsap.config」檔案可能不包含所有支援的組態參數。您可以視需求新增組態參數。
+
+下表列出所有支援SnapManager 的支援的邊區組態參數、並說明何時使用這些參數：
+
+|===
+| 參數 | 說明 
+
+
+ a| 
+* 「需要每小時點數」
+* 「續約時數。持續時間」
+* "ited.moed.count"
+* '月租持續時間'
+
+ a| 
+這些參數會在您建立設定檔時設定保留原則。例如、您可以指派下列值：
+
+「需要.hour.count=12」
+
+「需要每小時一次。持續時間= 2」
+
+"ited.moite.count=2"
+
+"ited.moite.duration = 6"
+
+
+
+ a| 
+"REstore.volate.Volume名稱"
+ a| 
+此參數會將名稱指派給暫用Volume。當使用間接方法從二線儲存設備還原資料時、需要在一線儲存設備上使用暫存磁碟區來保留暫存資料複本、直到資料複製到資料庫檔案中並恢復資料庫為止。SnapManager沒有預設值。如果未指定值、則必須在使用間接方法的還原命令中輸入名稱。例如、您可以指派下列值：
+
+"REstore.forimaryVolume名稱=* smsap_tem_volume*
+
+
+
+ a| 
+"host.inaites.pedy"
+ a| 
+此參數可SnapManager 讓支援資料不再儲存主機認證資料。根據預設、不會儲存主機認證資料。但是、如果您有在遠端實體複本上執行的自訂指令碼、且需要存取遠端伺服器、則需要儲存主機認證資料。您可以將* true *指派給「host.instaite.stist」、以啟用主機認證資料的儲存。可加密並儲存主機認證資料。SnapManager
+
+
+
+ a| 
+「storePlanMaxFilesDisplayed」
+ a| 
+此參數可讓您定義要在還原預覽中顯示的檔案數量上限。SnapManager 根據預設、還原預覽最多可顯示20個檔案。不過、您可以變更為大於0的值。例如、您可以指派下列值：
+
+* 「storePlanMaxFilesDisplayed = 30」
+
+
+
+NOTE: 如果您指定無效值、則會顯示預設的檔案數目。
+
+
+
+ a| 
+snapshot .list.timeout.min
+ a| 
+此參數可讓您定義SnapManager 當執行SnapManager 任何功能時、必須等待「功能表」命令執行的時間（以分鐘為單位）。SnapManager 根據預設、功能表會等候30分鐘。不過、您可以變更為大於0的值。例如、您可以指派下列值：
+
+* "napshot.list.timeout.min=40"
+
+
+
+NOTE: 如果您指定無效值、則會使用預設值。
+
+對於SnapManager 任何的動作、如果「nap list」命令執行時間超過指派給「snapshot.list.timeout.mins」的值、則作業會失敗並顯示逾時錯誤訊息。
+
+
+
+ a| 
+剪除IfFileExistsInOther目的地
+ a| 
+此剪除參數可讓您定義歸檔記錄檔的目的地。歸檔記錄檔會儲存在多個目的地中。在剪除歸檔記錄檔時、SnapManager 由於需要知道歸檔記錄檔的目的地、因此您可以指派的可能值如下：
+
+* 當您想要從指定目的地剪除歸檔記錄檔時、必須將*假*指派給「剪除IfFileExistsInOther目的地」。
+* 當您想要從外部目的地剪除歸檔記錄檔時、必須將* true*指派給「pruneIfFileExistsInOther目的地」。
+
+
+
+
+ a| 
+prune.archivelogs.backedup.from.otherdestination`
+ a| 
+此剪除參數可讓您剪除從指定的歸檔記錄目的地備份或從外部歸檔記錄目的地備份的歸檔記錄檔。您可以指派的可能值如下：
+
+* 如果您想從指定目的地剪除歸檔記錄檔、並且使用「-prune-dest」從指定目的地備份歸檔記錄檔、則必須將*假*指派給「prune.archivelogs.backedup.from.otherdestination`」。
+* 如果您想從指定目的地剪除歸檔記錄檔、而且至少從任何其他目的地備份一次歸檔記錄檔、則必須將* true *指派給「prune.archivelogs.backedup.from.otherdestination`」。
+
+
+
+
+ a| 
+"mim.archivelog.files.toprune.atatatatime."
+ a| 
+此剪除參數可讓您定義指定時間可剪除的最大歸檔記錄檔數。例如、您可以指派下列「Value:maximat.archivelog.files.toprune.atatatatime」=* 998*
+
+
+NOTE: 可指派給「max.archivelog.files.toprune.atatatime」的值必須小於1000。
+
+
+
+ a| 
+《歸檔文件彙總》
+ a| 
+如果SnapManager 您將* true*指派給「archivelogs.splin舉」、此參數可讓支援對象不需執行重複的歸檔記錄備份。
+
+
+
+ a| 
+"uffix.backup.label.with .logs"
+ a| 
+此參數可讓您指定要新增的尾碼、以區分資料備份和歸檔記錄備份的標籤名稱。例如、當您將記錄指派至「shuffix.backup.label.with .log」時、會將「_logs」新增為歸檔記錄備份標籤的尾碼。然後歸檔記錄備份標籤會是「arch_logs」。
+
+
+
+ a| 
+backup.archivelogs.beyond.missingfiles`
+ a| 
+此參數允許SnapManager 將遺失的歸檔記錄檔包含在備份中。不存在於作用中檔案系統中的歸檔記錄檔不會包含在備份中。如果您想要包含所有歸檔記錄檔、即使是使用中檔案系統中不存在的記錄檔、也必須將* true *指派給「backup.archivelogs.beyond.missingfiles`」。
+
+您可以指派假以忽略遺失的歸檔記錄檔。
+
+
+
+ a| 
+"rvctl.timeout"
+ a| 
+此參數可讓您定義「show vctl」命令的逾時值。
+
+
+NOTE: Server Control（服務器控制）（服務器控制）是用於管理RAC執行個體的公用程式。
+
+當執行srvctl命令所需時間超過超時值時、此錯誤訊息會導致執行過程失敗：「錯誤：執行命令時發生逾時：srvctl STATUS」SnapManager SnapManager 。
+
+
+
+ a| 
+「napshot.storageNameCheck」
+ a| 
+此參數可讓SnapManager VMware執行Snapshot複本還原作業、這些複本是在從Data ONTAP 以7-Mode運作的VMware移轉至叢集式Data ONTAP之前建立的。指派給此參數的預設值為假。如果Data ONTAP 您已從以7-Mode運作的支援對象移轉至叢集Data ONTAP 式支援對象、但想要使用移轉前建立的Snapshot複本、請設定「shapshot.還原.storageNameCheck」=* true *。
+
+
+
+ a| 
+ervices.common.disableAbort`
+ a| 
+此參數會在長時間執行的作業失敗時停用清除功能。您可以設定「shervices.common.disableAbort`=*true*.For範例」、如果執行的實體複本作業執行時間過長、但由於Oracle錯誤而失敗、則可能不想清除實體複本。如果您設定「ervices.common.disableAbort`=*true*」、則不會刪除複本。您可以修正Oracle問題、並從故障點重新啟動複製作業。
+
+
+
+ a| 
+* 備份、睡眠、dnfs.layout
+* backup.sleep.dnfs.secs`
+
+ a| 
+這些參數會在Direct NFS（DNFS）配置中啟動睡眠機制。使用DNFS或網路檔案系統（NFS）建立控制檔的備份之後SnapManager 、嘗試讀取控制檔、但可能找不到檔案。若要啟用睡眠機制、請確定「backup.sleep.dnfs.layouts=* true*」。預設值為* true*。
+
+啟用睡眠機制時、您必須將睡眠時間指派給「backup.sleep.dnfs.secs`」。指派的睡眠時間以秒為單位、值取決於您的環境。預設值為5秒。
+
+例如：
+
+* "backup.sleep.dnfs.layouts=*真*
+* backup.sleep.dnfs.secs`=*2*
+
+
+
+
+ a| 
+* override.default.backup.pattern`
+* new.default.backup.pattern`
+
+ a| 
+如果您未指定備份標籤、SnapManager 則會建立預設的備份標籤。這些支援資料參數可讓您自訂預設的備份標籤。若要自訂備份標籤、請確定「override.default.backup.pattern`」的值設為* true *。SnapManager預設值為*假*。
+
+若要指派新的備份標籤模式、您可以將資料庫名稱、設定檔名稱、範圍、模式和主機名稱等關鍵字指派給「new.default.backup.pattern`」。關鍵字應以底線分隔。例如、「new.default.backup.pattern`=*dbname_profile_hostname_scope_mode*」。
+
+
+NOTE: 時間戳記會自動包含在產生的標籤結尾。
+
+
+
+ a| 
+allow.underscore.in.clone.sid`
+ a| 
+Oracle支援在Oracle 11gR2的複製SID中使用底線。這個支援此功能的參數可讓您在實體複製的SID名稱中加入底線。若要在實體複製的SID名稱中加入底線、請確定「allow.underscore.in.clone.sid`」的值設為* true*。SnapManager預設值為* true*。
+
+如果您使用的Oracle版本早於Oracle 11gR2、或不想在複製的SID名稱中加入底線、請將值設為*假*。
+
+
+
+ a| 
+oracle.parameters.with.comma`
+ a| 
+此參數可讓您指定所有以逗號（、）做為值的Oracle參數。執行任何操作SnapManager 時、執行任何操作時、均會使用「oracle.parameters.with.comma`」檢查所有的Oracle參數、並跳過值分割。
+
+例如、如果「_NLS_numeric _characters_」=的值、請指定「oracle.parameters.with.comma=_nls_numeric_characters_`」。如果有多個Oracle參數以逗號作為值、您必須在「oracle.parameters.with.comma`」中指定所有參數。
+
+
+
+ a| 
+* "archivedLogs.exclex"
+* "archivedLogs.excle.filessoit"
+* 如「.db-unique-name>.archivedLogs.excle.filessoh」
+
+ a| 
+如果SnapManager 資料庫不在啟用Snapshot複製的儲存系統上、而且您想SnapManager 要在該儲存系統上執行還原作業、則這些參數可讓您從設定檔和備份中排除歸檔記錄檔。
+
+
+NOTE: 在建立設定檔之前、您必須在組態檔中包含排除參數。
+
+指派給這些參數的值可以是最上層目錄、或是保存檔記錄檔所在的掛載點、或是子目錄。
+
+若要排除歸檔記錄檔不包含在設定檔中並進行備份、您必須包含下列其中一個參數：
+
+* 「archivedLogs.exclude」可指定從所有設定檔或備份中排除歸檔記錄檔的規則運算式。
++
+符合規則運算式的歸檔記錄檔會從所有設定檔和備份中排除。
+
++
+例如、您可以設定「archivedLogs.exclude = J：\Arch\.*」。
+
++
+
+NOTE: 如果目的地有檔案分隔符號、則必須在模式中新增額外的斜槓符號（\）、且模式必須以雙斜槓模式（\。*）結束。
+
+* 「archivedLogs.excle.filessoWs」指定SQL運算式、以便從所有設定檔或備份中排除歸檔記錄檔。
++
+符合SQL運算式的歸檔記錄檔會從所有設定檔和備份中排除。
+
++
+例如、您可以設定「archivedLogs.exclude」檔案、例如= J：\ARCH2\%。
+
++
+
+NOTE: 如果目的地有檔案分隔符號、則必須在模式中新增額外的斜槓符號（\）、且模式必須以雙斜槓模式（\%）結束。
+
+
+
+
+
+ a| 
+ a| 
+* 「.db-unique-name>.archivedLogs.excle.filessoes」可指定SQL運算式、以便僅從設定檔中排除歸檔記錄檔、或使用指定的_db-unique-name_為資料庫建立備份。
++
+符合SQL運算式的歸檔記錄檔會從設定檔和備份中排除。
+
++
+例如、您可以設定「mydb.archivedLogs.excle.filessoes = J：\ARCH2\%'。
+
++
+
+NOTE: 如果目的地有檔案分隔符號、則必須在模式中新增額外的斜槓符號（\）、且模式必須以雙斜槓模式（\%）結束。
+
+
+
+
+NOTE: BR*工具不支援下列參數、即使這些參數設定為排除歸檔記錄檔：
+
+* "archivedLogs.excle.filessoit"
+* 如「.db-unique-name>.archivedLogs.excle.filessoh」
+
+
+|===

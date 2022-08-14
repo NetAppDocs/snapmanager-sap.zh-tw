@@ -1,0 +1,50 @@
+---
+permalink: windows/task-clone-databases-from-backups.html 
+sidebar: sidebar 
+keywords: clone, database, backup, create, command 
+summary: 您可以使用Clone create命令、從備份複製資料庫。 
+---
+= 從備份複製資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「Clone cre創作」命令、從備份複製資料庫。
+
+
+
+== 關於這項工作
+
+您必須先為資料庫建立複製規格檔案。根據此規格檔案中的資訊建立實體複本。SnapManager
+
+複製資料庫之後、您可能會想要使用新的複製資料庫連線資訊來更新用戶端機器上的「tnsnames.ora」檔案。tnssnames.ora檔案可用來連線至Oracle執行個體、而不需指定完整的資料庫資訊。不更新「tnssnames.ora」檔案。SnapManager
+
+如果您使用以「包括線上備份」建立的設定檔、則使用時一律會建立包含歸檔記錄檔的備份。SnapManager支援使用者僅複製完整的資料庫備份。SnapManager
+
+使用支援（3.2或更新版本）、您可以複製包含資料檔案和歸檔記錄檔的備份。SnapManager
+
+如果歸檔記錄可從外部位置取得、您可以在複製期間指定外部位置、以便將複製的資料庫恢復為一致狀態。您必須確保Oracle可以存取外部位置。不支援僅複製歸檔記錄備份。
+
+雖然歸檔記錄備份是與線上部分備份一起建立、但您無法使用此備份來建立資料庫複本。
+
+當您指定外部歸檔記錄位置、以便將複製的資料庫還原為一致的狀態時、必須確保將外部位置名稱完全以大寫輸入。在檔案系統中、所有資料夾和子資料夾的名稱必須為大寫、因為Oracle資料庫會將目的地路徑轉譯為大寫、並預期外部目的地路徑、資料夾名稱和子資料夾名稱必須為大寫。如果您以小寫形式指定外部歸檔記錄目的地路徑、則資料庫可能無法識別指定的路徑、也無法還原複製的資料庫。
+
+您只能從獨立式資料庫的外部歸檔記錄檔位置複製資料庫備份。
+
+您可以將「-dump」選項指定為選用參數、以便在成功或失敗的實體複本建立作業之後收集傾印檔案。
+
+*複製資料檔案備份而不備份歸檔記錄*
+
+當資料檔案備份不包含歸檔記錄備份時、SnapManager 適用於SAP的功能會根據備份期間記錄的系統變更編號（SCN）來複製資料庫。如果無法恢復複製的資料庫、則會顯示「Archived log file for thread < number> and change <SCN> required to finally recovery」（執行緒的歸檔記錄檔與變更完成恢復所需的<SCN>）錯誤訊息、即使SnapManager SAP的更新繼續複製資料庫、最後成功建立複製。
+
+使用資料檔案備份進行複製時、若不包含歸檔記錄備份、SnapManager 則直到上次歸檔記錄SCN（在備份期間記錄）為止、恢復複製的資料庫。
+
+.步驟
+. 建立複製規格檔案。
+. 若要建立實體複本、請輸入下列命令：
++
++smsap Clone cree-backup-labelbackup_name-newsidnew_sidnew_sid-labelclonclone_label-profileprofile_name-clonespecfull路徑to_clonespecfile [-taskspec_][-recover-from位置] path1 [,<path2>...] [-dump（傾印）+]
+
+

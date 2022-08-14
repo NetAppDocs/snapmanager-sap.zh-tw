@@ -1,0 +1,98 @@
+---
+permalink: unix-administration/reference-the-smosmsapprofile-list-command.html 
+sidebar: sidebar 
+keywords: command, display, list, current, profile, smsap 
+summary: 此命令會顯示目前設定檔的清單。 
+---
+= smsap設定檔清單命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會顯示目前設定檔的清單。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap profile list
+[-quiet | -verbose]]
+----
+
+
+== 參數
+
+* 「*- Quiet *」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 命令範例
+
+下列範例顯示現有的設定檔及其詳細資料。
+
+[listing]
+----
+smsap profile list -verbose
+Profile name: FGTER
+Repository:
+  Database name: SMSAPREPO
+  SID: SMSAPREPO
+  Host: hotspur
+  Port: 1521
+  Username: swagrahn
+  Password: ********
+Profile name: TEST_RBAC
+Repository:
+  Database name: smsaprep
+  SID: smsaprep
+  Host: elbe.rtp.org.com
+  Port: 1521
+  Username: smsapsaal
+  Password: ********
+Profile name: TEST_RBAC_DP_PROTECT
+Repository:
+  Database name: smsaprep
+  SID: smsaprep
+  Host: elbe.rtp.org.com
+  Port: 1521
+  Username: smsapsaal
+  Password: ********
+Profile name: TEST_HOSTCREDEN_OFF
+Repository:
+  Database name: smsaprep
+  SID: smsaprep
+  Host: elbe.rtp.org.com
+  Port: 1521
+  Username: smsapsaal
+  Password: ********
+Profile name: SMK_PRF
+Repository:
+  Database name: smsaprep
+  SID: smsaprep
+  Host: elbe.rtp.org.com
+  Port: 1521
+  Username: smsapsaal
+  Password: ********
+Profile name: FGLEX
+Repository:
+  Database name: SMSAPREPO
+  SID: SMSAPREPO
+  Host: hotspur
+  Port: 1521
+  Username: swagrahn
+  Password: ********
+----
+'''

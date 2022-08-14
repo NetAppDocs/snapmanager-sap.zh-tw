@@ -1,0 +1,18 @@
+---
+permalink: unix-administration/concept-what-resource-pools-are.html 
+sidebar: sidebar 
+keywords: resource, pool, collection, physical, storage, system, volume, lun, provision, assign, aggregate 
+summary: 資源池是未使用的實體儲存設備（例如儲存系統或集合體）的集合、可從其中配置新的磁碟區或LUN來容納資料。如果您將儲存系統指派給資源池、則該儲存系統上的所有集合體都可進行資源配置。 
+---
+= 什麼是資源集區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+資源池是未使用的實體儲存設備（例如儲存系統或集合體）的集合、可從其中配置新的磁碟區或LUN來容納資料。如果您將儲存系統指派給資源池、則該儲存系統上的所有集合體都可進行資源配置。
+
+儲存管理員可使用Protection Manager的主控台、將資源池指派給備份和鏡射複本。資源池中的實體資源中、資源資源配置應用程式可自動配置磁碟區、以包含備份和鏡射複本。
+
+針對受保護的設定檔、SnapManager 此功能會顯示設定檔的相關資訊、並指出是否已將儲存資源池指派給該設定檔。否則、設定檔會被視為「不一致」。 將儲存資源池指派給對應的設定檔資料集之後、該設定檔就會被視為「一致」。

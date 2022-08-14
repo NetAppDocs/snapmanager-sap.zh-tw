@@ -1,0 +1,35 @@
+---
+permalink: windows/concept-how-to-organize-repositories.html 
+sidebar: sidebar 
+keywords: organize, snapmanager, repository, repositories, business, application, type, usage 
+summary: 您可以組織SnapManager 這些資訊庫來滿足您的業務需求。您可以透過多種方式來組織這些應用程式、包括依應用程式類型和使用量。 
+---
+= 如何組織儲存庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以組織SnapManager 這些資訊庫來滿足您的業務需求。您可以透過多種方式來組織這些應用程式、包括依應用程式類型和使用量。
+
+您可以透過多種方式組織儲存庫。這兩種方法如下：
+
+|===
+| 類型 | 特性 
+
+
+ a| 
+依應用程式
+ a| 
+如果您有多個Oracle資料庫執行不同的應用程式、您可以為SnapManager 每種應用程式類型建立一個這個儲存庫。每SnapManager 個系統資訊庫都會有特定應用程式類型資料庫的設定檔。該應用程式類型的所有正式作業、開發和測試資料庫、都會由相同SnapManager 的資訊庫來管理。此選項有助於將類似的資料庫分組、並簡化複製作業。不過、如果您有多種應用程式類型、則可能需要管理多SnapManager 個版本資訊庫、如果您選擇實作其他應用程式類型、則需要建立另一個SnapManager 版本資訊庫。由於這些SnapManager 不穩定儲存庫將會管理正式作業資料庫、因此這些儲存庫必須位於高可用度的伺服器上、這可能很昂貴。此外SnapManager 、在相同的支援資源庫中、必須管理正式作業資料庫、以及開發和測試相同類型的資料庫、也可能是安全問題。
+
+
+
+ a| 
+依使用量
+ a| 
+您可以根據SnapManager 資料庫的使用情況、將資料庫散佈到各個不穩定的儲存庫（例如、正式作業、開發、測試和訓練）。此選項會將儲存庫數量限制在您擁有的不同資料庫類型。由於所有正式作業資料庫都是由單SnapManager 一的知識庫來管理、因此只有正式作業資料庫管理員可以存取此儲存庫。此外、如果您選擇針對新的應用程式類型部署其他資料庫、則只需在對應SnapManager 的還原儲存庫中註冊資料庫、而不需建立新的儲存庫。高可用度僅可提供給SnapManager 保存所有正式作業資料庫設定檔的不間斷資料儲存庫。
+
+|===
+Oracle與SAP的支援不應共用相同的儲存庫。SnapManager SnapManager若為SnapManager Oracle版和SnapManager SAP版的支援功能、您必須在環境中使用不同的儲存庫（不同的Oracle資料庫使用者）來儲存每個產品。在相同或不同的資料庫中使用不同的儲存庫、可為每個產品提供獨立的升級週期、以提供更高的靈活度。

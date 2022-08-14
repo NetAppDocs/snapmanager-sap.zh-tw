@@ -1,0 +1,111 @@
+---
+section: unix-installation-7mode
+title: UNIX 7模式的安裝與設定
+entries:
+- title: 產品總覽
+  url: "/unix-installation-7mode/reference-smsap-isg-product-overview.html"
+  entries:
+  - title: 架構SnapManager
+    url: "/unix-installation-7mode/reference-smsap-isg-snapmanager-architecture.html"
+- title: 部署工作流程
+  url: "/unix-installation-7mode/reference-smsap-isg-deployment-workflow.html"
+- title: 準備部署
+  url: "/unix-installation-7mode/task-smsap-isg-prepare-for-deployment.html"
+  entries:
+  - title: 提供授權SnapManager
+    url: "/unix-installation-7mode/reference-smsap-isg-snapmanager-licensing.html"
+  - title: 支援的組態
+    url: "/unix-installation-7mode/reference-supported-configurations.html"
+  - title: 支援的儲存類型
+    url: "/unix-installation-7mode/reference-supported-storage-types.html"
+  - title: UNIX主機需求
+    url: "/unix-installation-7mode/reference-smsap-isg-host-requirements.html"
+- title: 設定資料庫
+  url: "/unix-installation-7mode/task-smsap-isg-configure-databases.html"
+  entries:
+  - title: 設定目標資料庫
+    url: "/unix-installation-7mode/task-smsap-isg-configure-the-target-database.html"
+  - title: 為目標資料庫建立Oracle資料庫使用者
+    url: "/unix-installation-7mode/task-create-an-oracle-user-for-the-target-database.html"
+  - title: 建立儲存庫資料庫執行個體
+    url: "/unix-installation-7mode/task-create-the-repository-database-instance.html"
+  - title: 為儲存庫資料庫執行個體建立Oracle使用者
+    url: "/unix-installation-7mode/task-create-an-oracle-user-for-the-repository-database-instance.html"
+  - title: 驗證Oracle偵聽器組態
+    url: "/unix-installation-7mode/task-verify-the-oracle-listener-configuration.html"
+- title: 安裝SnapManager
+  url: "/unix-installation-7mode/task-smsap-isg-install-snapmanager.html"
+  entries:
+  - title: 與SAP BR*工具整合
+    url: "/unix-installation-7mode/task-smsap-isg-integrate-with-sap-br-tools.html"
+- title: 設定SnapManager 功能
+  url: "/unix-installation-7mode/task-set-up-snapmanager.html"
+  entries:
+  - title: 啟動SnapManager 伺服器
+    url: "/unix-installation-7mode/task-smsap-isg-start-the-snapmanager-server.html"
+  - title: 存取SnapManager 這個使用者介面
+    url: "/unix-installation-7mode/task-smsap-isg-access-the-snapmanager-user-interface.html"
+  - title: 設定SnapManager 此系統資訊庫
+    url: "/unix-installation-7mode/task-smsap-isg-configure-the-snapmanager-repository.html"
+- title: 準備儲存系統以進行SnapMirror和SnapVault 資訊複寫
+  url: "/unix-installation-7mode/reference-prepare-storage-systems-for-snapmirror-and-snapvault-replication.html"
+  entries:
+  - title: 瞭解SnapMirror與SnapVault SnapMirror之間的差異
+    url: "/unix-installation-7mode/concept-understanding-the-differences-between-snapmirror-and-snapvault.html"
+  - title: 準備儲存系統以進行SnapMirror複寫
+    url: "/unix-installation-7mode/task-prepare-storage-systems-for-snapmirror-replication-7-mode.html"
+  - title: 準備儲存系統SnapVault 以進行資訊複寫
+    url: "/unix-installation-7mode/task-prepare-storage-systems-for-snapvault-replication-7-mode.html"
+- title: 備份及驗證資料庫
+  url: "/unix-installation-7mode/concept-backing-up-and-verifying-your-databases.html"
+  entries:
+  - title: 支援概述SnapManager
+    url: "/unix-installation-7mode/concept-smsap-isg-snapmanager-backup-overview.html"
+  - title: 定義備份策略
+    url: "/unix-installation-7mode/concept-smsap-isg-defining-a-backup-strategy.html"
+  - title: 建立資料庫的設定檔
+    url: "/unix-installation-7mode/task-smsap-isg-create-a-profile-for-your-database.html"
+  - title: 備份資料庫
+    url: "/unix-installation-7mode/task-smsap-isg-back-up-your-database.html"
+  - title: 驗證資料庫備份
+    url: "/unix-installation-7mode/task-smsap-isg-verify-database-backups.html"
+  - title: 排程重複備份
+    url: "/unix-installation-7mode/task-smsap-isg-schedule-recurring-backups.html"
+- title: 從UNIX主機解除安裝軟體
+  url: "/unix-installation-7mode/task-smsap-isg-uninstall-the-software-from-a-unix-host.html"
+- title: 升級SnapManager
+  url: "/unix-installation-7mode/concept-upgrading-snapmanager-for-oracle-snapmanager-for-sap.html"
+  entries:
+  - title: 準備升級SnapManager
+    url: "/unix-installation-7mode/concept-preparing-to-upgrade-snapmanager-for-oracle-snapmanager-for-sap.html"
+  - title: 升級SnapManager 功能
+    url: "/unix-installation-7mode/task-upgrade-snapmanager-for-oracle-snapmanager-for-sap-hosts.html"
+  - title: 升級後的工作
+    url: "/unix-installation-7mode/concept-post-upgrade-tasks.html"
+    entries:
+    - title: 更新現有儲存庫
+      url: "/unix-installation-7mode/task-update-the-existing-repository.html"
+    - title: 修改備份保留類別
+      url: "/unix-installation-7mode/task-modify-the-backup-retention-class.html"
+    - title: 還原程序類型
+      url: "/unix-installation-7mode/concept-restore-process-identification.html"
+  - title: 使用循環升級來升級SnapManager 功能
+    url: "/unix-installation-7mode/concept-upgrading-snapmanager-hosts-by-using-rolling-upgrade.html"
+    entries:
+    - title: 執行循環升級的先決條件
+      url: "/unix-installation-7mode/concept-prerequisites-for-performing-rolling-upgrade.html"
+    - title: 在單一主機或多部主機上執行循環升級
+      url: "/unix-installation-7mode/task-perform-rolling-upgrade-on-a-single-host-or-multiple-hosts.html"
+    - title: 什麼是復原
+      url: "/unix-installation-7mode/concept-what-a-rollback-is.html"
+      entries:
+      - title: 執行復原的限制
+        url: "/unix-installation-7mode/concept-limitations-for-performing-a-rollback.html"
+      - title: 執行復原的先決條件
+        url: "/unix-installation-7mode/concept-prerequisites-for-performing-a-rollback.html"
+      - title: 在單一主機或多個主機上執行復原
+        url: "/unix-installation-7mode/task-perform-a-rollback-on-a-single-host-or-multiple-hosts.html"
+      - title: 復原後工作
+        url: "/unix-installation-7mode/task-post-rollback-tasks.html"
+- title: 下一步
+  url: "/unix-installation-7mode/reference-smsap-isg-where-to-go-next.html"

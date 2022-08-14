@@ -1,0 +1,13 @@
+---
+permalink: reference-releasenotes.html 
+sidebar: sidebar 
+keywords: release, notes, new, features, fixed, issues, known, limitations, oncommand, workflow, automation, netapp, 5.0, 5.0.1 
+summary: 說明新功能、升級附註、修正問題、已知限制及已知問題。 
+---
+= 版本資訊
+:allow-uri-read: 
+
+
+版本資訊說明新功能、升級附註、修正問題、已知限制及已知問題。
+
+link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2849494["適用於SAP 3.4.2版本說明SnapManager"^]

@@ -1,0 +1,29 @@
+---
+permalink: windows/concept-what-the-snapmanager-architecture-is.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, architecture, component, host, client, repository, primary, secondary, storage, system, netapp, product, architecture 
+summary: 適用於SAP的解決方案架構包含許多元件、SnapManager 例如SnapManager 適用於SAP主機、用戶端和儲存庫的解決方案。其他元件包括一線和二線儲存系統、以及其他NetApp產品。 
+---
+= SAP架構的功能SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+適用於SAP的解決方案架構包含許多元件、SnapManager 例如SnapManager 適用於SAP主機、用戶端和儲存庫的解決方案。其他元件包括一線和二線儲存系統、以及其他NetApp產品。
+
+適用於SAP的架構包括下列架構元件：SnapManager
+
+* 支援SnapManager
+* 圖形化使用者介面或命令列介面SnapManager
+* 系統儲存庫SnapManager
+* SAP BACKINT介面SnapManager
+* 主儲存系統
+* 二線儲存系統
+* 適用於Windows SnapDrive
+
+
+下圖顯示SnapManager 適用於SAP及相關元件的架構：
+
+image::../media/scrn_en_drw_smsap_architecture.gif[適用於Oracle架構SnapManager]

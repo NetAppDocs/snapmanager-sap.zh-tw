@@ -1,0 +1,65 @@
+---
+permalink: unix-administration/concept-about-role-based-access-control.html 
+sidebar: sidebar 
+keywords: role-based, access, control, rbac, control, access, snapmanager, operation, administrator, environment, role 
+summary: 角色型存取控制（RBAC）可讓您控制哪些人可以存取SnapManager 哪些內容。RBAC可讓系統管理員定義角色並指派使用者給這些角色、藉此管理使用者群組。您可能想SnapManager 要在已有RBAC的環境中使用無法使用的RBAC。 
+---
+= 關於角色型存取控制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+角色型存取控制（RBAC）可讓您控制哪些人可以存取SnapManager 哪些內容。RBAC可讓系統管理員定義角色並指派使用者給這些角色、藉此管理使用者群組。您可能想SnapManager 要在已有RBAC的環境中使用無法使用的RBAC。
+
+RBAC包含下列元件：
+
+* 資源：儲存構成資料庫之資料檔案的磁碟區和LUN。
+* 功能：可在資源上執行的作業類型。
+* 使用者：您授予功能的人員。
+* 角色：一組資源和資源所允許的功能。您可以指派特定角色給應執行這些功能的使用者。
+
+
+您可以在SnapDrive 支援的過程中啟用RBAC。然後、您可以在Operations Manager Web圖形化使用者介面或命令列介面中、針對每個角色設定特定功能。在DataFabric Manager伺服器中執行RBAC檢查。
+
+下表列出Operations Manager中設定的部分角色及其一般工作。
+
+[cols="1a,3a"]
+|===
+| 角色 | 一般工作 
+
+
+ a| 
+SAP基礎管理員
+ a| 
+* 建立、維護及監控位於主機上的Oracle資料庫
+* 排程及建立資料庫備份
+* 確保備份有效且可還原
+* 複製資料庫
+
+
+
+
+ a| 
+伺服器管理員
+ a| 
+* 設定儲存系統與集合體
+* 監控磁碟區以獲得可用空間
+* 根據使用者的要求來配置儲存設備
+* 設定及監控災難恢復鏡像
+
+
+
+
+ a| 
+儲存架構設計師
+ a| 
+* 制定儲存架構決策
+* 規劃儲存容量成長
+* 規劃災難恢復策略
+* 將功能委派給團隊成員
+
+
+|===
+如果正在使用RBAC（表示已安裝Operations Manager、SnapDrive 且已啟用RBAC）、則儲存管理員必須指派資料庫檔案的所有磁碟區和儲存系統的RBAC權限。

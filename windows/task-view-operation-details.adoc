@@ -1,0 +1,36 @@
+---
+permalink: windows/task-view-operation-details.html 
+sidebar: sidebar 
+keywords: view, detail, information, particular, profile, verify, success, failure, operation, resource, operation 
+summary: 您可以檢視特定設定檔的詳細資訊、以驗證作業是否成功。它也能協助您判斷特定作業所使用的儲存資源。 
+---
+= 檢視作業詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視特定設定檔的詳細資訊、以驗證作業是否成功。它也能協助您判斷特定作業所使用的儲存資源。
+
+
+
+== 關於這項工作
+
+您可以檢視特定作業的下列詳細資料：
+
+* 營運ID
+* 作業類型
+* 是否強制執行該作業
+* 執行時間資訊、包括作業的狀態、開始和結束日期
+* 執行作業的主機、包括程序ID和SnapManager 版本
+* 儲存庫資訊
+* 使用中的儲存資源
+
+
+.步驟
+. 若要檢視特定作業ID的詳細資訊、請輸入下列命令：
++
+「* smsap作業」顯示-profile _profile_name_[-label _label_|-id _id_][-quiet |-verbose]*
+
+

@@ -1,0 +1,66 @@
+---
+permalink: windows/reference-where-to-go-for-more-information.html 
+sidebar: sidebar 
+keywords: information, task, install, snapmanager 
+summary: 您可以找到有關安裝及使用SnapManager 方面的基本工作資訊。 
+---
+= 如需詳細資訊、請前往何處
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以找到有關安裝及使用SnapManager 方面的基本工作資訊。
+
+|===
+| 文件 | 說明 
+
+
+ a| 
+介紹頁面SnapManager
+ a| 
+本頁提供SnapManager 有關資訊、線上文件的指標、SnapManager 以及指向可從其中下載軟體之「支援資訊」下載頁面的連結。
+
+
+
+ a| 
+適用於7-Mode_的_ Data ONTAP 《SAN組態指南》
+ a| 
+如需此文件、請參閱 http://mysupport.netapp.com/["NetApp支援"^]。
+
+這是一份動態的線上文件、其中包含有關在SAN環境中設定系統需求的最新資訊。其中提供有關儲存系統與主機平台、纜線問題、交換器問題與組態的最新詳細資料。
+
+
+
+ a| 
+不兼容性對照表SnapManager SnapDrive
+ a| 
+本文件可在互通性一節中找到、網址為 http://mysupport.netapp.com/matrix["互通性對照表工具"^]。
+
+這是一份動態的線上文件、內含SnapManager 最新的資訊、這些資訊都是針對具體的需求及其平台需求而設計。
+
+
+
+ a| 
+發行說明SnapManager
+ a| 
+本文件SnapManager 隨附於本文件。您也可以從下載複本 http://mysupport.netapp.com/["NetApp支援"^]。
+
+其中包含您需要的任何最後一分鐘資訊、以便順利設定及執行。
+
+
+
+ a| 
+NetApp主機附加與支援套件文件
+ a| 
+http://mysupport.netapp.com/["NetApp支援"^]。
+
+
+
+ a| 
+主機作業系統與資料庫資訊
+ a| 
+這些文件提供有關主機作業系統和資料庫軟體的資訊。
+
+|===

@@ -1,0 +1,17 @@
+---
+permalink: unix-installation-7mode/concept-post-upgrade-tasks.html 
+sidebar: sidebar 
+keywords: upgrading, upgrade, version, snapmanager, update, exist, repository, backup, identify, post-upgrade, task 
+summary: 升級SnapManager 至更新版本的更新版本的更新版本之後、您必須更新現有的儲存庫。您也可能想要修改指派給現有備份的備份保留類別、並找出您可以使用的還原程序。 
+---
+= 升級後的工作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+升級SnapManager 至更新版本的更新版本的更新版本之後、您必須更新現有的儲存庫。您也可能想要修改指派給現有備份的備份保留類別、以識別您可以使用的還原程序。
+
+
+NOTE: 升級SnapManager 到版本不含更新版本的版本之後、如果您想使用資料庫（DB）驗證做為唯一的驗證方法、則必須將「_sqlnet.authentication_services_`」設為「*無*」。RAC資料庫不支援此功能。

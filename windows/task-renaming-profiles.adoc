@@ -1,0 +1,41 @@
+---
+permalink: windows/task-renaming-profiles.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, rename, profile, update, capabilities, capability, perform, renaming, retain 
+summary: 更新設定檔時、使用支援功能可重新命名設定檔。SnapManager在設定檔上設定的功能、以及在重新命名之前可以執行的作業、都會保留在重新命名的設定檔中。SnapManager 
+---
+= 重新命名設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+更新設定檔時、使用支援功能可重新命名設定檔。SnapManager在設定檔上設定的功能、以及在重新命名之前可以執行的作業、都會保留在重新命名的設定檔中。SnapManager
+
+* 重新命名設定檔時、您必須確保SnapManager 設定檔上沒有執行任何的功能。
+
+
+您可以從SnapManager 支援指令行介面（CLI）和圖形化使用者介面（GUI）重新命名設定檔。更新設定檔時SnapManager 、此功能會驗證並更新儲存庫中的設定檔名稱。
+
+
+NOTE: 不支援在「多重設定檔更新」視窗中重新命名設定檔。SnapManager
+
+當您提供新的設定檔名稱時、新的設定檔名稱會新增到用戶端認證快取中、而舊的設定檔名稱也會移除。當您從用戶端重新命名設定檔時、只會更新該用戶端的認證快取。您需要從每個用戶端執行smsap設定檔同步命令、以新的設定檔名稱來更新新的認證快取。
+
+您可以使用smsap認證集命令來設定設定檔的密碼。
+
+如果設定檔名稱包含在Snapshot複本命名模式中、則當您重新命名設定檔時、設定檔的新名稱將會更新。在設定檔上執行的SnapManager 所有功能均使用新的設定檔名稱。使用較早設定檔建立的備份、仍保留先前的設定檔名稱、並用於執行其他SnapManager 的還原作業。
+
+如果您正在執行SnapManager 循環升級、則必須確保在重新命名設定檔之前執行完整的升級。
+
+設定檔的新名稱只會從SnapManager 提出要求的來源來源更新。連接到該伺服器的不知道設定檔名稱的變更。SnapManager SnapManager您可以查看作業記錄、瞭解設定檔名稱的變更。
+
+
+NOTE: 如果排程的備份作業是在重新命名設定檔時開始、則排程的作業會失敗。
+
+. 輸入下列命令：
++
+「msap設定檔更新-profileprofile（-new-profilenew_profile_name）」
+
+

@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task-add-existing-profile-to-summary-notification.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, exist, add, profile, summary, email, notification, update, updating 
+summary: 利用此功能、您可以在更新設定檔的同時、將現有的設定檔新增至摘要電子郵件通知。SnapManager 
+---
+= 新增現有設定檔至摘要電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以在更新設定檔的同時、將現有的設定檔新增至摘要電子郵件通知。SnapManager
+
+.步驟
+. 輸入下列命令：
++
+_smsap profile update -profile _profile_name_[-profile-password _profile_password_]-reposite-dbname _repo_service_name_-host _repo_host_-port _repo_port_-userName _repo_username_-database-dbname _dbdb_dbname_-host _db_db_db_host_host_host_host_host_sthourly sdb_stock_[_login_en_deed_deed_don_de_de_deed_deed_deed_de_deed_deed_deed_deed_stock_stock_stock_stock_en_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_deed_dektam_ [-dimduration _m_][-週數_n_][-持續時間_m_][-每月數_n_][-持續時間_m_]][-註釋_comment _][-snapname-Pattern_][-protection [-protection policy _policy_name_][-摘要通知]*
+
+

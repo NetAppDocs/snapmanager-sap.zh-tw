@@ -1,0 +1,124 @@
+---
+permalink: unix-administration/reference-the-smosmsapbackup-mount-command.html 
+sidebar: sidebar 
+keywords: run, backup, mount, command, backup, recover, operation, external, tool, smsap 
+summary: 您可以執行備份掛載命令來掛載備份、以便使用外部工具執行恢復作業。 
+---
+= smsap備份掛載命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「備份掛載」命令來掛載備份、以便使用外部工具執行恢復作業。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap backup mount
+-profile _profile_name_
+[-label _label_ [-data | -archivelogs\] | [-id _id_\]
+[-host  _host_]
+[-from-secondary {-copy-id _id_}]
+[-dump]
+[-quiet | -verbose]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile_name_*」
++
+指定與您要掛載的備份相關聯的設定檔。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* 「* id guid*」
++
+以指定的GUID掛載備份。當SnapManager 您建立備份時、會產生由支援所產生的GUID。您可以使用「msap備份清單」命令來顯示每個備份的Guid。
+
+* 「*標籤_label_*」
++
+以指定的標籤掛載備份。
+
+* 「*資料*」
++
+指定資料檔案。
+
+* 《*歸檔者*》
++
+指定歸檔記錄檔。
+
+* 「*來源-次要-複製- ID _id_*」
++
+從次要儲存設備掛載備份。如果未指定此選項、SnapManager 則由主儲存設備掛載備份。如果備份已釋出、您可以使用此選項。
+
++
+只要指定「來源-次要」選項、就必須指定「-copy -id」選項。如果二線儲存系統上有多個備份、則可使用「-copy -id」選項來指定次要儲存設備上的備份複本、以用於掛載備份。
+
++
+
+NOTE: 如果您使用Data ONTAP 的是7-Mode的支援功能、則必須為「-copy -id」選項指定有效值。但是、如果您使用叢集Data ONTAP 式的功能、則不需要「-copy -id」選項。
+
+* 「*主機_host_*」
++
+指定要掛載備份的主機。
+
+* 「*傾印*」
++
+在成功或失敗的掛載作業之後收集傾印檔。
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設設定為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+NOTE: 只有在使用外部工具（例如Oracle Recovery Manager（RMAN））時、才必須使用此命令。如果您使用「msap備份還原」命令來還原備份、則系統會自動處理備份的掛載作業。SnapManager此命令會顯示清單、顯示已掛載Snapshot複本的路徑。只有在指定了「-verbose」選項時、才會顯示此清單。
+
+'''
+
+
+== 範例
+
+下列範例裝載備份：
+
+[listing]
+----
+smsap backup mount -profile S10_BACKUP -label full_monthly_10 -verbose
+SMSAP-13046 [INFO ]: Operation GUID 8abc013111b9088e0111b908a7560001
+starting on Profile S10_BACKUP
+SMSAP-08052 [INFO ]: Beginning to connect mount(s)
+[/oracle/S10_mirrlogs, /oracle/S10_sapdata] from logical snapshot
+SMSAP_S10_BACKUP_S10_F_C_1_8abc013111a450480111a45066210001.
+SMSAP-08025 [INFO ]: Beginning to connect mount
+/oracle/S10_mirrlogs from snapshot
+SMSAP_S10_BACKUP_S10_F_C_1_8abc013111a450480111a45066210001_0 of
+volume saplog_S10.
+SMSAP-08027 [INFO ]: Finished connecting mount /oracle/S10_mirrlogs from snapshot
+SMSAP_S10_BACKUP_S10_F_C_1_8abc013111a450480111a45066210001_0 of
+volume saplog_S10.
+SMSAP-08025 [INFO ]: Beginning to connect mount /oracle/S10_sapdata
+from snapshot
+SMSAP_S10_BACKUP_S10_F_C_1_8abc013111a450480111a45066210001_0 of
+volume sapdata_S10.
+SMSAP-08027 [INFO ]: Finished connecting mount /oracle/S10_sapdata
+from snapshot
+SMSAP_S10_BACKUP_S10_F_C_1_8abc013111a450480111a45066210001_0 of
+volume sapdata_S10.
+SMSAP-08053 [INFO ]: Finished connecting mount(s)
+[/oracle/S10_mirrlogs, /oracle/S10_sapdata] from logical snapshot
+SMSAP_S10_BACKUP_S10_F_C_1_8abc013111a450480111a45066210001.
+SMSAP-13037 [INFO ]: Successfully completed operation: Backup Mount
+SMSAP-13048 [INFO ]: Operation Status: SUCCESS
+SMSAP-13049 [INFO ]: Elapsed Time: 0:01:00.981
+Operation Id [8abc013111b9088e0111b908a7560001] succeeded.
+----
+'''

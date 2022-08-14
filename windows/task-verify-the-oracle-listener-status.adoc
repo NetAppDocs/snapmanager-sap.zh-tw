@@ -1,0 +1,41 @@
+---
+permalink: windows/task-verify-the-oracle-listener-status.html 
+sidebar: sidebar 
+keywords: verify, oracle, listener, lsnrctl, status, command 
+summary: 您可以使用lsnrctl STATUS命令來驗證Oracle偵聽器狀態。 
+---
+= 驗證Oracle偵聽器狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「lsnrctl STATUS」命令來驗證Oracle接聽程式狀態。
+
+
+
+== 您的需求
+
+* 您必須連線至資料庫。
+
+
+
+
+== 關於這項工作
+
+接聽程式連接埠詳細資料如下：
+
+* 標準SAP Oracle安裝會將接聽程式連接埠設為1527。
+* 任何參照託管資料庫接聽程式連接埠的值都應為1527。
+* 任何參考儲存庫資料庫接聽程式連接埠的值都應為1521。
+
+
+Oracle接聽程式的記錄檔位於「%oracle_home%\network\log」、其中「oracle_homeis \oracle\sid\Oracle version」。
+
+.步驟
+. 在命令提示字元中輸入命令：
++
+‘* lsnrctl STATUS*’
+
+

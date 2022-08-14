@@ -1,0 +1,105 @@
+---
+permalink: windows/task-update-profiles.html 
+sidebar: sidebar 
+keywords: update, profile, modify, password, backup, database, operate, system, authentication, information, host, oracle 
+summary: 您可以更新設定檔以修改設定檔密碼、保留的備份數目、資料庫存取權、資料庫驗證的作業系統（OS）驗證、以及主機的相關資訊。如果Oracle資料庫密碼資訊變更、您也必須在設定檔中變更該資訊。 
+---
+= 更新設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以更新設定檔以修改設定檔密碼、保留的備份數目、資料庫存取權、資料庫驗證的作業系統（OS）驗證、以及主機的相關資訊。如果Oracle資料庫密碼資訊變更、您也必須在設定檔中變更該資訊。
+
+
+
+== 關於這項工作
+
+使用「分隔-歸檔儲存記錄備份」選項、即可更新設定檔（3.2或更新版本）、將歸檔記錄備份與資料檔案備份分開。SnapManager您可以為歸檔記錄備份指定個別的保留期間。利用NetApp技術、您可以將歸檔記錄備份與線上資料庫備份一起納入其中。SnapManager您也可以一起建立線上資料檔案備份與歸檔記錄備份、以便進行複製。建立線上資料檔案備份時、會立即建立歸檔記錄備份及資料檔案。
+
+.步驟
+. 輸入下列命令：
++
+「* smsap profile update -profile _profile_[-new-profile _countnew_profile_name_][-profile-password _password_][-database-dbnamedb_db_dbname_-host _db_host_[-sid_db_sid_][-loginedb_username-passworded_dure-edAN_edANh [_ednstyour-tfunnstampay_notification ms_noteedn [_notification ms_n-tn-tf-tn_noteedAN_][_noteay_][_notification ms_stay][_styour_notice n_notification ms_stay][_notice -pyour_notice nstay][_notification ms_notification ms_][_stay_notification ms_stay][_notice -peedn -pyour-pyour-pyour][-pyour-pyour_notee_notee_notee_noteedn [-pdn][-pyour] _email_address2_主題_ubject _Pattern_][-fell-email_address1_、_email_address2_-Subject _Subject _Pattern_][-site-archivelog-eding-archivelog-edays _hours _|-days _days _|-mites/-mites/-mites/-mays _|-mites/-mites/-mites/-mites/-mice-mice-mites/月份_月份_月份_eds月份_[包括在線上備份、不含備份
+
++
+此命令的其他選項如下：
+
++
+[`-force（力量）][`-nosmp]
+
++
+['quide'|'verbose']
+
++
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+*變更設定檔中資料庫備份的備份保留原則*
+ a| 
+指定保留類別的保留計數或保留持續時間、或同時指定兩者以變更保留原則。持續時間以課程單位為單位（例如小時、日）。
+
+** 「每小時」是指每小時保留班數、而「每小時保留班數」則分別是保留期間數和保留期間。
+** 「每日」是指每日保留類別、而「日」則分別是保留次數和保留時間。
+** 「每週」是每週保留課程、保留時間分別為[`-countn`、[`-durationm]。
+** 「每月」是每月保留等級、其中「（）- countn'）（）- durationm'）」分別是保留數和保留期間。
+
+
+
+
+ a| 
+*啟用資料庫作業完成狀態的電子郵件通知*
+ a| 
+指定下列選項和變數：
+
+** 「摘要通知」可讓您針對儲存庫資料庫下的多個設定檔設定摘要電子郵件通知。
+** 「通知」可讓您接收設定檔資料庫作業完成狀態的電子郵件通知。
+** 如果您使用新的或現有的設定檔來完成成功的資料庫作業、您就能在「s字 型email_address2」中收到電子郵件通知。
+** 您可以使用新的或現有的設定檔、接收有關資料庫作業失敗的電子郵件通知。
+** 在建立新設定檔或現有設定檔時、「SubectSub_text_text」會指定電子郵件通知的主旨文字。如果通知設定未針對儲存庫進行設定、而您嘗試使用命令列介面（CLI）設定設定設定檔或摘要通知、則主控台記錄中會記錄下列訊息：「SAP-1477: Notification Settings Not Configure（通知設定未設定）」。
++
+如果您已設定通知設定、且嘗試使用CLI設定摘要通知、但未啟用儲存庫的摘要通知、則主控台記錄中會記錄下列訊息：「MSAP-14775：摘要通知組態無法用於此儲存庫」
+
+
+
+
+
+ a| 
+*更新設定檔以分別建立歸檔記錄檔的備份*
+ a| 
+指定下列選項和變數：
+
+** 您可以使用「分隔的archivelog-Backup」來建立與資料庫檔案分開的歸檔記錄檔備份。
++
+指定此選項之後、您可以建立純資料檔案備份或僅歸檔程式備份。您無法建立完整備份。此外、您也無法透過分隔備份來還原設定檔設定。根據保留原則、還原在進行僅歸檔程式備份之前所建立的備份。SnapManager
+
+** 「-ret-archivelog-Backups」可設定歸檔記錄備份的保留時間。
++
+
+NOTE: 如果您是第一次更新設定檔、可以使用「分隔的歸檔記錄備份」選項、將歸檔記錄備份與資料檔案備份區隔開；您必須使用「-retave-archivelog-backups」選項來提供歸檔記錄備份的保留時間。稍後更新設定檔時、您可選擇是否要設定保留期間。
+
+** 「包括線上備份」是指將歸檔記錄備份與資料庫備份一起納入。
+** 「不含線上備份」指定資料庫備份不包含歸檔記錄檔檔案備份。
+
+
+
+
+ a| 
+*變更目標資料庫的主機名稱*
+ a| 
+指定「-hostnew_db_host'」以變更設定檔的主機名稱。
+
+
+
+ a| 
+*在設定檔更新作業之後收集傾印檔*
+ a| 
+指定"-dump（轉儲）"選項。
+
+|===
+. 若要檢視更新的設定檔、請輸入下列命令：「msap profile show」
+

@@ -1,0 +1,28 @@
+---
+permalink: windows/concept-disabling-client-access-to-snapshot-copies.html 
+sidebar: sidebar 
+keywords: storage, system, volume, nfs, protocol, sap, data, back up, tools, disable, client, snapshot, copies, copy, disable 
+summary: 對於任何使用NFS傳輸協定且包含使用BR*工具備份之SAP資料的儲存系統磁碟區、您必須停用用戶端存取該磁碟區的Snapshot複本。如果啟用用戶端存取、BR*工具會嘗試建立含有先前備份的隱藏.snapshot目錄備份。 
+---
+= 停用用戶端對Snapshot複本的存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+對於任何使用NFS傳輸協定且包含使用BR*工具備份之SAP資料的儲存系統磁碟區、您必須停用用戶端存取該磁碟區的Snapshot複本。如果啟用用戶端存取、BR*工具會嘗試建立含有先前備份的隱藏.snapshot目錄備份。
+
+若要停用用戶端存取、請使用下列其中一種方法。
+
+* 使用Data ONTAP 功能：Data ONTAP 使用Isrofing命令列介面、輸入下列命令：「volvol options volvolvolate_name nosnapdir on」、其中「vole_name」是包含SAP資料的磁碟區名稱、例如：「/vol/fs/sap_cer91_data1」
+* 使用FilerView：若要使用FilerView圖形使用者介面停用存取、您必須已擁有磁碟區的Snapshot複本。
++
+.. 在FilerView左窗格中、選取* Volumes *>* Snapshot*>* Manage *。
+.. 在「Manage Snapshots（管理快照）」頁面上、按一下Volume（磁碟區）欄中的磁碟區
+.. 在「Configure Snapshots」（設定快照）頁面上、清除「Snapshot Directory Visible」（可看見Snapshot目錄）核取方塊、然後按一下「* Apply」（
+
+
+
+
+如需停用用戶端存取Snapshot複本的詳細資訊、請參閱《關於_Eshot Data ONTAP Data Protection Online Backup and Recovery Guide_的Snapshot Management》一章、瞭解您Data ONTAP 的版次。

@@ -1,0 +1,35 @@
+---
+permalink: windows/task-freeing-backups.html 
+sidebar: sidebar 
+keywords: free, backup, delete, snapshot, copies, copy, deleting, metadata, function, space, smsap 
+summary: 您可以釋放備份、刪除Snapshot複本而不刪除備份中繼資料。此功能可釋出備份佔用的空間。您可以使用smsap備份free命令來釋放備份。 
+---
+= 釋放備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以釋放備份、刪除Snapshot複本而不刪除備份中繼資料。此功能可釋出備份佔用的空間。您可以使用smsap備份free命令來釋放備份。
+
+若要讓備份符合釋出資格、您必須確保下列事項：
+
+* 備份成功
+* 備份不會掛載
+* 備份沒有複本
+* 不得使用不受限的保留原則來保留備份
+* 備份尚未釋出
+
+
+您可以將-dump選項指定為選用參數、以便在備份可用作業成功或失敗後收集傾印檔案。
+
+. 輸入下列命令：
++
+「msap備份可用設定檔設定檔名稱｛-label label label [data |-archivelogs]|-id id |-all｝-force[-dump ][-Quid][-force]」
+
+
+
+*相關資訊*
+
+xref:reference-the-smosmsapbackup-free-command.adoc[smsap備份free命令]

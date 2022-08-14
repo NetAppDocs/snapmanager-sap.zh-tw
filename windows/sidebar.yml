@@ -1,0 +1,661 @@
+---
+section: windows
+title: Windows安裝與管理
+entries:
+- title: SnapManagerfor SAP是什麼
+  url: "/windows/concept-what-snapmanager-for-oraclefor-sap-is.html"
+  entries:
+  - title: SAP的功能SnapManager
+    url: "/windows/concept-what-snapmanager-for-oraclesnapmanager-for-sap-does.html"
+  - title: 與其他NetApp應用程式和技術整合
+    url: "/windows/concept-integration-with-other-netapp-applications-and-technologies.html"
+  - title: 使用SnapManager 過程中的優勢
+    url: "/windows/concept-advantages-of-using-snapmanager.html"
+    entries:
+    - title: 使用Snapshot複本建立備份
+      url: "/windows/concept-create-backups-using-snapshot-copies.html"
+    - title: 為何您應該剪下歸檔記錄檔
+      url: "/windows/concept-why-you-should-prune-archive-log-files.html"
+    - title: 歸檔記錄整合
+      url: "/windows/concept-archive-log-consolidation.html"
+    - title: 資料庫的完整或部分還原
+      url: "/windows/concept-full-or-partial-restoration-of-the-database.html"
+    - title: 驗證備份狀態
+      url: "/windows/concept-verify-backup-status.html"
+    - title: 資料庫備份複本
+      url: "/windows/concept-clone-database-backups.html"
+    - title: 追蹤詳細資料並產生報告
+      url: "/windows/concept-track-details-and-produce-reports.html"
+  - title: SAP架構的功能SnapManager
+    url: "/windows/concept-what-the-snapmanager-architecture-is.html"
+    entries:
+    - title: 支援SnapManager
+      url: "/windows/concept-snapmanager-host.html"
+    - title: 圖形化使用者與命令列介面SnapManager
+      url: "/windows/concept-snapmanager-graphical-user-and-command-line-interfaces.html"
+    - title: 系統儲存庫SnapManager
+      url: "/windows/concept-snapmanager-repository.html"
+    - title: 在伺服器上執行SnapDrive SnapManager
+      url: "/windows/concept-snapdrive-on-snapmanager-server.html"
+  - title: 什麼是儲存庫
+    url: "/windows/concept-what-repositories-are.html"
+  - title: 什麼是設定檔
+    url: "/windows/concept-what-profiles-are.html"
+  - title: 運作狀態為何SnapManager
+    url: "/windows/concept-what-snapmanager-operation-states-are.html"
+  - title: 如何維護安全性SnapManager
+    url: "/windows/concept-snapmanager-security.html"
+  - title: 存取及列印線上說明
+    url: "/windows/task-access-and-print-online-help.html"
+- title: 適用於SAP部署考量SnapManager
+  url: "/windows/concept-snapmanager-for-oraclefor-sap-deployment-considerations.html"
+  entries:
+  - title: 執行SnapManager 需求
+    url: "/windows/concept-requirements-for-running-snapmanager.html"
+    entries:
+    - title: 支援的主機硬體
+      url: "/windows/concept-supported-host-hardware.html"
+    - title: 支援的一般組態
+      url: "/windows/concept-supported-general-configurations.html"
+    - title: 叢集式組態
+      url: "/windows/concept-clustered-configurations.html"
+  - title: 資料庫版本支援與組態總覽
+    url: "/windows/concept-database-version-support-and-configuration-overview.html"
+    entries:
+    - title: 一般配置與組態
+      url: "/windows/concept-general-layout-and-configuration.html"
+    - title: 範例資料庫Volume配置
+      url: "/windows/reference-sample-database-volume-layouts.html"
+  - title: 使用SnapManager 不受限
+    url: "/windows/concept-limitations.html"
+  - title: Windows不支援的功能與Oracle技術SnapManager
+    url: "/windows/concept-snapmanager-features-and-oracle-technologies-not-supported-on-windows.html"
+  - title: 叢集式的不受限SnapManager Data ONTAP
+    url: "/windows/concept-snapmanger-limitations-for-clustered-data-ontap.html"
+  - title: Oracle資料庫的相關限制
+    url: "/windows/concept-limitations-related-to-oracle-database.html"
+  - title: 已過時的Oracle資料庫版本
+    url: "/windows/concept-deprecated-versions-of-oracle-database.html"
+- title: 安裝SnapManager 適用於SAP的
+  url: "/windows/concept-installing-snapmanager-for-oraclesnapmanager-for-sap.html"
+  entries:
+  - title: 準備安裝SnapManager 適用於SAP的功能
+    url: "/windows/concept-preparing-to-install-snapmanager-for-oraclesnapmanager-for-sap.html"
+    entries:
+    - title: 預先安裝工作
+      url: "/windows/concept-preinstallation-tasks.html"
+    - title: 下載SnapManager 適用於SAP的更新套件
+      url: "/windows/task-download-snapmanager-for-oraclesnapmanager-for-sap-installation-package.html"
+  - title: 安裝SnapManager SAP適用的功能
+    url: "/windows/task-install-snapmanager-for-oracle-snapmanager-for-sap.html"
+  - title: 與SAP BR*工具整合
+    url: "/windows/task-integrate-with-sap-br-tools.html"
+- title: 升級SnapManager
+  url: "/windows/concept-upgrading-snapmanager-for-oracle-snapmanager-for-sap.html"
+  entries:
+  - title: 準備升級SnapManager
+    url: "/windows/concept-preparing-to-upgrade-snapmanager-for-oracle-snapmanager-for-sap.html"
+  - title: 升級SnapManager 功能主機
+    url: "/windows/task-upgrade-snapmanager-for-oraclesnapmanager-for-sap-hosts.html"
+  - title: 升級後的工作
+    url: "/windows/concept-post-upgrade-tasks.html"
+    entries:
+    - title: 更新現有儲存庫
+      url: "/windows/task-update-the-existing-repository.html"
+    - title: 修改備份保留類別
+      url: "/windows/task-modify-the-backup-retention-class.html"
+  - title: 使用循環升級來升級SnapManager 功能
+    url: "/windows/concept-upgrading-snapmanager-hosts-by-using-rolling-upgrade.html"
+    entries:
+    - title: 執行循環升級的先決條件
+      url: "/windows/concept-prerequisites-for-performing-rolling-upgrade.html"
+    - title: 在單一主機或多部主機上執行復原升級
+      url: "/windows/task-perform-roll-upgrade-on-a-single-host-or-multiple-hosts.html"
+    - title: 什麼是復原
+      url: "/windows/concept-what-a-rollback-is.html"
+      entries:
+      - title: 執行復原的限制
+        url: "/windows/concept-limitations-for-performing-a-rollback.html"
+      - title: 執行復原的先決條件
+        url: "/windows/concept-prerequisites-for-performing-a-rollback.html"
+      - title: 在單一主機或多個主機上執行復原
+        url: "/windows/task-perform-a-rollback-on-a-single-host-or-multiple-hosts.html"
+      - title: 復原後工作
+        url: "/windows/task-post-rollback-tasks.html"
+- title: 設定SnapManager 功能
+  url: "/windows/concept-configuring-snapmanager-for-oraclesap.html"
+  entries:
+  - title: 組態參數SnapManager
+    url: "/windows/reference-snapmanager-configuration-parameters.html"
+    entries:
+    - title: 編輯組態參數
+      url: "/windows/task-edit-the-configuration-parameters.html"
+- title: 啟動SnapManagerfor SAP
+  url: "/windows/task-start-snapmanager-for-oraclefor-sap.html"
+  entries:
+  - title: 識別要備份的現有資料庫
+    url: "/windows/task-identify-an-existing-database-to-backup.html"
+  - title: 驗證Oracle偵聽器狀態
+    url: "/windows/task-verify-the-oracle-listener-status.html"
+  - title: 為儲存庫資料庫建立Oracle使用者
+    url: "/windows/task-create-oracle-users-for-the-repository-database.html"
+  - title: 為目標資料庫建立Oracle使用者
+    url: "/windows/task-create-an-oracle-user-for-the-target-database.html"
+  - title: 存取SnapManager 功能
+    url: "/windows/concept-accessing-snapmanager.html"
+    entries:
+    - title: 啟動SnapManager 支援服務器
+      url: "/windows/task-start-the-snapmanager-windows-host-server.html"
+      entries:
+      - title: 驗SnapManager 證「不支援主機伺服器」狀態
+        url: "/windows/task-verify-the-snapmanager-windows-host-server-status.html"
+    - title: 使用SnapManager 指令
+      url: "/windows/task-use-snapmanager-commands.html"
+    - title: 啟動SnapManager 功能不全的GUI
+      url: "/windows/task-start-the-snapmanager-graphical-user-interface.html"
+    - title: 使用Java Web Start下載並啟動圖形化使用者介面
+      url: "/windows/task-download-and-start-the-graphical-user-interface-using-java-web-start-windows.html"
+  - title: 驗證環境
+    url: "/windows/task-verify-the-environment.html"
+    entries:
+    - title: 驗SnapDrive 證Windows適用的功能
+      url: "/windows/task-verify-snapdrive-for-windows.html"
+  - title: 建立儲存庫
+    url: "/windows/task-create-repositories.html"
+    entries:
+    - title: 如何組織儲存庫
+      url: "/windows/concept-how-to-organize-repositories.html"
+  - title: 執行作業的順序
+    url: "/windows/task-order-of-performing-operations.html"
+- title: 安全性與認證管理
+  url: "/windows/concept-managing-security-and-credentials.html"
+  entries:
+  - title: 什麼是使用者驗證
+    url: "/windows/concept-what-user-authentication-is.html"
+  - title: 儲存加密密碼以供自訂指令碼使用
+    url: "/windows/task-store-encrypted-passwords-for-custom-scripts.html"
+  - title: 授權存取儲存庫
+    url: "/windows/task-authorize-user-access-to-the-repository.html"
+  - title: 授權存取設定檔
+    url: "/windows/task-authorize-user-access-to-profiles.html"
+  - title: 檢視使用者認證資料
+    url: "/windows/task-view-user-credentials.html"
+  - title: 清除所有主機、儲存庫和設定檔的使用者認證
+    url: "/windows/task-clear-user-credentials-for-all-hosts-repositories-and-profiles.html"
+    entries:
+    - title: 清除認證快取後、請設定認證資料
+      url: "/windows/task-set-credentials-after-clearing-credential-cache.html"
+  - title: 刪除個別資源的認證資料
+    url: "/windows/task-delete-credentials-for-individual-resources.html"
+    entries:
+    - title: 刪除儲存庫的使用者認證
+      url: "/windows/task-delete-user-credentials-for-repositories.html"
+    - title: 刪除主機的使用者認證資料
+      url: "/windows/task-delete-user-credentials-for-hosts.html"
+    - title: 刪除設定檔的使用者認證
+      url: "/windows/task-delete-user-credentials-for-profiles.html"
+- title: 管理設定檔以有效備份
+  url: "/windows/concept-managing-profiles-for-efficient-backups.html"
+  entries:
+  - title: 建立設定檔
+    url: "/windows/task-create-profiles.html"
+  - title: Snapshot複本命名
+    url: "/windows/concept-snapshot-copy-naming.html"
+  - title: 重新命名設定檔
+    url: "/windows/task-rename-profiles.html"
+  - title: 變更設定檔密碼
+    url: "/windows/task-change-profile-passwords.html"
+  - title: 重設設定檔密碼
+    url: "/windows/task-reset-profile-password.html"
+  - title: 授權存取設定檔
+    url: "/windows/task-authorize-user-access-to-profiles.html"
+  - title: 驗證設定檔
+    url: "/windows/task-verify-profiles.html"
+  - title: 更新設定檔
+    url: "/windows/task-update-profiles.html"
+  - title: 刪除設定檔
+    url: "/windows/task-delete-profiles.html"
+- title: 備份資料庫
+  url: "/windows/concept-database-backup-management.html"
+  entries:
+  - title: 什麼是資料庫備份SnapManager
+    url: "/windows/concept-what-snapmanager-database-backups-are.html"
+  - title: 什麼是完整備份和部分備份
+    url: "/windows/concept-what-full-and-partial-backups-are.html"
+    entries:
+    - title: 備份類型與Snapshot複本數量
+      url: "/windows/concept-backup-types-and-the-number-of-snapshot-copies.html"
+    - title: 完整的線上備份
+      url: "/windows/concept-full-online-backups.html"
+    - title: 部分線上備份
+      url: "/windows/concept-partial-online-backups.html"
+    - title: 備份、還原及還原作業的範例
+      url: "/windows/reference-examples-of-backup-restore-and-recover-operations.html"
+  - title: 關於控制檔和歸檔記錄檔處理
+    url: "/windows/concept-about-control-file-and-archive-log-file-handling.html"
+  - title: 什麼是資料庫備份排程
+    url: "/windows/concept-what-database-backup-scheduling-is.html"
+  - title: 建立資料庫備份
+    url: "/windows/task-create-database-backups.html"
+    entries:
+    - title: 剪下歸檔記錄檔
+      url: "/windows/task-prune-archive-log-files.html"
+    - title: 整合歸檔記錄備份
+      url: "/windows/task-consolidate-archive-log-backups.html"
+    - title: 排程保存檔記錄檔剪除
+      url: "/windows/task-schedule-archive-log-file-pruning.html"
+  - title: 什麼是呢AutoSupport
+    url: "/windows/concept-what-autosupport-is.html"
+    entries:
+    - title: 將以叢集Data ONTAP 式功能運作的儲存系統新增至SnapManager 支援此功能的伺服器主機
+      url: "/windows/task-add-storage-systems-to-the-snapmanager-server-host.html"
+    - title: 啟用AutoSupport 支援功能SnapManager
+      url: "/windows/task-enable-autosupport-in-snapmanager.html"
+    - title: 停用AutoSupport 不SnapManager 穩定的
+      url: "/windows/task-disable-autosupport-in-snapmanager.html"
+  - title: 驗證資料庫備份
+    url: "/windows/task-verify-database-backups.html"
+  - title: 變更備份保留原則
+    url: "/windows/task-change-the-backup-retention-policy.html"
+    entries:
+    - title: 永久保留備份
+      url: "/windows/task-retain-backups-forever.html"
+    - title: 指派具有特定保留類別的備份
+      url: "/windows/task-assign-backups-with-a-specific-retention-class.html"
+    - title: 變更保留原則預設行為
+      url: "/windows/task-change-the-retention-policy-default-behavior.html"
+    - title: 免費或刪除保留原則豁免備份
+      url: "/windows/task-free-or-delete-retention-policy-exempt-backups.html"
+  - title: 檢視備份清單
+    url: "/windows/task-view-a-list-of-backups.html"
+  - title: 檢視備份詳細資料
+    url: "/windows/task-view-backup-details.html"
+  - title: 掛載備份
+    url: "/windows/task-mount-backups.html"
+  - title: 卸載備份
+    url: "/windows/task-unmount-backups.html"
+  - title: 免費備份
+    url: "/windows/task-free-backups.html"
+  - title: 刪除備份
+    url: "/windows/task-delete-backups.html"
+- title: 排程資料庫備份
+  url: "/windows/concept-scheduling-database-backups.html"
+  entries:
+  - title: 建立備份排程
+    url: "/windows/task-create-backup-schedules.html"
+  - title: 更新備份排程
+    url: "/windows/task-update-a-backup-schedule.html"
+  - title: 檢視排程作業清單
+    url: "/windows/task-view-a-list-of-scheduled-operations.html"
+  - title: 暫停備份排程
+    url: "/windows/task-suspend-backup-schedules.html"
+  - title: 恢復備份排程
+    url: "/windows/task-resume-backup-schedules.html"
+  - title: 刪除備份排程
+    url: "/windows/task-delete-backup-schedules.html"
+- title: 還原資料庫備份
+  url: "/windows/concept-restoring-database-backup.html"
+  entries:
+  - title: 什麼是資料庫還原
+    url: "/windows/concept-what-database-restore-is.html"
+    entries:
+    - title: 備份還原
+      url: "/windows/concept-backup-recovery.html"
+    - title: 還原程序所需的資料庫狀態
+      url: "/windows/concept-database-state-needed-for-restore-process.html"
+    - title: 什麼是還原預覽計畫
+      url: "/windows/concept-restore-preview-plans.html"
+  - title: 預覽備份還原資訊
+    url: "/windows/task-preview-backup-restore-information.html"
+  - title: 還原主儲存設備上的備份
+    url: "/windows/task-restore-backups-on-primary-storage.html"
+  - title: 從替代位置還原檔案
+    url: "/windows/concept-restore-files-from-an-alternate-location.html"
+    entries:
+    - title: 從替代位置總覽還原備份
+      url: "/windows/concept-restore-backups-from-an-alternate-location-overview.html"
+      entries:
+      - title: 從檔案還原資料
+        url: "/windows/concept-restoration-of-the-data-from-files.html"
+      - title: 從檔案系統還原資料
+        url: "/windows/concept-restoration-of-the-data-from-file-systems.html"
+    - title: 建立還原規格
+      url: "/windows/task-create-restore-specifications.html"
+    - title: 從替代位置還原備份
+      url: "/windows/task-restore-backups-from-an-alternate-location.html"
+- title: 複製資料庫備份
+  url: "/windows/concept-cloning-database-backup.html"
+  entries:
+  - title: 何謂複製
+    url: "/windows/concept-what-cloning-is.html"
+  - title: 複製方法
+    url: "/windows/concept-cloning-methods.html"
+  - title: 建立複製規格
+    url: "/windows/task-create-clone-specifications.html"
+    entries:
+    - title: 複製資料庫並使用自訂外掛程式指令碼
+      url: "/windows/task-clone-databases-and-using-custom-plugin-scripts.html"
+  - title: 從備份複製資料庫
+    url: "/windows/task-clone-databases-from-backups.html"
+  - title: 複製目前狀態的資料庫
+    url: "/windows/task-clone-databases-in-the-current-state.html"
+  - title: 複製資料庫備份、無需重新設檔
+    url: "/windows/task-clone-database-backups-without-resetlogs.html"
+  - title: 將資料庫複製到替代主機的考量事項
+    url: "/windows/concept-considerations-for-cloning-a-database-to-an-alternate-host.html"
+    entries:
+    - title: 將資料庫複製到替代主機
+      url: "/windows/task-clone-a-database-to-an-alternate-host.html"
+  - title: 檢視複本清單
+    url: "/windows/task-view-a-list-of-clones.html"
+  - title: 檢視詳細的實體複本資訊
+    url: "/windows/task-view-detailed-clone-information.html"
+  - title: 刪除複本
+    url: "/windows/task-delete-clones.html"
+- title: 介紹資料保護功能SnapManager
+  url: "/windows/concept-introduction-to-data-protection-in-snapmanager.html"
+  entries:
+  - title: 如何在本機儲存設備上保留備份SnapManager
+    url: "/windows/concept-how-snapmanager-retains-backups-on-the-local-storage.html"
+  - title: 執行資料保護的考量
+    url: "/windows/concept-prerequisites-for-data-protection.html"
+    entries:
+    - title: 資料保護功能SnapManager 所需的授權
+      url: "/windows/concept-licenses-required-for-data-protection.html"
+  - title: 使用指令碼保護資料庫備份
+    url: "/windows/concept-protecting-database-backups-by-using-post-scripts.html"
+    entries:
+    - title: 指令碼後的範例
+      url: "/windows/reference-sample-post-scripts.html"
+    - title: 建立或更新POST指令碼
+      url: "/windows/task-create-or-update-post-scripts.html"
+      entries:
+      - title: 建立後置處理、工作規格檔案
+        url: "/windows/task-create-post-process-task-specification-file.html"
+        entries:
+        - title: 使用後處理工作規格來鏡射磁碟區
+          url: "/windows/task-use-post-processing-task-specification-to-mirror-volumes.html"
+        - title: 使用後處理工作規格來保存qtree
+          url: "/windows/task-use-post-processing-task-specification-to-vault-qtrees.html"
+- title: 執行管理作業
+  url: "/windows/concept-performing-management-operations.html"
+  entries:
+  - title: 檢視作業清單
+    url: "/windows/task-view-a-list-of-operations.html"
+  - title: 檢視作業詳細資料
+    url: "/windows/task-view-operation-details.html"
+  - title: 從替代主機發出命令
+    url: "/windows/task-issue-commands-from-an-alternate-host.html"
+  - title: 請查看SnapManager 此軟體版本
+    url: "/windows/task-check-the-snapmanager-software-version.html"
+  - title: 停止SnapManager 支援服務器
+    url: "/windows/task-stop-the-snapmanager-host-server.html"
+  - title: 重新啟動SnapManager 支援服務器
+    url: "/windows/task-restart-the-snapmanager-windows-host-server.html"
+  - title: 解除安裝SnapManager
+    url: "/windows/task-uninstall-the-software-from-a-windows-host.html"
+- title: 設定電子郵件通知
+  url: "/windows/concept-configuring-e-mail-notification.html"
+  entries:
+  - title: 設定儲存庫的郵件伺服器
+    url: "/windows/task-configure-mail-server-for-a-repository.html"
+  - title: 設定新設定檔的電子郵件通知
+    url: "/windows/task-configure-e-mail-notification-for-a-new-profile.html"
+    entries:
+    - title: 自訂新設定檔的電子郵件主旨
+      url: "/windows/task-customize-e-mail-subject-for-a-new-profile.html"
+  - title: 設定現有設定檔的電子郵件通知
+    url: "/windows/task-configure-e-mail-notification-for-an-existing-profile.html"
+    entries:
+    - title: 自訂現有設定檔的電子郵件主旨
+      url: "/windows/task-customize-the-email-subject-for-an-existing-profile.html"
+  - title: 設定多個設定檔的摘要電子郵件通知
+    url: "/windows/task-configure-summary-e-mail-notification-for-multiple-profiles.html"
+  - title: 新增設定檔至摘要電子郵件通知
+    url: "/windows/task-add-new-profile-to-summary-notification.html"
+  - title: 新增現有設定檔至摘要電子郵件通知
+    url: "/windows/task-add-existing-profile-to-summary-notification.html"
+  - title: 停用多個設定檔的電子郵件通知
+    url: "/windows/task-disable-email-notification-for-multiple-profiles.html"
+- title: 建立SnapManager 工作規格檔案和指令碼、以利執行各項作業
+  url: "/windows/concept-creating-task-specification-file-and-scripts-for-snapmanager-operations.html"
+  entries:
+  - title: 建立工作前、工作後及原則指令碼
+    url: "/windows/task-create-pretask-post-task-and-policy-scripts.html"
+    entries:
+    - title: 工作指令碼中的作業
+      url: "/windows/concept-operations-in-task-scripts.html"
+    - title: 備份作業的工作指令碼中可用的變數
+      url: "/windows/concept-variables-available-in-the-task-scripts-for-backup-operation.html"
+    - title: 可在還原作業的工作指令碼中使用的變數
+      url: "/windows/concept-variables-available-in-custom-script-for-restore-operation.html"
+    - title: 工作指令碼中可供用於複製作業的變數
+      url: "/windows/concept-variables-available-in-the-task-scripts-for-clone-operation.html"
+    - title: 自訂指令碼中的錯誤處理
+      url: "/windows/concept-error-handling-in-custom-scripts.html"
+  - title: 檢視外掛程式指令碼範例
+    url: "/windows/task-view-sample-plugin-scripts.html"
+  - title: 建立工作指令碼
+    url: "/windows/task-create-task-scripts.html"
+  - title: 儲存工作指令碼
+    url: "/windows/task-store-the-task-scripts.html"
+  - title: 驗證外掛程式指令碼的安裝
+    url: "/windows/task-verify-installation-of-plugin-scripts.html"
+  - title: 建立工作規格檔案
+    url: "/windows/task-create-a-task-specification-file.html"
+  - title: 使用指令碼和指令碼後執行備份、還原和複製作業
+    url: "/windows/task-perform-backup-restore-and-clone-operations-using-prescript-and-post-scripts.html"
+- title: 更新與設定檔相關的儲存系統名稱和目標資料庫主機名稱
+  url: "/windows/concept-updating-storage-controller-name-and-database-hostname-associated-with-a-profile.html"
+  entries:
+  - title: 更新與設定檔相關的儲存系統名稱
+    url: "/windows/task-update-storage-system-name-associated-with-a-profile.html"
+  - title: 檢視與設定檔相關的儲存系統清單
+    url: "/windows/task-view-a-list-of-storage-controllers-associated-with-a-profile.html"
+  - title: 更新與設定檔相關聯的目標資料庫主機名稱
+    url: "/windows/task-update-target-database-hostname-associated-with-a-profile.html"
+- title: 維持SnapManager 不中斷營運的歷史記錄
+  url: "/windows/concept-maintaining-history-of-snapmanager-operations.html"
+  entries:
+  - title: 設定SnapManager 靜態作業的歷程記錄
+    url: "/windows/task-configure-history-for-backup-operation.html"
+  - title: 查看SnapManager 一份關於此作業記錄的清單
+    url: "/windows/task-view-a-list-of-snapmanager-history-operation-as-a-report.html"
+  - title: 檢視與設定檔相關之特定作業的詳細記錄
+    url: "/windows/task-view-the-detailed-history-of-a-specific-operation-associated-with-a-profile.html"
+  - title: 刪除SnapManager 動作歷程記錄
+    url: "/windows/task-purge-history-of-snapmanager-operation.html"
+  - title: 移除與單一設定檔或多個設定檔相關的記錄設定
+    url: "/windows/task-remove-history-configuration-associated-with-a-single-profile-or-multiple-profiles.html"
+  - title: 檢視SnapManager 有關資料的歷史記錄組態詳細資料
+    url: "/windows/task-view-snapmanger-history-operation-details.html"
+- title: 搭配SnapManager 使用BR*工具搭配適用於SAP的功能
+  url: "/windows/concept-using-br-tools-with-snapmanager-for-sap.html"
+  entries:
+  - title: 什麼是BR*工具
+    url: "/windows/concept-what-br-tools-are.html"
+  - title: 設定BR*工具的路徑
+    url: "/windows/task-set-the-path-for-br-tools.html"
+  - title: 停用用戶端對Snapshot複本的存取
+    url: "/windows/concept-disabling-client-access-to-snapshot-copies.html"
+  - title: BR*工具備份的設定檔使用量
+    url: "/windows/concept-profile-usage-for-br-tools-backups.html"
+  - title: 使用BRBACKUP和BRRCHIVE建立資料庫備份
+    url: "/windows/concept-database-backups-created-using-brbackup-and-brarchive.html"
+  - title: 使用SAP交易DB13排程備份
+    url: "/windows/task-schedule-backups-with-sap-transaction-db13.html"
+  - title: 使用BRRESTORE和BRRECOVER
+    url: "/windows/concept-database-restore-by-using-brrestore-and-brrecover.html"
+  - title: 使用BR*工具備份及還原檔案
+    url: "/windows/concept-backing-up-and-restoring-files-using-br-tools.html"
+  - title: 將備份還原至其他主機
+    url: "/windows/concept-restoring-a-backup-to-a-different-host.html"
+- title: SAP命令參考資料SnapManager
+  url: "/windows/concept-snapmanager-for-oraclefor-sap-command-reference.html"
+  entries:
+  - title: backint register-sld命令
+    url: "/windows/reference-the-backint-register-sld-command.html"
+  - title: smsap_server重新啟動命令
+    url: "/windows/reference-the-smosmsap-server-restart-command.html"
+  - title: smsap_server start命令
+    url: "/windows/reference-the-smosmsap-server-start-command.html"
+  - title: smsap_server狀態命令
+    url: "/windows/reference-the-smosmsap-server-status-command.html"
+  - title: smsap_server stop命令
+    url: "/windows/reference-the-smosmsap-server-stop-command.html"
+  - title: smsap備份create命令
+    url: "/windows/reference-the-smosmsapbackup-create-command.html"
+  - title: smsap備份刪除命令
+    url: "/windows/reference-the-smosmsapbackup-delete-command.html"
+  - title: smsap備份free命令
+    url: "/windows/reference-the-smosmsapbackup-free-command.html"
+  - title: smsap備份清單命令
+    url: "/windows/reference-the-smosmsapbackup-list-command.html"
+  - title: smsap備份掛載命令
+    url: "/windows/reference-the-smosmsapbackup-mount-command.html"
+  - title: smsap備份還原命令
+    url: "/windows/reference-the-smosmsapbackup-restore-command.html"
+  - title: smsap備份show命令
+    url: "/windows/reference-the-smosmsapbackup-show-command.html"
+  - title: smsap備份unmount命令
+    url: "/windows/reference-the-smosmsapbackup-unmount-command.html"
+  - title: smsap備份更新命令
+    url: "/windows/reference-the-smosmsapbackup-update-command.html"
+  - title: smsap備份驗證命令
+    url: "/windows/reference-the-smosmsapbackup-verify-command.html"
+  - title: smsap clone create命令
+    url: "/windows/reference-the-smosmsapclone-create-command.html"
+  - title: smsap clone刪除命令
+    url: "/windows/reference-the-smosmsapclone-delete-command.html"
+  - title: smsap clone list命令
+    url: "/windows/reference-the-smosmsapclone-list-command.html"
+  - title: smsap clone show命令
+    url: "/windows/reference-the-smosmsapclone-show-command.html"
+  - title: smsap Clone範本命令
+    url: "/windows/reference-the-smosmsapclone-template-command.html"
+  - title: smsap Clone update命令
+    url: "/windows/reference-the-smosmsap-clone-update-command.html"
+  - title: smsap Clone detach命令
+    url: "/windows/reference-the-smosmsap-clone-detach-command.html"
+  - title: smsap cmd命令
+    url: "/windows/reference-the-smosmsapcmdfile-command.html"
+  - title: smsap認證清除命令
+    url: "/windows/reference-the-smosmsapcredential-clear-command.html"
+  - title: smsap認證刪除命令
+    url: "/windows/reference-the-smosmsapcredential-delete-command.html"
+  - title: smsap認證清單命令
+    url: "/windows/reference-the-smosmsapcredential-list-command.html"
+  - title: smsap認證集命令
+    url: "/windows/reference-the-smosmsapcredential-set-command.html"
+  - title: smsap history list命令
+    url: "/windows/reference-the-smosmsap-history-list-command.html"
+  - title: smsap history operation-show命令
+    url: "/windows/reference-the-smosmsap-history-operation-show-command.html"
+  - title: smsap歷史記錄清除命令
+    url: "/windows/reference-the-smosmsap-history-purge-command.html"
+  - title: smsap history remove命令
+    url: "/windows/reference-the-smosmsap-history-remove-command.html"
+  - title: smsap history set命令
+    url: "/windows/reference-the-smosmsap-history-set-command.html"
+  - title: smsap history show命令
+    url: "/windows/reference-the-smo-smsap-history-show-command.html"
+  - title: smsap說明命令
+    url: "/windows/reference-the-smosmsaphelp-command.html"
+  - title: smsap通知remove-sap-notification命令
+    url: "/windows/reference-the-smo-notification-removesummarynotification-command.html"
+  - title: smsap notification update-sap-notification命令
+    url: "/windows/reference-the-smosmsap-notification-updatesummarynotification-command.html"
+  - title: smsap通知集命令
+    url: "/windows/reference-the-smosmsap-notification-set-command.html"
+  - title: smsap作業傾印命令
+    url: "/windows/reference-the-smosmsapoperation-dump-command.html"
+  - title: smsap作業清單命令
+    url: "/windows/reference-the-smosmsapoperation-list-command.html"
+  - title: smsap operation show命令
+    url: "/windows/reference-the-smosmsap-operation-show-command.html"
+  - title: smsap密碼重設命令
+    url: "/windows/reference-the-smosmsap-password-reset-command.html"
+  - title: smsap profile create命令
+    url: "/windows/reference-the-smosmsapprofile-create-command.html"
+  - title: smsap設定檔刪除命令
+    url: "/windows/reference-the-smosmsapprofile-delete-command.html"
+  - title: smsap設定檔傾印命令
+    url: "/windows/reference-the-smosmsapprofile-dump-command.html"
+  - title: smsap設定檔清單命令
+    url: "/windows/reference-the-smosmsapprofile-list-command.html"
+  - title: smsap profile show命令
+    url: "/windows/reference-the-smosmsapprofile-show-command.html"
+  - title: smsap設定檔同步命令
+    url: "/windows/reference-the-smosmsapprofile-sync-command.html"
+  - title: smsap設定檔更新命令
+    url: "/windows/reference-the-smosmsapprofile-update-command.html"
+  - title: smsap設定檔驗證命令
+    url: "/windows/reference-the-smosmsapprofile-verify-command.html"
+  - title: smsap儲存庫create命令
+    url: "/windows/reference-the-smosmsaprepository-create-command.html"
+  - title: smsap儲存庫刪除命令
+    url: "/windows/reference-the-smosmsaprepository-delete-command.html"
+  - title: smsap儲存庫復原命令
+    url: "/windows/reference-the-smosmsap-repository-rollingback-command.html"
+  - title: smsap儲存庫復原升級命令
+    url: "/windows/reference-the-smosmsap-repository-rollingupgrade.html"
+  - title: smsap儲存庫show命令
+    url: "/windows/reference-the-smosmsaprepository-show-command.html"
+  - title: smsap儲存庫更新命令
+    url: "/windows/reference-the-smosmsaprepository-update-command.html"
+  - title: smsap排程create命令
+    url: "/windows/reference-the-smosmsap-schedule-create-command.html"
+  - title: smsap排程刪除命令
+    url: "/windows/reference-the-smosmsap-schedule-delete-command.html"
+  - title: smsap排程清單命令
+    url: "/windows/reference-the-smosmsap-schedule-list-command.html"
+  - title: smsap排程恢復命令
+    url: "/windows/reference-the-smosmsap-schedule-resume-command.html"
+  - title: smsap排程暫停命令
+    url: "/windows/reference-the-smosmsap-schedule-suspend-command.html"
+  - title: smsap排程更新命令
+    url: "/windows/reference-the-smosmsap-schedule-update-command.html"
+  - title: smsap儲存清單命令
+    url: "/windows/reference-the-smosmsap-storage-list-command.html"
+  - title: smsap儲存設備重新命名命令
+    url: "/windows/reference-the-smosmsap-storage-rename-command.html"
+  - title: smsap系統傾印命令
+    url: "/windows/reference-the-smosmsapsystem-dump-command.html"
+  - title: smsap系統驗證命令
+    url: "/windows/reference-the-smosmsapsystem-verify-command.html"
+  - title: smsap version命令
+    url: "/windows/reference-the-smosmsapversion-command.html"
+- title: 疑難排解SnapManager
+  url: "/windows/reference-troubleshooting-snapmanager.html"
+  entries:
+  - title: 傾印檔案
+    url: "/windows/concept-dump-files.html"
+    entries:
+    - title: 建立作業層級的傾印檔案
+      url: "/windows/task-create-operation-level-dump-files.html"
+    - title: 建立設定檔層級的傾印檔案
+      url: "/windows/task-create-profile-level-dump-files.html"
+    - title: 建立系統層級的傾印檔案
+      url: "/windows/task-create-system-level-dump-files.html"
+    - title: 如何找到傾印檔案
+      url: "/windows/reference-how-to-locate-dump-files.html"
+    - title: 如何收集傾印檔案
+      url: "/windows/concept-how-to-collect-dump-files.html"
+    - title: 收集其他記錄資訊、以便更輕鬆地進行偵錯
+      url: "/windows/concept-collecting-additional-log-information-for-easier-debugging.html"
+  - title: 疑難排解複製問題
+    url: "/windows/reference-troubleshooting-clone-issues.html"
+  - title: 疑難排解圖形化使用者介面問題
+    url: "/windows/reference-troubleshooting-graphical-user-interface-issues.html"
+  - title: 疑難排解已知問題
+    url: "/windows/reference-troubleshooting-known-issues.html"
+  - title: 在不支援的情況下、執行多個平行作業會失敗SnapManager
+    url: "/windows/reference-running-multiple-parallel-operations-fail-in-snapmanager.html"
+  - title: 無法從未建立設定檔的其中一個RAC節點還原RAC資料庫
+    url: "/windows/reference-unable-to-restore-rac-database-from-one-of-the-rac-nodes-where-the-profile-was-not-created.html"
+  - title: 如需詳細資訊、請前往何處
+    url: "/windows/reference-where-to-go-for-more-information.html"
+- title: 錯誤訊息分類
+  url: "/windows/reference-error-message-classifications.html"
+- title: 錯誤訊息
+  url: "/windows/reference-error-messages.html"

@@ -1,0 +1,30 @@
+---
+permalink: windows/concept-create-backups-using-snapshot-copies.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, create, backup, primary, local, storage, secondary, remote, postprocess, script, copies, copy, snapshot 
+summary: 使用支援的支援功能、您可以在主要（本機）儲存設備上建立備份、也可以使用後處理指令碼在次要（遠端）儲存設備上建立備份。SnapManager 
+---
+= 使用Snapshot複本建立備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用支援的支援功能、您可以在主要（本機）儲存設備上建立備份、也可以使用後處理指令碼在次要（遠端）儲存設備上建立備份。SnapManager
+
+以Snapshot複本建立的備份是資料庫的虛擬複本、儲存在與資料庫相同的實體媒體中。因此、備份作業所需時間較短、而且所需空間遠少於完整的磁碟對磁碟備份。利用此功能、您可以備份下列項目：SnapManager
+
+* 所有資料檔案、歸檔記錄檔及控制檔
+* 選取的資料檔案或表格空間、所有歸檔記錄檔及控制檔
+
+
+使用支援更新版本的支援功能、您可以選擇備份下列項目：SnapManager
+
+* 所有資料檔案和控制檔
+* 選取的資料檔案或表格空間以及控制檔
+* 歸檔記錄檔
+
+
+
+NOTE: 資料檔案、歸檔記錄檔和控制檔可位於不同的儲存系統、儲存系統磁碟區或邏輯單元編號（LUN）。當同一個Volume或LUN上有多個資料庫時、您也可以使用SnapManager 支援功能來備份資料庫。

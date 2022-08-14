@@ -1,0 +1,23 @@
+---
+permalink: windows/task-resuming-backup-schedules.html 
+sidebar: sidebar 
+keywords: administrator, option, resume, suspend, backup, schedule, resuming 
+summary: 系統管理員可選擇繼續暫停的備份排程。 
+---
+= 恢復備份排程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+系統管理員可選擇繼續暫停的備份排程。
+
+如果您嘗試恢復使用中的排程、可能會遇到錯誤訊息：「無法恢復：排程<schedulename>已經處於恢復狀態」。
+
+.步驟
+. 若要恢復暫停的備份排程、請輸入下列命令：
++
+「msap排程恢復設定檔設定檔名稱排程名稱排程名稱（-quiet |-verbose]）」
+
+

@@ -1,0 +1,62 @@
+---
+permalink: windows/concept-integration-with-other-netapp-applications-and-technologies.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, stand-alone, product, integrate, feature, netapp, enable, backup, amount, space, integration, application, technology, technologies 
+summary: SAP版是獨立式產品、整合了其他NetApp產品的功能、只需少量空間即可快速備份。SnapManager 
+---
+= 與其他NetApp應用程式和技術整合
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAP版是獨立式產品、整合了其他NetApp產品的功能、只需少量空間即可快速備份。SnapManager
+
+支援下列NetApp應用程式與技術：SnapManager
+
+|===
+| 應用程式與技術 | 說明 
+
+
+ a| 
+SnapDrive
+ a| 
+使用此功能建立儲存設備的Snapshot複本。SnapManager SnapDriveSnapshot複本可確保備份比磁碟對磁碟備份更節省空間、而且建立速度更快。
+
+
+
+ a| 
+FlexClone（Data ONTAP 獲得授權的功能）
+ a| 
+使用FlexClone功能建立快速、節省空間的備份複本。SnapManager
+
+
+
+ a| 
+Snapshot（Data ONTAP 功能介紹）
+ a| 
+Snapshot技術可建立資料庫的時間點複本。
+
+
+
+ a| 
+（獲得授權的功能之一）SnapRestore Data ONTAP
+ a| 
+利用還原技術、減少恢復資料庫的平均時間。SnapManager SnapRestore可將個別檔案還原至數TB的Volume、以便快速恢復作業。SnapRestore
+
+
+
+ a| 
+（獲得授權的功能之一）SnapVault Data ONTAP
+ a| 
+利用磁碟型備份、以可靠、低成本的方式備份及還原資料庫。SnapVault
+
+
+
+ a| 
+SnapMirror（Data ONTAP 獲得授權的功能）
+ a| 
+SnapMirror以簡單、可靠且具成本效益的方式、在全球網路上高速複寫資料庫資料。
+
+|===

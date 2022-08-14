@@ -1,0 +1,27 @@
+---
+permalink: windows/task-disabling-email-notification-for-multiple-profiles.html 
+sidebar: sidebar 
+keywords: enable, summary, email, notification, multiple, profile, disable, alert, disabling 
+summary: 啟用多個設定檔的摘要電子郵件通知之後、您可以停用這些設定檔、使其不再接收電子郵件警示。 
+---
+= 停用多個設定檔的電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+啟用多個設定檔的摘要電子郵件通知之後、您可以停用這些設定檔、使其不再接收電子郵件警示。
+
+利用此功能、您可以停用設定檔執行資料庫作業的摘要電子郵件通知。SnapManager在「支援服務」CLI中、輸入notification remove-Summary通知命令、以停用多個設定檔的摘要電子郵件通知、以及不需要電子郵件通知的儲存庫資料庫名稱。SnapManager
+
+. 若要停用儲存庫資料庫上多個設定檔的摘要通知、請輸入下列命令：「msap notification remove-sap-notification -repose-portrepo_port-dbnamerepo_service_name-hoselpo_host-login-usernamerepo_username'
+
+
+下列範例顯示儲存庫資料庫上的多個設定檔正在停用摘要通知：
+
+[listing]
+----
+
+smsap notification remove-summary-notification –repository –port 1521 –dbname repo2 –host 10.72.197.133 –login –username oba5
+----

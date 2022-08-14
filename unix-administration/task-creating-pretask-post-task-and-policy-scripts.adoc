@@ -1,0 +1,193 @@
+---
+permalink: unix-administration/task-create-pretask-post-task-and-policy-scripts.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, create, script, preprocessing, activity, post-processing, policy, task, backup, restore, clone, operation, pretask, post-task, creating 
+summary: 利用此功能、您可以針對備份、還原及複製作業的預先處理活動、後處理活動及原則工作、建立指令碼。SnapManager您必須將指令碼放在正確的安裝目錄中、才能執行SnapManager 該作業系統的預先處理活動、後處理活動和原則工作。 
+---
+= 建立工作前、工作後及原則指令碼
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以針對備份、還原及複製作業的預先處理活動、後處理活動及原則工作、建立指令碼。SnapManager您必須將指令碼放在正確的安裝目錄中、才能執行SnapManager 該作業系統的預先處理活動、後處理活動和原則工作。
+
+*關於此工作*
+
+* Pretask和任務後指令碼內容*
+
+所有指令碼都必須包含下列項目：
+
+* 特定作業（檢查、說明及執行）
+* （選用）預先定義的環境變數
+* 特定錯誤處理代碼（傳回代碼（rc））
+
+
+
+NOTE: 您必須包含正確的錯誤處理代碼、才能驗證指令碼。
+
+您可以將pretask指令碼用於許多用途、例如在SnapManager 執行動作之前先清理磁碟空間。例如SnapManager 、您也可以使用工作後指令碼來預估、以判斷是否有足夠的磁碟空間來完成作業。
+
+*原則工作指令碼內容*
+
+您可以執行原則指令碼、而不需使用檢查、描述及執行等特定作業。指令碼包含預先定義的環境變數（選用）和特定的錯誤處理程式碼。
+
+原則指令碼會在備份、還原及複製作業之前執行。
+
+*支援的格式*
+
+副檔名為.sh的Shell指令碼檔案可做為指令碼和指令碼後置處理。
+
+*指令碼安裝目錄*
+
+安裝指令碼的目錄會影響指令碼的使用方式。您可以將指令碼放在目錄中、並在備份、還原或複製作業開始之前或之後執行指令碼。您必須將指令碼放在表格中指定的目錄中、並在指定備份、還原或複製作業時、以選用的方式使用。
+
+
+NOTE: 在使用指令碼執行SnapManager 完動作之前、您必須確保plugins目錄具有執行檔權限。
+
+[cols="1a,3a,3a,3a"]
+|===
+| 活動 | 備份 | 還原 | 複製 
+
+
+ a| 
+預先處理
+ a| 
+<default_installation_directory>/plugins/backup/creation/pre
+ a| 
+<default_installation_directory>/plugins/reetal/creation/pre
+ a| 
+<default_installation_directory>/plugins/clone / creation/pre
+
+
+
+ a| 
+後處理
+ a| 
+<預設安裝目錄>/外掛程式/備份/建立/張貼
+ a| 
+<default_installation_directory>/plugins/還原/建立/張貼
+ a| 
+<default_installation_directory>/plugins/clone /建立/張貼
+
+
+
+ a| 
+原則型
+ a| 
+<default_installation_directory>/plugins/backup/creation/policy
+ a| 
+<default_installation_directory>/plugins/還原/建立/原則
+ a| 
+預設安裝目錄>/plugins/clone /建立/原則
+
+|===
+*範例指令碼位置*
+
+以下是安裝目錄路徑中備份與複製作業的一些前置與工作後指令碼範例：
+
+* <default_installation_directory>/plugins/examples/backup/creation/pre
+* <default_installation_directory>/plugins/examples/backup/creation/POST
+* <default_installation_directory>/plugins/examples/clone / creation/pre
+* 預設安裝目錄>/plugins/examples/clone /建立/張貼
+
+
+*您可以在指令碼中變更的內容*
+
+如果您要建立新的指令碼、則只能變更「描述」和「執行」作業。每個指令碼都必須包含下列變數：「_context, timeout,_」和「_parameter_」。
+
+您在指令碼的「描述」功能中所描述的變數、必須在指令碼開頭時聲明。您可以在「參數=（）」中新增參數值、然後在執行功能中使用參數。
+
+'''
+
+
+== 範例指令碼
+
+以下是使用者指定的傳回碼範例指令碼、用於估算SnapManager 出駐留在該主機上的空間：
+
+[listing]
+----
+
+    #!/bin/bash
+    # $Id: //depot/prod/capstan/main/src/plugins/unix/examples/backup/create/pre/disk_space_estimate.sh#5 $
+    name="disk space estimation ($(basename $0))"
+    description="pre tasks for estimating the space on the target system"
+    context=
+    timeout="0"
+    parameter=()
+    EXIT=0
+    PRESERVE_DIR="/tmp/preserve/$(date +%Y%m%d%H%M%S)"
+    function _exit {
+       rc=$1
+       echo "Command complete."
+       exit $rc
+    }
+    function usage {
+       echo "usage: $(basename $0) { -check | -describe | -execute }"
+       _exit 99
+    }
+    function describe {
+       echo "SM_PI_NAME:$name"
+       echo "SM_PI_DESCRIPTION:$description"
+       echo "SM_PI_CONTEXT:$context"
+       echo "SM_PI_TIMEOUT:$timeout"
+       IFS=^
+       for entry in ${parameter[@]}; do
+           echo "SM_PI_PARAMETER:$entry"
+       done
+       _exit 0
+    }
+    function check {
+       _exit 0
+    }
+    function execute {
+       echo "estimating the space on the target system"
+       # Shell script to monitor or watch the disk space
+       # It will display alert message, if the (free available) percentage
+       # of space is >= 90%
+       # ----------------------------------------------------------------------
+       # Linux shell script to watch disk space (should work on other UNIX oses )
+       # set alert level 90% is default
+       ALERT=90
+       df -H | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5 " " $1 }' | while read output;
+       do
+         #echo $output
+         usep=$(echo $output | awk '{ print $1}' | cut -d'%' -f1  )
+         partition=$(echo $output | awk '{ print $2 }' )
+       if [ $usep -ge $ALERT ]; then
+           echo "Running out of space \"$partition ($usep%)\" on $(hostname) as on $(date)" |
+       fi
+       done
+      _exit 0
+     }
+    function preserve {
+        [ $# -ne 2 ] && return 1
+        file=$1
+        save=$(echo ${2:0:1} | tr [a-z] [A-Z])
+        [ "$save" == "Y" ] || return 0
+        if [ ! -d "$PRESERVE_DIR" ] ; then
+           mkdir -p "$PRESERVE_DIR"
+           if [ $? -ne 0 ] ; then
+               echo "could not create directory [$PRESERVE_DIR]"
+               return 1
+           fi
+        fi
+        if [ -e "$file" ] ; then
+            mv "$file" "$PRESERVE_DIR/."
+        fi
+        return $?
+    }
+    case $(echo $1 | tr [A-Z] [a-z]) in
+        -check)    check
+                  ;;
+        -execute)  execute
+                  ;;
+        -describe) describe
+                  ;;
+     *)         echo "unknown option $1"
+              usage
+              ;;
+     esac
+----
+'''

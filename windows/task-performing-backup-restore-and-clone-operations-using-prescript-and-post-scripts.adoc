@@ -1,0 +1,60 @@
+---
+permalink: windows/task-performing-backup-restore-and-clone-operations-using-prescript-and-post-scripts.html 
+sidebar: sidebar 
+keywords: script, initiating, initiate, backup, restore, clone, operation, snapmanager, task-enabling, page, create, wizard, restore, recover, create, parameter, prescript, post-script 
+summary: 您可以在開始備份、還原或複製作業時、使用自己的指令碼。在「備份建立精靈」、「還原或還原精靈」或「Clone Create精靈」中顯示「工作啟用」頁面、您可以在其中選取指令碼、並為指令碼所需的任何參數提供值。SnapManager 
+---
+= 使用指令碼和指令碼後執行備份、還原和複製作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在開始備份、還原或複製作業時、使用自己的指令碼。在「備份建立精靈」、「還原或還原精靈」或「Clone Create精靈」中顯示「工作啟用」頁面、您可以在其中選取指令碼、並為指令碼所需的任何參數提供值。SnapManager
+
+* 將外掛程式指令碼安裝在正確SnapManager 的安裝位置。
+* 使用smsap外掛檢查命令、確認外掛程式已正確安裝。
+* 請確定您使用的是Bash Shell。
+
+
+在命令列介面（CLI）中、列出指令碼名稱、選取參數、然後設定值。
+
+. 若要驗證是否使用了Bash Shell、請在命令提示字元中輸入下列命令
++
+或者、您也可以在提示字元輸入bash命令、然後使用命令輸出作為指令碼的開始參數。
+
++
+如果沒有看到錯誤、則表示Bash Shell運作正常。
+
+. 對於備份作業、請輸入-taskspec選項、並提供工作規格XML檔案的絕對路徑、以便在備份作業之前或之後執行預先處理或後處理活動：
++
+「msap備份建立設定檔設定檔名稱｛[-full｛-online |-offline |-auto｝[-sthourly |[-ditly |-flely |-mourly |-monthly |-minonthly |-unbonly |-vally_][-vertain-forms][-stourly -comment-station-tabellabellabel][每週日、每週註解][-每小時不限、每週不限時、每週不限時、每週不限時、[、每月、每月、][、每月、每月、每月、][、][、][、每小時、 [-backup-destpath1 [,[path2]][-exclude destpath1 [,path2]][-prunelogs {-all |-untilscnuntilscn |-there-dateyy-mm-dd：mm:sss |-mays |-twestpath1 |-hours｝-prune-destprunnestpruny'備份與線上備份[-spec-destpruny_destpruny'備份包含在線上的備份[-prun][-prunestunestunestunestun][、task-testpruny'、task-testuny'、task-testpruny
+
++
+如果備份外掛程式作業失敗、則只會顯示外掛程式名稱和傳回代碼。外掛程式指令碼必須包含記錄訊息、並將訊息重新導向至使用者定義的記錄檔。
+
+. 對於備份還原作業、請輸入-taskspec選項、並提供工作規格XML檔案的絕對路徑、以便在還原作業之前或之後執行預先處理或後處理活動：
++
+「msap備份還原-profileprofileprofile_name｛-label<label>|-id<id>｝｛-files<files>|-tabl空間<tabl空間\>|-f完整|-controlfiles｝[-recoverect｛-alllogs |-nologs |-直到<enet>｝）[-restorepoesec<restoresprec>][-taskspec< restorespec-off]需要快速備份備份備份備份[-快轉][-快轉][- restorequid][-快轉][- restoreepoid
+
++
+如果還原外掛程式作業失敗、則只會顯示外掛程式名稱和傳回代碼。外掛程式指令碼必須包含記錄訊息、並將訊息重新導向至使用者定義的記錄檔。
+
+. 對於實體複本建立作業、請輸入-taskspec選項、並提供工作規格XML檔案的絕對路徑、以便在實體複本作業之前或之後執行預先處理或後處理活動：
++
+「msap clone create -profileprofileprofile_name｛-backup-labelbackup_name |-backup-id<backup-id>|-current｝-newsidnewsnew_sid-clonespecfull路徑to_clonespecfile [-reserve<yes、no、inherited>][-host<host<host>][-label<label>][-comment備份留言
+
++
+如果複製外掛程式作業失敗、則只會顯示外掛程式名稱和傳回代碼。外掛程式指令碼必須包含記錄訊息、並將訊息重新導向至使用者定義的記錄檔。
+
+
+
+
+
+== 使用工作規格XML檔案建立備份的範例
+
+[listing]
+----
+smsap backup create -profile SALES1 -full -online -taskspec sales1_taskspec.xml -force -verify
+----

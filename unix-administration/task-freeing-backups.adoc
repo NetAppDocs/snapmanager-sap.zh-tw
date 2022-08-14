@@ -1,0 +1,116 @@
+---
+permalink: unix-administration/task-free-backups.html 
+sidebar: sidebar 
+keywords: free, backup, delete, snapshot, copies, copy, deleting, metadata, function, smsap, command 
+summary: 您可以釋放備份、刪除Snapshot複本而不刪除備份中繼資料。此功能可釋出備份佔用的空間。您可以使用smsap備份free命令來釋放備份。 
+---
+= 免費備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以釋放備份、刪除Snapshot複本而不刪除備份中繼資料。此功能可釋出備份佔用的空間。您可以使用smsap備份free命令來釋放備份。
+
+*您需要的是什麼*
+
+若要讓備份符合釋出資格、您必須確保下列事項：
+
+* 備份成功
+* 備份不會掛載
+* 備份沒有複本
+* 不得使用不受限的保留原則來保留備份
+* 備份尚未釋出
+
+
+*關於此工作*
+
+如果在設定檔上啟用保護、且保護原則包含使用鏡射關係之主要節點的連線、則在釋放備份時、會在主要節點上刪除Snapshot複本。當下次傳輸至次要儲存設備時、也會從鏡射節點刪除這些Snapshot複本。
+
+當您釋出受保護的備份時SnapManager 、要求Protection Manager移除本機Snapshot複本以進行備份。如果保護備份的可用備份作業成功、則Protection Manager會以非同步方式刪除Snapshot複本。
+
+[cols="2a,1a,3a,3a,4a"]
+|===
+| 保護狀態 | 本機狀態 | 主儲存設備的行動 | 二線儲存設備的行動 | 說明 
+
+
+ a| 
+未要求（要保護）
+ a| 
+存在
+ a| 
+釋放備份
+ a| 
+無需採取任何行動
+ a| 
+不需要本機備份。SnapManager
+
+
+
+ a| 
+釋放
+ a| 
+無需採取任何行動
+ a| 
+無需採取任何行動
+ a| 
+本機備份已釋出。
+
+
+
+ a| 
+未受保護
+ a| 
+存在
+ a| 
+釋放備份
+ a| 
+無需採取任何行動
+ a| 
+即使次要儲存設備上沒有複本、也可利用此功能釋出本機備份。SnapManager
+
+
+
+ a| 
+釋放
+ a| 
+無需採取任何行動
+ a| 
+無需採取任何行動
+ a| 
+本機備份已釋出。
+
+
+
+ a| 
+受保護
+ a| 
+存在
+ a| 
+釋放備份
+ a| 
+不需採取任何行動；二線備份仍會保留
+ a| 
+不需要本機備份。SnapManager複本會保留在次要儲存設備上。
+
+
+
+ a| 
+釋放
+ a| 
+無需採取任何行動
+ a| 
+無需採取任何行動
+ a| 
+本機備份已釋出。
+
+|===
+您可以將-dump選項指定為選用參數、以便在備份可用作業成功或失敗後收集傾印檔案。
+
+.步驟
+. 輸入下列命令：
++
+「* smsap備份可用-profile _profile_name_｛-label _label_[資料|-archivelogs]|-id _id_|-all｝-force[-dump ][-Quarety][-force]*」
+
+

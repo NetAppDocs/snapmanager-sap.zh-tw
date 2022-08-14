@@ -1,0 +1,29 @@
+---
+permalink: unix-administration/concept-limitations-related-to-oracle-database.html 
+sidebar: sidebar 
+keywords: start, work, snapmanager, limitation, relate, oracle, database 
+summary: 開始使用SnapManager 支援功能之前、您必須先瞭解Oracle資料庫的相關限制。 
+---
+= Oracle資料庫的相關限制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+開始使用SnapManager 支援功能之前、您必須先瞭解Oracle資料庫的相關限制。
+
+限制如下：
+
+* 支援Oracle版本10gR2、不支援Oracle 10gR1做為儲存庫或目標資料庫。SnapManager
+* 不支援Oracle叢集檔案系統（OFS）SnapManager 。
+* 不支援Oracle Database 9i、不SnapManager 再適用於32。
+* 支援Oracle Database 10gR2（早於10.2.0.5）的SnapManager 功能已不再受支援、不再受支援。
+
+
+
+NOTE: 請參閱互通性對照表、找出所支援的Oracle資料庫版本。
+
+*相關資訊*
+
+http://support.netapp.com/NOW/products/interoperability/["互通性對照表"^]

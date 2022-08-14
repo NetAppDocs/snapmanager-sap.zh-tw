@@ -1,0 +1,38 @@
+---
+permalink: unix-administration/task-protect-archive-log-backups.html 
+sidebar: sidebar 
+keywords: create, creating, profile, enable, protection, archive, log, backup, policy, protect 
+summary: 在建立設定檔時、您可以根據歸檔記錄保護原則來啟用歸檔記錄備份的保護。 
+---
+= 保護歸檔記錄備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在建立設定檔時、您可以根據歸檔記錄保護原則來啟用歸檔記錄備份的保護。
+
+.步驟
+. 輸入下列命令：
++
+_smsap設定檔create -profile _profile_[-profile-password _profile_password_]-reposit儲存 庫-dbname _repo_dbname_-host _repo_host_-port _repo_port_-login_username_-database-dbname _dbdb_dbname -host _db_host_[-sidh log_en_dhour_st_en_de_[_sam_en_deed_station_en_deed_de__sthour_st_]-dbam_[-dbam_en_deed_unk_en_deed_deed_station_主機_-am_n _主機_-dbam_n _-station_station_-dbam_n _-db_enam_[_n _主機_-amen_en_deour_station_-am_station_主機_-am_ _m_][-denth [-count_n_][-dim_][-m_][每週[-count_n_][-dim_m_][每月[-count_address_][-dim_]]][-comment _comment _comment _][-snapname-Pattern_][-protection [-protection [-protection [-petime_email_policy_policy_note_note_note_notee_notee_notee_notee_notee_notee_notee_notee_notee_notee_notee_note]電子郵件[_電子郵件通知單電子郵件[_每月電子郵件通知單電子郵件_電子郵件 email_address2_-Subject _Subject _Pattern_]][-sisar-archivelog-take-ap日 保存備份-archivelog-take-hours _hidays _days |-mays _micle__|-micle_mos_月_[-protection [-protection -policy_name_][-include-one-online備份|不含轉儲]備份功能*、不含線上備份功能
+
++
+[cols="2a,5a"]
+|===
+| 如果... | 然後... 
+
+
+ a| 
+*您想要分開備份歸檔記錄備份、並保護歸檔記錄檔*
+ a| 
+指定下列選項：
+
+** 使用「分隔的archivelog-Backups」、您可以將歸檔記錄檔與資料檔分開。
+** 「-protection」會為歸檔記錄歸檔記錄備份指派個別的保護原則。
+** 保護原則指派歸檔記錄備份的保護原則。
+
+
+|===
+

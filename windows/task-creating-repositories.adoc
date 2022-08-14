@@ -1,0 +1,73 @@
+---
+permalink: windows/task-creating-repositories.html 
+sidebar: sidebar 
+keywords: snapmanager, require, repository, host, data, operation, perform, creating, create 
+summary: 需在主機上建立儲存庫、才能儲存您執行作業的相關資料。SnapManager 
+---
+= 正在建立儲存庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+需在主機上建立儲存庫、才能儲存您執行作業的相關資料。SnapManager
+
+請確認已完成下列工作：
+
+. 在儲存庫資料庫中建立Oracle使用者和密碼。
+. 授權使用者存取儲存庫。
+
+
+針對儲存庫、SnapManager 針對安裝此儲存庫的資料表空間、適用於SAP的支援要求最低4K區塊大小。您可以使用下列SQL命令來檢查區塊大小：
+
+[listing]
+----
+select a.username, a.default_tablespace, b.block_size
+from dba_users a, dba_tablespaces b
+a.username = repo_user
+----
+其中
+
+* a.default_tablespace = b.tablspace_name
+* a.username =儲存庫上的使用者名稱
+
+
+如果您要升級儲存庫、則必須重新啟動SnapManager 伺服器以重新啟動任何相關的排程。
+
+. 若要建立儲存庫、請使用下列一般格式輸入儲存庫建立命令：
++
+「msap儲存庫create -repository -dbname repo_service_name -host repo_host -login-userName repo_username-port repo_port [-force][-noprompt][-quiet |-verbose]」
+
++
+其中：
+
++
+** -repository -dbname是儲存庫資料庫的名稱。
+** -host是儲存庫的主機名稱。
+** -UserName是可存取儲存庫的資料庫使用者名稱。
+** -port是主機的連接埠。此命令的其他選項如下：
+
+
++
+[-force][-noprompel]
+
++
++
+
++
++附註：如果現有儲存庫的名稱相同、而且您使用-force選項、則會覆寫現有儲存庫架構中的所有資料。
+
+
+
+
+
+== 建立儲存庫
+
+下列命令列會建立儲存庫。
+
+[listing]
+----
+smsap repository create -repository -dbname HR1
+-host server1 -login -username admin -port 1521
+----

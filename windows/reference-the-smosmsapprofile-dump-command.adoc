@@ -1,0 +1,56 @@
+---
+permalink: windows/reference-the-smosmsapprofile-dump-command.html 
+sidebar: sidebar 
+keywords: run, profile, dump, command, create, jar, file, diagnostic, information, smsap 
+summary: 您可以執行設定檔傾印命令、建立內含設定檔診斷資訊的.jar檔案。 
+---
+= smsap設定檔傾印命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「設定檔傾印」命令來建立包含設定檔診斷資訊的「.jar」檔案。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap profile dump
+-profile profile_name
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定您要建立傾印檔案的設定檔。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+下列範例會建立設定檔SALES1的傾印：
+
+[listing]
+----
+smsap profile dump -profile SALES1
+Dump file created
+Path: C:\\userhomedirectory\\netapp\\smsap\\3.3.0\\smsap_dump_SALES1_hostname.jar
+----

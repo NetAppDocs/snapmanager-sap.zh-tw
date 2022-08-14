@@ -1,0 +1,85 @@
+---
+permalink: unix-installation-cmode/reference-smsap-isg-snapmanager-licensing.html 
+sidebar: sidebar 
+keywords: snapmanager, license, storage, system, license, require, enable, operation, license, per-server, database, per-storage 
+summary: 需要提供一份不必要的支援證書和數份儲存系統授權、才能執行不必要的操作。SnapManager SnapManager本產品提供兩種授權模式：每部伺服器授權、其中包含每部資料庫主機上的駐留版次、以及儲存系統授權、其中包含儲存系統上的版次授權。SnapManager SnapManager SnapManager 
+---
+= 提供授權SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+需要提供一份不必要的支援證書和數份儲存系統授權、才能執行不必要的操作。SnapManager SnapManager本產品提供兩種授權模式：_每部伺服器授權_、其中每部資料庫主機都有此版本的驗證；_每部儲存系統授權_、其中儲存系統有此版本的驗證。SnapManager SnapManager SnapManager
+
+下列是此產品的不含授權要求：SnapManager
+
+|===
+| 授權 | 說明 | 必要時 
+
+
+ a| 
+每部伺服器的SnapManager
+ a| 
+特定資料庫主機的主機端授權。授權僅適用於SnapManager 安裝了此功能的資料庫主機。儲存系統不SnapManager 需要任何功能證。
+ a| 
+在支援主機上。SnapManager使用每部伺服器授權時、一線和二線儲存系統不需要使用此功能的驗證。SnapManager
+
+
+
+ a| 
+每個儲存系統的SnapManager
+ a| 
+儲存端授權、可支援任意數量的資料庫主機。僅當您未在資料庫主機上使用個別伺服器授權時才需要。
+ a| 
+在一線和二線儲存系統上。
+
+
+
+ a| 
+SnapRestore
+ a| 
+必要的授權、SnapManager 可讓還原資料庫。
+ a| 
+在一線和二線儲存系統上。SnapMirror目的地系統必須執行遠端驗證。
+
+需要在SnapVault 目的地系統上執行遠端驗證、以及從備份還原。
+
+
+
+ a| 
+FlexClone
+ a| 
+複製資料庫的選用授權。
+ a| 
+在一線和二線儲存系統上。SnapVault 從備份建立複本時、在目的地系統上為必要項目。
+
+
+
+ a| 
+SnapMirror
+ a| 
+鏡射備份至目的地儲存系統的選用授權。
+ a| 
+在一線和二線儲存系統上。
+
+
+
+ a| 
+SnapVault
+ a| 
+將備份歸檔至目的地儲存系統的選用授權。
+ a| 
+在一線和二線儲存系統上。
+
+
+
+ a| 
+通訊協定
+ a| 
+視使用的傳輸協定而定、需要NFS、iSCSI或FC授權。
+ a| 
+在一線和二線儲存系統上。SnapMirror目的地系統需要在來源磁碟區無法使用時提供資料。
+
+|===

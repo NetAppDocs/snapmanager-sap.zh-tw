@@ -1,0 +1,212 @@
+---
+permalink: unix-administration/concept-what-br-tools-are.html 
+sidebar: sidebar 
+keywords: information, sap, storage, system, br, tools 
+summary: 您可以找到搭配儲存系統使用SAP所需的資訊。 
+---
+= 什麼是BR*工具
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以找到搭配儲存系統使用SAP所需的資訊。
+
+如需使用BR*工具的一般資訊（包括命令語法）、請參閱SAP文件、例如線上BR* Tools for Oracle Database Administration（適用於Oracle資料庫管理的BR*工具）。
+
+
+
+== 設定檔需求
+
+SAP版的功能表必須正確命名、才能搭配BR*工具使用。SnapManager根據預設、BACKINT會使用設定檔、其名稱與SAP SID相同、該設定檔是由發出BR* Tools命令的使用者ID所決定的儲存庫。
+
+如果SAP SID在您的環境中並非唯一、則您需要使用不同的設定檔名稱。如需更多資訊、請參閱「BR*工具備份的設定檔使用量」。
+
+您必須擁有BR* Tools目錄到SnapManager 由SAP的支援所安裝的「/ope/NetApp/smsap/bin/backint」檔案的連結。如需建立連結的相關資訊、請參閱_整合SAP BR*工具_。
+
+無法驗證以BR* Tools 7.00之前版本建立的備份。需要表格空間或資料檔案的區塊大小才能完成驗證、不過BR* Tools 7.00之前的版本並未提供此功能。
+
+
+
+== 關於結合BR*工具與SnapManager SAP介面的功能
+
+您可以結合使用BR*工具和SnapManager 適用於SAP的圖形使用者介面（GUI）或命令列介面（CLI）來執行下列作業：
+
+[cols="1a,1a"]
+|===
+| 營運 | 您可以使用的介面 
+
+
+ a| 
+使用BRBACKUP建立清單、還原、還原及刪除資料庫備份（包括資料檔案、控制檔或線上重作記錄檔的備份）
+ a| 
+適用於SAP CLI和GUI SnapManager
+
+
+NOTE: BR*工具只能列出及還原使用BR*工具建立的備份。
+
+
+
+ a| 
+列出並刪除使用BRBACKUP建立的其他檔案集備份
+ a| 
+適用於SAP CLI和GUI SnapManager
+
+
+
+ a| 
+複製以BRBACKUP建立的其他檔案集備份
+ a| 
+使用BRBACKUP命令進行的完整線上或離線備份、可以使用SnapManager SAP CLI或GUI的版本來複製。
+
+|===
+
+
+== BR*工具CLI下的選項SnapManager 搭配適用於SAP的功能
+
+BR*工具CLI提供下列選項：
+
+[cols="1a,2a"]
+|===
+| 選項 | 可執行的工作 
+
+
+ a| 
+執行個體管理
+ a| 
+記錄檔案系統和資料庫表格中的所有動作、並將備份記錄和設定檔儲存至備份媒體。
+
+
+
+ a| 
+空間管理
+ a| 
+提供全方位的Volume管理功能。若要使用空間管理所提供的功能、您必須使用BRBACKUP或BRRCHIVE初始化磁碟區、以確保它們包含SAP專屬的標籤。
+
+
+
+ a| 
+備份與資料庫複本
+ a| 
+建立資料庫備份、執行離線重作記錄（歸檔記錄）、以及驗證備份。
+
+
+
+ a| 
+還原與還原
+ a| 
+還原及還原備份。
+
+
+
+ a| 
+資料庫統計資料
+ a| 
+維護表格與索引的統計資料。
+
+|===
+
+
+== BR*工具GUI中也有類似的功能
+
+BR*工具GUI下提供下列作業：
+
+[cols="1a,1a"]
+|===
+| 精靈類型 | 可執行的工作 
+
+
+ a| 
+建立儲存庫精靈
+ a| 
+在資料庫中建立儲存庫。
+
+
+
+ a| 
+設定檔精靈
+ a| 
+在儲存庫中建立設定檔。
+
+
+
+ a| 
+備份精靈
+ a| 
+建立設定檔的備份。
+
+
+
+ a| 
+還原與還原精靈
+ a| 
+還原及還原設定檔備份。
+
+
+
+ a| 
+「恢復刪除」SnapManager 精靈
+ a| 
+刪除備份的複本。
+
+
+
+ a| 
+還原備份刪除精靈SnapManager
+ a| 
+刪除設定檔的備份。
+
+|===
+
+
+== 關於使用BR*工具建立的複製備份
+
+使用BRBACKUP命令進行的完整線上或離線備份、可以使用SnapManager 適用於SAP CLI或GUI的功能來複製。
+
+若要建立使用BRBACKUP命令所建立之資料庫備份的複本、請確定已在smsap.config檔案中將組態參數BRBACKUP.enable、clonewe.BACKUP設為true、然後重新啟動SnapManager SAP伺服器的Rsorp。輸入下列命令：「brbackup.enable.clonable.backups=true」
+
+針對使用BRBACKUP命令建立的線上備份、SnapManager 使用適用於SAP的支援功能、您可以複製備份、而不需對SnapManager 適用於SAP CLI或GUI的功能進行任何變更。
+
+針對建立BRBACKUP命令的離線備份、SnapManager 使用適用於SAP的解決方法、您可以SnapManager 在執行下列步驟之後、從適用於SAP CLI或GUI的支援中心複製備份：
+
+. 在smsap.config檔案中新增下列組態變數。
++
+下列變數的值為預設值。如果您要將這些值設為預設值、可以保留這些值。
+
++
+** brbackup.oracle.max.datafes=254
+** brbackup.oracle.maxtoghistory = 1168
+** brbackup.oracle.maxtInstances = 50
+** brbackup.oracle.maxtlogfiles=255
+** brbackup.oracle.bluslogems=3
+** brbackup.oracle.character_set=UTF8
+
+
+. 若要變更smsap.config檔案中的任何這些預設組態參數值、請從SQL命令提示字元執行下列命令：
++
+「將資料庫備份控制檔變更為檔案追蹤」
+
++
+該檔案可以是任何使用者定義的名稱、並建立在叫用SQL* Plus的同一個目錄中。
+
+. 開啟檔案、將這些值設為smsap.config檔案中的對應組態變數。
+. 重新啟動SnapManager 伺服器。
+
+
+
+
+== 關於刪除使用BR*工具建立的備份
+
+BR*工具不會刪除備份。由於適用於SAP備份的功能是以Snapshot複本為基礎、因此您可以保留的備份數量有限。SnapManager您必須確保不再需要備份時、備份會被刪除。
+
+在NetApp儲存系統上、每個磁碟區最多可有255個Snapshot複本。如果磁碟區達到限制、備份將會失敗。使用BRBACKUP所製作的備份、通常會針對每個受影響的Volume建立兩個Snapshot複本。
+
+為了避免達到255個Snapshot複本上限、您可以使用下列方式來管理備份：
+
+* 您可以在BR*工具作業所用的設定檔中設定保留選項。
++
+SAP版的更新程式會根據需要自動刪除舊的備份。SnapManager
+
+* 您可以使用SnapManager 適用於SAP CLI或GUI的功能、手動刪除不再需要的備份。
+

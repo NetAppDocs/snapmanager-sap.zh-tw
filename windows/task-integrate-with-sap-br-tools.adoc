@@ -1,0 +1,111 @@
+---
+permalink: windows/task-integrate-with-sap-br-tools.html 
+sidebar: sidebar 
+keywords: sap, br, tools, oracle, database, administration, brarchive, brbackup, brconnect, brrecover, rerestore, brspace, brtools, backint, interface, integrate 
+summary: SAP BR*工具包含SAP工具、可用於Oracle資料庫管理、例如：BRRCHIVE、BRBACKUP、BRCONNECT、 BRRECOVER, BRRESTORE、BRSPACE和BRTOOLS使用SnapManager 由SAP提供的BACKINT介面。若要整合SAP BR*工具、您必須從BR* Tools目錄建立連結、以<適用於SnapManager SAP安裝目錄>\NetApp\SnapManager for SAP\bin（安裝BACKINT檔案的位置）。 
+---
+= 與SAP BR*工具整合
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAP BR*工具包含SAP工具、可用於Oracle資料庫管理、例如：BRRCHIVE、BRBACKUP、BRCONNECT、 BRRECOVER, BRRESTORE、BRSPACE和BRTOOLS使用SnapManager 由SAP提供的BACKINT介面。若要整合SAP BR*工具、您必須從BR* Tools目錄建立連結、連結至SnapManager 安裝BACKINT檔案的「<針對SAP安裝目錄>\NetApp\SnapManager for SAP\bin」。
+
+
+
+== 您的需求
+
+* 您必須確保已安裝SAP BR*工具。
+
+
+.步驟
+. 從BR* Tools目錄建立連結、連結至每個SAP執行個體的「C:\Program Files\NetApp\SnapManager for SAP-bin\backint」檔案。
++
+
+NOTE: 您必須使用連結而非複製檔案、以便在安裝SnapManager 新版的更新版本時、連結會指向新的BACKINT介面版本。
+
+. 設定執行BR*工具命令之使用者的認證資料。
++
+作業系統使用者需要SnapManager 使用適用於SAP儲存庫、設定檔和伺服器的支援認證、才能備份及還原SAP執行個體。
+
+. 指定不同的設定檔名稱。
++
+根據預設、SnapManager 當從BR*工具處理命令時、使用的設定檔名稱與SAP系統識別碼相同。如果此系統識別碼在您的環境中不是唯一的、請修改「initSID.utl」SAP初始化檔案、然後建立參數以指定正確的設定檔。「initSID.utl」檔案位於「%oracle_home%\database.s」。
+
++
+* 範例 *
+
++
+以下是「initSID.utl」檔案範例：
+
++
+[listing]
+----
+# Backup Retention policy.
+# Specifies the retention / lifecycle of backups on the filer.
+#
+----------------------------------------------------------------------
+----------
+# Default Value: daily
+# Valid Values: unlimited/hourly/daily/weekly/monthly
+# retain = daily
+# Enabling Fast Restore.
+#
+----------------------------------------------------------------------
+----------
+# Default Value: fallback
+# Valid Values: fallback/off
+#
+# fast = fallback
+# profile_name = SID_BRTOOLS
+----
++
+
+NOTE: 參數名稱一律為小寫、註解必須有數字符號（#）。
+
+. 執行下列步驟、編輯「initSID.SAP」BR*工具組態檔：
++
+.. 開啟「initSID.sap」檔案。
+.. 找到包含備份公用程式參數檔案資訊的區段。
++
+* 範例 *
+
++
+[listing]
+----
+# backup utility parameter file
+# default: no parameter file
+# util_par_file =
+----
+.. 編輯最後一行以包含「initSID.utl」檔案。
++
+* 範例 *
+
++
+[listing]
+----
+# backup utility parameter file
+# default: no parameter file
+# util_par_file = initSID.utl
+----
+
+
+. 請執行下列步驟以完成連結：
++
+這些步驟可能會因作業系統（OS）版本而有所不同。
+
++
+.. 以系統管理員身分登入主機系統。
+.. 按一下*開始*>*控制台*>*系統*>*進階*>*環境*。
+.. 編輯* path*變數以新增下列路徑：「Installation directory\NetApp\SnapManager for SAP\bin」
+
+
+
+
+
+
+== 完成後
+
+執行backint註冊sld命令、在系統橫向目錄（SLD）中登錄BACKINT介面。

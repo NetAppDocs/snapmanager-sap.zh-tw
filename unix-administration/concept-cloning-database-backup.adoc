@@ -1,0 +1,29 @@
+---
+permalink: unix-administration/concept-cloning-database-backup.html 
+sidebar: sidebar 
+keywords: clone, database, perform, task, upgrade, production, installation, cloning, backup 
+summary: 如果您複製資料庫、可以執行測試資料庫升級等工作、而不會影響正式作業中的資料庫、將主要安裝複製到數個訓練系統、或將主要安裝複製為基礎安裝、以供其他需求類似的伺服器使用。 
+---
+= 複製資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您複製資料庫、可以執行測試資料庫升級等工作、而不會影響正式作業中的資料庫、將主要安裝複製到數個訓練系統、或將主要安裝複製為基礎安裝、以供其他需求類似的伺服器使用。
+
+您可以執行下列與複製相關的工作：
+
+* 從現有備份複製資料庫。
+* 以目前狀態複製資料庫、以便在單一程序中建立備份與複製。
+* 在二級或甚至三級儲存設備上複製受保護的備份。
+* 複製資料庫並使用自訂外掛程式指令碼、這些指令碼會在複製作業之前或之後執行。
+* 將資料庫複製到資料庫所在的相同主機。
+* 使用外部歸檔記錄位置的歸檔記錄檔來複製資料庫。
+* 將資料庫複製到替代主機。
+* 複製RAC資料庫。
+* 檢視複本清單。
+* 檢視詳細的實體複本資訊。
+* 刪除複本。
+

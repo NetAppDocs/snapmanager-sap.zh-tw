@@ -1,0 +1,20 @@
+---
+permalink: unix-administration/concept-full-or-partial-restoration-of-the-database.html 
+sidebar: sidebar 
+keywords: snapmanager, provide, flexibility, restore, full, database, specific, tablespace, control, file, combination, full, partial 
+summary: 支援使用者可靈活還原完整的資料庫、特定的表格空間、檔案、控制檔或這些實體的組合。SnapManager使用支援以檔案為基礎的還原程序或更快的磁碟區型還原程序、即可還原資料。SnapManager資料庫管理員可以選擇想要使用的程序、或讓SnapManager 它決定適合的程序。 
+---
+= 資料庫的完整或部分還原
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援使用者可靈活還原完整的資料庫、特定的表格空間、檔案、控制檔或這些實體的組合。SnapManager使用以檔案為基礎的還原處理器、即可透過更快速的Volume型還原程序來還原資料。SnapManager資料庫管理員可以選擇想要使用的程序、或讓SnapManager 它決定適合的程序。
+
+支援資料庫管理員（DBA）預覽還原作業。SnapManager預覽功能可讓DBA逐一檢視每個還原作業。
+
+DBA可以指定SnapManager 執行還原作業時、還原及恢復資訊的層級。例如、DBA可以將資料還原及還原至特定時間點。還原點可以是日期和時間、也可以是Oracle系統變更編號（SCN）。
+
+利用支援的更新版本（3.2或更新版本）、您無需DBA介入即可自動還原及恢復資料庫備份。SnapManager您可以使用SnapManager 功能表來建立歸檔記錄備份、然後使用這些歸檔記錄備份來還原及還原資料庫備份。即使備份的歸檔記錄檔是在外部歸檔記錄位置進行管理、您也可以指定外部位置、以便這些歸檔記錄有助於還原還原的資料庫。

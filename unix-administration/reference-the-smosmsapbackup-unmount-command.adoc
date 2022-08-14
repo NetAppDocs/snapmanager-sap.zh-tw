@@ -1,0 +1,95 @@
+---
+permalink: unix-administration/reference-the-smosmsapbackup-unmount-command.html 
+sidebar: sidebar 
+keywords: run, backup, unmount, command, smsap 
+summary: 您可以執行備份卸載命令來卸載備份。 
+---
+= smsap備份unmount命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「備份卸載」命令來卸載備份。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap backup unmount
+-profile _profile_name_
+[-label _label_ [-data | -archivelogs\] | [-id _id_\]
+[-force\]
+[-dump\][-quiet | -verbose\]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile名稱_*」
++
+指定您要卸載備份的設定檔。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* 「-id _id_*」
++
+使用指定的Guid卸載備份。當SnapManager 您建立備份時、會產生由支援所產生的GUID。您可以使用smsap備份清單命令來顯示每個備份的Guid。
+
+* 「*標籤_label_*」
++
+使用指定的標籤卸載備份。
+
+* 「*資料*」
++
+指定資料檔案。
+
+* 《*歸檔者*》
++
+指定歸檔記錄檔。
+
+* 「*傾印*」
++
+在成功或失敗的卸載作業之後收集傾印檔案。
+
+* 「*力*」
++
+即使在釋出與備份相關的資源時發生問題、也會卸載備份。嘗試卸載備份並清除任何相關資源。SnapManager記錄顯示卸載作業成功、但如果記錄中有錯誤、您可能必須手動清理資源。
+
+* 「*- Quiet *」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 範例
+
+以下是卸載作業的範例：
+
+[listing]
+----
+# smsap backup unmount -label test -profile SALES1 -verbose
+----
+[listing]
+----
+SMSAP-13046 [INFO ]: Operation GUID 8abc013111b909eb0111b90a02f50001 starting on Profile SALES1
+SMSAP-08028 [INFO ]: Beginning to disconnect connected mount(s)
+[/u/user1/mnt/_mnt_ssys1_logs_SMSAP_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001,
+ /u/user1/mnt/_mnt_ssys1_data_SMSAP_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001].
+SMSAP-08030 [INFO ]: Done disconnecting connected mount(s)
+[/u/user1/mnt/_mnt_ssys1_logs_SMSAP_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001,
+ /u/user1//mnt/_mnt_ssys1_data_SMSAP_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001].
+SMSAP-13037 [INFO ]: Successfully completed operation: Backup Unmount
+SMSAP-13048 [INFO ]: Operation Status: SUCCESS
+SMSAP-13049 [INFO ]: Elapsed Time: 0:00:33.715
+Operation Id [8abc013111b909eb0111b90a02f50001] succeeded.
+----
+'''

@@ -1,0 +1,53 @@
+---
+permalink: windows/reference-the-smosmsap-storage-list-command.html 
+sidebar: sidebar 
+keywords: run, storage, list, command, display, system, associate, profile, smsap 
+summary: 您可以執行儲存清單命令、顯示與特定設定檔相關聯的儲存系統清單。 
+---
+= smsap儲存清單命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「儲存清單」命令來顯示與特定設定檔相關的儲存系統清單。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap storage list
+-profile profile
+----
+
+
+== 參數
+
+* *？設定檔_profile _？*
++
+指定設定檔的名稱。名稱最長可達30個字元、且在主機內必須是唯一的。
+
+
+
+
+
+== 範例
+
+以下範例顯示與設定檔mjullian相關的儲存系統：
+
+[listing]
+----
+smsap storage list -profile mjullian
+----
+[listing]
+----
+
+Sample Output:
+Storage Controllers
+--------------------
+FAS3020-RTP07OLD
+----

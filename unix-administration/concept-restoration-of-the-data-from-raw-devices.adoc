@@ -1,0 +1,16 @@
+---
+permalink: unix-administration/concept-restoration-of-the-data-from-raw-devices.html 
+sidebar: sidebar 
+keywords: restore, alternate, location, connect, necessary, raw, device, exist, local, host, restoration 
+summary: 從替代位置還原之前、您必須先連線至本機主機上所需的原始裝置。 
+---
+= 從原始裝置還原資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從替代位置還原之前、您必須先連線至本機主機上所需的原始裝置。
+
+您可以從替代位置作業叫用還原、將替代原始裝置的資料區塊複製到作用中的原始裝置。若要執行此作業、您必須建立還原規格、以指定要從中還原原始原始裝置的替代原始裝置。

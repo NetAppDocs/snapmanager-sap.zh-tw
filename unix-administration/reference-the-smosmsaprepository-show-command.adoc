@@ -1,0 +1,91 @@
+---
+permalink: unix-administration/reference-the-smosmsaprepository-show-command.html 
+sidebar: sidebar 
+keywords: command, display, information, repository, smsap 
+summary: 此命令會顯示儲存庫的相關資訊。 
+---
+= smsap儲存庫show命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會顯示儲存庫的相關資訊。
+
+
+
+== 語法
+
+[listing]
+----
+smsap repository show
+-repository
+-dbname repo_service_name
+-host repo_host
+-port repo_port
+-login -username repo_username
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* 「*儲存庫*」
++
+"-reposac儲存 庫"後面的選項會指定儲存庫的資料庫詳細資料。
+
+* 「*」-dbname _repo_service_name_*
++
+指定儲存庫的資料庫名稱。使用全域名稱或SID。
+
+* 「*主機_repo_host_*」
++
+指定執行儲存庫資料庫的主機電腦名稱或IP位址。
+
+* 「*登入*」
++
+啟動儲存庫登入詳細資料。
+
+* 「*使用者名稱_repo_username_*」
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* 「*連接埠」、「repo_port*」
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* 「*- Quiet *」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 命令範例
+
+下列範例顯示SALESDB資料庫中儲存庫的詳細資料。
+
+[listing]
+----
+smsap repository show -repository -dbname SALESDB  -host server1
+-port 1521 -login -username admin
+Repository Definition:
+User Name: admin
+Host Name: server1
+Database Name: SALESDB
+Database Port: 1521
+Version: 28
+Hosts that have run operations using this repository: 2
+server2
+server3
+Profiles defined in this repository: 2
+GSF5A
+GSF3A
+Incomplete Operations: 0
+----

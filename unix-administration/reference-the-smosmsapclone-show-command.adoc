@@ -1,0 +1,132 @@
+---
+permalink: unix-administration/reference-the-smosmsapclone-show-command.html 
+sidebar: sidebar 
+keywords: run, clone, show, command, display, information, database, profile, smsap 
+summary: 您可以執行clone show命令、顯示指定設定檔的資料庫複本相關資訊。 
+---
+= smsap clone show命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「Clone show」命令、顯示指定設定檔的資料庫複本相關資訊。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap clone show
+-profile _profile_name_
+[-id  _guid_ | -label _clone_name_\]
+[-quiet | -verbose\]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile名稱_*」
++
+指定與設定檔相關聯的複本清單。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* 「* id guid*」
++
+顯示具有指定之GUID的實體複本相關資訊。當SnapManager 您建立複本時、會產生由實體所產生的GUID。您可以使用「shmsap clone show」命令來顯示每個實體複本的GUID。
+
+* 「*標籤_label_name_*」
++
+顯示具有指定標籤之實體複本的相關資訊。
+
+* 「*- Quiet *」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 範例
+
+以下範例顯示有關實體複本的資訊：
+
+[listing]
+----
+smsap clone show -profile SALES1 -label full_backup_sales_May -verbose
+----
+'''
+'''
+下列輸出顯示有關主儲存設備上備份複本的資訊：
+
+[listing]
+----
+Clone id: 8abc013111b916e30111b916ffb40001
+Clone status: SUCCESS
+Clone SID: hsdbc
+Clone label: hsdbc
+Clone comment: null
+Clone start time: 2007-04-03 16:15:50
+Clone end time: 2007-04-03 16:18:17
+Clone host: Host1
+Filesystem: /mnt/ssys1/data_clone
+File: /mnt/ssys1/data_clone/hsdb/sysaux01.dbf
+File: /mnt/ssys1/data_clone/hsdb/undotbs01.dbf
+File: /mnt/ssys1/data_clone/hsdb/users01.dbf
+File: /mnt/ssys1/data_clone/hsdb/system01.dbf
+File: /mnt/ssys1/data_clone/hsdb/undotbs02.dbf
+Backup id: 8abc013111a450480111a45066210001
+Backup label: full_backup_sales_May
+Backup SID: hsdb1
+Backup comment:
+Backup start time: 2007-03-30 15:26:30
+Backup end time: 2007-03-30 15:34:13
+Backup host: server1
+----
+'''
+'''
+下列輸出顯示有關二線儲存設備上受保護備份複本的資訊：
+
+[listing]
+----
+clone show -label clone_CLSTEST -profile
+TEST_USER_NFSTEST_DIRMAC
+Clone id:8abc01ec16514aec0116514af52f0001
+Clone status: SUCCESS
+Clone SID: CLSTEST
+Clone label: clone_CLSTEST
+Clone comment:comment_for_clone_CLSTEST
+Clone start time: 2007-11-18 00:46:10
+Clone end time: 2007-11-18 00:47:54
+Clone host: dirmac
+Filesystem: /ant/fish/bt_dirmac_nfs_clone
+File: /ant/fish/bt_dirmac_nfs_clone/datafiles/sysaux01.dbf
+File: /ant/fish/bt_dirmac_nfs_clone/datafiles/system01.dbf
+File: /ant/fish/bt_dirmac_nfs_clone/datafiles/undotbs01.dbf
+File: /ant/fish/bt_dirmac_nfs_clone/datafiles/users01.dbf
+Backup id: 8abc01ec16514883011651488b580001
+Backup label:full_backup
+Backup SID: NFSTEST
+Backup comment:
+Backup start time: 2007-11-18 00:43:32
+Backup end time: 2007-11-18 00:45:30
+Backup host: dirmac
+Storage System: fish (Secondary storage)
+Volume: bt_dirmac_nfs
+Snapshot:smsap_user_nfstest_b_nfstest_f_c_1_8abc01ec16511d6a0116511d73590001_0
+File: /ant/fish/bt_dirmac_nfs/archlogs/1_14_638851420.dbf
+File: /ant/fish/bt_dirmac_nfs/datafiles/sysaux01.dbf
+File: /ant/fish/bt_dirmac_nfs/datafiles/undotbs01.dbf
+File: /ant/fish/bt_dirmac_nfs/archlogs/1_13_638851420.dbf
+File: /ant/fish/bt_dirmac_nfs/archlogs_2/1_16_638851420.dbf
+File: /ant/fish/bt_dirmac_nfs/datafiles/users01.dbf
+File: /ant/fish/bt_dirmac_nfs/controlfiles/SMSAPBakCtl_1195361899651_2
+File: /ant/fish/bt_dirmac_nfs/datafiles/system01.dbf
+----
+'''

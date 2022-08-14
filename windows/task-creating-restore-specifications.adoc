@@ -1,0 +1,51 @@
+---
+permalink: windows/task-creating-restore-specifications.html 
+sidebar: sidebar 
+keywords: restore, specification, file, sml, contain, original, alternate, location, snapmanager, location, creating, create 
+summary: 還原規格檔案是XML檔案、其中包含可從中還原檔案的原始和替代位置。使用此規格檔案從指定位置還原檔案。SnapManager 
+---
+= 建立還原規格
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+還原規格檔案是XML檔案、其中包含可從中還原檔案的原始和替代位置。使用此規格檔案從指定位置還原檔案。SnapManager
+
+您可以使用任何文字編輯器來建立還原規格檔案。您必須為檔案使用.xml副檔名。
+
+. 開啟文字檔。
+. 輸入下列內容：「+<還原規格的xmlns="http://www.netapp.com">+`[]
+. 使用下列範例所示格式輸入任何檔案對應資訊：
++
+[listing]
+----
+<file-mapping>
+    <original-location>E:\disks\sysaux.dbf</original-location>
+    <alternate-location>E:\disks\sysaux.dbf</alternate-location>
+</file-mapping>
+----
++
+檔案對應會指定從何處還原檔案。原始位置是檔案在備份時在作用中檔案系統上的位置。替代位置是指從何處還原檔案。
+
+. 使用範例中所示的格式輸入任何掛載的檔案系統對應資訊：
++
+[listing]
+----
+<mountpoint-mapping>
+     <original-location>E:\disks\sysaux.dbf</original-location>
+     <snapname>snapname</snapname>
+     <alternate-location>E:\disks\sysaux.dbf</alternate-location>
+</mountpoint-mapping>
+----
++
+mountpoint指目錄路徑C：\myfs。mountpoint對應指定要從其還原檔案的掛載點。原始位置是備份時作用中檔案系統中掛載點的位置。替代位置是還原原始位置檔案的掛載點。snapname是備份原始檔案的Snapshot複本名稱。
+
++
+
+NOTE: Snapshot複本名稱是必要的元件、因為同一個檔案系統可在單一備份作業中多次使用（例如、資料檔案一次、記錄一次）。
+
+. 輸入下列內容：「」
+. 將檔案另存為.xml檔案、然後關閉規格。
+

@@ -1,0 +1,25 @@
+---
+permalink: windows/task-starting-the-snapmanager-windows-host-server.html 
+sidebar: sidebar 
+keywords: start, snapmanager, server, windows, service, host 
+summary: 您SnapManager 可以使用Windows服務來啟動此伺服器。 
+---
+= 啟動SnapManager 支援服務器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您SnapManager 可以使用Windows服務來啟動此伺服器。
+
+. 按一下*開始*>*控制台*>*管理工具*>*服務*。
+. 在「服務」視窗中、選取「NetAppSnapManager 3.3 for SAP」。
+. 您可以使用下列三種方式之一來啟動伺服器：
++
+** 在左側面板中、按一下* Start*。
+** 在NetApp SnapManager 3.3 for SAP上按一下滑鼠右鍵、然後從下拉式功能表中選取* Start*。
+** 按兩下NetAppSnapManager 3.3 for SAP、然後在「Properties（屬性）」視窗中、按一下「* Start*（開始*）」。
+
+
+

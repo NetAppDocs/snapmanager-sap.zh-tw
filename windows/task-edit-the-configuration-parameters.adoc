@@ -1,0 +1,27 @@
+---
+permalink: windows/task-edit-the-configuration-parameters.html 
+sidebar: sidebar 
+keywords: environment, default, value, assign, configuration, parameter, edit 
+summary: 視您的環境而定、您可以變更指派給組態參數的預設值。 
+---
+= 編輯組態參數
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+視您的環境而定、您可以變更指派給組態參數的預設值。
+
+.步驟
+. 從下列預設位置開啟組態檔：
++
+「預設安裝位置\內容\smsap.config」
+
+. 變更組態參數的預設值。
++
+
+NOTE: 您也可以新增組態檔中未包含的支援組態參數、然後指派值給這些參數。
+
+. 重新啟動SnapManager SAP伺服器的功能。
+

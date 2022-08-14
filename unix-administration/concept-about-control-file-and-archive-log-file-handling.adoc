@@ -1,0 +1,46 @@
+---
+permalink: unix-administration/concept-about-control-file-and-archive-log-file-handling.html 
+sidebar: sidebar 
+keywords: snapmanager, control, file, log, backup, archive, recovery, operation, handling 
+summary: 包含控制檔、並選擇性地在每個備份中包含歸檔記錄檔。SnapManager歸檔記錄檔用於還原作業。 
+---
+= 關於控制檔和歸檔記錄檔處理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+包含控制檔、並選擇性地在每個備份中包含歸檔記錄檔。SnapManager歸檔記錄檔用於還原作業。
+
+資料庫使用控制檔來識別資料庫檔案的名稱、位置和大小。由於還原程序會使用控制檔、所以在每個備份中都包含控制檔。SnapManager
+
+資料庫的變更會使用線上重作記錄加以追蹤、這些記錄最終會歸檔並稱為歸檔重作記錄（或歸檔記錄）。利用支援（3.2或更新版本）、您可以使用不同的保留和頻率、分別備份資料檔案和歸檔記錄檔。SnapManager僅能備份歸檔記錄或合併備份資料檔案和歸檔記錄。SnapManager提供完整的歸檔記錄自動化管理功能、不需要任何手動介入資料庫恢復作業、也可在備份完成後、從一或多個歸檔記錄目的地剪除歸檔記錄。SnapManager
+
+
+NOTE: 若要查看備份中包含哪些表格空間和資料檔案、請使用備份show命令或備份內容視窗。
+
+下表說明SnapManager 了在每次作業期間、如何處理控制和歸檔記錄檔：
+
+[cols="1a,2a,2a"]
+|===
+| 作業類型 | 控制檔 | 歸檔記錄檔 
+
+
+ a| 
+備份
+ a| 
+隨附於每個備份
+ a| 
+可隨附於每個備份中
+
+
+
+ a| 
+還原
+ a| 
+可以單獨還原、也可以連同表格空間或資料檔案一起還原
+ a| 
+可用於恢復程序
+
+|===

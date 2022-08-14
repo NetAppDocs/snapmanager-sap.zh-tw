@@ -1,0 +1,85 @@
+---
+permalink: unix-administration/concept-backup-types-and-the-number-of-snapshot-copies.html 
+sidebar: sidebar 
+keywords: backup, type, full, partial, snapshot, copies, copy, snapmanager, backup, tablespace, file 
+summary: 備份類型（完整或部分）會影響SnapManager 到所建立的Snapshot複本數量。針對完整備份、SnapManager Eshot會建立每個Volume的Snapshot複本、SnapManager 而針對部分備份、則會建立每個資料表空間檔案的Snapshot複本。 
+---
+= 備份類型與Snapshot複本數量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+備份類型（完整或部分）會影響SnapManager 到所建立的Snapshot複本數量。針對完整備份、SnapManager Eshot會建立每個Volume的Snapshot複本、SnapManager 而針對部分備份、則會建立每個資料表空間檔案的Snapshot複本。
+
+
+NOTE: 此功能可將每個Volume的Snapshot複本數量上限限制為255個。Data ONTAP只有在設定SnapManager 了將許多備份保留在其中、每個備份都包含許多Snapshot複本的情況下、才能達到此上限。
+
+若要保留足夠的備份資源池、同時確保未達到每個磁碟區的Snapshot複本上限、您必須在不再需要時移除備份。您可以設定SnapManager 「靜態保留原則」、以便在特定備份頻率達到特定臨界值後、移除成功的備份。例如SnapManager 、在執行完還原後、SnapManager 即可成功建立四個每日備份、而不需要執行前一天建立的每日備份。
+
+下表說明SnapManager 如何根據備份類型建立Snapshot複本。表格中的範例假設資料庫Z包含兩個磁碟區、每個磁碟區包含兩個資料表空間（TS1和TS2）、每個資料表空間包含兩個資料庫檔案（「TS1.data1、TS1.data2、TS2.data1」和「TS2.data2」）。
+
+這些表格顯示這兩種備份類型如何產生不同數量的Snapshot複本。
+
+此功能可在磁碟區層級建立Snapshot複本、而非在資料表空間層級建立Snapshot複本、通常可減少必須建立的Snapshot複本數量。SnapManager
+
+
+NOTE: 這兩種備份也會建立記錄檔的Snapshot複本。
+
+[cols="1a,1a,1a,1a,1a"]
+|===
+| 資料庫中的Volume | 表格空間TS1（包括2個資料庫檔案） | 表格空間TS2（包括2個資料庫檔案） | 已建立Snapshot複本 | Snapshot複本總數 
+
+
+ a| 
+/vol/Vola
+ a| 
+「TS1.data1」
+ a| 
+「TS2.data1」
+ a| 
+每個Volume 1個
+ a| 
+2.
+
+
+
+ a| 
+/vol/volB
+ a| 
+「TS1.data2」
+ a| 
+「TS2.data2」
+ a| 
+每個Volume 1個
+
+|===
+[cols="1a,1a,1a,1a,1a"]
+|===
+| 資料庫中的Volume | 表格空間TS1（包括2個資料庫檔案） | 表格空間TS2（包括2個資料庫檔案） | 已建立Snapshot複本 | Snapshot複本總數 
+
+
+ a| 
+/vol/Vola
+ a| 
+「TS1.data1」
+ a| 
+「TS2.data1」
+ a| 
+每個檔案2個
+ a| 
+4.
+
+
+
+ a| 
+/vol/volB
+ a| 
+「TS1.data2」
+ a| 
+「TS2.data2」
+ a| 
+每個檔案2個
+
+|===

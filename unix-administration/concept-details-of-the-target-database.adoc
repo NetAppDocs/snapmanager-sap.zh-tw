@@ -1,0 +1,32 @@
+---
+permalink: unix-administration/concept-details-of-the-target-database.html 
+sidebar: sidebar 
+keywords: example, integrate, database, protection, payroll, example, detail, target 
+summary: 此整合式資料庫保護範例說明薪資資料庫的保護。範例中使用下列資料。 
+---
+= 目標資料庫的詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此整合式資料庫保護範例說明薪資資料庫的保護。範例中使用下列資料。
+
+TechCo的資料庫管理員（DBA）是總部位於亞特蘭大的3000人公司、必須為正式作業薪資資料庫PAYDB建立一致的備份。若要備份至一線和二線儲存設備、DBA和儲存管理員必須共同作業、將Oracle資料庫備份至一線儲存設備的本機儲存設備、以及遠端備份至遠端位置的二線儲存設備。
+
+* *設定檔資訊*
++
+在SnapManager 建立選用功能的設定檔時、您需要下列資料：
+
++
+** 資料庫名稱：P01
+** 主機名稱：prod01.sample.com
+** 資料庫ID：P01
+** 設定檔名稱：P01備份
+** 連線模式：資料庫驗證
+** Snapshot命名方案：`_smsap_hostname_dbsid_smsapprofile_scope_mode_SMID_'（轉譯為「smsap_prod01.sample.com_p01_p01_backup_f_h_x"」）
+** 儲存庫使用者：<SID>rep、可轉譯為p01rep。
+
+
+

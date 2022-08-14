@@ -1,0 +1,32 @@
+---
+permalink: windows/concept-requirements-for-running-snapmanager.html 
+sidebar: sidebar 
+keywords: deploy, snapmanager, environment, requirement, run 
+summary: 在SnapManager 您的環境中部署不一樣的功能之前、您應該先瞭解不同的需求。 
+---
+= 執行SnapManager 需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在SnapManager 您的環境中部署不一樣的功能之前、您應該先瞭解不同的需求。
+
+使用SnapManager 此功能之前、您必須先檢閱所有必要產品的相容性表。您也必須檢閱下列內容：
+
+* 互通性區段中的更新版本與修補程式資訊、以取得本節所列所有主機、儲存系統及其他元件的相關資訊。SnapManager SnapDrive
+* 《NetApp FCP與iSCSI產品組態指南》。
+
+
+
+NOTE: 某些平台需要特定的Oracle版本。SnapManager
+
+如需主機與儲存系統的建議組態詳細資訊、請參閱文件套件。
+
+
+NOTE: 如果您需要SnapManager 文件套件中未提及的功能不均的組態、請聯絡您的銷售代表。
+
+*相關資訊*
+
+http://support.netapp.com/NOW/products/interoperability/["互通性對照表：support.netapp.com/NOW/products/interoperability"^]

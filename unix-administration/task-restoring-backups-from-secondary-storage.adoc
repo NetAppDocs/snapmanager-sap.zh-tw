@@ -1,0 +1,77 @@
+---
+permalink: unix-administration/task-restore-backups-from-secondary-storage.html 
+sidebar: sidebar 
+keywords: restore, protect, backup, secondary, storage, copy, data, back, primary, storage, restoring 
+summary: 您可以從次要儲存設備還原受保護的備份、並選擇將資料複製回主要儲存設備的方式。 
+---
+= 從二線儲存設備還原備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從次要儲存設備還原受保護的備份、並選擇將資料複製回主要儲存設備的方式。
+
+*關於此工作*
+
+您可以使用「備份還原」命令搭配「來源-次要」選項、從次要儲存設備還原資料。如果您未指定「來源-次要」選項、SnapManager 則由主儲存設備上的Snapshot複本還原資料。
+
+如果主儲存設備上存在備份、則無法使用「從二線備份」選項；必須先釋出一線備份、才能從二線儲存設備還原備份。如果使用暫用Volume、則必須使用「-temp-volume」選項來指定Volume。
+
+只要指定「來源-次要」選項、就必須指定「-copy -id」選項。如果二線儲存系統上有多個備份、則可使用「-copy -id」選項來指定二線儲存設備上的備份複本、以供還原作業使用。
+
+
+NOTE: 如果您使用Data ONTAP 的是7-Mode的支援功能、則必須為「-copy -id」選項指定有效值。但是、如果您使用叢集Data ONTAP 式的功能、則不需要「-copy -id」選項。
+
+從二線儲存設備還原資料時SnapManager 、首先會嘗試將資料直接從二線儲存系統還原至一線儲存系統（無需主機參與）。如果SnapManager 無法執行此類型的還原（例如、如果檔案不屬於檔案系統）、SnapManager 則將還原為主機端的檔案複本還原。執行從二線儲存設備進行主機端檔案複本還原的方法有兩種。SnapManager選擇的方法SnapManager 是在「smsap.config」檔案中設定。
+
+* 如果「_restore.secondaryAccessPolicy_=* DIRECT *」、SnapManager 則此功能會將資料複製到二線儲存設備、將複製的資料從二線儲存系統掛載到主機、然後將資料從複本複製到使用中環境。
++
+這是預設的次要存取原則。
+
+* 如果「_restore.secondaryAccessPolicy_=*間接*」、SnapManager 則首先將資料複製到一線儲存設備的暫存磁碟區、將資料從暫存磁碟區掛載到主機、然後將資料從暫存磁碟區複製到作用中環境。
++
+僅當主機無法直接存取次要儲存系統時、才應使用此原則。使用間接方法進行還原所需時間為直接方法的兩倍、因為會建立兩個資料複本。
+
+
+
+.步驟
+. 執行下列其中一項動作：
++
+[cols="1a,3a"]
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+如果所選備份存在於主要儲存設備上、請還原完整資料庫
+ a| 
+輸入下列命令：
+
+「* smsap備份還原-profile _profile_name_-label _-f完整- recoverclet-alllogs[-copy -id _id_]*」
+
+
+
+ a| 
+如果所選的備份不存在於主要儲存設備上、請還原完整資料庫
+ a| 
+輸入下列命令：「* smsap備份還原-profile _profile_name_-label _-f完整 恢復-alllogs-from次要[-temp-volume _][-copy -id _id_]*
+
+|===
+
+
+'''
+
+
+== 範例
+
+下列命令可從次要儲存系統還原受保護的備份：
+
+[listing]
+----
+smsap backup restore -profile PAYDB -label daily_monday -complete
+-recover alllogs -from-secondary -copy-id 3042 -temp-volume smsap_scratch_restore_volume
+Operation Id [8abc011215d385920115d38599470001] succeeded.
+----
+'''

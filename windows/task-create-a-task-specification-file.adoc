@@ -1,0 +1,92 @@
+---
+permalink: windows/task-create-a-task-specification-file.html 
+sidebar: sidebar 
+keywords: create, task, specification, file, graphical, user, interface, gui, command-line, interface, cli, text, editor, preprocess, post-process, backup, restore, operation 
+summary: 您可以使用圖形使用者介面（GUI）、命令列介面（CLI）或文字編輯器來建立工作規格檔案。這些檔案用於執行備份、還原或複製作業的預先處理或後處理活動。 
+---
+= 建立工作規格檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用圖形使用者介面（GUI）、命令列介面（CLI）或文字編輯器來建立工作規格檔案。這些檔案用於執行備份、還原或複製作業的預先處理或後處理活動。
+
+.步驟
+. 使用GUI、CLI或文字編輯器建立工作規格檔案。
++
+* 範例 *
+
++
+您可以根據下列範例工作規格檔的結構來建立規格檔：
+
++
+[listing]
+----
+
+<task-specification>
+  <pre-tasks>
+				<task>
+      <name>name</name>
+      <parameter>
+          <name>name</name>
+          <value>value</value>
+       </parameter>
+    </task>
+  </pre-tasks>
+  <post-tasks>
+    <task>
+      <name>name</name>
+      <parameter>
+          <name>name</name>
+          <value>value</value>
+       </parameter>
+    </task>
+  </post-tasks>
+</task-specification>
+----
+. 輸入指令碼名稱。
+. 輸入參數名稱及指派給參數的值。
+. 將XML檔案儲存在正確的安裝目錄中。
+
+
+
+
+== 工作規格範例
+
+[listing]
+----
+
+  <task-specification>
+    <pre-tasks>
+      <task>
+        <name>clone cleanup</name>
+        <description>pre tasks for cleaning up the target system</description>
+        </task>
+    </pre-tasks>
+    <post-tasks>
+      <task>
+        <name>SystemCopy follow-up activities</name>
+        <description>SystemCopy follow-up activities</description>
+        <parameter>
+          <name>SCHEMAOWNER</name>
+          <value>SAMSR3</value>
+        </parameter>
+      </task>
+      <task>
+        <name>Oracle Users for OS based DB authentication</name>
+        <description>Oracle Users for OS based DB authentication</description>
+        <parameter>
+          <name>SCHEMAOWNER</name>
+          <value>SAMSR3</value>
+        </parameter>
+        <parameter>
+          <name>ORADBUSR_FILE</name>
+
+										<value\>E:\\mnt\\sam\\oradbusr.sql</value\>
+        </parameter>
+      </task>
+      </post-tasks>
+  </task-specification>
+----

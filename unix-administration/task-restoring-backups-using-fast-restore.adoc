@@ -1,0 +1,61 @@
+---
+permalink: unix-administration/task-restore-backups-using-fast-restore.html 
+sidebar: sidebar 
+keywords: force, snapmanager, sap, volume-based, snaprestore, condition, restore, eligibility, restoring 
+summary: 如果符合所有必要的快速還原資格條件、您可以強制SnapManager SAP使用Volume型SnapRestore 的還原程序、而非其他還原程序。 
+---
+= 使用快速還原還原還原備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果符合所有必要的快速還原資格條件、您可以強制SnapManager SAP使用Volume型SnapRestore 的還原程序、而非其他還原程序。
+
+*關於此工作*
+
+您可以將備份還原命令與「-fast（快速）”搭配使用：
+
+「*備份還原-fast [需要|置換|後援|關閉]*」
+
+只有想要執行完整備份還原時、才能使用「-fast」選項。「-fast」選項包括下列參數：
+
+* 「資源要求」：可讓您執行磁碟區還原、如果符合所有必要的還原資格條件、而且找不到可過度使用的檢查。
++
+如果您指定「-fast」選項、但未指定「-fast」的任何參數、SnapManager 則預設使用「-需求」參數。
+
+* 「置換」：可讓您置換非強制資格檢查、並執行磁碟區型快速還原。
+* 「後援」：可讓您使用SnapManager 任何由哪些方法決定、來還原資料庫。
++
+如果您未指定「-fast」、SnapManager 則使用「-fallback」參數作為預設值。
+
+* 「關」：可讓您避免執行所有資格檢查、執行檔案型還原程序而非快速還原程序所需的時間。
+
+
+如果備份未通過強制資格檢查、則無法成功完成快速還原。
+
+僅在UNIX環境中執行Volume型快速還原、而不在Windows環境中執行快速還原。SnapManager SnapManager
+
+在資料檔案備份上執行VBRSR時、如果資料檔案和歸檔記錄檔存在於同一個磁碟區中、且歸檔記錄檔不在作用中檔案系統中、則資料庫的還原與還原將會成功。不過、未來的歸檔記錄快照會隨著VBRSR一併刪除、導致儲存庫中的歸檔記錄備份項目過時。
+
+.步驟
+. 輸入下列命令：
++
+「* smsap備份還原-profile _profile_name_-label _-fue-fast需求-詳細*」
+
++
+* 範例 *
+
++
+[listing]
+----
+smsap backup restore -profile targetdb1_prof1
+      -label full_bkup_sales_nov_08  -complete -fast require -verbose
+----
+. 檢閱快速還原資格檢查。
+. 如果資格檢查判定沒有強制檢查失敗、如果可以覆寫某些條件、而且您想要繼續還原程序、請輸入下列命令：
++
+‘*備份還原-fast overroverride *’
+
+

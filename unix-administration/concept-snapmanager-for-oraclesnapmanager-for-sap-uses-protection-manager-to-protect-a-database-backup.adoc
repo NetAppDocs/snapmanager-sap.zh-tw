@@ -1,0 +1,16 @@
+---
+permalink: unix-administration/concept-snapmanager-for-oraclesnapmanager-for-sap-uses-protection-manager-to-protect-a-database-backup.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, protection, manager, install, unix, host, server, respectively, database, administrator, dba, primary, storage, backup 
+summary: 針對SAP和Protection Manager、當分別安裝在UNIX主機和伺服器上時、即可讓該資料庫管理員（DBA）能夠設定及執行原則型Oracle資料庫備份至二線儲存設備、SnapManager SnapManager 並在必要時將備份的資料從二線儲存設備還原至一線儲存設備。 
+---
+= SAP使用Protection Manager保護資料庫備份SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+針對SAP和Protection Manager、當分別安裝在UNIX主機和伺服器上時、即可讓該資料庫管理員（DBA）能夠設定及執行原則型Oracle資料庫備份至二線儲存設備、SnapManager SnapManager 並在必要時將備份的資料從二線儲存設備還原至一線儲存設備。
+
+在下列範例中、使用SnapManager 支援功能的DBA會在一線儲存設備上建立本機備份的設定檔、並在另一個設定檔中建立受保護的備份至二線儲存設備。然後、此DBA會與使用Protection Manager主控台的網路儲存管理員合作、為該資料庫設定從一線儲存設備到二線儲存設備的原則型備份。

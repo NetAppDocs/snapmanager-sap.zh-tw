@@ -1,0 +1,30 @@
+---
+permalink: unix-administration/task-add-new-profile-to-summary-notification.html 
+sidebar: sidebar 
+keywords: configure, summary, email, notification, repository, database, profile, command 
+summary: 為儲存庫資料庫設定摘要電子郵件通知之後、您可以使用摘要通知命令、將新的設定檔新增至摘要通知。 
+---
+= 新增設定檔至摘要電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為儲存庫資料庫設定摘要電子郵件通知之後、您可以使用摘要通知命令、將新的設定檔新增至摘要通知。
+
+.步驟
+. 輸入下列命令：
++
+_smsap profile create -profile _profile_name_[-profile-password _profile_password_]-reposite-dbname _repo_service_name_-host _repo_host_-port _repo_port_-username_-database-dbname _dbdb_dbname_-host _db_host_host_name_[-hourly sdb_login_en_de_de_de_][_station_密碼_stock_en_deed_deed_deed_deed_de_de_deed_dektAN [_stock_stock_unn_station_密碼_station_[_sid_deed_deed_deed_deed_deed_deour_stock_stock_unn_stock_stock_n [_unn_stock_stock_stock_un-tl_tl_tl_tl_tl_tl_tl_tlus_n [_enim_n _styour_ [每週計數_n_][-duration _m_][每月計數n_][-持續時間_m_]][-註釋_comment _][-snapname-Pattern_][-protection [-protection policy _policy_name_]][-sape-notification ]*
+
++
+此命令的其他選項如下：
+
++
+《暴力》
+
++
+「-quiet |-verbose]」
+
+

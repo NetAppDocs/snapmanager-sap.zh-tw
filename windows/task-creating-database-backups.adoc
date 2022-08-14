@@ -1,0 +1,313 @@
+---
+permalink: windows/task-creating-database-backups.html 
+sidebar: sidebar 
+keywords: create, backup, database, portion, tablespace, data, file, control, creating 
+summary: 您可以建立整個資料庫或部分資料庫的備份、包括表格空間、資料檔案或控制檔。 
+---
+= 建立資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立整個資料庫或部分資料庫的備份、包括表格空間、資料檔案或控制檔。
+
+支援Snapshot複製功能、適用於許多主機端儲存堆疊的資料庫、包括NFS、Veritas及其他儲存堆疊。SnapManager
+
+系統管理員可以選擇性地向Oracle RMAN登錄備份、以便使用RMAN以較精細的精細度（例如區塊）還原及還原資料庫。
+
+定義設定檔時、您可以自訂由該設定檔備份所建立的Snapshot複本名稱。例如、您可以插入「躍點」字串來表示「高作業」備份。
+
+除了為備份所建立的Snapshot複本定義獨特名稱之外、您也可以為備份本身建立獨特的標籤。建立備份時、建議您提供備份名稱、以便使用-label參數輕鬆識別備份名稱。對於在特定設定檔中建立的所有備份、此名稱必須是唯一的。名稱可以包含字母、數字、底線（_）和連字號（-）。它不能以連字號開頭。標籤區分大小寫。您可能需要附加作業系統環境變數、系統日期和備份類型等資訊。
+
+如果您未提供標籤、SnapManager 則會以scene_mode_datestrand的形式建立預設標籤名稱、範圍是完整或部分、模式是離線、線上或自動（字字母c表示冷、h表示熱、a表示自動）。
+
+從功能3.4中SnapManager 、您可以覆寫SnapManager 由支援所建立的預設備份標籤、以提供自己的備份標籤。您必須將override.default.backup.pattern參數的值設為true、並在new.default.backup.pattern參數中指定新的備份標籤。備份標籤模式可包含資料庫名稱、設定檔名稱、範圍、模式和主機名稱等關鍵字、這些關鍵字必須以底線分隔。例如new.default.backup.pattern=dbname_profile_hostname_scope_mode。
+
+
+NOTE: 時間戳記會自動包含在產生的標籤結尾。
+
+輸入註解時、您可以包含空格和特殊字元。相反地、當您輸入標籤時、請勿包含空格或特殊字元。
+
+針對每個備份、SnapManager Estrate會自動產生一個32個字元的十六進位字串。若要判斷Guid、您必須使用-verbose選項執行備份清單命令。
+
+您可以在資料庫上線或離線時建立資料庫的完整備份。若要讓SnapManager 這個資料庫在線上或離線的情況下進行備份、您應該使用-auto選項。
+
+建立備份時、如果您已啟用剪除功能、且設定檔中已啟用摘要通知、則會觸發兩封獨立的電子郵件。一封電子郵件用於備份作業、另一封則用於剪除。您可以比較這些電子郵件中包含的備份名稱和備份ID、藉此建立這些電子郵件的關聯。
+
+您可以在資料庫處於關機狀態時建立冷備份。如果資料庫處於掛載狀態、請將其變更為關機狀態、然後執行離線備份（冷備份）。
+
+利用支援（3.2或更新版本）的功能、您可以將歸檔記錄檔與資料檔分開備份、以便有效率地管理歸檔記錄檔。SnapManager
+
+若要個別建立歸檔記錄備份、您必須建立新的設定檔或更新現有的設定檔、以便使用-isv分離 的歸檔記錄備份選項來分隔歸檔記錄備份。使用設定檔、您可以執行下列SnapManager 功能：
+
+* 建立歸檔記錄備份。
+* 刪除歸檔記錄備份。
+* 掛載歸檔記錄備份。
+* 釋放歸檔記錄備份。
+
+
+備份選項視設定檔設定而有所不同：
+
+* 使用未分隔的設定檔來分別進行歸檔記錄備份、可讓您執行下列動作：
++
+** 建立完整備份。
+** 建立部分備份。
+** 指定要備份歸檔記錄檔的歸檔記錄目的地。
+** 指定要從備份中排除的歸檔記錄目的地。
+** 指定刪除選項、以便從歸檔記錄目的地刪除歸檔記錄檔。
+
+
+* 使用分離的設定檔進行歸檔記錄備份、即可執行下列作業：
++
+** 建立純資料檔案備份。
+** 建立僅歸檔程式備份。
+** 建立純資料檔案備份時、請將歸檔記錄備份與線上資料檔案一併納入備份、僅供複製之用。
++
+如果您在「*設定檔建立*」精靈的「*設定檔設定*」頁面中包含歸檔記錄備份與資料檔案、SnapManager 請從該圖形使用者介面執行以下操作： 如果您尚未在「*備份建立*」精靈中選取*歸檔器*選項、SnapManager 則恆將建立歸檔記錄備份、以及所有線上備份的資料檔案。
+
++
+在這種情況下、SnapManager 您可以從支援資源的CLI中、將所有歸檔記錄目的地納入備份考量、SnapManager 但不包括在支援資源配置檔案中指定的排除目的地。但您無法剪除這些歸檔記錄檔。不過、您仍然可以使用-archivelogs選項來指定歸檔記錄檔目的地、並從SnapManager 還原CLI中剪除歸檔記錄檔。
+
++
+如果您是使用-autos選項建立備份、並指定-archivelogs選項、SnapManager 則根據目前的備份狀態、將會建立線上或離線備份。
+
++
+*** 當資料庫離線時、會建立離線備份、而且備份中不會包含歸檔記錄檔。SnapManager
+*** 當資料庫上線時、會建立線上備份、包括歸檔記錄檔。SnapManager
+
+
+** 建立僅歸檔程式備份時：
++
+*** 指定要備份的歸檔記錄目的地、以及僅歸檔程式備份
+*** 指定要從僅歸檔記錄備份中排除的歸檔記錄目的地
+*** 指定刪除選項、以便從歸檔記錄目的地刪除歸檔記錄檔
+
+
+
+
+* *不支援的案例*
++
+** 您無法建立僅歸檔記錄備份、以及離線資料檔案備份。
+** 當歸檔記錄檔未備份時、您無法剪除歸檔記錄檔。
+** 當Flash Recovery Area（FRA）已啟用歸檔記錄檔時、您無法剪除歸檔記錄檔。
++
+如果您在Flash Recovery區域中指定歸檔記錄位置、則必須確定您也在archive log_dest參數中指定歸檔記錄位置。
+
+
+
+
+
+
+NOTE: 建立歸檔記錄備份時、您必須在雙引號內輸入完整的歸檔記錄目的地路徑、並以逗號分隔目的地路徑。路徑分隔符號應指定為兩個反斜槓（\）、而非一個。
+
+當您指定線上資料檔案備份的標籤、加上內含的歸檔記錄備份時、標籤會套用至資料檔案備份、而歸檔記錄備份則會以（_logs）為後置處理。您可以在SnapManager 這個字尾設定檔中變更參數suffix .backup.label.with .logs參數。
+
+例如、您可以將該值指定為字尾.backup.label.with .logs=arc,以便將_logs預設值變更為_arcon.
+
+如果您尚未指定任何要納入備份的歸檔記錄目的地、SnapManager 則支援資料庫中設定的所有歸檔記錄目的地。
+
+如果任何一個目的地中缺少任何歸檔記錄檔、SnapManager 即使這些檔案在其他歸檔記錄目的地中可用、也會跳過在遺失的歸檔記錄檔之前所建立的所有歸檔記錄檔。
+
+建立歸檔記錄備份時、您必須指定要納入備份的歸檔記錄檔目的地、並可設定組態參數、將歸檔記錄檔納入備份中遺失的檔案之外。
+
+
+NOTE: 根據預設、此組態參數設為true、以包括所有歸檔記錄檔、而不包括遺失的檔案。如果您使用自己的歸檔記錄剪除指令碼、或是手動從歸檔記錄目的地刪除歸檔記錄檔、您可以停用此參數、SnapManager 讓效益分析能夠跳過歸檔記錄檔、並繼續進行備份。
+
+不支援下列的資料還原作業來進行歸檔記錄備份：SnapManager SnapManager
+
+* 複製歸檔記錄備份
+* 還原歸檔記錄備份
+* 驗證歸檔記錄備份
+
+
+支援從Flash恢復區域目的地備份歸檔記錄檔。SnapManager
+
+.步驟
+. 輸入下列命令：
++
+「msap備份建立設定檔設定檔名稱｛[-full｛-online |-offline |-auto｝[-hourly |-ditly |-f筆|-mourly |-monthly |-monthly |-unbonvally_][-VERIFAT]|[-DATA [-filesFIL]|[-filesfellabellabel][每週更新-每週更新資料資料標籤][-每週更新資料][-每週更新資料][-每週更新資料][-每週更新-每週更新資料][不限時更新資料標籤] [-backup-destpath1 [,[path2]][-exclude destpath1 [,path2]][-prunelogs {-all |-untilscnuntilscn |-tute-date yd-mm-dd:hh：mm:sss |-therate {-mes|-tyclays |-hes-theseesees}-prune-prunnestuny'[-pruny_destuny' taskun][-prunestuny'[-prunestunestun]之前的tasktask][、tasktask_prun
+
++
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+*指定您要備份線上或離線資料庫、而非讓SnapManager 支援處理其為線上或離線*
+ a| 
+指定-offline以備份離線資料庫。指定-online以備份線上資料庫。
+
+如果您使用這些選項、則無法使用-auto選項。
+
+
+
+ a| 
+*無論SnapManager 資料庫是在線上或離線、請指定是否要讓它處理資料庫的備份*
+ a| 
+指定-auto選項。如果您使用此選項、則無法使用-離線或-線上選項。
+
+
+
+ a| 
+*指定是否要執行特定檔案的部分備份*
+ a| 
+指定-data-filFiles選項、然後以逗號分隔列出檔案。例如、在選項之後列出檔案名稱F1、F2和f3。
+
+在Windows上建立部分資料檔案備份的範例
+
+[listing]
+----
+
+smsap backup create -profile nosep -data -files "J:\\mnt\\user\\user.dbf" -online
+-label partial_datafile_backup -verbose
+----
+
+
+ a| 
+*指定是否要執行特定表格空間的部分備份*
+ a| 
+指定-data-tabl空間 選項、然後以逗號分隔列出表格空間。例如、在選項之後使用TS1、TS2和TS3。
+
+支援備份唯讀表格空間。SnapManager建立備份時SnapManager 、功能區會將唯讀表格空間變更為讀寫。建立備份之後、表格空間會變更為唯讀。
+
+建立部分表格空間備份的範例
+
+[listing]
+----
+smsap backup create -profile nosep -data -tablespaces tb2 -online -label partial_tablespace_bkup -verbose
+----
+
+
+ a| 
+*指定您是否要為每個備份建立下列格式的唯一標籤：Full_hot_mybackup_label*
+ a| 
+對於Windows、您可以輸入以下範例：
+
+[listing]
+----
+
+smsap backup create -online -full -profile targetdb1_prof1
+-label full_hot_my_backup_label   -verbose
+----
+
+
+ a| 
+*指定是否要建立備份歸檔記錄檔、與資料檔案分開*
+ a| 
+指定下列選項和變數：
+
+** -archivelogs會建立歸檔記錄檔的備份。
+** -Backup目的地指定要備份的歸檔記錄檔目的地。
+** -exclude-dest指定要排除的歸檔記錄目的地。
+** -label指定歸檔記錄檔備份的標籤。
+
+
+
+NOTE: 您必須提供-backup-dest選項或-exclude dest選項。
+
+同時提供這兩個選項與備份時、會顯示您指定的備份選項無效的錯誤訊息。指定任一選項：-backup-dest或exclude dest.
+
+在Windows上分別建立歸檔記錄檔備份的範例
+
+[listing]
+----
+
+smsap backup create -profile nosep -archivelogs -backup-dest "J:\\mnt\\archive_dest_2\\" -label archivelog_backup -verbose
+----
+
+
+ a| 
+*指定是否要一起建立資料檔案備份及記錄檔*
+ a| 
+ Specify the following options and variables:
+** -data選項來指定資料檔案。
+** -archivelogs選項、用於指定歸檔記錄檔。範例：在Windows上一起備份資料檔案和歸檔記錄檔
++
+[listing]
+----
+
+smsap backup create -profile nosep -data -online -archivelogs -backup-dest "J:\\mnt\\archive_dest_2\\" -label data_arch_backup
+-verbose
+----
+
+
+
+
+ a| 
+*指定是否要在建立備份時剪除歸檔記錄檔*
+ a| 
+ Specify the following options and variables:
+** -prunelogs指定從歸檔記錄目的地刪除歸檔記錄檔。
++
+*** -all指定從歸檔記錄目的地刪除所有歸檔記錄檔。
+*** 直到scnush-scn指定刪除歸檔記錄檔、直到指定SCN為止。
+*** 直到日期年月月日：日：分：秒指定刪除歸檔記錄檔、直到指定的時間段為止。
+*** -before選項指定在指定的時間週期（天、月、週、小時）之前刪除歸檔記錄檔。
+*** -prune-destprune_dest1、[prune_dest2指定在建立備份時、從歸檔記錄目的地刪除歸檔記錄檔。*附註：*當Flash Recovery Area（FRA）已啟用歸檔記錄檔時、您無法剪除歸檔記錄檔。
+
+
+
+
+範例：在Windows上建立備份時剪除所有歸檔記錄檔
+
+[listing]
+----
+
+smsap backup create -profile nosep
+ -archivelogs -label archive_prunebackup1 -backup-dest "E:\\oracle\\MDV\\oraarch\\MDVarch,J:\\
+" -prunelogs -all -prune-dest "E:\\oracle\\MDV\\oraarch\\MDVarch,J:\\" -verbose
+----
+
+
+ a| 
+*指定是否要新增備份的相關註解*
+ a| 
+指定-comment、後面接著說明字串。
+
+
+
+ a| 
+*指定是否要強制資料庫進入您指定的備份狀態、無論資料庫目前處於*狀態
+ a| 
+指定-force選項。
+
+
+
+ a| 
+*指定是否要在建立備份的同時驗證備份*
+ a| 
+指定-VERIFY選項。
+
+
+
+ a| 
+*指定是否要在資料庫備份作業之後收集傾印檔*
+ a| 
+在備份create命令結尾處指定-dump選項。
+
+|===
+
+
+
+
+== 範例
+
+[listing]
+----
+smsap backup create -profile targetdb1_prof1 -full -online -force  -verify
+----
+*相關資訊*
+
+xref:concept-snapshot-copy-naming.adoc[Snapshot複本命名]
+
+xref:task-creating-pretask-post-task-and-policy-scripts.adoc[建立工作前、工作後及原則指令碼]
+
+xref:task-creating-task-scripts.adoc[建立工作指令碼]
+
+xref:task-storing-the-task-scripts.adoc[儲存工作指令碼]
+
+xref:reference-the-smosmsapbackup-create-command.adoc[smsap備份create命令]
+
+xref:task-creating-or-updating-post-scripts.adoc[建立或更新POST指令碼]

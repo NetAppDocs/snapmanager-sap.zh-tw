@@ -1,0 +1,98 @@
+---
+permalink: unix-administration/reference-the-smosmsap-operation-show-command.html 
+sidebar: sidebar 
+keywords: run, operation, show, command, list, summary, information, output, client, user, snapmanager, host, smsap 
+summary: 您可以執行operation show命令、列出針對指定設定檔所執行之所有作業的摘要資訊。輸出會列出用戶端使用者（用戶端PC的使用者）和有效使用者（SnapManager 在選定主機上有效的使用者）。 
+---
+= smsap operation show命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行operation show命令、列出針對指定設定檔所執行之所有作業的摘要資訊。輸出會列出用戶端使用者（用戶端PC的使用者）和有效使用者（SnapManager 在選定主機上有效的使用者）。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap operation show
+-profile _profile_name_
+[-label _label_ | -id _id_\] [-quiet | -verbose\]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile_name_*」
++
+指定設定檔的名稱。此名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* 「*標籤_label_*」
++
+指定作業的標籤。
+
+* 「*」-id _id_*
++
+指定作業的識別碼。
+
+* 「*無聲*」
++
+選用：僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+選用：在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 範例
+
+下列命令列顯示作業的詳細資訊：
+
+[listing]
+----
+smsap operation show -id 8ac861781d0ac992011d0ac999680001  -profile CER
+----
+[listing]
+----
+Operation Attempted
+    Operation ID: 8ac861781d0ac992011d0ac999680001
+    Type:Backup
+    For profile: CER
+    With Force: No
+    Label: 081017180043
+    Comments: BRBACKUP
+Operation Runtime Information
+   Status: SUCCESS
+   Start date: 2008-10-16 18:01:00 IST
+   End date: 2008-10-17 18:01:26 IST
+   Client user: oracle
+   Effective user: oracle
+   By schedule: none
+Host
+   Host Run upon: lnx225-248.lab.eng.org.com
+   Process ID: 29096
+   SnapManager version: 3.3
+Repository
+   Connection: krishna@smsaprep/10.72.225.155:1521
+   Repository version: 62
+Error messages
+   The operation did not generate any error messages.
+Resources in use
+   Snapshots:
+      f270-225-57:/vol/f270_lnx225_248_10gr2_sap_oracle_cer:smsap_cer_cer1_f_c_2_8ac861781d0ac992011d0ac999680001_0
+   Storage components:
+    /sapbackup/backCER1.log (File)
+    /sapbackup/bdzbalta.anf (File)
+    /sapreorg/spaceCER1.log (File)
+    /mnt/oracle/CER (File System)
+    ...
+----
+'''

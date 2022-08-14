@@ -1,0 +1,21 @@
+---
+permalink: windows/task-view-the-detailed-history-of-a-specific-operation-associated-with-a-profile.html 
+sidebar: sidebar 
+keywords: view, detail, history, snapmanager, operation, associate, profile 
+summary: 您可以檢視SnapManager 與設定檔相關的特定故障操作詳細記錄。 
+---
+= 檢視與設定檔相關之特定作業的詳細記錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視SnapManager 與設定檔相關的特定故障操作詳細記錄。
+
+.步驟
+. 若要顯示SnapManager 與設定檔相關之特定功能的詳細歷史記錄資訊、請輸入下列命令：
++
+「* smsap history operation-show -profile _profile_name_｛-label _label_|-id _id_｝[-quiet |-verbose]*」
+
+

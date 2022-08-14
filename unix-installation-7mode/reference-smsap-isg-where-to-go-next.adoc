@@ -1,0 +1,52 @@
+---
+permalink: unix-installation-7mode/reference-smsap-isg-where-to-go-next.html 
+sidebar: sidebar 
+keywords: install, snapmanager, successful, creating, create, backup, restore, recovery, cloning, clone, operation, addition, information, scheduling, schedule, where, to, go, next 
+summary: 安裝SnapManager 完支援功能並成功建立備份之後、您可以使用SnapManager 支援功能來執行還原、還原及複製作業。此外、您可能想要尋找SnapManager 其他功能的相關資訊、例如排程、管理SnapManager 等功能、以及維護營運記錄。 
+---
+= 下一步
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝SnapManager 完支援功能並成功建立備份之後、您可以使用SnapManager 支援功能來執行還原、還原及複製作業。此外、您可能想要尋找SnapManager 其他功能的相關資訊、例如排程、管理SnapManager 等功能、以及維護營運記錄。
+
+您可以在SnapManager 下列文件中找到這些功能的詳細資訊、以及針對發行版的資訊、這些資訊均可在上取得 http://mysupport.netapp.com["NetApp支援"^]。
+
+* https://library.netapp.com/ecm/ecm_download_file/ECMP12481453["適用於UNIX的SAP系統管理指南SnapManager"^]
++
+說明如何設定適用於SnapManager SAP的管理功能。主題包括如何設定、備份、還原及複製資料庫、執行二線保護、 加上CLI命令的說明。
+
+* https://library.netapp.com/ecm/ecm_download_file/ECMP12481455["SAP發行說明適用的3.4 SnapManager"^]
++
+說明SnapManager 適用於SAP的全新功能、修正問題、重要注意事項、已知問題及限制。
+
+* _適用於SAP線上說明_ SnapManager
++
+說明SnapManager 使用SnapManager UI執行不同的功能的逐步程序。
+
++
+
+NOTE: 「線上說明」與SnapManager 「支援網站」未提供的「支援UI」整合。
+
+* http://www.netapp.com/us/media/tr-3761.pdf["NetApp技術報告3761：SnapManager 《Oracle的支援：最佳實務做法》"^]
++
+介紹SnapManager Oracle最佳實務做法的功能。
+
+* http://www.netapp.com/us/media/tr-3633.pdf["NetApp技術報告3633：NetApp儲存設備上Oracle資料庫的最佳實務做法"^]
++
+說明在NetApp儲存系統上設定Oracle資料庫的最佳實務做法。
+
+* http://www.netapp.com/us/media/tr-3442.pdf["NetApp技術報告3442：SAP with Oracle on UNIX、NFS和NetApp Storage"^]
++
+說明部署NetApp儲存設備以支援SAP解決方案的最佳實務做法。
+
+
+
+*相關資訊*
+
+http://mysupport.netapp.com["NetApp支援"^]
+
+http://mysupport.netapp.com/documentation/productsatoz/index.html["NetApp文件：產品庫A-Z"^]

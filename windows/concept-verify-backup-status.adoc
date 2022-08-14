@@ -1,0 +1,16 @@
+---
+permalink: windows/concept-verify-backup-status.html 
+sidebar: sidebar 
+keywords: snapmanager, integrity, backup, standard, oracle, verification, operation, verify, status 
+summary: 使用標準的Oracle備份驗證作業、即可確認備份的完整性。SnapManager 
+---
+= 驗證備份狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用標準的Oracle備份驗證作業、即可確認備份的完整性。SnapManager
+
+資料庫管理員（DBA）可在備份作業中執行驗證、或在其他時間執行驗證。DBA可以設定在非尖峰時間（主機伺服器負載較少時）或在排定的維護期間執行驗證作業。

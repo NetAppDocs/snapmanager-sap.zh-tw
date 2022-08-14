@@ -1,0 +1,18 @@
+---
+permalink: unix-administration/concept-restoration-of-the-data-from-files.html 
+sidebar: sidebar 
+keywords: restore, alternate, location, file, snapvault, restoration, data 
+summary: 從替代位置還原之前、您需要從任何儲存媒體還原必要的檔案、並將檔案從SnapVault 諸如SnapMirror或SnapMirror等應用程式還原至安裝在本機主機上的檔案系統。 
+---
+= 從檔案還原資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從替代位置還原之前、您需要從任何儲存媒體還原必要的檔案、並將檔案從SnapVault 諸如SnapMirror或SnapMirror等應用程式還原至安裝在本機主機上的檔案系統。
+
+您可以使用從替代位置還原作業、將檔案從替代檔案系統複製到作用中檔案系統。
+
+您需要建立還原規格、以指定還原原始檔案的替代位置。

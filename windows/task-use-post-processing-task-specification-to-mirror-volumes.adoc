@@ -1,0 +1,56 @@
+---
+permalink: windows/task-use-post-processing-task-specification-to-mirror-volumes.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, enable, script, mirror, volume, backup, operation, windows, environment, post-process, task, specification 
+summary: SAP版的支援功能可讓您在Windows環境中執行備份作業之後、使用指令碼鏡射磁碟區。SnapManager 
+---
+= 使用後處理工作規格來鏡射磁碟區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAP版的支援功能可讓您在Windows環境中執行備份作業之後、使用指令碼鏡射磁碟區。SnapManager
+
+.步驟
+. 建立工作規格XML檔案。
+. 在XML檔案中、輸入指令碼名稱作為輸入參數。
+. 儲存工作規格XML檔案。
+. 使用下列命令建立資料庫到次要儲存設備的受保護備份。
++
+在建立受保護的備份時、您必須在「taskspecs」選項之後、提供已儲存工作規格XML檔案的完整路徑。
+
++
+範例：「msapbackup create -profile test_profile -full -online -taskspec「C：\鏡射\ SnapMirror。XML」
+
+
+
+以下範例顯示Data ONTAP 當您使用以7-Mode運作的功能時、後處理工作規格的結構：
+
+[listing]
+----
+#     <post-tasks>
+#               <task>
+#                   <name>Mirror the backup</name>
+#                    <description>Mirror the backup</description>
+#               </task>
+#             <post-tasks>
+----
+以下範例顯示使用叢集Data ONTAP 式的後處理工作規格結構：
+
+[listing]
+----
+# <task-specification>
+#              <post-tasks>
+#                  <task>
+#                   <name>"Vault the backup for cDOT"</name>
+#                    <parameter>
+#                    <name>SNAPSHOT_LABEL</name>
+#                   <value>TST</value>
+#                    </parameter>
+#                  </task>
+#                </post-tasks>
+#              </task-specification>
+#            </preposttask-specification>
+----

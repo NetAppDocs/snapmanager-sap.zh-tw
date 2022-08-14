@@ -1,0 +1,30 @@
+---
+permalink: windows/task-creating-or-updating-post-scripts.html 
+sidebar: sidebar 
+keywords: create, post, script, default, install, directory, plugin, creating, update, updating 
+summary: 您可以建立新的POST指令碼、也可以使用預設安裝目錄\外掛程式\備份\建立\ POST中的指令碼。 
+---
+= 建立或更新POST指令碼
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立新的POST指令碼、也可以使用預設安裝目錄\外掛程式\備份\建立\貼文的指令碼。
+
+您必須以特定方式建立指令碼結構、以便在SnapManager 執行動作的情境中執行指令碼。根據預期的作業、可用的輸入參數及傳回程式碼慣例來建立指令碼。
+
+. 建立新指令碼或使用可用的範例指令碼。
+. 視需要修改或包含函數、變數和參數。
+. 儲存自訂指令碼。
+. 在後處理工作規格XML檔案中新增指令碼名稱和必要輸入、或選取適當的指令碼和輸入參數、從GUI提供輸入。
++
+
+NOTE: 您不需要在工作規格XML檔案中提供次要儲存設備詳細資料。
+
+
+
+*相關資訊*
+
+xref:concept-creating-task-specification-file-and-scripts-for-snapmanager-operations.adoc[建立SnapManager 工作規格檔案和指令碼、以利執行各項作業]

@@ -1,0 +1,20 @@
+---
+permalink: unix-administration/concept-volume-management-restrictions.html 
+sidebar: sidebar 
+keywords: snapmanager, volume, management, restriction, environment 
+summary: 可能會影響環境的部分Volume管理限制。SnapManager 
+---
+= Volume管理限制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+可能會影響環境的部分Volume管理限制。SnapManager
+
+您可以為資料庫設定多個磁碟群組、但下列限制適用於特定資料庫的所有磁碟群組：
+
+* 資料庫的磁碟群組只能由一個Volume Manager管理。
+* 沒有邏輯磁碟區管理的Linux環境需要分割區。
+

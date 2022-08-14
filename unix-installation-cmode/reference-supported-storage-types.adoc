@@ -1,0 +1,37 @@
+---
+permalink: unix-installation-cmode/reference-supported-storage-types.html 
+sidebar: sidebar 
+keywords: snapmanager, support, wide, range, storage, type, physical, virtual, machine, verify, install, upgrade, storage, type 
+summary: 支援實體與虛擬機器上的各種儲存類型。SnapManager安裝或升級SnapManager 支援功能之前、您必須先確認儲存類型的支援。 
+---
+= 支援的儲存類型
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援實體與虛擬機器上的各種儲存類型。SnapManager安裝或升級SnapManager 支援功能之前、您必須先確認儲存類型的支援。
+
+|===
+| 機器 | 儲存類型 
+
+
+ a| 
+實體伺服器
+ a| 
+* NFS連線的磁碟區
+* 連接FC的LUN
+* 連接iSCSI的LUN
+
+
+
+
+ a| 
+VMware ESX
+ a| 
+* NFS磁碟區直接連線至客體系統
+* 客戶作業系統上的RDM LUN
+
+
+|===

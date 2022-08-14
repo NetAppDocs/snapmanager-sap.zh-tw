@@ -1,0 +1,163 @@
+---
+permalink: windows/concept-limitations.html 
+sidebar: sidebar 
+keywords: aware, scenario, limitation, environment, work, snapmanager 
+summary: 您必須瞭解可能影響環境的案例和限制。 
+---
+= 使用SnapManager 不受限
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須瞭解可能影響環境的案例和限制。
+
+*與資料庫配置與平台相關的限制*
+
+* 支援檔案系統上的控制檔、不支援原始裝置上的控制檔。SnapManager
+* 在Microsoft叢集（MSCS）環境中運作、但無法辨識MSCS組態的狀態（主動或被動）、也不會將儲存庫的主動管理傳輸至MSCS叢集的待命伺服器。SnapManager
+* 儲存庫資料庫可能存在於可使用多個IP位址存取的主機上。
++
+如果使用多個IP位址存取儲存庫、則會針對每個IP位址建立排程檔案。如果排程備份是針對其中一個IP位址（例如IP1）下的設定檔（例如設定檔A）建立、則只會更新該IP位址的排程檔案。如果從其他IP位址（例如IP2）存取設定檔A、則不會列出排程備份、因為IP2的排程檔案沒有IP1下建立的排程項目。
+
++
+您可以等待從該IP位址觸發排程、並更新排程檔案、或是重新啟動伺服器。
+
+
+
+* SnapManager 與功能不一的限制*
+
+* 支援下列需求的資料庫：SnapManager MultiStore
++
+** 您必須設定SnapDrive 用來設定MultiStore 用於靜態儲存系統的密碼的功能。
+** 如果基礎Volume不在同一個實體儲存系統中、則無法建立位於實體儲存系統qtree內的LUN或檔案的Snapshot複本。SnapDrive MultiStore MultiStore
+
+
+* 不支援從單一用戶端（從CLI或GUI）存取在不同連接埠上執行的兩個支援服務器。SnapManager SnapManager
++
+目標主機和遠端主機上的連接埠號碼應該相同。
+
+* 無法執行作業系統、而且儲存庫資料庫當機時、您無法存取GUI。SnapManager
++
+執行SnapManager 任何的還原作業時、您必須確認儲存庫資料庫正在執行中。
+
+* 不支援即時分割行動（LPM）和即時應用程式行動（LAM）SnapManager 。
+* 不支援Oracle Wallet Manager和透明資料加密（TDE）SnapManager 。
+* 由於虛擬儲存主控台（VSC）尚未支援各種VMware組態、因此在原始裝置對應（RDM）環境中不支援這些非重複組態。SnapManager MetroCluster MetroCluster
+
+
+*與設定檔管理相關的限制*
+
+* 如果您更新設定檔以分隔歸檔記錄備份、則無法在主機上執行復原作業。
+* 如果您從GUI啟用設定檔來建立歸檔記錄備份、然後嘗試使用「多重設定檔更新」視窗或「設定檔更新」視窗來更新設定檔、則無法修改該設定檔來建立完整備份。
+* 如果您在「多重設定檔更新」視窗中更新多個設定檔、而某些設定檔已啟用*備份歸檔資料*選項、而其他設定檔則已停用選項、則「*備份歸檔資料個別*」選項會停用。
+* 如果您更新多個設定檔、而某些設定檔已啟用*備份歸檔資料*選項、且其他設定檔已停用選項、則「多重設定檔更新」視窗中的*備份歸檔資料*選項會停用。
+* 如果您重新命名設定檔、則無法回復主機。
+
+
+*與循環升級或復原作業有關的限制*
+
+* 如果您嘗試在SnapManager 儲存庫中的主機上安裝舊版的主機版的支援功能、但未在主機上執行復原作業、則可能無法執行下列動作：
++
+** 檢視在SnapManager 舊版或更新版的主機用的支援功能所建立的設定檔。
+** 存取在SnapManager 舊版或更新版的更新版本中建立的備份或複本。
+** 在主機上執行循環升級或復原作業。
+
+
+* 在您將設定檔分開以建立歸檔記錄備份之後、便無法在相關的主機儲存庫上執行復原作業。
+
+
+*與備份作業相關的限制*
+
+* 恢復期間、如果備份已經掛載、SnapManager 則不會再次掛載備份、也會使用已掛載的備份。
++
+如果備份是由不同的使用者掛載、而您無法存取先前掛載的備份、則另一位使用者必須提供您權限。
+
++
+所有歸檔記錄檔都具有指派給群組之使用者的讀取權限；如果備份是由不同的使用者群組掛載、則您可能沒有歸檔記錄檔的存取權限。使用者可以手動授予已掛載的歸檔記錄檔的權限、然後重試還原或還原作業。
+
+* 將備份狀態設為「受保護」、即使資料庫備份的其中一個Snapshot複本已傳輸至次要儲存系統。SnapManager
+* 您只能使用任務規格檔案SnapManager 進行來自於更新版本的預定備份。
+* 如果儲存庫資料庫指向多個IP位址、而每個IP位址都有不同的主機名稱、則備份排程作業會針對一個IP位址成功、但對另一個IP位址失敗。
+* 在支援的支援環境中、某個來源Volume不支援多個次要目的地。ONTAP SnapManager
+
+
+*與還原作業相關的限制*
+
+* 不支援在Windows中使用快速還原或磁碟區型還原作業來還原資料庫備份。SnapManager
++
+當您嘗試從CLI執行快速還原作業時、顯示錯誤訊息。SnapManager SnapManager
+
+
+
+*與複製作業相關的限制*
+
+* 不支援使用在發行版更新版本之前建立的實體複本規格XML檔案。SnapManager SnapManager
+* 如果暫用資料表空間與資料檔案位置位於不同的位置、則複製作業會在資料檔案位置建立資料表空間。
++
+不過、如果暫用資料表空間是位於資料檔案位置不同位置的Oracle託管檔案（OMF）、則複製作業不會在資料檔案位置建立資料表空間。OMF並非SnapManager 由功能不完善的管理。
+
+* 如果您選取「-resettlogs」選項、則無法複製RAC資料庫。SnapManager
+
+
+*歸檔記錄檔與備份的相關限制*
+
+* 不支援剪除Flash恢復區域目的地的歸檔記錄檔。SnapManager
+* 不支援從待命目的地剪除歸檔記錄檔。SnapManager
+* 歸檔記錄備份會根據保留期間和預設的每小時保留類別來保留。
++
+當使用SnapManager 還原CLI或GUI修改歸檔記錄備份保留類別時、修改後的保留類別不被視為備份、因為歸檔記錄備份會根據保留期間而保留。
+
+* 如果您從歸檔記錄目的地刪除歸檔記錄檔、則歸檔記錄備份不會包含比遺失的歸檔記錄檔更舊的歸檔記錄檔。
++
+如果缺少最新的歸檔記錄檔、則歸檔記錄備份作業會失敗。
+
+* 如果您從歸檔記錄目的地刪除歸檔記錄檔、則保存檔記錄檔的剪除將會失敗。
+* 即使您從歸檔記錄目的地刪除歸檔記錄檔、或當歸檔記錄檔檔案毀損時、此功能也能整合歸檔記錄備份。SnapManager
+
+
+*與變更目標資料庫主機名稱相關的限制*
+
+當您變更目標資料庫主機名稱時、不支援下列SnapManager 的支援功能：
+
+* 變更SnapManager 目標資料庫主機名稱、從無法使用的圖形化圖形使用者介面。
+* 更新設定檔的目標資料庫主機名稱後、將儲存庫資料庫復原。
+* 同時更新新目標資料庫主機名稱的多個設定檔。
+* 執行SnapManager 任何功能不全的作業時、請變更目標資料庫主機名稱。
+
+
+* SnapManager 與不實CLI或圖形使用者介面相關的限制*
+
+* 從該指令產生的「profile create」作業的指令不含歷史組態選項。SnapManager SnapManager
++
+您無法使用「profile create」命令、從SnapManager CLI設定歷程記錄保留設定。
+
+* 當Windows用戶端上沒有可用的Java執行時間環境（JRE）時、無法在Mozilla Firefox中顯示GUI。SnapManager
+* 在Windows Server 2008和Windows 7的Microsoft Internet Explorer 6中、無法顯示VMware圖形介面。SnapManager SnapManager
+* 使用SnapManager S還原CLI更新目標資料庫主機名稱時、如果有一SnapManager 或多個開放式的還原GUI工作階段、則所有開啟SnapManager 的還原GUI工作階段都無法回應。
+* 在SnapManager Windows上安裝支援功能並在UNIX中啟動CLI時、會顯示Windows不支援的功能。
+
+
+* SnapMirror和SnapVault S基 類*的相關限制
+
+* 在某些情況下、當磁碟區SnapVault 建立了彼此的關聯時、您無法刪除與第一個Snapshot複本相關的最後一個備份。
++
+您只能在中斷關係時刪除備份。此問題是因為ONTAP 基礎Snapshot複本的不一致限制。在SnapMirror關係中、基礎Snapshot複本是由SnapMirror引擎所建立、SnapVault 而在整個過程中、基礎Snapshot複本是使用SnapManager SnapMirror所建立的備份。每次更新時、基礎Snapshot複本都會指向使用SnapManager 介紹所建立的最新備份。
+
+
+
+*資料保護待命資料庫的相關限制*
+
+* 不支援邏輯資料保護待命資料庫。SnapManager
+* 不支援Active Data Guard待命資料庫。SnapManager
+* 不允許線上備份Data Guard待命資料庫。SnapManager
+* 不允許部分備份Data Guard待命資料庫。SnapManager
+* 不允許還原Data Guard待命資料庫。SnapManager
+* 不允許剪除Data Guard待命資料庫的歸檔記錄檔。SnapManager
+* 不支援Data Guard Broker。SnapManager
+
+
+*相關資訊*
+
+http://mysupport.netapp.com/["NetApp支援網站上的文件"^]

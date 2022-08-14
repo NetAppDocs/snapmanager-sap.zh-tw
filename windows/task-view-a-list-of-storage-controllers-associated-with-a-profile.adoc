@@ -1,0 +1,46 @@
+---
+permalink: windows/task-view-a-list-of-storage-controllers-associated-with-a-profile.html 
+sidebar: sidebar 
+keywords: view, list, storage, system, associate, particular, profile 
+summary: 您可以檢視與特定設定檔相關聯的儲存系統清單。 
+---
+= 檢視與設定檔相關的儲存系統清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視與特定設定檔相關聯的儲存系統清單。
+
+
+
+== 關於這項工作
+
+清單會顯示與特定設定檔相關的儲存系統名稱。
+
+
+NOTE: 如果沒有可供設定檔使用的備份、您就無法檢視與設定檔相關聯的儲存系統名稱。
+
+.步驟
+. 若要顯示與特定設定檔相關的儲存系統資訊、請輸入下列命令：
++
+「* smsap儲存清單- profile _profile _（-無聲|-詳細）*」
+
+
+
+
+
+== 範例
+
+[listing]
+----
+smsap storage list -profile mjubllian
+----
+[listing]
+----
+Sample Output:
+Storage Controllers
+--------------------
+STCO1110-RTP07OLD
+----

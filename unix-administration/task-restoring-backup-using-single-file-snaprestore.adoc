@@ -1,0 +1,50 @@
+---
+permalink: unix-administration/task-restore-backup-using-single-file-snaprestore.html 
+sidebar: sidebar 
+keywords: restore, backup, single, file, snaprestore, sfsr, method, restoring 
+summary: 您可以使用單一檔案SnapRestore 功能（SFSR）方法還原備份。 
+---
+= 使用單一檔案SnapRestore 功能還原備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用單一檔案SnapRestore 功能（SFSR）方法還原備份。
+
+.步驟
+. 從SnapManager 無法使用的圖形化使用者介面（GUI）建立設定檔。
+. 使用GUI備份資料庫。
+. 取消Oracle和網路檔案系統（NFS）服務群組與叢集服務群組的連結、然後將其凍結。
+. 在SnapDrive 「sfapdrive.conf」檔案中、將「_#secuter-communication—連叢集節點之間的通訊」設定為「* on *」、以確保在主機和UNIX上設定了Secure Shell（SSH）。
+. 從功能支援GUI中、使用「-alllogs」執行完整備份還原與還原。SnapManager
+. 取消凍結服務群組、然後將其連結回叢集服務群組。
++
+
+NOTE: 僅SnapDrive 當您使用適用於UNIX的版本為1.1 D2 SnapDrive 、以及適用於UNIX的版本為4.2時、才適用此組態。
+
++
+如果某個還原作業之後再執行另一個還原作業、則建立備份Snapshot複本可能會失敗。如果您在SFSR可以完成的指定時間內執行後續還原作業、SnapManager 那麼適用於SAP的Sfor SAP將會遇到Snapshot複本建立錯誤。
+
++
+若要避免Snapshot複本建立錯誤、請確定還原作業是在SFSR進行期間之後執行。
+
++
+若要達到此目的、請從儲存系統命令列介面（CLI）輸入下列命令、檢查LUN實體複製分割程序狀態：
+
++
+「* rsh _filernname_ LUN clone s拆 分狀態_lun-name_*」
+
++
+[listing]
+----
+
+Sample Output:
+/vol/delaware_760gb/lun700gb (64% complete)..
+----
++
+
+NOTE: 執行Veritas堆疊且具有SFRAC和VCS環境的Solaris主機不支援Volume型SnapRestore 的功能（VBRSR）。
+
+

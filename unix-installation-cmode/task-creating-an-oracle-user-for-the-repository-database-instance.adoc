@@ -1,0 +1,26 @@
+---
+permalink: unix-installation-cmode/task-create-an-oracle-user-for-the-repository-database-instance.html 
+sidebar: sidebar 
+keywords: oracle, user, require, log, access, repository, database, instance, create, user, connect, resource, privilege, create 
+summary: Oracle使用者必須登入並存取儲存庫資料庫執行個體。您必須以連線和資源權限來建立此使用者。 
+---
+= 為儲存庫資料庫執行個體建立Oracle使用者
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Oracle使用者必須登入並存取儲存庫資料庫執行個體。您必須使用_CONNECT和_RESOURE_權限來建立此使用者。
+
+.步驟
+. 登入SQL * Plus：「qlplus '/ as Sysdba'」
+. 建立新的使用者並指派系統管理員密碼給該使用者：「*在tablspace_name;*上建立由admin_password預設表格空間表格空間名稱配額所識別的useruser_name quota un受到 限制
++
+** 「user_name」是您為儲存庫資料庫建立的使用者名稱。
+** 「admin_password」是您要指派給使用者的密碼。
+** 「tablspace_name」是為儲存庫資料庫建立的表格空間名稱。
+
+
+. 將_CONNECT和_RESOURE_權限指派給新的Oracle使用者：「*授予連線、將資源指派給USER_NAME；*」
+

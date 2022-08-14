@@ -1,0 +1,32 @@
+---
+permalink: windows/task-view-snapmanger-history-operation-details.html 
+sidebar: sidebar 
+keywords: view, history, set, single, profile, snapmanager, configuration, detail 
+summary: 您可以檢視單一設定檔的歷程記錄設定。 
+---
+= 檢視SnapManager 有關資料的歷史記錄組態詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視單一設定檔的歷程記錄設定。
+
+
+
+== 關於這項工作
+
+此「樣史」作業會針對每個設定檔顯示下列資訊：SnapManager
+
+* 作業名稱
+* 保留類別
+* 保留計數
+
+
+.步驟
+. 若要顯示SnapManager 特定設定檔的有關「資訊」記錄作業的資訊、請輸入下列命令：
++
+「* smsap歷程記錄」顯示-profile _profile_name_*
+
+

@@ -1,0 +1,14 @@
+---
+permalink: unix-installation-cmode/concept-backing-up-and-verifying-your-databases.html 
+sidebar: sidebar 
+keywords: install, snapmanager, create, backup, database, verify, corrupt, file, back up 
+summary: 安裝SnapManager 完這個功能之後、您可以建立資料庫的基本備份、並確認備份不會包含任何毀損的檔案。 
+---
+= 備份及驗證資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+安裝SnapManager 完這個功能之後、您可以建立資料庫的基本備份、並確認備份不會包含任何毀損的檔案。

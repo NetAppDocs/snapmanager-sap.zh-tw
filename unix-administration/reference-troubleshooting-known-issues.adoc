@@ -1,0 +1,335 @@
+---
+permalink: unix-administration/reference-troubleshooting-known-issues.html 
+sidebar: sidebar 
+keywords: aware, snapmanager, troubleshooting, known, issue 
+summary: 您應該瞭解使用SnapManager 下列項目時可能發生的一些已知問題、以及如何解決這些問題。 
+---
+= 疑難排解已知問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您應該瞭解使用SnapManager 下列項目時可能發生的一些已知問題、以及如何解決這些問題。
+
+
+
+== SAP無法將設定檔識別為叢集模式設定檔SnapManager
+
+如果SnapManager 叢集模式設定檔名稱未出現在SAP安裝目錄的「cmode_profile.config」檔案中、可能會觸發下列錯誤訊息：
+
+「請使用SnapDrive 下列功能來設定DFM伺服器
+
+此外、在升級SnapManager 適用於SAP的功能時、如果您刪除「/opt/netapp/smsap/*」資料夾、則具有叢集模式設定檔名稱的「cmode_profile.config」檔案也會遭到刪除。此問題也會觸發相同的錯誤訊息。
+
+*因應措施*
+
+更新設定檔：「* smsap profile update-profile _」
+
+
+NOTE: 如果SnapManager 將適用於SAP的版本安裝在「/opt/NetApp/smsap/`路徑中、則檔案位置將為「/opt /netapp/smsap/cmode_profile_config.`」
+
+
+
+== 伺服器無法啟動
+
+啟動伺服器時、您可能會看到類似下列的錯誤訊息：
+
+「MSAP-01104：叫用命令時發生錯誤：SMSAP-17107：SnapManager 由於下列錯誤、導致無法在連接埠8074上啟動Syndche伺 服器：java.net.BindException: Address already in use（位址已在使用中）」
+
+這可能是因為SnapManager 另一個應用程式目前正在使用不偵聽的連接埠（預設為27314和27315）。
+
+如果「smsap_server」命令已經在執行中、SnapManager 但無法偵測到現有的程序、也可能發生此錯誤。
+
+*因應措施*
+
+您可以重新設定SnapManager 使用不同連接埠的功能或其他應用程式。
+
+若要重新設定SnapManager 此功能、請編輯下列檔案：「/opt/NTap/smsap/properties/smsap.config」
+
+您可以指派下列值：
+
+* SMSAP Server.port=27314
+* SMSAP Server.rmiRegister.port=27315
+* remote.register.ocijdbc.port= 27315
++
+remote.register.ocijdbc.port必須與Server.rmiRegistry.port相同。
+
+
+
+若要啟動SnapManager 此伺服器、請輸入下列命令：「* smsap_server start*」
+
+
+NOTE: 如果伺服器已在執行中、則會顯示錯誤訊息。
+
+如果伺服器已在執行中、請執行下列步驟：
+
+. 輸入下列命令停止伺服器：「* smsap_server stop *」
+. 輸入以下命令重新啟動伺服器：「*smsap_server start*」
+
+
+
+
+== 終止目前執行SnapManager 中的功能不穩定作業
+
+如果此伺服器當機且您無法成功執行任何作業、您可以終止執行任何操作。SnapManager SnapManager
+
+*因應措施*
+
+可搭配使用支援功能的支援功能。SnapManager SnapManager您必須執行下列步驟、列出執行中的不同程序、並停止執行中的最後一個程序。
+
+. 列出SnapDrive 所有執行中的流程：「ps」
++
+《* ps*》
+
++
+範例：
+
++
+‘* ps | rep-pse* SnapDrive ’
+
+. 停止SnapDrive 不執行此程序或程序：「*停止<pid>*」
++
+「_pid_」是您使用「ps」命令找到的處理程序清單。
+
++
+
+NOTE: 請勿停止SnapDrive 所有的流程。您可能只想結束最後執行的程序。
+
+. 如果其中一項作業涉及從二線儲存設備還原受保護的備份、請開啟Protection Manager主控台並執行下列步驟：
++
+.. 從系統功能表中選取*工作*。
+.. 選擇*還原*。
+.. 檢查資料集的名稱是否與SnapManager 該資料集的名稱相符。
+.. 按一下滑鼠右鍵並選取*取消*。
+
+
+. 列舉SnapManager 各種流程：
++
+.. 以root使用者身分登入。
+.. 使用ps命令列出處理程序。
++
+例如：「* ps | grep Java*」
+
+
+
+. 結束SnapManager 這個過程：「*停止<pid>*」
+
+
+
+
+== 無法刪除或釋放上次受保護的備份
+
+當您在二線儲存設備上建立設定檔的第一次備份時、SnapManager 將有關備份的所有資訊傳送至Protection Manager。針對與此設定檔相關的後續備份、SnapManager 僅會傳送修改後的資訊。如果您移除上次受保護的備份、SnapManager 則無法識別備份之間的差異、因此必須找出方法來重新建立這些關係的基準。因此、嘗試刪除上次受保護的備份時、會顯示錯誤訊息。
+
+*因應措施*
+
+您可以刪除設定檔或僅刪除設定檔備份。
+
+若要刪除設定檔、請執行下列步驟：
+
+. 刪除設定檔的備份。
+. 更新設定檔並停用設定檔中的保護功能。
++
+這會刪除資料集。
+
+. 刪除上次受保護的備份。
+. 刪除設定檔。
+
+
+若要僅刪除備份、請執行下列步驟：
+
+. 建立設定檔的另一個備份複本。
+. 將該備份複本傳輸至次要儲存設備。
+. 刪除先前的備份複本。
+
+
+
+
+== 如果目的地名稱是其他目的地名稱的一部分、則無法管理歸檔記錄檔目的地名稱
+
+建立歸檔記錄備份時、如果使用者排除的目的地是其他目的地名稱的一部分、則其他目的地名稱也會排除在外。
+
+例如、假設有三個目的地可供排除：「/dest」、「/dest1」、「」和「/dest2」 在建立歸檔記錄檔備份時、如果您使用命令排除了「/dest'」
+
+[listing]
+----
+smsap backup create -profile almsamp1 -data -online -archivelogs  -exclude-dest /dest
+----
+、SnapManager SAP適用的解決方法排除以/Dest開頭的所有目的地。
+
+*因應措施*
+
+* 在「v$archive _dest"中設定目的地之後、新增路徑分隔符號。例如、將「/目的地」變更為「/目的地/」。
+* 建立備份時、請加入目的地、而不要排除任何目的地。
+
+
+
+
+== 還原在自動儲存管理（ASM）和非ASM儲存設備上多工處理的控制檔失敗
+
+當ASM和非ASM儲存設備上的控制檔進行多工處理時、備份作業便會成功完成。但是、當您嘗試從成功的備份還原控制檔時、還原作業會失敗。
+
+
+
+== 無法執行實體複製作業SnapManager
+
+當您複製SnapManager 以支援功能進行的備份時、DataFabric Manager伺服器可能無法探索磁碟區、並顯示下列錯誤訊息：
+
+「MSAP-13032：無法執行作業：Clone Create。根本原因：SMSAP-1177：從Snapshot複製錯誤：流程11019：執行失敗連接步驟：SD-00018：探索/mnt/datafe_clone3的儲存錯誤：SD-10016：執行SnapDrive 下列指令時發生錯誤：「/sbin/SnapManager SnapDrive儲存設備show -FS /mnt/datafe_clone3：0002-719：無法在Oracle磁碟區上執行磁碟區500.12206.15的磁碟區儲存作業：vol.ex_vol.ex.ex.ex.15上的磁碟區/vmfor.ex_ex.ex.5_ex.exclvol.ex.5_use.sor.ex.5_ex.ex.
+
+「原因：指定的資源無效。無法在Operations Manager伺服器10.x.x.x'上找到其ID
+
+如果儲存系統有大量磁碟區、就會發生這種情況。
+
+*因應措施*
+
+您必須執行下列其中一項：
+
+* 從Data Fabric Manager伺服器執行
++
+「DFM主機探索_storage系統_*」
+
++
+您也可以在Shell指令碼檔案中新增命令、並在DataFabric Manager伺服器中排程工作、以便頻繁執行指令碼。
+
+* 在「napdrive.conf」檔案中增加「_DFM-RBAC重試次數」的值。
++
+使用預設的重新整理時間間隔值和預設的重試次數。SnapDrive預設值「_DFM-RBAC重試睡眠秒數」為15秒、而「_DFM-RBAC重試次數」為12次重複。
+
++
+
+NOTE: Operations Manager重新整理時間間隔取決於儲存系統數量、儲存系統中的儲存物件數量、以及DataFabric Manager伺服器上的負載。
+
+
+
+建議您執行下列步驟：
+
+. 從DataFabric Manager伺服器、手動為與資料集相關的所有次要儲存系統執行下列命令：
++
+「DFM主機探索_storage系統_*」
+
+. 執行主機探索作業所需的時間加倍、並將該值指派給「_DFM-RBAC重試睡眠秒」。
++
+例如、如果作業花了11秒、您可以將「_DFM-RBAC重試睡眠-秒」的值設為22（11* 2）。
+
+
+
+
+
+== 儲存庫資料庫大小隨時間而成長、而非備份數量
+
+由於無法在儲存庫資料庫表格中插入或刪除架構內的資料、導致索引空間使用率偏高、因此儲存庫資料庫的大小會隨時間增加SnapManager 。
+
+*因應措施*
+
+您必須根據Oracle準則來監控及重新建置索引、以控制儲存庫架構所耗用的空間。
+
+
+
+== 無法存取此功能、且儲存庫資料庫當機時、無法執行各項功能SnapManager SnapManager
+
+無法執行作業系統、而且儲存庫資料庫當機時、您無法存取GUI。SnapManager
+
+下表列出您可能要執行的不同動作及其例外狀況：
+
+[cols="1a,3a"]
+|===
+| 營運 | 例外情況 
+
+
+ a| 
+開啟關閉的儲存庫
+ a| 
+下列錯誤訊息記錄在「shm_g1.log：[warn ]：SMSAP-01106：查詢儲存庫時發生錯誤：Closed Connection Java.sql.SQLException：Closed Connection.'
+
+
+
+ a| 
+按下F5重新整理已開啟的儲存庫
+ a| 
+GUI中會顯示儲存庫例外狀況、並在「shm_GUI .log」檔案中記錄一個NullPointerException。
+
+
+
+ a| 
+正在重新整理主機伺服器
+ a| 
+將一個nullPointerException記錄在"shumo_g1.log"檔案中。
+
+
+
+ a| 
+建立新的設定檔
+ a| 
+「設定檔組態」視窗中會顯示一個NullPointerException。
+
+
+
+ a| 
+重新整理設定檔
+ a| 
+以下SQL異常記錄在「shm_g1.log：[warn ]：SMSAP-01106：查詢儲存庫時發生錯誤：Closed Connection.'
+
+
+
+ a| 
+存取備份
+ a| 
+下列錯誤訊息會記錄在「shm_g1.log：無法lazily初始化集合。」
+
+
+
+ a| 
+檢視實體複本內容
+ a| 
+下列錯誤訊息會記錄在「shm_g1.log」和「shumo_g1.log：無法以Lazily初始化集合。」
+
+|===
+*因應措施*
+
+當您想要存取GUI或執行SnapManager 任何的還原作業時、必須確保儲存庫資料庫正在執行中。
+
+
+
+== 無法為複製的資料庫建立暫存檔
+
+當目標資料庫的暫用表格空間檔案放置在與資料檔案掛載點不同的掛載點時、複製建立作業會成功、但SnapManager 無法為複製的資料庫建立暫存檔。
+
+*因應措施*
+
+您必須執行下列其中一項：
+
+* 請確定已配置目標資料庫、以便將暫存檔放置在與資料檔案相同的掛載點。
+* 在複製的資料庫中手動建立或新增暫存檔。
+
+
+
+
+== 無法將傳輸協定從NFSv3移轉至NFSv4
+
+您可以在「snapdrive.conf」檔案中啟用「ENEN-MIGRAIGRAVING -NFSVERSION」參數、將傳輸協定從NFSv3移轉至NFSv4。在移轉期間SnapDrive 、無論rw、largefFiles、nosuid等掛載點選項為何、均只考慮傳輸協定版本。
+
+不過、將傳輸協定移轉至NFSv4之後、當您還原使用NFSv3建立的備份時、會發生下列情況：
+
+* 如果在儲存層級啟用NFSv3和NFSv4、則還原作業會成功、但會以備份期間可用的掛載點選項來掛載。
+* 如果只在儲存層級啟用NFSv4、則還原作業會成功、而且只會保留傳輸協定版本（NFSv4）。
++
+但是，其他掛載點選項（如rw、largefiles、nosuid等）則不會保留。
+
+
+
+*因應措施*
+
+您必須手動關閉資料庫、卸載資料庫掛載點、然後在還原之前使用可用的選項掛載。
+
+
+
+== 資料保護待命資料庫備份失敗
+
+如果有任何歸檔記錄位置是以主要資料庫的服務名稱設定、則Data Guard待命資料庫的備份會失敗。
+
+*因應措施*
+
+在GUI中、您必須清除*指定與主要資料庫服務名稱相對應的外部歸檔記錄位置*。

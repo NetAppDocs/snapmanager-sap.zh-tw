@@ -1,0 +1,38 @@
+---
+permalink: unix-administration/concept-maintaining-history-of-snapmanager-operations.html 
+sidebar: sidebar 
+keywords: snapmanager, sap, enable, maintain, history, operation, single, profile, graphical, user, interface, gui, report 
+summary: 適用於SAP的支援功能可讓您維護與單一設定檔或多個設定檔相關的不穩定作業歷史記錄。SnapManager SnapManager您可以從SnapManager 指令行介面（CLI）或圖形化使用者介面（GUI）維護記錄。您可以將作業記錄檢視為報告、並將報告用於稽核法規遵循目的。 
+---
+= 維持SnapManager 不中斷營運的歷史記錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+適用於SAP的支援功能可讓您維護與單一設定檔或多個設定檔相關的不穩定作業歷史記錄。SnapManager SnapManager您可以從SnapManager 指令行介面（CLI）或圖形化使用者介面（GUI）維護記錄。您可以將作業記錄檢視為報告、並將報告用於稽核法規遵循目的。
+
+您可以維護下列SnapManager 各項功能的歷史記錄：
+
+* 建立備份
+* 備份驗證
+* 備份還原
+* 建立實體複本
+* 實體複本分割
+
+
+根據保留資料、我們會維護有關不完整作業的歷史記錄資訊SnapManager 。您可以為每SnapManager 個支援的功能表作業設定不同的保留類別。
+
+以下是您可以指派的一些保留類別：
+
+* 天數
+* 週數
+* 月數
+* 作業數量
+
+
+根據保留資料、SnapManager 將會自動清除記錄。您也可以手動清除SnapManager 關於此功能的歷史記錄。如果刪除或銷毀設定檔、則會刪除與設定檔相關的所有記錄資訊。
+
+
+NOTE: 在復原主機之後、您無法檢視歷程記錄詳細資料、也無法執行任何與設定為歷史記錄維護之設定檔相關的歷史記錄作業。

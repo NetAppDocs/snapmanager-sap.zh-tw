@@ -1,0 +1,69 @@
+---
+permalink: unix-administration/reference-the-backint-register-sld-command.html 
+sidebar: sidebar 
+keywords: sap, br, tools, backint, register-sld, command, snapmanager, backint, interface, system, landscape, directory, sld 
+summary: 如果您想要使用SAP BR*工具、可以執行支援SnapManager SAP的backint註冊sl-sld命令、在系統橫向目錄（SLD）中註冊BACKINT介面。BACKINT介面由儲存設備廠商提供、可讓儲存系統使用BR* Tools命令。SAP版的BACKINT介面檔案安裝於/opt/NetApp/smsap/bin/。SnapManager 
+---
+= backint register-sld命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您想要使用SAP BR*工具、可以執行支援SnapManager SAP的backint註冊sl-sld命令、在系統橫向目錄（SLD）中註冊BACKINT介面。BACKINT介面由儲存設備廠商提供、可讓儲存系統使用BR* Tools命令。SAP版的BACKINT介面檔案安裝於/opt/NetApp/smsap/bin/。SnapManager
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[backint register-sld-host  _host_name_-port  _port_id_-username
+_username_-password _password_-template _template_ID_]
+----
+
+
+== 參數
+
+* 「*主機_主機_主機名稱_*」
++
+指定執行SAP SLD的主機名稱。
+
+* 「*連接埠_port_id_*」
++
+指定SAP SLD接受HTTP要求的連接埠ID。ID必須為數字、且小於或等於九位數。
+
+* 「*使用者名稱_username_*」
++
+指定有效且獲授權的SAP SLD使用者名稱。
+
+* 「*密碼_password_*」
++
+指定有效且授權的SAP SLD使用者密碼。這是選用的。如果您未使用-password設定密碼、系統會提示您輸入下列格式的密碼：
+
++
+"*使用者名稱@ http://_host:port_*`
+
+
+
+如果輸入的密碼不正確、則在三次嘗試後、命令會失敗並結束。
+
+* 「*範本_範本_id_*」
++
+指定主要範本XML檔案的名稱、此檔案可做為自訂檔案的基礎。
+
+
+
+
+
+== 命令範例
+
+下列範例顯示命令已成功完成：
+
+[listing, subs="+macros"]
+----
+pass:quotes[backint register-sld -host jack12 -port 50100
+-username j2ee_admin -password user123 -template /u/template.xml
+Operation Id [N96f4142a1442b31ee4636841babbc1d7] succeeded.
+----

@@ -1,0 +1,86 @@
+---
+permalink: windows/reference-the-smosmsapbackup-delete-command.html 
+sidebar: sidebar 
+keywords: run, backup, delete, command, remove, automatic, create, clone, fail, retention, unlimited, basis, class, smsap 
+summary: 您可以執行備份刪除命令、移除未自動移除的備份、例如用於建立複製或失敗備份的備份。您可以無限刪除保留的備份、而不需變更保留類別。 
+---
+= smsap備份刪除命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「備份刪除」命令來移除未自動移除的備份、例如用來建立複製或失敗備份的備份。您可以無限刪除保留的備份、而不需變更保留類別。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap backup delete
+-profile profile_name
+[-label label [-data | -archivelogs] | [-id guid | -all]
+-force
+[-dump]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定與您要移除之備份相關的資料庫。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *（id_guid_`*）
++
+使用指定的GUID指定備份。當SnapManager 您建立備份時、會產生由支援所產生的GUID。您可以使用「msap備份清單」命令來顯示每個備份的Guid。
+
+* *標籤_label_`*
++
+指定具有指定標籤的備份。或者、將備份範圍指定為資料檔案或歸檔記錄。
+
+* *資料*
++
+指定資料檔案。
+
+* *《歸檔者》*
++
+指定歸檔記錄檔。
+
+* *（全）*
++
+指定所有備份。若要僅刪除指定的備份、請使用「-id」或「-label」選項。
+
+* *（轉儲）*
++
+在成功或失敗的備份刪除作業之後收集傾印檔。
+
+* *（力）*
++
+強制移除備份。即使釋出與備份相關的資源時發生問題、也會移除備份。SnapManager例如、如果備份是使用Oracle Recovery Manager（RMAN）編錄目錄、但RMAN資料庫不再存在、包括「-force」、即使無法與RMAN連線、也會刪除備份。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+下列範例會刪除備份：
+
+[listing]
+----
+smsap backup delete -profile SALES1 -label full_backup_sales_May
+Operation Id [8abc01ec0e79004b010e79006da60001] succeeded.
+----

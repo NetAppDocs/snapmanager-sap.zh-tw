@@ -1,0 +1,37 @@
+---
+permalink: windows/concept-limitations-for-performing-a-rollback.html 
+sidebar: sidebar 
+keywords: aware, scenario, perform, rollback, additional, task, limitation 
+summary: 您必須瞭解無法執行復原的案例。不過、在某些情況下、您可以在執行復原之前執行一些額外的工作。 
+---
+= 執行復原的限制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須瞭解無法執行復原的案例。不過、在某些情況下、您可以在執行復原之前執行一些額外的工作。
+
+您無法執行復原或必須執行其他工作的案例如下：
+
+* 如果您在執行循環升級之後執行下列其中一項作業：
++
+** 建立新的設定檔。
+** 變更備份的掛載狀態。
++
+在此案例中、您必須先將掛載狀態變更為其原始狀態、然後執行復原。
+
+** 還原備份。
+** 將驗證模式從資料庫驗證變更為作業系統（OS）驗證。
++
+在此案例中、執行復原之後、您必須手動將驗證模式從OS變更為資料庫。
+
+
+
+* 如果設定檔的主機名稱已變更
+* 如果設定檔被分隔以建立歸檔記錄備份
++
+在此案例中、您無法復原至SnapManager 版本早於版本32的版本。
+
+

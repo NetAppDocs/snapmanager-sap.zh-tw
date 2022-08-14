@@ -1,0 +1,29 @@
+---
+permalink: windows/concept-prerequisites-for-data-protection.html 
+sidebar: sidebar 
+keywords: aware, consideration, perform, data, protection 
+summary: 執行資料保護時、您必須注意某些考量事項。 
+---
+= 執行資料保護的考量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+執行資料保護時、您必須注意某些考量事項。
+
+* 若要從次要系統執行實體複製或還原作業、您必須將目的地磁碟區掛載到命名空間中、然後正確匯出。
+* 您必須將SnapDrive 值設為*關閉*、以停用「檢查-匯出-權限-nfs -複製」這個組態參數。
++
+NetApp支援網站上的《支援UNIX》文件包含有關「檢查-匯出-權限-NFS-複製參數」的其他資訊。SnapDrive
+
+* 您必須為次要儲存系統中所要求的次要儲存磁碟區設定SnapMirror關係。
+* 您必須為SnapVault 次要儲存系統中所要求的次要儲存配額樹狀結構設定支援功能、以便Data ONTAP 在7-Mode中運作。
+* 如果您使用SnapVault 的是針對叢集Data ONTAP 式的非指令碼、則必須為使用者定義的SnapMirror標籤定義原則和規則。
++
+支援叢集式的等量資料、以及DP和XDP類型的SnapMirror關係。SnapVault Data ONTAPNetApp支援網站上的支援文件包含有關設定SnapMirror和SnapMirror的資訊。ONTAP SnapVault
+
+
+
+http://mysupport.netapp.com/["NetApp支援網站上的文件"^]

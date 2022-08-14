@@ -1,0 +1,83 @@
+---
+permalink: unix-installation-7mode/task-smsap-isg-configure-the-snapmanager-repository.html 
+sidebar: sidebar 
+keywords: configure, snapmanager, repository, database, instance, store, manage, configuring 
+summary: 您必須在SnapManager 儲存庫資料庫執行個體中設定這個靜態儲存庫。儲存庫資料庫會儲存SnapManager 中繼資料、以供由功能區管理的資料庫使用。 
+---
+= 設定SnapManager 此系統資訊庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在SnapManager 儲存庫資料庫執行個體中設定這個靜態儲存庫。儲存庫資料庫會儲存SnapManager 中繼資料、以供由功能區管理的資料庫使用。
+
+*您需要的是什麼*
+
+* 您必須已建立儲存庫資料庫執行個體。
+* 您必須為儲存庫資料庫執行個體建立具有必要權限的Oracle使用者。
+* 您必須在tnssnames.ora檔案中包含儲存庫資料庫執行個體詳細資料。
+
+
+*關於此工作*
+
+您可以SnapManager 從SnapManager 使用者介面（UI）或命令列介面（CLI）來設定這個解決方法。這些步驟說明如何使用SnapManager UI建立儲存庫。您也可以視需要使用CLI。
+
+如需如何使用CLI建立儲存庫的相關資訊、請參閱SnapManager UNIX適用的_《SAP系統管理指南》。
+
+. 在SesiUI的左窗格SnapManager 中、以滑鼠右鍵按一下「*儲存庫*」。
+. 選擇* Create New Repository*（創建新儲存庫）並單擊* Next*（下一步*）
+. 在*儲存庫資料庫組態資訊*視窗中、輸入下列資訊：
++
+|===
+| 在此欄位中... | 執行此動作... 
+
+
+ a| 
+*使用者名稱*
+ a| 
+輸入您為儲存庫資料庫執行個體所建立的使用者名稱。
+
+
+
+ a| 
+*密碼*
+ a| 
+輸入密碼。
+
+
+
+ a| 
+*主機*
+ a| 
+輸入建立儲存庫資料庫執行個體的主機IP位址。
+
+
+
+ a| 
+*連接埠*
+ a| 
+輸入用於連線至儲存庫資料庫執行個體的連接埠。預設連接埠為1521。
+
+
+
+ a| 
+*服務名稱*
+ a| 
+輸入SnapManager 用來連線至儲存庫資料庫執行個體的名稱。視「tnssnames.ora」檔案中的詳細資料而定、這可能是簡短的服務名稱或完整的服務名稱。
+
+|===
+. 在「*執行儲存庫新增作業*」視窗中、檢閱組態摘要、然後按一下「*新增*」。
++
+如果作業失敗、請按一下*作業詳細資料*索引標籤、以檢視導致作業失敗的原因。錯誤詳細資料也會記錄在位於/var/log/sap的作業記錄中。
+
+. 單擊*完成*。
++
+儲存庫會列在左窗格的*儲存庫*樹狀結構下。如果看不到儲存庫、請在*儲存庫*上按一下滑鼠右鍵、然後按一下*重新整理*。
+
+
+
+*相關資訊*
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP12481453["適用於UNIX的SAP系統管理指南SnapManager"^]

@@ -1,0 +1,32 @@
+---
+permalink: windows/concept-deprecated-versions-of-oracle-database.html 
+sidebar: sidebar 
+keywords: oracle, database, 9i, support, snapmanager, 10gr2, deprecate, version 
+summary: 不支援SnapManager Oracle資料庫9i、且SnapManager 不支援Oracle資料庫10gR2（早於10.2.0.4）。 
+---
+= 已過時的Oracle資料庫版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+不支援SnapManager Oracle資料庫9i、且SnapManager 不支援Oracle資料庫10gR2（早於10.2.0.4）。
+
+如果您使用Oracle 9i或10gR2（早於10.2.0.4）資料庫、並想要升級SnapManager 至版本32或更新版本、您將無法建立新的設定檔；此時會顯示一則警告訊息。
+
+如果您使用Oracle 9i或10gR2（早於10.2.0.4）資料庫、且想要升級SnapManager 至版本32或更新版本、則必須執行下列其中一項：
+
+* 將Oracle 9i或10gR2（早於10.2.0.4）資料庫升級至Oracle 10gR2（10.2.0.5）、11gR1或11gR2資料庫、然後升級SnapManager 至S32或3.3。
++
+如果您要升級至Oracle 12_c__、則必須升級SnapManager 至32．3．1或更新版本。
+
++
+
+NOTE: Oracle資料庫12_c__僅支援SnapManager 來自於隻支援來自於
+
+* 使用SnapManager 修補程式版本的更新版本的支援功能來管理Oracle 9i資料庫。
++
+如果您想要管理Oracle 10gR2、11gR1或11gR2資料庫、可以使用SnapManager 32或3.3；SnapManager 如果您想要管理Oracle 12_c__資料庫及其他支援的資料庫、可以使用更新版本的支援版本。
+
+

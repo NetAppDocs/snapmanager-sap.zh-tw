@@ -1,0 +1,29 @@
+---
+permalink: windows/task-create-system-level-dump-files.html 
+sidebar: sidebar 
+keywords: smsap, system, dump, command, log, information, snapmanager, environment, log, operation, profile, host, system-level, create 
+summary: 您可以使用smsap系統傾印命令來取得SnapManager 有關故障主機和環境的記錄資訊。您可以指定不同的記錄層級、以收集有關特定作業、設定檔或主機與環境的資訊。 
+---
+= 建立系統層級的傾印檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「shmsap系統傾印」命令來取得SnapManager 有關這個主機和環境的記錄資訊。您可以指定不同的記錄層級、以收集有關特定作業、設定檔或主機與環境的資訊。
+
+.步驟
+. 輸入下列命令：
++
+「msap系統傾印」
+
++
+產生的傾印
+
++
+[listing]
+----
+Path:\<user-home>\Application Data\NetApp\smsap\3.3.0\smsap_dump_server_host.jar
+----
+

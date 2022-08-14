@@ -1,0 +1,30 @@
+---
+permalink: unix-administration/task-enable-role-based-access-control.html 
+sidebar: sidebar 
+keywords: snapmanager, role-based, access, control, rbac, enable, snapdrive, installation, disable, default, operation 
+summary: 使用支援以角色為基礎的存取控制（RBAC）SnapManager SnapDrive 。安裝SnapDrive 完支援功能後、系統預設會停用RBAC。啟用SnapDrive 完RBAC後SnapManager 、即可在啟用RBAC的情況下執行作業。 
+---
+= 啟用角色型存取控制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用支援以角色為基礎的存取控制（RBAC）SnapManager SnapDrive 。安裝SnapDrive 完支援功能後、系統預設會停用RBAC。啟用SnapDrive 完RBAC後SnapManager 、即可在啟用RBAC的情況下執行作業。
+
+*關於此工作*
+
+在支援RBAC的情況下SnapDrive 、使用「se-napdrive.config」檔案可設定許多選項。
+
+本文件包含有關資料的詳細資料。SnapDrive SnapDrive
+
+.步驟
+. 在編輯器中開啟「snapdrive.conf」檔案。
+. 將「RBAC方法」參數的值從「*原生*」變更為「* DFM *」、即可啟用RBAC。
++
+此參數的預設值為「*原生*」、會停用RBAC。
+
+
+
+http://mysupport.netapp.com/["NetApp支援網站上的文件"^]

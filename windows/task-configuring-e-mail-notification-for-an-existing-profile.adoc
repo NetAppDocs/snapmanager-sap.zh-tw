@@ -1,0 +1,35 @@
+---
+permalink: windows/task-configuring-e-mail-notification-for-an-existing-profile.html 
+sidebar: sidebar 
+keywords: updating, update, profile, configure, receive, email, notification, completion, database, operation, configuring, exist 
+summary: 當您更新設定檔時、可以設定在資料庫作業完成時接收電子郵件通知。 
+---
+= 設定現有設定檔的電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您更新設定檔時、可以設定在資料庫作業完成時接收電子郵件通知。
+
+* 您必須設定傳送警示的電子郵件地址。
+* 您必須輸入要傳送警示的單一電子郵件地址或多個電子郵件地址。
++
+您可以針對多個位址使用以逗號分隔的清單。您必須確保在逗號和下一個電子郵件地址之間沒有空格。您也可以選擇新增主旨至電子郵件。
+
++
+
+NOTE: 您必須確保在雙引號內輸入多個電子郵件地址集。
+
+
+
+.步驟
+. 輸入下列命令：
++
+smsap profile update -profileprofile [-profile-passwordbprofile_password][-database-dbnamedb_dbname-host db_host [-iddb_sid][-login-namedb_username-password_db_port][{-rMAN {-file-profile|{-login-usernam_dure_dure-failen_deepeep-teep_eden_pass_noteepyeed][-fam_deepar_pass-name_pass_pass_pass-name_passeeparm/un][-name_edunsteparm/un][-name_noteepar_ed][-ed][-name_deeparm/ecountenam_deeparm/noteeparamed][-pass_noteeparm/noteepar_un][-pass_pass_pass_pass_pass_un][-ed][-timeparamed][-timeparam_deeparamed][-pass_pass_pass_
+
++
+您可以使用「成功」選項來接收通知、只有在資料庫作業成功時才會收到通知、而失敗選項則只會收到失敗資料庫作業的通知。
+
+

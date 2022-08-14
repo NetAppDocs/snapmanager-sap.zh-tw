@@ -1,0 +1,17 @@
+---
+permalink: windows/task-adding-existing-profile-to-summary-notification.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, add, exist, profile, summary, email, notification, updating, update 
+summary: 利用此功能、您可以在更新設定檔的同時、將現有的設定檔新增至摘要電子郵件通知。SnapManager 
+---
+= 新增現有設定檔至摘要電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以在更新設定檔的同時、將現有的設定檔新增至摘要電子郵件通知。SnapManager
+
+. 輸入下列命令：「msap profile update -profileprofileprofile_name [-countprofiledprofile_password]-reposite-dbnamerepo_service_name-hovernpo_host-portrepo_log-usernamerepo_username-database-dbnamedb_db_name-hostdbdb_host [-siddb_siddb_sidstep][-decourly notesktreamed][-tream_depnstepnstampuser-noteed][-decastrok_noteed][-decour-tream_depnstepamed][-tream_depnstepamed][-tream_depam_decastrostampuser-noticktun][-pour-pour][-tream_noteed][-tream_depnstampuser-noteed][-tream_depnoteed][-tream_depnstampuser-noteed][-tream_depnoteepnstampusernamed][
+

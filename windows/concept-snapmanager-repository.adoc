@@ -1,0 +1,19 @@
+---
+permalink: windows/concept-snapmanager-repository.html 
+sidebar: sidebar 
+keywords: repository, store, information, snapmanager, operation, time, backup, tablespace, data, data, file, storage, system, clone, snapshot, copies, copy, create 
+summary: 儲存庫會儲存與SnapManager 不同的還原作業相關的資訊、例如備份時間、表格空間和備份資料檔案、使用的儲存系統、建立的複本、以及建立的Snapshot複本。 
+---
+= 系統儲存庫SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儲存庫會儲存與SnapManager 不同的還原作業相關的資訊、例如備份時間、表格空間和備份資料檔案、使用的儲存系統、建立的複本、以及建立的Snapshot複本。
+
+儲存庫資料庫不能存在於同一個資料庫中、也不能是SnapManager 正在備份的同一個資料庫的一部分。這是因為儲存庫會儲存備份作業期間所建立之資料庫Snapshot複本的名稱。儲存庫必須建立在與要備份之資料庫不同的資料庫中。這表示您必須至少有兩個資料庫：SnapManager 由SnapManager 支援中心管理的還原庫資料庫和目標資料庫。當您執行SnapManager 支援服務時、兩個資料庫都必須正常運作。
+
+
+NOTE: 儲存庫資料庫當機時、您不得SnapManager 使用GUI或CLI執行任何功能。

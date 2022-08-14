@@ -1,0 +1,72 @@
+---
+permalink: windows/concept-dump-files.html 
+sidebar: sidebar 
+keywords: dump, file, compress, log, contain, information, snapmanager, environment, operation, profile, system 
+summary: 傾印檔案是壓縮的記錄檔、其中包含SnapManager 有關還原及其環境的資訊。建立的記錄檔類型有作業、設定檔和系統傾印檔。 
+---
+= 傾印檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+傾印檔案是壓縮的記錄檔、其中包含SnapManager 有關還原及其環境的資訊。建立的記錄檔類型有作業、設定檔和系統傾印檔。
+
+您可以使用dump命令或圖形使用者介面（GUI）中的* Create診斷*索引標籤、來收集有關作業、設定檔或環境的資訊。系統傾印不需要設定檔、但是設定檔和作業傾印需要設定檔。
+
+下列診斷資訊包含在傾印檔案中：SnapManager
+
+* 執行的步驟
+* 每個步驟完成的時間長度
+* 每個步驟的結果
+* 作業期間發生的錯誤（如果有）
+
+
+
+NOTE: 僅root使用者和其他屬於root使用者群組的使用者、才能使用包含記錄檔或傾印檔的讀取和寫入權限。SnapManager
+
+在檔案中也包含下列資訊：SnapManager
+
+* 作業系統版本與架構
+* 環境變數
+* Java版本
+* 版本與架構SnapManager
+* 自選設定SnapManager
+* 資訊SnapManager
+* Log4j屬性
+* 版本與架構SnapDrive
+* 資訊記錄檔SnapDrive
+* Oracle版本
+* Oracle OPatch本機庫存詳細資料
+* 儲存庫資料庫Oracle版本
+* 目標資料庫類型（獨立）
+* 目標資料庫角色（主要、實體待命或邏輯待命）
+* 目標資料庫Oracle Recovery Manager（RMAN）設定（無RMAN整合、含控制檔的RMAN、或含目錄檔案的RMAN）
+* 目標資料庫Oracle版本
+* 目標資料庫的系統識別碼（SID）
+* 儲存庫資料庫服務名稱
+* 安裝在主機上的資料庫執行個體
+* 設定檔描述元
+* 共享記憶體最大值
+* 交換空間資訊
+* 記憶體資訊
+* 多重路徑環境
+* 主機公用程式版本
+* 適用於Windows的Microsoft Internet Small電腦系統介面（iSCSI）軟體啟動器版本
+* BACKINT介面版本
+* br工具版本
+* 修補程式層級
+* 輸出「系統驗證」命令
+
+
+傾印檔案也會列出SnapManager Windows上的功能限制。
+
+包含資料收集器檔案和Oracle警示記錄檔的資訊、SnapManager SnapDrive您可以使用「msap operation dump」和「shmsap profile dump」命令來收集Oracle警示記錄檔。
+
+
+NOTE: 系統傾印不包含Oracle警示記錄、但是設定檔和作業傾印包含警示記錄。
+
+即使未執行任何功能、您仍可使用命令列介面（CLI）或GUI來存取傾印資訊。SnapManager
+
+如果遇到無法解決的問題、您可以將這些檔案傳送至NetApp全球服務。

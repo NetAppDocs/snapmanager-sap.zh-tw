@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task-view-a-list-of-scheduled-operations.html 
+sidebar: sidebar 
+keywords: view, list, schedule, operation, profile 
+summary: 您可以檢視設定檔的排程作業清單。 
+---
+= 檢視排程作業清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視設定檔的排程作業清單。
+
+.步驟
+. 若要顯示排程作業的相關資訊、請輸入下列命令：
++
+hy*smsap排程清單-profile _profile_name_[-quiet |-verbose]*
+
+

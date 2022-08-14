@@ -1,0 +1,166 @@
+---
+permalink: windows/reference-the-smosmsapclone-create-command.html 
+sidebar: sidebar 
+keywords: run, clone, create, command, backed-up, back, up, database, backup, primary, secondary, storage, smsap 
+summary: 您可以執行Clone create命令、建立備份資料庫的複本。您可以從一線或二線儲存設備複製備份。 
+---
+= smsap clone create命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「Clone create」命令、建立備份資料庫的複本。您可以從一線或二線儲存設備複製備份。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap clone create
+-profile profile_name
+[-backup-id backup_guid | -backup-label backup_label_name | -current]
+-newsid new_sid
+[-host target_host]
+[-label clone_label]
+[-comment string]
+-clonespec full_path_to_clonespec_file
+]
+[-syspassword syspassword]
+[-reserve {yes | no | inherit}]
+
+[-no-resetlogs | -recover-from-location path1 [, path2]][-taskspec taskspec]
+[-dump]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。-profile _name_`*
++
+指定要複製的資料庫。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *（即備份ID _guid_`*）
++
+使用指定的GUID複製備份。當SnapManager 您建立備份時、會產生由支援所產生的GUID。您可以使用「msap備份清單-詳細」命令來顯示每個備份的Guid。
+
+* *備份標籤_backup_label_name_`*
++
+指定使用指定的標籤名稱來複製備份。
+
+* *目前*
++
+指定從資料庫的目前狀態建立備份與複製。
+
++
+
+NOTE: 如果資料庫處於「nocarchivelog」模式、SnapManager 則會建立離線備份。
+
+* *（newsid _new_sid_`*）
++
+為複製的資料庫指定新的唯一Oracle系統識別碼。系統識別碼值最多八個字元。Oracle不允許在同一主機上同時執行兩個具有相同系統識別碼的資料庫。
+
+* *主機_目標主機_主機_
++
+指定應在其上建立實體複本的主機。
+
+* *標籤_clone_label_`*
++
+指定實體複本的標籤。
+
+* *（註釋_stron_`*）
++
+指定可選的註釋來描述此克隆。您必須將字串括在單引號內。
+
++
+
+NOTE: 有些Shell會刪除引號。如果您的Shell確實如此、則必須使用反斜槓（\）來轉義報價。例如、您可能需要輸入：*、這是註解\「*」
+
+* *（即clonespec _Full_path_to_clonespec_file_`*）
++
+指定複製規格XML檔案的路徑。這可以是相對路徑名稱或絕對路徑名稱。
+
+* *（即syspassWord _syspassword_`*）
++
+指定sys授權使用者的密碼。
+
++
+
+NOTE: 如果系統權限使用者所提供的資料庫認證資料不同、您必須提供系統權限使用者的密碼。
+
+* *（保留）*
++
+將「-Reserve」選項設為「yes」、可確保新複製磁碟區的磁碟區保證空間保留功能已開啟。將「-Reserve」選項設為「no」、可確保新複製磁碟區的磁碟區保證空間保留功能已關閉。將「-Reserve」選項設定為繼承、可確保新的實體複本繼承父Snapshot複本的空間保留特性。預設設定為「否」
+
++
+下表說明複製方法及其對複製建立作業及其「保留」選項的影響。LUN可以使用任一方法複製。
+
++
+|===
+
+
+| 複製方法 | 說明 | 結果 
+
+
+ a| 
+LUN複製
+ a| 
+在同一個磁碟區內建立新的實體複製LUN。
+ a| 
+當LUN的-Reserve選項設為yes時、磁碟區內的空間會保留為完整LUN大小。
+
+
+
+ a| 
+Volume複製
+ a| 
+此時會建立新的FlexClone、且複製LUN存在於新的複製磁碟區中。使用FlexClone技術。
+ a| 
+當Volume的-Reserve選項設為yes時、空間會保留給集合體內的完整Volume大小。
+
+|===
+* *（無重新設置日誌）*
++
+指定在建立複本時跳過還原資料庫、執行DBNEWID公用程式、而不使用重新設定記錄開啟資料庫。
+
+* *（從位置恢復）*
++
+指定歸檔記錄備份的外部歸檔記錄檔位置SnapManager 、其中的資訊為從外部位置取得歸檔記錄檔、並使用它們進行複製。
+
+* *（taskspec*）
++
+指定工作規格XML檔案、用於複製作業的預先處理活動或後處理活動。您必須提供工作規格XML檔案的完整路徑。
+
+* *（轉儲）*
++
+指定在複製建立作業之後收集傾印檔案。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設設定為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+下列範例使用針對此複本所建立的複本規格來複製備份：
+
+[listing]
+----
+smsap clone create -profile SALES1 -backup-label full_backup_sales_May -newsid
+CLONE -label sales1_clone -clonespec E:\\spec\\clonespec.xml
+----
+[listing]
+----
+Operation Id [8abc01ec0e794e3f010e794e6e9b0001] succeeded.
+----

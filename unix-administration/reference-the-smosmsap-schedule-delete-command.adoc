@@ -1,0 +1,37 @@
+---
+permalink: unix-administration/reference-the-smosmsap-schedule-delete-command.html 
+sidebar: sidebar 
+keywords: command, delete, backup, schedule, smsap 
+summary: 當不再需要備份排程時、此命令會刪除該排程。 
+---
+= smsap排程刪除命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當不再需要備份排程時、此命令會刪除該排程。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap schedule delete -profile _profile_name_
+-schedule-name _schedule_name_[-quiet | -verbose]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile_name_*」
++
+指定與您要刪除備份排程之資料庫相關的設定檔名稱。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* 「*排程名稱_排程名稱_*」
++
+指定建立備份排程時所提供的排程名稱。
+
+

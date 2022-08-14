@@ -1,0 +1,64 @@
+---
+permalink: unix-administration/concept-error-handling-in-custom-scripts.html 
+sidebar: sidebar 
+keywords: snapmanager, process, custom, script, specific, return, code, value, execution, error, handling, handle 
+summary: 根據特定的傳回代碼來處理自訂指令碼。SnapManager例如、如果您的自訂指令碼傳回0、1、2或3的值、SnapManager 則會繼續執行複製程序。傳回程式碼也會影響SnapManager 到指令碼執行的功能、並傳回指令碼執行的標準輸出。 
+---
+= 自訂指令碼中的錯誤處理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+根據特定的傳回代碼來處理自訂指令碼。SnapManager例如、如果您的自訂指令碼傳回0、1、2或3的值、SnapManager 則會繼續執行複製程序。傳回程式碼也會影響SnapManager 到指令碼執行的功能、並傳回指令碼執行的標準輸出。
+
+[cols="1a,3a,2a"]
+|===
+| 退貨代碼 | 說明 | 繼續處理作業 
+
+
+ a| 
+0
+ a| 
+指令碼已成功完成。
+ a| 
+是的
+
+
+
+ a| 
+1.
+ a| 
+指令碼已成功完成、並顯示資訊訊息。
+ a| 
+是的
+
+
+
+ a| 
+2.
+ a| 
+指令碼已完成、但包含警告
+ a| 
+是的
+
+
+
+ a| 
+3.
+ a| 
+指令碼失敗、但作業仍在繼續。
+ a| 
+是的
+
+
+
+ a| 
+4或>4
+ a| 
+指令碼失敗、作業停止。
+ a| 
+否
+
+|===

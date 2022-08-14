@@ -1,0 +1,60 @@
+---
+permalink: unix-administration/reference-the-smosmsap-profile-destroy-command.html 
+sidebar: sidebar 
+keywords: command, delete, split, clone, database, profile, snapmanager, process, smsap, destroy 
+summary: 此命令會刪除分割複本（資料庫）、以及SnapManager 在複製分割程序期間由效益分析所產生的設定檔。 
+---
+= smsap設定檔銷毀命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會刪除分割複本（資料庫）、以及SnapManager 在複製分割程序期間由效益分析所產生的設定檔。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap profile destroy
+-profile _profile_
+[-host _hostname_\]
+[-quiet | -verbose\]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile _*」
++
+指定SnapManager 在成功完成複製切割程序後、由實體產生的設定檔。
+
+* 「*主機名稱_*」
++
+指定分割實體複本所在的主機名稱。
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 命令範例
+
+下列範例會刪除名為SALES1的設定檔。
+
+[listing]
+----
+smsap profile destroy -profile SALES1
+----
+'''

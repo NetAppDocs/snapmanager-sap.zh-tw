@@ -1,0 +1,211 @@
+---
+permalink: windows/reference-the-smosmsapprofile-create-command.html 
+sidebar: sidebar 
+keywords: run, profile, create, command, database, repository, smsap 
+summary: 您可以執行設定檔create命令、在儲存庫中建立資料庫的設定檔。您必須先掛載資料庫、才能執行此命令。 
+---
+= smsap profile create命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「profile create」命令、在儲存庫中建立資料庫的設定檔。您必須先掛載資料庫、才能執行此命令。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap profile create
+-profile profile
+[-profile-password profile_password]
+-repository
+-dbname repo_service_name
+-host repo_host
+-port repo_port
+-login -username repo_username
+-database
+-dbname db_dbname
+-host db_host
+[-sid  db_sid]
+[-login
+[-username db_username -password db_password -port db_port]
+]
+[-rman {-controlfile | {-login
+-username  rman_username -password  rman_password}
+-tnsname  rman_tnsname}}]
+
+
+[-retain
+[-hourly [-count n] [-duration m]]
+[-daily [-count n] [-duration m]]
+[-weekly [-count n] [-duration m]]
+[-monthly [-count n] [-duration m]]]]
+-comment comment
+-snapname-pattern pattern
+[]
+[-summary-notification]
+[-notification
+[-success
+-email email_address1,email_address2
+-subject subject_pattern]
+[-failure
+-email email_address1,email_address2
+-subject subject_pattern]
+[-separate-archivelog-backups
+-retain-archivelog-backups
+-hours hours |
+-days days |
+-weeks weeks |
+-months months
+[]
+[-include-with-online-backups | -no-include-with-online-backups]]
+[-dump]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *？設定檔_profile _？*
++
+指定設定檔的名稱。此名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* *？？設定檔密碼_profile_password_`*
++
+指定設定檔的密碼。
+
+* *（系統儲存庫）*
++
+儲存庫之後的選項會指定儲存設定檔的資料庫詳細資料。
+
+* *（即dbname _repo_service_name_`*）
++
+指定儲存設定檔的資料庫名稱。使用全域名稱或SID。
+
+* *主機_repo_host_`*
++
+指定執行儲存庫資料庫的主機電腦名稱或IP位址。
+
+* *？？SID_db_SID_`*
++
+指定設定檔所描述之資料庫的系統識別碼。根據預設SnapManager 、系統識別碼會使用資料庫名稱。如果系統識別碼與資料庫名稱不同、您必須使用「-SID」選項來指定。
+
+* *（登入）*
++
+指定儲存庫登入詳細資料。
+
+* *（用戶名_repo_username_`*）
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* *（連接埠_repo_port_`*）
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* *（資料庫）*
++
+指定設定檔所描述之資料庫的詳細資料。這是要備份、還原或複製的資料庫。
+
+* *（即dbname _db_dbname_`*）
++
+指定設定檔所描述的資料庫名稱。您可以使用全域名稱或系統識別碼。
+
+* *主機_db_host db_host_`*
++
+指定執行資料庫的主機電腦名稱或IP位址。
+
+* *（登入）*
++
+指定資料庫登入詳細資料。
+
+* *（用戶名_db_username_`*）
++
+指定存取設定檔所描述之資料庫所需的使用者名稱。
+
+* *密碼_db_password_`*
++
+指定存取設定檔所描述之資料庫所需的密碼。
+
+* *（連接埠_db_port_`*）
++
+指定用於存取設定檔所描述之資料庫的TCP連接埠號碼。
+
+* *（時數）-Retain（時數）[-countn][-duration m]（時數m）][-每日[-countn]（時長m）][-週數n][-duration m]）][-月數n][-duration m]（時長m）]）*
++
+指定備份的保留原則、其中保留數與保留類別的保留期間（每小時、每日、每週、每月）均為一或兩個。
+
++
+對於每個保留類別、可以指定保留計數或保留期間的一項或兩項。持續時間以課程單位為單位（例如小時、日）。例如、如果使用者僅指定每日備份的保留時間為7、SnapManager 則不會限制設定檔的每日備份次數（因為保留次數為0）、SnapManager 但無法自動刪除7天前建立的每日備份。
+
+* *意見_comment _`*
++
+指定描述設定檔網域的設定檔註解。
+
+* *快照名稱模式_Pattern_`*
++
+指定Snapshot複本的命名模式。您也可以在所有Snapshot複本名稱中加入自訂文字、例如用於高可用度作業的HAOPS。您可以在建立設定檔或建立設定檔之後、變更Snapshot複本命名模式。更新的模式僅適用於尚未建立的Snapshot複本。現有的Snapshot複本會保留先前的Snapname模式。您可以在模式文字中使用多個變數。
+
+* *（即摘要通知）*
++
+指定新設定檔已啟用摘要電子郵件通知。
+
+* *（通知）-成功電子郵件_email_address1、電子郵件地址2_-主題_Subject _Pattern_（主旨_模式_）*
++
+指定啟用新設定檔的電子郵件通知、以便在SnapManager 更新作業成功時、收件者能收到電子郵件。您必須輸入要傳送電子郵件警示的單一電子郵件地址或多個電子郵件地址、以及新設定檔的電子郵件主旨模式。
+
++
+您也可以加入新設定檔的自訂主旨文字。您可以在建立設定檔或建立設定檔之後變更主旨文字。更新的主旨僅適用於未傳送的電子郵件。您可以針對電子郵件主旨使用多個變數。
+
+* *（通知）-故障-電子郵件_email_address1、電子郵件地址2_-主題_Subject _Pattern_（主旨_模式_）*
++
+指定啟用新設定檔的電子郵件通知功能、以便接收者在SnapManager 該操作失敗時接收電子郵件。您必須輸入要傳送電子郵件警示的單一電子郵件地址或多個電子郵件地址、以及新設定檔的電子郵件主旨模式。
+
++
+您也可以加入新設定檔的自訂主旨文字。您可以在建立設定檔或建立設定檔之後變更主旨文字。更新的主旨僅適用於未傳送的電子郵件。您可以針對電子郵件主旨使用多個變數。
+
+* *（分離式歸檔儲存設備備份）*
++
+指定歸檔記錄備份與資料檔案備份分開。這是可在建立設定檔時提供的選用參數。使用此選項分隔備份之後、您可以進行純資料檔案備份或僅歸檔記錄備份。
+
+* *（he-stave-archivelog-ape清-時數_小時_|-天_天_|-週_週_天_|-月_月_月_日*）
++
+指定根據歸檔記錄保留期間（每小時、每日、每週、每月）來保留歸檔記錄備份。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+* *（包括線上備份）*
++
+指定在線上資料庫備份時隨附歸檔記錄備份。
+
+* *「不含線上備份」*
++
+指定不會隨線上資料庫備份一起提供歸檔記錄備份。
+
+* *（轉儲）*
++
+指定在成功建立設定檔之後收集傾印檔。
+
+
+
+
+
+== 範例
+
+下列範例顯示建立設定檔時、請遵循每小時保留原則和電子郵件通知：
+
+[listing]
+----
+smsap profile create -profile test_rbac -profile-password netapp -repository -dbname SMSAPREP -host hostname.org.com -port 1521 -login -username smsaprep -database -dbname RACB -host saal -sid racb1 -login -username sys -password netapp -port 1521 -rman -controlfile -retain -hourly -count 30 -verbose
+Operation Id [8abc01ec0e78ebda010e78ebe6a40005] succeeded.
+----

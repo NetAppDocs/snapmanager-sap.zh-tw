@@ -1,0 +1,158 @@
+---
+permalink: windows/task-creating-backup-schedules.html 
+sidebar: sidebar 
+keywords: schedule, backup, time, frequency, suit, data, environment, creating, create 
+summary: 您可以排定備份的時間和頻率、以適合您的資料和環境。 
+---
+= 建立備份排程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以排定備份的時間和頻率、以適合您的資料和環境。
+
+從適用於SAP的32個3.2、SnapManager 您可以分別排程歸檔記錄檔的備份。不過、您必須使用所建立的設定檔來分隔歸檔記錄檔。
+
+如果您已排程同時備份資料檔案和歸檔記錄檔、SnapManager 則會先建立資料檔案備份。
+
+如果您選取排程時間間隔為僅限時間、則所有剪除選項都可用。如果您選取的排程時間間隔不是-onetimeonly、則不支援修剪選項-直到SCN和-直到 日期、並顯示下列錯誤訊息：您已指定的保存記錄剪除選項-直到SCN或-直到-日期為每小時的排程時間間隔無效。指定排程時間間隔的-onetimeonly選項、或是使用任一選項來剪除歸檔記錄、或是在｛-Months |-tays |-wites|-hours｝之前剪下。
+
+在Microsoft Windows Server容錯移轉叢集（WSFC）和Microsoft叢集伺SnapManager 服器（MSCS）環境中發生容錯移轉時、您必須重新啟動SAP伺服器的功能、以便將服務（虛擬）位址對應至作用中主機、SnapManager 並將功能表調整為作用SnapManager 中的功能。
+
+
+NOTE: 如果另一個儲存庫中存在相同的設定檔和排程名稱、則不會在該儲存庫中啟動備份排程作業。作業將會結束、並顯示下列訊息：「operation is already running（作業已在執行中）」。
+
+. 輸入下列命令： 「msap排程create -profile profile_name｛-full｛-online |-offline |-auto｝[-sthourly |-ditly |-fleyly |-muthonly |-minutional][-vallyour]|[-data [-filesfiles/files/files/]|[-testabl空間 記錄表空間[-tap空間]｛-online |-offline |-offline |-comment-pathleyour-station][每月備份每小時不限路徑1、[每週[每小時不限備份][每小時][每小時][每小時][、][、]、共數][、共數][每小時不限備份、共數][、共1、共數][、共不限 |-untilscnuntilscn |-the-dateyyyy-mm-dd hh：mm:ss|-therly｛-月|週|-天|-小時｝-prune-destprune_dest1、prune_dest2）-schedule-namestschedule-verbose tasktaskschedule_comment_comment]-{-timourtask-time-y-pourtask-ty-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py-py_dr [-spec-spec-spec-spec-spec_start-spec_start-timestry-py-py
++
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+*排程線上或離線資料庫的備份*
+ a| 
+指定-offline或-online來排程離線或線上資料庫的備份。如果您指定這些項目、就無法使用-auto.
+
+
+
+ a| 
+* SnapManager 讓它處理資料庫的排程、無論資料庫是在線上或離線*
+ a| 
+指定-auto.如果您指定-auto,就無法使用--offline或-online。
+
+
+
+ a| 
+*排定資料檔案的備份*
+ a| 
+指定-data -filFiles以列出以逗號分隔的檔案。例如、使用檔案名稱F1、F2、f3。
+
+
+
+ a| 
+*排程特定表格空間的部分備份*
+ a| 
+指定-tabl空間 以列出以逗號分隔的表格空間。例如、使用TS1、TS2、TS3。
+
+
+
+ a| 
+*排程歸檔記錄檔的備份*
+ a| 
+指定下列項目：
+
+** -archivelogs來排程歸檔記錄檔的備份
+** -備份目的地、以排程要納入備份的歸檔記錄檔目的地
+** -exclude-dest可排程要從備份中排除的歸檔記錄目的地
+
+
+
+
+ a| 
+*指定保留類別值*
+ a| 
+指定-retate、並指出是否應根據下列其中一個保留類別來保留備份：
+
+** -每小時
+** 每日
+** 每週
+** 每月
+** -無限SnapManager 次使用、預設為每小時。
+
+
+
+
+ a| 
+*排程保存記錄檔的剪除*
+ a| 
+指定下列項目：*-prunelogs以在排程備份時剪除歸檔記錄檔。*-prune-dest以指定要剪除歸檔記錄檔檔案的歸檔記錄目的地
+
+
+
+ a| 
+*加入排程名稱*
+ a| 
+指定-schedule-name。
+
+
+
+ a| 
+*排程在特定時間間隔內備份資料庫*
+ a| 
+指定時間間隔選項、然後從下列選項中選取建立備份的時間間隔：
+
+** -每小時
+** 每日
+** 每週
+** 每月
+** 僅限一次
+
+
+
+
+ a| 
+*設定排程*
+ a| 
+指定-cronstrand並包含下列七個子運算式來描述個別選項：
+
+** 1指秒。
+** 2指分鐘。
+** 3指小時。
+** 4指一個月內的一天。
+** 5指的是月份。
+** 6指一週中的一天。
+** （選用）7指的是年份。*注意：*如果您在-cronstrand -start-tTime中排定不同時間的備份、則備份排程會被-start-tTime覆寫並觸發。
+
+
+
+
+ a| 
+*新增備份排程的相關註解*
+ a| 
+指定-schedule-comment、後面接著說明字串。
+
+
+
+ a| 
+*指定排程作業的開始時間*
+ a| 
+以yyyy-mm-dd hh：mm格式指定-start-tTime。
+
+
+
+ a| 
+*排程備份時、變更排程備份作業的使用者*
+ a| 
+指定-runasuser.此作業以建立排程的使用者（root使用者或Oracle使用者）身分執行。不過、如果您同時擁有資料庫設定檔和主機的有效認證資料、則可以使用自己的使用者ID。
+
+
+
+ a| 
+*使用工作前及工作後規格XML檔案*、啟用備份排程作業的工作前或工作後活動
+ a| 
+指定-taskspec選項、並提供工作規格XML檔案的絕對路徑、以便在備份排程作業之前或之後執行預先處理或後處理活動。
+
+|===
+

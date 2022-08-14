@@ -1,0 +1,78 @@
+---
+permalink: windows/concept-considerations-for-cloning-a-database-to-an-alternate-host.html 
+sidebar: sidebar 
+keywords: clone, host, database, reside, requirement, consideration, clone, alternate 
+summary: 在複製到資料庫所在主機以外的主機之前、必須滿足某些需求。 
+---
+= 將資料庫複製到替代主機的考量事項
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在複製到資料庫所在主機以外的主機之前、必須滿足某些需求。
+
+下表顯示來源和目標主機設定需求：
+
+|===
+| 必要設定 | 需求 
+
+
+ a| 
+架構
+ a| 
+來源主機和目標主機必須相同
+
+
+
+ a| 
+作業系統與版本
+ a| 
+來源主機和目標主機必須相同
+
+
+
+ a| 
+SAP適用的SnapManager
+ a| 
+必須在來源主機和目標主機上安裝並執行
+
+
+
+ a| 
+認證資料
+ a| 
+必須設定使用者才能存取目標主機
+
+
+
+ a| 
+Oracle
+ a| 
+來源主機和目標主機都必須安裝相同的軟體版本。
+
+Oracle接聽程式必須在目標主機上執行。
+
+
+
+ a| 
+相容的儲存堆疊
+ a| 
+來源主機和目標主機必須相同
+
+
+
+ a| 
+用於存取資料檔案的傳輸協定
+ a| 
+來源主機和目標主機必須相同
+
+
+
+ a| 
+網域
+ a| 
+遠端主機和資料庫所在主機必須位於網域中、而非工作群組中
+
+|===

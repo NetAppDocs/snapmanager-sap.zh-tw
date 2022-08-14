@@ -1,0 +1,45 @@
+---
+permalink: windows/concept-supported-host-hardware.html 
+sidebar: sidebar 
+keywords: memory, disk, space, cpu, requirement, support, host, hardware 
+summary: 請考量記憶體、磁碟空間和CPU需求。 
+---
+= 支援的主機硬體
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+請考量記憶體、磁碟空間和CPU需求。
+
+需要下列組態才能使用：SnapManager
+
+|===
+| 硬體功能 | 硬體需求 
+
+
+ a| 
+記憶體
+ a| 
+這個支援服務器需要128 MB的記憶體。SnapManager
+
+圖形使用者介面至少需要512 MB RAM才能執行。
+
+每個SnapManager 由伺服器執行的作業、在執行時都需要48 MB的額外記憶體。
+
+
+
+ a| 
+磁碟空間
+ a| 
+圖形使用者應用程式的可用磁碟空間為128 MB（最小）。
+
+
+
+ a| 
+CPU速度
+ a| 
+1.0 GHz處理器速度（最低）。
+
+|===

@@ -1,0 +1,37 @@
+---
+permalink: windows/task-creating-oracle-users-for-the-repository-database.html 
+sidebar: sidebar 
+keywords: create, oracle, user, repository, database, assign, privilege, operation, creating 
+summary: 您可以為儲存庫資料庫建立Oracle使用者、並指派特定權限、以便在儲存庫資料庫上執行不同的作業。 
+---
+= 為儲存庫資料庫建立Oracle使用者
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以為儲存庫資料庫建立Oracle使用者、並指派特定權限、以便在儲存庫資料庫上執行不同的作業。
+
+您必須將連線和資源權限指派給Oracle使用者。您不需要使用Sysdba權限建立儲存庫資料庫的使用者。
+
+
+NOTE: 不過、您必須為目標資料庫建立具有Sysdba角色的Oracle使用者。
+
+. 登入SQL * Plus。
++
+在命令提示字元中、輸入下列命令：「qlplus '/ as Sysdba'」
+
++
+[listing]
+----
+SQL*Plus: Release 11.2.0.1.0 Production on Wed Jun 1 06:01:26 2011
+Copyright (c) 1982, 2009, Oracle.  All rights reserved.
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - Production
+With the Partitioning, Automatic Storage Management, OLAP, Data Mining
+and Real Application Testing options
+----
+. 若要使用系統管理員密碼為儲存庫建立使用者（例如repo1_user）、例如adminpw1、請在SQL提示字元中輸入下列命令：「SQL」>「create user repo1_user（建立由adminpw1識別的使用者）」
+. 若要將連線和資源權限授予使用者、請輸入下列命令：「授予連線、資源以供repo1_user;」
+

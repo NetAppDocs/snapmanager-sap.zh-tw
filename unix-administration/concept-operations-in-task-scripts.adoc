@@ -1,0 +1,72 @@
+---
+permalink: unix-administration/concept-operations-in-task-scripts.html 
+sidebar: sidebar 
+keywords: pretask, post-task, script, create, follow, standard, snapmanager, sap, plug-in, structure, operation, task 
+summary: 您所建立的工作前或工作後指令碼、必須遵循SnapManager SAP外掛程式的標準功能。 
+---
+= 工作指令碼中的作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您所建立的工作前或工作後指令碼、必須遵循SnapManager SAP外掛程式的標準功能。
+
+工作前指令碼和工作後指令碼必須包含下列作業：
+
+* 檢查
+* 說明
+* 執行
+
+
+如果在pretask或task-task指令碼中未指定其中任何一個作業、則指令碼會變成無效。
+
+當您針對pretask或task-task指令碼執行「msap plugin Check」命令時、指令碼傳回的狀態會顯示錯誤（因為傳回的狀態值不是零）。
+
+[cols="1a,4a"]
+|===
+| 營運 | 說明 
+
+
+ a| 
+檢查
+ a| 
+該伺服SnapManager 器會執行「plugin.sh -check」命令、以確保系統對外掛程式指令碼具有執行權限。您也可以在遠端系統上包含檔案權限檢查。
+
+
+
+ a| 
+說明
+ a| 
+該伺服SnapManager 器執行「plugin.sh -filele'」命令、以取得指令碼的相關資訊、並符合規格檔案所提供的元素。您的外掛程式指令碼必須包含下列說明資訊：
+
+* 「M_PI_NAME」：指令碼名稱。您必須提供此參數的值。
+* 「M_PI_description」：描述指令碼的用途。您必須提供此參數的值。
+* 「M_PI_context...」：指令碼應執行的內容、例如root或orasid。您必須提供此參數的值。
+* 「M_PI_timeout」：SnapManager 指令碼完成處理並終止執行的最長時間（以毫秒為單位）。您必須提供此參數的值。
+* 「M_PI_參 數字」：外掛程式指令碼執行處理所需的一或多個自訂參數。每個參數都應列在新的輸出行中、並包含參數名稱和說明。指令碼完成處理後、參數值會由環境變數提供給指令碼。
+
+
+以下是Followup活動指令碼的範例輸出。
+
+[listing]
+----
+plugin.sh - describe
+
+SM_PI_NAME:Followup_activities
+SM_PI_DESCRIPTION:this script contains follow-up activities to be executed after the clone create
+operation.
+SM_PI_CONTEXT:root
+SM_PI_TIMEOUT:60000
+SM_PI_PARAMETER:SCHEMAOWNER:Name of the database schema owner.
+Command complete.
+----
+
+
+ a| 
+執行
+ a| 
+該伺服SnapManager 器會執行「plugin.sh -execute」命令、啟動指令碼來執行指令碼。
+
+|===

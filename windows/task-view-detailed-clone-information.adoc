@@ -1,0 +1,40 @@
+---
+permalink: windows/task-view-detailed-clone-information.html 
+sidebar: sidebar 
+keywords: view, detail, information, specific, clone, show, command 
+summary: 您可以使用clone show命令來檢視特定實體複本的詳細資訊。 
+---
+= 檢視詳細的實體複本資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「Clone show」命令來檢視特定實體複本的詳細資訊。
+
+
+
+== 關於這項工作
+
+「Clone show」命令會顯示下列資訊：
+
+* 複製系統識別碼和複製ID
+* Clone作業狀態
+* Clone建立開始與結束日期或時間
+* Clone標籤
+* 複製留言
+* 備份標籤與ID
+* 來源資料庫
+* 備份開始與結束時間
+* 資料庫名稱、表格空間及資料檔案
+* 包含資料檔案的主機名稱和檔案系統
+* 儲存系統磁碟區和Snapshot複本、以備份複本
+
+
+.步驟
+. 輸入下列命令：
++
+h.*smsap clone show -profile _profile_name_[-label _label_|-id _guid_]*
+
+

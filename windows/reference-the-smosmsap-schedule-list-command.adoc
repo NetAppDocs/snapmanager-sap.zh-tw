@@ -1,0 +1,35 @@
+---
+permalink: windows/reference-the-smosmsap-schedule-list-command.html 
+sidebar: sidebar 
+keywords: command, list, schedule, operation, associate, profile, smsap 
+summary: 此命令會列出與設定檔相關的排程作業。 
+---
+= smsap排程清單命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會列出與設定檔相關的排程作業。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap schedule list
+-profile profile_name
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定與資料庫相關的設定檔名稱、您可以使用該名稱來檢視排程作業的清單。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+

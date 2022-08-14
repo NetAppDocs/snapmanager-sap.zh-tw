@@ -1,0 +1,25 @@
+---
+permalink: windows/task-authorizing-user-access-to-profiles.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, set, password, unauthorized, access, authorize, authorizing, profile 
+summary: 使用支援的支援功能、您可以設定設定檔的密碼、以防止未獲授權的存取。SnapManager 
+---
+= 授權存取設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用支援的支援功能、您可以設定設定檔的密碼、以防止未獲授權的存取。SnapManager
+
+.步驟
+. 輸入下列命令：
++
+「msap認證資料集-profile -name profile_name（密碼密碼）」
+
+
+
+*相關資訊*
+
+xref:reference-the-smosmsapcredential-set-command.adoc[smsap認證集命令]

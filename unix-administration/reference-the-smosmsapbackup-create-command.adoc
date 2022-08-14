@@ -1,0 +1,192 @@
+---
+permalink: unix-administration/reference-the-smosmsapbackup-create-command.html 
+sidebar: sidebar 
+keywords: run, backup, create, command, database, storage, system, smsap 
+summary: 您可以執行備份create命令、在一或多個儲存系統上建立資料庫備份。 
+---
+= smsap備份create命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「備份建立」命令、在一或多個儲存系統上建立資料庫備份。
+
+
+
+== 語法
+
+
+NOTE: 執行此命令之前、您必須使用profile create命令來建立資料庫設定檔。
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap backup create
+-profile profile_name
+{[-full{-auto | -online | -offline} [-retain {_-hourly_ | _-daily_ | _-weekly_ | _-monthly_ | _-unlimited_} [-verify\]  |
+[-data [[-files _files_ [_files_]] |
+pass:quotes[[-tablespaces _tablespaces_ [_tablespaces_]] pass:quotes[[-label _label_]] {-auto | -online | -offline}
+pass:quotes[[-retain {_-hourly_ | _-daily_ | _-weekly_ | _-monthly_ | _-unlimited_} [-verify] |
+pass:quotes[[-archivelogs [-label _label_]] pass:quotes[[-comment _comment_\]}
+[-protect | -noprotect | -protectnow\]
+[-backup-dest _path1_ [ _, path2_\]\]
+[-exclude-dest path1 [ _, path2_\]\]
+[-prunelogs {-all | -until-scn _until-scn_ | -until-date _yyyy-MM-dd:HH:mm:ss_\] | -before {-months | -days | -weeks | -hours}}
+-prune-dest _prune_dest1_,[_prune_dest2_\]\]
+[-taskspec _taskspec_\]
+[-dump]-force
+[-quiet | -verbose]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile_name_*」
++
+指定與您要備份之資料庫相關的設定檔名稱。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* 「*自動*」*選項*
++
+如果資料庫處於掛載或離線狀態、SnapManager 則執行離線備份。如果資料庫處於開啟或線上狀態、SnapManager 則執行線上備份。如果您使用「-force」選項搭配「-offline」選項、SnapManager 即使資料庫目前處於線上狀態、也會強制進行離線備份。
+
+* *線上***選項*
++
+指定線上資料庫備份。
+
++
+只要主叢集處於開啟狀態、或主叢集已掛載且執行個體處於開啟狀態、您就可以建立真實應用程式叢集（RAC）資料庫的線上備份。如果本機執行個體處於關機狀態、或沒有執行個體處於開啟狀態、您可以使用「-force」選項進行線上備份。Oracle版本必須為10.2.0.5；否則、如果RAC中有任何執行個體已掛載、資料庫將會掛起。
+
++
+** 如果本機執行個體處於關機狀態、且至少有一個執行個體處於開啟狀態、您可以使用「-force」選項將本機執行個體變更為掛載狀態。
+** 如果沒有執行個體處於開啟狀態、您可以使用-force選項將本機執行個體變更為開啟狀態。
+
+
+* *離線**選項*
++
+指定資料庫處於關機狀態時的離線備份。如果資料庫處於開啟或掛載狀態、則備份會失敗。如果使用「-force」選項、SnapManager 則嘗試變更資料庫狀態、以關閉資料庫進行離線備份。
+
+* *「*全*」*選項*
++
+備份整個資料庫。這包括所有資料、歸檔記錄和控制檔。無論您執行何種類型的備份、都會備份歸檔的重作記錄和控制檔。如果您只想備份一部分資料庫、請使用「-files'」選項或「-tabl空間」選項。
+
+* *資料**選項*
++
+指定資料檔案。
+
+* 「*檔案_list_*」
++
+僅備份指定的資料檔案、加上歸檔的記錄和控制檔。以空格分隔檔案名稱清單。如果資料庫處於開啟狀態、SnapManager 則驗證適當的表格空間是否處於線上備份模式。
+
+* 「*表格空間_表格空間_*」
++
+僅備份指定的資料庫表格空間、以及歸檔的記錄和控制檔。以空格分隔表格空間名稱。如果資料庫處於開啟狀態、SnapManager 則驗證適當的表格空間是否處於線上備份模式。
+
+* 「*標籤_label_*」
++
+指定此備份的選用名稱。此名稱在設定檔中必須是唯一的。名稱可以包含字母、數字、底線（_）和連字號（-）。它不能以連字號開頭。如果您未指定標籤、SnapManager 則會以scene_type_date格式建立預設標籤：
+
++
+** 範圍為F表示完整備份、或是P表示部分備份。
+** 類型為C表示離線（冷）備份、H表示線上（熱）備份、或A表示自動備份、例如P_a_200810060037IST。
+** 日期是備份的年、月、日和時間。
++
+支援24小時時鐘。SnapManager
+
+
+
++
+例如、如果您在2007年1月16日下午5：45：16離線執行資料庫完整備份東部標準時間SnapManager 、這個功能可以建立F_C_20070111111174516EST標籤。
+
+* 「*」-「comment _stron_*」
++
+指定可選的註釋來描述此備份。將字串括在單引號（'）內。
+
++
+
+NOTE: 有些Shell會取消引號。在這種情況下、您必須加上反斜槓（\）的引號。例如、您可能需要輸入下列內容：「\」這是註解。
+
+* 「*驗證*」*選項*
++
+執行Oracle DBV公用程式、確認備份中的檔案未毀損。
+
++
+
+NOTE: 如果您指定「-Verify」（驗證）選項、則在驗證作業完成之前、備份作業不會完成。
+
+* 「*力*」*選項*
++
+如果資料庫狀態不正確、則強制變更狀態。例如SnapManager 、根據您指定的備份類型和資料庫所在的狀態、將資料庫狀態從線上變更為離線。
+
++
+使用線上RAC資料庫備份時、如果本機執行個體處於關機狀態、或沒有執行個體處於開啟狀態、請使用「-force」選項。
+
++
+
+NOTE: Oracle版本必須為10.2.0.5；否則、如果RAC中有任何執行個體已掛載、資料庫將會掛起。
+
++
+** 如果本機執行個體處於關機狀態、且至少有一個執行個體處於開啟狀態、則使用「-force」選項會將本機執行個體變更為掛載狀態。
+** 如果沒有執行個體處於開啟狀態、使用「-force」選項會將本機執行個體變更為開啟狀態。
+
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+* 「*保護」|「-nosprotProtect」|「-protectnow*」
++
+指出備份是否應受到二線儲存設備的保護。NoprotProtect選項指定不應將備份保護至次要儲存設備。只有完整備份受到保護。如果未指定任何選項、SnapManager 則當備份是完整備份、且設定檔指定保護原則時、預設會使用支援功能來保護備份。「-protectNOW」選項僅適用於Data ONTAP 以7-Mode運作的VMware。此選項會指定將備份立即保護至次要儲存設備。
+
+* 「*」-「保留」｛-每小時|-每日|-每週|-每月|-無限量｝*
++
+指定備份應以每小時、每日、每週、每月或無限的方式保留。如果未指定"-retif省"選項、則保留類別預設為"-Hour"選項。若要永久保留備份、請使用「無限」選項。「無限」選項可讓備份不符合保留原則刪除的資格。
+
+* *《*歸檔者*》*選項*
++
+建立歸檔記錄備份。
+
+* 「*備份目的地_path1」、「、」、「_（路徑2）_」*
++
+指定要備份以進行歸檔記錄備份的歸檔記錄目的地。
+
+* "*—exclude目的地_path1_、[、_[path2]_]*
++
+指定要從備份中排除的歸檔記錄目的地。
+
+* 「*」、「*」、「｛-all |-the-scnush-scnush-scn |-截至日期_西元年-月-日：日：時：分：分：秒_|-前｛-月|-日|-週|-小時｝*」
++
+根據建立備份時所提供的選項、從歸檔記錄目的地刪除歸檔記錄檔。「-all」選項會從歸檔記錄目的地刪除所有歸檔記錄檔。在指定的系統變更編號（SCN）之前、「直到SCN」選項會刪除歸檔記錄檔。「直到日期」選項會刪除歸檔記錄檔、直到指定的時間段為止。「之前」選項會在指定的時間段（天、月、週、小時）之前刪除歸檔記錄檔。
+
+* 「*：prune-dest_prune_dest1、prune_dest2_*」
++
+在建立備份時、從歸檔記錄目的地刪除歸檔記錄檔。
+
+* 「*」taskspec_taskspec_*
++
+指定可用於備份作業的預先處理活動或後處理活動的工作規格XML檔案。提供-taskspec選項時、應提供XML檔案的完整路徑。
+
+* "* dump（*轉儲）*選項*
++
+在資料庫備份作業成功或失敗之後收集傾印檔案。
+
+
+
+'''
+
+
+== 命令範例
+
+下列命令會建立完整的線上備份、建立次要儲存設備的備份、並將保留原則設為每日：
+
+[listing]
+----
+smsap backup create -profile SALES1 -full -online
+-label full_backup_sales_May -profile SALESDB -force -retain -daily
+Operation Id [8abc01ec0e79356d010e793581f70001] succeeded.
+----
+'''

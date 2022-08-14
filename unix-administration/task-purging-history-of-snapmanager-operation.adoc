@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task-purge-history-of-snapmanager-operation.html 
+sidebar: sidebar 
+keywords: delete, history, snapmanager, operation, require, detail, deleting 
+summary: 如果不再需要歷程詳細資料、您可以刪除SnapManager 此動作的歷程記錄。 
+---
+= 刪除SnapManager 動作歷程記錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果不再需要歷程詳細資料、您可以刪除SnapManager 此動作的歷程記錄。
+
+.步驟
+. 若要刪除SnapManager 此動作的歷程記錄、請輸入下列命令：
++
+hesap歷史記錄清除-profile {_-name, profile_name profile_name1,profile_name2_]| all-reposure-login[-password_]-userName _repo_username_-dbname _repo_dbname_-host _repo_host_-port _repo_port_}-opment {-name_operations_allyetation_operation_name_operation.[-operation_name_unity_name_op_name_unity_op_op_op_op_operation.1操作[_name_name_use_name_op_op_
+
+

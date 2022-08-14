@@ -1,0 +1,37 @@
+---
+permalink: unix-administration/task-schedule-backups-with-sap-transaction-db13.html 
+sidebar: sidebar 
+keywords: enable, backup, snapmanager, sap, dba, planning, calendar, transaction, db13, scheduling 
+summary: 若要讓SnapManager SAP能夠從DBA規劃行事曆交易DB13執行備份、需要執行多個步驟。 
+---
+= 使用SAP交易DB13排程備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要讓SnapManager SAP能夠從DBA規劃行事曆交易DB13執行備份、需要執行多個步驟。
+
+.步驟
+. 變更「/oracle/sid/sapBackup」目錄的權限、以允許使用sidadm使用者識別碼進行寫入存取。
++
+使用下列命令作為「orasid」：
+
++
+"* chmod775/oracle/si/sapbackup*
+
++
+這將允許"dba"群組的成員寫入該目錄。使用者識別碼「sidadm'」是「dba'」群組的成員。
+
+. 變更SnapManager SAP認證檔案的「orasid」權限、以允許「sidadm'」存取。請使用以下由「orasid（orasid）”執行的命令：
++
+請使用以下由「orasid（orasid）”執行的命令：
+
++
+「*」chmod660 /oracle/si/.netapp/smsap/assentites*
+
++
+請遵循TR-3582「SnapManager 適用於SAP最佳實務做法」第3.3節「在儲存庫中註冊系統」中的指示、在SnapManager SAP儲存庫的英文資訊庫中註冊sidadm使用者識別碼。
+
+

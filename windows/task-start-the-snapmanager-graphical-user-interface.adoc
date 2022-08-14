@@ -1,0 +1,31 @@
+---
+permalink: windows/task-start-the-snapmanager-graphical-user-interface.html 
+sidebar: sidebar 
+keywords: snapmanager, install, host, graphical, user, interface, gui, list, program, start 
+summary: 如果SnapManager 主機上安裝了支援功能、請SnapManager 從程式清單中選取程式、以啟動支援功能的圖形化使用者介面（GUI）。 
+---
+= 啟動SnapManager 功能不全的GUI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果SnapManager 主機上安裝了支援功能、請SnapManager 從程式清單中選取程式、以啟動支援功能的圖形化使用者介面（GUI）。
+
+
+
+== 您的需求
+
+* 確認SnapManager 已啟動伺服器。
+
+
+
+
+== 關於這項工作
+
+您可以SnapManager 使用下列其中一種方法來啟動圖形使用者介面：
+
+* 在這個主機中、按一下SnapManager *開始*>*所有程式*>* NetApp *>* SnapManager 適用於SAP*的*支援*>*啟動SMSAP GUI *。
+* 如果SnapManager 主機上未安裝支援功能、請使用Java Web Start來下載SnapManager 支援功能的元件並啟動GUI。
+

@@ -1,0 +1,199 @@
+---
+permalink: unix-administration/reference-the-smosmsapbackup-restore-command.html 
+sidebar: sidebar 
+keywords: run, backup, restore, command, database, portion, recover, information, smsap 
+summary: 您可以執行備份還原命令來還原資料庫或部分資料庫的備份、然後選擇性地還原資料庫資訊。 
+---
+= smsap備份還原命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「備份還原」命令來還原資料庫或部分資料庫的備份、然後選擇性地還原資料庫資訊。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap backup restore
+-profile _profile_name_
+[-label _label_ | -id _id_\]
+[-files files [_files..._\] |
+-tablespaces _tablespaces [tablespaces...\]_\] |
+-complete | -controlfiles\]
+[-recover {-alllogs | -nologs | -until _until_} [-using-backup-controlfile\] \]
+[-restorespec _restorespec_ | -from-secondary [-temp-volume _temp_volume_\] [-copy-id _id_\]\]
+[-preview\]
+[-fast {-require | -override | -fallback | -off}\]
+[-recover-from-location _path1_ [_, path2_\]\] [-taskspec _taskspec_\][-dump\]
+[-force\]
+[-quiet | -verbose\]]
+----
+
+
+== 參數
+
+* 「*設定檔_profile_name_*」
++
+指定您要還原的資料庫。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* 「*標籤名稱_*」
++
+使用指定的標籤還原備份。
+
+* -id _guid_*
++
+使用指定的Guid還原備份。當SnapManager 您建立備份時、會產生由支援所產生的GUID。您可以使用smsap備份清單命令來顯示每個備份的Guid。
+
+* *選擇全部或指定的檔案*
++
+您也可以選擇使用下列其中一個選項：
+
++
+** 「-complete」（完整）可還原備份中的所有資料檔案。
+** 「-`-tabl空間_list_'：僅從備份還原指定的表格空間。
++
+您必須使用空格來分隔清單中的名稱。
+
+** -`-fils_list_'：僅從備份還原指定的資料檔案。
++
+您必須使用空格來分隔清單中的名稱。如果資料庫正在執行、SnapManager 則由支援驗證可確保包含檔案的資料表空間離線。
+
+
+
+* -controlfiles*
++
+還原控制檔。利用此功能、您可以在單一作業中還原控制檔及備份中的資料檔案。SnapManagercontrolfilers'選項與其他還原範圍參數（例如：「完整」、「表格空間」及「檔案」）無關。
+
+* 「*恢復*」
++
+還原資料庫後將其恢復。您也必須SnapManager 使用下列其中一個選項、指定要讓效益管理系統恢復資料庫的點：
+
++
+** noslogs：將資料庫恢復到備份時間、不套用任何記錄。
++
+您可以使用此參數進行線上或離線備份。
+
+** 「-alllogs」：將資料庫恢復到最後一筆交易或提交、並套用所有必要的記錄。
+** 「直到日期」：將資料庫恢復至指定的日期和時間。
++
+您必須使用年月日期：小時：分：秒（_year-mm-dd:hh：mm:ss_）格式。視資料庫設定而定、若為小時、請使用12小時或24小時格式。
+
+** 「直到SCN」：將資料檔案轉送到指定的系統變更編號（SCN）為止。
+** 使用備份控制檔：使用備份控制檔恢復資料庫。
+
+
+* 「*還原*」
++
+可讓您將資料還原至作用中檔案系統、並透過每個原始Snapshot複本對應至作用中檔案系統、從指定的資料還原資料。如果您未指定選項、SnapManager 則由主儲存設備上的Snapshot複本還原資料。您可以指定下列其中一個選項：
+
++
+** restoresespec：指定要還原的資料和還原格式。
+** 「來源-次要」：從次要儲存設備還原資料。
++
+如果主要儲存設備上存在備份、則無法使用此選項；必須先釋出主要備份、才能從次要儲存設備還原備份。如果使用暫用Volume、則必須使用「-temp-volume」選項來指定Volume。
+
++
+只要指定「來源-次要」選項、就必須指定「-copy -id」選項。如果二線儲存系統上有多個備份、則可使用「-copy -id」選項來指定二線儲存設備上的備份複本、以供還原作業使用。
+
++
+
+NOTE: 如果您使用Data ONTAP 的是7-Mode的支援功能、則必須為「-copy -id」選項指定有效值。但是、如果您使用叢集Data ONTAP 式的功能、則不需要「-copy -id」選項
+
++
+從二線儲存設備還原時SnapManager 、首先會嘗試將資料直接從二線儲存系統還原至一線儲存系統（無需主機參與）。如果SnapManager 無法執行此類型的還原（例如、如果檔案不屬於檔案系統）、SnapManager 則將還原為主機端的檔案複本還原。支援從次要執行主機端檔案複本還原的兩種方法。SnapManager選擇的方法SnapManager 是在「smsap.config」檔案中設定。
+
+** 直接：SnapManager 將資料複製到二線儲存設備、將複製的資料從二線儲存系統掛載到主機、然後將資料從複本複製到使用中環境。
++
+這是預設的次要存取原則。
+
+** 間接：SnapManager 首先將資料複製到一線儲存設備的暫用磁碟區、將資料從暫用磁碟區掛載到主機、然後將資料從暫用磁碟區複製到作用中環境。
++
+僅當主機無法直接存取次要儲存系統時、才應使用此原則。使用間接方法進行還原的時間、會比直接二次存取原則的時間長兩倍、因為會建立兩份資料複本。
+
+
+
++
+決定是否使用直接或間接方法、是由「smsap.config」組態檔中的「_restore.secondaryAccessPolicy_`參數」值所控制。
+
+* 「*預覽*」
++
+顯示下列資訊：
+
++
+** 將使用哪種還原機制（快速還原、儲存端檔案系統還原、儲存端檔案還原或主機端檔案複本還原）來還原每個檔案
+** 當您指定「-verbose」選項時、為什麼不使用更有效率的機制來還原每個檔案。如果您使用「-preview」（預覽）選項、您必須瞭解下列事項：
+** 「-force」選項對命令沒有影響。
+** 「-recover'」選項對命令沒有影響。
+** 「-fast」選項（「-需求」、「-override」、「-fallback」或「-off」）對輸出有重大影響。若要預覽還原作業、必須掛載資料庫。如果您想預覽還原計畫、但目前尚未掛載資料庫、SnapManager 則會掛載資料庫。如果無法掛載資料庫、則命令將會失敗、SnapManager 而將資料庫恢復為原始狀態。
+
+
++
+「preview」（預覽）選項最多可顯示20個檔案。您可以設定要在「smsap.config」檔案中顯示的檔案數目上限。
+
+* 「*快速*」
++
+可讓您選擇還原作業所使用的程序。如果符合所有強制還原資格條件、您可以強制SnapManager 使用Volume型快速還原程序、而非其他還原程序。如果您知道無法執行Volume還原、您也可以使用此程序、透過SnapManager 快速還原程序來防止執行資格檢查和還原作業。
+
++
+「-fast」選項包括下列參數：
+
++
+** 「需求」：如果SnapManager 符合所有還原資格條件、就能強制執行還原磁碟區。
++
+如果您指定「-fast」選項、但未指定「-fast」的任何參數、SnapManager 則預設使用「-需求」參數。
+
+** 「-`-override」：可讓您覆寫非強制資格檢查、並執行磁碟區型快速還原程序。
+** 「fallback」：可讓您使用SnapManager 任何由哪些方法決定、來還原資料庫。
++
+如果您未指定「-fast」選項、SnapManager 則使用預設的「備份還原-快速回復」選項。
+
+** 「關」：可讓您避免執行資格檢查所需的時間。
+
+
+* 「*-從位置恢復*」
++
+指定歸檔記錄檔的外部歸檔記錄位置。從外部位置取得歸檔記錄檔、並將其用於恢復程序。SnapManager
+
+* 「* taskspec*」
++
+指定工作規格XML檔案、以供還原作業的預先處理活動或後處理活動使用。您必須提供工作規格XML檔案的完整路徑。
+
+* 「*傾印*」
++
+指定在還原作業之後收集傾印檔。
+
+* 「*力*」
++
+如有必要、可將資料庫狀態變更為低於目前狀態。若為Real Application Clusters(RAC)、SnapManager 如果必須將任何RAC執行個體的狀態變更為較低狀態、則必須包含「-force」選項。
+
++
+根據預設、SnapManager 在作業期間、無法將資料庫狀態變更為較高的狀態。不需要此選項SnapManager 、即可將資料庫變更為較高的狀態。
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設設定為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台顯示錯誤、警告和資訊訊息。您可以使用此選項來瞭解為何無法使用更有效率的還原程序來還原檔案。
+
+
+
+'''
+
+
+== 範例
+
+下列範例會還原資料庫及控制檔：
+
+[listing]
+----
+smsap backup restore -profile SALES1 -label full_backup_sales_May
+-complete -controlfiles -force
+----
+'''

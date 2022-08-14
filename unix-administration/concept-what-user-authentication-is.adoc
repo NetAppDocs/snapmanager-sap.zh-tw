@@ -1,0 +1,44 @@
+---
+permalink: unix-administration/concept-what-user-authentication-is.html 
+sidebar: sidebar 
+keywords: role-base, access, control, snapmanager, authenticate, operating, system, os, smsap, credential, set, authentication 
+summary: 除了使用角色型存取控制（RBAC）之外、SnapManager 在SnapManager 執行此伺服器的主機上、使用作業系統（OS）登入來驗證使用者。您可以透過操作時的密碼提示或使用smsap認證集來啟用使用者驗證。 
+---
+= 什麼是使用者驗證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+除了使用角色型存取控制（RBAC）之外、SnapManager也會在SnapManager 執行此伺服器的主機上使用作業系統（OS）登入來驗證使用者。您可以透過操作時的密碼提示或使用「最新認證集」來啟用使用者驗證。
+
+使用者驗證需求取決於執行作業的位置。
+
+* 如果SnapManager 該驗證用戶端與SnapManager 該支援主機位於同一部伺服器上、您就會獲得作業系統認證資料的驗證。
++
+系統不會提示您輸入密碼、因為您已經登入SnapManager 執行此伺服器的主機。
+
+* 如果SnapManager 支援的是不同SnapManager 主機上的支援服務器、SnapManager 那麼就需要用兩個作業系統認證來驗證您的身分。
++
+如果您尚未將作業系統認證資料儲存在您的支援者認證快取中、則系統會提示您輸入任何作業的密碼。SnapManager SnapManager如果您輸入「shmsap認證集-host'」命令、您會將OS認證儲存在SnapManager 您的「支援資訊」認證快取檔案中、SnapManager 因此、針對任何作業、不會提示輸入密碼。
+
+
+
+如果您已通過SnapManager 驗證使用此伺服器、您將被視為有效使用者。任何作業的有效使用者都必須是執行作業的主機上有效的使用者帳戶。例如、如果您執行實體複本作業、應該能夠登入目的地主機以進行實體複本。
+
+
+NOTE: SAP的支援可能無法授權在中央Active Directory服務中建立的使用者、例如LDAP和ADS。SnapManager為了確保驗證不會失敗、您必須將「可設定的auth.disableServerAuthorization」設為「* true *」。
+
+身為有效使用者、您可以使用下列方式來管理認證：
+
+* 或者、您可以設定SnapManager 將使用者認證資料儲存在SnapManager 靜態使用者認證檔案中。
++
+根據預設SnapManager 、不儲存主機認證資料。例如、如果您有需要存取遠端主機的自訂指令碼、您可能會想要變更此設定。遠端複製作業是SnapManager 一個需要遠端主機使用者登入認證的功能不穩定作業範例。若要讓使用者主機登入認證資料記住在「支援資訊」使用者認證快取中、請在「smsap.config」檔案中將「host.ecents.pist」屬性設為「* true *」SnapManager SnapManager 。
+
+* 您可以授權使用者存取儲存庫。
+* 您可以授權使用者存取設定檔。
+* 您可以檢視所有使用者認證資料。
+* 您可以清除所有資源（主機、儲存庫和設定檔）的使用者認證。
+* 您可以刪除個別資源（主機、儲存庫和設定檔）的認證資料。
+

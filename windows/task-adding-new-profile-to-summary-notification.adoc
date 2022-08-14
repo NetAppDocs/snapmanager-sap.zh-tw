@@ -1,0 +1,23 @@
+---
+permalink: windows/task-adding-new-profile-to-summary-notification.html 
+sidebar: sidebar 
+keywords: configure, summary, email, notification, repository, database, profile, command, add 
+summary: 為儲存庫資料庫設定摘要電子郵件通知之後、您可以使用摘要通知命令、將新的設定檔新增至摘要通知。 
+---
+= 新增設定檔至摘要電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為儲存庫資料庫設定摘要電子郵件通知之後、您可以使用摘要通知命令、將新的設定檔新增至摘要通知。
+
+. 輸入下列命令：「msap profile create -profileprofileprofile_name [-countprofiledprofile_password]-reposite-dbnamerepo_service_name-hovernpo_host-portrepo_log-usernamerepo_username-database-dbnamedb_db_name-hostdbdb_host [-siddb_siddb_sidstep][-decourly notesktreamed][-tream_depnecastrostep_noteed][-tream_depnstepam_depam_depnstepam_depam_depamed][-decastrok_noteed][-decastrok_note[-tream_depam_depam_depam_depnoteed[-tream_notic][-tream_depnstampuser-noteed][-treamed][-treamed][-treamed][-pour-pour-pecastrosthour-pour-pour-pecastrostampuser-note
++
+此命令的其他選項如下：
+
++
+[力]
+
+

@@ -1,0 +1,22 @@
+---
+permalink: windows/concept-snapmanger-limitations-for-clustered-data-ontap.html 
+sidebar: sidebar 
+keywords: limitation, functionalities, functionality, snapmanager, operation, cluster, data, ontap 
+summary: 如果您使用叢集式的功能、則必須瞭解某些功能和SnapManager 功能的限制Data ONTAP 。 
+---
+= 叢集式的不受限SnapManager Data ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用叢集式的功能、則必須瞭解某些功能和SnapManager 功能的限制Data ONTAP 。
+
+如果您使用SnapManager 的是叢集Data ONTAP 式的支援功能、則不支援下列功能：
+
+* 儲存虛擬機器（SVM）的原始裝置對應（RDM）邏輯單元編號（LUN）
+* 在Data ONTAP 其中一個LUN屬於執行以7-Mode運作的系統、而另一個LUN屬於執行叢集Data ONTAP 式VMware的系統
+* 適用於SAP的支援不支援移轉叢集式的Vserver SnapManager Data ONTAP
+* 適用於SAP的支援叢集式的支援功能、無法為Volume和qtree指定不同的匯出原則SnapManager Data ONTAP
+

@@ -1,0 +1,27 @@
+---
+permalink: unix-installation-cmode/concept-what-a-rollback-is.html 
+sidebar: sidebar 
+keywords: rollback, operation, enable, revert, earlier, version, snapmanager, perform, roll, upgrade, what, is 
+summary: 復原作業可讓您在SnapManager 執行循環升級後、還原至舊版的支援。 
+---
+= 什麼是復原
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+復原作業可讓您在SnapManager 執行循環升級後、還原至舊版的支援。
+
+
+NOTE: 在執行復原之前、您必須先確定儲存庫資料庫下的所有主機都可以解析。
+
+當您執行復原時、會復原下列項目：
+
+* 使用SnapManager 還原所在的版本還原所建立、釋出及刪除的備份
+* 從使用SnapManager 還原版本建立的備份所建立的複本
+* 設定檔認證資料會使用SnapManager 還原的版本進行修改
+* 使用SnapManager 還原來源的還原版本修改備份的保護狀態
+
+
+不支援使用中的功能、但在您要回復的版本中無法使用。SnapManager例如、當您執行SnapManager 從還原3.3或更新版本回溯至SnapManager 還原3.1時、SnapManager 針對還原3.3或更新版本中的設定檔所設定的歷史組態不會回溯到SnapManager 還原3.1中的設定檔。這是因為SnapManager 記錄組態功能無法在功能介紹3.1中使用。

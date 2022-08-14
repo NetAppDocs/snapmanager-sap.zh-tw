@@ -1,0 +1,102 @@
+---
+permalink: windows/task-updating-profiles.html 
+sidebar: sidebar 
+keywords: update, profile, modify, password, backup, database, operating, system, authentication, information, host, oracle, updating 
+summary: 您可以更新設定檔以修改設定檔密碼、保留的備份數目、資料庫存取權、資料庫驗證的作業系統（OS）驗證、以及主機的相關資訊。如果Oracle資料庫密碼資訊變更、您也必須在設定檔中變更該資訊。 
+---
+= 正在更新設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以更新設定檔以修改設定檔密碼、保留的備份數目、資料庫存取權、資料庫驗證的作業系統（OS）驗證、以及主機的相關資訊。如果Oracle資料庫密碼資訊變更、您也必須在設定檔中變更該資訊。
+
+利用支援更新設定檔的功能（3.2或更新版本）、您可以使用-分隔-archivelog-Backups選項、將歸檔記錄備份與資料檔案備份區分開。SnapManager您可以為歸檔記錄備份指定個別的保留期間。利用NetApp技術、您可以將歸檔記錄備份與線上資料庫備份一起納入其中。SnapManager您也可以一起建立線上資料檔案備份與歸檔記錄備份、以便進行複製。建立線上資料檔案備份時、會立即建立歸檔記錄備份及資料檔案。
+
+.步驟
+. 輸入下列命令：
++
+smsap profile update -profileprofile [-new-profilenew_profile_name][-profile-count_name_name][-profile-passivalprofileprofileprofile_password][-database-dbnamedb_dbnamedb_password db_port][-address_notee-hour-pyour-pet_notee-notee-notee-ednagm_seep-tam_del][-peeparam_deleceep-tim_noteep-tam_deleepam_delam_deepam_deeparm/noteepam_deed][-name_noteeparam_deepam_deep_notektun][_noteeparam_deepam_deepend_noteeparam_noteepam_del][-noteeparam_deeparam_deepam_deeparm/noteepam_deepam_deeparam_deed][-peceepam_deeparam_deeparm/
+
++
+此命令的其他選項如下：
+
++
+[-force][-noprompel]
+
++
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+*變更設定檔中資料庫備份的備份保留原則*
+ a| 
+指定保留類別的保留計數或保留持續時間、或同時指定兩者以變更保留原則。持續時間以課程單位為單位（例如小時、日）。
+
+** 「每小時」是指每小時的保留類別、其中[-countn][-durationm]分別是保留數和保留期間。
+** 「每日」是每日保留類別、而「日」則分別為保留計數和保留持續時間。
+** 每週保留類別為每週保留類別、其中[-countn][-durationm]分別為保留計數和保留期間。
+** 「每月」是每月保留類別、其中[-countn][-durationm]分別為保留計數和保留期間。
+
+
+
+
+ a| 
+*啟用資料庫作業完成狀態的電子郵件通知*
+ a| 
+指定下列選項和變數：
+
+** 使用摘要通知功能、您可以在儲存庫資料庫下設定多個設定檔的摘要電子郵件通知。
+** 通知功能可讓您接收設定檔資料庫作業完成狀態的電子郵件通知。
+** 使用新的或現有的設定檔、您可以在資料庫作業成功完成之後、收到電子郵件通知。
+** -aile-emailemail_address2可讓您接收電子郵件通知、通知您使用新的或現有的設定檔執行失敗的資料庫作業。
+** -SubectSub_text會在建立新設定檔或現有設定檔時、指定電子郵件通知的主旨文字。如果通知設定未針對儲存庫進行設定、且您嘗試使用命令列介面（CLI）設定設定設定檔或摘要通知、則主控台記錄中會記錄下列訊息：SMSAP-14777：通知設定未設定。
++
+如果您已設定通知設定、且嘗試使用CLI設定摘要通知、但未啟用儲存庫的摘要通知、則主控台記錄中會記錄下列訊息：__**_SMSAP-14575：摘要通知組態無法用於此儲存庫
+
+
+
+
+
+ a| 
+*更新設定檔以分別建立歸檔記錄檔的備份*
+ a| 
+指定下列選項和變數：
+
+** 使用分隔的archivelog-Backup、您可以建立與資料庫檔案分開的歸檔記錄檔備份。
++
+指定此選項之後、您可以建立純資料檔案備份或僅歸檔程式備份。您無法建立完整備份。此外、您也無法透過分隔備份來還原設定檔設定。根據保留原則、還原在進行僅歸檔程式備份之前所建立的備份。SnapManager
+
+** -ret-archivelog-Backups可設定歸檔記錄備份的保留時間。
++
+
+NOTE: 如果您是第一次更新設定檔、可以使用-分隔-archivelog-Backup選項、將歸檔記錄備份與資料檔案備份區隔開；您必須使用-retave-archivelog-Backup選項、提供歸檔記錄備份的保留時間。稍後更新設定檔時、您可選擇是否要設定保留期間。
+
+** -include-with online備份會指定將歸檔記錄備份與資料庫備份一起包含在內。
+** -免 包含線上備份指定資料庫備份不隨附歸檔記錄檔備份。
+
+
+
+
+ a| 
+*變更目標資料庫的主機名稱*
+ a| 
+指定-hostnew_db_host以變更設定檔的主機名稱。
+
+
+
+ a| 
+*在設定檔更新作業之後收集傾印檔*
+ a| 
+指定-dump選項。
+
+|===
+. 若要檢視更新的設定檔、請輸入下列命令：smsap profile show
+
+
+*相關資訊*
+
+xref:concept-how-to-collect-dump-files.adoc[如何收集傾印檔案]

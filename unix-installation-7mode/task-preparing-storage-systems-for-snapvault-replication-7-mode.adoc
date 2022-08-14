@@ -1,0 +1,106 @@
+---
+permalink: unix-installation-7mode/task-prepare-storage-systems-for-snapvault-replication-7-mode.html 
+sidebar: sidebar 
+keywords: snapmanager, integrate, snapvault, technology, archive, snapshot, copies, copy, disk, configure, intialize, data-protection, relationship, source, volume, destination, volume, initialization, data, block, preparing, prepare, storage, system, replication 
+summary: 在您使用SnapManager的整合SnapVault 式支援技術將Snapshot複本歸檔到磁碟之前、您必須先設定並初始化來源與目的地磁碟區之間的資料保護關係。初始化時SnapVault 、功能區會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。 
+---
+= 準備儲存系統SnapVault 以進行資訊複寫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用SnapManager的整合SnapVault 式功能將Snapshot複本歸檔到磁碟之前、您必須先設定並初始化來源與目的地磁碟區之間的_data-protection關係。初始化時SnapVault 、功能區會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。
+
+*您需要的是什麼*
+
+* 您必須在SnapManager 「解決方法組態」精靈中設定主要儲存位置的資料集。
+* 所有LUN必須位於qtree中、每qtree只有一個LUN。
+
+
+
+IMPORTANT: 如果您要將資料庫檔案和交易記錄儲存在不同的磁碟區上、則必須在資料庫檔案的來源和目的地磁碟區之間、以及交易記錄的來源和目的地磁碟區之間建立關聯。
+
+.步驟
+. 在來源和目的地系統主控台上、啟用SnapVault 下列功能：
++
+* 範例 *
+
++
+[listing]
+----
+options snapvault.enable on
+----
+. 在來源系統主控台、使用「options SnapVault存取」命令來指定允許直接從來源系統複製資料的系統主機名稱。
++
+* 範例 *
+
++
+下列命令可複寫至destination_SystemB：
+
++
+[listing]
+----
+options snapvault.access host=destination_systemB
+----
+. 在目的地系統主控台、使用「options SnapVault存取」命令來指定可還原複製資料的系統主機名稱。
++
+* 範例 *
+
++
+下列命令可將複製的資料還原至SOUR_SystemA：
+
++
+[listing]
+----
+options snapvault.access host=destination_systemA
+----
+. 在來源系統主控台、使用「ndmpd on」命令來啟用NDMP。
++
+* 範例 *
+
++
+下列命令可啟用NDMP：
+
++
+[listing]
+----
+ndmpd on
+----
+. 在目的地系統主控台上、使用「vol create」命令建立大小與來源Volume相同或更大的SnapMirror目的地Volume。
++
+* 範例 *
+
++
+下列命令會在Agggr1上建立名為vol2的2-GB目的地Volume：
+
++
+[listing]
+----
+vol create vol2 aggr1 2g
+----
+. 在《NetApp管理主控台》（NetApp Management Console）中、新增目的地Volume的資源池：OnCommand
++
+.. 按一下「*資料*>*資源集區*」以開啟「*資源集區*」頁面。
+.. 在「資源池」頁面上、按一下「*新增*」以啟動「*新增資源池*」精靈。
+.. 遵循精靈中的提示、為目的地Volume指定集合體。
+.. 按一下「*完成*」結束精靈。
+
+
+. 在UM NetApp管理主控台中、將資源池指派給SnapManager 您在「發揮作用」組態精靈中建立的資料集：
++
+.. 按一下「*資料*>*資料集*」以開啟「資料集」頁面。
+.. 在「*資料集*」頁面上、選取您建立的資料集、然後按一下「*編輯*」。
+.. 在「*編輯資料集*」頁面上、按一下「*備份*>*資源資源池*」以開啟「*組態資料集節點*」精靈。
+.. 依照精靈中的提示、將資源池指派給資料集。
++
+資源池指派會指定來源與目的地磁碟區之間的資料保護關係。
+
+.. 按一下「*完成*」結束精靈並初始化資料保護關係。
++
+初始化程序會將_基準線傳輸_傳送到目的地Volume。將來源磁碟區的Snapshot複本製作、然後將複本及其參照的所有資料區塊傳輸到目的地磁碟區。SnapVault
+
+
+
+

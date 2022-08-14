@@ -1,0 +1,35 @@
+---
+permalink: unix-administration/task-view-a-list-of-operations.html 
+sidebar: sidebar 
+keywords: view, summary, list, operation, perform, profile 
+summary: 您可以檢視針對設定檔執行的所有作業的摘要清單。 
+---
+= 檢視作業清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視針對設定檔執行的所有作業的摘要清單。
+
+*關於此工作*
+
+當您列出與特定設定檔相關的作業時、可以檢視下列資訊：
+
+* 作業執行的開始和結束日期
+* 作業狀態
+* 營運ID
+* 作業類型
+* 執行的主機
+
+
+.步驟
+. 若要列出所有作業的摘要資訊、請使用下列命令：
++
+「* smsap作業清單設定檔- profile _profile_name_-分隔符號_characters_[-quiet |-verbose]*」
+
++
+當指定-分隔 符號選項時、命令會將每一列分別列在一行中、並以指定的字元分隔該列中的屬性。
+
+

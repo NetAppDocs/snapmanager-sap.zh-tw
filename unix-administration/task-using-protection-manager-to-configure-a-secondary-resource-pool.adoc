@@ -1,0 +1,47 @@
+---
+permalink: unix-administration/task-use-protection-manager-to-configure-a-secondary-resource-pool.html 
+sidebar: sidebar 
+keywords: support, backup, database, secondary, storage, administrator, protection, manager, organize, snapvault, license, resource, pool 
+summary: 為了支援將資料庫備份至二線儲存設備、儲存管理員使用Protection Manager將以SnapVault 「支援此功能的二線儲存系統」、組織到資源池中進行備份。 
+---
+= 使用Protection Manager來設定次要資源池
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為了支援將資料庫備份至二線儲存設備、儲存管理員使用Protection Manager將以SnapVault 「支援此功能的二線儲存系統」、組織到資源池中進行備份。
+
+*您需要的是什麼*
+
+理想情況下、資源池中的儲存系統在備份目的地的可接受度方面是可以互換的。例如、當您開發薪資資料庫的保護策略時、身為儲存管理員的您、發現二線儲存系統的效能和服務層級相似、適合屬於同一個資源池的成員。
+
+您已在儲存系統上建立未使用空間的集合體、以供指派給資源池。如此可確保有足夠空間容納備份。
+
+.步驟
+. 前往Protection Manager的NetApp管理主控台。
+. 在功能表列中、按一下*資料*>*資源池*。
++
+出現「資源池」視窗。
+
+. 按一下「 * 新增 * 」。
++
+隨即啟動「新增資源池」精靈。
+
+. 完成精靈中的步驟以建立* paydb_backup_resource*資源池。
++
+使用下列設定：
+
++
+** 名稱：使用* paydb-backup_resource*
+** 空間臨界值（使用預設值）：
++
+*** 空間使用率臨界值：已啟用
+*** 接近完整臨界值（適用於資源池）：80%
+*** 完整臨界值（適用於資源池）：90%
+
+
+
+
+

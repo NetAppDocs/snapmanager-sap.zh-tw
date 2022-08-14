@@ -1,0 +1,14 @@
+---
+permalink: unix-administration/concept-restoring-protected-backups-from-secondary-storage.html 
+sidebar: sidebar 
+keywords: restore, backup, protect, secondary, storage, primary, restoring, 
+summary: 您可以從次要儲存設備還原受保護的備份。不過、如果主要儲存設備上也有備份、則無法從次要儲存設備還原備份。 
+---
+= 從二線儲存設備還原受保護的備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從次要儲存設備還原受保護的備份。不過、如果主要儲存設備上也有備份、則無法從次要儲存設備還原備份。

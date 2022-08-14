@@ -1,0 +1,43 @@
+---
+permalink: windows/concept-collecting-additional-log-information-for-easier-debugging.html 
+sidebar: sidebar 
+keywords: additional, log, debug, fail, snapmanager, operation, external, environment, variable, server.log.level, file, collect 
+summary: 如果您需要額外的記錄來偵錯失敗SnapManager 的功能、則必須設定外部環境變數server.log.level。此變數會覆寫預設的記錄層級、並傾印記錄檔中的所有記錄訊息。例如、您可以將記錄層級變更為DEBUG、以記錄其他訊息並協助偵錯問題。 
+---
+= 收集其他記錄資訊、以便更輕鬆地進行偵錯
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您需要額外的記錄來偵錯失敗SnapManager 的功能、則必須設定外部環境變數「sherver.log.level」。此變數會覆寫預設的記錄層級、並傾印記錄檔中的所有記錄訊息。例如、您可以將記錄層級變更為DEBUG、以記錄其他訊息並協助偵錯問題。
+
+您可在下列位置找到SnapManager 此資訊檔：
+
+* 「napManager_install_ddirectory\log」
+
+
+若要覆寫預設的記錄層級、您必須執行下列步驟：
+
+. 在SnapManager 安裝目錄中建立「plate.override」文字檔。
+. 在「plate.override」文字檔中新增「sherver.log.level」參數。
+. 指派值（*追蹤、偵錯、資訊、警告、錯誤、 fatal或progress_*）到「sherver.log.level」參數。
++
+例如、若要將記錄層級變更為_error_、請將「sherver.log.level」的值設為_error_。
+
++
+"erver.log.level =錯誤"
+
+. 重新啟動SnapManager 伺服器。
+
+
+
+NOTE: 如果不需要額外的記錄資訊、您可以從「platform.override」文字檔刪除「sherver.log.level」參數。
+
+根據使用者在「smsap.config」檔案中定義的下列參數值來管理伺服器記錄檔的磁碟區：SnapManager
+
+* "log.max.log_files."
+* "log.max.log_file_Size"
+* 記錄：log.main_roling_operation_factory記錄
+

@@ -1,0 +1,278 @@
+---
+permalink: unix-administration/task-set-role-based-access-control-capabilities-and-roles.html 
+sidebar: sidebar 
+keywords: enable, role-based, access, control, rbac, snapmanager, snapdrive, capabilities, capability, setting, role, operation 
+summary: 啟用角色型存取控制（RBAC）以SnapManager 使用SnapDrive 支援功能進行支援後、您可以將RBAC功能和使用者新增至角色以執行SnapManager 支援功能。 
+---
+= 設定角色型存取控制功能和角色
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+啟用角色型存取控制（RBAC）以SnapManager 使用SnapDrive 支援功能進行支援後、您可以將RBAC功能和使用者新增至角色以執行SnapManager 支援功能。
+
+*您需要的是什麼*
+
+您必須在Data Fabric Manager伺服器中建立群組、然後將群組新增至主要和次要儲存系統。執行下列命令：
+
+* "DFM group create _smsap_grp_"
+* 「DFM群組add _smsap_grpprimary儲存系統_」
+* 「DFM群組add _smsap_grpasside_storage系統_」
+
+
+*關於此工作*
+
+您可以使用Operations Manager Web介面或Data Fabric Manager伺服器命令列介面（CLI）來修改RBAC功能和角色。
+
+下表列出執行SnapManager 資訊技術作業所需的RBAC功能：
+
+[cols="1a,2a,3a"]
+|===
+| 營運SnapManager | 未啟用資料保護時所需的RBAC功能 | 啟用資料保護時所需的RBAC功能 
+
+
+ a| 
+設定檔建立或設定檔更新
+ a| 
+sd.Storage.read（smsap_grp）
+ a| 
+SD.Storage.Read（SMSAP `_PROfile_'資料集）
+
+
+
+ a| 
+設定檔保護
+ a| 
+Dfm.Database.Write（smsap_grp）
+
+sd.Storage.read（smsap_grp）
+
+sd.Config.read（smsap_grp）
+
+SD.Config.Write（smsap_grp）
+
+SD.Config.Delete（smsap_grp）
+
+GlobalDataProtection
+ a| 
+無
+
+
+
+ a| 
+建立備份
+ a| 
+sd.Storage.read（smsap_grp）
+
+SD.Snapshot寫入（smsap_grp）
+
+sd.Snapshot：讀取（smsap_grp）
+
+sd.Snapshot刪除（smsap_grp）
+ a| 
+SD.Storage.Read（SMSAP `_PROfile_'資料集）
+
+SD.Snapshot寫入（SMSAP `_profile _'資料集）
+
+SD.Snapshot讀取（SMSAP `_profile _'資料集）
+
+SD.Snapshot刪除（SMSAP `_profile _'資料集）
+
+
+
+ a| 
+建立備份（使用DBVerify）
+ a| 
+sd.Storage.read（smsap_grp）
+
+SD.Snapshot寫入（smsap_grp）
+
+sd.Snapshot：讀取（smsap_grp）
+
+sd.Snapshot刪除（smsap_grp）
+
+sd.snapshot（smsap_grp）
+ a| 
+SD.Storage.Read（SMSAP `_PROfile_'資料集）
+
+SD.Snapshot寫入（SMSAP `_profile _'資料集）
+
+SD.Snapshot讀取（SMSAP `_profile _'資料集）
+
+SD.Snapshot刪除（SMSAP `_profile _'資料集）
+
+SD.snapshot（SMSAP `_profile _'資料集）
+
+
+
+ a| 
+建立備份（使用RMAN）
+ a| 
+sd.Storage.read（smsap_grp）
+
+SD.Snapshot寫入（smsap_grp）
+
+sd.Snapshot：讀取（smsap_grp）
+
+sd.Snapshot刪除（smsap_grp）
+
+sd.snapshot（smsap_grp）
+ a| 
+SD.Storage.Read（SMSAP `_PROfile_'資料集）
+
+SD.Snapshot寫入（SMSAP `_profile _'資料集）
+
+SD.Snapshot讀取（SMSAP `_profile _'資料集）
+
+SD.Snapshot刪除（SMSAP `_profile _'資料集）
+
+SD.snapshot（SMSAP `_profile _'資料集）
+
+
+
+ a| 
+備份還原
+ a| 
+sd.Storage.read（smsap_grp）
+
+SD.Snapshot寫入（smsap_grp）
+
+sd.Snapshot：讀取（smsap_grp）
+
+sd.Snapshot刪除（smsap_grp）
+
+sd.snapshot（smsap_grp）
+
+SD.Snapshot：還原（smsap_grp）
+ a| 
+SD.Storage.Read（SMSAP `_PROfile_'資料集）
+
+SD.Snapshot寫入（SMSAP `_profile _'資料集）
+
+SD.Snapshot讀取（SMSAP `_profile _'資料集）
+
+SD.Snapshot刪除（SMSAP `_profile _'資料集）
+
+SD.snapshot（SMSAP `_profile _'資料集）
+
+SD.Snapshot：還原（SMSAP `_profile _'資料集）
+
+
+
+ a| 
+刪除備份
+ a| 
+sd.Snapshot刪除（smsap_grp）
+ a| 
+SD.Snapshot刪除（SMSAP `_profile _'資料集）
+
+
+
+ a| 
+備份驗證
+ a| 
+sd.Storage.read（smsap_grp）
+
+sd.Snapshot：讀取（smsap_grp）
+
+SD.Snapshot：Clone（smsap_grp）
+ a| 
+SD.Storage.Read（SMSAP `_PROfile_'資料集）
+
+SD.Snapshot讀取（SMSAP `_profile _'資料集）
+
+SD.Snapshot複製（SMSAP `_PROfile_'資料集）
+
+
+
+ a| 
+備份掛載
+ a| 
+sd.Storage.read（smsap_grp）
+
+sd.Snapshot：讀取（smsap_grp）
+
+SD.Snapshot：Clone（smsap_grp）
+ a| 
+SD.Storage.Read（SMSAP `_PROfile_'資料集）
+
+SD.Snapshot讀取（SMSAP `_profile _'資料集）
+
+SD.Snapshot複製（SMSAP `_PROfile_'資料集）
+
+
+
+ a| 
+備份卸載
+ a| 
+SD.Snapshot：Clone（smsap_grp）
+ a| 
+SD.Snapshot複製（SMSAP `_PROfile_'資料集）
+
+
+
+ a| 
+建立實體複本
+ a| 
+sd.Storage.read（smsap_grp）
+
+sd.Snapshot：讀取（smsap_grp）
+
+sd.snapshot（smsap_grp）
+ a| 
+SD.Storage.Read（SMSAP `_PROfile_'資料集）
+
+SD.Snapshot讀取（SMSAP `_profile _'資料集）
+
+SD.snapshot（SMSAP `_profile _'資料集）
+
+
+
+ a| 
+刪除實體複本
+ a| 
+SD.Snapshot：Clone（smsap_grp）
+ a| 
+SD.Snapshot複製（SMSAP `_PROfile_'資料集）
+
+
+
+ a| 
+實體複本分割
+ a| 
+sd.Storage.read（smsap_grp）
+
+sd.Snapshot：讀取（smsap_grp）
+
+sd.snapshot（smsap_grp）
+
+sd.Snapshot刪除（smsap_grp）
+
+SD.Storage.Write（smsap_grp）
+ a| 
+SD.Storage.Read（SMSAP `_PROfile_'資料集）
+
+SD.Snapshot讀取（SMSAP `_profile _'資料集）
+
+SD.snapshot（SMSAP `_profile _'資料集）
+
+SD.Snapshot刪除（SMSAP `_profile _'資料集）
+
+SD.Storage.Write（SMSAP `_PROfile_'資料集）
+
+|===
+如需定義RBAC功能的詳細資訊、請參閱《_ OnCommand 關於Unified Manager Operations Manager管理指南_》。
+
+.步驟
+. 存取Operations Manager主控台。
+. 從「設定」功能表中、選取*角色*。
+. 選取現有的角色或建立新的角色。
+. 若要將作業指派給資料庫儲存資源、請按一下*「Add Capabilities」（新增功能）*。
+. 在「編輯角色設定」頁面上、按一下「*更新*」以儲存您對角色所做的變更。
+
+
+*相關資訊*
+
+http://support.netapp.com/documentation/productsatoz/index.html["《Unified Manager Operations Manager系統管理指南》OnCommand"^]

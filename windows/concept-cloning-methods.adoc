@@ -1,0 +1,38 @@
+---
+permalink: windows/concept-cloning-methods.html 
+sidebar: sidebar 
+keywords: clone, method, database, create, operation 
+summary: 您可以使用兩種方法之一來複製資料庫。您選擇的方法會影響實體複本建立作業。 
+---
+= 複製方法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用兩種方法之一來複製資料庫。您選擇的方法會影響實體複本建立作業。
+
+下表說明了複製方法及其對「Clone create」（複製建立）作業及其「Reserve」（保留）選項的影響。可使用任一方法複製LUN。
+
+|===
+| 複製方法 | 說明 | Clone create -Reserve 
+
+
+ a| 
+LUN複製
+ a| 
+在同一個磁碟區內建立新的實體複製LUN。
+ a| 
+當LUN的「保留」設定為「是」時、磁碟區內的空間會保留為完整LUN大小。
+
+
+
+ a| 
+Volume複製
+ a| 
+系統會建立新的FlexClone、並在新的複製磁碟區中存在複製LUN。使用FlexClone技術。
+ a| 
+當Volume的「保留」設定為「是」時、空間會保留給集合體內的完整Volume大小。
+
+|===

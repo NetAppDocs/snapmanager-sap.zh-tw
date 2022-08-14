@@ -1,0 +1,33 @@
+---
+permalink: unix-administration/task-configure-e-mail-notification-for-an-existing-profile.html 
+sidebar: sidebar 
+keywords: updating, update, profile, configure, receive, email, notification, completion, database, operation, configuring, exist 
+summary: 當您更新設定檔時、可以設定在資料庫作業完成時接收電子郵件通知。 
+---
+= 設定現有設定檔的電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您更新設定檔時、可以設定在資料庫作業完成時接收電子郵件通知。
+
+*您需要的是什麼*
+
+* 您必須設定傳送警示的電子郵件地址。
+* 您必須輸入要傳送警示的單一電子郵件地址或多個電子郵件地址。
++
+您可以針對多個位址使用以逗號分隔的清單。您必須確保在逗號和下一個電子郵件地址之間沒有空格。您也可以選擇新增主旨至電子郵件。
+
+
+
+.步驟
+. 輸入下列命令：
++
+「* smsap profile update -profile _profile_[-profile-password _profile_password_][-database-dbname _dbname_-host _db_host_[-sID _db_sid_][-login_username_-password _db_password_-port _db_port_][{-RMA_dim_dim_dimour_n_dim_dim_nstation__每週一次登入密碼[_controllunyour_][_styour_station_次_次_次_次輸入密碼組[_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次輸入_次輸入_次輸入_次輸入_次輸入_次輸入_次輸入_次輸入_次_次輸入_次_次輸入_密碼_次輸入_次輸入_次_次_次_次_次_次輸入_次_次_ _n_][-dim_m_][-comment _comment _][-snapname-Pattern_][-protection [-protection -policy _policy_name_]|[-nosprote][-notification [-svm-email_address1、email_address2_-Subject _Pattern_][-email_Subject電子郵件_address_email_proteed_stite_]電子郵件_1、電子郵件主題電子郵件、電子郵件、電子郵件、_protee_protee_protee_protee_protee_protee_protee_1、電子郵件、電子郵件
+
++
+您可以使用「成功」選項來接收通知、只有在資料庫作業成功時才會收到通知、而失敗選項則只會收到失敗資料庫作業的通知。
+
+

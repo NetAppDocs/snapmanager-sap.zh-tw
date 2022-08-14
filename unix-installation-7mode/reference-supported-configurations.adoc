@@ -1,0 +1,20 @@
+---
+permalink: unix-installation-7mode/reference-supported-configurations.html 
+sidebar: sidebar 
+keywords: host, install, snapmanager, software, browser, database, operating, system, requirement, verify, configuration, upgrade 
+summary: 您要安裝SnapManager 的主機必須符合指定的軟體、瀏覽器、資料庫和作業系統需求。安裝或升級SnapManager 支援功能之前、您必須先驗證組態的支援。 
+---
+= 支援的組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您要安裝SnapManager 的主機必須符合指定的軟體、瀏覽器、資料庫和作業系統需求。安裝或升級SnapManager 支援功能之前、您必須先驗證組態的支援。
+
+如需支援組態的相關資訊、請參閱 http://mysupport.netapp.com/matrix["互通性對照表工具"^]。
+
+*相關資訊*
+
+http://mysupport.netapp.com/matrix["NetApp 互通性對照表工具"^]

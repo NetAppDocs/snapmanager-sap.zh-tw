@@ -1,0 +1,57 @@
+---
+permalink: unix-administration/concept-workflow-summary-for-local-and-secondary-database-backup.html 
+sidebar: sidebar 
+keywords: dba, snapmanager, storage, administrator, netapp, management, console, data, protection, capability, local, backup, protect, database, target, workflow, summary, local, secondary, backup 
+summary: 在此範例中、DBA（使用SnapManager NetApp）和儲存管理員（使用NetApp管理主控台資料保護功能）會協調行動、以設定目標資料庫的本機備份和次要備份（也稱為受保護的備份）。 
+---
+= 本機和次要資料庫備份的工作流程摘要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在此範例中、DBA（使用SnapManager NetApp）和儲存管理員（使用NetApp管理主控台資料保護功能）會協調行動、以設定目標資料庫的本機備份和次要備份（也稱為受保護的備份）。
+
+所執行的行動順序摘要如下：
+
+* *次要資源池組態*
++
+儲存管理員使用NetApp管理主控台資料保護功能、在次要站台設定儲存系統的資源池、以用於儲存薪資資料庫備份。
+
+* *二線備份排程*
++
+儲存管理員使用NetApp管理主控台資料保護功能來設定次要備份排程。
+
+* *保護原則組態*
++
+儲存管理員使用NetApp管理主控台資料保護功能來設定目標資料庫的次要備份保護原則。保護原則包括排程、並指定用於實作備份保護（備份、鏡射或兩者的組合）的基礎保護類型、以及用於主要資料、次要及有時是第三級儲存節點的名稱保留原則。
+
+* *資料庫設定檔組態與保護原則指派*
++
+DBA使用SnapManager 支援二線備份的目標資料庫設定檔來建立或編輯。設定設定檔時、DBA：
+
++
+** 為二線儲存設備提供備份保護。
+** 將在NetApp管理主控台資料保護功能中建立及擷取的新保護原則指派給此設定檔。
++
+指派保護原則時、會自動將目標資料庫包含在部分已配置但不符合NetApp管理主控台資料保護功能資料集中。完全配置後、資料集組態可將目標資料庫備份至次要儲存設備。
+
++
+資料集名稱使用下列語法：「_smsap_hostname_datapasename_」、其轉譯為「smsap_prod01.sample.com_p01"」。
+
+
+
+* *二線和三線儲存資源配置*
++
+儲存管理員使用NetApp管理主控台資料保護功能來指派資源集區、以配置二線儲存節點、有時是三線儲存節點（如果指派的保護原則指定三線儲存節點）。
+
+* *在本機儲存設備上備份*
++
+DBA開啟設定檔、SnapManager 啟用了支援功能的保護功能、並建立本機儲存設備的完整備份。更新的備份會在SnapManager 更新時段顯示為已排定的保護、但尚未受到保護。
+
+* *次要備份確認*
++
+由於備份是以啟用保護的設定檔為基礎、因此會根據保護原則的排程、將備份傳輸至次要。DBA使用SnapManager 支援功能來確認將備份傳輸至二線儲存設備。將備份複製到二線儲存設備後、SnapManager 將備份保護狀態從「未受保護」變更為「受保護」。
+
+

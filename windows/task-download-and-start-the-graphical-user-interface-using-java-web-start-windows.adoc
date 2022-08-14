@@ -1,0 +1,133 @@
+---
+permalink: windows/task-download-and-start-the-graphical-user-interface-using-java-web-start-windows.html 
+sidebar: sidebar 
+keywords: java, web, start, snapmanager, install, host, download, graphical, user, interface, gui, jre 
+summary: 如果SnapManager 主機上未安裝支援功能、您可以使用Java Web Start。Java Web Start會下載SnapManager 各種元件、並啟動圖形化使用者介面（GUI）。支援的JRE版本為1.5、1.6和1.7。 
+---
+= 使用Java Web Start下載並啟動圖形化使用者介面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果SnapManager 主機上未安裝支援功能、您可以使用Java Web Start。Java Web Start會下載SnapManager 各種元件、並啟動圖形化使用者介面（GUI）。支援的JRE版本為1.5、1.6和1.7。
+
+
+
+== 您的需求
+
+您必須確保符合下列條件：
+
+* 執行中的是這個伺服器。SnapManager
+* 網頁瀏覽器視窗隨即開啟。
+
+
+.步驟
+. 在Microsoft Internet Explorer網頁瀏覽器視窗中、輸入「+https://smsap-server.domain.com:port+`」。
++
+「msap-server.domain.com」是安裝SnapManager 了支援的完整主機名稱和網域、而「port」則是SnapManager 支援該伺服器的偵聽連接埠（預設為27314）。
+
++
+
+NOTE: 您必須在瀏覽器視窗中輸入「https」。
+
++
+此時會顯示一個對話方塊、顯示下列訊息。
+
+
+
+
+IMPORTANT: 「這是一個對話方塊、顯示站台的安全性憑證有問題...您要繼續嗎？」訊息
+
+. 按一下「*是*」或「*繼續*」。
+. 按一下標有*按一下這裡以下載並安裝JRE 6.0和應用程式*的連結。
++
+此時會顯示標有「Download Java Web Start（下載Java Web Start）」的連結、並顯示下列訊息。
+
+
+
+
+IMPORTANT: 「此網站可能需要下列的ActiveX控制項：Java Plug-in 1.6」... "按一下這裡進行安裝"
+
+. 在* Install*視窗中、執行下列步驟：
++
+.. 按一下標示為「Click here to install．．．」的訊息
++
+畫面會顯示*安裝ActiveX控制項*功能表。
+
+.. 選取*安裝ActiveX控制項...*。
++
+此時會顯示下列訊息。
+
+
+
+
+
+
+IMPORTANT: 「Internet Explorer -安全性警告」包含下列文字：「您要安裝此軟體嗎？名稱：Java Plug-in 1.6'
+
+. 按一下「*安裝*」。
++
+此時會顯示適用於「J2SE執行時間環境1.6」安裝程式的「Java Plug-in 1.6」視窗。
+
+. 按一下「*安裝*」。
++
+畫面會顯示一個視窗、要求您安裝「J2SE執行時間環境1.6」。。在「Install（安裝）」視窗中、執行下列步驟：
+
+. 在*授權合約*頁面上、選取*我接受授權合約*中的條款、然後按一下*下一步*。
+. 在「*安裝類型*」頁面上、選取「*典型*」、然後按「*下一步*」。
+. 在* Installation completed（*安裝完成*）*視窗中、按一下* Finish（*完成*）。
++
+開始下載。SnapManager
+
++
+出現「您要儲存此檔案嗎？」訊息的「檔案下載」對話方塊此時會顯示application.jnlp。。在*檔案下載*視窗中、執行下列步驟：
+
+. 在Windows用戶端上安裝最新版本的JRE 1.6。
+. 執行下列命令確認是否已安裝Java：「Java -version」
++
+輸出應指出Java 1.6.0_24版（Java 1.6版）或更新版本。
+
+. 將Windows組態設定變更為一律使用程式Java Web Start啟動器開啟副檔名為jnlp的檔案。
++
+變更Windows組態設定的步驟會因您使用的Windows版本而有所不同。
+
+. 輸入SnapManager 您在步驟1中指定的URL。
++
+從Windows用戶端開始下載此功能、並顯示下列警告SnapManager
+
+
+
+
+WARNING: 畫面會顯示「安全性」對話方塊
+
+. 請執行下列步驟。
++
+訊息內容和按鈕標籤會因平台而異。
+
++
+.. 在「*警告-安全性*」對話方塊中、按一下「*是*」。
++
+隨即顯示對話方塊。
+
+.. 在主機名稱不相符對話方塊中、按一下*執行*。
++
+「警告-安全性」對話方塊SnapManager 中會顯示一則訊息、說明該應用程式的簽名。
+
+.. 按一下「*執行*」。
++
+隨即顯示一個對話方塊、標題為「Java Installer - Security Warning"（Java安裝程式-安全性警告）」、並顯示下列訊息。
+
+
+
+
+
+
+WARNING: 「警告安全性：應用程式的數位簽章有錯誤。您想要執行應用程式嗎
+
+. 按一下「*執行*」。
++
+瀏覽器會下載SnapManager 並啟動適用於SAP GUI的功能。
+
+

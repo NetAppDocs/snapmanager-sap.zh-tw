@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task-delete-backup-schedules.html 
+sidebar: sidebar 
+keywords: delete, backup, schedule, deleting 
+summary: 您可以在不再需要備份排程時、刪除這些排程。 
+---
+= 刪除備份排程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在不再需要備份排程時、刪除這些排程。
+
+.步驟
+. 若要刪除備份排程、請輸入下列命令：
++
+hy*smsap排程刪除-profile _profile_name_-schedule-name _schedulename_[-quiet |-verbose]*
+
+

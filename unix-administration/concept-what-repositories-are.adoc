@@ -1,0 +1,28 @@
+---
+permalink: unix-administration/concept-what-repositories-are.html 
+sidebar: sidebar 
+keywords: snapmanager, organize, information, profile, repository, repositories, data 
+summary: 將資訊整理成設定檔、然後再與儲存庫建立關聯。SnapManager設定檔包含正在管理之資料庫的相關資訊、而儲存庫則包含有關在設定檔上執行之作業的資料。 
+---
+= 什麼是儲存庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將資訊整理成設定檔、然後再與儲存庫建立關聯。SnapManager設定檔包含正在管理之資料庫的相關資訊、而儲存庫則包含有關在設定檔上執行之作業的資料。
+
+儲存庫會記錄備份的時間、備份的檔案、以及是否從備份建立複本。當資料庫管理員還原資料庫或恢復其中一部分時、SnapManager Oracle會查詢儲存庫以判斷備份的內容。
+
+由於儲存庫會儲存備份作業期間所建立之資料庫Snapshot複本的名稱、因此儲存庫資料庫無法存在於同一個資料庫中、也不能是SnapManager 同一個資料庫的一部分。執行還原作業時、您必須SnapManager 至少有兩個資料庫SnapManager （由支援此功能的還原庫資料庫和目標資料庫）在執行中SnapManager 。
+
+如果您在儲存庫資料庫關閉時嘗試開啟圖形化使用者介面（GUI）、下列錯誤訊息會記錄在「shm_g1.log」檔案中：[warn]：「sSAP -01106：查詢儲存庫時發生錯誤：沒有更多資料可從套接字讀取」。此外SnapManager 、當儲存庫資料庫當機時、無法執行功能。如需不同錯誤訊息的詳細資訊、請參閱_疑難排解已知問題_。
+
+您可以使用任何有效的主機名稱、服務名稱或使用者名稱來執行作業。若要讓儲存庫支援SnapManager Sz供 作業、儲存庫使用者名稱和服務名稱必須僅包含下列字元：字母字元（A-Z）、數字（0-9）、減號（-）、底線（_）和句點（.）。
+
+儲存庫連接埠可以是任何有效的連接埠號碼、而且儲存庫主機名稱可以是任何有效的主機名稱。主機名稱必須包含字母字元（A-Z）、數字（0-9）、減號（-）和句點（.）、但不能包含底線（_）。
+
+儲存庫必須在Oracle資料庫中建立。應根據Oracle資料庫組態程序來設定使用的資料庫SnapManager 。
+
+單一儲存庫可以包含多個設定檔的相關資訊、不過每個資料庫通常只會與一個設定檔建立關聯。您可以擁有多個儲存庫、每個儲存庫都包含多個設定檔。

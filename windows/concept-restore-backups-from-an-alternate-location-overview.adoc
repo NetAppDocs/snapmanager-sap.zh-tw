@@ -1,0 +1,25 @@
+---
+permalink: windows/concept-restore-backups-from-an-alternate-location-overview.html 
+sidebar: sidebar 
+keywords: restore, database, backup, alternate, location, section, overview 
+summary: 若要從替代位置還原資料庫備份、請使用下列主要步驟、本節將進一步說明每個步驟。 
+---
+= 從替代位置總覽還原備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要從替代位置還原資料庫備份、請使用下列主要步驟、本節將進一步說明每個步驟。
+
+* 視資料庫配置和需要還原的項目而定、執行下列其中一項：
++
+** 將所需的資料檔案、從磁帶、SnapVault 支援、SnapMirror或任何其他媒體還原至資料庫主機上掛載的任何檔案系統。
+** 還原所需的檔案系統、並將其掛載到資料庫主機上。
+** 連線至本機主機中所需的原始裝置。
+
+
+* 建立還原規格可延伸標記語言（XML）檔案、其中包含SnapManager 從替代位置還原至原始位置所需的對應。將檔案儲存在SnapManager 可存取的位置。
+* 使用還原規格的XML檔案來還原及恢復資料。SnapManager
+

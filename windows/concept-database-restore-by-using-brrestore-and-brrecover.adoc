@@ -1,0 +1,25 @@
+---
+permalink: windows/concept-database-restore-by-using-brrestore-and-brrecover.html 
+sidebar: sidebar 
+keywords: brrestore, brrecover, command, work, backup, brbackup, database, restore 
+summary: BRRESTORE和BRRECOVERR命令僅適用於使用BRBACKUP建立的備份。 
+---
+= 使用BRRESTORE和BRRECOVER
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+BRRESTRESTORE和BRRECOVER'命令僅適用於使用「BRBACKUP」建立的備份。
+
+請參閱SAP文件、以取得「BRRESTORE」和「BRRECOVER」命令的具體指示和語法。
+
+如果SnapManager 無法使用SAP資料庫系統識別碼、您必須指定包含SnapManager 此資訊檔名稱的參數檔名稱。您可以使用下列其中一種方法來執行此作業：
+
+* 使用「BRBACKUP」命令中的「-r」選項、指定備份公用程式參數檔（「initSID.utl」）。
+* 在BR*工具初始化檔案（「initSID.SAP」）中指定參數檔案。
+
+
+
+NOTE: 使用「BRBACKUP」建立的備份（資料檔案、控制檔或線上重作記錄檔）、可以使用「msap」「restore」命令、從二線或三線儲存系統還原。不過、建議您使用「BRBACKUP」搭配「AP_DIR」來備份其他SAP組態檔、例如SAP記錄檔、核心檔案及傳輸要求、並使用「BRRESTRESTORE」來還原。

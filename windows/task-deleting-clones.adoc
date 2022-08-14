@@ -1,0 +1,43 @@
+---
+permalink: windows/task-deleting-clones.html 
+sidebar: sidebar 
+keywords: delete, clone, size, snapshot, copy, backup, data, deleting 
+summary: '當Snapshot複本的大小達到備份量的10%到20%時、您可以刪除複本。這也保證複本擁有最新的資料。' 
+---
+= 刪除複本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當Snapshot複本的大小達到備份量的10%到20%時、您可以刪除複本。這也保證複本擁有最新的資料。
+
+標籤是設定檔中每個實體複本的唯一識別碼。您可以使用實體複本標籤或ID、但不能使用系統識別碼（SID）來刪除實體複本。
+
+
+NOTE: 實體複製的SID和實體複製標籤不同。
+
+刪除實體複本時、資料庫必須正在執行中。否則、將不會刪除現有複本的許多檔案和目錄、導致在建立另一個複本之前、需要進行更多工作。
+
+當刪除實體複本時、會銷毀為實體複本中特定Oracle參數所指定的目錄、且僅應包含複製資料庫的資料：歸檔記錄目的地、背景、核心及使用者傾印目的地。稽核檔案不會刪除。
+
+
+NOTE: 當複本用於其他作業時、您無法刪除複本。
+
+您可以選擇在成功或失敗的實體複本刪除作業之後收集傾印檔案。
+
+. 輸入下列命令：「msap clone delete -profileprofileprofile_name（-labelLabel |-idguid][-force][-dump）[-quid]|[-verbose]（msap複製刪除-profileprofileprofile_name）」
+
+
+
+
+== 範例
+
+[listing]
+----
+smsap clone delete -profile targetdb1_prof1 -label sales0908_clone1
+----
+*相關資訊*
+
+xref:reference-the-smosmsapclone-delete-command.adoc[smsap clone刪除命令]

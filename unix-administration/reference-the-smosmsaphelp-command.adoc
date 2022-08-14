@@ -1,0 +1,50 @@
+---
+permalink: unix-administration/reference-the-smosmsaphelp-command.html 
+sidebar: sidebar 
+keywords: run, help, command, display, information, snapmanager, command, option, supply, valid, command, name, syntax, smsap 
+summary: 您可以執行「說明」命令來顯示SnapManager 有關支援功能及其選項的資訊。如果您未提供命令名稱、則會顯示有效命令的清單。如果您提供命令名稱、則會顯示該命令的語法。 
+---
+= smsap說明命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「help」命令來顯示SnapManager 有關支援功能及其選項的資訊。如果您未提供命令名稱、則會顯示有效命令的清單。如果您提供命令名稱、則會顯示該命令的語法。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap help
+[_backup_|_cmdfile_|_clone_|_credential_|_help_|_operation_|_profile_|_protection-policy_|_repository_|_system_|_version_|_plugin_|_diag_|_history_|_schedule_|_notification_|_storage_|_get_]]
+[-quiet | -verbose]]
+----
+
+
+== 參數
+
+以下是您可以搭配此命令使用的一些命令名稱：
+
+* 備份
+* 《Clone》（複製）
+* "cmd檔案"
+* 《認證資料》
+* 《大雜誌》
+* 《Get》（取得）
+* 《通知》
+* 《幫助》
+* 《歷史》
+* 《營運》
+* 外掛程式
+* 《設定檔》
+* 《保護政策》
+* 《存管》
+* 「排程」
+* 《太老了》
+* 《系統》
+* 「分度」
+

@@ -1,0 +1,29 @@
+---
+permalink: unix-administration/task-restore-backups-from-an-alternate-location.html 
+sidebar: sidebar 
+keywords: restore, backup, alternate, location, data, file, intermediate, system, block, raw, device, restoring 
+summary: 您可以從替代位置還原備份、將資料檔案從中繼檔案系統還原至作用中檔案系統、或將資料區塊從中繼原始裝置還原至作用中原始裝置。 
+---
+= 從替代位置還原備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從替代位置還原備份、將資料檔案從中繼檔案系統還原至作用中檔案系統、或將資料區塊從中繼原始裝置還原至作用中原始裝置。
+
+*您需要的是什麼*
+
+* 建立還原規格XML檔案、並指定您要使用的還原方法類型。
+
+
+*關於此工作*
+
+您可以使用smsap「備份還原」命令、並指定您建立的還原規格XML檔案、以便從替代位置還原備份。
+
+. 輸入下列命令：
++
+"*smsap備份還原-profile _profile_-label _label_-完整-alllogs -restorespec _restoresprec_*
+
+

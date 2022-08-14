@@ -1,0 +1,16 @@
+---
+permalink: windows/concept-performing-management-operations.html 
+sidebar: sidebar 
+keywords: perform, management, task, set, up, configure, snapmanager, manage, normal, operation, restore, clone 
+summary: 您可以在設定SnapManager 及設定好整套功能後執行管理工作。這些工作可讓您管理備份、還原及複製以外的正常作業。 
+---
+= 執行管理作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在設定SnapManager 及設定好整套功能後執行管理工作。這些工作可讓您管理備份、還原及複製以外的正常作業。
+
+系統管理員可以使用圖形化使用者介面或命令列介面來執行作業。

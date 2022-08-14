@@ -1,0 +1,96 @@
+---
+permalink: windows/task-installing-snapmanager-for-oracle-snapmanager-for-sap.html 
+sidebar: sidebar 
+keywords: install, snapmanager, host, database, manage, instance, host, sap 
+summary: 您可以在SnapManager 需要管理一或多個資料庫的主機上安裝支援。每個主機只能安裝一個SnapManager 實體執行個體。 
+---
+= 安裝SnapManager 適用於SAP的
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在SnapManager 需要管理一或多個資料庫的主機上安裝支援。每個主機只能安裝一個SnapManager 實體執行個體。
+
+* 您必須已完成必要的預先安裝工作。
+* 必須下載最新SnapManager 的版本更新的版本。
+* 必須在所有目標主機上安裝並設定適當版本SnapDrive 的Windows版。
++
+如需安裝及設定SnapDrive 適用於Windows的功能、請參閱《適用於SnapDrive Windows的安裝與管理指南》_。
+
++
+.. 按兩下SnapManager 「安裝更新檔」：
++
+|===
+| 如果作業系統是... | 然後使用... 
+
+
+ a| 
+Windows x86
+ a| 
+netapp.smsap.windows-x86-version.exe
+
+
+
+ a| 
+Windows x64
+ a| 
+netapp.smsap.windows-x64-version.exe
+
+|===
++
+此時會顯示下列訊息：無法驗證發行者。確定要執行此軟體？
+
+.. 按一下「*確定*」。
+.. 在Introduction（簡介）窗口中，單擊* Next*（下一步*）。
+.. 在Choose Install Folder（選擇安裝文件夾）窗口中，單擊* Next*（下一步*）接受默認安裝位置或選擇新位置。
++
+預設位置為：C:\Program Files\NetApp\SnapManager for SAP。
+
+.. 在Menu Availability（菜單可用度）窗口中，單擊* Next*（下一步*）。
+.. 在「指定服務內容」視窗中、輸入Windows服務的帳戶和密碼資訊。
++
+指定的帳戶必須是下列群組的成員：
+
++
+*** 儲存系統的本機管理群組
+*** 本機系統管理員的群組
+*** ORA_DBA群組您可以指定服務必須在重新開機後自動啟動、還是手動啟動。
+
+
+.. 在「預先安裝摘要」視窗中、按一下「*安裝*」。
+.. 在Install Complete（安裝完成）窗口中，單擊* Next*（下一步*）。
+.. 在「重要資訊」視窗中、按一下「*完成*」結束安裝程式。
+
+
+
+
+完成安裝之後、您可以確認安裝是否成功：
+
+. 啟動SnapManager 伺服器：
++
+.. 在Windows服務視窗中、選取* SnapManager 適用於SAP*的NetApp更新版本。
+.. 在左側面板中、按一下* Start*。
+
+
+. 驗證SnapManager 該系統是否正確執行：
++
+.. 按一下*開始*>*程式集*>* NetApp *>* SnapManager 適用於SAP*的*更新*>*啟動SMSAP命令列介面（CLI）*。
+.. 在命令列介面（CLI）中、輸入下列命令：「msap system Verify（msap系統驗證）」。此時會顯示下列訊息：營運ID編號成功。
+
+
++
+Number是營運ID編號。
+
+
+
+*相關資訊*
+
+xref:concept-preparing-to-install-snapmanager-for-oraclesnapmanager-for-sap.adoc[準備安裝SnapManager 適用於SAP的功能]
+
+xref:concept-preinstallation-tasks.adoc[預先安裝工作]
+
+xref:task-downloading-snapmanager-for-oraclesnapmanager-for-sap-installation-package.adoc[正在下載SnapManager 適用於SAP的更新套件]
+
+http://mysupport.netapp.com/["NetApp支援網站上的文件：mysupport.netapp.com"]

@@ -1,0 +1,76 @@
+---
+permalink: unix-administration/task-schedule-archive-log-file-pruning.html 
+sidebar: sidebar 
+keywords: create, backup, schedule, pruning, prune, archive, log, file, scheduling 
+summary: 建立備份時、您可以排定在指定時間剪除保存記錄檔。 
+---
+= 排程保存檔記錄檔剪除
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立備份時、您可以排定在指定時間剪除保存記錄檔。
+
+*關於此工作*
+
+利用此功能、您可以定期從作用中的檔案系統中剪除歸檔記錄檔。SnapManager
+
+.步驟
+. 輸入下列命令：
++
+「*smsap排程create -profile _profile_name_｛[-full｛-online |-offline |-auto｝[-hourly |-dayly |-fleyly |-mourly |-monthly |-unonviment][-unchimalize__[_-tap空間[_-forms_chargeed_]每週一次、每週一次、每次、每次、每次、每次、每次、每次、每次不限、每次、每次不限、每次、每次、每次不限、每次、每次、每次、每次、每次不限、每次、每次、每次 |-protectNOW |-nosprotect][-backup-dest_path1_[、[_path2_][-exclude -dest_path1_[_、path2_][-prunelogs｛-all |-untilit_untilscn_|-prestate _yours_前｛_dest-minuts_每月_時間_____、每週_、_、每小時_、_、_、_、每週_、共_、共_、共_、共_、共_、共_、共_、共_、共_、共_、共_天_、共_、共_天_、共_、共_、共_天_、共_、共_、共_天_、共_、共_、共_天_、共_、共_、共_、共_、共_天_、共_、共_、共_天_ start_time <yd-mm-dd hh：mm>_｝-runasuser __ Runasuser_[-force][-quiet |-verbose]*
+
++
+[cols="2a,4a"]
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+*排程保存記錄檔的剪除*
+ a| 
+指定下列選項：
+
+** 「剪除日誌」來排程剪除歸檔日誌檔
+** 從歸檔記錄目的地剪除歸檔記錄檔檔案的「prune-dest」
+
+
+
+
+ a| 
+*加入排程名稱*
+ a| 
+指定"-schedule-nam"選項。
+
+
+
+ a| 
+*排程在特定時間間隔內剪除歸檔記錄檔*
+ a| 
+指定「時間間隔」選項、並指出是否應根據下列時間間隔類別來剪除歸檔記錄檔：
+
+** 「每小時」
+** 《每日》
+** 每週一次
+** 每月一次
+** 僅限一次性
+
+
+
+
+ a| 
+*新增有關排程作業的留言*
+ a| 
+指定「-schedule-comment」選項、後面接著說明字串。
+
+
+
+ a| 
+*指定排程作業的開始時間*
+ a| 
+以yyyy-mm-dd hh：mm格式指定「-start-time」選項。
+
+|===
+

@@ -1,0 +1,49 @@
+---
+permalink: unix-administration/reference-the-smosmsapsystem-dump-command.html 
+sidebar: sidebar 
+keywords: run, system, dump, command, create, jar, file, contain, diagnostic, information, server, environment, smsap 
+summary: 您可以執行系統傾印命令來建立一個包含伺服器環境診斷資訊的Jar檔案。 
+---
+= smsap系統傾印命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「系統傾印」命令來建立包含伺服器環境診斷資訊的Jar檔案。
+
+
+
+== 語法
+
+[listing]
+----
+smsap system dump
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* 「*- Quiet *」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 系統傾印命令範例
+
+以下範例使用smsap系統傾印命令來建立一個Jar檔案：
+
+[listing]
+----
+smsap system dump
+Path:/userhomedirectory/.netapp/smsap/3.3.0/smsap_dump_hostname.jar
+----

@@ -1,0 +1,27 @@
+---
+permalink: windows/task-verify-the-environment.html 
+sidebar: sidebar 
+keywords: verify, environment, snapdrive, snapmanager, set, up, correct 
+summary: 您可以驗證環境、以確保SnapDrive 正確SnapManager 設定了Sure和Sure。 
+---
+= 驗證環境
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以驗證環境、以確保SnapDrive 正確SnapManager 設定了Sure和Sure。
+
+
+
+== 您的需求
+
+下載、安裝及設定必要的先決條件。確定SnapManager 安裝了「支援」功能、且主機伺服器正在執行。
+
+.步驟
+. 若要驗SnapDrive 證是否已安裝且可從root帳戶執行、請執行下列命令：
++
+系統驗證*
+
+

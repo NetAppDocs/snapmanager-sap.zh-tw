@@ -1,0 +1,23 @@
+---
+permalink: windows/task-uninstalling-the-software-from-a-windows-host.html 
+sidebar: sidebar 
+keywords: uninstall, snapmanager, host, server 
+summary: 您可以從SnapManager 主機伺服器解除安裝支援。 
+---
+= 解除安裝SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從SnapManager 主機伺服器解除安裝支援。
+
+* 請先停止主機伺服器、再解除安裝SnapManager 支援。
+
+
+.步驟
+. 按一下*開始*>*控制台*>*新增或移除程式*。
+. 選擇* SnapManager 適用於SAP*。
+. 按一下*解除安裝*。
+

@@ -1,0 +1,30 @@
+---
+permalink: windows/concept-accessing-snapmanager.html 
+sidebar: sidebar 
+keywords: access, snapmanager, command-line, interface, cli, graphical, user, interface, gui 
+summary: 您可以SnapManager 使用命令列介面（CLI）或圖形使用者介面（GUI）來存取功能。 
+---
+= 存取SnapManager 功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以SnapManager 使用命令列介面（CLI）或圖形使用者介面（GUI）來存取功能。
+
+您可以SnapManager 透過下列方式執行不同的功能：
+
+* 在與資料庫主機位於相同網路的主機上的CLI中輸入命令。
++
+如需所有命令的清單及其選項和引數的說明、請參閱命令參考一章。
+
++
+若要存取CLI、請按一下*開始*>*所有程式*>* NetApp *>* SnapManager 針對SAP***>*啟動SMSAP命令列介面（CLI）*。
+
+* 存取與資料庫主機位於同一個網路中的主機上的GUI。
++
+GUI提供簡單易用的精靈、可協助您執行不同的作業。
+
+* 使用SAP BR*工具命令。
+

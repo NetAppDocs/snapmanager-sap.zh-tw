@@ -1,0 +1,24 @@
+---
+permalink: windows/concept-clone-database-backups.html 
+sidebar: sidebar 
+keywords: snapmanager, flexclone, technology, create, writable, space-efficient, clone, database, backup, modify, source 
+summary: 使用FlexClone技術建立可寫入、節省空間的資料庫備份複本。SnapManager您可以修改實體複本、而不需變更備份來源。 
+---
+= 資料庫備份複本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用FlexClone技術建立可寫入、節省空間的資料庫備份複本。SnapManager您可以修改實體複本、而不需變更備份來源。
+
+您可能想要複製資料庫、以便在非正式作業環境中進行測試或升級。您可以複製主資料庫上的資料庫。實體複本可位於同一主機、或與資料庫位於不同主機上。
+
+FlexClone技術可讓SnapManager 支援使用資料庫的Snapshot複本、避免建立完整的實體磁碟對磁碟複本。Snapshot複本所需的建立時間較短、佔用的空間遠少於實體複本。
+
+如Data ONTAP 需FlexClone技術的詳細資訊、請參閱《支援》文件。
+
+*相關資訊*
+
+http://support.netapp.com/documentation/productsatoz/index.html["本文檔Data ONTAP"^]

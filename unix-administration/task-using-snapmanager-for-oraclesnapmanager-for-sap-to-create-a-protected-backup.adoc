@@ -1,0 +1,51 @@
+---
+permalink: unix-administration/task-use-snapmanager-for-oraclesnapmanager-for-sap-to-create-a-protected-backup.html 
+sidebar: sidebar 
+keywords: create, creating, backup, example, dba, select, full, set, secondary, storage, local, protection-enabled, profile, transfer, protection, policy 
+summary: 為此範例建立備份時、DBA會選擇建立完整備份、設定備份選項、並選擇對次要儲存設備的保護。雖然備份最初是在本機儲存設備上進行、但因為此備份是以啟用保護的設定檔為基礎、因此會根據Protection Manager中定義的保護原則排程、將備份傳輸至次要儲存設備。 
+---
+= 使用適用於SAP的支援功能來建立受保護的備份SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為此範例建立備份時、DBA會選擇建立完整備份、設定備份選項、並選擇對次要儲存設備的保護。雖然備份最初是在本機儲存設備上進行、但因為此備份是以啟用保護的設定檔為基礎、因此會根據Protection Manager中定義的保護原則排程、將備份傳輸至次要儲存設備。
+
+.步驟
+. 前往SnapManager SAP用戶端的《關於SAP用戶端的問題：
+. 在SnapManager 「還原儲存庫」樹狀結構中、以滑鼠右鍵按一下包含您要備份之資料庫的設定檔、然後選取「*備份*」。
++
+SAP備份精靈隨即啟動。SnapManager
+
+. 輸入
++
+「正式作業薪資*」
+
++
+作為標籤。
+
+. 輸入
++
+「生產總薪資1月19日備份*」
+
++
+作為評論。
+
+. 選取*自動*作為您要建立的備份類型。
++
+這可讓SnapManager 人判斷是否要執行線上或離線備份。
+
+. 選擇*每日*或*每週*作為備份頻率。
+. 若要確認備份的格式是否為Oracle的有效格式、請勾選*驗證備份*旁的方塊。
++
+此作業使用Oracle DBVerify檢查區塊格式和結構。
+
+. 若要強制資料庫狀態進入適當的模式（例如從開啟到掛載）、請選取*允許資料庫的啟動或關機（若有必要）*、然後按一下*下一步*。
+. 在Database（資料庫）、表格空間（資料檔案）或Datafiles to Backup（要備份的資料檔案）頁面中、選取*完整備份*、然後按一下* Next*（下一步*）。
+. 若要保護次要儲存設備上的備份、請勾選*保護備份*、然後按一下*下一步*。
+. 在「執行作業」頁面中、確認您提供的資訊、然後按一下「*備份*」。
+. 在「Progress（進度）」頁面中、檢視建立備份的進度和結果。
+. 若要檢視作業的詳細資料、請按一下*作業詳細資料*。
+

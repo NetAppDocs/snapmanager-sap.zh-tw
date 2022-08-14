@@ -1,0 +1,49 @@
+---
+permalink: unix-administration/task-use-protection-manager-to-provision-the-new-dataset.html 
+sidebar: sidebar 
+keywords: smsap_paydb, dataset, create, storage, administrator, protection, manager, assign, system, resource, provision, backup, node 
+summary: 建立smsap_paydb資料集之後、儲存管理員會使用Protection Manager指派儲存系統資源來配置資料集的備份節點。 
+---
+= 使用Protection Manager來配置新的資料集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立smsap_paydb資料集之後、儲存管理員會使用Protection Manager指派儲存系統資源來配置資料集的備份節點。
+
+*您需要的是什麼*
+
+在配置新建立的資料集之前、儲存管理員會將設定檔中指定的資料集名稱授予DBA合作夥伴。
+
+在此情況下、資料集名稱為smsap_prod01.sample.com_P01。
+
+.步驟
+. 前往Protection Manager的NetApp管理主控台。
+. 在功能表列中、按一下*資料*>*資料集*>*總覽*。
++
+「資料集」視窗的「資料集」索引標籤會顯示資料集清單、其中包含剛剛透過SnapManager 「資訊」建立的資料集。
+
+. 找到並選取* smsap_prod01.sample.com_p01*資料集。
++
+選取此資料集時、圖表區域會顯示smsap_P01資料集、且其備份節點未配置資源。其一致性狀態會標示為不一致。
+
+. 在smsap_P01資料集仍反白顯示的情況下、按一下*編輯*。
++
+Protection Manager的NetApp管理主控台會顯示* smsap_prod01.sample.com_p01*資料集的「編輯資料集」視窗。視窗的導覽窗格會顯示資料集的主要節點、備份連線和備份節點的組態選項。
+
+. 在導覽窗格中、找到資料集備份節點的選項、然後選取*資源資源池*。
++
+「編輯資料集」視窗會顯示預設資源配置原則的設定、以及可用資源集區的清單。
+
+. 在此範例中、選取* P01備份資源*資源池、然後按一下*>*。
++
+選取的資源池會列在「此節點的資源集區」欄位中。
+
+. 按一下「*完成*」以儲存變更。
+
+
+* 結果 *
+
+Protection Manager會自動將資源從paydb_backup_resourcePool中配置為次要備份節點。

@@ -1,0 +1,28 @@
+---
+permalink: unix-administration/task-destroy-split-clone-and-associated-profile.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, destroy, profile, associate, split, clone, database, storage, remove. backup 
+summary: 利用此功能、您可以銷毀與分割複本（資料庫）相關的設定檔、以及基礎儲存設備。SnapManager在銷毀設定檔之前、請務必先移除相關的備份與複本。 
+---
+= 銷毀設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以銷毀與分割複本（資料庫）相關的設定檔、以及基礎儲存設備。SnapManager在銷毀設定檔之前、請務必先移除相關的備份與複本。
+
+.步驟
+. 若要銷毀使用分割複製作業和分割複製資料庫所建立的設定檔、請輸入下列命令：
++
+「* smsap設定檔銷毀-profileprofile [-host _hostname_][-quiet |-verbose]*」
+
+
+
+'''
+[listing]
+----
+smsap profile destroy -profile AUTO-REVEN
+----
+'''

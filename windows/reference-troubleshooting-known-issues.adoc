@@ -1,0 +1,191 @@
+---
+permalink: windows/reference-troubleshooting-known-issues.html 
+sidebar: sidebar 
+keywords: aware, issue, snapmanager, troubleshoot 
+summary: 您應該瞭解使用SnapManager 下列項目時可能發生的一些已知問題、以及如何解決這些問題。 
+---
+= 疑難排解已知問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您應該瞭解使用SnapManager 下列項目時可能發生的一些已知問題、以及如何解決這些問題。
+
+
+
+== SAP無法將設定檔識別為叢集模式設定檔SnapManager
+
+如果SnapManager 叢集模式設定檔名稱未出現在SAP安裝目錄的「cmode_profile.config」檔案中、可能會觸發下列錯誤訊息：
+
+「請使用SnapDrive 下列功能來設定DFM伺服器：
+
+此外、在升級SnapManager 適用於SAP的功能時、如果您刪除「/opt/netapp/smsap/`*」資料夾、則具有「叢集模式」設定檔名稱的「cmode_profile.config」檔案也會遭到刪除。此問題也會觸發相同的錯誤訊息。
+
+*因應措施*
+
+更新設定檔：「msap profile update-profile <profile名稱>」
+
+
+NOTE: 如果SnapManager 將for SAP安裝在「/opt/netapp/smsap/」路徑中、則檔案位置將是「/opt/netapp/smsap/cmode_profiles/cmode_profiles.config」。
+
+
+
+== 伺服器無法啟動
+
+啟動伺服器時、您可能會看到類似下列的錯誤訊息：
+
+「MSAP-01104：叫用命令時發生錯誤：SMSAP-17107：SnapManager 由於下列錯誤、導致無法在連接埠8074上啟動Syndche伺 服器：java.net.BindException: Address already in use（位址已在使用中）」
+
+這可能是因為SnapManager 另一個應用程式目前正在使用不偵聽的連接埠（預設為27314和27315）。
+
+如果「smsap_server」命令已經在執行中、SnapManager 但無法偵測到現有的程序、也可能發生此錯誤。
+
+*因應措施*
+
+您可以重新設定SnapManager 使用不同連接埠的功能或其他應用程式。
+
+若要重新設定SnapManager 功能、請編輯下列檔案：「C:\Program Files\NetApp\SnapManager for SAp\properties\smsap.config」
+
+您可以指派下列值：
+
+* SMSAP Server.port=27314
+* SMSAP Server.rmiRegister.port=27315
+* remote.register.ocijdbc.port= 27315
++
+remote.register.ocijdbc.port必須與Server.rmiRegistry.port相同。
+
+
+
+若要啟動SnapManager 此伺服器、請執行下列步驟：
+
+.步驟
+. 按一下*開始*>*控制台*>*管理工具*>*服務*。
+. 在「服務」視窗開啟中、選取「NetApp SnapManager Rs233 for SAP」。
+. 您可以使用下列三種方式之一來啟動伺服器：
++
+** 在左側面板中、按一下* Start*。
+** 在SnapManager NetApp Sfor SAP上按一下滑鼠右鍵、然後從下拉式功能表中選取* Start*。
+** 按兩SnapManager 下「NetApp Sfor SAP」3.3、然後在開啟的「內容」視窗中、按一下「* Start*」。
+
+
+
+
+
+
+== 如果目的地名稱是其他目的地名稱的一部分、則無法管理歸檔記錄檔目的地名稱
+
+建立歸檔記錄備份時、如果使用者排除的目的地是其他目的地名稱的一部分、則其他目的地名稱也會排除在外。
+
+例如、假設有三個目的地可供排除：「E：\arch」、「G：\arch」和「H：\arch」。在建立歸檔記錄檔備份時、如果您使用命令排除「E：\ arch」
+
+[listing]
+----
+smsap backup create -profile almsamp1 -data -online -archivelogs  -exclude-dest E:\\arch
+----
+、SnapManager SAP的支援範圍排除以「E：\arch」開頭的所有目的地。
+
+*因應措施*
+
+* 在「v$archive _dest"中設定目的地之後、新增路徑分隔符號。例如、將「E：\arch」變更為「E：\arch」。
+* 建立備份時、請加入目的地、而不要排除任何目的地。
+
+
+
+
+== 儲存庫資料庫大小隨時間而成長、而非備份數量
+
+由於無法在儲存庫資料庫表格中插入或刪除架構內的資料、導致索引空間使用率偏高、因此儲存庫資料庫的大小會隨時間增加SnapManager 。
+
+*因應措施*
+
+您必須根據Oracle準則來監控及重新建置索引、以控制儲存庫架構所耗用的空間。
+
+
+
+== 無法存取此功能、且儲存庫資料庫當機時、無法執行各項功能SnapManager SnapManager
+
+無法執行作業系統、而且儲存庫資料庫當機時、您無法存取GUI。SnapManager
+
+下表列出您可能要執行的不同動作及其例外狀況：
+
+|===
+| 營運 | 例外情況 
+
+
+ a| 
+開啟關閉的儲存庫
+ a| 
+下列錯誤訊息記錄在「shm_g1.log：[warn ]：SMSAP-01106：查詢儲存庫時發生錯誤：Closed Connection Java.sql.SQLException: Closed Connection'。
+
+
+
+ a| 
+按下F5重新整理已開啟的儲存庫
+ a| 
+GUI中會顯示儲存庫例外狀況、並在「shm_GUI .log」檔案中記錄一個NullPointerException。
+
+
+
+ a| 
+正在重新整理主機伺服器
+ a| 
+將一個nullPointerException記錄在"shumo_g1.log"檔案中。
+
+
+
+ a| 
+建立新的設定檔
+ a| 
+「設定檔組態」視窗中會顯示一個NullPointerException。
+
+
+
+ a| 
+重新整理設定檔
+ a| 
+以下SQL異常記錄在「shm_g1.log：[warn ]：SMSAP-01106：查詢儲存庫時發生錯誤：Closed Connection]。
+
+
+
+ a| 
+存取備份
+ a| 
+下列錯誤訊息記錄在「shm_g1.log：無法以Lazily初始化集合」中。
+
+
+
+ a| 
+檢視實體複本內容
+ a| 
+下列錯誤訊息會記錄在「shm_g1.log」和「shumo_g1.log：無法以Lazily初始化集合」中。
+
+|===
+*因應措施*
+
+當您想要存取GUI或執行SnapManager 任何的還原作業時、必須確保儲存庫資料庫正在執行中。
+
+
+
+== 無法為複製的資料庫建立暫存檔
+
+當目標資料庫的暫用表格空間檔案放置在與資料檔案掛載點不同的掛載點時、複製建立作業會成功、但SnapManager 無法為複製的資料庫建立暫存檔。
+
+*因應措施*
+
+您必須執行下列其中一項：
+
+* 請確定已配置目標資料庫、以便將暫存檔放置在與資料檔案相同的掛載點。
+* 在複製的資料庫中手動建立或新增暫存檔。
+
+
+
+
+== 資料保護待命資料庫備份失敗
+
+如果有任何歸檔記錄位置是以主要資料庫的服務名稱設定、則Data Guard待命資料庫的備份會失敗。
+
+*因應措施*
+
+在GUI中、您必須清除*指定與主要資料庫服務名稱相對應的外部歸檔記錄位置*。

@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task-retain-backups-forever.html 
+sidebar: sidebar 
+keywords: specify, backup, ineligible, deletion, retention, policy, indefinitely, retain, forever 
+summary: 您可以指定備份不符合保留原則刪除的資格、以無限期保留備份。 
+---
+= 永久保留備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以指定備份不符合保留原則刪除的資格、以無限期保留備份。
+
+.步驟
+. 若要指定不受限制地保留備份、請輸入下列命令：
++
+「* smsap備份更新-profile _profile_name_｛-label _label_[data |-archivelogs]|-id _id_｝-starm -unonstrated*」
+
+

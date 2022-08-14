@@ -1,0 +1,85 @@
+---
+permalink: unix-installation-cmode/task-smsap-isg-install-snapmanager.html 
+sidebar: sidebar 
+keywords: install, snapmanager, host, database, backup, run 
+summary: 您必須在SnapManager 執行備份的資料庫所在的每個主機上安裝支援功能。 
+---
+= 安裝SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在SnapManager 執行備份的資料庫所在的每個主機上安裝支援功能。
+
+
+
+== 您的需求
+
+您必須在SnapDrive 資料庫主機上安裝適用於UNIX的功能、並建立與儲存系統的連線。
+
+如需瞭解如何安裝SnapDrive 及建立與儲存系統的連線、請參閱SnapDrive 適用於UNIX的文件。
+
+
+
+== 關於這項工作
+
+您必須在SnapManager 每個資料庫主機上安裝一個實體執行個體。如果您使用Real Application Cluster（RAC）資料庫並想要備份RAC資料庫、則必須在SnapManager RAC資料庫的所有主機上安裝更新程式。
+
+.步驟
+. 從SnapManager NetApp Support網站下載適用於UNIX的SAP安裝套件、然後複製到主機系統。
++
+http://mysupport.netapp.com/NOW/cgi-bin/software["NetApp下載：軟體"^]
+
+. 以root使用者身分登入資料庫主機。
+. 在命令提示字元中、瀏覽至複製安裝套件的目錄。
+. 將安裝套件設為可執行檔：「chmod7555install_package.bin」
+. 安裝SnapManager ：`/install_package.bin'
+. 按下「Enter」繼續。
+. 請執行下列步驟：
++
+.. 將作業系統使用者的預設值變更為* ora*"shid"、其中「id」是資料庫的系統識別碼。
+.. 按Enter鍵接受作業系統群組的預設值。
++
+群組的預設值為_dba。
+
+.. 按下「Enter」接受開機類型的預設值。
+
+
++
+隨即顯示組態摘要。
+
+. 檢閱組態摘要、然後按下「Enter」繼續。
++
+安裝SAP適用的程式碼和所需的Java執行時間環境（JRE）、並自動執行「smsap_setup」指令碼。SnapManager
+
++
+SAP用版安裝於「/opt/NetApp/smsap」SnapManager
+
+
+
+
+
+== 完成後
+
+您可以執行下列步驟來驗證安裝是否成功：
+
+. 執行下列命令、啟動for SnapManager the Server：「msap_server start」
++
+畫面會顯示訊息、指出for SnapManager the伺服器正在執行。
+
+. 輸入下列命令「SnapManager msap系統驗證」、驗證SAP for System是否正確執行
++
+畫面會顯示下列訊息：「操作ID編號成功。」
+
++
+「Number」是營運ID編號。
+
+
+
+*相關資訊*
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30050["NetApp文件：SnapDrive 適用於UNIX的解決方案"^]
+
+http://mysupport.netapp.com/["NetApp支援網站上的文件：mysupport.netapp.com"^]

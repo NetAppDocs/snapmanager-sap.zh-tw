@@ -1,0 +1,59 @@
+---
+permalink: unix-administration/task-create-task-scripts.html 
+sidebar: sidebar 
+keywords: create, pretask, post-task, policy, task, script, backup, restore, clone,  operation, predefined, environment, variable, parameter, snapmanager, sample, creating 
+summary: 您可以建立用於備份、還原及複製作業的前置、工作後及原則工作指令碼、撰寫指令碼、並在參數中加入預先定義的環境變數。您可以建立新的指令碼、或是修改SnapManager 其中一個指令碼樣例。 
+---
+= 建立工作指令碼
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以建立用於備份、還原及複製作業的前置、工作後及原則工作指令碼、撰寫指令碼、並在參數中加入預先定義的環境變數。您可以建立新的指令碼、或是修改SnapManager 其中一個指令碼樣例。
+
+*您需要的是什麼*
+
+在開始建立指令碼之前、請確定：
+
+* 您必須以特定方式建立指令碼結構、以便在SnapManager 執行過程中執行。
+* 您必須根據預期的作業、可用的輸入參數和傳回程式碼慣例來建立指令碼。
+* 您必須包含記錄訊息、並將訊息重新導向至使用者定義的記錄檔。
++
+.. 自訂範例指令碼來建立工作指令碼。
++
+請執行下列步驟：
+
++
+... 在下列安裝目錄中找到範例指令碼：
++
+「<efault_install_ddirectory>/plugins/examples/backup/cred'」
+
++
+「<default_install_ddirectory>/plugins/examples/clone / cred'」
+
+... 在指令碼編輯器中開啟指令碼。
+... 以不同名稱儲存指令碼。
+
+
+.. 視需要修改功能、變數和參數。
+.. 將指令碼儲存在下列其中一個目錄中：
++
+*備份作業指令碼*
+
++
+*** <default_install_ddirectory>/plugins/backup/creation/pre:在備份作業執行之前執行指令碼。您可以在指定建立備份時選用此選項。
+*** <default_install_ddirectory>/plugins/backup/creation/post：在備份作業執行後執行指令碼。您可以在指定建立備份時選用此選項。
+*** <default_install_ddirectory>/plugins/backup/creation/policy：在執行備份作業之前、請務必執行指令碼。此指令碼一律用於儲存庫中的所有備份。SnapManager*還原作業指令碼*
+*** <default_install_ddirectory>/plugins/reetal/creation/pre:在執行備份作業之前執行指令碼。您可以在指定建立備份時選用此選項。
+*** <default_install_ddirectory>/plugins/還原/建立/張貼：在備份作業執行後執行指令碼。您可以在指定建立備份時選用此選項。
+*** <default_install_ddirectory>/plugins/還原/建立/原則：在執行備份作業之前、請務必執行指令碼。此指令碼一律用於儲存庫中的所有備份。SnapManager*複製作業指令碼*
+*** <default_install_ddirectory>/plugins/clone / creation/pre:在執行備份作業之前執行指令碼。您可以在指定建立備份時選用此選項。
+*** <default_install_ddirectory>/plugins/clone /建立/張貼：在備份作業執行後執行指令碼。您可以在指定建立備份時選用此選項。
+*** <default_install_ddirectory>/plugins/clone /建立/原則：在執行備份作業之前、請務必執行指令碼。此指令碼一律用於儲存庫中的所有備份。SnapManager
+
+
+
+
+

@@ -1,0 +1,108 @@
+---
+permalink: unix-installation-cmode/task-smsap-isg-integrate-with-sap-br-tools.html 
+sidebar: sidebar 
+keywords: sap, br, contain, tool, oracle, database, administration, brarchive, brbackup, brconnect, brrecover, brrestore, brspace, brtools, backint, file, integrate 
+summary: SAP BR*工具包含SAP工具、可用於Oracle資料庫管理、例如：BRRCHIVE、BRBACKUP、BRCONNECT、 BRRECOVER, BRRESTORE、BRSPACE和BRTOOLS使用SnapManager 由SAP提供的BACKINT介面。若要整合SAP BR*工具、您必須從BR* Tools目錄建立連結、連結至安裝BACKINT檔案的/opt/NetApp/smsap/bin/。 
+---
+= 與SAP BR*工具整合
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SAP BR*工具包含SAP工具、可用於Oracle資料庫管理、例如：BRRCHIVE、BRBACKUP、BRCONNECT、 BRRECOVER, BRRESTORE、BRSPACE和BRTOOLS使用SnapManager 由SAP提供的BACKINT介面。若要整合SAP BR*工具、您必須從BR* Tools目錄建立連結、連結至安裝BACKINT檔案的「/opt/NetApp/smsap/bin/」。
+
+
+
+== 您的需求
+
+* 您必須確保已安裝SAP BR*工具。
+
+
+.步驟
+. 為每個SAP執行個體建立BR* Tools目錄與「/opt / NetApp/smsap/bin/backint」檔案之間的連結。
++
+
+NOTE: 您必須使用連結而非複製檔案、以便在安裝SnapManager 新版的更新版本時、連結會指向新的BACKINT介面版本。
+
+. 設定執行BR*工具命令之使用者的認證資料。
++
+作業系統使用者需要SnapManager 使用適用於SAP儲存庫、設定檔和伺服器的驗證資料、才能支援SAP執行個體的備份與還原。
+
+. 指定不同的設定檔名稱。
++
+根據預設、SnapManager 當從BR*工具處理命令時、使用的設定檔名稱與SAP系統識別碼相同。如果此系統識別碼在您的環境中不是唯一的、請修改「initSID.utl」SAP初始化檔案、然後建立參數以指定正確的設定檔。「initSID.utl」檔案位於「%oracle_home%\database.」
+
++
+* 範例 *
+
++
+以下是「initSID.utl」檔案範例：
+
++
+[listing]
+----
+# Backup Retention policy.
+# Specifies the retention / lifecycle of backups on the filer.
+#
+----------------------------------------------------------------------
+----------
+# Default Value: daily
+# Valid Values: unlimited/hourly/daily/weekly/monthly
+# retain = daily
+# Enabling Fast Restore.
+#
+----------------------------------------------------------------------
+----------
+# Default Value: fallback
+# Valid Values: require/fallback/off
+#
+# fast = fallback
+# Data Protection.
+#
+----------------------------------------------------------------------
+----------
+# Default Value: empty
+# Valid Values: empty/yes/no
+# protect =
+# profile_name = SID_BRTOOLS
+----
++
+
+NOTE: 參數名稱一律為小寫、註解必須有數字符號（#）。
+
+. 執行下列步驟、編輯「initSID.SAP」BR*工具組態檔：
++
+.. 開啟「initSID.sap」檔案。
+.. 找到包含備份公用程式參數檔案資訊的區段。
++
+* 範例 *
+
++
+[listing]
+----
+# backup utility parameter file
+# default: no parameter file
+# util_par_file =
+----
+.. 編輯最後一行以包含「initSID.utl」檔案。
++
+* 範例 *
+
++
+[listing]
+----
+# backup utility parameter file
+# default: no parameter file
+# util_par_file = initSID.utl
+----
+
+
+
+
+
+
+== 完成後
+
+執行「backint register-sld」命令、在系統橫向目錄（SLD）中登錄BACKINT介面。

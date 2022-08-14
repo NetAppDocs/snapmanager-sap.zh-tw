@@ -1,0 +1,94 @@
+---
+permalink: unix-administration/reference-the-smosmsap-repository-rollingupgrade.html 
+sidebar: sidebar 
+keywords: command, perform, roll, upgrade, single, host, multiple, associate, target, database, version, snapmanager, smsap, repository, rollingupgrade 
+summary: 此命令可在單一主機或多個主機上執行循環升級、並將其相關的目標資料庫從SnapManager 較低版本的支援升級至較高版本。升級後的主機只能以更新版本SnapManager 的支援進行管理。 
+---
+= smsap儲存庫復原升級命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令可在單一主機或多個主機上執行循環升級、並將其相關的目標資料庫從SnapManager 較低版本的支援升級至較高版本。升級後的主機只能以更新版本SnapManager 的支援進行管理。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap repository rollingupgrade
+-repository
+-dbname _repo_service_name_
+-host _repo_host_
+-login -username _repo_username_
+-port _repo_port_
+-upgradehost _host_with_target_database_
+[-force] [-noprompt]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* 「*儲存庫*」
++
+儲存庫後面的選項會指定儲存庫的資料庫詳細資料。
+
+* 「*」-「dbname _repo_service_name_*」
++
+指定儲存庫的資料庫名稱。使用全域名稱或SID。
+
+* 「*主機_repo_host_*」
++
+指定執行儲存庫資料庫的主機電腦名稱或IP位址。
+
+* 「*登入*」
++
+啟動儲存庫登入詳細資料。
+
+* -username_repo_username_*
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* 「*升級主機_host_with _target資料庫_*」
++
+指定要從較低版本SnapManager 的支援升級至較高版本的主機名稱。
+
+* 「*連接埠_repo_port_*」
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* 「*力*」
++
+嘗試強制更新儲存庫。更新前、系統會提示您備份目前的儲存庫。SnapManager
+
+* 「*節點提示*」
++
+不會在更新儲存庫資料庫之前顯示提示。使用「-noprompt」選項可確保不會出現提示、讓您更容易使用指令碼來更新儲存庫。
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 命令範例
+
+下列範例會更新SALESDB資料庫中的儲存庫。
+
+[listing]
+----
+smsap repository rollingupgrade -repository -dbname SALESDB
+-host server1 -login -username admin -port 1521 -upgradehost hostA
+----
+'''

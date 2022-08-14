@@ -1,0 +1,38 @@
+---
+permalink: windows/task-create-an-oracle-user-for-the-target-database.html 
+sidebar: sidebar 
+keywords: create, oracle, user, sysdba, role, connect, database, perform, operation, target 
+summary: 您需要建立一個具有Sysdba角色的Oracle使用者、以連線至資料庫並執行資料庫作業。 
+---
+= 為目標資料庫建立Oracle使用者
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您需要建立一個具有Sysdba角色的Oracle使用者、以連線至資料庫並執行資料庫作業。
+
+
+
+== 關於這項工作
+
+支援Sysdba權限的任何Oracle使用者、例如預設的「sys」使用者。SnapManager您也可以在目標資料庫中建立使用者SnapManager 、以供整個過程使用。
+
+.步驟
+. 登入SQL * Plus。
++
+在命令提示字元中輸入下列命令：
+
++
+'* sqlplus '/ as sysdba'*
+
+. 若要使用系統管理員密碼建立使用者、例如「_smsap_oper_」、例如「_adminpw1_」、請在SQL提示字元中輸入下列命令：
++
+創建由_adminpw1_;*識別的用戶_smsap_oper_
+
+. 輸入下列命令、將Sysdba權限授予Oracle使用者：
++
+將Sysdba授予_smsap_oper_;*
+
+

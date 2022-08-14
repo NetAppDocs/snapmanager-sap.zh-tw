@@ -1,0 +1,26 @@
+---
+permalink: windows/concept-what-snapmanager-for-oraclefor-sap-is.html 
+sidebar: sidebar 
+keywords: snapmanager, tools, perform, policy-driven, data, management, schedule, create, database, backup, restore, primary, storage, post-process, sap 
+summary: 提供執行原則導向資料管理、排程及建立定期資料庫備份、在發生資料遺失或災難時從這些備份還原資料、以及建立資料庫複本所需的工具。SnapManager您可以使用後處理指令碼、在主要儲存設備上建立備份、並在次要儲存設備上建立受保護的備份。 
+---
+= SnapManagerfor SAP是什麼
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+提供執行原則導向資料管理、排程及建立定期資料庫備份、在發生資料遺失或災難時從這些備份還原資料、以及建立資料庫複本所需的工具。SnapManager您可以使用後處理指令碼、在主要儲存設備上建立備份、並在次要儲存設備上建立受保護的備份。
+
+與最新資料庫版本整合時、可利用NetApp技術。SnapManager支援下列NetApp應用程式與技術：SnapManager
+
+* 支援自動化儲存資源配置工作、並簡化建立儲存設備無錯誤且與主機一致的Snapshot複本的程序。SnapDrive
+* Snapshot（Data ONTAP 功能不只是功能）可建立資料庫的時間點複本。
+* 利用以磁碟為基礎的備份、提供可靠、低成本的資料庫備份與還原功能（獲得授權的功能）SnapVault Data ONTAP 。
+* SnapMirror（Data ONTAP 即獲得授權的功能）以簡單、可靠且具成本效益的方式、在全球網路上高速複寫資料庫資料。
+* 不受容量或檔案數量限制、僅需數秒即可恢復整個資料庫（即獲得授權的功能）SnapRestore Data ONTAP 。
+* FlexClone（Data ONTAP 獲得授權的功能）有助於從Snapshot備份建立快速、節省空間的資料庫複本。
+
+
+支援SAN（FC和iSCSI）傳輸協定。SnapManager

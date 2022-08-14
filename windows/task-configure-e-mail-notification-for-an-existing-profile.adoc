@@ -1,0 +1,39 @@
+---
+permalink: windows/task-configure-e-mail-notification-for-an-existing-profile.html 
+sidebar: sidebar 
+keywords: update, profile, configure, receive, email, notification, completion, database, operation, exist 
+summary: 當您更新設定檔時、可以設定在資料庫作業完成時接收電子郵件通知。 
+---
+= 設定現有設定檔的電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您更新設定檔時、可以設定在資料庫作業完成時接收電子郵件通知。
+
+
+
+== 您的需求
+
+* 您必須設定傳送警示的電子郵件地址。
+* 您必須輸入要傳送警示的單一電子郵件地址或多個電子郵件地址。
++
+您可以針對多個位址使用以逗號分隔的清單。您必須確保在逗號和下一個電子郵件地址之間沒有空格。您也可以選擇新增主旨至電子郵件。
+
++
+
+NOTE: 您必須確保在雙引號內輸入多個電子郵件地址集。
+
+
+
+.步驟
+. 輸入下列命令：
++
+「* smsap profile update -profile _profile_[-profile-password _profile_password_][-database-dbname _dbname_-host _db_host_[-sID db_sid_][-login-username_db_username_-password _det_-port_][{-rmne-pour-tn_dim_dim_dim_n_n_stock_dim_unyour_unyour_styour_uneed][_次密碼[_unyour_unyour-tn_styour_uneed][_次_次密碼_次_次_次_次_次_次_次_次_次_次密碼_次_次_次_次次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次_次 [-dimdation _m_]][-comment _comment _][-snapname-Pattern_][[[]|[][-notification [-s字 成功電子郵件_email_address1_、_email_address2_-Subject _Subject _Pattern_][-f失敗 電子郵件_email_address1_、電子郵件_address_2_、主題_Subject ___主題模式_attern]
+
++
+您可以使用「成功」選項來接收通知、僅針對成功的資料庫作業、而「失敗」選項則只針對失敗的資料庫作業接收通知。
+
+

@@ -1,0 +1,80 @@
+---
+permalink: windows/task-order-of-performing-operations.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, perform, operation, create, profile, backup, clone, order 
+summary: 利用此功能、您可以執行各種作業、例如建立設定檔、執行備份及複製備份。SnapManager這些作業必須以特定順序執行。 
+---
+= 執行作業的順序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以執行各種作業、例如建立設定檔、執行備份及複製備份。SnapManager這些作業必須以特定順序執行。
+
+.步驟
+. 使用「msap profile create」命令在現有儲存庫上建立設定檔。
++
+
+NOTE: 為目標資料庫指定的Oracle使用者必須擁有Sysdba權限。
+
++
+* 範例 *
+
++
+下列範例顯示建立設定檔的命令：
+
++
+[listing]
+----
+smsap profile create -profile prof1 -profile-password prof1cred
+-repository -dbname HR1 -login -username admin -host server1 -port 1527
+-database -dbname SID -host db_server1 -port 1527
+----
+. 使用「msap備份建立」命令、在現有的設定檔上建立備份。
++
+* 範例 *
+
++
+下列範例顯示建立備份的命令：
+
++
+[listing]
+----
+smsap backup create -profile prof1 -full -offline -label full_backup_prof1 -force
+----
+. 使用「msap備份還原」命令、在主要儲存設備上還原及還原資料庫備份。
++
+* 範例 *
+
++
+下列範例顯示還原備份的命令：
+
++
+[listing]
+----
+smsap backup restore -profile prof1 -label full_backup_prof1
+-complete -recover -alllogs
+----
+. 使用「msap Clone template」命令建立實體複本規格。
++
+您可以使用圖形化使用者介面（GUI）中的Clone（複製）精靈來建立範本複製規格。您也可以使用文字編輯器來建立複製規格檔案。
+
+. 使用「msap Clone cre創作」命令、以現有的備份複製資料庫。
++
+您必須擁有現有的實體複本規格、或建立實體複本規格、才能指定實體複本的儲存與資料庫規格。
+
++
+* 範例 *
+
++
+以下範例顯示建立複本的命令：
+
++
+[listing]
+----
+smsap clone create -profile prof1 -backup-label full_backup_prof1
+-newsid clone1 -label prof1_clone -clonespec C:\\clone_spec\\prof1_clonespec.xml
+----
+

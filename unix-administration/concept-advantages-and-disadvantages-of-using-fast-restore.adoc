@@ -1,0 +1,33 @@
+---
+permalink: unix-administration/concept-advantages-and-disadvantages-of-using-fast-restore.html 
+sidebar: sidebar 
+keywords: dba, aware, advantage, disadvantage, volume-base, fast, restore, disadvantage 
+summary: DBA應該瞭解使用Volume型快速還原的優缺點。 
+---
+= 使用快速還原的優缺點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+DBA應該瞭解使用Volume型快速還原的優缺點。
+
+使用快速還原還原還原資料庫備份具有下列優點：
+
+* 磁碟區型還原可縮短還原備份所需的時間。
+* 提供快速還原資格檢查。SnapManager此功能可分析資料庫備份、並顯示是否能執行Volume型還原的相關資訊。SnapManager
+* 您可以預覽還原作業、並決定是否要繼續建議的路徑、或是在選取的程序中覆寫建議。
+
+
+使用快速還原還原還原資料庫備份有下列缺點：
+
+* 整個檔案系統都會還原、包括不被視為備份一部分的檔案。磁碟區上的其他檔案、檔案系統或LUN也會還原。
+* 還原所還原的Snapshot後、將移除所有Snapshot複本。SnapManager實際上、您會在Snapshot複製日期之後遺失歷程記錄。例如、如果您已還原星期一的備份、則無法還原星期二的備份。
+
+
+您可以遵循下列建議來避免缺點：
+
+* 根據最佳實務做法最佳化資料庫配置。
+* 保護備份至二線儲存設備。不過、如果您從主要儲存設備刪除Snapshot複本、就無法使用快速還原從次要儲存設備還原。
+

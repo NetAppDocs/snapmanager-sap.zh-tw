@@ -1,0 +1,30 @@
+---
+permalink: windows/task-verify-snapdrive-for-windows.html 
+sidebar: sidebar 
+keywords: install, snapdrive, windows, snapshot, verify, create, copy 
+summary: 如果您已安裝SnapDrive 適用於Windows的功能、請先確認您可以建立Snapshot複本、然後再使用SnapManager 資訊技術。 
+---
+= 驗SnapDrive 證Windows適用的功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您已安裝SnapDrive 適用於Windows的功能、請先確認您可以建立Snapshot複本、然後再使用SnapManager 資訊技術。
+
+.步驟
+. 在「開始」功能表中、以滑鼠右鍵按一下「*我的電腦*」、然後選取「*管理*」。
+. 在*電腦管理*視窗中、按一下*儲存*>* SnapDrive 還原*。
+. 選取磁碟。
++
+請參閱《_ SnapDrive 適用於Windows的安裝與管理指南_》、以瞭解更多有關SnapDrive 使用效益的資訊。
+
++
+如果您已成功找到SnapDrive 有關該產品的磁碟資訊、SnapDrive 則表示該產品的運作正常。
+
+
+
+*相關資訊*
+
+http://support.netapp.com/documentation/productsatoz/index.html["適用於Windows安裝與管理指南SnapDrive"^]

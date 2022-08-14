@@ -1,0 +1,36 @@
+---
+permalink: unix-administration/concept-introduction-to-data-protection-in-snapmanager.html 
+sidebar: sidebar 
+keywords: snapmanager, data, protection, backup, secondary, tertiary, storage, system, snapmirror, snapvault, relationship, destination, volume 
+summary: 支援資料保護、可保護二線或三線儲存系統上的備份。SnapManager您必須在SnapVault 來源與目的地磁碟區之間設定SnapMirror和相依關係。 
+---
+= 介紹資料保護功能SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援資料保護、可保護二線或三線儲存系統上的備份。SnapManager您必須在SnapVault 來源與目的地磁碟區之間設定SnapMirror和相依關係。
+
+如果您使用Data ONTAP 的是以7-Mode運作的功能、SnapManager 則可與Protection Manager（OnCommand VMware Unified Manager）整合、藉此提供原則導向的資料保護功能。如此SnapManager 一SnapVault 來、您就能使用由Protection Manager中的儲存或備份管理員所建立的還原或SnapMirror原則、將主儲存系統上的還原備份自動複寫到二線儲存系統、甚至是三線儲存系統。根據SnapManager 建立設定檔期間所定義的保留保留、以及建立備份期間標記的保留類別、在一線儲存設備上保留資料的能力可由支援團隊加以控制。次要儲存備份保留是由Protection Manager中定義的原則所控制。
+
+如果您使用叢集Data ONTAP 式的功能、SnapManager 則支援使用_SnapManager®cDOT_Mirror_和_SnapManager®cDOT_Vault_的資料保護原則。建立設定檔時、您可以根據使用SnapVault 叢集Data ONTAP 式CLI或系統管理員建立的SnapMirror或SnapMirror關係來選擇這些原則。當您建立備份時、選取您啟用保護的設定檔、備份會受到保護、以供二線儲存系統使用。
+
+
+NOTE: 使用BR*工具建立的備份、無法使用SnapManager 適用於SAP的功能來保護。
+
+如果您使用SnapManager 的是叢集Data ONTAP 式的還原技術、則備份會使用建立設定檔時所選取的指令碼來保護。如果您想要使用這些設定檔、在升級至SnapManager 更新至更新版3.4之後、您必須執行下列作業。
+
+* 您必須更新設定檔、以選取_SnapManager®cDOT_Mirror_或_SnapManager®cDOT_Vault_原則、並刪除用於資料保護的指令碼後置。
+* 在更新設定檔以使用_SnapManager®cDOT_Vault_原則之後、您必須刪除現有的備份排程、並建立新的排程、以指定SnapVault 備份的更新標籤。
+* 如果設定檔是在SnapManager 不選取POST指令碼的情況下、在不選取POST指令碼的情況下建立、您必須更新設定檔、以選取_SnapManager®cDOT_Mirror_或_SnapManager®cDOT_Vault_原則來啟用資料保護。
+
+
+
+NOTE: 如果您在二線儲存系統中有使用SnapManager 還原3.3.1後檔鏡射或保存的備份、則無法使用SnapManager 這些備份來還原或複製。
+
+如果您使用叢集Data ONTAP 式的功能、SnapManager 則來源SnapVault 磁碟區上的SnapMirror和SnapMirror可支援多種保護關係。每個Volume僅SnapVault 支援一個SnapMirror和一個不完整的關係。您必須建立個別的設定檔、每個設定檔都必須選取「_SnapManager」/cDOT_Mirror_」和「_SnapManager」cDOT_Vault_」原則。
+
+
+NOTE: 需要針對Unix 5.3.2及更新版本使用多種保護原則。SnapDrive

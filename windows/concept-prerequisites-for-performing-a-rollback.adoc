@@ -1,0 +1,47 @@
+---
+permalink: windows/concept-prerequisites-for-performing-a-rollback.html 
+sidebar: sidebar 
+keywords: perform, rollback, ensure, environment, certain, requirement, prerequisite 
+summary: 在執行復原之前、您必須確保環境符合特定要求。 
+---
+= 執行復原的先決條件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在執行復原之前、您必須確保環境符合特定要求。
+
+* 如果您使用SnapManager 的是版本號不高於版本號的版本號、而想要回復SnapManager 到版本號不高於版本號的版本號、則必須回復到3.2、然後再回復到所需版本。
+* 必須備份用於執行任何外部資料保護或資料保留的外部指令碼。
+* 必須安裝您要回復的版本。SnapManager
++
+
+NOTE: 如果您想要從SnapManager 版本資訊3.3或更新版本復原至SnapManager 版本更新至版本更新於版本資訊版本資訊3.1之前的版本、您必須先安裝SnapManager 版本資訊技術3.2並執行復原。回溯到3.2版之後、您可以安裝SnapManager 更新版本的更新版本、然後再執行另一個復原到該版本。
+
+* 您必須安裝支援的支援支援支援的Windows版本（包含您想要回復的版本）SnapDrive SnapManager 。
++
+如需安裝SnapDrive 方面的資訊、請參閱SnapDrive 《關於安裝方面的知識》文件集。
+
+* 必須備份儲存庫資料庫。
+* 如果要回復的主機使用儲存庫、SnapManager 則不得在使用相同儲存庫的其他主機上執行此功能。
++
+在其他主機上排程或執行的作業會等待復原完成。
+
+* 指向相同儲存庫資料庫的設定檔、必須在SnapManager 伺服器主機上以不同名稱建立。
++
+如果您使用名稱相同的設定檔、則涉及該儲存庫資料庫的復原作業將會失敗而不會發出警告。
+
+* 不能在您要復原的主機上執行支援作業。SnapManager
++
+如果有執行中的作業、您必須等到該作業完成、然後再繼續復原。
+
+
+
+
+NOTE: 復原作業會隨著合併備份的主機累計數量增加、執行時間會更長。復原的持續時間可能會因特定主機的設定檔數量和備份數量而有所不同。
+
+*相關資訊*
+
+http://mysupport.netapp.com/["NetApp支援網站上的文件：mysupport.netapp.com"^]

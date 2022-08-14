@@ -1,0 +1,25 @@
+---
+permalink: unix-administration/task-delete-profile.html 
+sidebar: sidebar 
+keywords: delete, profile, successful, backup, current, operation, free, backup, deleting 
+summary: 只要設定檔不包含目前用於其他作業的成功備份、即可刪除該設定檔。您可以刪除包含已釋出或刪除備份的設定檔。 
+---
+= 刪除設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+只要設定檔不包含目前用於其他作業的成功備份、即可刪除該設定檔。您可以刪除包含已釋出或刪除備份的設定檔。
+
+. 輸入下列命令：「msap profile delete -profileprofile [-quiet |-verbose]」
++
+您可以刪除為複本分割建立的新設定檔。刪除時、SnapManager 如果您刪除設定檔、稍後無法銷毀設定檔警告訊息會顯示在指令行介面中。
+
+
+
+[listing]
+----
+smsap profile delete -profile AUTO-REVEN
+----

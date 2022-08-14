@@ -1,0 +1,18 @@
+---
+permalink: unix-installation-cmode/concept-restore-process-identification.html 
+sidebar: sidebar 
+keywords: restore, process, support, snapmanager, sap, version, upgrade, types 
+summary: 並非所有SnapManager 的SAP版本均支援所有還原程序。升級SnapManager 完支援後、您必須注意還原程序、才能用來還原備份。 
+---
+= 還原程序類型
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+並非所有SnapManager 的SAP版本均支援所有還原程序。升級SnapManager 完支援後、您必須注意還原程序、才能用來還原備份。
+
+您SnapManager 可以使用快速還原和檔案型還原程序、還原使用支援支援支援支援支援的更新版本。不過、使用SnapManager 早於版本的版本建立的備份、只要使用檔案型還原程序即可還原。
+
+您可以執行「備份show」命令來判斷SnapManager 用來建立備份的版本。

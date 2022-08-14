@@ -1,0 +1,27 @@
+---
+permalink: windows/task-free-or-delete-retention-policy-exempt-backups.html 
+sidebar: sidebar 
+keywords: backup, retention, class, unlimited, delete, free, hourly, daily, weekly, monthly, policy, exempt backups 
+summary: 無法直接刪除或釋出保留類別為無限的備份。若要刪除或釋出這些備份、您必須先指派另一個保留類別、例如每小時、每日、每週或每月。若要刪除或釋出免除保留原則的備份、您必須先更新備份、使其符合刪除或釋出保留原則的資格。 
+---
+= 免費或刪除保留原則豁免備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+無法直接刪除或釋出保留類別為「無限」的備份。若要刪除或釋出這些備份、您必須先指派另一個保留類別、例如每小時、每日、每週或每月。若要刪除或釋出免除保留原則的備份、您必須先更新備份、使其符合刪除或釋出保留原則的資格。
+
+.步驟
+. 若要更新備份、使其符合保留原則刪除的資格、請輸入下列命令：
++
+hy*smsap備份更新-profile _profile_name_｛-label _label_[資料|-archivelogs]|-id _id_｝-starm [每小時|每天|每週|每月]*
+
+. 更新備份以符合刪除資格之後、您可以刪除備份或免費備份資源。
++
+** 若要刪除備份、請輸入以下命令：+ h.*smsap備份刪除-profile _profile_name_｛-label _label_[data |-archivelogs]|-id _id_|-all｝*
+** 若要釋出備份資源、而非刪除備份、請輸入以下命令：+ h.*smsap備份可用-profile _profile_name_｛-label _label_[data |-archivelogs]|-id _id_|-all｝[-force][-dump ][-quid| verbose]*
+
+
+

@@ -1,0 +1,44 @@
+---
+permalink: unix-installation-cmode/task-smsap-isg-access-the-snapmanager-user-interface.html 
+sidebar: sidebar 
+keywords: access, snapmanager, user, interface, ui, remote, web, browser, system, operate, support, target, database, smsapgui, command 
+summary: 您可以SnapManager 從SnapManager 執行於支援的作業系統上的任何系統、使用網頁瀏覽器從遠端存取功能支援的使用者介面（UI）。您也SnapManager 可以執行smsapgui命令、從目標資料庫主機存取sfrosUI。 
+---
+= 存取SnapManager 這個使用者介面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以SnapManager 從SnapManager 執行於支援的作業系統上的任何系統、使用網頁瀏覽器從遠端存取功能支援的使用者介面（UI）。您也SnapManager 可以執行「shmsapgui」命令、從目標資料庫主機存取這個功能。
+
+
+
+== 您的需求
+
+* 您必須確保SnapManager 執行的是功能不正常的。
+* 您必須確保要存取SnapManager 此UI的系統上已安裝支援的作業系統和Java。
++
+如需支援的作業系統和Java的相關資訊、請參閱互通性對照表工具。
+
+
+
+.步驟
+. 在網路瀏覽器視窗中、輸入下列命令：「*」*+ https://server_name.domain.com:port_number+*``
++
+** 「_server_name_」是SnapManager 安裝了此功能的目標資料庫主機名稱。
++
+您也可以輸入目標資料庫主機的IP位址。
+
+** 「_port_number_」是SnapManager 執行此功能的連接埠。
++
+預設值為27214.
+
+
+
+. 按一下*《Launch SnapManager Sfor SAP*》連結。
++
+畫面會顯示適用於SAP UI。SnapManager
+
+

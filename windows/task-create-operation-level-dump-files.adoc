@@ -1,0 +1,33 @@
+---
+permalink: windows/task-create-operation-level-dump-files.html 
+sidebar: sidebar 
+keywords: smsap, operation, dump, command, name, id, fail, log, information, level, profile, host, environment, create, operation-level 
+summary: 您可以使用smsap作業傾印命令搭配失敗作業的名稱或ID、以取得特定作業的記錄資訊。您可以指定不同的記錄層級、以收集有關特定作業、設定檔、主機或環境的資訊。 
+---
+= 建立作業層級的傾印檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用名稱或ID為故障作業的「msap operation dump」命令來取得特定作業的記錄資訊。您可以指定不同的記錄層級、以收集有關特定作業、設定檔、主機或環境的資訊。
+
+.步驟
+. 輸入下列命令：
++
+‘* smsap作業傾印-id _guid_*’
+
++
+
+NOTE: 「shmsap operation dump」命令提供「shmsap profile dump」命令所提供的超級資訊集、而後者則提供「shmsap system dump」命令所提供的超級資訊集。
+
++
+傾印檔案位置：
+
++
+[listing]
+----
+Path:\<user-home>\Application Data\NetApp\smsap\3.3.0\smsap_dump_8abc01c814649ebd0114649ec69d0001.jar
+----
+

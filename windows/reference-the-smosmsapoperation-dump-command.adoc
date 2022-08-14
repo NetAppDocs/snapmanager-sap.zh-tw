@@ -1,0 +1,68 @@
+---
+permalink: windows/reference-the-smosmsapoperation-dump-command.html 
+sidebar: sidebar 
+keywords: run, operation, dump, command, jar, file, diagnostic, information, smsap 
+summary: 您可以運行operation dump命令來創建一個包含操作診斷信息的Jar文件。 
+---
+= smsap作業傾印命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行「operation dump」命令來建立包含操作診斷資訊的Jar檔案。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap operation dump
+-profile profile_name
+[-label label_name | -id guid]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *。設定檔_profile_name_`*
++
+指定您要建立傾印檔案的設定檔。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *標籤_label_name_`*
++
+為作業建立傾印檔、並指派指定的標籤。
+
+* *（id_guid_`*）
++
+使用指定的Guid建立作業的傾印檔。當SnapManager 作業開始時、會產生由不含資訊的GUID。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+下列範例會建立備份的傾印檔案：
+
+[listing]
+----
+smsap operation dump -profile SALES1
+-id 8abc01ec0e78f3e2010e78f3fdd00001
+----
+[listing]
+----
+Dump file created Path: C:\userhomedirectory\netapp\smsap\3.3\smsap_dump_8abc01ec0e78f3e2010e78f3fdd00001.jar
+----

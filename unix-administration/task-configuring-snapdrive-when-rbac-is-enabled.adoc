@@ -1,0 +1,97 @@
+---
+permalink: unix-administration/task-configure-snapdrive-when-rbac-is-enabled.html 
+sidebar: sidebar 
+keywords: role-based, access, control, rbac, enable, configure, datafabric, manager, server, capability, capabilities, snapdrive, create, storage, system, regiser, configure, configuring 
+summary: 啟用角色型存取控制（RBAC）時、您必須設定DataFabric Manager伺服器以納入RBAC功能。您也必須登錄SnapDrive 在Data Fabric Manager伺服器中建立的支援功能、以及SnapDrive 在支援中儲存系統的root使用者。 
+---
+= 啟用RBAC時、請設定DataFabric Manager伺服器SnapDrive 及其功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+啟用角色型存取控制（RBAC）時、您必須設定DataFabric Manager伺服器以納入RBAC功能。您也必須登錄SnapDrive 在Data Fabric Manager伺服器中建立的支援功能、以及SnapDrive 在支援中儲存系統的root使用者。
+
+.步驟
+. 設定DataFabric Manager伺服器。
++
+.. 若要重新整理DataFabric Manager伺服器、以更新目標資料庫在儲存系統上直接所做的變更、請輸入下列命令：
++
+「DFM主機探索_storage系統_*」
+
+.. 在DataFabric Manager伺服器中建立新使用者、然後設定密碼。
+.. 若要將作業系統使用者新增至DataFabric Manager伺服器管理清單、請輸入下列命令：
++
+「DFM使用者新增_SD-admin_*」
+
+.. 若要在DataFabric Manager伺服器中建立新角色、請輸入下列命令：
++
+「DFM角色可建立_SD-admin-role_*」
+
+.. 若要將Dfm.Core.AccessCheck全域功能新增至角色、請輸入下列命令：
++
+「DFM角色」新增_SD-admin-role_ dfm.Core.AccessCheck Global*
+
+.. 若要將「shd-admin-role」新增至作業系統使用者、請輸入下列命令：
++
+「DFM使用者角色集_SD-adminsd-admin-role_*」
+
+.. 若要在DataFabric Manager伺服器中為SnapDrive 支援該位使用者建立其他角色、請輸入下列命令：
++
+「DFM角色可建立_SD-Protect _*」
+
+.. 若要將RBAC功能新增至為SnapDrive 該位址使用者或管理員所建立的角色、請輸入下列命令：
++
+「DFM角色」新增_SD-Protect _ SD.Config.Read Global*
+
++
+「DFM角色」新增_SD-Protect _ SD.Config.Write Global*
+
++
+「DFM角色」新增_SD-Protect _ SD.Config.Delete Global*
+
++
+「DFM角色」新增_SD-Protect _ SD.Storage.Read Global*
+
++
+「DFM角色」新增_SD-Protect _ Dfm.Database.Write Global*
+
++
+「DFM角色」新增_SD-Protect _ GlobalDataProtection *
+
+.. 若要將目標資料庫Oracle使用者新增至DataFabric Manager伺服器的系統管理員清單、並指派SD-Protect角色、請輸入下列命令：
++
+"* dfm使用者add -r _sd-protectardb_host1_\oracle*
+
+.. 若要在DataFabric Manager伺服器中新增目標資料庫所使用的儲存系統、請輸入下列命令：
++
+"* dfm host set _storage system_ hostLogin=Oracle hostPassword=_password_*
+
+.. 若要在DataFabric Manager伺服器中的目標資料庫所使用的儲存系統中建立新角色、請輸入下列命令：
++
+'* dfm主機角色可建立-h _storage _system-c_"api-**,login-*"_storage－RBAC角色_**
+
+.. 若要在儲存系統中建立新群組、並指派在DataFabric Manager伺服器中建立的新角色、請輸入下列命令：
++
+「* dfm主機使用者群組」會建立-h _storage _system_-r _storage、RBAC、rolestorage、RBAC群組_*
+
+.. 若要在儲存系統中建立新使用者、並指派新角色和在DataFabric Manager伺服器中建立的群組、請輸入下列命令：
++
+「* dfm主機使用者」建立-h _storage _system_-r _storage -RBAC角色_-p _password_-g _storage -RBAC群組tardb_host1_*
+
+
+
+. 設定SnapDrive 功能
++
+.. 若要使用SnapDrive 下列命令、將「_SD-admin_」使用者的認證登錄到位：
++
+hy* SnapDrive 《*》組態集-DFM _SD-adprinfm_host_*》
+
+.. 若要使用SnapDrive 下列命令、向root使用者或儲存系統管理員註冊使用效益管理系統：
++
+「* SnapDrive 組態集_tardb_host 1storage_system_*」
+
+
+
+

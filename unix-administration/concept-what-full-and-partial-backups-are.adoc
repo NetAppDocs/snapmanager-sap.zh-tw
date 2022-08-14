@@ -1,0 +1,41 @@
+---
+permalink: unix-administration/concept-what-full-and-partial-backups-are.html 
+sidebar: sidebar 
+keywords: entire, database, portion, tablespace, data, file, full, partial, backup 
+summary: 您可以選擇備份整個資料庫、或只備份其中一部分。如果您選擇備份部分資料庫、可以選擇備份一組表格空間或資料檔案。您可以選擇分別備份資料表空間和資料檔案。 
+---
+= 什麼是完整備份和部分備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以選擇備份整個資料庫、或只備份其中一部分。如果您選擇備份部分資料庫、可以選擇備份一組表格空間或資料檔案。您可以選擇分別備份資料表空間和資料檔案。
+
+下表列出每種備份類型的優點與後果：
+
+[cols="1a,2a,2a"]
+|===
+| 備份類型 | 優勢 | 缺點 
+
+
+ a| 
+完整
+ a| 
+最小化Snapshot複本數量。對於線上備份、每個資料表空間在備份作業的整個時間都處於備份模式。針對資料庫所使用的每個磁碟區、執行一個Snapshot複本、以及針對記錄檔所佔用的每個磁碟區、執行一個Snapshot複本。SnapManager
+ a| 
+對於線上備份、每個資料表空間在備份作業的整個時間都處於備份模式。
+
+
+
+ a| 
+部分
+ a| 
+將每個資料表空間在備份模式中所花費的時間降至最低。根據表空間將Snapshot複本分組。SnapManager每個表格空間都處於備份模式、只有足夠的時間可建立Snapshot複本。這種將Snapshot複本分組的方法、可在線上備份期間、將記錄檔中的實體區塊寫入作業減至最少。
+ a| 
+備份可能需要在同一個磁碟區中建立多個資料表空間的Snapshot複本。這種方法SnapManager 可能會導致在備份作業期間、建立單一磁碟區的多個Snapshot複本。
+
+|===
+
+NOTE: 雖然您可以執行部分備份、但必須一律對整個資料庫執行完整備份。

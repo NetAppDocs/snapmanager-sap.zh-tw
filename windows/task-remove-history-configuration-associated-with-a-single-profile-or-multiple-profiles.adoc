@@ -1,0 +1,21 @@
+---
+permalink: windows/task-remove-history-configuration-associated-with-a-single-profile-or-multiple-profiles.html 
+sidebar: sidebar 
+keywords: snapmanager, remove, history, set, operation, purge, information, profile, single, multiple, associate 
+summary: 利用此功能、您可以移除還原作業的歷史記錄設定。SnapManager SnapManager此作業會清除與單一設定檔或多個設定檔相關的所有歷程記錄資訊。 
+---
+= 移除與單一設定檔或多個設定檔相關的記錄設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以移除還原作業的歷史記錄設定。SnapManager SnapManager此作業會清除與單一設定檔或多個設定檔相關的所有歷程記錄資訊。
+
+.步驟
+. 若要移除SnapManager 與單一設定檔或多個設定檔相關聯的支援流程記錄、請輸入下列命令：
++
+「* smsap歷程記錄移除-profile｛_-name_、_profile_name_[_profile_name1_、_profile_name_]| ALL -reposory -login[-password_repo_password_]-userName _-dbname _repo_dbos_-host _repo_host_-port _port_name_all作業[_operation_name_
+
+

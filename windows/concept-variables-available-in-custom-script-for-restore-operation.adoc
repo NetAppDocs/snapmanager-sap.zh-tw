@@ -1,0 +1,226 @@
+---
+permalink: windows/concept-variables-available-in-custom-script-for-restore-operation.html 
+sidebar: sidebar 
+keywords: snapmanager, context, information, form, environment, variable, restore, operation, perform, script, original, host, backup, restore 
+summary: 提供環境變數形式的內容資訊、這些環境變數與正在執行的還原作業有關。SnapManager例如、您的指令碼可以擷取原始主機的名稱、以及還原的備份標籤。 
+---
+= 可在還原作業的工作指令碼中使用的變數
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+提供環境變數形式的內容資訊、這些環境變數與正在執行的還原作業有關。SnapManager例如、您的指令碼可以擷取原始主機的名稱、以及還原的備份標籤。
+
+下表列出可在指令碼中使用的環境變數：
+
+|===
+| 變數 | 說明 | 格式 
+
+
+ a| 
+`_SM_operation_ID_'
+ a| 
+指定目前作業的ID
+ a| 
+字串
+
+
+
+ a| 
+`_SM_profile名稱_'
+ a| 
+指定所使用的設定檔名稱
+ a| 
+字串
+
+
+
+ a| 
+`_SM_host_'
+ a| 
+指定資料庫的主機名稱
+ a| 
+字串
+
+
+
+ a| 
+_SM_OS_USER_'
+ a| 
+指定資料庫的作業系統（OS）擁有者
+ a| 
+字串
+
+
+
+ a| 
+`_SM_OS_group_'
+ a| 
+指定資料庫的OS群組
+ a| 
+字串
+
+
+
+ a| 
+`_SM_backup_type_'
+ a| 
+指定備份類型（線上、離線或自動）
+ a| 
+字串
+
+
+
+ a| 
+`_SM_backup_label_'
+ a| 
+指定備份標籤
+ a| 
+字串
+
+
+
+ a| 
+`_SM_backup_ID_'
+ a| 
+指定備份ID
+ a| 
+字串
+
+
+
+ a| 
+`_SM_backup_profile_'
+ a| 
+指定用於備份的設定檔
+ a| 
+字串
+
+
+
+ a| 
+`_SM_recovery類型_'
+ a| 
+指定恢復組態資訊
+ a| 
+字串
+
+
+
+ a| 
+`_SM_volume恢復模式_`
+ a| 
+指定Volume還原組態
+ a| 
+字串
+
+
+
+ a| 
+_sm_target檔案管理器名稱_
+ a| 
+指定目標儲存系統名稱
+
+[NOTE]
+====
+如果使用多個儲存系統、則儲存系統名稱必須以逗號分隔。
+
+==== a| 
+字串
+
+
+
+ a| 
+_sm_target磁碟區名稱_
+ a| 
+指定目標Volume名稱
+
+[NOTE]
+====
+目標磁碟區名稱必須以儲存設備名稱為前置、例如SM_target檔案管理器名稱/SM_target磁碟區名稱。
+
+==== a| 
+字串
+
+
+
+ a| 
+「_SM_host_file_system_'」
+ a| 
+指定主機檔案系統
+ a| 
+字串
+
+
+
+ a| 
+`_SM_snapshot名稱_'
+ a| 
+指定Snapshot清單
+
+[NOTE]
+====
+Snapshot複本名稱必須以儲存系統名稱和Volume名稱為前置。Snapshot複本的名稱以逗號分隔。
+
+==== a| 
+字串陣列
+
+
+
+ a| 
+_sm_archive記錄檔目錄_
+ a| 
+指定歸檔記錄目錄
+
+[NOTE]
+====
+如果歸檔記錄位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+
+==== a| 
+字串陣列
+
+
+
+ a| 
+`_SM_REDO_LOGS目錄_`
+ a| 
+指定重作記錄目錄
+
+[NOTE]
+====
+如果重作記錄位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+
+==== a| 
+字串陣列
+
+
+
+ a| 
+`_SM_control_fils_directory_`
+ a| 
+指定控制檔目錄
+
+[NOTE]
+====
+如果控制檔位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+
+==== a| 
+字串陣列
+
+
+
+ a| 
+`_SM_data_fils_directory_`
+ a| 
+指定資料檔案目錄
+
+[NOTE]
+====
+如果資料檔案位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+
+==== a| 
+字串陣列
+
+|===

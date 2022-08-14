@@ -1,0 +1,93 @@
+---
+permalink: unix-administration/reference-troubleshooting-storage-system-renaming-issue.html 
+sidebar: sidebar 
+keywords: face, issue, renaming, rename, storage, system, successful, troubleshooting 
+summary: 在重新命名儲存系統或成功重新命名儲存系統之後、您可能會遇到問題。 
+---
+= 疑難排解儲存系統重新命名問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在重新命名儲存系統或成功重新命名儲存系統之後、您可能會遇到問題。
+
+當您嘗試重新命名儲存系統時、作業可能會失敗、並顯示下列錯誤訊息：「MSAP-5085 No storage controller "FAS3020-rtp07New" is founds to the profile」（找不到與設定檔相關的儲存控制器「FAS3020-rtp07New」）
+
+您必須輸入執行「最新儲存清單」命令時所列的儲存系統IP位址或名稱。
+
+重新命名儲存系統之後、SnapManager 如果SnapManager 無法辨識儲存系統、則可能無法執行各項功能。您必須在DataFabric Manager伺服器主機和SnapManager 支援服務器主機中執行一些其他步驟、才能解決此問題。
+
+在DataFabric Manager伺服器主機中執行下列步驟：
+
+. 刪除DataFabric Manager伺服器主機上位於「/etc/hosts」的主機檔案中、較早儲存系統的IP位址和主機。
+. 將新儲存系統的新IP位址和主機新增至DataFabric Manager伺服器主機上位於「/etc/hosts」的主機檔案。
+. 輸入下列命令來變更儲存主機名稱：
++
+「* DFM主機重新命名- a _old_host_namenew_host_name_*」
+
+. 輸入下列命令、在主機中設定新的IP位址：
++
+「* DFM主機設定_old_host_name_or_objectid_ hostPrimaryAddress =_new_storage controller_ip_address_*」
+
++
+
+NOTE: 只有在將IP位址指定為新的儲存系統名稱時、才必須執行此步驟。
+
+. 輸入下列命令、更新DataFabric Manager伺服器主機中的新儲存系統名稱：
++
+「* DFM主機診斷_old_storage名稱_*」
+
++
+您可以輸入下列命令、確認先前的儲存控制器名稱已被新的儲存控制器名稱取代：
+
++
+’* dfm主機探索new_storage名稱*
+
+
+
+以root使用者身分在SnapManager 伺服器主機上執行下列步驟。
+
+
+NOTE: 輸入新的儲存控制器名稱時、請確定您使用的是系統別名、而非完整網域名稱（FQDN）。
+
+. 輸入下列命令、刪除舊版儲存系統名稱：
++
+hy* SnapDrive 《*》、刪除_old_storage、name_*》
+
++
+
+NOTE: 如果您沒有刪除先前的儲存系統名稱、SnapManager 則所有的動作都會失敗。
+
+. 刪除位於目標資料庫主機「etc/hosts」的主機檔案中、較早儲存系統的IP位址和主機。
+. 將新儲存系統的新IP位址和主機新增到目標資料庫主機的主機檔案中。
+. 輸入下列命令新增儲存系統名稱：
++
+hy* SnapDrive 組態集root _new_storage名稱_*
+
+. 輸入下列命令來對應較早和較新的儲存系統名稱：
++
+hy* SnapDrive 《*組態移轉集_old_storage、namenew_storage、name_*》
+
+. 輸入下列命令、刪除舊版儲存系統的管理路徑：
++
+Check Alignment of PHs>"`* SnapDrive 鏡像組態刪除-mgmtpath _old_store_name_*
+
+. 輸入下列命令、新增新儲存系統的管理路徑：
++
+`* SnapDrive 《*》組態集-mgmtpath _new_store_name_*》
+
+. 輸入下列命令、以新的儲存系統名稱來更新資料檔案和歸檔記錄檔的資料集：
++
+`* SnapDrive 《資料集變更主機名稱-dn _Data_name_-oldname _old_storage名稱_-newname _new_storage名稱_*》
+
+. 輸入下列命令、更新新儲存系統名稱的設定檔：
++
+h.*smsap儲存設備重新命名-profile _profile_name_-oldname _old_storage名稱_-newname _new_storage名稱_*
+
+. 輸入下列命令、驗證與設定檔相關的儲存系統：
++
+h.*smsap儲存清單-profile _profile_name_*
+
+

@@ -1,0 +1,94 @@
+---
+permalink: unix-administration/reference-the-smosmsap-repository-rollingback-command.html 
+sidebar: sidebar 
+keywords: command, enable, roll, back, revert, version, snapmanager, original, version, upgrade, smsap, repository, rollback 
+summary: 此命令可讓您從更新版本SnapManager 的支援還原或還原至您升級的原始版本。 
+---
+= smsap儲存庫復原命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令可讓您從更新版本SnapManager 的支援還原或還原至您升級的原始版本。
+
+
+
+== 語法
+
+[listing, subs="+macros"]
+----
+pass:quotes[smsap repository rollback
+-repository
+-dbname _repo_service_name_
+-host _repo_host_
+-login -username _repo_username_
+-port _repo_port_
+-rollbackhost _host_with_target_database_
+[-force]]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* 「*儲存庫*」
++
+儲存庫後面的選項會指定儲存庫的資料庫詳細資料。
+
+* 「*」-「dbname _repo_service_name_*」
++
+指定儲存庫的資料庫名稱。使用全域名稱或SID。
+
+* 「*主機_repo_host_*」
++
+指定執行儲存庫資料庫的主機電腦名稱或IP位址。
+
+* 「*登入*」
++
+啟動儲存庫登入詳細資料。
+
+* -username_repo_username_*
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* 復原主機_host_with _target資料庫_*
++
+指定要從較高版本SnapManager 的資訊更新回原始較低版本的主機名稱。
+
+* 「*連接埠_repo_port_*」
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* 「*力*」
++
+嘗試強制更新儲存庫。更新前、系統會提示您備份目前的儲存庫。SnapManager
+
+* 「*節點提示*」
++
+不會在更新儲存庫資料庫之前顯示提示。使用-noprompt選項可確保不會出現提示、讓您更容易使用指令碼來更新儲存庫。
+
+* 「*無聲*」
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* 「*」-「Verbos*」
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+'''
+
+
+== 命令範例
+
+下列範例會更新SALESDB資料庫中的儲存庫。
+
+[listing]
+----
+smsap repository rollback -repository -dbname SALESDB
+-host server1 -login -username admin -port 1521 -rollbackhost hostA
+----
+'''

@@ -1,0 +1,81 @@
+---
+permalink: windows/reference-the-smosmsapprofile-sync-command.html 
+sidebar: sidebar 
+keywords: command, profile-to-repository, map, repository, file, home, directory, local, host, smsap 
+summary: 此命令會將該儲存庫的設定檔對儲存庫對應、載入到本機主機主目錄中的檔案。 
+---
+= smsap設定檔同步命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會將該儲存庫的設定檔對儲存庫對應、載入到本機主機主目錄中的檔案。
+
+
+
+== 語法
+
+[listing]
+----
+
+smsap profile sync
+-repository
+-dbname repo_service_name
+-host repo_host
+-port repo_port
+-login
+-username repo_username
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *（系統儲存庫）*
++
+"-reposac儲存 庫"後面的選項會指定儲存庫的資料庫詳細資料。
+
+* *（即dbname _repo_service_name_`*）
++
+指定要同步處理之設定檔的儲存庫資料庫。
+
+* *（主機）*
++
+指定資料庫主機。
+
+* *（即連接埠）*
++
+指定主機的連接埠。
+
+* *（登入）*
++
+指定主機使用者的登入程序。
+
+* *（用戶名）*
++
+指定主機的使用者名稱。
+
+* *（靜音）*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *（冗長）*
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 命令範例
+
+下列範例顯示同步資料庫設定檔對儲存庫對應的命令結果。
+
+[listing]
+----
+smsap profile sync -repository -dbname smrepo -host Host2 -port 1521 -login -username user2
+SMSAP-12345 [INFO ]: Loading profile mappings for repository "user2@Host2:smrepo" into cache for OS User "admin".
+Operation Id [Nff8080810da9018f010da901a0170001] succeeded.
+----

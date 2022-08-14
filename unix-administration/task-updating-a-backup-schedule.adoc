@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task-update-a-backup-schedule.html 
+sidebar: sidebar 
+keywords: view, list, schedule, operation, update, frequency, start, time, cronstring, expression, user, updating, backup 
+summary: 您可以檢視排程作業清單、並視需要更新。您可以更新排程頻率、排程的開始時間、cronstring運算式、以及排程備份的使用者。 
+---
+= 更新備份排程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視排程作業清單、並視需要更新。您可以更新排程頻率、排程的開始時間、cronstring運算式、以及排程備份的使用者。
+
+.步驟
+. 若要更新備份排程、請輸入下列命令：
++
+hesap排程更新-profile _profile_name_-schedule-name _schedulename_[-schedule-comment _scheduledcomment comment _]-time{_-hour__|-day__|__周_|__月_|__一次時間__-start-time _startTIME -verbose字串_cronstring_-runasuser-user-runasuser-useidenety*[
+
+

@@ -1,0 +1,27 @@
+---
+permalink: windows/reference-unable-to-restore-rac-database-from-one-of-the-rac-nodes-where-the-profile-was-not-created.html 
+sidebar: sidebar 
+keywords: oracle, rac, environment, node, cluster, restore, backup, operation, fail, profile 
+summary: 在兩個節點都屬於同一個叢集的Oracle RAC環境中、如果您嘗試從不同於建立備份之節點的節點進行還原作業、則還原作業會失敗。 
+---
+= 無法從未建立設定檔的其中一個RAC節點還原RAC資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在兩個節點都屬於同一個叢集的Oracle RAC環境中、如果您嘗試從不同於建立備份之節點的節點進行還原作業、則還原作業會失敗。
+
+例如、如果您在節點A中建立備份並嘗試從節點B還原、則還原作業會失敗。
+
+*活動內容*
+
+從節點B執行還原作業之前、請先在節點B中執行下列步驟：
+
+.步驟
+. 新增儲存庫。
+. 執行命令「smo profile sync」來同步設定檔。
+. 執行命令「shmo認證集」、設定要用於還原作業的設定檔認證資料。
+. 更新設定檔、執行命令「模組設定檔更新」、以新增主機名稱和對應的SID。
+

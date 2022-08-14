@@ -1,0 +1,15 @@
+---
+permalink: unix-installation-cmode/reference-trademark.html 
+sidebar: sidebar 
+keywords: trademark, information 
+summary: 商標資訊 
+---
+= 商標資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+S-、S-、ARCH設計、ASUP、Active IQ AltaVault AutoSupport Campaign Express、叢集Data ONTAP 式、Customer Fitness、Data ONTAP 功能、 Element、Fitness、Flash Accel 支援、Flash Cache、Flash Pool、 解決方案、解決方案、解決方案、FlexArray FlexCache FlexPod FlexShare、FlexVol 功能完整、FPolicy、Fulfed by SolidFire Eflex、GetSuccessful、 Helix Design、LockVault、管理ONTAP 功能、MetroCluster MultiStore NetApp、NetApp Insight 解決方案、OnCommand ONTAP 不包括：RAID DP RAID-TEC SANscreen SANshare SANtricity 簡單、簡單、模擬、Snap Creator、SecureShare ONTAP SnapCenter 包括：SnapCopy SnapDrive SnapLock SnapManager SnapMirror、SnapMover SnapMirror、SnapProtect 不複本、不包括SnapRestore 不包括：SnapValidator SnapVault SolidFire SolidFire Helix StorageGRID VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、SyncMirror Tech OnTap WAFL所有其他品牌或產品均為其各自所有者的商標或註冊商標、因此應予以處理。如需最新的NetApp商標清單、請參閱網路。
+
+http://www.netapp.com/us/legal/netapptmlist.aspx[]

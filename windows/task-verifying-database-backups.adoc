@@ -1,0 +1,32 @@
+---
+permalink: windows/task-verifying-database-backups.html 
+sidebar: sidebar 
+keywords: backup, verify, command, block, database, corrupt, operation, invoke, oracle, utility, data, file, backup 
+summary: 您可以使用備份驗證命令來驗證資料庫備份中的區塊是否未毀損。驗證作業會針對備份中的每個資料檔案、呼叫Oracle Database Verify公用程式。 
+---
+= 正在驗證資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用備份驗證命令來驗證資料庫備份中的區塊是否未毀損。驗證作業會針對備份中的每個資料檔案、呼叫Oracle Database Verify公用程式。
+
+利用此功能、您可以隨時在系統上方便您和使用者的位置執行驗證作業。SnapManager您可以在建立備份之後立即執行驗證。您必須指定包含備份的設定檔、以及所建立備份的標籤或ID。
+
+
+NOTE: 如果您使用SnapManager 的是Windows 3.0和Oracle資料庫11.1.0.7、則備份驗證作業在Windows環境中會失敗。您必須使用Oracle資料庫11.2.0.1或更新版本。
+
+
+NOTE: 您可以指定-dump來在備份驗證作業之後收集傾印檔案。
+
+. 輸入下列命令：
++
+「msap備份驗證-profile profile_name [-label label |-id id][-force][-dump ][-quiet |-verbose]」
+
+
+
+*相關資訊*
+
+xref:reference-the-smosmsapbackup-verify-command.adoc[smsap備份驗證命令]

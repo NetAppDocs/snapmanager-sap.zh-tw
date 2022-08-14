@@ -1,0 +1,14 @@
+---
+permalink: windows/concept-snapmanager-graphical-user-and-command-line-interfaces.html 
+sidebar: sidebar 
+keywords: snapmanager, client, graphical, user, interface, gui, command-line, cli 
+summary: 支援的支援包括圖形化使用者介面（GUI）和命令列介面（CLI）SnapManager 。 
+---
+= 圖形化使用者與命令列介面SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援的支援包括圖形化使用者介面（GUI）和命令列介面（CLI）SnapManager 。

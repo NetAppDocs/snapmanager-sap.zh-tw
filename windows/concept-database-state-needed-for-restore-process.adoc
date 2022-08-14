@@ -1,0 +1,69 @@
+---
+permalink: windows/concept-database-state-needed-for-restore-process.html 
+sidebar: sidebar 
+keywords: state, database, restore, depend, process, perform, type, file 
+summary: 要還原的資料庫狀態取決於您要執行的還原程序類型、以及要包含的檔案類型。 
+---
+= 還原程序所需的資料庫狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要還原的資料庫狀態取決於您要執行的還原程序類型、以及要包含的檔案類型。
+
+下表列出資料庫應處於的狀態、視選取的還原選項和要納入還原的檔案類型而定：
+
+|===
+| 還原類型 | 內含檔案 | 此執行個體的資料庫狀態 
+
+
+ a| 
+僅還原
+ a| 
+控制檔
+ a| 
+關機
+
+
+
+ a| 
+系統檔案
+ a| 
+掛載或關機
+
+
+
+ a| 
+無系統檔案
+ a| 
+任何狀態
+
+
+
+ a| 
+還原與還原
+ a| 
+控制檔
+ a| 
+關機
+
+
+
+ a| 
+系統檔案
+ a| 
+掛載
+
+
+
+ a| 
+無系統檔案
+ a| 
+掛載或開啟
+
+|===
+還原作業所需的資料庫狀態SnapManager 取決於所執行的還原類型（完整、部分或控制檔）。除非指定「force」選項、否則無法將資料庫轉換為較低的狀態（例如、從Open移至Mount）SnapManager 。
+
+SAP適用的不驗證SAP是否正在執行。SnapManagerSAP等待逾時、然後關閉資料庫、這可能會增加一小時的還原時間。SnapManager

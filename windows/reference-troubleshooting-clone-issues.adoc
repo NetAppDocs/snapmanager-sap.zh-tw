@@ -1,0 +1,99 @@
+---
+permalink: windows/reference-troubleshooting-clone-issues.html 
+sidebar: sidebar 
+keywords: information, clone, operation, resolve, troubleshoot, issue 
+summary: 您可以在複製作業期間找到可能發生的相關資訊、以及如何解決這些資訊。 
+---
+= 疑難排解複製問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在複製作業期間找到可能發生的相關資訊、以及如何解決這些資訊。
+
+|===
+| 症狀 | 說明 | 因應措施 
+
+
+ a| 
+當歸檔目的地設定為「US_DB_recovery _file_dest'」時、複製作業會失敗。
+ a| 
+當歸檔目的地參照US_DB_recovery _file_dest時、Flash恢復區域（FRA）會主動管理歸檔記錄。在複製或還原作業期間、不使用FRA位置、因此作業失敗。SnapManager
+ a| 
+將歸檔目的地變更為實際的歸檔記錄位置、而非變更FA位置。
+
+
+
+ a| 
+Clone作業失敗、並顯示下列錯誤訊息：「無法執行作業：Clone Create。根本原因：Oracle-00001：執行SQL時發生錯誤：[Alter database OPEN RESETLOGS；]。傳回的命令：ora-01195：檔案1的線上備份需要更多還原才能保持一致。
+ a| 
+如果Oracle接聽程式無法連線至資料庫、就會發生此問題。
+ a| 
+如果您使用SnapManager 支援功能的圖形使用者介面來複製備份、請執行下列動作：
+
+. 在儲存庫樹狀結構中、按一下*儲存庫*>*主機*>*設定檔*以顯示備份。
+. 在您要複製的備份上按一下滑鼠右鍵、然後選取* Clone（複製）*。
+. 在Clone初始化頁面上、輸入必要的值、然後選取Clone規格方法。
+. 在Clone Specification（複製規格）頁面上、選取*參數*。
+. 按一下*參數*索引標籤。
+. 在*參數名稱*欄位中、輸入名稱「local_listener」、然後按一下*確定*。
+. 選取「local_listener_」列的「*置換預設*」核取方塊。
+. 按一下任一參數、然後按兩下local_listen參數、並輸入下列值：「（」（address=（傳輸協定= TCP）（host=<yure_host_name>）（port=<port#>））」
+. 按一下*「儲存至檔案」*。
+. 單擊* Next*（下一步）並繼續執行Clone Create（克隆創建）嚮導。
+
+
+如果您使用CLI複製備份、則必須在實體複製規格檔案的*標籤中包含下列資訊：
+
+[listing]
+----
+
+<parameters>
+  <parameter>
+  <name>local_listener</name>
+  <value>(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=<hostname>)(PORT=<port#>)))</value>
+  </parameter>
+</parameters>
+----
+
+
+ a| 
+複製作業失敗、並顯示錯誤訊息、指出您正在使用的掛載點已在使用中。
+ a| 
+不允許在現有的掛載點上掛載實體複本。SnapManager因此、不完整的實體複本並未移除掛載點。
+ a| 
+指定要由複本使用的不同掛載點、或卸載有問題的掛載點。
+
+
+
+ a| 
+複製作業失敗、並顯示不具.dbf副檔名的資料檔案錯誤訊息。
+ a| 
+除非檔案使用.dbf副檔名、否則某些版本的Oracle NID公用程式無法處理資料檔案。
+ a| 
+* 重新命名資料檔案、為其提供.dbf副檔名。
+* 重複備份作業。
+* 複製新備份。
+
+
+
+
+ a| 
+由於需求未獲滿足、因此複製作業失敗。
+ a| 
+您正在嘗試建立複本、但尚未達到某些先決條件。
+ a| 
+按照_建立複本_中所述進行、以符合先決條件。
+
+
+
+ a| 
+SAP無法複製Oracle 10gR2（10.2.0.5）實體Oracle Data Guard待命資料庫。SnapManager
+ a| 
+針對SAP執行Oracle 10gR2（10.2.0.5）實體待命資料庫的離線備份時、不會停用託管還原模式、而這些資料庫是使用Oracle Data Guard服務建立的。SnapManager由於此問題、所進行的離線備份不一致。當針對SAP的支援嘗試複製離線備份時、它甚至不會嘗試在複製的資料庫上執行任何恢復。SnapManager由於備份不一致、因此複製的資料庫需要還原、因此SAP無法成功建立複本。
+ a| 
+將Oracle資料庫升級至Oracle 11gR1（11.1.0.7修補程式）。
+
+|===

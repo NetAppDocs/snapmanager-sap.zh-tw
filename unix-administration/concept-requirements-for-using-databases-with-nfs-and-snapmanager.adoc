@@ -1,0 +1,30 @@
+---
+permalink: unix-administration/concept-requirements-for-using-databases-with-nfs-and-snapmanager.html 
+sidebar: sidebar 
+keywords: requirement, database, network, file, system, nfs, snapmanager, root, attribute, caching, cache, sybolic, link 
+summary: 您必須瞭解使用資料庫搭配網路檔案系統（NFS）和SnapManager 功能的需求。建議包括以root執行、屬性快取和符號連結。 
+---
+= 資料庫搭配NFS和SnapManager 功能的使用需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須瞭解使用資料庫搭配網路檔案系統（NFS）和SnapManager 功能的需求。建議包括以root執行、屬性快取和符號連結。
+
+* 您必須以SnapManager root執行Solid；SnapManager 必須能夠存取包含資料檔案、控制檔、線上重作記錄、歸檔記錄和資料庫主目錄的檔案系統。
++
+設定下列任一NFS匯出選項、以確保root能夠存取檔案系統：
+
++
+** root=`_host name_`
+** rw=`_host name_`、anon=0
+
+
+* 您必須停用所有包含資料庫資料檔案、控制檔、重作和歸檔記錄、以及資料庫主目錄的磁碟區的屬性快取。
++
+使用noac（適用於Solaris和AIX）或actmeo=0（適用於Linux）選項匯出磁碟區。
+
+* 您必須將資料庫資料檔案從本機儲存設備連結至NFS、以僅支援掛載點層級的符號連結。
+

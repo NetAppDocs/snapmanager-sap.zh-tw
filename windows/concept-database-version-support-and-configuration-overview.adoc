@@ -1,0 +1,19 @@
+---
+permalink: windows/concept-database-version-support-and-configuration-overview.html 
+sidebar: sidebar 
+keywords: database, version, configuration, support, snapmanager,  perform, layout, setup, operation, overview 
+summary: 您必須知道SnapManager 支援的不同資料庫版本和組態。您必須執行基本的資料庫配置和組態設定、才能確保作業成功。 
+---
+= 資料庫版本支援與組態總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須知道SnapManager 支援的不同資料庫版本和組態。您必須執行基本的資料庫配置和組態設定、才能確保作業成功。
+
+SAP的支援範圍與Oracle版本10gR2（10.2.0.5）、11gR2（11.2.0.1和11.2.0.2）和12_c__整合、採用原生Oracle技術、例如Recovery Manager（RMAN）、以及光纖通道（FC）和網際網路小型電腦系統介面（iSCSI）傳輸協定。SnapManager
+
+
+NOTE: 不支援來自32、10 g R2（10.2.0.5之前）SnapManager 的Oracle Database 9i SnapManager 。

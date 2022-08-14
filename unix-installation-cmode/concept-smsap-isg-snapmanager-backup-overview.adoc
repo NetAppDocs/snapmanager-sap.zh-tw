@@ -1,0 +1,16 @@
+---
+permalink: unix-installation-cmode/concept-smsap-isg-snapmanager-backup-overview.html 
+sidebar: sidebar 
+keywords: snapmanager, netapp, snapshot, technology, create, backup, database, dbverify, utility, verify, integrity, overview 
+summary: 使用NetApp Snapshot技術來建立資料庫備份。SnapManager您可以使用DBVERIFY公用程式、也可以使用SnapManager 效益驗證備份的完整性。 
+---
+= 支援概述SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用NetApp Snapshot技術來建立資料庫備份。SnapManager您可以使用DBVERIFY公用程式、也可以使用SnapManager 效益驗證備份的完整性。
+
+透過建立包含資料檔案、控制檔和歸檔記錄檔的磁碟區Snapshot複本、來備份資料庫。SnapManager這些Snapshot複本一起構成一套備份集、SnapManager 可供還原資料庫。

@@ -1,0 +1,74 @@
+---
+permalink: unix-administration/concept-what-cloning-is.html 
+sidebar: sidebar 
+keywords: clone, database, create, replica, database, backup, cloning 
+summary: 您可以複製資料庫、以建立原始資料庫的確切複本。您可以從完整備份或資料庫的目前狀態建立複本。 
+---
+= 何謂複製
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以複製資料庫、以建立原始資料庫的確切複本。您可以從完整備份或資料庫的目前狀態建立複本。
+
+使用SnapManager 效益技術建立實體複本的部分優點如下：
+
+[cols="1a,4a"]
+|===
+| 優勢 | 詳細資料 
+
+
+ a| 
+速度
+ a| 
+此實體複製作業使用FlexClone功能搭配使用。SnapManager Data ONTAP這可讓您快速複製大型資料磁碟區。
+
+
+
+ a| 
+空間效率
+ a| 
+使用SnapManager 支援功能建立複本時、只有在備份與複本之間進行變更時才需要空間。此實體複本是原始資料庫的可寫入Snapshot複本、可視需要擴充。SnapManager相反地、資料庫的實體複製需要足夠的空間來複製整個資料庫。
+
+
+
+ a| 
+虛擬複本
+ a| 
+您可以使用複製的資料庫、就像原始資料庫一樣。例如、您可以使用實體複本進行測試、平台與更新檢查、針對大型資料集進行多項模擬、以及遠端辦公室測試與接移。對實體複本所做的變更不會影響原始資料庫。複製資料庫之後、複製的資料庫便可完全運作。
+
+
+
+ a| 
+簡易性
+ a| 
+您可以使用SnapManager 下列指令、將資料庫複製到任何主機。
+
+|===
+您可以在主要（本機）儲存設備或次要（遠端）儲存設備上的受保護備份上複製備份。不過、如果備份作業正在進行中、或備份已傳輸至次要儲存設備、則無法複製備份。
+
+您必須確保在複製資料庫之前符合下列先決條件：
+
+* 確保「/etc/eets|/var/opt/oracle]/oratab'目錄中沒有指向目標系統識別碼的項目。
+* 從「$oracle_home/DBS」刪除「shipfile<sid>.ora」檔案。
+* 從「$oracle_home/DBS」刪除「init<sid>.ora」檔案。
+* 刪除在Clone規格檔案中指定的Oracle傾印目的地。
+* 刪除在Clone規格檔案中指定的Oracle控制檔。
+* 刪除在Clone規格檔案中指定的Oracle重作記錄檔。
+
+
+您必須為複本指定新的系統識別碼。您無法同時在同一部主機上執行具有相同系統識別碼的兩個資料庫。您可以使用相同的系統識別碼、在不同的主機上建立複本。您可以為實體複本貼上標籤、或是使用SnapManager 建立實體複本的系統識別碼、日期和時間、讓它建立標籤。
+
+輸入標籤時、不得包含空格或特殊字元。
+
+在複製程序中SnapManager 、利用此功能、即可為複製的資料庫建立必要的Oracle檔案和參數。如需Oracle檔案、例如：「init<sID>.ora」。
+
+當您複製資料庫時SnapManager 、將在「$oracle_home/dbs」目錄中、為資料庫建立新的「init<sid>.ora」檔案。
+
+您可以複製Real Application Cluster（RAC）資料庫及非叢集式資料庫。RAC實體複本會以單一資料庫的形式啟動。
+
+您可以將資料庫備份複製到資料庫所在的主機或替代主機。
+
+如果您複製的資料庫使用「shpfile」、SnapManager 則會建立一個「shipfile」來複製。它會將此檔案放在「$oracle_home/DBS」目錄中、並建立診斷檔案的目錄結構。檔案名稱為「shpfile <sID>.ora」。
