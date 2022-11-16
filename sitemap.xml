@@ -496,13 +496,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-how-to-send-comments-about-documentation-and-receive-update-notifications-netapp-post-preface.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-how-to-send-comments-about-documentation-and-receive-update-notifications-netapp-post-preface.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -511,6 +504,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/concept-how-to-send-comments-about-documentation-and-receive-update-notifications-netapp-post-preface.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-how-to-send-comments-about-documentation-and-receive-update-notifications-netapp-post-preface.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1595,13 +1595,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-copyright.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-copyright.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -1610,6 +1603,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/reference-copyright.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-copyright.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1763,13 +1763,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-smsap-isg-product-overview.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-product-overview.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -1778,6 +1771,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/reference-smsap-isg-product-overview.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-smsap-isg-product-overview.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2869,13 +2869,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-trademark.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-trademark.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -2884,6 +2877,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/reference-trademark.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-trademark.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2983,7 +2983,7 @@
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap//search.html</loc>
       
-      <lastmod>2022-08-14T17:59:34+00:00</lastmod>
+      <lastmod>2022-11-16T07:40:50+00:00</lastmod>
       
     </url>
   
