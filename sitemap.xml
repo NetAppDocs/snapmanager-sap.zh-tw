@@ -13,14 +13,14 @@
   
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-about-control-file-and-archive-log-file-handling.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-about-control-file-and-archive-log-file-handling.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-about-control-file-and-archive-log-file-handling.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-about-control-file-and-archive-log-file-handling.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -62,13 +62,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-archive-log-consolidation.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-archive-log-consolidation.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -76,7 +69,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-backing-up-and-restoring-files-using-br-tools.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-archive-log-consolidation.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -90,7 +83,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-backing-up-and-verifying-your-databases.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-backing-up-and-restoring-files-using-br-tools.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -104,7 +97,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-backup-recovery.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-backing-up-and-verifying-your-databases.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -118,14 +111,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-backup-schedule-and-retention-strategy.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-backup-recovery.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-backup-types-and-the-number-of-snapshot-copies.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-backup-schedule-and-retention-strategy.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -139,7 +132,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-clone-database-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-backup-types-and-the-number-of-snapshot-copies.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -153,7 +146,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-cloning-database-backup.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-clone-database-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -167,7 +160,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-cloning-methods.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-cloning-database-backup.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -181,14 +174,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-clustered-configurations.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-cloning-methods.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-collecting-additional-log-information-for-easier-debugging.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-clustered-configurations.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -202,14 +195,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-configuring-and-enabling-policy-driven-data-protection.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-collecting-additional-log-information-for-easier-debugging.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-configuring-e-mail-notification.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-configuring-and-enabling-policy-driven-data-protection.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -223,7 +216,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-configuring-snapmanager-for-oraclesap.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-configuring-e-mail-notification.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -237,7 +230,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-considerations-for-cloning-a-database-to-an-alternate-host.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-configuring-snapmanager-for-oraclesap.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -251,7 +244,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-create-backups-using-snapshot-copies.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-considerations-for-cloning-a-database-to-an-alternate-host.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -265,7 +258,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-creating-task-specification-file-and-scripts-for-snapmanager-operations.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-create-backups-using-snapshot-copies.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -279,7 +272,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-database-backup-management.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-creating-task-specification-file-and-scripts-for-snapmanager-operations.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -293,7 +286,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-database-backups-created-using-brbackup-and-brarchive.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-database-backup-management.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -307,7 +300,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-database-restore-by-using-brrestore-and-brrecover.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-database-backups-created-using-brbackup-and-brarchive.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -321,7 +314,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-database-state-needed-for-restore-process.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-database-restore-by-using-brrestore-and-brrecover.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -335,14 +328,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-database-version-support-and-configuration-overview.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-database-state-needed-for-restore-process.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-deprecated-versions-of-oracle-database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-database-version-support-and-configuration-overview.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -356,14 +349,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-details-of-the-target-database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-deprecated-versions-of-oracle-database.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-disabling-client-access-to-snapshot-copies.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-details-of-the-target-database.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -377,7 +370,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-dump-files.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-disabling-client-access-to-snapshot-copies.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -391,7 +384,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-error-handling-in-custom-scripts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-dump-files.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -405,14 +398,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-fast-restore-eligibility-checks.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-error-handling-in-custom-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-full-online-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-fast-restore-eligibility-checks.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -426,7 +419,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-full-or-partial-restoration-of-the-database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-full-online-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -440,7 +433,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-general-layout-and-configuration.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-full-or-partial-restoration-of-the-database.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -454,7 +447,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-how-snapmanager-retains-backups-on-the-local-storage.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-general-layout-and-configuration.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -468,7 +461,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-how-to-collect-dump-files.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-how-snapmanager-retains-backups-on-the-local-storage.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -482,21 +475,14 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-how-to-collect-dump-files.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-how-to-organize-repositories.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-how-to-send-comments-about-documentation-and-receive-update-notifications-netapp-post-preface.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-how-to-send-comments-about-documentation-and-receive-update-notifications-netapp-post-preface.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -510,7 +496,21 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-how-to-send-comments-about-documentation-and-receive-update-notifications-netapp-post-preface.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-how-to-send-comments-about-documentation-and-receive-update-notifications-netapp-post-preface.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-how-to-send-comments-about-documentation-and-receive-update-notifications-netapp-post-preface.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -531,13 +531,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-introduction-to-data-protection-in-snapmanager.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-introduction-to-data-protection-in-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -545,7 +538,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-licenses-required-for-data-protection.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-introduction-to-data-protection-in-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -559,14 +552,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-limitations-for-performing-a-rollback.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-limitations-for-performing-a-rollback.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-licenses-required-for-data-protection.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -580,7 +566,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-limitations-related-to-oracle-database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-limitations-for-performing-a-rollback.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-limitations-for-performing-a-rollback.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -594,7 +587,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-limitations.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-limitations-related-to-oracle-database.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -608,7 +601,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-maintaining-history-of-snapmanager-operations.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-limitations.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -622,7 +615,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-managing-profiles-for-efficient-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-maintaining-history-of-snapmanager-operations.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -636,7 +629,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-managing-security-and-credentials.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-managing-profiles-for-efficient-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -650,7 +643,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-operations-in-task-scripts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-managing-security-and-credentials.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -664,7 +657,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-partial-online-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-operations-in-task-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -678,7 +671,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-performing-management-operations.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-partial-online-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -692,7 +685,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-post-upgrade-tasks.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-performing-management-operations.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/concept-post-upgrade-tasks.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -706,7 +706,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/concept-post-upgrade-tasks.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-post-upgrade-tasks.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -727,7 +727,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-preparing-to-upgrade-snapmanager-for-oracle-snapmanager-for-sap.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/concept-preparing-to-upgrade-snapmanager-for-oracle-snapmanager-for-sap.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -741,14 +741,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/concept-preparing-to-upgrade-snapmanager-for-oracle-snapmanager-for-sap.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-prerequisites-for-data-protection.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-preparing-to-upgrade-snapmanager-for-oracle-snapmanager-for-sap.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -762,14 +755,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-prerequisites-for-performing-a-rollback.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-prerequisites-for-performing-a-rollback.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-prerequisites-for-data-protection.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -783,14 +769,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-prerequisites-for-performing-rolling-upgrade.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-prerequisites-for-performing-a-rollback.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-prerequisites-for-performing-rolling-upgrade.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-prerequisites-for-performing-a-rollback.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -804,6 +790,20 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-prerequisites-for-performing-rolling-upgrade.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-prerequisites-for-performing-rolling-upgrade.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-primary-and-secondary-storage-configuration-and-topology.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -811,14 +811,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-profile-usage-for-br-tools-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-profile-usage-for-br-tools-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-profile-usage-for-br-tools-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-profile-usage-for-br-tools-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -853,13 +853,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restoration-of-the-data-from-file-systems.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-restoration-of-the-data-from-file-systems.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -867,7 +860,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restoration-of-the-data-from-files.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restoration-of-the-data-from-file-systems.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -881,14 +874,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-restoration-of-the-data-from-raw-devices.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restoration-of-the-data-from-files.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restore-backups-from-an-alternate-location-overview.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-restoration-of-the-data-from-raw-devices.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -902,7 +895,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restore-files-from-an-alternate-location.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restore-backups-from-an-alternate-location-overview.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -916,7 +909,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restore-preview-plans.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restore-files-from-an-alternate-location.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -930,7 +923,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-restore-process-identification.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restore-preview-plans.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -938,6 +931,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/concept-restore-process-identification.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-restore-process-identification.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -958,13 +958,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restoring-a-backup-to-a-different-host.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-restoring-a-backup-to-a-different-host.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -972,7 +965,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restoring-database-backup.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restoring-a-backup-to-a-different-host.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -986,14 +979,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-restoring-protected-backups-from-secondary-storage.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-restoring-database-backup.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-scheduling-database-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-restoring-protected-backups-from-secondary-storage.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1007,7 +1000,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-smsap-isg-defining-a-backup-strategy.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-scheduling-database-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1021,7 +1014,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-smsap-isg-snapmanager-backup-overview.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-smsap-isg-defining-a-backup-strategy.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1029,6 +1022,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/concept-smsap-isg-snapmanager-backup-overview.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-smsap-isg-snapmanager-backup-overview.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1049,14 +1049,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-snapmanager-for-oraclefor-sap-command-reference.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-snapmanager-for-oraclefor-sap-command-reference.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-snapmanager-for-oraclefor-sap-command-reference.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-snapmanager-for-oraclefor-sap-command-reference.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1098,13 +1098,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-snapmanager-security.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-snapmanager-security.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -1112,7 +1105,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-snapmanger-limitations-for-clustered-data-ontap.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-snapmanager-security.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1126,7 +1119,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-snapshot-copy-naming.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-snapmanger-limitations-for-clustered-data-ontap.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1134,6 +1127,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-snapshot-copy-naming.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-snapshot-copy-naming.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1161,14 +1161,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-track-details-and-produce-reports.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-track-details-and-produce-reports.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-track-details-and-produce-reports.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-track-details-and-produce-reports.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1182,13 +1182,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-understanding-the-differences-between-snapmirror-and-snapvault.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/concept-understanding-the-differences-between-snapmirror-and-snapvault.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -1196,7 +1189,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-updating-storage-controller-name-and-database-hostname-associated-with-a-profile.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-understanding-the-differences-between-snapmirror-and-snapvault.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1210,14 +1203,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-upgrading-snapmanager-for-oracle-snapmanager-for-sap.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-upgrading-snapmanager-for-oracle-snapmanager-for-sap.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-updating-storage-controller-name-and-database-hostname-associated-with-a-profile.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1231,14 +1217,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-upgrading-snapmanager-hosts-by-using-rolling-upgrade.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-upgrading-snapmanager-for-oracle-snapmanager-for-sap.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-upgrading-snapmanager-hosts-by-using-rolling-upgrade.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-upgrading-snapmanager-for-oracle-snapmanager-for-sap.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1252,7 +1238,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-using-br-tools-with-snapmanager-for-sap.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-upgrading-snapmanager-hosts-by-using-rolling-upgrade.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-upgrading-snapmanager-hosts-by-using-rolling-upgrade.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1266,7 +1259,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-variables-available-in-custom-script-for-restore-operation.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-using-br-tools-with-snapmanager-for-sap.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1280,7 +1273,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-variables-available-in-the-task-scripts-for-backup-operation.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-variables-available-in-custom-script-for-restore-operation.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1294,7 +1287,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-variables-available-in-the-task-scripts-for-clone-operation.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-variables-available-in-the-task-scripts-for-backup-operation.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1308,7 +1301,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-verify-backup-status.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-variables-available-in-the-task-scripts-for-clone-operation.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1322,21 +1315,14 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-verify-backup-status.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-volume-management-restrictions.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-a-rollback-is.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-what-a-rollback-is.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1350,7 +1336,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-autosupport-is.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/concept-what-a-rollback-is.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-a-rollback-is.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1364,7 +1357,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-br-tools-are.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-autosupport-is.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1378,7 +1371,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-cloning-is.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-br-tools-are.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1392,7 +1385,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-database-backup-scheduling-is.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-cloning-is.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1406,7 +1399,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-database-restore-is.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-database-backup-scheduling-is.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1420,7 +1413,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-full-and-partial-backups-are.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-database-restore-is.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1434,7 +1427,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-profiles-are.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-full-and-partial-backups-are.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1442,6 +1435,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-what-profiles-are.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-profiles-are.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1462,14 +1462,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-repositories-are.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-what-repositories-are.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-what-repositories-are.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-repositories-are.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1483,14 +1483,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-snapmanager-database-backups-are.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-what-snapmanager-database-backups-are.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-what-snapmanager-database-backups-are.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-snapmanager-database-backups-are.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1511,14 +1511,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-snapmanager-operation-states-are.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-what-snapmanager-operation-states-are.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-what-snapmanager-operation-states-are.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-snapmanager-operation-states-are.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1532,14 +1532,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-user-authentication-is.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-what-user-authentication-is.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-what-user-authentication-is.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-what-user-authentication-is.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1553,14 +1553,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-why-you-should-prune-archive-log-files.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-why-you-should-prune-archive-log-files.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/concept-why-you-should-prune-archive-log-files.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/concept-why-you-should-prune-archive-log-files.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1588,7 +1588,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-copyright.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/reference-copyright.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1602,13 +1602,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/reference-copyright.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-copyright.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -1616,7 +1609,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-error-message-classifications.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-copyright.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1630,7 +1623,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-error-messages.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-error-message-classifications.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1644,7 +1637,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-examples-of-backup-restore-and-recover-operations.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-error-messages.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1658,7 +1651,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-how-to-locate-dump-files.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-examples-of-backup-restore-and-recover-operations.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1672,14 +1665,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-mounting-a-flexclone-fails-in-nfs-environment.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-how-to-locate-dump-files.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-prepare-storage-systems-for-snapmirror-and-snapvault-replication.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-mounting-a-flexclone-fails-in-nfs-environment.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1693,14 +1686,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/reference-releasenotes.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-prepare-storage-systems-for-snapmirror-and-snapvault-replication.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-running-multiple-parallel-operations-fail-in-snapmanager.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/reference-releasenotes.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1714,7 +1707,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-sample-database-volume-layouts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-running-multiple-parallel-operations-fail-in-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1728,14 +1721,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-sample-post-scripts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-sample-database-volume-layouts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-deployment-workflow.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-sample-post-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1749,7 +1742,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-host-requirements.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-deployment-workflow.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1763,7 +1756,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-product-overview.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-host-requirements.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1777,14 +1770,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-smsap-isg-product-overview.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-product-overview.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-snapmanager-architecture.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-smsap-isg-product-overview.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1798,7 +1791,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-snapmanager-licensing.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-snapmanager-architecture.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1812,7 +1805,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-where-to-go-next.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-snapmanager-licensing.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1826,7 +1819,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-snapmanager-configuration-parameters.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-smsap-isg-where-to-go-next.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1840,7 +1833,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-supported-configurations.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-snapmanager-configuration-parameters.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1854,14 +1847,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-supported-partition-devices.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-supported-configurations.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-supported-storage-types.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-supported-partition-devices.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1875,7 +1868,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-backint-register-sld-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-supported-storage-types.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1889,7 +1882,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smo-notification-removesummarynotification-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-backint-register-sld-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1903,7 +1896,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smo-smsap-history-show-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smo-notification-removesummarynotification-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1917,7 +1910,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-clone-detach-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smo-smsap-history-show-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1925,6 +1918,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-the-smosmsap-clone-detach-command.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-clone-detach-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -1973,13 +1973,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-clone-update-command.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-the-smosmsap-clone-update-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -1987,7 +1980,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-history-list-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-clone-update-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2001,7 +1994,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-history-operation-show-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-history-list-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2015,7 +2008,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-history-purge-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-history-operation-show-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2029,7 +2022,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-history-remove-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-history-purge-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2043,7 +2036,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-history-set-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-history-remove-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2057,7 +2050,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-notification-set-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-history-set-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2071,7 +2064,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-notification-updatesummarynotification-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-notification-set-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2085,7 +2078,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-operation-show-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-notification-updatesummarynotification-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2099,7 +2092,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-password-reset-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-operation-show-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2107,6 +2100,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-the-smosmsap-password-reset-command.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-password-reset-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2127,13 +2127,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-repository-rollingback-command.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-the-smosmsap-repository-rollingback-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -2141,7 +2134,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-repository-rollingupgrade.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-repository-rollingback-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2155,7 +2148,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-create-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-repository-rollingupgrade.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2169,7 +2162,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-delete-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-create-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2183,7 +2176,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-list-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-delete-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2197,7 +2190,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-resume-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-list-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2211,7 +2204,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-suspend-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-resume-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2225,7 +2218,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-update-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-suspend-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2239,7 +2232,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-server-restart-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-schedule-update-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2253,7 +2246,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-server-start-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-server-restart-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2267,7 +2260,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-server-status-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-server-start-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2281,7 +2274,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-server-stop-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-server-status-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2295,7 +2288,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-storage-list-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-server-stop-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2309,7 +2302,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-storage-rename-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-storage-list-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2323,7 +2316,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-create-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsap-storage-rename-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2337,7 +2330,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-delete-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-create-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2351,7 +2344,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-free-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-delete-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2365,7 +2358,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-list-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-free-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2379,7 +2372,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-mount-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-list-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2393,7 +2386,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-restore-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-mount-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2407,7 +2400,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-show-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-restore-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2421,7 +2414,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-unmount-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-show-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2435,7 +2428,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-update-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-unmount-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2449,7 +2442,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-verify-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-update-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2463,7 +2456,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapclone-create-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapbackup-verify-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2477,7 +2470,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapclone-delete-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapclone-create-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2491,7 +2484,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapclone-list-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapclone-delete-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2505,7 +2498,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapclone-show-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapclone-list-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2519,7 +2512,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapclone-template-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapclone-show-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2533,7 +2526,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapcmdfile-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapclone-template-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2547,7 +2540,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapcredential-clear-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapcmdfile-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2561,7 +2554,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapcredential-delete-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapcredential-clear-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2575,7 +2568,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapcredential-list-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapcredential-delete-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2589,7 +2582,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapcredential-set-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapcredential-list-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2603,7 +2596,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsaphelp-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapcredential-set-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2617,7 +2610,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapoperation-dump-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsaphelp-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2631,7 +2624,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapoperation-list-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapoperation-dump-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2645,7 +2638,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-create-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapoperation-list-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2659,7 +2652,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-delete-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-create-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2673,7 +2666,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-dump-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-delete-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2687,7 +2680,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-list-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-dump-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2701,7 +2694,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-show-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-list-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2715,7 +2708,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-sync-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-show-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2729,7 +2722,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-update-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-sync-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2743,7 +2736,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-verify-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-update-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2757,14 +2750,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-the-smosmsapprotection-policy-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapprofile-verify-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsaprepository-create-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-the-smosmsapprotection-policy-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2778,7 +2771,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsaprepository-delete-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsaprepository-create-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2792,7 +2785,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsaprepository-show-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsaprepository-delete-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2806,7 +2799,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsaprepository-update-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsaprepository-show-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2820,7 +2813,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapsystem-dump-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsaprepository-update-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2834,7 +2827,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapsystem-verify-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapsystem-dump-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2848,7 +2841,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapversion-command.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapsystem-verify-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2862,14 +2855,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-trademark.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-trademark.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-the-smosmsapversion-command.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2883,6 +2869,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/reference-trademark.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-trademark.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -2890,7 +2883,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-troubleshooting-clone-issues.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-trademark.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2904,7 +2897,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-troubleshooting-graphical-user-interface-issues.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-troubleshooting-clone-issues.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2918,7 +2911,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-troubleshooting-known-issues.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-troubleshooting-graphical-user-interface-issues.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2932,6 +2925,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-troubleshooting-known-issues.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-troubleshooting-snapdrive-issues.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -2939,14 +2939,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-troubleshooting-snapmanager.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-troubleshooting-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-troubleshooting-snapmanager.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-troubleshooting-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2967,14 +2967,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-where-to-go-for-more-information.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-where-to-go-for-more-information.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/reference-where-to-go-for-more-information.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/reference-where-to-go-for-more-information.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -2983,7 +2983,7 @@
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap//search.html</loc>
       
-      <lastmod>2022-11-16T07:40:50+00:00</lastmod>
+      <lastmod>2022-12-15T12:10:52+00:00</lastmod>
       
     </url>
   
@@ -2995,14 +2995,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-accessing-and-printing-online-help.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-access-and-print-online-help.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-access-and-print-online-help.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-accessing-and-printing-online-help.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3030,13 +3030,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-adding-existing-profile-to-summary-notification.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-add-existing-profile-to-summary-notification.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -3044,7 +3037,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-adding-new-profile-to-summary-notification.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-adding-existing-profile-to-summary-notification.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3058,7 +3051,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-adding-storage-systems-to-the-snapmanager-server-host.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-adding-new-profile-to-summary-notification.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3072,6 +3065,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-adding-storage-systems-to-the-snapmanager-server-host.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-assign-backups-with-a-specific-retention-class.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -3079,14 +3079,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-assigning-backups-with-a-specific-retention-class.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-assign-backups-with-a-specific-retention-class.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-assign-backups-with-a-specific-retention-class.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-assigning-backups-with-a-specific-retention-class.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3107,13 +3107,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-authorizing-user-access-to-profiles.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-authorize-user-access-to-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -3121,7 +3114,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-authorizing-user-access-to-the-repository.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-authorizing-user-access-to-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3129,6 +3122,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-authorize-user-access-to-the-repository.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-authorizing-user-access-to-the-repository.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3156,13 +3156,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-changing-profile-passwords.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-change-profile-passwords.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -3170,7 +3163,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-changing-the-backup-retention-policy.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-changing-profile-passwords.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3184,7 +3177,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-changing-the-retention-policy-default-behavior.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-changing-the-backup-retention-policy.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3198,14 +3191,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-check-the-snapmanager-software-version.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-changing-the-retention-policy-default-behavior.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-checking-the-snapmanager-software-version.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-check-the-snapmanager-software-version.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3219,6 +3212,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-checking-the-snapmanager-software-version.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-clear-user-credentials-for-all-hosts-repositories-and-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -3226,14 +3226,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-clearing-user-credentials-for-all-hosts-repositories-and-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-clear-user-credentials-for-all-hosts-repositories-and-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-clear-user-credentials-for-all-hosts-repositories-and-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-clearing-user-credentials-for-all-hosts-repositories-and-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3275,13 +3275,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-cloning-a-database-to-an-alternate-host.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-clone-a-database-to-an-alternate-host.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -3289,7 +3282,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-cloning-database-backups-without-resetlogs.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-cloning-a-database-to-an-alternate-host.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3303,7 +3296,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-cloning-databases-and-using-custom-plugin-scripts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-cloning-database-backups-without-resetlogs.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3317,7 +3310,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-cloning-databases-from-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-cloning-databases-and-using-custom-plugin-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3331,7 +3324,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-cloning-databases-in-the-current-state.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-cloning-databases-from-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3339,6 +3332,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-clone-databases-in-the-current-state.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-cloning-databases-in-the-current-state.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3394,13 +3394,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-configuring-e-mail-notification-for-a-new-profile.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-configure-e-mail-notification-for-a-new-profile.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -3408,7 +3401,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-configuring-e-mail-notification-for-an-existing-profile.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-configuring-e-mail-notification-for-a-new-profile.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3422,7 +3415,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-configuring-history-for-backup-operation.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-configuring-e-mail-notification-for-an-existing-profile.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3436,7 +3429,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-configuring-mail-server-for-a-repository.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-configuring-history-for-backup-operation.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3444,6 +3437,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-configure-mail-server-for-a-repository.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-configuring-mail-server-for-a-repository.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3478,14 +3478,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-configuring-summary-e-mail-notification-for-multiple-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-configure-summary-e-mail-notification-for-multiple-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-configure-summary-e-mail-notification-for-multiple-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-configuring-summary-e-mail-notification-for-multiple-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3499,14 +3499,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-consolidating-archive-log-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-consolidate-archive-log-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-consolidate-archive-log-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-consolidating-archive-log-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3625,13 +3625,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-a-task-specification-file.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-create-a-task-specification-file.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -3639,7 +3632,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-create-an-oracle-user-for-the-repository-database-instance.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-a-task-specification-file.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3653,14 +3646,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-an-oracle-user-for-the-target-database.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-create-an-oracle-user-for-the-target-database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-create-an-oracle-user-for-the-repository-database-instance.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3674,7 +3660,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-backup-schedules.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-create-an-oracle-user-for-the-target-database.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-an-oracle-user-for-the-target-database.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3688,7 +3681,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-clone-specifications.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-backup-schedules.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3702,7 +3695,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-database-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-clone-specifications.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3716,7 +3709,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-operation-level-dump-files.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-database-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3724,6 +3717,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-create-operation-level-dump-files.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-operation-level-dump-files.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3751,13 +3751,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-pretask-post-task-and-policy-scripts.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-create-pretask-post-task-and-policy-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -3765,7 +3758,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-profile-level-dump-files.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-pretask-post-task-and-policy-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3779,7 +3772,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-profile-level-dump-files.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3793,14 +3786,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-repositories.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-restore-specifications.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-repositories.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3814,7 +3807,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-system-level-dump-files.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-restore-specifications.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3828,7 +3821,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-task-scripts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-system-level-dump-files.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3842,7 +3835,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-create-the-repository-database-instance.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-creating-task-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3850,6 +3843,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-create-the-repository-database-instance.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-create-the-repository-database-instance.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3870,13 +3870,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-customizing-e-mail-subject-for-a-new-profile.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-customize-e-mail-subject-for-a-new-profile.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -3884,7 +3877,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-customizing-the-email-subject-for-an-existing-profile.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-customizing-e-mail-subject-for-a-new-profile.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3892,6 +3885,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-customize-the-email-subject-for-an-existing-profile.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-customizing-the-email-subject-for-an-existing-profile.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -3975,13 +3975,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-backup-schedules.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-delete-backup-schedules.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -3989,7 +3982,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-backup-schedules.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4003,7 +3996,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-clones.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4017,7 +4010,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-credentials-for-individual-resources.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-clones.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4031,14 +4024,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-delete-profile.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-credentials-for-individual-resources.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-delete-profile.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4052,7 +4045,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-user-credentials-for-hosts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4066,7 +4059,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-user-credentials-for-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-user-credentials-for-hosts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4080,7 +4073,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-user-credentials-for-repositories.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-user-credentials-for-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4088,6 +4081,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-delete-user-credentials-for-repositories.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-deleting-user-credentials-for-repositories.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4115,13 +4115,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-disabling-autosupport-in-snapmanager.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-disable-autosupport-in-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -4129,7 +4122,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-disabling-email-notification-for-multiple-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-disabling-autosupport-in-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4137,6 +4130,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-disable-email-notification-for-multiple-profiles.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-disabling-email-notification-for-multiple-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4178,14 +4178,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-editing-the-configuration-parameters.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-edit-the-configuration-parameters.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-edit-the-configuration-parameters.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-editing-the-configuration-parameters.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4199,14 +4199,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-enabling-autosupport-in-snapmanager.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-enable-autosupport-in-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-enable-autosupport-in-snapmanager.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-enabling-autosupport-in-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4234,13 +4234,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-freeing-backups.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-free-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -4248,7 +4241,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-freeing-or-deleting-retention-policy-exempt-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-freeing-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4256,6 +4249,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-free-or-delete-retention-policy-exempt-backups.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-freeing-or-deleting-retention-policy-exempt-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4311,14 +4311,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-issuing-commands-from-an-alternate-host.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-issue-commands-from-an-alternate-host.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-issue-commands-from-an-alternate-host.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-issuing-commands-from-an-alternate-host.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4332,7 +4332,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-modifying-the-backup-retention-class.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-modify-the-backup-retention-class.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4346,7 +4346,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-modify-the-backup-retention-class.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-modifying-the-backup-retention-class.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4360,14 +4360,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-mounting-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-mount-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-mount-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-mounting-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4402,7 +4402,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-performing-a-rollback-on-a-single-host-or-multiple-hosts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-perform-a-rollback-on-a-single-host-or-multiple-hosts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4416,14 +4416,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-perform-a-rollback-on-a-single-host-or-multiple-hosts.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-performing-backup-restore-and-clone-operations-using-prescript-and-post-scripts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-performing-a-rollback-on-a-single-host-or-multiple-hosts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4437,14 +4430,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-performing-rolling-upgrade-on-a-single-host-or-multiple-hosts.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-perform-rolling-upgrade-on-a-single-host-or-multiple-hosts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-performing-backup-restore-and-clone-operations-using-prescript-and-post-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4458,7 +4444,21 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-post-rollback-tasks.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-perform-rolling-upgrade-on-a-single-host-or-multiple-hosts.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-performing-rolling-upgrade-on-a-single-host-or-multiple-hosts.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-post-rollback-tasks.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4472,7 +4472,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-post-rollback-tasks.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-post-rollback-tasks.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4514,14 +4514,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-previewing-backup-restore-information.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-preview-backup-restore-information.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-preview-backup-restore-information.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-previewing-backup-restore-information.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4556,14 +4556,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-pruning-archive-log-files.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-prune-archive-log-files.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-prune-archive-log-files.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-pruning-archive-log-files.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4577,14 +4577,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-purging-history-of-snapmanager-operation.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-purge-history-of-snapmanager-operation.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-purge-history-of-snapmanager-operation.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-purging-history-of-snapmanager-operation.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4598,14 +4598,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-removing-history-configuration-associated-with-a-single-profile-or-multiple-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-remove-history-configuration-associated-with-a-single-profile-or-multiple-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-remove-history-configuration-associated-with-a-single-profile-or-multiple-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-removing-history-configuration-associated-with-a-single-profile-or-multiple-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4619,14 +4619,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-renaming-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-rename-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-rename-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-renaming-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4640,14 +4640,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-resetting-profile-password.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-reset-profile-password.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-reset-profile-password.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-resetting-profile-password.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4696,14 +4696,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-restoring-backups-from-an-alternate-location.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-restore-backups-from-an-alternate-location.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-restore-backups-from-an-alternate-location.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-restoring-backups-from-an-alternate-location.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4717,14 +4717,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-restoring-backups-on-primary-storage.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-restore-backups-on-primary-storage.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-restore-backups-on-primary-storage.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-restoring-backups-on-primary-storage.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4745,14 +4745,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-resuming-backup-schedules.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-resume-backup-schedules.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-resume-backup-schedules.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-resuming-backup-schedules.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4766,14 +4766,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-retaining-backups-forever.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-retain-backups-forever.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-retain-backups-forever.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-retaining-backups-forever.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4794,13 +4794,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-scheduling-archive-log-file-pruning.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-schedule-archive-log-file-pruning.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -4808,7 +4801,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-scheduling-backups-with-sap-transaction-db13.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-scheduling-archive-log-file-pruning.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4816,6 +4809,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-schedule-backups-with-sap-transaction-db13.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-scheduling-backups-with-sap-transaction-db13.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4836,14 +4836,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-setting-credentials-after-clearing-credential-cache.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-set-credentials-after-clearing-credential-cache.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-set-credentials-after-clearing-credential-cache.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-setting-credentials-after-clearing-credential-cache.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4857,13 +4857,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-set-up-snapmanager.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-set-up-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -4871,7 +4864,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-access-the-snapmanager-user-interface.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-set-up-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4885,7 +4878,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-back-up-your-database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-access-the-snapmanager-user-interface.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4899,7 +4892,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-configure-databases.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-back-up-your-database.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4913,7 +4906,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-configure-the-snapmanager-repository.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-configure-databases.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4927,7 +4920,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-configure-the-target-database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-configure-the-snapmanager-repository.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4941,7 +4934,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-create-a-profile-for-your-database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-configure-the-target-database.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4955,7 +4948,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-install-snapmanager.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-create-a-profile-for-your-database.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4969,7 +4962,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-integrate-with-sap-br-tools.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-install-snapmanager.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4983,7 +4976,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-prepare-for-deployment.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-integrate-with-sap-br-tools.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -4997,7 +4990,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-schedule-recurring-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-prepare-for-deployment.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5011,7 +5004,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-start-the-snapmanager-server.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-schedule-recurring-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5025,7 +5018,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-uninstall-the-software-from-a-unix-host.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-start-the-snapmanager-server.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5039,7 +5032,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-verify-database-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-uninstall-the-software-from-a-unix-host.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5047,6 +5040,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-smsap-isg-verify-database-backups.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-smsap-isg-verify-database-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5116,14 +5116,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-stopping-the-snapmanager-host-server.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-stop-the-snapmanager-host-server.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-stop-the-snapmanager-host-server.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-stopping-the-snapmanager-host-server.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5144,13 +5144,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-storing-encrypted-passwords-for-custom-scripts.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-store-encrypted-passwords-for-custom-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -5158,7 +5151,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-storing-the-task-scripts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-storing-encrypted-passwords-for-custom-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5172,6 +5165,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-storing-the-task-scripts.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-suspend-backup-schedules.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -5179,14 +5179,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-suspending-backup-schedules.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-suspend-backup-schedules.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-suspend-backup-schedules.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-suspending-backup-schedules.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5221,14 +5221,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-unmounting-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-unmount-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-unmount-backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-unmounting-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5270,13 +5270,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-updating-a-backup-schedule.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-update-a-backup-schedule.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -5284,7 +5277,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-updating-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-updating-a-backup-schedule.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5298,7 +5291,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-updating-storage-system-name-associated-with-a-profile.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-updating-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5312,7 +5305,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-updating-target-database-hostname-associated-with-a-profile.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-updating-storage-system-name-associated-with-a-profile.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5326,14 +5319,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-updating-the-existing-repository.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-update-the-existing-repository.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-updating-target-database-hostname-associated-with-a-profile.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5347,6 +5333,20 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-update-the-existing-repository.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-updating-the-existing-repository.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-upgrade-snapmanager-for-oraclesnapmanager-for-sap-hosts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -5354,14 +5354,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-upgrade-snapmanager-for-oracle-snapmanager-for-sap-hosts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-upgrade-snapmanager-for-oracle-snapmanager-for-sap-hosts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-upgrade-snapmanager-for-oracle-snapmanager-for-sap-hosts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-upgrade-snapmanager-for-oracle-snapmanager-for-sap-hosts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5536,13 +5536,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-verifying-database-backups.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-verify-database-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -5550,7 +5543,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-verifying-installation-of-plugin-scripts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-verifying-database-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5564,7 +5557,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-verifying-profiles.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-verifying-installation-of-plugin-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5572,6 +5565,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-verify-profiles.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-verifying-profiles.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5592,14 +5592,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-verify-the-oracle-listener-configuration.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-verify-the-oracle-listener-configuration.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-7mode/task-verify-the-oracle-listener-configuration.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-installation-cmode/task-verify-the-oracle-listener-configuration.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5711,13 +5711,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-backups.html</loc>
-      
-      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-view-a-list-of-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -5725,7 +5718,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-clones.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-backups.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5739,7 +5732,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-operations.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-clones.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5753,7 +5746,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-scheduled-operations.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-operations.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5767,7 +5760,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-snapmanager-history-operation-as-a-report.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-scheduled-operations.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5781,7 +5774,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-storage-controllers-associated-with-a-profile.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-snapmanager-history-operation-as-a-report.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5795,7 +5788,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-backup-details.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-a-list-of-storage-controllers-associated-with-a-profile.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5809,14 +5802,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-view-clone-split-estimate.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-backup-details.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-detailed-clone-information.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-view-clone-split-estimate.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5830,7 +5823,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-operation-details.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-detailed-clone-information.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5844,7 +5837,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-sample-plugin-scripts.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-operation-details.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5858,7 +5851,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-snapmanger-history-operation-details.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-sample-plugin-scripts.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5872,14 +5865,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-view-status-of-clone-split-process.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-snapmanger-history-operation-details.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-the-detailed-history-of-a-specific-operation-associated-with-a-profile.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-view-status-of-clone-split-process.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
@@ -5893,6 +5886,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-the-detailed-history-of-a-specific-operation-associated-with-a-profile.html</loc>
+      
+      <lastmod>2022-08-14T17:59:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-view-the-result-of-the-clone-split-process.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
@@ -5900,14 +5900,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-user-credentials.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-view-user-credentials.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/unix-administration/task-view-user-credentials.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-sap/windows/task-viewing-user-credentials.html</loc>
       
       <lastmod>2022-08-14T17:59:18+00:00</lastmod>
       
