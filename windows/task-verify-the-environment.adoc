@@ -15,7 +15,7 @@ summary: 您可以驗證環境、以確保SnapDrive 正確SnapManager 設定了S
 
 
 
-== 您的需求
+== 您需要的產品
 
 下載、安裝及設定必要的先決條件。確定SnapManager 安裝了「支援」功能、且主機伺服器正在執行。
 
