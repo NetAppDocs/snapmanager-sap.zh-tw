@@ -1,0 +1,33 @@
+---
+indexpage:
+  title: 適用於SAP文件的SnapManager
+  summary: 適用於SAP的解決方案可自動化並簡化資料庫的備份、還原及複製相關的複雜、手動及耗時程序。SnapManager您可以使用SnapManager
+    支援ONTAP SnapMirror的功能來建立備份複本、並使用ONTAP SnapVault 支援此技術的功能、將備份有效歸檔至磁碟。
+  keywords: snapmanager, sap, installation, setup, deployment, workflow, configuration,product.
+  lead: 適用於SAP的解決方案可自動化並簡化資料庫的備份、還原及複製相關的複雜、手動及耗時程序。SnapManager您可以使用SnapManager 支援ONTAP
+    SnapMirror的功能來建立備份複本、並使用ONTAP SnapVault 支援此技術的功能、將備份有效歸檔至磁碟。
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 產品總覽
+      url: "/unix-installation-cmode/reference-smsap-isg-product-overview.html"
+    - title: 版本資訊
+      url: reference-releasenotes.html
+  - title: 系統管理
+    links:
+    - title: 設定SnapManager 適用於UNIX的功能
+      url: "/unix-administration/concept-configuring-snapmanager-for-oraclesap.html"
+    - title: 設定SnapManager 適用於Windows的功能
+      url: "/windows/concept-configuring-snapmanager-for-oraclesap.html"
+  - title: 安裝與設定
+    links:
+    - title: 部署工作流程（7-Mode）
+      url: "/unix-installation-7mode/reference-smsap-isg-deployment-workflow.html"
+    - title: 部署工作流程（叢集模式）
+      url: "/unix-installation-cmode/reference-smsap-isg-deployment-workflow.html"
+  - title: 更多資源
+    links:
+    - title: NetApp支援
+      url: https://mysupport.netapp.com/site/global/dashboard
+    - title: NetApp社群
+      url: https://community.netapp.com/
